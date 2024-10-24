@@ -1,0 +1,21 @@
+{# In case of item has more than 4 children, display children into a grid with 6 columns. #}
+{% set col_sm = items|length > 4 ? '3' : '4' %}
+{% set col_md = items|length > 4 ? '2' : '3' %}
+
+<div class="fr-grid-row fr-grid-row--start fr-grid-row--gutters">
+  {% for item in items %}
+    <div {{ item.attributes.addClass('fr-col-12 fr-col-md-' ~ col_md ~ ' fr-col-sm-' ~ col_sm) }}>
+      <h3 class="fr-footer__top-cat">
+        {{ link(item.title, item.url, item.attributes.addClass('fr-footer__top-link')) }}
+      </h3>
+      <ul class="fr-footer__top-list">
+        {% for subitem in item.below %}
+          <li{{ subitem.attributes }}>
+            {% set link_attributes = item.link_attributes|default(create_attribute()) %}
+            {{ link(subitem.title, subitem.url, link_attributes.addClass('fr-footer__top-link')) }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>

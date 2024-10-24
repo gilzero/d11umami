@@ -1,0 +1,599 @@
+# We don't use "xxx.nomodule.min.js" because of conflicts with "Big Pipe" module.
+# These Javascript files are needed for old/outdated browsers.
+# @see: https://www.systeme-de-design.gouv.fr/utilisation-et-organisation/developpeurs/prise-en-main/
+
+component.accordion:
+  css:
+    component:
+      /libraries/dsfr/dist/component/accordion/accordion.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.alert:
+  css:
+    component:
+      /libraries/dsfr/dist/component/alert/alert.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.badge:
+  css:
+    component:
+      /libraries/dsfr/dist/component/badge/badge.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.breadcrumb:
+  css:
+    component:
+      /libraries/dsfr/dist/component/breadcrumb/breadcrumb.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/breadcrumb/breadcrumb.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/breadcrumb/breadcrumb.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/core
+
+component.button:
+  css:
+    component:
+      /libraries/dsfr/dist/component/button/button.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.callout:
+  css:
+    component:
+      /libraries/dsfr/dist/component/callout/callout.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.card:
+  css:
+    component:
+      /libraries/dsfr/dist/component/card/card.min.css: { minified: true }
+    theme:
+      css/card.css: {}
+  dependencies:
+    - dsfr4drupal/component.button
+    - dsfr4drupal/core
+
+component.checkbox:
+  css:
+    component:
+      /libraries/dsfr/dist/component/checkbox/checkbox.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.form
+    - dsfr4drupal/core
+
+component.consent:
+  css:
+    component:
+      /libraries/dsfr/dist/component/consent/consent.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.content:
+  css:
+    component:
+      /libraries/dsfr/dist/component/content/content.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.display:
+  js:
+    /libraries/dsfr/dist/component/display/display.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/display/display.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/component.radio
+    - dsfr4drupal/core
+    - dsfr4drupal/scheme
+
+component.display.button:
+  css:
+    theme:
+      css/display.button.css: {}
+
+component.connect:
+  css:
+    component:
+      /libraries/dsfr/dist/component/connect/connect.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.follow:
+  css:
+    component:
+      /libraries/dsfr/dist/component/follow/follow.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.footer:
+  css:
+    component:
+      /libraries/dsfr/dist/component/footer/footer.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.link
+    - dsfr4drupal/core
+
+component.form:
+  css:
+    component:
+      /libraries/dsfr/dist/component/form/form.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.header:
+  css:
+    component:
+      /libraries/dsfr/dist/component/header/header.min.css: { minified: true }
+  js:
+    js/header.mobile.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - dsfr4drupal/component.link
+    - dsfr4drupal/component.button
+    - dsfr4drupal/core
+
+component.highlight:
+  css:
+    component:
+      /libraries/dsfr/dist/component/highlight/highlight.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.input:
+  css:
+    component:
+      /libraries/dsfr/dist/component/input/input.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.button
+    - dsfr4drupal/component.form
+    - dsfr4drupal/core
+
+component.link:
+  css:
+    component:
+      /libraries/dsfr/dist/component/link/link.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.logo:
+  css:
+    component:
+      /libraries/dsfr/dist/component/logo/logo.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.modal:
+  css:
+    component:
+      /libraries/dsfr/dist/component/modal/modal.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/modal/modal.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/modal/modal.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/component.button
+    - dsfr4drupal/component.link
+    - dsfr4drupal/core
+
+component.navigation:
+  css:
+    component:
+      /libraries/dsfr/dist/component/navigation/navigation.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/navigation/navigation.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/navigation/navigation.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/component.button
+    - dsfr4drupal/component.link
+    - dsfr4drupal/core
+    - dsfr4drupal/utility
+
+component.notice:
+  css:
+    component:
+      /libraries/dsfr/dist/component/notice/notice.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.pagination:
+  css:
+    component:
+      /libraries/dsfr/dist/component/pagination/pagination.min.css: { minified: true }
+    theme:
+      css/pager.css: {}
+  dependencies:
+    - dsfr4drupal/core
+
+component.password:
+  css:
+    component:
+      /libraries/dsfr/dist/component/password/password.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/password/password.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/password/password.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/component.button
+    - dsfr4drupal/component.checkbox
+    - dsfr4drupal/component.input
+    - dsfr4drupal/component.link
+    - dsfr4drupal/core
+
+component.quote:
+  css:
+    component:
+      /libraries/dsfr/dist/component/quote/quote.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.range:
+  css:
+    component:
+      /libraries/dsfr/dist/component/range/range.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/range/range.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/range/range.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/core
+
+component.radio:
+  css:
+    component:
+      /libraries/dsfr/dist/component/radio/radio.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.form
+    - dsfr4drupal/core
+
+component.search:
+  css:
+    component:
+      /libraries/dsfr/dist/component/search/search.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.form
+    - dsfr4drupal/core
+
+component.segmented:
+  css:
+    component:
+      /libraries/dsfr/dist/component/segmented/segmented.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/segmented/segmented.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/segmented/segmented.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/component.form
+    - dsfr4drupal/core
+
+component.select:
+  css:
+    component:
+      /libraries/dsfr/dist/component/select/select.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.form
+    - dsfr4drupal/core
+
+component.share:
+  css:
+    component:
+      /libraries/dsfr/dist/component/share/share.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.button
+    - dsfr4drupal/component.link
+    - dsfr4drupal/core
+
+component.sidemenu:
+  css:
+    component:
+      /libraries/dsfr/dist/component/sidemenu/sidemenu.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/sidemenu/sidemenu.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/sidemenu/sidemenu.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/core
+
+component.skiplink:
+  css:
+    component:
+      /libraries/dsfr/dist/component/skiplink/skiplink.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.link
+    - dsfr4drupal/core
+
+component.stepper:
+  css:
+    component:
+      /libraries/dsfr/dist/component/stepper/stepper.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.summary:
+  css:
+    component:
+      /libraries/dsfr/dist/component/summary/summary.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.table:
+  css:
+    component:
+      /libraries/dsfr/dist/component/table/table.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/table/table.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/table/table.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/core
+
+component.tag:
+  css:
+    component:
+      /libraries/dsfr/dist/component/tag/tag.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+component.tile:
+  css:
+    component:
+      /libraries/dsfr/dist/component/tile/tile.min.css: { minified: true }
+    theme:
+      css/tile.css: {}
+  dependencies:
+    - dsfr4drupal/core
+
+component.toggle:
+  css:
+    component:
+      /libraries/dsfr/dist/component/toggle/toggle.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/toggle/toggle.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/toggle/toggle.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+
+component.tooltip:
+  css:
+    component:
+      /libraries/dsfr/dist/component/tooltip/tooltip.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/tooltip/tooltip.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/tooltip/tooltip.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/core
+
+component.transcription:
+  css:
+    component:
+      /libraries/dsfr/dist/component/transcription/transcription.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/transcription/transcription.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/transcription/transcription.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/component.button
+    - dsfr4drupal/core
+
+component.tab:
+  css:
+    component:
+      /libraries/dsfr/dist/component/tab/tab.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/component/tab/tab.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/component/tab/tab.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+  dependencies:
+    - dsfr4drupal/core
+
+component.translate:
+  css:
+    component:
+      /libraries/dsfr/dist/component/translate/translate.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/component.button
+    - dsfr4drupal/component.navigation
+    - dsfr4drupal/core
+
+core:
+  css:
+    base:
+      /libraries/dsfr/dist/core/core.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/core/core.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+#    /libraries/dsfr/dist/core/core.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+#  dependencies:
+#    - dsfr4drupal/legacy
+
+drupal.message:
+  js:
+    js/messages.js: {}
+  dependencies:
+    - dsfr4drupal/component.alert
+
+drupal.node.preview:
+  css:
+    theme:
+      css/drupal.node.preview.css: {}
+
+#legacy:
+#  js:
+#    /libraries/dsfr/dist/legacy/legacy.nomodule.min.js:
+#      minified: true
+#      attributes:
+#        nomodule: true
+#      # Move DSFR modules to first load to improve Javascript file aggregation.
+#      weight: -50
+
+navigation.layout:
+  css:
+    theme:
+      css/navigation.header.css: {}
+
+scheme:
+  css:
+    base:
+      /libraries/dsfr/dist/scheme/scheme.min.css: { minified: true }
+  js:
+    /libraries/dsfr/dist/scheme/scheme.module.min.js:
+      minified: true
+      attributes:
+        type: module
+      # Move DSFR modules to first load to improve Javascript file aggregation.
+      weight: -50
+  dependencies:
+    - dsfr4drupal/core
+
+tarteaucitron:
+  css:
+    theme:
+      vendor/dsfr-tarteaucitron/css/dsfr-theme-tac.min.css: { minified: true }
+
+toolbar:
+  css:
+    theme:
+      css/toolbar.css: {}
+
+utility:
+  css:
+    base:
+      /libraries/dsfr/dist/utility/utility.min.css: { minified: true }
+  dependencies:
+    - dsfr4drupal/core
+
+utility.icons:
+  css:
+    base:
+      /libraries/dsfr/dist/utility/icons/icons.min.css: { minified: true }

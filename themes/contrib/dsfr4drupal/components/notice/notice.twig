@@ -1,0 +1,36 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set title_attributes = create_attribute({'class': ['fr-notice__title']}) %}
+{% set button_label = button_label|default('Hide message'|t) %}
+{% set button_title = button_title|default('Hide message'|t) %}
+{% set variant = variant|default('info') %}
+
+{% if icon and variant starts with 'weather-' %}
+  {% set title_attributes = title_attributes.addClass('fr-icon-' ~ icon ~ '-fill') %}
+{% endif %}
+
+<div{{ attributes.addClass(['fr-notice', 'fr-notice--' ~ variant]) }}>
+  <div class="fr-container">
+    <div class="fr-notice__body">
+      {% if content is not empty or link is not empty %}
+        <p>
+          <span{{ title_attributes }}>{{ title }}</span>
+          {% if content is not empty %}
+          <span class="fr-notice__desc">{{ content }}</span>
+          {% endif %}
+          {{ link }}
+        </p>
+      {% else %}
+        <p{{ title_attributes }}>
+          {{ title }}
+        </p>
+      {% endif %}
+
+      {% if has_button %}
+        <button class="fr-btn--close fr-btn" title="{{ button_title }}" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)">
+          {{ button_label }}
+        </button>
+        {{ attach_library('dsfr4drupal/component.button') }}
+      {% endif %}
+    </div>
+  </div>
+</div>

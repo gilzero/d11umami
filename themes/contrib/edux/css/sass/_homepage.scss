@@ -1,0 +1,18 @@
+.homepage-content .block-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.frontpage-main .block,
+.homepage-content-bottom .block {
+  margin-bottom: 5rem;
+}
+.region-content-home-top .block {
+  padding: 4rem 0;
+}
+.region-content-home-top .block:nth-child(even) {
+  position: relative;
+  background: #f0f0f0;
+}
+.region-content-home-top .block:last-child {
+  margin: 0;
+}

@@ -1,0 +1,117 @@
+/**
+ * @file
+ * Visual styles for table drag.
+ */
+
+body div.tabledrag-changed-warning {
+  margin-bottom: 0.5em;
+}
+
+.draggable a.tabledrag-handle {
+  margin-left: 0;
+}
+a.tabledrag-handle {
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background: transparent;
+}
+a.tabledrag-handle .handle,
+a.tabledrag-handle:hover .handle,
+a.tabledrag-handle:focus .handle {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 1.1rem;
+  background: url("../../images/drag_handle.svg") no-repeat 50% 50%;
+}
+.drag > .field-multiple-drag .tabledrag-handle,
+a.tabledrag-handle:hover,
+a.tabledrag-handle:focus {
+  transition: all 0.2s;
+  border: 1px solid #a6a6a6;
+  outline: none;
+  background-color: #f9f8f6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
+}
+
+.js .tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+
+abbr[title].tabledrag-changed {
+  text-decoration: none;
+  border: 0;
+}
+
+table.field-multiple-table {
+  margin-bottom: 0.6em;
+}
+
+table.field-multiple-table tbody {
+  border: 1px solid rgba(221, 221, 221, 0.5);
+  background-color: rgba(254, 254, 254, 0.7);
+}
+
+table.field-multiple-table thead {
+  border: 0;
+  background: none;
+}
+
+table.field-multiple-table thead th.field-label {
+  padding: 0;
+}
+
+table.field-multiple-table thead th.field-label .label {
+  line-height: 1.8;
+}
+
+table.field-multiple-table .form-no-label input,
+table.field-multiple-table .form-no-label select,
+table.field-multiple-table .form-no-label textarea {
+  margin-bottom: 0;
+}
+
+.draggable td.field-multiple-drag {
+  position: relative;
+  width: 1%;
+  padding-right: 0;
+}
+
+td.field-multiple-drag .tabledrag-changed {
+  position: absolute;
+  left: 4px;
+  padding: 0 0 0 7px;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: #000;
+  border: 0;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+tr.draggable.drag td.field-multiple-drag::after,
+tr.draggable.drag-previous td.field-multiple-drag::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  display: block;
+  width: 3px;
+  height: 100%;
+  content: "";
+  background: #fff4c6;
+}
+
+td.delta-order {
+  padding-left: 0;
+}
+
+tr.drag {
+  z-index: 100;
+  display: table-row;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+tr.drag-previous {
+  background: #fffceb !important;
+}

@@ -1,0 +1,59 @@
+/*** SUPERNOVA STYLE ***/
+
+#top_bg, .themed-block {
+	background-color: #000;
+	background-image: -webkit-linear-gradient(bottom, #01173b 0%, #000 150px);
+	background-image: linear-gradient(to top, #01173b 0%, #000 150px);
+}
+#section2 {
+	background-color: #000;
+	background-image: -webkit-linear-gradient(bottom, #000 0%, #01173b 150px);
+	background-image: linear-gradient(to top, #000 0%, #01173b 150px);
+}
+.region-highlighted {
+	border: solid 1px #55ac2b;
+}
+a, a:link, h1, h2, h3, .block-title {
+	color: #39c;
+}
+a:hover, a:active, a.is-active, ul.menu a.is-active {
+	color: #55ac2b;
+}
+#name-and-slogan a {
+	color: #55ac2b;
+}
+.pure-menu-link {
+	color: #fff !important;
+	text-shadow: 1px 1px #000;
+	background: #069;
+}
+.pure-menu-link:hover, .pure-menu-link:focus {
+	background: #407697;
+}
+.pure-menu-children .pure-menu-link {
+	background: #069;
+	border: 1px solid;
+	border-color: #4987ab #069 #069 #4987ab;
+}
+.pure-menu-children a:hover, .pure-menu-children a:focus {
+	background: #407697;
+}
+.menu-toggle .bars {
+	background: #39c;
+}
+
+@media screen and (max-width: 48em) {
+	.pure-menu-link, .pure-menu-children,
+	.pure-menu-children .pure-menu-link {
+		color: #069 !important;
+		text-shadow: none;
+		background: none;
+		border: none;
+	}
+	.pure-menu-link:hover,
+	.pure-menu-link:focus,
+	.pure-menu-children a:hover,
+	.pure-menu-children a:focus {
+		background: #191919;
+	}
+}

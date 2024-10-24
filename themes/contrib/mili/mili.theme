@@ -1,0 +1,124 @@
+<?php
+use Drupal\file\Entity\File;
+/**
+ * @file
+ * Contains Mili theme override and preprocess functions.
+ */
+
+ /**
+  * Sanitise input urls.
+  */
+function santise_val_url($url) {
+	if ($url != '') {
+		// Sanitise (remove all illegal characters) from url.
+		$url = filter_var($url, FILTER_SANITIZE_URL);
+
+		// Validate url.
+		if (filter_var($url, FILTER_VALIDATE_URL) == TRUE) {
+			$url = $url;
+		} else {
+			$url = '#';
+		}
+		return $url;
+	}
+}
+
+ /* *
+ * Mili page preprocess.
+ * Define variables for theme settings.
+ */
+function mili_preprocess_page(array &$variables) {
+	$config = \Drupal::config('system.site');
+	$variables['site_name'] = $config->get('name');
+	$variables['site_slogan'] = $config->get('slogan');
+	$variables['all_icons_show'] = theme_get_setting('all_icons_show', 'mili');
+	$variables['facebook_url'] = santise_val_url(theme_get_setting('facebook_url', 'mili'));
+	$variables['twitter_url'] = santise_val_url(theme_get_setting('twitter_url', 'mili'));
+	$variables['instagram_url'] = santise_val_url(theme_get_setting('instagram_url', 'mili'));
+	$variables['linkedin_url'] = santise_val_url(theme_get_setting('linkedin_url', 'mili'));
+	$variables['youtube_url'] = santise_val_url(theme_get_setting('youtube_url', 'mili'));
+	$variables['gplus_url'] = santise_val_url(theme_get_setting('gplus_url', 'mili'));
+  $variables['telegram_url'] = santise_val_url(theme_get_setting('telegram_url', 'mili'));
+  $variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'mili'));
+  $variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'mili'));
+	$variables['vk_url'] = santise_val_url(theme_get_setting('vk_url', 'mili'));
+	$variables['scrolltotop_on'] = theme_get_setting('scrolltotop_on', 'mili');
+	$variables['copyright_text'] = theme_get_setting('copyright_text', 'mili');
+	$variables['front_sidebar'] = theme_get_setting('front_sidebar', 'mili');
+	$variables['fontawesome_four'] = theme_get_setting('fontawesome_four', 'mili');
+	$variables['fontawesome_six'] = theme_get_setting('fontawesome_six', 'mili');
+	$variables['bootstrapicons'] = theme_get_setting('bootstrapicons', 'mili');
+	$variables['font_icon_material'] = theme_get_setting('font_icon_material', 'mili');
+	$variables['slider_show'] = theme_get_setting('slider_show', 'mili');
+	$variables['slider_code'] = theme_get_setting('slider_code', 'mili');
+	$slider_image_id = theme_get_setting('slider_image', 'mili');
+	if(!empty($slider_image_id)) {
+		$slider_image_file = File::load($slider_image_id[0]);
+		$slider_image_file->setPermanent();
+		$slider_image_file->save();
+		$slider_image_file_usage = \Drupal::service('file.usage');
+		$slider_image_file_usage->add($slider_image_file, 'mili', 'theme', $slider_image_id[0]);
+	};
+	if(!empty($slider_image_file)) {
+    $imageuri = $slider_image_file->getFileUri();
+    $variables['slider_image_path'] = \Drupal::service('file_url_generator')->generateAbsoluteString($imageuri);
+	};
+}
+
+/* *
+ * Node preprocess.
+ */
+function mili_preprocess_node(array &$variables) {
+	$variables['node_tags'] = theme_get_setting('node_tags');
+}
+
+/* *
+ * Comment preprocess.
+ */
+function mili_preprocess_comment(array &$variables) {
+	$variables['comment_user_pic'] = theme_get_setting('comment_user_pic');
+}
+
+ /**
+  * Html preprocess for Mili theme.
+  * Adds body classes if certain regions have content.
+  * Used for creating different page layout.
+  */
+function mili_preprocess_html(&$variables) {
+	$variables['base_path'] = base_path();
+	$variables['styling'] = theme_get_setting('styling');
+	$variables['styling_code'] = theme_get_setting('styling_code');
+	$slider_home = theme_get_setting('slider_show');
+	$is_front = \Drupal::service('path.matcher')->isFrontPage();
+	if ($slider_home == 1 and $is_front == 1) {
+		$variables['attributes']['class'][] = 'frontpage';
+	}
+}
+
+/* *
+ * Add current page to breadcrumb.
+ */
+function mili_preprocess_breadcrumb(&$variables) {
+	$request = \Drupal::request();
+	$route_match = \Drupal::routeMatch();
+	$page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+	if (!empty($page_title)) {
+		$variables['breadcrumb'][] = [
+			'text' => $page_title,
+		];
+		// Add cache context based on url.
+		$variables['#cache']['contexts'][] = 'url';
+	}
+}
+/**
+ * Implements THEME_preprocess_HOOK() for system messages block.
+ * 10.3 upgrade now missing status-message theme suggestions
+ * and outputs multiple messages on page load.
+ * see https://www.drupal.org/project/drupal/issues/3456176
+ */
+use Drupal\Core\Render\Element\StatusMessages;
+
+function mili_preprocess_block__system_messages_block(&$variables) {
+  $variables['content'] = StatusMessages::renderMessages();
+	$variables['#cache']['max-age'] = 0;
+}

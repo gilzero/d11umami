@@ -1,0 +1,5 @@
+provider_huggingface.settings_menu:
+  title: "Huggingface Configuration"
+  description: "Setup Huggingface"
+  route_name: provider_huggingface.settings_form
+  parent: ai.admin_providers

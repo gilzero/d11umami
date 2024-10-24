@@ -1,0 +1,153 @@
+onecol:
+  label: 'One column'
+  path: layouts/layout_discovery/onecol
+  template: layout--onecol
+  category: 'Columns: 1'
+  default_region: content
+  icon_map:
+    - [content]
+  regions:
+    content:
+      label: Content
+
+twocol:
+  label: 'Two columns'
+  path: layouts/layout_discovery/twocol
+  template: layout--twocol
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [top]
+    - [first, second]
+    - [bottom]
+  regions:
+    top:
+      label: Top
+    first:
+      label: First
+    second:
+      label: Second
+    bottom:
+      label: Bottom
+
+twocol_75_25:
+  label: 'Two columns 75/25'
+  path: layouts/layout_discovery/twocol_75_25
+  template: layout--twocol-75-25
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
+twocol_60_40:
+  label: 'Two columns 60/40'
+  path: layouts/layout_discovery/twocol_60_40
+  template: layout--twocol-60-40
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, first, first, second, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
+twocol_25_75:
+  label: 'Two columns 25/75'
+  path: layouts/layout_discovery/twocol_25_75
+  template: layout--twocol-25-75
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, second, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
+twocol_40_60:
+  label: 'Two columns 40/60'
+  path: layouts/layout_discovery/twocol_40_60
+  template: layout--twocol-40-60
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, first, second, second, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
+twocol_bricks:
+  label: 'Two-column bricks'
+  path: layouts/layout_discovery/twocol_bricks
+  template: layout--twocol-bricks
+  category: 'Columns: 2'
+  default_region: middle
+  icon_map:
+    - [top]
+    - [first_above, second_above]
+    - [middle]
+    - [first_below, second_below]
+    - [bottom]
+  regions:
+    top:
+      label: Top
+    first_above:
+      label: 'First above'
+    second_above:
+      label: 'Second above'
+    middle:
+      label: Middle
+    first_below:
+      label: 'First below'
+    second_below:
+      label: 'Second below'
+    bottom:
+      label: Bottom
+
+threecol_25_50_25:
+  label: 'Three columns 25/50/25'
+  path: layouts/layout_discovery/threecol_25_50_25
+  template: layout--threecol-25-50-25
+  category: 'Columns: 3'
+  default_region: second
+  icon_map:
+    - [first, second, second, third]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+
+threecol_33_34_33:
+  label: 'Three columns 33/34/33'
+  path: layouts/layout_discovery/threecol_33_34_33
+  template: layout--threecol-33-34-33
+  category: 'Columns: 3'
+  default_region: first
+  icon_map:
+    - [top]
+    - [first, second, third]
+    - [bottom]
+  regions:
+    top:
+      label: Top
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+    bottom:
+      label: Bottom

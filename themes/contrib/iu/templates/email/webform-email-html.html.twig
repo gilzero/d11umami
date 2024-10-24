@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Default theme implementation for webform email wrapper template as HTML.
+ *
+ * Leverages the non-branded email template.
+ */
+#}
+{% extends '@iu/email/email-template--nonbranded.html.twig' %}
+
+{% block content %}
+{{ body|raw }}
+{% endblock %}
+
+{% block compliance %}
+This e-mail was automatically sent to <strong>{{ to_mail }}</strong>{% if from_name %} on behalf of {{ from_name }}{% endif %} using the <a href="{{ form_url }}" target="_blank" style="color:#006298;">{{ form_name }}</a> on the {{ site_name }} website.
+{% endblock %}
+
+{% block online_version %}{% endblock %}

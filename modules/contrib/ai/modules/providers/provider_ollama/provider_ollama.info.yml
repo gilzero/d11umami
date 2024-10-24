@@ -1,0 +1,14 @@
+name: Ollama Provider
+description: This enables the use of Ollama for the AI module.
+package: AI Providers
+type: module
+core_version_requirement: ^10.2 || ^11
+configure: provider_ollama.settings_form
+
+dependencies:
+  - ai:ai
+
+# Information added by Drupal.org packaging script on 2024-10-10
+version: '1.0.0-alpha8'
+project: 'ai'
+datestamp: 1728569766

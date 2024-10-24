@@ -1,0 +1,41 @@
+.local-tasks {
+  margin: -0.25rem;
+  padding: 0.25rem;
+  list-style: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.local-tasks li {
+  width: auto;
+  float: left;
+  padding: 0.1em 1.2em 0.1em 0;
+}
+
+.local-tasks li > a {
+  /* .rvt-button--secondary */
+  padding: 0.3em 1em;
+  background-color: transparent;
+  border-radius: .25rem;
+  border: .125rem solid #c6ecf6;
+  color: #006298;
+  font-weight: 500;
+  font-family: BentonSansMedium, Arial, sans-serif;
+  transition: all 0.2s ease-out;
+  display: block;
+  text-decoration: none;
+}
+
+.local-tasks li > a:hover {
+  background-color: #edfafd;
+  border-color: #c6ecf6;
+  color: #004f80;
+}
+
+/* rvt-button */
+.local-tasks li.active > a {
+  background-color: #006298;
+  border-color: #006298;
+  color: #fff;
+}

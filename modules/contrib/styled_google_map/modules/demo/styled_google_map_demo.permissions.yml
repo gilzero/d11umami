@@ -1,0 +1,19 @@
+add real estate entities:
+  title: 'Create new Real estate entities'
+
+administer real estate entities:
+  title: 'Administer Real estate entities'
+  description: 'Allow to access the administration form to configure Real estate entities.'
+  restrict access: true
+
+delete real estate entities:
+  title: 'Delete Real estate entities'
+
+edit real estate entities:
+  title: 'Edit Real estate entities'
+
+view published real estate entities:
+  title: 'View published Real estate entities'
+
+view unpublished real estate entities:
+  title: 'View unpublished Real estate entities'

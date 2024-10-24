@@ -1,0 +1,8 @@
+{# Button to be inserted in the bottom list block of the footer. #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set label = label|default('Display settings'|t) %}
+<li{{ attributes.addClass('fr-footer__bottom-item') }}>
+  <button class="fr-footer__bottom-link fr-icon-theme-fill fr-btn--icon-left" aria-controls="modal-display-settings" data-fr-opened="false">
+    {{ label }}
+  </button>
+</li>

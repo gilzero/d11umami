@@ -1,0 +1,8 @@
+.vt-region-breadcrumb {
+  margin: 1rem 0;
+}
+.vt-breadcrumb {
+  padding: 0;
+  @include flexbox;
+  gap: 15px;
+}

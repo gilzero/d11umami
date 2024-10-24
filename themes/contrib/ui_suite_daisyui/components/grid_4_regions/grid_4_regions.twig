@@ -1,0 +1,43 @@
+{% set container_type = container_type|default('container mx-auto') %}
+
+{% set grid_cols = grid_cols|default('grid-cols-12') %}
+{% set gap = gap|default('gap-4') %}
+{% set grid_classes = ['grid', gap, gap_lg, gap_md, gap_sm, grid_cols, grid_cols_lg, grid_cols_md, grid_cols_sm] %}
+{% set grid_classes_attributes = create_attribute().addClass(grid_classes) %}
+{% set attributes = attributes.addClass('grid') %}
+
+{% set col_first_classes = [col_span_first, col_start_first, col_end_first, col_span_first_lg, col_start_first_lg, col_end_first_lg, col_span_first_md, col_start_first_md, col_end_first_md, col_span_first_sm, col_start_first_sm, col_end_first_sm] %}
+{% set col_first_attributes = create_attribute().addClass(col_first_classes) %}
+{% set col_second_classes = [col_span_second, col_start_second, col_end_second, col_span_second_lg, col_start_second_lg, col_end_second_lg, col_span_second_md, col_start_second_md, col_end_second_md, col_span_second_sm, col_start_second_sm, col_end_second_sm] %}
+{% set col_second_attributes = create_attribute().addClass(col_second_classes) %}
+{% set col_third_classes = [col_span_third, col_start_third, col_end_third, col_span_third_lg, col_start_third_lg, col_end_third_lg, col_span_third_md, col_start_third_md, col_end_third_md, col_span_third_sm, col_start_third_sm, col_end_third_sm] %}
+{% set col_third_attributes = create_attribute().addClass(col_third_classes) %}
+{% set col_fourth_classes = [col_span_fourth, col_start_fourth, col_end_fourth, col_span_fourth_lg, col_start_fourth_lg, col_end_fourth_lg, col_span_fourth_md, col_start_fourth_md, col_end_fourth_md, col_span_fourth_sm, col_start_fourth_sm, col_end_fourth_sm] %}
+{% set col_fourth_attributes = create_attribute().addClass(col_fourth_classes) %}
+
+{% set attributes = attributes.addClass(background_size, background_position, background_repeat) %}
+
+{% if background_image %}
+  {% set attributes = attributes.setAttribute('style', 'background-image: url(' ~ background_image ~ ')') %}
+{% endif %}
+
+<section {{ attributes.addClass(container_type != 'bg-breakout' ? grid_classes, container_type) }} >
+{% if container_type == 'bg-breakout' %}
+  <div {{ grid_classes_attributes.addClass('container', 'mx-auto') }} >
+{% endif %}
+  <div {{ col_first_attributes }}>
+    {{ col_first }}
+  </div>
+  <div  {{ col_second_attributes }}>
+    {{ col_second }}
+  </div>
+  <div  {{ col_third_attributes }}>
+    {{ col_third }}
+  </div>
+  <div  {{ col_fourth_attributes }}>
+    {{ col_fourth }}
+  </div>
+{% if container_type == 'bg-breakout' %}
+  </div>
+{% endif %}
+</section>

@@ -1,0 +1,41 @@
+.help-section.clearfix {
+  border: 2px solid $black-pearl;
+  border-radius: 10px;
+  padding: 10px;
+  background: $ck-grey;
+  margin: 2rem 0;
+  > .layout-column--quarter {
+    padding-left: 0;
+  }
+  .layout-column--quarter {
+    display: flex;
+    flex-direction: column;
+    * {
+      color: $text-white;
+    }
+    .section-item {
+      @extend %parent-focus;
+      position: relative;
+      background: $smart-navy;
+      border-bottom: 2px solid $delightful-yellow;
+      margin-top: 2px;
+      padding: 0.75rem 0.5rem;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: default;
+      &:has(a):hover {
+        opacity: 0.8;
+      }
+      a {
+        @extend %stretched-link;
+        text-decoration: none;
+        ~ .card-icon {
+          display: none;
+        }
+      }
+    }
+    .card-icon {
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{# Button to be inserted in the tools-links block of the header. #}
+{{ include('dsfr4drupal:button', {
+  'attributes': create_attribute({
+    'class': ['fr-icon-theme-fill'],
+    'aria-controls': 'modal-display-settings',
+    'data-fr-opened': 'false',
+  }),
+  'label': label|default('Display settings'|t),
+}, with_context=false) }}

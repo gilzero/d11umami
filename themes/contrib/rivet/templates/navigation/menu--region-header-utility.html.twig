@@ -1,0 +1,50 @@
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/3.x/tags/macro.html
+#}
+{% set username = user.account.name %}
+{{ menus.menu_links(items, attributes, 0, logged_in, username) }}
+
+{% macro menu_links(items, attributes, menu_level, logged_in, username) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <div class="rvt-flex rvt-items-center rvt-m-left-md rvt-p-bottom-md rvt-p-bottom-none-lg-up">
+    {% else %}
+      <ul class="submenu">
+    {% endif %}
+    {% for item in items %}
+      {%
+        set classes = [
+          'rvt-ts-14',
+          not loop.first ? 'rvt-m-left-xs',
+          not loop.last ? 'rvt-p-right-xs rvt-border-right',
+        ]
+      %}
+      <div{{ item.attributes.addClass(classes) }}>
+        {% set title = item.title %}
+        {% if item.title == 'My account' and logged_in %}
+        {% set title %}
+          <span class="rvt-flex rvt-items-center">
+            <span class="rvt-avatar rvt-avatar--xs">
+              <span class="rvt-avatar__text">{{ username | split(' ') | map((v) => v|first|upper ) |join('') }}</span>
+            </span>
+            <span class="rvt-m-left-xs">{{ username }}</span>
+          </span>
+        {% endset %}
+        {% endif %}
+        {{ link(title, item.url) }}
+        {% if item.below %}
+        {{ menus.menu_links(item.below, attributes, menu_level + 1, logged_in, username) }}
+        {% endif %}
+      </div>
+    {% endfor %}
+    {% if menu_level == 0 %}
+    </div>
+    {% else %}
+    </ul>
+    {% endif %}
+  {% endif %}
+{% endmacro %}

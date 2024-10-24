@@ -1,0 +1,29 @@
+name: DSFR - Share
+description: Share buttons allow users to easily share content they are viewing with other users.
+status: stable
+group: DSFR
+props:
+  properties:
+    add_mandatory_items:
+      type: boolean
+      title: Add mandatory items?
+      description: Add mandatory "Copy to clipboard" item at the very last item.
+      default: true
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    content:
+      type: string
+      title: Content
+    items:
+      type: array
+      title: Items
+      description: 'Each item expects properties of the "dsfr4drupal:button-group" component.'
+      items:
+        type: object
+    title:
+      type: string
+      title: Title
+  required:
+    - items
+    - title

@@ -1,0 +1,12 @@
+{% set wrapper_attributes = wrapper_attributes|default(create_attribute()) %}
+
+<div{{ wrapper_attributes.addCLass('fr-table') }}>
+  <div class="fr-table__wrapper">
+    <div class="fr-table__container">
+      <div class="fr-table__content">
+        {% include '@system/templates/table.html.twig' %}
+      </div>
+    </div>
+  </div>
+</div>
+{{ attach_library('dsfr4drupal/component.table') }}

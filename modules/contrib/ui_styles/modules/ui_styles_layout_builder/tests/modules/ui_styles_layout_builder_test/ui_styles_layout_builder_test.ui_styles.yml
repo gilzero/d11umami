@@ -1,0 +1,18 @@
+test_class:
+  label: Test class
+  description: Test class
+  options:
+    test-class-section: Test
+    test-class-region: Test
+    test-class-section-2-col: Test
+    test-class-region-first: Test
+    test-class-region-second: Test
+    test-class-title-block-wrapper: Test
+    test-class-title-block-title: Test
+    test-class-title-block-content: Test
+    test-class-body-block-wrapper: Test
+    test-class-body-block-title: Test
+    test-class-body-block-content: Test
+    test-class-block-content-entity-block-wrapper: Test
+    test-class-block-content-entity-block-title: Test
+    test-class-block-content-entity-block-content: Test

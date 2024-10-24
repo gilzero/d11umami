@@ -1,0 +1,158 @@
+@media (min-width:62rem) {
+  .solo-inner .navigation__megamenu {
+    position: relative;
+  }
+
+  .solo-inner .navigation__megamenu>li>ul li,
+  .solo-inner .navigation__megamenu>li>ul ul {
+    display: flex !important;
+    height: initial !important;
+    margin: initial !important;
+    padding: initial !important;
+    flex-direction: column;
+  }
+
+  .page-wrapper .solo-inner .navigation__megamenu ul li.nav__menu-item>button,
+  .page-wrapper .solo-inner .navigation__megamenu ul li.nav__menu-item>a {
+    --r-bg-lk: transparent;
+    --r-bg-lk-h: transparent;
+  }
+
+  .solo-inner .navigation__megamenu>li.nav__menu-item>a,
+  .solo-inner .navigation__megamenu>li.nav__menu-item>button {
+    padding: var(--solo-px12);
+  }
+
+  .solo-inner .navigation__megamenu>li>ul.sub__menu-header>li>a,
+  .solo-inner .navigation__megamenu>li>ul.sub__menu-header>li>button {
+    font-weight: bold;
+    font-size: 110%;
+  }
+
+  .solo-inner .navigation__megamenu>li>ul.sub__menu {
+    width: 100%;
+    display: none;
+    overflow: unset;
+    gap: var(--solo-px16);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--solo-px16);
+    padding-left: var(--solo-px16);
+  }
+
+  .solo-inner .navigation__megamenu>li>ul>li {
+    margin-top: var(--solo-px16) !important;
+    margin-bottom: var(--solo-px16) !important;
+  }
+
+  .solo-inner .navigation__megamenu>li>ul.sub__menu>* {
+    width: 100%;
+    height: 100%;
+  }
+
+  .solo-inner .navigation__megamenu ul .toggler-icon,
+  .solo-inner .navigation__megamenu>li>ul>li.link-and-button button {
+    display: none;
+    height: 0 !important;
+    width: 0 !important;
+  }
+
+  .solo-inner .navigation__megamenu>li li>a,
+  .solo-inner .navigation__megamenu>li li>button {
+    display: inline-flex !important;
+    width: min-content;
+  }
+
+  .page-wrapper .solo-inner .navigation__megamenu>li li:hover,
+  .page-wrapper .solo-inner .navigation__megamenu>li li a:hover,
+  .page-wrapper .solo-inner .navigation__megamenu>li li button:hover,
+  .page-wrapper .navigation-responsive-hover .navigation__megamenu li li.has-sub__menu:hover>a,
+  .page-wrapper .navigation-responsive-hover .navigation__megamenu li li.has-sub__menu:hover>button {
+    background-color: unset !important;
+  }
+
+  .solo-inner .navigation__megamenu>li>ul.sub__menu .ds-link:hover {
+    color: var(--r-tx) !important;
+  }
+
+  .solo-inner .navigation__megamenu>li>ul.sub__menu .ds-link {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .solo-inner .navigation-responsive-hover .navigation__megamenu>li:hover>ul.sub__menu {
+    display: grid !important;
+    height: initial !important;
+  }
+
+}
+
+@media (max-width:62rem) {
+  .solo-inner .navigation__megamenu ul.sub__menu {
+    grid-auto-columns: 1fr;
+  }
+
+  .solo-inner .navigation__megamenu li.nav__menu-item>button.ds-link>span.menu__url-title-disabled {
+    flex-grow: 1;
+    margin-right: var(--solo-px12);
+  }
+
+  .solo-inner .navigation__megamenu li.nav__menu-item>a,
+  .solo-inner .navigation__megamenu li.nav__menu-item>button {
+    padding: var(--solo-px12);
+  }
+
+  .solo-inner .navigation__megamenu li.nav__menu-item .dropdown-toggler {
+    cursor: context-menu !important;
+  }
+
+  .solo-inner .navigation__megamenu li.nav__menu-item,
+  .solo-inner .navigation__megamenu li.nav__menu-item>a,
+  .solo-inner .navigation__megamenu li.nav__menu-item>button {
+    display: flex;
+  }
+
+  .solo-inner .navigation__megamenu li.link-only {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .solo-inner .navigation__megamenu li.link-and-button>button {
+    position: relative;
+    flex-basis: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .solo-inner .navigation__megamenu li.link-and-button>a {
+    position: relative;
+    flex-basis: calc(100% - 50px);
+    width: calc(100% - 50px);
+    flex-grow: 1;
+  }
+
+  .solo-inner .navigation__megamenu li.button-only>button>span.menu__url-title-disabled {
+    flex-basis: calc(100% - 24px);
+    position: relative;
+    flex-grow: 1;
+  }
+
+  .solo-inner .navigation__megamenu li.button-only>button>span.toggler-icon {
+    flex-basis: 24px;
+    margin-left: var(--solo-px12);
+  }
+
+  .solo-inner .navigation__megamenu li.button-only>button>span.toggler-icon,
+  .solo-inner .navigation__megamenu li.link-and-button>button>span.toggler-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .solo-inner .navigation__megamenu li {
+    flex-basis: 100%;
+    flex-grow: 1;
+  }
+
+}

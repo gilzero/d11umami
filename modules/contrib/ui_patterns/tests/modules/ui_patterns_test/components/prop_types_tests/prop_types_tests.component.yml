@@ -1,0 +1,186 @@
+name: "Prop types tests"
+
+props:
+  type: object
+  required:
+    - string
+  properties:
+    nothing:
+      title: "Unknown (nothing)"
+    object:
+      title: "Unknown (empty object)"
+      type: "object"
+    array:
+      title: "Unknown (empty array)"
+      type: "array"
+    array_object:
+      title: "Unknown (array of empty objects)"
+      type: array
+      items:
+        type: object
+    string:
+      title: "String"
+      type: "string"
+    string_default:
+      title: "String with default"
+      type: "string"
+      default: "Default text"
+    string_length:
+      title: "String with min & max length"
+      type: "string"
+      maxLength: 10
+      minLength: 3
+    machine_name:
+      title: "Machine name"
+      type: string
+      pattern: '^[A-Za-z]+\w*$'
+    url_1:
+      title: "Url (explicit typing)"
+      "$ref": "ui-patterns://url"
+    url_2:
+      title: "Url (implicit typing, exact type)"
+      type: "string"
+      format: "iri-reference"
+    url_3:
+      title: "Url (implicit typing, other type)"
+      description: Test format compatibility
+      type: "string"
+      format: "uri"
+    list:
+      title: "List of strings (not enum)"
+      type: array
+      items:
+        type: "string"
+    boolean:
+      title: "Boolean"
+      type: "boolean"
+    integer:
+      title: "Integer"
+      type: "integer"
+    number_1:
+      title: "Number (float or integer)"
+      type: "number"
+    number_default:
+      title: "Number, with default"
+      type: "number"
+      default: 4
+    number_2:
+      title: "Number with min max"
+      type: "number"
+      minimum: 2
+      maximum: 10
+    string_enum:
+      title: "String with enum"
+      type: "string"
+      enum:
+        - top
+        - bottom
+    string_enum_default:
+      title: "String with enum with default"
+      type: "string"
+      enum:
+        - top
+        - bottom
+      default: top
+    enum_with_meta:
+      title: "Enum with meta"
+      type: "string"
+      enum:
+        - one
+        - two
+        - three
+      "meta:enum":
+        one: Un
+        two: Deux
+        three: Trois
+    enum_with_missing_value:
+      title: "Enum with meta but missing value"
+      type: "string"
+      enum:
+        - one
+        - three
+      "meta:enum":
+        one: Un
+        two: Deux
+        three: Trois
+    attributes_implicit:
+      title: "Attributes (implicit typing)"
+      type: object
+      patternProperties:
+        ".+":
+          anyOf:
+            - type:
+                - string
+                - number
+            - type: array
+              items:
+                anyOf:
+                  - type: number
+                  - type: string
+    attributes_explicit:
+      title: "Attributes (explicit typing)"
+      "$ref": "ui-patterns://attributes"
+    attributes_sdc:
+      title: "Attributes when type is a PHP namespace"
+      type: 'Drupal\Core\Template\Attribute'
+    enum_list:
+      title: "List of strings enum"
+      type: array
+      items:
+        type: "string"
+        enum: ["one", "two", "three"]
+    enum_list_2:
+      title: "List of strings enum and numbers, and default"
+      type: array
+      items:
+        type: "string"
+        enum: ["one", 2, "three"]
+      default:
+        - "one"
+        - 2
+    enum_list_3:
+      title: "List of strings enum with max limit"
+      type: array
+      items:
+        type: "string"
+        enum: ["one", "two", "three"]
+        maxItems: 2
+    enum_list_meta:
+      title: "List of strings enum with meta"
+      type: array
+      items:
+        type: "string"
+        enum: ["one", "two", "three"]
+        "meta:enum":
+          one: Un
+          two: Deux
+          three: Trois
+    enum_list_meta_missing:
+      title: "List of strings enum with meta but one value is missing"
+      type: array
+      items:
+        type: "string"
+        enum: ["one", "three"]
+        "meta:enum":
+          one: Un
+          two: Deux
+          three: Trois
+    links:
+      title: "Links"
+      type: array
+      items:
+        type: object
+        properties:
+          title: { type: string }
+          attributes: { "$ref": "ui-patterns://attributes" }
+          below: { "$ref": "ui-patterns://links" }
+    links_2:
+      title: "Links with extra property"
+      type: array
+      items:
+        type: object
+        properties:
+          title: { type: string }
+          attributes: { "$ref": "ui-patterns://attributes" }
+          below: { "$ref": "ui-patterns://links" }
+          extra: { type: string }

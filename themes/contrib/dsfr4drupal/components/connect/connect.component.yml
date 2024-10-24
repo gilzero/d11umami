@@ -1,0 +1,24 @@
+name: DSFR - FranceConnect
+description: The FranceConnect button allows an administration (or a software provider acting on behalf of an administration) to offer a simplified connection or account creation.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    connect_plus:
+      type: boolean
+      title: Use FranceConnect+?
+      default: false
+    link_label:
+      type: string
+      title: Link label
+      description: 'By default: "What is FranceConnect?", or the translated string in another language.'
+    login_label:
+      type: string
+      title: Login label
+      description: 'By default: "Identify with", or the translated string in another language.'
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.connect

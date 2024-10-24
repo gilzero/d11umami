@@ -1,0 +1,35 @@
+name: DSFR - Alert
+description: Alerts make it possible to draw the user's attention to information without interrupting their current task.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    button_label:
+      type: string
+      title: Button label
+    button_title:
+      type: string
+      title: Button title attribute
+    content:
+      type: string
+      title: Content
+    has_button:
+      type: boolean
+      title: Has button?
+      default: false
+    title:
+      type: string
+      title: Title
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - sm
+  required:
+    - content
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.alert

@@ -1,0 +1,21 @@
+.layout-type--flex-builder .page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 100%;
+}
+
+.layout-type--flex-builder .l-attribution {
+  -webkit-box-ordinal-group: 101;
+      -ms-flex-order: 100;
+          order: 100;
+}
+
+.bogus {
+  padding: 0;
+}
+/*# sourceMappingURL=at--bc.css.map */

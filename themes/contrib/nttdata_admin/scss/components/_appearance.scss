@@ -1,0 +1,42 @@
+/**
+* @file
+* Appearance.
+*/
+
+.system-themes-list {
+  .card {
+    &-list__item {
+      border: 0;
+      border-radius: 0 3rem 0 0;
+      box-shadow: 0 0 3px 0 $border-grey;
+    }
+    &__image {
+      max-height: 100%;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__content-wrapper {
+      border-radius: 0 3rem 0 0;
+      border-left: 1px solid $ck-grey;
+    }
+    &__footer {
+      padding: 0.5rem 0.5rem 0.5rem calc(1.5rem - 0.25rem);
+      .action-link {
+        @extend %button-primary;
+        padding: 0.25rem 0.5rem;
+        margin: 0.25rem;
+        border-radius: 5px;
+      }
+    }
+    #nttdata-admin-notes {
+      display: flex;
+      *:not(:first-child) {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}

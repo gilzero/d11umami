@@ -1,0 +1,36 @@
+/*
+ * Homepage
+ */
+ #home-main {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.homepage-content .block {
+  width: 100%;
+  margin-bottom: 80px;
+}
+.home-content .block-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.home-content .block-title::before,
+.home-content .block-title::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  width: 60px;
+  height: 2px;
+  margin-left: -30px;
+  
+}
+.home-content .block-title::before {
+  background: var(--theme-color);
+  bottom: 6px;
+}
+.home-content .block-title::after {
+  background: var(--color-secondary);
+  bottom: 0;
+}

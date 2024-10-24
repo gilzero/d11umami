@@ -1,0 +1,25 @@
+services:
+  ui_patterns_legacy.twig.extension:
+    class: Drupal\ui_patterns_legacy\Template\TwigExtension
+    tags:
+      - { name: twig.extension }
+  ui_patterns_legacy.discovery:
+    class: Drupal\ui_patterns_legacy\ComponentDiscovery
+    arguments:
+      - "@extension.path.resolver"
+      - "@module_handler"
+      - "@theme_handler"
+      - "@file_system"
+  ui_patterns_legacy.component_converter:
+    class: Drupal\ui_patterns_legacy\ComponentConverter
+    arguments:
+      - "@renderer"
+      - "@plugin.manager.sdc"
+  ui_patterns_legacy.component_writer:
+    class: Drupal\ui_patterns_legacy\ComponentWriter
+  ui_patterns_legacy.component_element_alter:
+    class: Drupal\ui_patterns_legacy\Element\ComponentElementAlter
+    arguments:
+      - "@theme.manager"
+      - "@plugin.manager.sdc"
+      - "@ui_patterns.component_element_alter"

@@ -1,0 +1,124 @@
+// Transition Mixing
+@mixin transition($variable) {
+  -webkit-transition: $variable;
+  -moz-transition: $variable;
+  -ms-transition: $variable;
+  -o-transition: $variable;
+  transition: $variable;
+}
+
+// Transform Mixing
+@mixin transform($variable) {
+  -webkit-transform: $variable;
+  -moz-transform: $variable;
+  -ms-transform: $variable;
+  -o-transform: $variable;
+  transform: $variable;
+}
+
+// Translate Mixing
+@mixin translate($v1, $v2) {
+  -webkit-transform: translate($v1, $v2);
+  -moz-transform: translate($v1, $v2);
+  -ms-transform: translate($v1, $v2);
+  -o-transform: translate($v1, $v2);
+  transform: translate($v1, $v2);
+}
+
+// Filter
+@mixin filter($variable) {
+  -webkit-filter: $variable;
+  -ms-filter: $variable;
+  -moz-filter: $variable;
+  -o-filter: $variable;
+  filter: $variable;
+}
+
+// scroll bar
+@mixin scroll() {
+  &::-ms-clear {
+    display: none;
+  }
+  &::-webkit-scrollbar-track {
+    display: none;
+    position: absolute;
+    background: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: transparent repeat-y;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $text-grey;
+    opacity: 0.6;
+    border-radius: 4px;
+  }
+}
+
+// Stop selection
+@mixin selection() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// Form element
+@mixin input() {
+  padding: calc(0.75rem - 3px) calc(2.5rem - 1px) calc(0.75rem - 3px) calc(0.75rem - 3px);
+  min-height: 2rem;
+  color: $text-dark;
+  border: 1px solid $border-grey;
+  background-color: $white;
+}
+
+// Buttons
+@mixin button-color (
+  $text-color,
+  $background-color,
+  $background-color-hover,
+  $background: unset,
+  $background-hover: unset,
+) {
+  background: $background;
+  background-color: $background-color;
+  box-shadow: none;
+  color: $text-color;
+  &:hover {
+    color: $text-color;
+    background: $background-hover;
+    background-color: $background-color-hover;
+    text-decoration: none;
+  }
+  &:focus {
+    @include focus-outline;
+  }
+}
+
+@mixin button-dk-color (
+  $text-color,
+  $background-color,
+  $background-color-hover,
+  $background: unset,
+  $background-hover: unset,
+) {
+  @include button-color($text-color, $background-color, $background-color-hover, $background, $background-hover);
+  &:before,
+  &:after {
+    @extend %filter-white;
+  }
+}
+
+@mixin focus-outline (
+  $color: $green,
+  $border-size: 0.25rem,
+) {
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: solid $color $border-size;
+    box-shadow: 0 0 0 3px $color;
+  }
+}

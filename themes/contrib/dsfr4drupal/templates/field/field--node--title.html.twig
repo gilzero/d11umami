@@ -1,0 +1,14 @@
+{% if not is_inline %}
+  {% include "field.html.twig" %}
+{% else %}
+  {%- if attributes is not empty -%}
+    <span{{ attributes }}>
+  {%- endif -%}
+  {%- for item in items -%}
+    {{ item.content }}
+  {%- endfor -%}
+
+  {%- if attributes is not empty -%}
+    </span>
+  {%- endif -%}
+{% endif %}

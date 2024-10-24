@@ -1,0 +1,44 @@
+name: "Alert"
+description: "Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages."
+links:
+  - "https://getbootstrap.com/docs/5.3/components/alerts/"
+variants:
+  primary:
+    title: "Primary"
+  secondary:
+    title: "Secondary"
+  success:
+    title: "Success"
+  danger:
+    title: "Danger"
+  warning:
+    title: "Warning"
+  info:
+    title: "Info"
+  light:
+    title: "Light"
+  dark:
+    title: "Dark"
+props:
+  type: object
+  properties:
+    dismissible:
+      title: "Dismissible?"
+      description: "It is possible to dismiss any alert inline."
+      type: "boolean"
+slots:
+  heading:
+    title: "Heading"
+    description: "The alert heading. Optional."
+  message:
+    title: "Message"
+    description: "The alert message."
+stories:
+  preview:
+    title: "Preview"
+    description: "The default preview from UI Patterns 1.x"
+    props:
+      dismissible: True
+    slots:
+      heading: "Well done!"
+      message: "A simple alert. Check it out!"

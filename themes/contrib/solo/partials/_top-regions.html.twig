@@ -1,0 +1,79 @@
+
+{% set top_first = page.top_first is not empty ? page.top_first : null %}
+{% set top_second = page.top_second is not empty ? page.top_second : null %}
+{% set top_third = page.top_third is not empty ? page.top_third : null %}
+
+{% if top_first or top_second or top_third %}
+
+{% set top_regions = 0 %}
+
+{% if top_first %}
+  {% set top_regions = top_regions + 1 %}
+  {% set top_first_outer_classes = 'region-outer top-box top-box-first' %}
+  {% set top_first_inner_classes = 'region-inner top-box-inner top-box-first-inner fade-inner' ~ (classes_top_first ? ' ' ~ classes_top_first) %}
+{% endif %}
+
+{% if top_second %}
+  {% set top_regions = top_regions + 1 %}
+  {% set top_second_outer_classes = 'region-outer top-box top-box-second' %}
+  {% set top_second_inner_classes = 'region-inner top-box-inner top-box-second-inner fade-inner' ~ (classes_top_second ? ' ' ~ classes_top_second) %}
+{% endif %}
+
+{% if top_third %}
+  {% set top_regions = top_regions + 1 %}
+  {% set top_third_outer_classes = 'region-outer top-box top-box-third' %}
+  {% set top_third_inner_classes = 'region-inner top-box-inner top-box-third-inner fade-inner' ~ (classes_top_third ? ' ' ~ classes_top_third) %}
+{% endif %}
+
+{% set top_active = 'active-top-' ~ top_regions %}
+
+{% set top_outer = 'solo-outer multi top-container' ~
+  (top_active ? ' ' ~ top_active) ~
+  (site_regions_top_border ? ' has-border') ~
+  (site_regions_top_rounded ? ' ' ~ site_regions_top_rounded) ~
+  (site_regions_top_animate_border ? ' animate-border') ~
+  (site_regions_top_animate_hover ? ' animate-hover') ~
+  (classes_top_container ? ' ' ~ classes_top_container) %}
+
+{% set top_inner = 'solo-inner solo-col top-container-inner' ~
+  (top_layout ? ' ' ~ top_layout) %}
+
+  <!-- Start: Top Container -->
+  <div id="top-container" class="{{ top_outer }}" {{ attributes_top_container }}>
+    <div id="top-container-inner" class="{{ top_inner }}">
+
+    {% if top_first %}
+      <!-- Start: Top container first region -->
+      <div id="top-box-first" class="{{ top_first_outer_classes }}">
+        <div class="{{ top_first_inner_classes }}" {{ attributes_top_first }}>
+          {{ top_first }}
+        </div>
+      </div>
+      <!-- End: Top Container First -->
+    {% endif %}
+
+    {% if top_second %}
+      <!-- Start: Top Container Second  -->
+      <div id="top-box-second" class="{{ top_second_outer_classes }}">
+        <div class="{{ top_second_inner_classes }}" {{ attributes_top_second }}>
+          {{ top_second }}
+        </div>
+      </div>
+      <!-- End: Top Container Second -->
+    {% endif %}
+
+    {% if top_third %}
+      <!-- Start: Top Container Third -->
+      <div id="top-box-third" class="{{ top_third_outer_classes }}">
+        <div class="{{ top_third_inner_classes }}" {{ attributes_top_third }}>
+          {{ top_third }}
+        </div>
+      </div>
+      <!-- End: Top Container Third -->
+    {% endif %}
+
+    </div>
+  </div>
+  <!-- End: Top container -->
+{% endif %}
+

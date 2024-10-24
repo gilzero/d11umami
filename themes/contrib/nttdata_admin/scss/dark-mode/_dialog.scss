@@ -1,0 +1,96 @@
+body.dark-mode {
+  // Modal
+  .ui-dialog {
+    #drupal-modal {
+      background-color: $white;
+      label,
+      .form-item.description {
+        color: $text-dark;
+      }
+      //! validar a utilização deste código
+      // a {
+      //   color: $delightful-yellow;
+      // }
+      .fieldset__description {
+        color: $text-lightgrey;
+      }
+      ul.dropbutton,
+      ul.action-links {
+        a {
+          color: $text-dark;
+        }
+      }
+      // Media library side menu
+      .media-library-menu {
+        padding-top: 0;
+      }
+      .media-library-menu__item {
+        padding: 0;
+        margin: 0 0 0 -0.5rem;
+        a {
+          color: $text-dark;
+          background-color: $white;
+          margin-top: 0;
+          &:hover {
+            background-color: $white2;
+          }
+          &.active:before {
+            border-left: 4px solid $delightful-yellow;
+          }
+        }
+      }
+    }
+    .ui-dialog-titlebar {
+      background: $white2;
+      color: $text-dark;
+    }
+    .ui-dialog-buttonpane {
+      background-color: $white;
+      button:not(.button--primary) {
+        color: $white2;
+      }
+    }
+  }
+  .cke_dialog .cke_dialog {
+    &_body {
+      border: 1px solid $text-grey;
+    }
+    &_contents {
+      tr:hover {
+        background-color: unset;
+      }
+      label {
+        color: $text-dark;
+        .cke_dialog_ui_labeled_required {
+          color: $text-dark;
+        }
+      }
+      input[type="text"] {
+        @include input;
+        color: $text-dark;
+        background-color: $white2;
+        padding: calc(0.75rem - 3px);
+        &:focus {
+          @include focus-outline;
+        }
+      }
+      select {
+        color: $text-dark;
+        background-color: $white2;
+        &:focus {
+          @include focus-outline;
+        }
+        option {
+          color: $text-dark;
+          background-color: $white2;
+        }
+      }
+    }
+    &_ui_button_ok {
+      color: $white2;
+      &:hover {
+        color: $white2;
+      }
+    }
+  }
+}

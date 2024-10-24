@@ -1,0 +1,8 @@
+/**
+ * @file
+ * Override header "z-index" to fix rendering when "navigation" module is enabled.
+ */
+
+.fr-header {
+  z-index: calc(var(--ground) + 450);
+}

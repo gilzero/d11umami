@@ -1,0 +1,67 @@
+.webform-submission-form fieldset,
+.webform-submission-form fieldset .fieldset-wrapper.solo-panel {
+  border: none;
+  background: transparent !important;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.webform-submission-form .form-actions {
+  text-align: center;
+}
+
+.webform-submission-form .form-actions > input {
+  margin: var(--solo-px16) var(--solo-px8) !important;
+}
+
+.webform-submission-form .form-type-webform-rating label {
+  height: calc(2* var(--solo-px12));
+  float: left;
+}
+
+.webform-multiple-table td input[type="image"] {
+  border-color: var(--r-br, var(--r-br-b));
+}
+
+.webform-multiple-add {
+  text-align: center;
+}
+
+.webform-multiple-add .form-type-number input {
+  display: inline-block;
+  margin: 0;
+  width: 4em;
+}
+
+.webform-multiple-add div.solo-section.form-item {
+  width: auto;
+  clear: none;
+}
+
+.webform-multiple-add > div,
+.webform-multiple-add > input {
+  float: left;
+  margin-right: var(--solo-px10);
+}
+
+.webform-multiple-add .field-suffix {
+  font-size: 90%;
+}
+
+.webform-multiple-table td.webform-multiple-table--handle {
+  width: auto;
+}
+
+.webform-has-field-prefix span.field-prefix + div,
+.webform-has-field-suffix > div + span.field-suffix {
+  display: inline-block;
+  clear: none;
+}
+
+.webform-multiple-table td input[type="image"] + input[type="image"] {
+  margin: var(--solo-px2) 0 0 0;
+}
+.webform-has-field-prefix,
+.webform-has-field-suffix {
+  display: inline-flex;
+}

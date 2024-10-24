@@ -1,0 +1,221 @@
+
+abc-purecss-local:
+  version: 3.0.0
+  css:
+    layout:
+      css/yui/pure-min.css: { minified: true }
+      css/yui/grids-responsive-min.css: { minified: true }
+
+abc-purecss:
+  remote: https://purecss.io/
+  version: 3.0.0
+  license:
+    name: BSD
+    url: https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css
+    gpl-compatible: true
+  css:
+    layout:
+      //cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css: { type: external, minified: true }
+
+
+base:
+  version: VERSION
+  css:
+    component:
+      css/components/action-links.css: { weight: -10 }
+      css/components/breadcrumb.css: { weight: -10 }
+      css/components/button.css: { weight: -10 }
+      css/components/collapse-processed.css: { weight: -10 }
+      css/components/container-inline.css: { weight: -10 }
+      css/components/details.css: { weight: -10 }
+      css/components/exposed-filters.css: { weight: -10 }
+      css/components/form.css: { weight: -10 }
+      css/components/icons.css: { weight: -10 }
+      css/components/inline-form.css: { weight: -10 }
+      css/components/link.css: { weight: -10 }
+      css/components/links.css: { weight: -10 }
+      css/components/more-link.css: { weight: -10 }
+      css/components/pager.css: { weight: -10 }
+      css/components/tabledrag.css: { weight: -10 }
+      css/components/tableselect.css: { weight: -10 }
+      css/components/tablesort.css: { weight: -10 }
+      css/components/tabs.css: { weight: -10 }
+      css/components/textarea.css: { weight: -10 }
+      css/components/ui-dialog.css: { weight: -10 }
+
+user:
+  version: VERSION
+  css:
+    component:
+      css/components/user.css: { weight: -10 }
+
+dropbutton:
+  version: VERSION
+  css:
+    component:
+      css/components/dropbutton.css: { weight: -10 }
+
+dialog:
+  version: VERSION
+  css:
+    component:
+      css/components/dialog.css: { weight: -10 }
+
+progress:
+  version: VERSION
+  css:
+    component:
+      css/components/progress.css: { weight: -10 }
+
+book-navigation:
+  version: VERSION
+  css:
+    component:
+      css/components/book-navigation.css: {}
+
+file:
+  version: VERSION
+  css:
+    component:
+      css/components/file.css: { weight: -10 }
+
+forum:
+  version: VERSION
+  css:
+    component:
+      css/components/forum.css: { weight: -10 }
+
+indented:
+  version: VERSION
+  css:
+    component:
+      css/components/indented.css: {}
+
+node:
+  version: VERSION
+  css:
+    component:
+      css/components/node.css: { weight: -10 }
+
+search-results:
+  version: VERSION
+  css:
+    component:
+      css/components/search-results.css: {}
+
+media_embed_error:
+  version: VERSION
+  css:
+    component:
+      css/components/media-embed-error.css: {}
+
+messages:
+  version: VERSION
+  css:
+    component:
+      css/components/messages.css: { weight: -10 }
+
+image-widget:
+  version: VERSION
+  css:
+    component:
+      css/components/image-widget.css: {}
+
+media_library:
+  version: VERSION
+  css:
+    layout:
+      css/layout/media-library.css: {}
+
+media_embed_ckeditor_theme:
+  version: VERSION
+  js:
+    js/classy/media_embed_ckeditor.theme.js: { attributes: { defer: true } }
+
+abc-style:
+  Version: VERSION
+  css:
+    theme:
+      css/x_style.css: {}
+      css/x_print.css: { media: print }
+  footer: true
+  js:
+    js/blockid.min.js: { minified: true, attributes: { defer: true } }
+    js/toggles.min.js: { minified: true, attributes: { defer: true } }
+  dependencies:
+    - core/jquery
+
+abc-montserrat:
+  Version: VERSION
+  css:
+    theme:
+      css/_font-montserrat.css: {}
+      '//fonts.googleapis.com/css?family=Montserrat&display=swap': { type: external, minified: true }
+
+abc-merriweather:
+  Version: VERSION
+  css:
+    theme:
+      css/_font-merriweather.css: {}
+      '//fonts.googleapis.com/css?family=Merriweather&display=swap': { type: external, minified: true }
+
+abc-toolbarfix:
+  Version: VERSION
+  css:
+    theme:
+      css/_toolbarfix.css: {}
+
+abc-cart-block:
+  Version: VERSION
+  css:
+    theme:
+      css/_cart.css: {}
+
+abc-bicons:
+  Version: VERSION
+  css:
+    theme:
+      css/x_bicons.css: {}
+
+abc-picons:
+  Version: VERSION
+  css:
+    theme:
+      css/x_picons.css: {}
+
+abc-social:
+  Version: VERSION
+  css:
+    theme:
+      css/x_social.css: {}
+
+abc-slider:
+  Version: VERSION
+  css:
+    theme:
+      css/x_slider.css: {}
+  footer: true
+  js:
+    js/slide.js: {}
+    js/jquery.flexslider-min.js: { minified: true, attributes: { defer: true } }
+  dependencies:
+    - core/jquery
+
+abc-slider-full:
+  Version: VERSION
+  css:
+    theme:
+      css/x_slider-full.css: {}
+  footer: true
+  js:
+    js/slide.js: {}
+    js/jquery.flexslider-min.js: { minified: true, attributes: { defer: true } }
+  dependencies:
+    - core/jquery
+
+abc-custom:
+  Version: VERSION
+  css:
+    theme:
+      _custom/custom-style.css: { weight: 210 }

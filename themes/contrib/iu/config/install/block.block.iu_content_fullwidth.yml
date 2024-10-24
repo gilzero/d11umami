@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - iu_paragraphs
+    - system
+  theme:
+    - iu
+id: iu_content_fullwidth
+theme: iu
+region: content_fullwidth
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content (nodes)'
+  provider: system
+  label_display: '0'
+visibility:
+  entity_type:
+    id: entity_type
+    types:
+      node: node
+    negate: false
+    context_mapping: {  }

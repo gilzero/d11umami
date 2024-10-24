@@ -1,0 +1,56 @@
+name: Toast
+description: "Toast is a wrapper to stack elements, positioned on the corner of page."
+group: Feedback
+links:
+  - "https://daisyui.com/components/toast/"
+slots:
+  items:
+    title: Items
+    description: "Expect a list of items"
+props:
+  type: object
+  properties:
+    position_x:
+      title: "Position x"
+      description: "Position on horizontal axe."
+      $ref: "ui-patterns://enum"
+      enum:
+        - start
+        - center
+        - end
+      "meta:enum":
+        start: Start
+        center: Center
+        end: End
+    position_y:
+      title: "Position y"
+      description: "Position on vertical axe."
+      $ref: "ui-patterns://enum"
+      enum:
+        - top
+        - middle
+        - bottom
+      "meta:enum":
+        top: Top
+        middle: Middle
+        bottom: Bottom
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: component
+          component: "ui_suite_daisyui:alert"
+          slots:
+            message: "New mail arrived."
+          props:
+            variant: info
+        - type: component
+          component: "ui_suite_daisyui:alert"
+          slots:
+            message: "Message sent successfully."
+          props:
+            variant: success
+    props:
+      attributes:
+        class: relative

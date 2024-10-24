@@ -1,0 +1,554 @@
+<?php
+
+use Drupal\node\NodeInterface;
+/**
+ * @file
+ * Functions to support theming in the IU theme.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Site\Settings;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function iu_page_attachments_alter(array &$attachments) {
+
+  // Permit developers to load the dev version of the IU Framework dependency
+  // via a config override in settings.php or settings.local.php
+  // E.g. $settings['iu_framework_assets'] = 'dev';.
+  $prod_library = 'iu/iu-framework-prod';
+  $dev_library = 'iu/iu-framework-dev';
+  if (Settings::get('iu_framework_assets', 'prod') == 'dev') {
+    if (in_array($prod_library, $attachments['#attached']['library'])) {
+      $index = array_search($prod_library, $attachments['#attached']['library']);
+      unset($attachments['#attached']['library'][$index]);
+      $attachments['#attached']['library'][] = $dev_library;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function iu_preprocess_html(&$variables) {
+  $secondary_color = theme_get_setting('secondary_color');
+  $color_class_mappings = _iu_secondary_color_palette_options();
+  $variables['attributes']['class'][] = !empty($color_class_mappings[$secondary_color]) ? $secondary_color : 'none';
+  $variables['attributes']['class'][] = 'landmarks';
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (
+    $node instanceof NodeInterface &&
+    $node->hasField('field_banner') &&
+    $node->field_banner->getValue()
+  ) {
+    $variables['attributes']['class'][] = 'has-banner';
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function iu_preprocess_page(&$variables) {
+  $off_canvas_position = theme_get_setting('off_canvas_position');
+  $variables['off_canvas_position'] = !empty($off_canvas_position) ? $off_canvas_position : 'right';
+
+  $campus = theme_get_setting('campus');
+  $variables['campus'] = !empty($campus) ? $campus : 'iub';
+
+  // Uncomment these lines to theme Status messages.
+  // \Drupal::messenger()->addStatus(t('This is a successful message <a href="#">with link</a>.'));
+  // \Drupal::messenger()->addStatus(t('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'));
+  // \Drupal::messenger()->addWarning(t('This is a warning message <a href="#">with link</a>.'));
+  // \Drupal::messenger()->addError(t('This is an error message <a href="#">with link</a>.'));
+}
+
+/**
+ * Implements hook_preprocess_maintenance_page().
+ */
+function iu_preprocess_maintenance_page(&$variables) {
+
+  // Setup maintenance page with same variables as normal page.
+  iu_preprocess_page($variables);
+}
+
+/**
+ * Prepares variables for `email.html.twig`.
+ */
+function iu_preprocess_email(&$variables) {
+
+  // Add site_name variable for use in email templates.
+  $site_name = \Drupal::configFactory()->get('system.site')->get('name');
+  $variables['site_name'] = $site_name;
+
+  // Add site_url variable for use in email templates.
+  $url_options = [
+    'absolute' => TRUE,
+    'language' => \Drupal::languageManager()->getCurrentLanguage(),
+  ];
+  $variables['site_url'] = Url::fromRoute('<front>', [], $url_options)->toString();
+
+  // Add current url variable for use in email templates.
+  $variables['current_url'] = \Drupal::request()->getRequestUri();
+
+
+  // Add to & from names and emails for use in email templates.
+  $email = $variables['email'];
+  $sender = $email->getSender();
+  $variables['sender_name'] = $variables['from_name'] = $sender->getDisplayName();
+  $variables['sender_mail'] = $variables['from_mail'] = $sender->getEmail();
+
+  if ($from = $email->getFrom()) {
+    $variables['from_name'] = $variables['from_mail'] = [];
+    foreach ($from as $key => $address) {
+      $variables['from_name'][] = $address->getDisplayName();
+      $variables['from_mail'][] = $address->getEmail();
+    }
+    $variables['from_name'] = implode(", ", $variables['from_name']);
+    $variables['from_mail'] = implode(", ", $variables['from_mail']);
+  }
+  if ($to = $email->getTo()) {
+    $variables['to_name'] = $variables['to_mail'] = [];
+    foreach ($to as $key => $address) {
+      $variables['to_name'][] = $address->getDisplayName();
+      $variables['to_mail'][] = $address->getEmail();
+    }
+    $variables['to_name'] = implode(", ", $variables['to_name']);
+    $variables['to_mail'] = implode(", ", $variables['to_mail']);
+  }
+
+  // Add webform variables for use in email templates.
+  $legacy_message = $email->getParam('legacy_message');
+  if (
+    is_array($legacy_message) &&
+    $legacy_message['module'] == 'webform' &&
+    $handler = $legacy_message['params']['handler']
+  ) {
+    _iu_attach_webform_email_variables($handler->getWebform(), $variables);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for blocks.
+ */
+function iu_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+
+  // Add a template suggestion for blocks based on region and block type.
+  if (isset($variables['elements']['#id'])) {
+
+    $block_id = $variables['elements']['#id'];
+    $base_plugin_id = $variables['elements']['#base_plugin_id'];
+    $block = Block::load($block_id);
+
+    // Use the same templates for both system menu blocks and menu_block.
+    if ($base_plugin_id == 'system_menu_block') {
+      $base_plugin_id = 'menu_block';
+    }
+
+    if ($block) {
+      $region = $block->getRegion();
+      $suggestions[] = $variables['theme_hook_original'] . '__' . $region;
+      $suggestions[] = $variables['theme_hook_original'] . '__' . $region . '__' . $base_plugin_id;
+    }
+  }
+}
+
+/**
+ * Prepares variables for `block.html.twig`.
+ */
+function iu_preprocess_block(&$variables) {
+
+  // Pass the region name via a custom data attribute for usage in
+  // hook_preprocess_menu.
+  if (isset($variables['elements']['#id'])) {
+    $block_id = $variables['elements']['#id'];
+    $block = Block::load($block_id);
+
+    if ($block) {
+      $region = $block->getRegion();
+      $variables['content']['#attributes']['data-region'] = $region;
+
+      $block_class = '';
+      // Create an HTML class based on the menu ID.
+      if (
+        !empty($variables['elements']['#base_plugin_id']) &&
+        !empty($variables['elements']['#derivative_plugin_id']) &&
+        in_array($variables['elements']['#base_plugin_id'], [
+          'menu_block',
+          'system_menu_block',
+        ])
+      ) {
+
+        $menu_id = $variables['elements']['#derivative_plugin_id'];
+
+        // Add 'menu' to the id for clarity in CSS.
+        if (strpos($menu_id, 'menu') === FALSE) {
+          $menu_id = 'menu-' . $menu_id;
+        }
+
+        $block_class = Html::cleanCssIdentifier($menu_id);
+      }
+      // Otherwise, create an HTML class based on the block ID.
+      else {
+        $block_class = Html::cleanCssIdentifier($block_id);
+      }
+
+      if ($block_class) {
+        $variables['attributes']['class'][] = 'block-' . $block_class;
+      }
+    }
+  }
+}
+
+/**
+ * Prepares variables for `breadcrumb.html.twig`.
+ */
+function iu_preprocess_breadcrumb(&$variables) {
+
+  // Remove 'Home' from breadcrumb trail based on theme settings variable.
+  //
+  // Possible values:
+  // - 0: do not remove
+  // - 1: remove
+  // - 2: remove if its the only item.
+  $hide_home_breadcrumb = theme_get_setting('hide_home_breadcrumb');
+  if ($hide_home_breadcrumb == '1' && count($variables['breadcrumb'])) {
+    array_shift($variables['breadcrumb']);
+  }
+  elseif ($hide_home_breadcrumb == '2' && count($variables['breadcrumb']) == 1) {
+    array_shift($variables['breadcrumb']);
+  }
+}
+
+/**
+ * Prepares variables for `menu.html.twig`.
+ */
+function iu_preprocess_menu(&$variables) {
+  $menu_name = isset($variables['menu_name']) ? $variables['menu_name'] : '';
+
+  // If this menu is inside a menu_block, find the region the block belongs to
+  // then clean up after ourselves to remove the data attribute created in
+  // hook_preprocess_block.
+  $region = '';
+  if (!empty($variables['attributes']['data-region'])) {
+    $region = $variables['attributes']['data-region'];
+    unset($variables['attributes']['data-region']);
+  }
+
+  // Expose the region variable to the template.
+  $variables['region'] = $region;
+
+  // Special case triggers to hide first/last menu items on desktop, and make
+  // them icons on the mobile sticky menu.
+  $has_search = FALSE;
+  $has_home = FALSE;
+  if ($region == 'primary_menu') {
+    @$last = &end($variables['items']);
+    if ((!$last['url']->isRouted() && $last['url']->getUri() == '/search')
+      || ($last['url']->isRouted() && $last['url']->getRouteName() == 'search.view')) {
+      $last['attributes']->addClass('show-on-sticky search');
+      $attrs = $last['url']->getOption('attributes');
+      $attrs['class'] = ['search-toggle'];
+      $last['url']->setOption('attributes', $attrs);
+      $has_search = TRUE;
+    }
+
+    @$first = &reset($variables['items']);
+    if ($first['title'] == 'Home' || ($first['url']->isRouted() && $first['url']->getRouteName() == '<front>')) {
+      $first['attributes']->addClass('show-on-sticky home');
+      $has_home = TRUE;
+    }
+  }
+
+  // Add first/last and two/two-left classes on all menu items.
+  $i = 1;
+  $count = count($variables['items']);
+  foreach ($variables['items'] as &$item) {
+    // The order of these if/elseifs are relevent, and prevent "last two" or
+    // "first two-left" appearing on the same element.
+    if (($i == $count && !$has_search) || ($i == ($count - 1) && $has_search)) {
+      $item['attributes']->addClass('last');
+    }
+    elseif (($i == 2 && !$has_home) || ($i == 3 && $has_home)) {
+      $item['attributes']->addClass('two');
+    }
+    if (($i == 1 && !$has_home) || ($i == 2 && $has_home)) {
+      $item['attributes']->addClass('first');
+    }
+    elseif (($i == ($count - 1) && !$has_search) || ($i == ($count - 2) && $has_search)) {
+      $item['attributes']->addClass('two-left');
+    }
+    $i++;
+  }
+}
+
+/**
+ * Prepares variables for `menu-local-task.html.twig`.
+ */
+function iu_preprocess_menu_local_task(&$variables) {
+  $variables['attributes']['class'][] = 'nav-item';
+  $variables['link']['#options']['attributes']['class'][] = 'nav-link' . (!empty($variables['is_active']) ? ' active' : '');
+}
+
+/**
+ * Prepares variables for `node.html.twig`.
+ */
+function iu_preprocess_node(&$variables) {
+  static $cacheable_metadata_list = [];
+  $blockRepository = \Drupal::service('block.repository');
+  /** @var \Drupal\block\BlockInterface[] $blocks */
+  $blocks = $blockRepository->getVisibleBlocksPerRegion($cacheable_metadata_list);
+  $variables['has_page_title'] = (isset($blocks['page_title']) && !empty($blocks['page_title']));
+}
+
+/**
+ * Prepares variables for `form.html.twig`.
+ */
+function iu_preprocess_form(&$variables) {
+
+}
+
+/**
+ * Prepares variables for `input.html.twig`.
+ */
+function iu_preprocess_input(&$variables) {
+
+  if (!empty($variables['element']['#button_type'])) {
+    switch ($variables['element']['#button_type']) {
+      case 'primary':
+        $variables['attributes']['class'][] = 'primary';
+        break;
+
+      case 'danger':
+        $variables['attributes']['class'][] = 'warning';
+        break;
+    }
+  }
+
+  $classes = &$variables['attributes']['class'];
+
+  if (!empty($classes) && in_array('field-add-more-submit', $classes)) {
+    $classes[] = 'small invert';
+  }
+  elseif (!empty($classes) && in_array('button', $classes)) {
+    // Get attribute value from TranslatableMarkup when instance
+    // is provided or raw value when is string.
+    $attributes = $variables['attributes'];
+    if ($attributes['value'] instanceof TranslatableMarkup) {
+      $attribute_value = $attributes['value']->getUntranslatedString();
+    }
+    else {
+      $attribute_value = $attributes['value'];
+    }
+
+    if ($attribute_value == 'Remove') {
+      $classes[] = 'button--remove small secondary hollow no-margin';
+    }
+  }
+
+  if (!empty($classes) && in_array('error', $classes)) {
+    $classes[] = 'is-invalid-input';
+  }
+}
+
+/**
+ * Prepares variables for `input--submit.html.twig`.
+ */
+function iu_preprocess_input__submit(&$variables) {
+  $classes = &$variables['attributes']['class'];
+  if (in_array('paragraph-type-add-modal-button', $classes)) {
+    $classes[] = 'small invert no-margin';
+  }
+}
+
+/**
+ * Prepares variables for `input--submit--paragraph-action.html.twig`.
+ */
+function iu_preprocess_input__submit__paragraph_action(&$variables) {
+  // var_dump($variables);
+  $classes = &$variables['attributes']['class'];
+  if (in_array('paragraphs-dropdown-action', $classes)) {
+    $classes[] = 'tiny secondary hollow no-margin';
+  }
+  if (in_array('paragraphs-icon-button', $classes)) {
+    $classes[] = 'tiny secondary hollow no-margin';
+  }
+  elseif (in_array('field-add-more-submit', $classes)) {
+    $classes[] = 'small invert';
+  }
+}
+
+/**
+ * Prepares variables for `pager.html.twig`.
+ */
+function iu_preprocess_pager(&$variables) {
+
+  // @todo backend developer code review of pager 'total' calculation
+  // Needs approval from someone familiar with Drupal pagers to determine
+  // whether this RegEx can be considered safe or not, or maybe there's a
+  // better way to figure this out.
+  if (!empty($variables['items']['last'])) {
+    if (preg_match('/(\d+)/', $variables['items']['last']['href'], $matches)) {
+      $variables['total'] = ((int) $matches[0]) + 1;
+    }
+  }
+  elseif (!empty($variables['current'])) {
+    $variables['total'] = $variables['current'];
+  }
+  else {
+    $variables['total'] = t('several');
+  }
+}
+
+/**
+ * Prepares variables for `webform-email-html.html.twig`.
+ */
+function iu_preprocess_webform_email_html(&$variables) {
+  // Prepare site and theme variables to pass along to the IU branded
+  // email-template.html.twig.
+  $campus = theme_get_setting('campus');
+  $variables['campus'] = !empty($campus) ? $campus : 'iub';
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+
+  // Use the webform submission URL as the "View online" link.
+  $variables['online_version_url'] = $variables['webform_submission']->toUrl('canonical', ['absolute' => TRUE]);
+
+  // Expose the message array to the Twig template. Remove some array keys of
+  // elements that are already exposed to Twig. Why this is not exposed
+  // by default is beyond reason.
+  $handler = $variables['handler'];
+  $webform_submission = $variables['webform_submission'];
+  $message = $handler->getMessage($webform_submission);
+  unset($message['webform_submission']);
+  unset($message['handler']);
+  $variables['message'] = $message;
+
+  // Expose the sender and recipient info to the Twig template.
+  $variables['to_mail'] = $message['to_mail'];
+  $variables['from_mail'] = $message['from_mail'];
+  $variables['from_name'] = $message['from_name'];
+
+  // Expose the form name and id to the Twig template.
+  _iu_attach_webform_email_variables($handler->getWebform(), $variables);
+}
+
+/**
+ * Helper adds webform-specific $variables.
+ */
+function _iu_attach_webform_email_variables($webform, &$variables) {
+  // Expose the form name and id to the Twig template.
+  $variables['form_name'] = $webform->label();
+  $variables['form_id'] = $webform->id();
+
+  // Provide the absolute path to the current page where the Webform is
+  // embedded. We use Drupal path service and alias manager instead of just
+  // using Drupal::request()->getRequestUri() because the form submission
+  // may be done via ajax, which adds unnecessary parameters to the URL that
+  // should not be revealed in the notification emails.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $variables['form_url'] = Url::fromUserInput($path_alias, ['absolute' => 'true'])->toString();
+}
+
+/**
+ * Helper to expose IU secondary color palette data.
+ *
+ * @see https://styleguide.iu.edu/visual-style/colors.html
+ */
+function _iu_secondary_color_palette_options() {
+  return [
+    'crimson' => [
+      'name' => 'Crimson',
+      'hex' => '#990000',
+      'class' => 'bg-crimson bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'gray' => [
+      'name' => 'Light Gray',
+      'hex' => '#f8f9fa',
+      'class' => 'bg-gray',
+      'is_dark' => FALSE,
+    ],
+    'gold-dark' => [
+      'name' => 'Dark Gold',
+      'hex' => '#dc8823',
+      'class' => 'bg-gold-dark',
+      'is_dark' => FALSE,
+    ],
+    'gold' => [
+      'name' => 'Gold',
+      'hex' => '#f1be48',
+      'class' => 'bg-gold',
+      'is_dark' => FALSE,
+    ],
+    'mint-dark' => [
+      'name' => 'Dark Mint',
+      'hex' => '#285c4d',
+      'class' => 'bg-mint-dark bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'mint' => [
+      'name' => 'Mint',
+      'hex' => '#008264',
+      'class' => 'bg-mint bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'midnight-dark' => [
+      'name' => 'Dark Midnight',
+      'hex' => '#01426a',
+      'class' => 'bg-midnight-dark bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'midnight' => [
+      'name' => 'Midnight',
+      'hex' => '#006298',
+      'class' => 'bg-midnight bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'majestic-dark' => [
+      'name' => 'Dark Majestic',
+      'hex' => '#512a44',
+      'class' => 'bg-majestic-dark bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'majestic' => [
+      'name' => 'Majestic',
+      'hex' => '#66435a',
+      'class' => 'bg-majestic bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'limestone-dark' => [
+      'name' => 'Dark Limestone',
+      'hex' => '#83786f',
+      'class' => 'bg-limestone-dark bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'limestone' => [
+      'name' => 'Limestone',
+      'hex' => '#aca39a',
+      'class' => 'bg-limestone',
+      'is_dark' => FALSE,
+    ],
+    'black' => [
+      'name' => 'Black',
+      'hex' => '#191919',
+      'class' => 'bg-black bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'mahogany' => [
+      'name' => 'Base Black',
+      'hex' => '#243142',
+      'class' => 'bg-mahogany bg-dark',
+      'is_dark' => TRUE,
+    ],
+    'none' => [
+      'name' => 'None',
+      'hex' => '#fff',
+      'class' => 'bg-none',
+      'is_dark' => FALSE,
+    ],
+  ];
+}

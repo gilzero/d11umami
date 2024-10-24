@@ -1,0 +1,40 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set icon_position = icon_position|default('left') %}
+{% set url = url|default(attributes.href) %}
+
+{% if variant and not is_external %}
+  {% set attributes = attributes.addClass('fr-link--' ~ variant) %}
+{% endif %}
+
+{% set attributes = attributes.addClass('fr-link') %}
+
+{% if icon %}
+  {% set attributes = attributes.addClass(icon) %}
+
+  {% if icon_position %}
+    {% set attributes = attributes.addClass('fr-link--icon-' ~ icon_position) %}
+  {% endif %}
+{% endif %}
+
+{% if is_external %}
+  {% set attributes = attributes.setAttribute('rel', 'noopener') %}
+  {% if not force_internal %}
+    {% set attributes = attributes.setAttribute('target', '_blank') %}
+  {% endif %}
+{% endif %}
+
+{% if target %}
+  {% set attributes = attributes.setAttribute('target', '_' ~ target) %}
+{% endif %}
+
+{% if title %}
+  {% set attributes = attributes.setAttribute('title', title) %}
+{% endif %}
+
+{% if detail %}
+  {% set label %}
+    {{ label }} <span class="fr-link__detail">{{ detail }}</span>
+  {% endset %}
+{% endif %}
+
+{{ link(label, url, attributes) }}

@@ -1,0 +1,29 @@
+html.js .webform-select-other .webform-select-other-input,
+html.js .webform-checkboxes-other .webform-checkboxes-other-input,
+html.js .webform-radios-other .webform-radios-other-input,
+html.js .webform-buttons-other .webform-buttons-other-input {
+  transition: opacity 0.05s ease-out 0.01s;
+}
+
+html.js .webform-select-other .webform-select-other-input[style*="height"],
+html.js
+  .webform-checkboxes-other
+  .webform-checkboxes-other-input[style*="height"],
+html.js .webform-radios-other .webform-radios-other-input[style*="height"],
+html.js .webform-buttons-other .webform-buttons-other-input[style*="height"],
+html.js .webform-select-other .webform-select-other-input[style*="none"],
+html.js
+  .webform-checkboxes-other
+  .webform-checkboxes-other-input[style*="none"],
+html.js .webform-radios-other .webform-radios-other-input[style*="none"],
+html.js .webform-buttons-other .webform-buttons-other-input[style*="none"] {
+  transition: opacity 0.05s ease-out 0s;
+  opacity: 0;
+}
+
+.webform-select-other-input,
+.webform-radios-other-input,
+.webform-buttons-other-input,
+.webform-checkboxes-other-input {
+  margin-top: 0.5rem;
+}

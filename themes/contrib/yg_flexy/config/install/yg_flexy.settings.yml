@@ -1,0 +1,12 @@
+
+# header Section
+company_phone_no: '+123 456 7890'
+company_email: 'info@domain.com'
+facebook: 'https://www.facebook.com'
+twitter: 'https://www.twitter.com'
+linkedin: 'https://www.linkedin.com'
+pinterest: 'https://pinterest.com'
+dribbble: 'https://dribbble.com'
+
+#banner Section For User pages and Not found pages
+banner_image: 'themes/custom/yg_flexy/top-banner.jpg'

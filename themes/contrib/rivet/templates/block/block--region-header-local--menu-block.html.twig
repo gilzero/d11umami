@@ -1,0 +1,22 @@
+<div{{attributes.addClass('rvt-header-local__inner')|without('id')}} data-rvt-disclosure="local-header-menu" data-rvt-close-click-outside>
+
+  {{ title_prefix }}
+  {% if label %}
+    {% if '<a' in label|render|render|raw %}
+      {% set label_link = label|render|render|raw|replace({'<a': '<a class="rvt-header-local__title"'}) %}
+      {{ label_link|raw }}
+    {% else %}
+      <div {{ title_attributes.addClass('rvt-header-local__title') }}>{{ label }}</div>
+    {% endif %}
+  {% endif %}
+  {{ title_suffix }}
+
+  <button aria-expanded="false" class="rvt-global-toggle rvt-global-toggle--menu rvt-hide-lg-up" data-rvt-disclosure-toggle="local-header-menu">
+    <span class="rvt-sr-only">Toggle {{ label }} menu</span>
+    <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+  </button>
+
+  <nav aria-label="Secondary" class="rvt-header-menu rvt-c-header-menu" data-rvt-disclosure-target="local-header-menu" hidden>
+    {{ content }}
+  </nav>
+</div>

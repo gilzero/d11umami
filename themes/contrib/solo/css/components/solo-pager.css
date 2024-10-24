@@ -1,0 +1,26 @@
+.pager__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pager__items li {
+  padding: 0;
+}
+
+.pager__items li a {
+  padding: var(--solo-px6) var(--solo-px12);
+  display: inline-flex;
+}
+
+.pager__items li.solo-active-pager,
+.pager__items li.is-active {
+  padding: var(--solo-px6) var(--solo-px12);
+  font-weight: bold;
+}
+
+.pager__items li.solo-active-pager a,
+.pager__items li.is-active a {
+  padding: 0;
+  text-decoration: underline;
+}

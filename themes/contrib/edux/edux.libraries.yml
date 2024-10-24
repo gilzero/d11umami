@@ -1,0 +1,39 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/edux.js: {}
+  dependencies:
+    - core/jquery
+
+# Google Fonts from CDN
+googlefontscdn:
+  css:
+    base:
+      //fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700: { type: external }
+
+# Google Fonts from local
+googlefontslocal:
+  css:
+    base:
+      css/fonts.css: {}
+
+# Slider
+slider:
+  version: 2.1.2
+  js:
+    js/slider.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    component:
+      css/slider.css: {}
+
+# Theme settings page 
+theme-settings:
+  version: VERSION
+  css:
+    theme:
+      css/theme-settings.css: {}

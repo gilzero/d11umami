@@ -1,0 +1,27 @@
+.skip-link {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: var(--solo-white);
+  outline: 0;
+  background-color: var(--solo-black);
+}
+
+.skip-link:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.skip-link::after {
+  content: "\0020	➔";
+}
+
+.skip-link.focusable:focus {
+  padding: var(--solo-px12) var(--solo-px24);
+  position: absolute !important;
+  z-index: 1000;
+  width: 100%;
+  outline: none;
+}

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override to display primary and secondary local tasks.
+ *
+ * Available variables:
+ * - primary: HTML list items representing primary tasks.
+ * - secondary: HTML list items representing primary tasks.
+ *
+ * Each item in these variables (primary and secondary) can be individually
+ * themed in menu-local-task.html.twig.
+ */
+#}
+{% if primary or secondary %}
+  {{ attach_library('at_core/at.responsivelists') }}
+{% endif %}
+{% if primary %}
+  <nav class="is-horizontal is-responsive" role="navigation" aria-labelledby="primary-tabs-title" data-at-responsive-list>
+    <h2 id="primary-tabs-title" class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
+    <ul class="tabs tabs--primary is-responsive__list">{{ primary }}</ul>
+  </nav>
+{% endif %}
+{% if secondary %}
+  <nav class="is-horizontal is-responsive" role="navigation" aria-labelledby="secondary-tabs-title" data-at-responsive-list>
+    <h2 id="secondary-tabs-title" class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
+    <ul class="tabs tabs--secondary is-responsive__list">{{ secondary }}</ul>
+  </nav>
+{% endif %}

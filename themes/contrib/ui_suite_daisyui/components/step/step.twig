@@ -1,0 +1,17 @@
+{% set attributes = attributes.addClass('step') %}
+
+{% if variant %}
+{% set attributes = (variant != 'default') ? attributes.addClass('step-' ~ variant) : attributes %}
+{% endif %}
+
+{% if empty_data_content %}
+    {% set attributes = attributes.setAttribute('data-content', '') %}
+{% elseif data_content %}
+    {% set attributes = attributes.setAttribute('data-content', data_content) %}
+{% endif %}
+
+<li {{ attributes }}>
+{% if text %}
+    {{ text }}
+{% endif %}
+</li>

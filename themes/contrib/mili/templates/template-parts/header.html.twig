@@ -1,0 +1,36 @@
+<!-- Start: Header -->
+<header class="header">
+  <div class="header-main">
+  <div class="container">
+    <div class="header-main-container">
+      {% if page.site_branding %}
+        <div class="site-brand">
+          {{ page.site_branding }}
+        </div> <!--/.site-branding -->
+      {% endif %}
+      <div class="header-right">
+        {% if page.primary_menu %}
+          <div class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="primary-menu-wrapper">
+            <div class="menu-wrap">
+              <div class="close-mobile-menu">x</div>
+              {{ page.primary_menu }}
+            </div>
+          </div>
+        {% endif %}<!-- End: primary menu region -->
+        {% include '@mili/template-parts/search.html.twig' %}
+      </div> <!-- /.header-right -->
+    </div> <!-- /.header-main-container -->
+  </div> <!-- /.container -->
+  </div> <!-- /.header-main -->
+  {% if is_front and slider_show %}
+    {% include '@mili/template-parts/slider.html.twig' %}
+  {% elseif not is_front %}
+    {% include '@mili/template-parts/page_header.html.twig' %}
+  {% endif %}
+</header>
+<!-- End: Header -->

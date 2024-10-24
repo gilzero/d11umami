@@ -1,0 +1,336 @@
+/* Page wrapper
+Bayern Blue #0066B2, Berry Blue #4F86F7, Blue Yonder #5072A7, OIL #050100
+*/
+.page-wrapper {
+  --r-br: #bbaea0;
+  --r-bg: #f6fbff;
+  --r-tx: #2c261f;
+  color: var(--r-tx);
+  border-color: var(--r-br);
+  background-color: var(--r-bg);
+  --r-header-bg: linear-gradient(0deg, #0e0c0a, #221d18);
+  --r-header-tx: #85725f;
+  --r-menu-tx-h: #000508;
+  --r-menu-bg-h: #008df6;
+}
+
+/* Heads */
+.page-wrapper h1:not(.page-title-text),
+.page-wrapper h2,
+.page-wrapper h3,
+.page-wrapper h1 a,
+.page-wrapper h2 a,
+.page-wrapper h3 a,
+.page-wrapper h1 a span,
+.page-wrapper h2 a span,
+.page-wrapper h3 a span,
+.page-wrapper .site-name,
+.page-wrapper .site-slogan,
+.page-wrapper .site-name-link {
+  --r-tx: #85725f;
+}
+
+/* Link only */
+.page-wrapper a:not(.nav__menu-link,
+.button,
+.site-name-link,
+.site-logo,
+h1 a,
+h2 a,
+h3 a) {
+  --r-tx: #0083e5;
+}
+
+.page-wrapper a:hover:not(.nav__menu-link,
+.button,
+.site-name-link,
+.site-logo,
+h1 a,
+h2 a,
+h3 a) {
+  --r-tx: #0066b2;
+}
+
+/* Menu Links */
+.page-wrapper .login-button-open,
+.page-wrapper .hamburger-icon button,
+.page-wrapper .main-navigation-wrapper,
+.page-wrapper .main-navigation-wrapper ul,
+.page-wrapper .main-navigation-wrapper li,
+.page-wrapper .header li.nav__menu-item>a,
+.page-wrapper .main-navigation-wrapper li>a,
+.page-wrapper .header li.nav__menu-item>button,
+.page-wrapper .main-navigation-wrapper li>button {
+  --r-br: #005390;
+  --r-bg: #0066b2;
+  --r-tx: #f6fbff;
+}
+
+.page-wrapper .login-button-open:hover,
+.page-wrapper .hamburger-icon button:hover,
+.page-wrapper .header li.nav__menu-item>a:hover,
+.page-wrapper .main-navigation-wrapper li>a:hover,
+.page-wrapper .header li.nav__menu-item>button:hover,
+.page-wrapper .main-navigation-wrapper li>button:hover {
+  --r-tx: #000508;
+  --r-bg: #008df6;
+}
+
+.page-wrapper ul.tabs.secondary li a:hover,
+.page-wrapper ul.tabs.primary li a:hover {
+  --r-tx: #000508;
+  --r-bg: #008df6;
+  background-color: var(--r-bg);
+}
+
+/* The same colors as hover for the main menu */
+.page-wrapper .navigation-sidebar-hover .navigation__sidebar li.has-sub__menu:hover>a,
+.page-wrapper .navigation-sidebar-hover .navigation__sidebar li.has-sub__menu:hover>button,
+.page-wrapper .navigation-responsive-hover .navigation__megamenu>li.has-sub__menu:hover>a,
+.page-wrapper .navigation-responsive-hover .navigation__megamenu>li.has-sub__menu:hover>button,
+.page-wrapper .navigation-responsive-hover .navigation__responsive:not(.navigation__megamenu) li.has-sub__menu:hover>a,
+.page-wrapper .navigation-responsive-hover .navigation__responsive:not(.navigation__megamenu) li.has-sub__menu:hover>button {
+  --r-tx: #000508;
+  --r-bg: #008df6;
+}
+
+/* Form Button */
+.page-wrapper a.button,
+.page-wrapper input.button,
+.page-wrapper .search-button-close button,
+.block-user-login-block form+.item-list ul li a {
+  --r-bg: #4a3f35;
+  --r-tx: #b2deff;
+}
+
+.page-wrapper a.button:hover,
+.page-wrapper input.button:hover,
+.page-wrapper .search-button-close button:hover,
+.block-user-login-block form+.item-list ul li a:hover {
+  --r-tx: #0e0c0a;
+  --r-bg: #f6fbff;
+}
+
+/* Regions Light */
+.welcome-text,
+.main-container .main-box {
+  --r-bg: var(--solo-white);
+}
+
+.main-container,
+.top-container,
+.fixed-search-block,
+.popup-login-block-inner {
+  --r-br: #8f7a66;
+  --r-bg: linear-gradient(135deg, #fbfdff, #f4f2ef);
+  background: var(--r-bg);
+}
+
+.highlighted {
+  --r-bg: linear-gradient(135deg, #dfd8d2, #e5f4ff);
+  background: var(--r-bg);
+}
+
+.top-container .top-box-inner {
+  --r-bg: linear-gradient(180deg, #fcfdfe, #f4f2ef);
+  background: var(--r-bg);
+}
+
+/* Regions Dark */
+header.header,
+div.page-title.lone {
+  --r-tx: #e6e1db;
+  --r-bg: linear-gradient(0deg, #0e0c0a, #221d18);
+  background: var(--r-bg);
+}
+
+div.page-title.lone h1 a,
+div.page-title.lone h1 span,
+header.header h1,
+header.header h2,
+header.header h3,
+header.header h1 a,
+header.header h2 a,
+header.header h3 a,
+header.header h1 a span,
+header.header h2 a span,
+header.header h3 a span {
+  --r-tx: #c9bfb4;
+}
+
+.breadcrumb,
+.copyright {
+  --r-tx: #eaf4ff;
+  --r-bg: linear-gradient(0deg, #0e0c0a, #000508);
+  background: var(--r-bg);
+}
+
+.bottom-container,
+.footer-container,
+.footer-menu {
+  --r-br: #005ca1;
+  --r-tx: #c2b6aa;
+  --r-bg: linear-gradient(180deg, #0e0c0a, #000508);
+  background: var(--r-bg);
+}
+
+.bottom-container .bottom-box-inner,
+.footer-container .footer-box-inner {
+  --r-bg: linear-gradient(180deg, #000508, #0c0908);
+  background: var(--r-bg);
+}
+
+.page-wrapper .bottom-container a,
+.page-wrapper .footer-container a,
+.page-wrapper .footer-menu a,
+.page-wrapper .breadcrumb a,
+.page-wrapper .copyright a {
+  --r-tx: #85725f;
+}
+
+.page-wrapper .bottom-container h1,
+.page-wrapper .bottom-container h2,
+.page-wrapper .bottom-container h3,
+.page-wrapper .footer-container h1,
+.page-wrapper .footer-container h2,
+.page-wrapper .footer-container h3,
+.page-wrapper .footer-menu h1,
+.page-wrapper .footer-menu h2,
+.page-wrapper .footer-menu h3 {
+  --r-tx: #0070c3;
+}
+
+.sm-icons .snapchat svg,
+.sm-icons .threads svg,
+.sm-icons .whatsapp svg,
+.sm-icons .tiktok svg,
+.sm-icons .reddit svg,
+.sm-icons .facebook svg,
+.sm-icons .twitter svg,
+.sm-icons .pinterest svg,
+.sm-icons .linkedin svg,
+.sm-icons .instagram svg,
+.sm-icons .youtube svg,
+.sm-icons .drupal svg,
+.sm-icons .mastodon svg,
+.sm-icons .telegram svg,
+.sm-icons .email svg,
+.sm-icons .rss svg {
+  fill: #5d5043;
+}
+
+.page-wrapper .solo-select,
+.page-wrapper .solo-radio,
+.page-wrapper .solo-check,
+.page-wrapper .solo-input,
+.page-wrapper .solo-textarea,
+.page-wrapper a.button,
+.page-wrapper input.button,
+.page-wrapper .search-button-close button {
+  --r-br: #2c261f;
+}
+
+.page-wrapper .solo-select:focus,
+.page-wrapper .solo-ckeck:focus,
+.page-wrapper .solo-radio:focus,
+.page-wrapper .solo-input:focus,
+.page-wrapper .solo-textarea:focus {
+  --r-br: #00497f;
+}
+
+#fixed-search-block,
+.primary-sidebar-menu,
+.solo-inner .navigation__responsive,
+.page-wrapper .primary-menu.solo-sticky,
+.fixed-search-block-inner .fixed-search-wrapper,
+.page-wrapper .solo-outer.animate-hover .region-inner.top-box-inner {
+  --s-b: 24, 20, 17;
+}
+
+.page-wrapper .solo-outer.animate-hover .region-inner.bottom-box-inner,
+.page-wrapper .solo-outer.animate-hover .region-inner.footer-box-inner {
+  --s-b: 208, 199, 190;
+}
+
+.sm-icons a > span {
+  --s-b: 8, 150, 255;
+}
+
+/* Border animation  */
+@keyframes borderLeftColors {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: var(--r-br, var(--r-br-b));
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: var(--r-br, var(--r-br-b));
+    border-right-color: var(--r-br, var(--r-br-b));
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  99.9999% {
+    width: 100%;
+    height: 100%;
+    border-top-color: var(--r-br, var(--r-br-b));
+    border-right-color: var(--r-br, var(--r-br-b));
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+}
+
+@keyframes borderRightColors {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--r-br, var(--r-br-b));
+    border-left-color: transparent;
+  }
+
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--r-br, var(--r-br-b));
+    border-left-color: var(--r-br, var(--r-br-b));
+  }
+
+  99.9999% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--r-br, var(--r-br-b));
+    border-left-color: var(--r-br, var(--r-br-b));
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+}

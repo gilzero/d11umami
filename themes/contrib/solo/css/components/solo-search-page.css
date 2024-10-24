@@ -1,0 +1,76 @@
+form.search-form input[type=textarea],
+form.search-form input[type=search],
+form.search-form input[type=textfield] {
+  width: 100% !important;
+}
+
+form.search-form>.form-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(250px, auto) minmax(50px, 160px);
+  grid-template-rows: 1fr;
+  gap: 0 0;
+  grid-auto-flow: row;
+  row-gap: var(--solo-px8);
+  grid-template-areas: "form-item form-submit";
+  align-items: self-end;
+}
+
+form.search-form>.form-wrapper>.form-item {
+  grid-area: form-item;
+}
+
+form.search-form>.form-wrapper>.form-submit {
+  grid-area: form-submit;
+  margin: 0 0 var(--solo-px8) 0;
+  width: 100%;
+}
+
+form.search-form .form-wrapper>.button--primary {
+  padding-right: var(--solo-px3) !important;
+  padding-left: var(--solo-px3) !important;
+}
+
+form.search-form>* {
+  width: 100%;
+}
+
+.path-search .solo-row.item-list>h3 {
+  padding: 0 var(--solo-px16);
+  font-size: var(--solo-px18);
+}
+
+.path-search .search-form .search-advanced summary.solo-button {
+  box-sizing: border-box;
+}
+
+.path-search .search-form .search-advanced #edit-type--wrapper>legend,
+.path-search .search-form .search-advanced #edit-language--wrapper>legend {
+  display: none;
+}
+
+.path-search .search-form .search-advanced #edit-type--wrapper div.fieldset-wrapper,
+.path-search .search-form .search-advanced #edit-keywords-fieldset>.fieldset-wrapper,
+.path-search .search-form .search-advanced #edit-language--wrapper div.fieldset-wrapper,
+.path-search .search-form .search-advanced #edit-type--wrapper div.fieldset-wrapper div.form-checkboxes,
+.path-search .search-form .search-advanced #edit-language--wrapper div.fieldset-wrapper div.form-checkboxes {
+  margin: 0 !important;
+}
+
+.path-search .search-form .search-advanced #edit-lang-fieldset>.fieldset-wrapper,
+.path-search .search-form .search-advanced #edit-types-fieldset>.fieldset-wrapper {
+  margin-top: 0 !important;
+}
+
+.path-search .search-form .search-advanced #edit-lang-fieldset>legend,
+.path-search .search-form .search-advanced #edit-types-fieldset>legend {
+  display: inline-block;
+}
+
+.search-form .search-advanced:hover {
+  background-color: transparent !important;
+}
+
+.search-form + h2 {
+  clear: both;
+}

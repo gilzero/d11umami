@@ -1,0 +1,9 @@
+{#
+  Fall back to IU Bloomington campus header bar if not otherwise specified
+  in theme settings.
+#}
+{% if campus %}
+{% include '@iu/parts/header-' ~ campus ~ '.html.twig' %}
+{% else %}
+{% include '@iu/parts/header-iub.html.twig' %}
+{% endif %}

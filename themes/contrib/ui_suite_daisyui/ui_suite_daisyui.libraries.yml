@@ -1,0 +1,12 @@
+daisy:
+  remote: https://daisyui.com/
+  license: MIT
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css: {}
+  js:
+    https://cdn.tailwindcss.com?plugins=typography: {}
+custom_css:
+  css:
+    theme:
+      dist/css/custom/custom.css: {}

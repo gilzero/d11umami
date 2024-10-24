@@ -1,0 +1,30 @@
+label[for="edit-edux"] {
+	width: 100%;
+	text-align: center;
+}
+
+.settings-form-title {
+	background-color: #2a2e52;
+	background-image: url("../images/logo2.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 90%;
+	padding: 50px;
+	color: #ffffff;
+	margin: 0 auto;
+}
+
+/* Fieldset */
+fieldset.set-default-fieldset,
+details.set-default-fieldset {
+	background-color: #ffeaa7;
+}
+fieldset.info-fieldset,
+details.info-fieldset {
+	background-image: url(../images/theme-settings/info.svg);
+	background-position: 3px 3px;
+	background-repeat: no-repeat;
+	background-color: #bbd9ff;
+	border: 1px solid #2e86de;
+	padding: 30px 18px 18px 40px;
+}

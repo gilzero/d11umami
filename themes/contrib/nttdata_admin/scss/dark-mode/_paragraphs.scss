@@ -1,0 +1,29 @@
+body.dark-mode {
+  .paragraphs-tabs-wrapper {
+    table thead tr th {
+      color: $text-white;
+      background-color: $primary;
+    }
+  }
+  .paragraphs-description::after {
+    content: none;
+  }
+  .paragraph-type-label,
+  .paragraphs-content-wrapper .summary-content,
+  .paragraphs-subform label {
+    color: $text-white;
+  }
+  .paragraphs-dropdown {
+    button {
+      @extend %button-icon-dk;
+    }
+    &.open {
+      .paragraphs-dropdown-actions {
+        background: $ck-grey;
+        .button--small {
+          @extend %button-dark-dk;
+        }
+      }
+    }
+  }
+}

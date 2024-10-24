@@ -1,0 +1,34 @@
+name: DSFR - Modal
+description: The modal allows you to focus the user's attention exclusively on a task or an element of information, without losing the context of the current page. This component requires user action in order to be opened or closed.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    button_label:
+      type: string
+      title: Button label
+      description: 'By default: "Close", or the translated string in another language.'
+    button_title:
+      type: string
+      title: Button title attribute
+      description: 'By default: "Close", or the translated string in another language.'
+    html_id:
+      type: string
+      title: HTML identifier
+    title:
+      type: string
+      title: Title
+slots:
+  modal_content:
+    title: Modal content
+    required: true
+  modal_footer:
+    title: Modal footer
+  modal_title:
+    title: Modal title
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.modal

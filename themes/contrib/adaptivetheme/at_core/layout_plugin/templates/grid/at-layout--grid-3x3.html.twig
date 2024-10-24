@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Adaptivetheme implementation to display 3x3 grid Layout Plugin layout.
+ *
+ * Available variables:
+ * - content: holds layout regions.
+ * - attributes: layout attributes.
+#}
+{%- set element = html_element|default('div') -%}
+<{{- element }}{{ attributes -}}>
+  <div class="atl__lr atl__cw">
+    {# Row 1 #}
+    {% if content.r1c1|render|trim is not empty %}
+      <div class="atl__lc lc-r1c1 lc-1">
+        {{ content.r1c1 }}
+      </div>
+    {% endif %}
+
+    {% if content.r1c2|render|trim is not empty %}
+      <div class="atl__lc lc-r1c2 lc-2">
+        {{ content.r1c2 }}
+      </div>
+    {% endif %}
+
+    {% if content.r1c3|render|trim is not empty %}
+      <div class="atl__lc lc-r1c3 lc-3">
+        {{ content.r1c3 }}
+      </div>
+    {% endif %}
+
+    {# Row 2 #}
+    {% if content.r2c1|render|trim is not empty %}
+      <div class="atl__lc lc-r2c1 lc-4">
+        {{ content.r2c1 }}
+      </div>
+    {% endif %}
+
+    {% if content.r2c2|render|trim is not empty %}
+      <div class="atl__lc lc-r2c2 lc-5">
+        {{ content.r2c2 }}
+      </div>
+    {% endif %}
+
+    {% if content.r2c3|render|trim is not empty %}
+      <div class="atl__lc lc-r2c3 lc-6">
+        {{ content.r2c3 }}
+      </div>
+    {% endif %}
+
+    {# Row 3 #}
+    {% if content.r3c1|render|trim is not empty %}
+      <div class="atl__lc lc-r3c1 lc-7">
+        {{ content.r3c1 }}
+      </div>
+    {% endif %}
+
+    {% if content.r3c2|render|trim is not empty %}
+      <div class="atl__lc lc-r3c2 lc-8">
+        {{ content.r3c2 }}
+      </div>
+    {% endif %}
+
+    {% if content.r3c3|render|trim is not empty %}
+      <div class="atl__lc lc-r3c3 lc-9">
+        {{ content.r3c3 }}
+      </div>
+    {% endif %}
+  </div>
+</{{ element }}>

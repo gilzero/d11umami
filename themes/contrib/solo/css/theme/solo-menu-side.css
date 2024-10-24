@@ -1,0 +1,163 @@
+/* For Primary Sidenav menu and any sidenav menu. */
+#primary-sidebar-menu {
+  z-index: 5001;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: fixed !important;
+  overflow: auto;
+}
+
+#primary-sidebar-menu  h2.block__title {
+  padding: 16px;
+}
+
+.primary-sidebar-menu {
+  inset-block-start: 0;
+  inset-inline-start: 100%;
+  visibility: hidden;
+  overflow: auto;
+  height: 100%;
+  transition: transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.primary-sidebar-menu-inner {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.primary-sidebar-menu-inner>* {
+  width: 100%;
+}
+
+.primary-sidebar-menu.toggled {
+  visibility: visible;
+  transform: translateX(-100%);
+}
+
+.solo-inner div.navigation-sidebar {
+  display: flex;
+  flex: 1;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar,
+.solo-inner .navigation-sidebar .navigation__sidebar ul.sub__menu {
+  display: flex;
+  justify-content: left;
+  align-items: stretch;
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar li.link-only>a,
+.solo-inner .navigation-sidebar .navigation__sidebar li.button-only>button,
+.solo-inner .navigation-sidebar .navigation__sidebar li.nav__menu-item {
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar li.has-sub__menu ul.sub__menu {
+  overflow: hidden;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar>li.nav__menu-item>ul.sub__menu>li.nav__menu-item>a:first-child,
+.solo-inner .navigation-sidebar .navigation__sidebar>li.nav__menu-item>ul.sub__menu>li.nav__menu-item>button:first-child {
+  padding-left: 24px;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar>li.nav__menu-item>ul.sub__menu>li.nav__menu-item>ul.sub__menu>li.nav__menu-item>a:first-child,
+.solo-inner .navigation-sidebar .navigation__sidebar>li.nav__menu-item>ul.sub__menu>li.nav__menu-item>ul.sub__menu>li.nav__menu-item>button:first-child {
+  padding-left: 32px;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar>li.nav__menu-item>ul.sub__menu>li.nav__menu-item>ul.sub__menu>li.nav__menu-item> ul.sub__menu>li.nav__menu-item>a:first-child,
+.solo-inner .navigation-sidebar .navigation__sidebar>li.nav__menu-item>ul.sub__menu>li.nav__menu-item>ul.sub__menu>li.nav__menu-item> ul.sub__menu>li.nav__menu-item>button:first-child {
+  padding-left: 40px;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar li.has-sub__menu {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar ul.sub__menu {
+  display: none;
+}
+
+.solo-inner .navigation-sidebar .navigation__sidebar li.link-and-button>button {
+  margin-left: auto;
+}
+
+.slide-out {
+  animation-duration: 400ms;
+  animation-name: slide-out;
+}
+
+/* Add borders to primary side menu. */
+#primary-sidebar-menu.has-border h2.block__title {
+  border-bottom: 1px solid var(--r-br);
+}
+
+.page-wrapper .has-border .primary-sidebar-menu {
+  border-top: 1px solid var(--r-br);
+  border-bottom: 1px solid var(--r-br);
+}
+
+.page-wrapper .has-border .primary-sidebar-menu-inner ul.toggled {
+  border-top: 1px solid var(--r-br) !important;
+}
+
+.page-wrapper .has-border .primary-sidebar-menu-inner .sidebar-button-close,
+.page-wrapper .has-border .primary-sidebar-menu-inner .navigation__menubar li {
+  border-bottom: 1px solid var(--r-br) !important;
+}
+
+/* Menu brandiong. */
+#primary-sidebar-menu .sidebar-button-close.activate-branding {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+}
+
+#primary-sidebar-menu .sidebar-button-close.activate-branding .menu-branding {
+  margin: 0;
+  padding: var(--solo-px4) var(--solo-px12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+}
+
+.slide-in {
+  animation-duration: 400ms;
+  animation-name: slide-in;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+}

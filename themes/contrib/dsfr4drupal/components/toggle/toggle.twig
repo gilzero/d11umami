@@ -1,0 +1,38 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set display_current = display_current ?? true %}
+{% set input_id = input_id|default('toggle-' ~ random()) %}
+{% set input_name = input_name|default('toggle') %}
+{% set input_value = input_value|default(1) %}
+{% set label_attributes = create_attribute({class: 'fr-toggle__label', for: input_id}) %}
+
+{% if display_current and label_checked is not empty and label_unchecked is not empty %}
+  {% set label_attributes = label_attributes.setAttribute('data-fr-checked-label', label_checked).setAttribute('data-fr-unchecked-label', label_unchecked) %}
+{% endif %}
+
+{% if has_border %}
+  {% set attributes = attributes.addClass('fr-toggle--border-bottom') %}
+{% endif %}
+
+{% if label_left %}
+  {% set attributes = attributes.addClass('fr-toggle--label-left') %}
+{% endif %}
+
+<div{{ attributes.addClass('fr-toggle') }}>
+  <input
+    type="checkbox"
+    class="fr-toggle__input"
+    id="{{ input_id }}"
+    name="{{ input_name }}"
+    value="{{ input_value }}"
+    {% if hint_text %} aria-describedby="{{ input_id ~ '-hint-text' }}" {% endif %}
+    {% if checked %} checked="checked" {% endif %}
+  />
+  <label{{ label_attributes }}>
+    {{ label_checked }}
+  </label>
+  {% if hint_text %}
+    <p class="fr-hint-text" id="{{ input_id ~ '-hint-text' }}">
+      {{ hint_text }}
+    </p>
+  {% endif %}
+</div>

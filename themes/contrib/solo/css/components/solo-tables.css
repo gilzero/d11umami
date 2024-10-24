@@ -1,0 +1,75 @@
+.page-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.page-wrapper tr {
+  border-bottom: 1px solid var(--r-br, var(--r-br-b));
+}
+
+.page-wrapper tr.region-title {
+  color: var(--r-tx);
+  background-color: var(--r-bg);
+}
+
+.page-wrapper table td ul {
+  margin: 0;
+}
+
+.page-wrapper table td li {
+  list-style: none;
+}
+
+.page-wrapper .region-title td {
+  font-weight: bold !important;
+  text-transform: uppercase;
+}
+
+.page-wrapper .region-title td a {
+  text-transform: capitalize;
+}
+
+.page-wrapper .solo-table-all {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+}
+
+.page-wrapper .solo-table-all {
+  border: var(--solo-px1) solid var(--r-br, var(--r-br-b));
+}
+
+.page-wrapper .solo-table-all tr {
+  border-bottom: var(--solo-px1) solid var(--r-br, var(--r-br-b));
+}
+
+.page-wrapper .solo-table-all tr:nth-child(even) {
+  background-color: var(--solo-even, var(--r-bg));
+}
+
+.page-wrapper .solo-table-all tr:nth-child(odd) {
+  background-color: var(--solo-odd, var(--r-bg));
+}
+
+#page-wrapper .solo-table-all thead tr {
+  background-color: var(--solo-thead, var(--r-bg));
+}
+
+.page-wrapper .solo-table-all td,
+.page-wrapper .solo-table-all th {
+  padding: var(--solo-px8);
+  display: table-cell;
+  vertical-align: middle;
+  text-align: initial;
+}
+
+.page-wrapper .solo-table-all th:first-child,
+.page-wrapper .solo-table-all td:first-child {
+  padding-left: var(--solo-px16);
+}
+
+.page-wrapper table td .form-type-radio,
+.page-wrapper table td .form-type-checkbox {
+  margin: 0 !important;
+}

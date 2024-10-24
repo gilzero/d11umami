@@ -1,0 +1,36 @@
+{% set col_class1 = 'fr-col-lg-6' %}
+{% set col_class2 = col_class1 %}
+
+{% for class in attributes.getClass() %}
+  {# 4 or 8 #}
+  {% if '33-67' in class %}
+    {% set col_class1 = 'fr-col-lg-4' %}
+    {% set col_class2 = 'fr-col-lg-8' %}
+  {% elseif '67-33' in class %}
+    {% set col_class1 = 'fr-col-lg-8' %}
+    {% set col_class2 = 'fr-col-lg-4' %}
+  {# 3 or 9 #}
+  {% elseif '25-75' in class %}
+    {% set col_class1 = 'fr-col-lg-3' %}
+    {% set col_class2 = 'fr-col-lg-9' %}
+  {% elseif '75-25' in class %}
+    {% set col_class1 = 'fr-col-lg-9' %}
+    {% set col_class2 = 'fr-col-lg-3' %}
+  {% endif %}
+{% endfor %}
+
+{% if content %}
+  <div{{ attributes.addClass('fr-grid-row', 'fr-grid-row--gutters') }}>
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('fr-col-12 ', col_class1) }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass('fr-col-12 ', col_class2) }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

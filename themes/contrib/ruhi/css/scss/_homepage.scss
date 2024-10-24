@@ -1,0 +1,77 @@
+.homepage .main-wrapper {
+  padding: 0;
+}
+.homepage-content .block-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.region-content-home-top .block {
+  position: relative;
+  padding: 4rem 0;
+}
+.region-content-home-top .block:nth-child(odd) {
+  background: var(--light);
+}
+.circle-lines {
+  position: absolute;
+  left: 5%;
+  bottom: 30%;
+  background: url('../images/shapes/circle-lines.svg') no-repeat;
+  background-size: cover;
+  height: 5rem;
+  width: 5rem;
+}
+.circle-lines-right {
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+  background: url('../images/shapes/circle-lines.svg') no-repeat;
+  background-size: cover;
+  height: 5rem;
+  width: 5rem;
+}
+.circle-double {
+  position: absolute;
+  right: 3%;
+  top: 40%;
+  background: url('../images/shapes/circle-double.svg') no-repeat;
+  background-size: cover;
+  height: 66px;
+  width: 66px;
+}
+.triangle-left {
+  position: absolute;
+  left: 10%;
+  bottom: 30%;
+  background: url('../images/shapes/triangle.svg') no-repeat;
+  background-size: contain;
+  height: 3rem;
+  width: 3rem;
+}
+.triangle-right {
+  position: absolute;
+  right: 8%;
+  bottom: 8%;
+  background: url('../images/shapes/triangle.svg') no-repeat;
+  background-size: contain;
+  height: 3rem;
+  width: 3rem;
+}
+.square {
+  position: absolute;
+  left: 6%;
+  top: 8%;
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid var(--primary);
+  transform:rotateZ(45deg)
+}
+.square-dot {
+  position: absolute;
+  left: 6%;
+  top: 8%;
+  background: url('../images/shapes/square-dots.svg') no-repeat;
+  background-size: contain;
+  height: 3rem;
+  width: 3rem;
+}

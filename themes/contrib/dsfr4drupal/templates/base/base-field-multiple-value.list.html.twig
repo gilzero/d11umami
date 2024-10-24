@@ -1,0 +1,11 @@
+{% set list_attributes = list_attributes|default(create_attribute()) %}
+{% set list_item_attributes = list_item_attributes|default(create_attribute()) %}
+{% extends '@dsfr4drupal/templates/base/base-field-multiple-value.html.twig' %}
+
+{% block items_content %}
+  <ul{{ list_attributes }}>
+    {% for item in items %}
+      <li{{ list_item_attributes }}>{{ item.content }}</li>
+    {% endfor %}
+  </ul>
+{% endblock items_content %}

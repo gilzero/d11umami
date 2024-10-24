@@ -1,0 +1,29 @@
+{% set attributes = attributes.addClass(['avatar', 'not-prose']) %}
+
+{% if variant %}
+{% set attributes = (variant != 'default') ? attributes.addClass(variant) : attributes %}
+{% endif %}
+
+{% set avatar_attributes = create_attribute() %}
+
+{% if size %}
+    {% set avatar_attributes = avatar_attributes.addClass(size) %}
+{% endif %}
+
+{% if rounded %}
+    {% set avatar_attributes = avatar_attributes.addClass(rounded) %}
+{% endif %}
+
+{% if mask %}
+    {% set avatar_attributes = avatar_attributes.addClass(['mask', mask]) %}
+{% endif %}
+
+{% if ring %}
+    {% set avatar_attributes = avatar_attributes.addClass(['ring', 'ring-primary', 'ring-offset-base-100', 'ring-offset-2']) %}
+{% endif %}
+
+<div {{ attributes }}>
+  <div {{ avatar_attributes }}>
+    {{ image }}
+  </div>
+</div>

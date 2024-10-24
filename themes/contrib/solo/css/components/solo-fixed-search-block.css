@@ -1,0 +1,76 @@
+#fixed-search-block {
+  display: block;
+  width: 100%;
+  z-index: 5000;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  transition: 0.5s;
+  background-color: var(--r-bg);
+}
+
+#fixed-search-block .fixed-search-block-inner {
+  position: relative;
+  padding-top: 3.125rem;
+  padding-bottom: 3.125rem;
+  display: flex;
+  flex-wrap: nowrap;
+  row-gap: 0;
+  justify-content: left;
+  align-items: center;
+  min-height: 300px;
+  max-width: 1100px;
+}
+
+.fixed-search-block-inner .fixed-search-wrapper {
+  border-radius: var(--solo-px16);
+  display: flex;
+}
+
+.fixed-search-block-inner form .form-search,
+.fixed-search-block-inner form .form-submit {
+  padding-top: var(--solo-px20);
+  padding-bottom: var(--solo-px20);
+}
+
+.fixed-search-block-inner .solo-search-block-form .form-type-search::before {
+  top: 26px;
+}
+
+.fixed-search-block-inner .search-button-close {
+  flex-basis: 60px;
+}
+
+.fixed-search-block-inner form .form-submit {
+  border-radius: 0 var(--solo-px4) var(--solo-px4) 0;
+}
+
+.fixed-search-block-inner .solo-search-block-form .form-item,
+.fixed-search-block-inner .solo-search-block-form .form-actions {
+  margin: 0 auto!important;
+}
+
+.fixed-search-block-inner .search-button-close button {
+  color: var(--r-tx);
+  border: 1px solid var(--r-br, var(--r-br-b));
+  background-color: var(--r-bg);
+  min-width: 60px !important;
+  margin: 0 auto !important;
+  border-radius: var(--solo-px4) 0 0 var(--solo-px4);
+}
+
+.solo-inner.fixed-search-block-inner .hamburger-icon span>svg {
+  height: 4.5rem;
+  width: 4.688rem;
+}
+
+.fixed-search-block-inner .solo-search-block-form {
+  flex-basis: calc(100% - 65px);
+  flex-grow: 1;
+}
+
+.fixed-search-block-inner {
+  position: relative;
+}

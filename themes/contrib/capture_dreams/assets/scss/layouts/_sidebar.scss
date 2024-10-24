@@ -1,0 +1,107 @@
+.main-container {
+    aside.sidebar {
+        width: 100%;
+        padding: em(10px);
+        height: unset !important;
+        @include md {
+            background: url(../images/aside.png) no-repeat right top $black;
+            width: 25%;
+            float: left;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: em(36px) em(30px);
+            height: 100vh !important;
+        }
+        .region-header {
+            position: relative;
+            .menu--main{
+                position: fixed;
+                z-index: 9;
+                width: 100%;
+                left: -100%;
+                padding: em(10px) em(40px);
+                background: $color-surface-100;
+                @include md {
+                    position: unset;
+                    padding: em(10px);
+                    background: transparent;
+                }
+                // &.mob_menu_open {
+                //     left: 0px;
+		        //     transition: left 0.3s ease;
+                // }
+                // &.mob_menu_close{
+                //     left: -100%;;
+		        //     transition: left 2s ease;
+                // }
+            }
+            .mob_menu{
+                position: absolute;
+                right: 0;
+                top: em(15px);
+                @include md {
+                    display:none;
+                }
+                #menu {
+                    display: none;
+                    &:checked ~ .menu {
+                        background-color: transparent;
+                        transform: rotate(360deg);
+                        transition: transform 250ms ease;
+                        span {
+                            background-color: white;
+                            transition: transform 250ms ease;
+                            &:nth-of-type(1) {
+                                transform: translateY(1px) rotate(45deg);
+                            }
+                            &:nth-of-type(2) {
+                                display: none;
+                            }
+                            &:nth-of-type(3) {
+                                transform: translateY(-1px) rotate(-45deg);
+                            }
+                        }
+                    }
+                }
+                .menu{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    width: 50px;
+                    height: 50px;
+                    transition: transform 250ms ease;
+                    cursor: pointer;
+                    z-index: 200;
+                    span {
+                        position: relative;
+                        display: block;
+                        width: 50%;
+                        height: 2px;
+                        background-color: $color-primary-300;
+                        float: left;
+                        transform-origin: center center;
+                        transition: transform 250ms ease;
+                        z-index: 200;
+                        &:nth-of-type(1) {
+                            transform: translateY(-5px);
+                        }
+                        &:nth-of-type(3) {
+                            transform: translateY(5px);
+                        }
+                    }
+                }
+            }
+            // #menu:checked ~ .menu--main {
+            //     display: block;
+            // }
+        }
+        .site-footer{
+            display: none;
+            @include md {
+                display: block;
+            }
+        }
+    }
+}

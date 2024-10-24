@@ -1,0 +1,119 @@
+body.dark-mode {
+  .filter-guidelines__item {
+    color: $text-dark;
+  }
+  // CARDS
+  .admin-list {
+    .nttdata-card {
+      background-color: $white2;
+      &.admin-item {
+        .admin-item__title {
+          .admin-item__link {
+            color: $text-dark;
+          }
+        }
+      }
+    }
+  }
+  // DROPDOWNS
+  .dropbutton-wrapper {
+    .dropbutton-widget {
+      .dropbutton.dropbutton--small {
+        a,
+        input,
+        .dropbutton-toggle {
+          @extend %button-dark-dk;
+          button {
+            @extend %button-dark-dk;
+          }
+        }
+      }
+      .dropbutton__item {
+        border: 1px solid $link-water;
+        box-shadow: 0 2px 5px $link-water;
+        &:first-of-type {
+          > *,
+          ~.dropbutton__item a,
+          ~.dropbutton__item input {
+            @extend %button-dark-dk;
+            border: 1px solid $link-water;
+            box-shadow: 0 2px 5px $link-water;
+          }
+        }
+      }
+      .dropbutton__toggle {
+        @extend %button-dark-dk;
+        border: 1px solid $link-water !important;
+        box-shadow: 0 2px 5px $link-water;
+        margin-top: 1px;
+        padding: 1px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  // BOOLEAN
+  .form-type--boolean {
+    .form-boolean--type-radio {
+      &:checked {
+        filter: invert(52%) sepia(96%) saturate(248%) hue-rotate(181deg) brightness(83%) contrast(83%);
+        box-shadow: unset;
+      }
+    }
+  }
+  // APPEARANCE
+  #system-themes-page {
+    .card {
+      &__content-wrapper {
+        background: $white2;
+      }
+      &__footer {
+        .action-link {
+          @extend %button-primary-dk;
+        }
+      }
+    }
+  }
+  // EXTEND
+  .system-modules {
+    .module-list__description {
+      background-color: $white;
+      .action-link.module-link {
+        color: $cornflower-blue;
+        background-color: $link-water;
+        &:before {
+          filter: invert(42%) sepia(10%) saturate(2583%) hue-rotate(182deg) brightness(91%) contrast(85%);
+        }
+        &:hover {
+          color: $text-dark;
+          opacity: 0.85;
+          &:before {
+            @extend %filter-white;
+          }
+        }
+      }
+    }
+  }
+  .region-content  {
+    // HELP
+    .layout-column--quarter {
+      .section-item {
+        background: $white2;
+      }
+    }
+    // REPORTS
+    div[class^="system-status"] {
+      .card {
+        background-color: $white2;
+        .cron-description__run-cron a {
+          @extend %button-base-dk;
+        }
+      }
+      .color-warning {
+        color: $cornflower-blue;
+        background-color: $link-water;
+      }
+    }
+  }
+}

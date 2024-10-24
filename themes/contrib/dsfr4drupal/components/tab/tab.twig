@@ -1,0 +1,31 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set attributes = attributes.setAttribute('aria-selected', 'false') %}
+
+{% if icon %}
+  {% set attributes = attributes.addClass(['fr-tabs__tab--icon-left', icon]) %}
+{% endif %}
+
+{% if is_active %}
+  {% set attributes = attributes.setAttribute('aria-selected', 'true').addClass('fr-tabs__tab--selected') %}
+{% endif %}
+
+{% if panel_id %}
+  {% set attributes = attributes.setAttribute('aria-controls', panel_id) %}
+{% endif %}
+
+{% if url %}
+  {{ link(title, url, attributes.addClass('fr-tabs__tab').setAttribute('role', 'tab')) }}
+  {{ attach_library('dsfr4drupal/component.link') }}
+{% else %}
+  {% set tag = tag|default('button') %}
+  {% set attributes = attributes.setAttribute('tabindex', '-1') %}
+
+  {% if is_active %}
+    {% set attributes = attributes.setAttribute('tabindex', '0') %}
+  {% endif %}
+
+  <{{ tag }}{{ attributes.addClass('fr-tabs__tab').setAttribute('role', 'tab') }}>
+    {{ title }}
+  </{{ tag }}>
+  {{ attach_library('dsfr4drupal/component.button') }}
+{% endif %}

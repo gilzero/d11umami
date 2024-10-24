@@ -1,0 +1,37 @@
+/* this file for use only home page banner */
+.home_hero_banner {
+  min-height: calc(100vh - 200px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
+}
+.home_hero_banner h2.banner_title {
+  margin-top: 0;
+  font-size: 2.5rem;
+  color: #fd8f5f;
+}
+
+.home_hero_banner .banner_wraper {
+  max-width: 700px;
+  text-align: left;
+  -webkit-animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+.home_hero_banner .banner_wraper.center {
+  text-align: center;
+}
+.home_hero_banner .banner_wraper.end {
+  text-align: right;
+}
+
+.banner_dec {
+  /* text-shadow: 1px 1px rgba(100, 100, 111, 0.4); */
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .home_hero_banner .banner_wraper {
+    padding: 0 15px;
+  }
+}

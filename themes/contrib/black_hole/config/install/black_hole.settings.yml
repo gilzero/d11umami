@@ -1,0 +1,85 @@
+# Default features.
+
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  logo: true
+  name: true
+  node_user_picture: true
+  slogan: true
+
+# Pure.CSS settings
+css_zone: 0
+wrapper: '85em'
+first_width: 5
+second_width: 5
+mobile_blocks: 2
+
+# Layout settings
+style: 10
+fntfam: 0
+fntsize: 0
+themedblocks: 0
+blockicons: 4
+navpos: 1
+searchimg: 1
+pageicons: 2
+roundcorners: 1
+headerimg: 1
+devlink: 1
+
+# Breadcrumbs display
+breadcrumb_display: 1
+
+# Submitted by Author & Date
+submitted_dateuser: 0
+submitted_txt: 'Published by'
+
+# SEO settings
+page_seo: 0
+block_seo: 0
+
+# Slideshow
+slideshow_display: 1
+slideshow_all: 0
+slidety: 1
+slideh: '25em'
+show_slide1: 1
+show_slide2: 1
+show_slide3: 1
+show_slide4: 1
+show_slide5: 1
+slide1_head: 'Headline 1'
+slide2_head: 'Headline 2'
+slide3_head: 'Headline 3'
+slide4_head: 'Headline 4'
+slide5_head: 'Headline 5'
+slide1_desc: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...'
+slide2_desc: 'Morbi id lacus. Etiam malesuada diam ut libero. Sed blandit, justo nec euismod laoreet, nunc nulla iaculis elit, vitae'
+slide3_desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed libero in nisl consequat tincidunt eget et libero.'
+slide4_desc: 'Aenean aliquet placerat velit, vitae porta dolor ultricies vitae. Maecenas vitae egestas tortor, et venenatis erat.'
+slide5_desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam eu quam. Nulla sed purus in ipsum sagittis eleifend.'
+slide1_image_url: '/themes/contrib/black_hole/_custom/sliderimg/bw-1.jpg'
+slide2_image_url: '/themes/contrib/black_hole/_custom/sliderimg/bw-2.jpg'
+slide3_image_url: '/themes/contrib/black_hole/_custom/sliderimg/bw-3.jpg'
+slide4_image_url: '/themes/contrib/black_hole/_custom/sliderimg/bw-4.jpg'
+slide5_image_url: '/themes/contrib/black_hole/_custom/sliderimg/bw-5.jpg'
+slide1_alt: 'Slide 1'
+slide2_alt: 'Slide 2'
+slide3_alt: 'Slide 3'
+slide4_alt: 'Slide 4'
+slide5_alt: 'Slide 5'
+
+# Social Media Links
+social_links_display: 1
+facebook_url: 'https://www.facebook.com/cfradut'
+twitter_url: 'https://twitter.com/DrRadut'
+linkedin_url: 'https://www.linkedin.com/in/cfradut'
+drupal_url: 'https://www.drupal.org/u/florian'
+
+# Other settings
+httpheaders: 1
+toolbarfix: 0
+show_intl_logo: 0
+intl_logo_path: '/themes/contrib/black_hole/_custom/logos'

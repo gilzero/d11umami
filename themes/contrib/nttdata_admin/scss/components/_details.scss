@@ -1,0 +1,84 @@
+/**
+ * @file
+ * Details.
+ */
+
+.claro-details {
+  color: $text-dark;
+  background-color: $white;
+  box-shadow: 0 2px 10px $ck-grey;
+  border: 1px solid $light-grey;
+  padding-bottom: 1px;
+  &#edit-group-seo {
+    .claro-details__wrapper.details-wrapper {
+      margin: 24px 15px;
+    }
+    #snippet_preview{
+      width: auto;
+    }
+  }
+  &#edit-group-main{
+    margin: 0;
+    border-top: unset;
+    box-shadow: unset 2px 10px var(--white2);
+  }
+}
+
+.claro-details:not(.module-list__module-details):not(.field-group-tab),
+.claro-details[open]:not(.module-list__module-details):not(.field-group-tab) {
+  > summary.claro-details__summary {
+    color: $text-white;
+    background: $nttdata-effect;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: none;
+    > .claro-details__summary-summary {
+      display: none;
+    }
+    &:before {
+      @extend %filter-white;
+    }
+    &:after {
+      box-shadow: none;
+      border: none;
+    }
+    &:focus {
+      @include focus-outline;
+      color: $text-white;
+      &:before {
+        @extend %filter-white;
+      }
+      &:hover {
+        &:before {
+          @extend %filter-white;
+        }
+      }
+    }
+    &:hover {
+      background: $primary2;
+      &:before {
+        @extend %filter-white;
+      }
+    }
+  }
+  > .claro-details__wrapper {
+    color: $text-dark;
+    background-color: $white;
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+.entity-meta {
+  &__header {
+    color: $text-dark;
+    background-color: $white;
+    border: 2px solid $ck-grey;
+    box-shadow: 0 2px 5px $ck-grey;
+  }
+  details > .claro-details__wrapper.details-wrapper {
+    border: 1px solid $white2;
+    box-shadow: 0 2px 5px $ck-grey;
+  }
+}

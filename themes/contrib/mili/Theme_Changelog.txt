@@ -1,0 +1,46 @@
++===============================+
+Version 10.1.0
+25 Dec 2022
++===============================+
+# Intial release of 10.x.x series.
+
+
++===============================+
+Version 10.1.1
+12 July 2023
++===============================+
+# Fixed third level drop down menu.
+# Other minor improvements.
+
+
++===============================+
+Version 11.0.0
+06 Aug 2024
++===============================+
+# Initial release of 11.x.x series.
+# Drupal 11 compatible.
+
+
++===============================+
+Version 11.0.1
+19 Sep 2024
++===============================+
+# Updated Morphist slider to version 3.0.0
+# Added woff2 font formats in head section as preload.
+# New body classes.
+# Node submitted details now uses Drupal default format.
+# Removed option to show author picture in node submitted details.
+# Added fontawesome 6 font icons. This can be enabled from theme settings.
+# Added bootstrap icons. This can be enabled from theme settings.
+# Updated twitter social icons.
+# New styling for mobile menu icon.
+# Added styling for comments buttons: edit / reply / delete
+
+
++===============================+
+Version 11.0.2
+20 Sep 2024
++===============================+
+# Fixed styling for mini pager.
+# Fixed styling for system message.
+# Fixed other minor known issues.

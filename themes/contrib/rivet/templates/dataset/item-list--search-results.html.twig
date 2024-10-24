@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Theme override for an item list of search results.
+ *
+ * Available variables:
+ * - items: A list of items. Each item contains:
+ *   - attributes: HTML attributes to be applied to each list item.
+ *   - value: The content of the list element.
+ * - title: The title of the list.
+ * - list_type: The tag for list element ("ul" or "ol").
+ * - attributes: HTML attributes to be applied to the list.
+ * - empty: A message to display when there are no items. Allowed value is a
+ *   string or render array.
+ * - context: An list of contextual data associated with the list. For search
+ *   results, the following data is set:
+ *   - plugin: The search plugin ID, for example "node_search".
+ *
+ * @see template_preprocess_item_list()
+ */
+#}
+{%
+  set classes = [
+    'search-results',
+    context.plugin ~ '-results',
+  ]
+%}
+{% set attributes = attributes.addClass(classes) %}
+
+{% if context.list_style %}
+  {%- set wrapper_attributes = wrapper_attributes.addClass('item-list--' ~ context.list_style) %}
+  {%- set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
+{% endif %}
+
+{% if not items and empty %}
+<div class="rvt-alert rvt-alert--warning [ rvt-m-bottom-md ]" role="alert" aria-labelledby="list-alert-alert-title" data-rvt-alert="warning">
+  {% if title is not empty %}
+  <div class="rvt-alert__title" id="list-alert-alert-title">{{ title }}</div>
+  {% endif %}
+  <div class="rvt-alert__message">{{ empty }}</div>
+  <button class="rvt-alert__dismiss" data-rvt-alert-close="">
+    <span class="rvt-sr-only">Dismiss this alert</span>
+    <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16">
+      <path d="m3.5 2.086 4.5 4.5 4.5-4.5L13.914 3.5 9.414 8l4.5 4.5-1.414 1.414-4.5-4.5-4.5 4.5L2.086 12.5l4.5-4.5-4.5-4.5L3.5 2.086Z"></path>
+    </svg>
+  </button>
+</div>
+{% elseif items -%}
+  <div{{wrapper_attributes.addClass('item-list')}}>
+    {%- if title is not empty -%}
+      <h3>{{ title }}</h3>
+    {%- endif -%}
+    <{{list_type}}{{attributes}}>
+      {%- for item in items -%}
+        <li{{item.attributes}}>{{ item.value }}</li>
+      {%- endfor -%}
+    </{{list_type}}>
+  </div>
+{%- endif %}

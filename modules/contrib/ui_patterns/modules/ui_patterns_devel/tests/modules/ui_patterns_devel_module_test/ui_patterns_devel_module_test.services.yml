@@ -1,0 +1,5 @@
+services:
+  ui_patterns_devel_module_test.twig.mock:
+    class: Drupal\ui_patterns_devel_module_test\Template\TwigExtension
+    tags:
+      - { name: twig.extension, priority: 500 }

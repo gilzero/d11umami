@@ -1,0 +1,118 @@
+body.dark-mode {
+  table {
+    &.sticky-header {
+      background-color: transparent;
+    }
+    .sortable-heading {
+      a {
+        &:hover {
+          color: $text-white;
+          &:before {
+            border-bottom: 0.1875rem solid $white;
+          }
+        }
+        .tablesort {
+          @extend %filter-white;
+        }
+        &:after {
+          @extend %filter-white;
+        }
+      }
+      &.is-active a {
+        color: $text-dark;
+        &:before {
+          border-bottom: 0.1875rem solid $text-dark;
+        }
+        .tablesort {
+          @extend %filter-white;
+        }
+      }
+    }
+    tr {
+      td {
+        a {
+          color: $delightful-yellow;
+        }
+        .module-list__module-details,
+        .module-list__module-details[open] {
+          > summary.claro-details__summary {
+            &:before {
+              filter: unset;
+            }
+            &:hover {
+              color: $delightful-yellow;
+              &:before {
+                background-image: $yellow-arrow;
+              }
+            }
+          }
+        }
+        //Delete action in form manage .draggable.field-group
+        .field-plugin-settings-edit-wrapper {
+          .image-button {
+            @extend %filter-light-grey;
+          }
+          + a::after {
+            @extend %filter-light-grey;
+          }
+        }
+      }
+      &.selected {
+        td {
+          background-color: $black-pearl;
+        }
+      }
+      &.draggable {
+        color: $text-lightgrey;
+        &.field-plugin-settings-editing,
+        &:focus {
+          background: $white2;
+        }
+      }
+      &.region-message {
+        color: $text-lightgrey;
+      }
+    }
+    .region-title {
+      color: $text-dark;
+    }
+    .revision-current {
+      background-color: unset;
+    }
+  }
+  .tabledrag-toggle-weight-wrapper {
+    button {
+      .action-link {
+        background: $white;
+        color: $text-dark;
+        &:before {
+          @extend %filter-white;
+        }
+        &:hover {
+          background: $white2;
+        }
+      }
+    }
+  }
+  table.responsive-enabled.sticky-enabled {
+    td > a {
+      color: $delightful-yellow;
+    }
+  }
+  
+  // admin/modules (Extend tab)
+  // claro elements
+  .module-list__description {
+    .claro-details {
+      box-shadow: none;
+      border: 0;
+      background-color: $white;
+      .claro-details__summary.module-list__module-summary {
+        background: $white;
+      }
+      .claro-details__wrapper.module-details__wrapper {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

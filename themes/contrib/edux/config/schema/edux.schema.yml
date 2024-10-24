@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Edu X theme.
+
+edux.settings:
+  type: theme_settings
+  label: 'Edu X Settings'

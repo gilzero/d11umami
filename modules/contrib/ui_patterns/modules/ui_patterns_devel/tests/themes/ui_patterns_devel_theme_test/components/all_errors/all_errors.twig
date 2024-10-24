@@ -1,0 +1,250 @@
+--- Schema ---
+{% for link in array_object_valid %}
+  {{ link.title }} : {{ link.url }}
+{% endfor %}
+{{ missing_type_enum_valid | join(', ') }}
+
+--- Injected ---
+attributes: {{ attributes.addClass('foo') }}
+variant: {{ variant}}
+
+--- Story ---
+test_slot_content: {{ test_slot_content }}
+test_slot_string: {{ test_slot_string }}
+test_prop_string_1: {{ test_prop_string }}
+test_prop_string_default: {{ test_prop_string_default }}
+test_prop_string_enum: {{ test_prop_string_enum }}
+test_prop_string_enum_default: {{ test_prop_string_enum_default }}
+test_prop_string_length: {{ test_prop_string_length }}
+test_prop_boolean: {{ test_prop_boolean }}
+test_prop_integer: {{ test_prop_integer }}
+test_prop_number_1: {{ test_prop_number_1 }}
+test_prop_number_default: {{ test_prop_number_default }}
+test_prop_number_2: {{ test_prop_number_2 }}
+test_prop_url_1: {{ test_prop_url_1 }}
+test_prop_url_2: {{ test_prop_url_2 }}
+test_prop_url_3: {{ test_prop_url_3 }}
+test_prop_color: {{ test_prop_color }}
+test_prop_color_6: {{ test_prop_color_6 }}
+test_prop_color_3: {{ test_prop_color_3 }}
+test_prop_object: {{ test_prop_object.foo }}-{{ test_prop_object.bar }}
+test_prop_array: {{ test_prop_array | join(', ') }}
+test_prop_enum_list: {{ test_prop_enum_list | join(', ') }}
+test_prop_enum_list_2: {{ test_prop_enum_list_2 | join(', ') }}
+test_prop_enum_list_3: {{ test_prop_enum_list_3 | join(', ') }}
+test_prop_links:
+{% for link in test_prop_links %}
+  {{ link.title }}
+  {% for sub_link in link.below %}
+    - {{ sub_link.title }} -
+  {% endfor %}
+{% endfor %}
+test_prop_links_2:
+{% for link in test_prop_links_2 %}
+  {{ link.title }} {{ link.extra }}
+  {% for sub_link in link.below %}
+    - {{ sub_link.title }} -
+  {% endfor %}
+{% endfor %}
+test_prop_machine_name: {{ test_prop_machine_name }}
+test_prop_list: {{ test_prop_list | join(', ') }}
+{# @todo test_prop_attributes_implicit: {{ test_prop_attributes_implicit }} #}
+test_prop_attributes_explicit: {{ test_prop_attributes_explicit }}
+test_prop_attributes_sdc: {{ test_prop_attributes_sdc }}
+
+--- TESTS FILTERS ---
+
+default ERROR: {{ test_prop_boolean | default('error') }}
+default ERROR: {{ true | default('error') }}
+default ERROR: {{ false | default('error') }}
+default ERROR: {{ null | default('error') }}
+
+{% set my_var = null %}
+default OK: {{ my_var | default('var is not defined') }}
+default OK: {{ my_var.foo | default('foo item on var is not defined') }}
+default OK: {{ my_var['foo'] | default('foo item on var is not defined') }}
+default OK: {{ '' | default('passed var is empty') }}
+default OK: {{ my_var.method('bar' | default('foo')) | default('bar') }}
+default OK: {{ my_var | default() }}
+default OK: {{ 'foo' | default() }}
+
+set_attribute ERROR: {{ test_slot_content | add_class('foo') | set_attribute('bar', 'baz') }}
+set_attribute ERROR: {{ test_slot_content | set_attribute('baz', { 'baz': 'qux' }) }}
+set_attribute ERROR: {{ test_slot_content | set_attribute('qux', null) }}
+set_attribute OK: {{ test_slot_content | set_attribute('quux', 'foo') }}
+set_attribute OK: {{ test_slot_content | set_attribute('foo', 'bar') | set_attribute('bar', 'baz') }}
+set_attribute OK: {{ test_slot_content | set_attribute('corge', ['foo', 'bar']) }}
+
+add_class ERROR: {{ 'foo' | add_class('bar') }}
+add_class OK: {{ test_slot_content | add_class('grault') | add_class('quux') }}
+
+t NOTICE: {{ '' | t }}
+t OK: {{ 'foo' | t }}
+
+trans NOTICE: {{ '' | trans }}
+trans WARNING: {{ 'foo' | trans }}
+
+abs ERROR: {{ true | abs }}
+abs OK: {{ 12.33 | abs }}
+
+clean_unique_id WARNING: {{ 'foo' | clean_unique_id }}
+
+filter WARNING: {{ [] | filter((v, k) => k) }}
+
+reduce WARNING: {{ [1, 2, 3] | reduce((c, v) => c + v) }}
+
+{% set var_placeholder = 'foo' %}
+placeholder ERROR: {{ var_placeholder | placeholder }}
+placeholder ERROR: {% trans %}Foo {{ date|placeholder }}{% endtrans %}
+
+without ERROR: {{ {} | without('test') }}
+without ERROR: {{ test_slot_content | without('links') }}
+
+clean_id ERROR: {{ -5 | clean_id }}
+clean_id ERROR: {{ 2.33 | clean_id }}
+clean_id ERROR: {{ true | clean_id }}
+clean_id OK: {{ 'Az#"_!gH' | clean_id }}
+
+render ERROR: {{ {} | render }}
+
+date_modify / data ERROR: {{ '' | date_modify('+1 day') | date('Y-M-d') }}
+format_date ERROR: {{ 1669324282 | format_date('html_date') }}
+
+add_suggestion ERROR: {{ {'#theme': 'foo'} | add_suggestion('bar') }}
+
+Gray list NOTICE: {{ [{ 'foo' : 'bar'}, {'foo' : 'baz' }] | column('foo') | join('') }}
+Gray list NOTICE: {% for user in ['b', 'a'] | sort %}{{ user }}{% endfor %}
+Gray list NOTICE: {% apply spaceless %}{% endapply %}
+
+--- TESTS FUNCTION ---
+
+source WARNING: {{ source('test.html', true) }}
+
+active_theme ERROR: {{ active_theme() }}
+active_theme_path ERROR: {{ active_theme_path() }}
+
+constant:PHP_VERSION ERROR: {{ constant('PHP_VERSION') }}
+date filter ERROR: {{ "now" | date("m/d/Y") }}
+date function ERROR: {% set date = date('-2days', 'Europe/Paris') %} empty
+file_url ERROR: {{ file_url('public://foo.txt') }}
+path ERROR: {{ path('<front>') }}
+
+include ERROR: {% include 'links.html.twig' %}
+include fn ERROR: {% include('links.html.twig') %}
+embed ERROR: {% embed "links.html.twig" %}{% endembed %}
+block ERROR: {% block foo %}{% endblock %}{{ block('foo') }}
+import ERROR: {% from 'block--local-actions-block.html.twig' import input as foo %}
+import ERROR: {% from 'links.html.twig' import input as foo %}
+import ERROR: {% import 'links.html.twig' as links %}{{ links | join(',') }}
+sandbox ERROR: {% sandbox %}Foo{% endsandbox %}
+do WARNING: {% do 1 + 2 %}
+flush ERROR: {% flush %}
+
+validate_component_props ERROR: {{ validate_component_props('ui_patterns_devel_theme_test:foo') }}
+add_component_context ERROR: {{ add_component_context('ui_patterns_devel_theme_test:foo') }}
+attach_library ERROR: {{ attach_library('system/maintenance') }}
+pattern_preview ERROR: {{ pattern_preview('ui_patterns_devel_theme_test:foo', 'preview') }}
+url ERROR: {{ url('<none>') }}
+link ERROR: {{ link('foo', 'http://foo.bar') }}
+
+random ERROR: {% set foo_random = random() %} {{ foo_random }}
+random ERROR: {{ foo_random ~ random() }}
+random ERROR: {% set bar_random = foo_random ~ '--' ~ random() %} {{ bar_random }}
+random ERROR: {{ random() }}
+random ERROR: {% set qux_random = 'foo-' ~ bar_random ~ random() %} {{ qux_random }}
+{% set quux_random = 'quux' %}
+random OK: {% set foo_random = 'foo-' ~ quux_random | default(random()) %} {{ foo_random }}
+random OK: {% set foo_random = quux_random | default(random()) %} {{ foo_random }}
+random OK: {% set foo_random = quux_random | default(foo_random ~ '-' ~ random()) %} {{ foo_random }}
+
+--- TESTS TESTS ---
+
+{% set foo_tests = '' %}
+defined ERROR: {% if foo_tests is defined %}{% endif %}
+empty ERROR: {% if foo_tests is empty %}{% endif %}
+iterable WARNING: {% if foo_tests is iterable %}{% endif %}
+null WARNING: {{ foo_tests is null }}
+null coalescing WARNING: {{ foo_tests ?? 'foo' }}
+same as ERROR: {% if foo_tests is same as(false) %}{% endif %}
+
+--- TESTS GETATTR ---
+
+{% set foo = ['#bar'] %}
+Get attribute WARNING: {{ foo['#bar'] }}
+
+Direct method call ERROR: {{ test_prop_object.bundle() }}
+
+--- TESTS NAME ---
+
+componentMetadata ERROR: {{ componentMetadata.name }}
+loop.parent ERROR: {% for item in ['foo'] %}{{ loop.parent.variant }}{% endfor %}
+
+--- TESTS CONDITIONAL ---
+
+{% set foo = false %}{% set bar = false %}{% set baz = false %}{% set qux = 'qux' %}{% set quux = 'quux' %}
+No chained ternary ERROR: {{ foo ? baz : bar ? qux : baz ? qux : quux }}
+No chained ternary ERROR: {{ foo ? baz : bar ? qux : baz }}
+No chained ternary OK: {{ foo ? baz : bar }}
+No chained ternary OK: {{ foo ? baz }}
+
+{% set foo = false %}{% set bar = 'bar' %}
+Use |default WARNING: {{ foo ? foo : bar }}
+Use |default WARNING: {{ foo ?: bar }}
+Use |default WARNING: {{ foo | default(false) }}
+Use |default WARNING: {{ foo | default(true) }}
+Use |default WARNING: {{ foo | default(foo) }}
+Use |default OK: {{ foo|default(bar) }}
+
+ternary test with boolean NOTICE: {{ qux == 'bar' ? true : false }}
+
+--- TESTS NOT SET ---
+
+Not set ERROR: {{ bar_not_set }}
+
+--- GLOBAL TESTS UNUSED ---
+
+Unused ERROR: key_unused, item_unused, my_attributes_unused, macro_unused
+
+{% macro test(macro_1, macro_unused) %}{{ macro_1 }}{% endmacro %}
+{% set foo_set = 'foo' %}
+{{ foo_set }}
+{% for key_unused, item in test_prop_array %}
+  {{ item }}
+{% endfor %}
+{% for item in test_prop_array %}
+  {{ item }}
+{% endfor %}
+{% for item_unused in test_prop_array %}
+  {{ foo_set }}
+{% endfor %}
+{% set my_attributes_unused = create_attribute() %}
+
+--- END TESTS ---
+
+{# --- TESTS CRITICAL --- #}
+
+{# {{ 'foo' | abs }} #}
+{# {{ my_var | t }} #}
+{# {{ ['foo'] | t }} #}
+
+{# --- TESTS NOT POSSIBLE IN TEMPLATE --- #}
+
+{# Reason: extends is first line and need block for content #}
+{# Covered by TwigValidatorRuleParentTest #}
+{# {% extends 'links.html.twig' %}{% block foo %}{{ parent('bar') }}{% endblock %} #}
+
+{# --- TESTS BLOCKED --- #}
+
+{# Reason: GetAttrExpression, do not explicitly give 'attribute()' as name, hard to detect #}
+{# {{ attribute(['foo', 'bar'], 'foo') }} #}
+
+{# Reason: Can not work because replaced by render_var #}
+{# raw WARNING: {{ 'foo' | raw }} #}
+
+{# Reason: Can not work because of alias drupal_escape run on all var #}
+{# escape NOTICE: {{ 'foo' | e }} #}
+{# escape NOTICE: {{ 'foo' | escape }} #}
+
+{# Reason: Need module help enabled #}
+{# {{ help_route_link('foo') }} #}
+{# {{ help_topic_link('foo') }} #}

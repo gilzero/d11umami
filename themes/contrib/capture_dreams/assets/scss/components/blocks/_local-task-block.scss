@@ -1,0 +1,26 @@
+// local task block and menu scss
+.local-tasks-block {
+    margin-top: em(20px);
+    margin-bottom: em(30px);
+    .nav-tabs {
+        border-color: $color-primary-100;
+        border-width: em(3px);
+        .nav-item {
+            margin: 0 !important;
+            padding: em(5px) em(0px);
+            a {
+                padding: em(6px) em(45px);
+                color: $white;
+                text-decoration: none;
+                &.is-active {
+                    background-color: $color-primary-100;
+                    color: $color-surface-mixed-100;
+                }
+                &:hover {
+                    background-color: $color-primary-100;
+                    color: $color-surface-mixed-100;
+                }
+            }
+        }
+    }
+}

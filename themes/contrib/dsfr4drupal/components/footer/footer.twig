@@ -1,0 +1,58 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set is_front = is_front ?? true %}
+{% set logo_text = logo_text|default('République\nFrançaise') %}
+
+<footer{{ attributes.addClass('fr-footer').setAttribute('role', 'contentinfo').setAttribute('id', 'footer') }}>
+  {% if top %}
+    <div class="fr-footer__top">
+      <div class="fr-container">
+        {{ top }}
+      </div>
+    </div>
+  {% endif %}
+  <div class="fr-container">
+    <div class="fr-footer__body">
+      <div class="fr-footer__brand fr-enlarge-link">
+        {{ include('dsfr4drupal:logo', {'text': logo_text, 'has_link': not logo_operator, 'is_front': is_front}, with_context=false) }}
+
+        {% if logo_operator %}
+          {% if service_title %}
+            {% set t_args = {'@service_title': service_title, '@text': logo_text|replace({"\n": ' '})} %}
+            {% if is_front %}
+              {% set logo_operator_link_title = logo_operator_link_title|default('Homepage - @service_title - @text'|t(t_args)) %}
+            {% else %}
+              {% set logo_operator_link_title = logo_operator_link_title|default('Back to the homepage - @service_title - @text'|t(t_args)) %}
+            {% endif %}
+          {% else %}
+            {% set t_args = {'@text': logo_text|replace({"\n": ' '})} %}
+            {% if is_front %}
+              {% set logo_operator_link_title = logo_operator_link_title|default('Homepage - @text'|t(t_args)) %}
+            {% else %}
+              {% set logo_operator_link_title = logo_operator_link_title|default('Back to the homepage - @text'|t(t_args)) %}
+            {% endif %}
+          {% endif %}
+          {{ include('dsfr4drupal:logo-operator', {'attributes': create_attribute({'class': 'fr-footer__brand-link'}), 'has_link': true, 'is_front': is_front, 'link_title': logo_operator_link_title, 'logo': logo_operator, 'text': logo_text}, with_context=false) }}
+        {% endif %}
+      </div>
+      {% if content or content_description %}
+        <div class="fr-footer__content">
+          {% if content_description %}
+            <div class="fr-footer__content-desc">{{ content_description }}</div>
+          {% endif %}
+          {{ content }}
+        </div>
+      {% endif %}
+    </div>
+    {{ partners }}
+    {% if bottom or bottom_copy %}
+      <div class="fr-footer__bottom">
+        {{ bottom }}
+        {% if bottom_copy %}
+          <div class="fr-footer__bottom-copy">
+            <div>{{ bottom_copy }}</div>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</footer>

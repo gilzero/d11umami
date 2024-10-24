@@ -1,0 +1,40 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% block content %}
+{% if site_logo %}
+{% if show_intl_logo %}
+<a href="{{ path('<front>') }}" rel="home" title="{{ 'Home'|t }}" class="site-logo"><img src= "{{ intl_logo_path }}{{ path('<front>') ~ '_logo.png' }}" alt="{{ 'Home'|t }}" class="logoimg"></a>
+  {# <img src= "{{ base_path ~ directory }}/_custom/logos{{ path('<front>') ~ '_logo.png' }}" alt="{{ 'Home'|t }}" class="logoimg"> #}
+{% else %}
+<a href="{{ path('<front>') }}" rel="home" title="{{ 'Home'|t }}" class="site-logo"><img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="logoimg"></a>
+{% endif %}
+{% endif %}
+{% if site_name or site_slogan %}
+  <div id="name-and-slogan">
+  {% if site_name %}
+  {% if page_seo == '0' %}
+    {% set sitename_tag = is_front ? 'h1' : 'p' %}
+    <{{ sitename_tag }} id="site-name"><a href="{{ path('<front>') }}" rel="home" title="{{ 'Home'|t }}">{{ site_name }}</a></{{ sitename_tag }}>
+  {% else %}
+    <h1 id="site-name"><a href="{{ path('<front>') }}" rel="home" title="{{ 'Home'|t }}">{{ site_name }}</a></h1>
+  {% endif %}
+  {% endif %}
+  {% if site_slogan %}
+  <div class="site-slogan">{{ site_slogan }}</div>
+  {% endif %}
+  </div>
+{% endif %}
+{% endblock %}

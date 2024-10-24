@@ -1,0 +1,26 @@
+name: DSFR - Tabs
+description: The tabs component allows you to group several tab components together.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    panels:
+      type: array
+      title: Panels
+      description: 'Each item expects "dsfr4drupal:tab" component or another object like \Drupal\Core\Link.'
+      items:
+        type: object
+    tabs:
+      type: array
+      title: Panels
+      description: 'Each item expects "dsfr4drupal:tab-panel" component.'
+      items:
+        type: object
+  required:
+    - tabs
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.tab

@@ -1,0 +1,88 @@
+/**
+ * Adapt IU Framework 'current' class to Drupal's 'is-active'.
+ *
+ * This ended up being easier than trying to get Drupal to change the active
+ * link class.
+ */
+nav.main > .row.pad > ul > li.current-trail > a::after,
+nav.main > .row.pad > ul > li.current-trail > a:focus::after,
+nav.main > .row.pad > ul > li > a.is-active::after,
+nav.main > .row.pad > ul > li > a.is-active:focus::after {
+  width: 100%;
+  background: #900;
+  display: block;
+  height: 0.25rem;
+  position: absolute;
+  bottom: -0.75rem;
+}
+
+nav.main.is-sticky > .row.pad > ul > li.current-trail > a::after,
+nav.main.is-sticky > .row.pad > ul > li > a.is-active::after {
+  background: #fff;
+}
+
+.section-nav a.is-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: #900;
+}
+
+nav.main.dropdown > .row.pad > ul > li.current-trail > a::after,
+nav.main.dropdown > .row.pad > ul > li.current-trail > a:hover::after,
+nav.main.dropdown > .row.pad > ul > li.current-trail > a:focus::after,
+nav.main.dropdown > .row.pad > ul > a.is-active::after,
+nav.main.dropdown > .row.pad > ul > a.is-active:hover::after,
+nav.main.dropdown > .row.pad > ul > a.is-active:focus::after {
+  content: '';
+  display: block;
+  margin: auto;
+}
+
+nav.main.dropdown ul li li.current-trail > a
+nav.main.dropdown ul li li a.is-active {
+  box-shadow: inset 0.25rem 0 0 #006298;
+}
+
+.off-canvas-list ul li a.is-active::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: 0;
+  left: -3px;
+  width: 3px;
+  background: #900;
+}
+
+.breadcrumbs li {
+  line-height: 1.25rem;
+  margin-top: 0;
+  margin-right: 0.5rem;
+  font-size: .875rem;
+}
+
+.breadcrumbs li:last-child {
+  color: #4c5a69;
+}
+
+.breadcrumbs li.is-active {
+  color: #4c5a69;
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.form-item.alpha li.is-active a {
+  border-radius: 5px;
+}
+
+.filter.alpha li a.is-active,
+.form-item.alpha li a.is-active {
+  background: #900;
+  color: #fff;
+}

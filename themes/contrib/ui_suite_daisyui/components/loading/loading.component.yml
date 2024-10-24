@@ -1,0 +1,62 @@
+name: Loading
+description: "Loading shows an animation to indicate that something is loading."
+group: Feedback
+links:
+  - "https://daisyui.com/components/loading/"
+variants:
+  default:
+    title: Default
+  spinner:
+    title: Spinner
+  dots:
+    title: Dots
+  ring:
+    title: Ring
+  ball:
+    title: Ball
+  bars:
+    title: Bars
+  infinity:
+    title: Infinity
+props:
+  type: object
+  properties:
+    color:
+      title: Color
+      description: "Loading with colors?"
+      $ref: "ui-patterns://enum"
+      enum:
+        - primary
+        - secondary
+        - accent
+        - neutral
+        - info
+        - success
+        - warning
+        - error
+      "meta:enum":
+        primary: Primary
+        secondary: Secondary
+        accent: Accent
+        neutral: Neutral
+        info: Info
+        success: Success
+        warning: Warning
+        error: Error
+    size:
+      title: Size
+      description: "It is possible to set the size of loading."
+      $ref: "ui-patterns://enum"
+      enum:
+        - xs
+        - sm
+        - md
+        - lg
+      "meta:enum":
+        xs: "Extra small"
+        sm: Small
+        md: Medium
+        lg: Large
+stories:
+  preview:
+    title: Preview

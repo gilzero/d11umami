@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Override the system menu block to match IU Framework expectations.
+ */
+#}
+<div{{ attributes }}>
+  {{ title_prefix }}{{ title_suffix }}
+  <nav class="mobile off-canvas-list" role="navigation" aria-label="Mobile navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+    {{ content }}
+  </nav>
+</div>

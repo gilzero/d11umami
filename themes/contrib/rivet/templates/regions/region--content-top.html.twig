@@ -1,0 +1,15 @@
+{#
+The Content Top region holds breadcrumbs and page title in a gray bar above the
+sidebar and content areas for app-style layouts. Otherwise, it contains primary
+tabs, secondary tabs, and Drupal "local tasks".
+#}
+{% if content %}
+{{ attach_library('rivet/rvt-c-region') }}
+{% apply spaceless %}
+<div class="rvt-c-region rvt-c-region--content-top rvt-bg-black-000 rvt-border-bottom">
+  <div class="rvt-c-region__inner {{ content_width }} rvt-prose rvt-flow rvt-p-bottom-xl">
+    {{ content }}
+  </div>
+</div>
+{% endapply %}
+{% endif %}

@@ -1,0 +1,29 @@
+{{ include('dsfr4drupal:header', {
+  'is_front': is_front,
+  'logo_operator': logo_operator,
+  'logo_text': logo_text,
+  'service_tagline': site_slogan,
+  'service_title': site_name,
+  'tools_links': page.header_tools_links,
+  'tools_search': page.header_tools_search,
+  'navbar': page.header_navbar,
+}, with_context=false) }}
+<div class="{{ container_class|default('fr-container') }}">
+  {{ page.breadcrumb }}
+</div>
+<main id="main" role="main" class="{{ container_class|default('fr-container') }}" tabindex="-1">
+  <div class="{{ container_class|default('fr-container') }}">
+    {{ page.content }}
+  </div>
+</main>
+{{ include('dsfr4drupal:footer', {
+  'bottom': page.footer_bottom,
+  'bottom_copy': footer_copy,
+  'content': page.footer_content,
+  'content_description': footer_content_description,
+  'is_front': is_front,
+  'logo_operator': logo_operator,
+  'logo_text': logo_text,
+  'service_title': site_name,
+  'top': page.footer_top,
+}, with_context=false) }}

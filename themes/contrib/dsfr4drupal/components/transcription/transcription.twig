@@ -1,0 +1,33 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set title = title|default('Transcription'|t) %}
+{% set transcription_id = transcription_id|default('transcription-' ~ random()) %}
+{% set collapse_id = 'fr-transcription-collapse-' ~ transcription_id %}
+{% set modal_id = 'fr-transcription-modal-' ~ transcription_id %}
+{% set modal_title = modal_title|default(title) %}
+
+<div{{ attributes.addClass('fr-transcription') }}>
+  <button class="fr-transcription__btn" aria-expanded="false" aria-controls="{{ collapse_id }}">
+    {{ title }}
+  </button>
+  <div class="fr-collapse" id="{{ collapse_id }}">
+
+    <div class="fr-transcription__footer">
+      <div class="fr-transcription__actions-group">
+        <button class="fr-btn fr-btn--fullscreen" aria-controls="{{ modal_id }}" data-fr-opened="false" title="{{ 'Enlarge transcription'|t }}">
+          {{ 'Enlarge'|t }}
+        </button>
+      </div>
+    </div>
+
+    {% embed 'dsfr4drupal:modal' with {
+      attributes: create_attribute({'class': ['fr-col-12', 'fr-col-lg-8', 'fr-col-md-10']}),
+      content: content,
+      html_id: modal_id,
+      title: modal_title,
+    } only %}
+      {% block modal_content %}
+        {{ content }}
+      {% endblock %}
+    {% endembed %}
+  </div>
+</div>

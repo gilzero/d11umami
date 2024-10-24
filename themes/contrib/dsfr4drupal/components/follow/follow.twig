@@ -1,0 +1,45 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set social_title = social_title|default('Follow us <br />on social media'|t) %}
+{% set title_tag = title_tag|default('h2') %}
+
+{% if social_items or newsletter_form or newsletter_items %}
+  <div{{ attributes.addClass('fr-follow') }}>
+    <div class="fr-container">
+      <div class="fr-grid-row">
+        {% if newsletter_form or newsletter_items %}
+          <div class="fr-col-12 {{ social_items ? 'fr-col-md-8' : '' }}">
+            <div class="fr-follow__newsletter">
+              <div>
+                <{{ title_tag }} class="fr-h5 fr-follow__title">{{ newsletter_title }}</{{ title_tag }}>
+                {%- if newsletter_description -%}
+                  <p class="fr-text--sm">{{ newsletter_description }}</p>
+                {%- endif -%}
+              </div>
+              {%- if newsletter_form -%}
+                <div>
+                  {{ newsletter_form }}
+                </div>
+              {%- elseif newsletter_items -%}
+                {{ include('dsfr4drupal:button-group', {
+                  'items': newsletter_items,
+                  'attributes': newsletter_items_attributes,
+                }, with_context=false) }}
+              {%- endif -%}
+            </div>
+          </div>
+        {% endif %}
+        {% if social_items %}
+          <div class="fr-col-12 {{ newsletter_items or newsletter_form ? 'fr-col-md-4' : '' }}">
+            <div class="fr-follow__social">
+              <{{ title_tag }} class="fr-h5">{{ social_title }}</{{ title_tag }}>
+              {{ include('dsfr4drupal:button-group', {
+                'items': social_items,
+                'attributes': social_items_attributes,
+              }, with_context=false) }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

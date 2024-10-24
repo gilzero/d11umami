@@ -1,0 +1,70 @@
+
+
+// form fields globle css
+form {
+    margin: em(18px) em(0px);
+}
+
+label {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+textarea,
+select.form-select,
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"] {
+    height: em(52px);
+    width: 100%;
+    margin: 0;
+    font-size: em(16px);
+    border: none;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    &:focus{
+        outline: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+    }
+}
+
+textarea {
+    height: auto;
+}
+
+.form-select,
+select {
+    margin: 40px;
+    background: #ff0;
+    color: #fff;
+}
+option:not(:checked) {
+    background-color: $color-surface-mixed-100;
+}
+.form-item {
+    margin-bottom: em(18px);
+    position: relative;
+}
+
+
+// button css
+.button {
+    border-radius: em(30px);
+    padding: em(10px) em(18px);
+    margin: em(10px) em(0px);
+    line-height: 1.6;
+    @include transition(all 0.3s);
+    text-transform: uppercase;
+}
+.button--primary {
+    background: #f3c623;
+    border: 1px solid #f3c623;
+    color: $black;
+}

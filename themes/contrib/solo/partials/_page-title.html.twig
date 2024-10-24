@@ -1,0 +1,9 @@
+  {% if page.page_title and not is_front %}
+    <!-- Start: Page Title -->
+    <div id="page-title" class="solo-outer lone page-title{{ classes_page_title ? ' ' ~ classes_page_title }}" {{ attributes_page_title }}>
+      <div id="page-title-inner" class="solo-inner solo-col solo-col-1 fade-inner page-title-inner">
+        {{ page.page_title }}
+      </div>
+    </div>
+    <!-- End: Page Title -->
+  {% endif %}

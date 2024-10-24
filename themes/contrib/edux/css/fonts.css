@@ -1,0 +1,22 @@
+/* noto-sans-regular */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'),
+       url('../fonts/noto-sans.woff2') format('woff2'),
+       url('../fonts/noto-sans.woff') format('woff'),
+       url('../fonts/noto-sans.ttf') format('truetype'),
+       url('../fonts/noto-sans.svg#NotoSans') format('svg');
+}
+/* noto-sans-700 */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+       url('../fonts/noto-sans-bold.woff2') format('woff2'),
+       url('../fonts/noto-sans-bold.woff') format('woff'),
+       url('../fonts/noto-sans-bold.ttf') format('truetype'),
+       url('../fonts/noto-sans-bold.svg#NotoSans') format('svg');
+}

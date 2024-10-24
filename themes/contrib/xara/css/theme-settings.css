@@ -1,0 +1,29 @@
+label[for="edit-xara"] {
+	width: 100%;
+	text-align: center;
+}
+
+.settings-form-title {
+	background-color: #D2EFE8;
+	background-image: url("../logo.svg");
+	background-position: calc(50% - 90px) center;
+	background-repeat: no-repeat;
+	padding: 2rem 2rem 2rem 5rem;
+	color: #EF7709;
+	margin: 0 auto;
+}
+
+/* Fieldset */
+fieldset.set-default-fieldset,
+details.set-default-fieldset {
+	background-color: #ffeaa7;
+}
+fieldset.info-fieldset,
+details.info-fieldset {
+	background-image: url(../images/theme-settings/info.svg);
+	background-position: 3px 3px;
+	background-repeat: no-repeat;
+	background-color: #bbd9ff;
+	border: 1px solid #2e86de;
+	padding: 30px 18px 18px 40px;
+}

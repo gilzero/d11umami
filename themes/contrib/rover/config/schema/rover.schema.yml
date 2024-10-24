@@ -1,0 +1,4 @@
+# Required to validate default theme settings.
+rover.settings:
+  type: theme_settings
+  label: "Rover theme"

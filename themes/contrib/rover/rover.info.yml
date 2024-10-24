@@ -1,0 +1,22 @@
+name: Rover
+type: theme
+description: "Introducing Rover where Elegance Meets Responsiveness"
+core_version_requirement: ^9 || ^10 || ^11
+libraries:
+  - rover/bootstrap
+  - rover/rover-styling
+base theme: false
+regions:
+  header: "Header"
+  primary_menu: "Primary menu"
+  user_menu: "User menu"
+  breadcrumb: "Breadcrumb"
+  content: "Content"
+  sidebar_left: "Sidebar Left"
+  sidebar_right: "Sidebar Right"
+  footer: "Footer"
+
+# Information added by Drupal.org packaging script on 2024-09-04
+version: '1.0.7'
+project: 'rover'
+datestamp: 1725453110

@@ -1,0 +1,34 @@
+label[for="edit-zuvi"] {
+	width: 100%;
+	text-align: center;
+}
+
+.settings-form-title {
+	background-color: #020312;
+	background-image: url("../logo.svg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 80px;
+	border-radius: 8px;
+}
+
+/* Fieldset */
+.fieldset__label {
+	background-color: #eef4fb;
+}
+fieldset.set-default-fieldset,
+details.set-default-fieldset {
+	background-color: #ffeaa7;
+}
+fieldset.info-fieldset,
+details.info-fieldset {
+	background-color: #bbd9ff;
+	border: 1px solid #2e86de;
+}
+mark {
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+li {
+	padding: 6px 0;
+}

@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * @ingroup themeable
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0, iul_theme_directory) }}
+
+{% macro menu_links(items, attributes, menu_level, directory) %}
+{%
+  set platform_icons = {
+    'facebook.com': 'images/footer-social/facebook.svg',
+    'linkedin.com': 'images/footer-social/linkedin.svg',
+    'twitter.com': 'images/footer-social/twitter.svg',
+    'instagram.com': 'images/footer-social/instagram.svg',
+    'youtube.com': 'images/footer-social/youtube.svg',
+    'mailto:': 'images/footer-social/mailto.svg',
+    'atom': 'images/footer-social/rss.svg',
+    'feed': 'images/footer-social/rss.svg',
+    'rss': 'images/footer-social/rss.svg',
+  }
+%}
+  {% import _self as menus %}
+  {% if items and menu_level == 0 %}
+    <ul class="rvt-footer-social__list">
+    {% for item in items %}
+      {% set title %}<span class="rvt-color-white">{{ item.title }}</span>{% endset %}
+      {% set url %}{{ item.url }}{% endset %}
+      {% for platform, icon in platform_icons %}
+        {% if platform in url %}
+          {% set svg %}{% include directory ~ icon ignore missing %}{% endset %}
+          {% if svg is empty %}
+            {% set svg %}{% include '@rivet/../' ~ icon ignore missing %}{% endset %}
+          {% endif %}
+          {% if svg is not empty %}
+            {% set title %}<span class="rvt-sr-only rvt-color-white">{{ item.title }}</span>{{ svg }}{% endset %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      <li>{{ link(title, item.url) }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

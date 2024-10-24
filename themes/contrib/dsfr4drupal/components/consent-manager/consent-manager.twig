@@ -1,0 +1,76 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set accept_all_label = accept_all_label|default('Accept all'|t) %}
+{% set accept_label = accept_label|default('Accept'|t) %}
+{% set confirm_label = confirm_label|default('Confirm my choices'|t) %}
+{% set more_details_label = more_details_label|default('See more details'|t) %}
+{% set refuse_all_label = refuse_all_label|default('Refuse all'|t) %}
+{% set refuse_label = refuse_label|default('Refuse'|t) %}
+
+<div{{ attributes.addClass('fr-consent-manager') }}>
+  <div class="fr-consent-service fr-consent-manager__header">
+    <fieldset class="fr-fieldset fr-fieldset--inline">
+      {% if title %}
+        <legend id="finality-legend" class="fr-consent-service__title">{{ title }}</legend>
+      {% endif %}
+      <div class="fr-consent-service__radios">
+        <div class="fr-radio-group">
+          <input type="radio" id="consent-all-accept" name="consent-all">
+          <label class="fr-label" for="consent-all-accept">{{ accept_all_label }}</label>
+        </div>
+        <div class="fr-radio-group">
+          <input type="radio" id="consent-all-refuse" name="consent-all">
+          <label class="fr-label" for="consent-all-refuse">{{ refuse_all_label }}</label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  {% for service in services %}
+    <div class="fr-consent-service">
+      <fieldset aria-labelledby="{{ service.attributes.id }}-legend {{ service.attributes.id }}-desc" role="group" class="fr-fieldset fr-fieldset--inline">
+        <legend id="{{ service.attributes.id }}-legend" class="fr-consent-service__title">{{ service.title }}</legend>
+        <div class="fr-consent-service__radios">
+          <div class="fr-radio-group">
+            <input type="radio" id="consent-{{ service.attributes.id }}-accept" name="consent-{{ service.attributes.id }}">
+            <label class="fr-label" for="consent-{{ service.attributes.id }}-accept">{{ accept_label }}</label>
+          </div>
+          <div class="fr-radio-group">
+            <input type="radio" id="consent-{{ service.attributes.id }}-refuse" name="consent-{{ service.attributes.id }}">
+            <label class="fr-label" for="consent-{{ service.attributes.id }}-refuse">{{ refuse_label }}</label>
+          </div>
+        </div>
+        {% if service.attributes.title %}
+          <p id="{{ service.attributes.id }}-desc" class="fr-consent-service__desc">{{ service.attributes.title }}</p>
+        {% endif %}
+        {% if service.below %}
+          <div class="fr-consent-service__collapse">
+            <button class="fr-consent-service__collapse-btn" aria-expanded="false" aria-describedby="{{ service.attributes.id }}-legend" aria-controls="{{ service.attributes.id }}-collapse">{{ more_details_label }}</button>
+          </div>
+          <div class="fr-consent-services fr-collapse" id="{{ service.attributes.id }}-collapse">
+            {% for sub_id, sub_service in service.below %}
+              <div class="fr-consent-service">
+                <fieldset class="fr-fieldset fr-fieldset--inline">
+                  <legend id="{{ service.attributes.id }}-{{ sub_id }}-legend" class="fr-consent-service__title">{{ sub_service.title }}</legend>
+                  <div class="fr-consent-service__radios fr-fieldset--inline">
+                    <div class="fr-radio-group">
+                      <input type="radio" id="consent-{{ service.attributes.id }}-{{ sub_id }}-accept" name="consent-{{ service.attributes.id }}-{{ sub_id }}">
+                      <label class="fr-label" for="consent-{{ service.attributes.id }}-{{ sub_id }}-accept">{{ accept_label }}</label>
+                    </div>
+                    <div class="fr-radio-group">
+                      <input type="radio" id="consent-{{ service.attributes.id }}-{{ sub_id }}-refuse" name="consent-{{ service.attributes.id }}-{{ sub_id }}">
+                      <label class="fr-label" for="consent-{{ service.attributes.id }}-{{ sub_id }}-refuse">{{ refuse_label }}</label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </fieldset>
+    </div>
+  {% endfor %}
+  {{ include('dsfr4drupal:button-group', {
+    'attributes': create_attribute({'class': ['fr-consent-manager__buttons', 'fr-btns-group--inline-sm']}),
+    'items': [{'label': confirm_label}],
+    'position': 'right',
+  }, with_context=false) }}
+</div>

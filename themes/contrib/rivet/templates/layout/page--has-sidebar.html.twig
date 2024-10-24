@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Template display for a single Drupal page with a visible sidebar region.
+ */
+ #}
+{% extends '@rivet/global/template.html.twig' %}
+
+{#
+  Use two_column_width defined in rivet_preprocess() to match content_top region
+  container with same in content region below.
+#}
+{% block content_top %}
+{% set content_top = page.content_top|filter((item, key) => key|first != '#') %}
+{% include "@rivet/regions/region--content-top.html.twig" with {'content': content_top, 'content_width': two_column_width} %}
+{% endblock content_top %}
+
+{#
+  Use 2-column width defined in rivet_preprocess().
+#}
+{% block content %}
+
+{% set layout_classes = [
+  'rvt-layout__wrapper',
+  'rvt-layout__wrapper--details',
+  two_column_width,
+]
+%}
+<div class="{{ layout_classes|join(' ') }}">
+
+<div class="rvt-layout__sidebar {{ not sidebar_border_right ? 'rvt-border-right-none' }}" id="section-nav">
+
+{{ page.sidebar }}
+
+</div>
+<div class="rvt-layout__content">
+
+{% block content_above %}{{ parent() }}{% endblock content_above %}
+
+{{ page.content }}
+
+{{ page.content_below }}
+
+{{ page.content_bottom }}
+
+</div>
+
+</div>
+
+{% endblock content %}
+{#
+  Do not render bottom regions since they moved up inside the content block.
+#}
+{% block content_below %}{% endblock content_below %}
+{% block content_bottom %}{% endblock content_bottom %}

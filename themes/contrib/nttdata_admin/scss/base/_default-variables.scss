@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'nttdata_admin_theme_icons';
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src:
+    url('../assets/icons/nttdata_admin_theme_icons.eot') format("eot"),
+    url('../assets/icons/nttdata_admin_theme_icons.ttf') format("ttf"),
+    url('../assets/icons/nttdata_admin_theme_icons.woff') format('woff'),
+    url('../assets/icons/nttdata_admin_theme_icons.svg') format('svg');
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'nttdata_admin_theme_icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icon-box: "\e900";
+$icon-close-solid: "\e901";
+$icon-copy: "\e902";
+$icon-edit-pencil: "\e903";
+$icon-trash: "\e904";
+$icon-enable: "\e905";
+$icon-clipboard: "\e906";
+$icon-cog: "\e907";
+$icon-inbox-check: "\e908";
+$icon-view-show: "\e909";
+$icon-download: "\e90a";
+$icon-letter-d-icon: "\e90b";
+$icon-translation-icon: "\e90c";
+
+@mixin icon(
+  $code,
+  $color,
+  $font-size: 1rem,
+  $width: 1rem,
+  $height: 1rem
+  ) {
+  display: inline-block;
+  content: $code !important;
+  font-family: 'nttdata_admin_theme_icons' !important;
+  color: $color;
+  font-size: $font-size;
+  width: $width;
+  height: $height;
+}

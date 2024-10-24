@@ -1,0 +1,20 @@
+uuid: 11c27200-5e42-4b88-b762-9ca47d369761
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - mili
+id: searchform
+theme: mili
+region: search_box
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search Here..'
+  provider: search
+  label_display: visible
+visibility: {  }

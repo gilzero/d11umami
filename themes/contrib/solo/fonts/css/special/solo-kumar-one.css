@@ -1,0 +1,4 @@
+.page-wrapper .kumar-one {
+  --solo-font-s: 'Kumar One', cursive;
+  font-family: var(--solo-font-s) !important;
+}

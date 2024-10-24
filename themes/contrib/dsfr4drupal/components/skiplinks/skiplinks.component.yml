@@ -1,0 +1,27 @@
+name: DSFR - Skiplinks
+description: Skip links allow users navigating with a keyboard, or equipped with screen readers, to access specific areas of the page more quickly.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    items:
+      type: array
+      title: Items
+      items:
+        type: object
+        properties:
+          anchor:
+            type: string
+            title: Item anchor
+            description: An HTML identifier
+          title:
+            type: string
+            title: Item title
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.skiplink

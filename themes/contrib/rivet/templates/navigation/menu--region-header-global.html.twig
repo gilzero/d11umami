@@ -1,0 +1,150 @@
+{#
+/**
+ * @file
+ * Rivet implementation for the global header menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link URL, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{{ attach_library('rivet/rvt-c-header-menu') }}
+
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/3.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0, region) }}
+
+{% macro menu_links(items, attributes, menu_level, region) %}
+  {% import _self as menus %}
+  {% set is_top_level = menu_level == 0 %}
+  {% set is_sub_level = menu_level > 0 %}
+  {% if items %}
+    {% set list_classes = [
+      is_top_level ? 'rvt-header-menu__list',
+      is_sub_level ? 'rvt-header-menu__submenu-list',
+    ] %}
+    {% set list_attrs = {
+      'class': list_classes,
+    } %}
+    <ul{{create_attribute(list_attrs)}}>
+    {% for item in items %}
+      {% set is_button = item.url and item.url.isRouted() and item.url.getRouteName() == '<button>' %}
+      {% set is_nolink = item.url and item.url.isRouted() and item.url.getRouteName() == '<nolink>' %}
+      {% set is_link = item.url and not is_button and not is_nolink %}
+      {% set item_classes = [
+        is_top_level ? 'rvt-header-menu__item',
+        is_sub_level ? 'rvt-header-menu__submenu-item',
+        is_top_level and item.in_active_trail ? 'rvt-header-menu__item--current',
+        is_sub_level ? 'rvt-header-menu__submenu-item',
+        is_sub_level and item.in_active_trail ? 'rvt-c-header-menu__submenu-item--current',
+      ] %}
+      {% set title = item.title|trim %}
+      <li{{ item.attributes.addClass(item_classes) }}>
+      {% set link_classes = [
+        is_top_level ? 'rvt-header-menu__link',
+        is_sub_level ? 'rvt-header-menu__submenu-link',
+      ] %}
+      {% set link_attrs = create_attribute({
+        'class': link_classes,
+      }) %}
+      {% set link %}{{ link(title, item.url, link_attrs) }}{% endset %}
+      {% set is_submenu_pullup = 'rvt-c-header-menu__submenu-pullup' in link %}
+      {% set is_menu_heading = 'rvt-dropdown__menu-heading' in link %}
+      {% if is_menu_heading and is_nolink %}
+        {% set link_attrs = create_attribute({
+          'class': link_classes,
+          'aria-hidden': 'true',
+        }) %}
+      {% endif %}
+      {% set dropdown_id = [region, menu_level, loop.index]|join('-') %}
+      {% set dropdown_classes = [
+        'rvt-dropdown',
+        is_top_level ? 'rvt-header-menu__dropdown',
+        is_sub_level ? 'rvt-c-header-menu__submenu-dropdown',
+      ] %}
+      {% set dropdown_attrs = {
+        'class': dropdown_classes,
+        'data-rvt-dropdown': dropdown_id,
+      } %}
+      {% set menu_group_classes = [
+        is_top_level ? 'rvt-header-menu__group',
+        is_sub_level ? 'rvt-c-header-menu__submenu-group',
+        is_sub_level and is_menu_heading ? 'rvt-c-header-menu__submenu-heading',
+      ] %}
+      {% set menu_classes = [
+        is_top_level ? 'rvt-dropdown__menu rvt-header-menu__submenu',
+        is_sub_level ? 'rvt-dropdown__menu rvt-c-dropdown__submenu',
+      ] %}
+      {% set menu_attrs = {
+        'class': menu_classes,
+        'data-rvt-dropdown-menu': dropdown_id,
+        'hidden': 'hidden',
+      } %}
+      {% if is_button %}
+      {% set link_attrs = {
+        'class': link_classes,
+        'data-rvt-dropdown-toggle': dropdown_id,
+        'aria-expanded': 'false',
+      } %}
+      {% set title %}
+        <span class="rvt-m-right-xs">{{ title }}</span>
+        {% if item.below %}
+        <span class="rvt-sr-only">Expand or hide links nested under the {{ item.title }} section</span>
+        <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16" class="rvt-global-toggle__open">{% if is_sub_level %}<path class="rvt-icon-chevron-right" d="M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z"/>{% else %}<path class="rvt-icon-chevron-down" d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"/>{% endif %}</svg>
+        {% endif %}
+      {% endset %}
+      {% endif %}
+      {% if not item.below %}
+        {{ link(title, item.url, link_attrs) }}
+      {% elseif item.below %}
+        {% if is_submenu_pullup %}
+          {{ link(title, item.url, link_attrs) }}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, region) }}
+        {% elseif is_button %}
+          <div{{ create_attribute(dropdown_attrs) }}>
+            {{ link(title, item.url, link_attrs) }}
+            <div{{ create_attribute(menu_attrs)}}>
+              {{ menus.menu_links(item.below, attributes, menu_level + 1, region) }}
+            </div>
+          </div>
+        {% else %}
+          <div{{ create_attribute(dropdown_attrs) }}>
+            <div class="{{ menu_group_classes|join(' ') }}">
+              {{ link(title, item.url, link_attrs) }}
+              <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="{{ dropdown_id }}">
+                <span class="rvt-sr-only">Toggle sub-navigation</span>
+                <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16">
+                  {% if is_sub_level %}
+                  <path class="rvt-icon-chevron-right rvt-hide-lg-down" d="M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z"></path>
+                  <path class="rvt-icon-chevron-down rvt-hide-lg-up" d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path>
+                  {% else %}
+                  <path class="rvt-icon-chevron-down" d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path>
+                  {% endif %}
+                </svg>
+              </button>
+            </div>
+            <div{{ create_attribute(menu_attrs)}}>
+              {{ menus.menu_links(item.below, attributes, menu_level + 1, region) }}
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

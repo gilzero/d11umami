@@ -1,0 +1,90 @@
+{% if items.pages %}
+  {% set aria_label = aria_label|default('Pagination'|t) %}
+  {% set attributes = attributes|default(create_attribute()) %}
+  {% set first_label = first_label|default('First page'|t) %}
+  {% set last_label = last_label|default('Last page'|t) %}
+  {% set next_label = next_label|default('Next page'|t) %}
+  {% set previous_label = previous_label|default('Previous page'|t) %}
+  {# There is a conflict between DSFR structure and Drupal behavior on the <a> tag. #}
+  {# If there are no href on <a> tag, javascript will crash when ajax is enabled. #}
+  {# DSFR doesn't expect href on disabled <a> are replaces with <span> to prevent error. #}
+  {% set first_tag = items.first is defined ? 'a' : 'span' %}
+  {% set last_tag = items.last is defined ? 'a' : 'span' %}
+  {% set next_tag = items.next is defined ? 'a' : 'span' %}
+  {% set previous_tag = items.previous is defined ? 'a' : 'span' %}
+  <nav{{ attributes.removeClass('js-pager__items').addClass('fr-pagination').setAttribute('role', 'navigation').setAttribute('aria-label', aria_label) }}>
+    <ul class="fr-pagination__list pager__items js-pager__items">
+      {% if not items.first %}
+        {% set first = {
+          attributes: create_attribute()
+        } %}
+      {% else %}
+        {% set first = items.first %}
+      {% endif %}
+      <li>
+        <{{ first_tag }}{{ first.attributes.addClass('fr-pagination__link', 'fr-pagination__link--first').setAttribute('href', first.href).setAttribute('aria-disabled', items.first is not defined ? 'true' : 'false') }}>
+          {{ first_label }}
+        </{{ first_tag }}>
+      </li>
+      {% if not items.previous %}
+        {% set previous = {
+          attributes: create_attribute()
+        } %}
+      {% else %}
+        {% set previous = items.previous %}
+      {% endif %}
+      <li>
+        <{{ previous_tag }}{{ previous.attributes.addClass('fr-pagination__link', 'fr-pagination__link--prev', 'fr-pagination__link--lg-label').setAttribute('href', previous.href) }} >
+          {{ previous_label }}
+        </{{ previous_tag }}>
+      </li>
+      {% if ellipses.previous %}
+        <li><span class="fr-pagination__link fr-hidden fr-unhidden-lg">...</span></li>
+      {% endif %}
+      {% for key, item in items.pages %}
+        <li>
+          {% if current == key %}
+            <span{{ item.attributes.addClass('fr-pagination__link').setAttribute('aria-current', 'page').setAttribute('title', 'Page @key'|t({'@key': key})) }}>
+              {{ key }}
+            </span>
+          {% elseif key - current > 1 or key - current < -1 %}
+            <a{{ item.attributes.addClass('fr-pagination__link', 'fr-hidden', 'fr-unhidden-lg').setAttribute('href', item.href).setAttribute('title', 'Page @key'|t({'@key': key})) }}>
+              {{ key }}
+            </a>
+          {% else %}
+            <a{{ item.attributes.addClass('fr-pagination__link').setAttribute('href', item.href).setAttribute('title', 'Page @key'|t({'@key': key})) }}>
+              {{ key }}
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+      {% if ellipses.next %}
+        <li><span class="fr-pagination__link fr-hidden fr-unhidden-lg">...</span></li>
+      {% endif %}
+      {% if not items.next %}
+        {% set next = {
+          attributes: create_attribute()
+        } %}
+      {% else %}
+        {% set next = items.next %}
+      {% endif %}
+      <li>
+        <{{ next_tag }}{{ next.attributes.addClass('fr-pagination__link', 'fr-pagination__link--next', 'fr-pagination__link--lg-label').setAttribute('href', next.href) }}>
+          {{ next_label }}
+        </{{ next_tag }}>
+      </li>
+      {% if not items.last %}
+        {% set last = {
+          attributes: create_attribute()
+        } %}
+      {% else %}
+        {% set last = items.last %}
+      {% endif %}
+      <li>
+        <{{ last_tag }}{{ last.attributes.addClass('fr-pagination__link', 'fr-pagination__link--last').setAttribute('href', last.href).setAttribute('aria-disabled', items.last is not defined ? 'true' : 'false') }}>
+          {{ last_label }}
+        </{{ last_tag }}>
+      </li>
+    </ul>
+  </nav>
+{% endif %}

@@ -1,0 +1,381 @@
+html,
+body {
+  min-height: 100%;
+  overflow-wrap: break-word;
+  font-family: var(--solo-font);
+  font-size: var(--solo-px16);
+  line-height: var(--solo-px32);
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* HTML tags */
+h1 {
+  font-size: var(--solo-px36);/* 36px */
+}
+
+h2 {
+  font-size: var(--solo-px32);/* 32px */
+}
+
+h3 {
+  font-size: var(--solo-px24);/* 24px */
+}
+
+h4 {
+  font-size: var(--solo-px20);/* 20px */
+}
+
+h5 {
+  font-size: var(--solo-px18);/* 18px */
+}
+
+h6 {
+  font-size: var(--solo-px16);/* 16px */
+}
+
+h1,
+h2,
+h3,
+.site-name,
+.site-slogan {
+  font-weight: 700;
+  font-family: var(--solo-h1);
+  margin: var(--solo-px12) 0;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: var(--solo-px8) 0;
+}
+
+hr {
+  border: 0;
+  border-top: var(--solo-px2) solid var(--r-br, var(--r-br-b));
+  margin: var(--solo-px20) 0;
+}
+
+.solo-image {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-placeholder {
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* End Var tags */
+.solo-container::after,
+.solo-container::before,
+.solo-panel::after,
+.solo-panel::before,
+.solo-row::after,
+.solo-row::before,
+.solo-clear::after,
+.solo-clear::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+::placeholder {
+  color: var(--r-tx);
+  opacity: 0.7;
+  font-size: 90%;
+}
+
+::-ms-input-placeholder {
+  color: var(--r-tx);
+  opacity: 0.7;
+}
+
+/*Unordered list */
+.solo-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+}
+
+.solo-ul li {
+  padding: var(--solo-px8) var(--solo-px16);
+}
+
+/* Button */
+.button,
+.solo-button {
+  display: inline-block;
+  padding: var(--solo-px8);
+  line-height: inherit;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.form-submit,
+[type="submit"],
+.solo-button.button--primary,
+.block-user-login-block form+.item-list ul li a {
+  border-width: var(--solo-px1);
+  border-style: solid;
+  padding: var(--solo-px10) var(--solo-px24);
+  margin: var(--solo-px6) auto;
+  float: none;
+  text-align: center;
+}
+
+.solo-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.solo-button.button--small {
+  padding: var(--solo-px8);
+  margin: var(--solo-px2) auto;
+}
+
+/* Forms Elements */
+.form-type-date > input {
+  max-height: 3.125rem;
+}
+
+
+.solo-check,
+.solo-radio,
+[type="radio"],
+[type="checkbox"] {
+  width: var(--solo-px24);
+  height: var(--solo-px24);
+  position: relative;
+  border: var(--solo-px1) solid var(--r-br, var(--r-br-b));
+  line-height: inherit;
+}
+
+textarea,
+.solo-input,
+.solo-textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  max-width: 100%;
+  padding: var(--solo-px10) var(--solo-px8);
+  display: block;
+  width: 100%;
+  border: var(--solo-px1) solid var(--r-br, var(--r-br-b));
+  line-height: inherit;
+}
+
+select,
+.solo-select {
+  max-width: 100%;
+  display: block;
+  line-height: inherit;
+  border: var(--solo-px1) solid var(--r-br, var(--r-br-b));
+  padding: var(--solo-px10) var(--solo-px40) var(--solo-px10) var(--solo-px8);
+  width: 100%;
+  background-image: var(--solo-select-arrow-icon);
+  background-repeat: no-repeat;
+  background-position: right var(--solo-px10) center;
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dropbutton-wrapper > div {
+  border: var(--solo-px1) solid var(--r-br, var(--r-br-b));
+  padding-top: var(--solo-px6);
+  padding-bottom: var(--solo-px6);
+}
+
+.dropbutton-multiple.open .dropbutton-arrow {
+  top: var(--solo-px20);
+}
+
+select[disabled] {
+  color: var(--solo-white);
+  background-color: var(--solo-dark-gray);
+}
+
+select.error {
+  border: solid var(--solo-px2) var(--solo-red);
+}
+
+select.error:focus {
+  outline-color: var(--solo-green);
+}
+
+select[multiple] {
+  height: auto;
+  background-image: none;
+  padding: var(--solo-px4) var(--solo-px8);
+}
+
+select[multiple] option {
+  padding: var(--solo-px4) var(--solo-px8);
+}
+
+ol {
+  display: block;
+}
+
+.form-type-number>label {
+  width: 100%;
+}
+
+.field-prefix,
+.field-suffix {
+  padding: var(--solo-px16) var(--solo-px8);
+  vertical-align: middle;
+}
+
+.solo-padding {
+  padding: var(--solo-px8) var(--solo-px16);
+}
+
+.solo-container,
+.solo-panel {
+  padding: var(--solo-px3) var(--solo-px16);
+}
+
+.solo-panel {
+  margin-top: var(--solo-px16);
+  margin-bottom: var(--solo-px16);
+}
+
+.solo-small {
+  font-size: var(--solo-px13);
+  line-height: var(--solo-px16);
+}
+
+.solo-medium {
+  font-size: var(--solo-px16);
+  line-height: var(--solo-px18);
+}
+
+.solo-bar {
+  width: 100%;
+  overflow: hidden;
+}
+
+.solo-bar .solo-bar-item {
+  padding: var(--solo-px8) var(--solo-px16);
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+}
+
+.solo-section {
+  margin-top: var(--solo-px16);
+  margin-bottom: var(--solo-px16);
+}
+
+.solo-block {
+  display: block;
+  width: 100%;
+}
+
+.solo-responsive {
+  display: block;
+  overflow-x: auto;
+}
+
+.links.inline {
+  display: flex;
+  justify-content: right;
+  font-size: var(--solo-px14);
+}
+
+form fieldset:not(td fieldset) {
+  border: 1px solid var(--r-br, var(--r-br-b)) !important;
+  margin-top: var(--solo-px12);
+}
+
+/* Global Classes */
+.solo-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.solo-relative {
+  position: relative;
+  width: 100%;
+}
+
+.visuallyhidden {
+  opacity: 0;
+}
+
+.dis-box-shadow {
+  box-shadow: none !important;
+}
+
+.dis-border {
+  border: 0 !important;
+}
+
+.dis-border-radius {
+  border-radius: 0 !important;
+}
+
+.dis-margin {
+  margin: 0 !important;
+}
+
+.dis-padding {
+  padding: 0 !important;
+}
+
+.dis-opacity {
+  animation: none !important;
+}
+
+.dis-text-transform {
+  text-transform: none !important;
+}
+
+.solo-card {
+  -webkit-box-shadow: 0 var(--solo-px1) var(--solo-px3) 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 var(--solo-px1) var(--solo-px3) 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 var(--solo-px1) var(--solo-px3) 0 rgba(0, 0, 0, 0.12);
+}

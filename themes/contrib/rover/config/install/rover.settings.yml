@@ -1,0 +1,24 @@
+favicon:
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  use_default: true
+container_size: container
+sidebar_first: "2"
+sidebar_second: "2"
+header_bg_colors: bg-primary
+banner_display: 1
+banner_align: center
+banner_title: "Rover UI Kit"
+banner_image: {}
+banner_desc:
+  value: "<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>"
+  format: full_html
+banner_url: ""
+banner_url_title: "see more"
+btn_type: primary
+btn_size: btn-md

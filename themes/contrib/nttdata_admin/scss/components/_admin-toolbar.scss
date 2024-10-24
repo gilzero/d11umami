@@ -1,0 +1,167 @@
+/**
+ * @file
+ * Admin toolbar.
+ */
+
+ #toolbar-administration #toolbar-bar #admin-toolbar-search-tab {
+  input {
+    color: $black-pearl;
+  }
+}
+
+#toolbar-administration {
+  #toolbar-bar {
+    border-bottom: 0.5px solid $light-grey;
+    .toolbar-tab {
+      background-color: $black;
+      color: $text-white;
+      border-left: 0.5px solid $light-grey;
+      border-right: 0.5px solid $light-grey;
+      a {
+        font-size: 0.9rem;
+        padding-top: 0.6rem;
+        padding-bottom: 0.7rem;
+        &.is-active {
+          color: $text-white;
+          background-color: $primary2;
+          text-decoration: none;
+          &:before {
+            @extend %filter-white;
+          }
+        }
+        &:hover {
+          background: $primary;
+          text-decoration: none;
+        }
+      }
+    }
+    .toolbar-toggle-orientation,
+    .toolbar-tray-vertical,
+    .toolbar-tray-horizontal {
+      border-left: 0.5px solid $light-grey;
+      border-right: 0.5px solid $light-grey;
+      background-color: $black-pearl;
+      .toolbar-lining {
+        background-color: $ck-grey2;
+        height: 100%;
+        button {
+          background-color: transparent;
+          min-height: 35px;
+          height: 100%;
+          &:before {
+            @extend %filter-dark-grey;
+          }
+          &:hover,
+          &:focus {
+            @extend %filter-black;
+          }
+        }
+      }
+      &.toolbar-tray {
+        background-color: $ck-grey;
+        border-top: 0.5px solid $light-grey;
+        border-bottom: 0.5px solid $light-grey;
+        .toolbar-menu {
+          li {
+            background-color: $white;
+            border: 0.5px solid $light-grey;
+            &.open {
+              > ul {
+                border-top: 0.5px solid $text-grey;
+              }
+            }
+            a {
+              background-color: #ffffff54; // $white with opacity
+              color: $text-grey;
+              &:before {
+                @extend %filter-dark-grey;
+              }
+              &.is-active {
+                background-color: #c1c2c765; // $light-grey with opacity
+                text-decoration: none;
+              }
+              &:hover {
+                background: #a2a2a36b; // $medium-grey with opacity
+                text-decoration: none;
+              }
+            }
+            button {
+              &:focus,
+              &:active {
+                background-color: transparent;
+                border: 2px solid $primary;
+              }
+            }
+          }
+        }
+        a {
+          &:focus {
+            background: transparent;
+            @include focus-outline;
+          }
+        }
+      }
+    }
+    .toolbar-tray-vertical {
+      .toolbar-lining {
+        button {
+          height: unset;
+        }
+      }
+    }
+    .toolbar-tray-horizontal {
+      .toolbar-menu-administration {
+        li.menu-item--expanded {
+          li.menu-item--expanded {
+            background-image: url('../assets/img/right-arrow-24.png');
+          }
+        }
+      }
+      ul li.menu-item--expanded .menu-item.hover-intent ul {
+        margin: -36px 0 0 200px;
+      }
+    }
+    #admin-toolbar-search-tab {
+      border: none;
+    }
+  }
+}
+
+body.dark-mode {
+  #toolbar-administration #toolbar-bar {
+    .toolbar-toggle-orientation,
+    .toolbar-tray-vertical,
+    .toolbar-tray-horizontal {
+      border-top: 0.5px solid $link-water;
+      border-bottom: 0.5px solid $link-water;
+      .toolbar-menu {
+        li {
+          border: 0.5px solid $link-water;
+          a {
+            background-color: #3f4a6071; // link-water with opacity
+            color: $light-grey;
+
+            &:before {
+              @extend %filter-light-grey;
+
+            }
+            &.is-active {
+              background-color: #161a2271; // darker link-water with opacity
+            }
+            &:hover {
+              background-color: #06070a9f; // darker link-water with opacity
+            }
+          }
+        }
+      }
+      .toolbar-lining {
+        button {
+          &:hover,
+          &:focus {
+            @extend %filter-light-grey;
+          }
+        }
+      }
+    }
+  }
+}

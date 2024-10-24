@@ -1,0 +1,12 @@
+# Theme definitions for Toolbar themes.
+
+toolbar_at_core:
+  label: "AT Toolbar"
+  version: 8.x-2.x
+  description: "Adaptivetheme style toolbar."
+  path: toolbar_theme
+  screen_shot: screenshot.png
+  base_theme: toolbar_themes_base
+  libraries:
+    base: at_core/at.toolbar_themes.base
+    icons: at_core/at.toolbar_themes.icons

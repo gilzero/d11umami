@@ -1,0 +1,25 @@
+services:
+  Drupal\ui_patterns_devel\Component\ComponentValidatorSilencer:
+    calls:
+      - [setValidator, []]
+
+  ui_patterns_devel.validator:
+    class: Drupal\ui_patterns_devel\Validator
+    arguments:
+      [
+        "@ui_patterns_devel.twig_validator",
+        "@ui_patterns_devel.definition_validator",
+      ]
+
+  ui_patterns_devel.definition_validator:
+    class: Drupal\ui_patterns_devel\DefinitionValidator
+    arguments: ['@Drupal\Core\Theme\Component\ComponentValidator']
+
+  ui_patterns_devel.twig_validator:
+    class: Drupal\ui_patterns_devel\TwigValidator\TwigValidator
+    arguments:
+      ["@twig", "@plugin.manager.twig_validator_rule", "@plugin.manager.sdc"]
+
+  plugin.manager.twig_validator_rule:
+    class: Drupal\ui_patterns_devel\TwigValidatorRulePluginManager
+    parent: default_plugin_manager

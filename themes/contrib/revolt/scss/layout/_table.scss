@@ -1,0 +1,30 @@
+table {
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  td,
+  th {
+    padding: 12px 15px;
+  }
+  thead {
+    tr {
+      background-color: $brand-color;
+      color: $white;
+      text-align: left;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $gray-dark;
+      &:nth-of-type(even) {
+        background-color: $white;
+      }
+      &:last-of-type {
+        border-bottom: 2px solid $brand-color;
+      }
+    }
+  }
+}

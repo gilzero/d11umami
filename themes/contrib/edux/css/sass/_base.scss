@@ -1,0 +1,209 @@
+/* Variables
+---------------------------------------- */
+ :root {
+  /* Theme Colors */
+  --theme-color: #FFCC18;
+  --theme-color-two: #383a68;
+  --primary: #FFCC18;
+  --secondary: #3e4182;
+  --dark: #2a2e52;
+  --light: #edeef5;
+  --border: #cccccc;
+  --bold-color: #111111;
+  --color-heading: #111111;
+  --content-bg: #f2f2f2;
+  --text-color: #222222;
+ --body-font: 'Noto Sans', sans-serif;
+ --heading-font: 'Noto Sans', sans-serif; 
+}
+/* HTML and Body
+---------------------------------------- */
+body {
+  font-family: var(--body-font);
+  background-color: #ffffff;
+  color: var(--text-color);
+}
+/* Regions
+---------------------------------------- */
+summary {
+  color: var(--text-color);
+}
+
+/* Typography
+---------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--bold-color);
+}
+strong {
+  color: var(--bold-color);
+}
+em {
+  color: var(--primary);
+}
+a {
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+a,
+a:active,
+li a.active {
+  color: var(--secondary);
+  
+}
+a:hover {
+  color: var(--primary);
+}
+
+/* Typography-> code tags */
+code,
+kbd,
+pre,
+samp {
+  background-color: var(--secondary);
+  color: #ffffff;
+}
+mark {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+figcaption {
+  background-color: var(--secondary);
+  color: #ffffff;
+}
+
+/* Form
+---------------------------------------- */
+/* Form -> Button */
+a.button,
+.button,
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background-color: var(--secondary);
+  color: #ffffff;
+  border: 4px solid var(--primary);
+  border-radius: 8px;
+  -webkit-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+a.button:hover,
+.button:hover,
+button:hover,
+[type="button"]:hover,
+[type="reset"]:hover,
+[type="submit"]:hover {
+  background-color: var(--dark);
+  color: var(--primary);
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  color: var(--text-color);
+  background-color: var(--light);
+  border: 1px solid var(--border);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border: 1px solid var(--primary);
+  background-color: #f0f0f0;
+}
+fieldset {
+  border: 1px solid var(--border);
+}
+/* Form -> Label */
+.form-item label,
+form label {
+  font-weight: 700;
+  color: var(--bold-color);
+}
+summary {
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+select {
+  color: var(--text-color);
+  background-color: #eeeeee;
+  border: 1px solid var(--border);
+}
+::-webkit-input-placeholder {
+  color: var(--border);
+}
+::placeholder {
+  color: var(--border);
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: var(--border);
+}
+::-ms-input-placeholder {
+  color: #969696;
+}
+:-moz-placeholder {
+  color: var(--border);
+}
+::-moz-placeholder {
+  color: var(--border);
+}
+/* Table
+---------------------------------------- */
+th {
+  background-color: var(--secondary);
+  color: #fff;
+  border: 1px solid var(--dark);
+}
+td {
+  border: 1px solid var(--border);
+}
+
+/* Common HTML Elements
+---------------------------------------- */
+hr {
+  background: var(--border);
+}
+dt {
+  color: var(--bold-color);
+}
+blockquote {
+  background-color: var(--light);
+  box-shadow: 2px 2px 6px var(--border);
+  border-left: 8px solid var(--secondary);
+}
+
+/* Selection
+---------------------------------------- */
+::-moz-selection {
+  background: var(--primary);
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: var(--primary);
+  color: #fff;
+  text-shadow: none;
+}

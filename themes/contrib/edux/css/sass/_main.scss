@@ -1,0 +1,32 @@
+/* Main
+---------------------------------------- */
+/* Main -> Admin tabs */
+ul.page-tabs {
+  border-bottom: 2px solid var(--secondary);
+}
+.page-tabs li a {
+  background: #dddddd;
+  color: var(--secondary);
+  border-right: 2px solid var(--secondary);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.page-tabs li.active-page-tab a,
+.page-tabs li a:hover {
+  background: var(--secondary);
+}
+/* Main -> Filter Module */
+.filter-wrapper {
+  border: 1px solid var(--border);
+}
+/* Node Submitted Details */
+.submitted-icons {
+  color: var(--primary);
+}
+.node-taxonomy-container .term-title::before {
+  font-family: 'ficon';
+  content: "\e902";
+  color: var(--primary);
+  padding-right: 6px;
+}

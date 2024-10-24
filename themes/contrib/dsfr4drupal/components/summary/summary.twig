@@ -1,0 +1,16 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set title_id = title_id|default('fr-summary-title--' ~ random()) %}
+{% set title_tag = title_tag|default('p') %}
+
+<nav{{ attributes.addClass('fr-summary').setAttribute('role', 'navigation').setAttribute('aria-labelledby', title_id) }}>
+  <{{ title_tag }} class="fr-summary__title" id="{{ title_id }}">{{ title }}</{{ title_tag }}>
+  <ol class="fr-summary__list">
+    {% for item in items %}
+      <li>
+        {% set link_attributes = item.attributes|default(create_attribute()) %}
+        {% set url = item.url|default(item.attributes.href.__toString()) %}
+        {{ link(item.title, url, link_attributes.addClass('fr-summary__link')|without('href')) }}
+      </li>
+    {% endfor %}
+  </ol>
+</nav>

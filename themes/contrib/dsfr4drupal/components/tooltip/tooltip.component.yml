@@ -1,0 +1,30 @@
+name: DSFR - Tooltip
+description: The “Tooltip” component (or “help bubble”, “contextual help”) allows you to display content in the navigation context (non-modal) about and during interaction with a specific element of the interface . It is hidden by default and is displayed when hovering over or clicking on the associated element, over the rest of the page.
+status: stable
+group: DSFR
+props:
+  properties:
+    title:
+      type: string
+      title: Title
+    title_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Title attributes
+    tooltip:
+      type: string
+      title: Tooltip
+    tooltip_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Tooltip attributes
+    tooltip_id:
+      type: integer
+      title: Tooltip identifier
+    url:
+      type: string
+      title: URL
+  required:
+    - title
+    - tooltip
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.tooltip

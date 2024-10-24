@@ -1,0 +1,23 @@
+// Base
+@import 'base/mixins';
+@import 'base/colors';
+@import 'base/variables';
+@import 'base/functions';
+@import 'base/accessibility';
+
+// Dark Mode
+@import 'dark-mode/buttons';
+@import 'dark-mode/cke';
+@import 'dark-mode/dialog';
+@import 'dark-mode/elements';
+@import 'dark-mode/filters';
+@import 'dark-mode/forms';
+@import 'dark-mode/media-directories';
+@import 'dark-mode/media-library';
+@import 'dark-mode/modules-tabs';
+@import 'dark-mode/pager';
+@import 'dark-mode/panels';
+@import 'dark-mode/paragraphs';
+@import 'dark-mode/tables';
+@import 'dark-mode/tabs';
+@import 'dark-mode/views';

@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Theme override for a range input form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{{ attach_library('rivet/rvt-c-range-input') }}
+<input{{attributes.removeClass('form-range').addClass('rvt-c-range-input')}}/>{{ children }}
+

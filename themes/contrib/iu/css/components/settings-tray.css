@@ -1,0 +1,36 @@
+/* See also contextual.css */
+
+.js-settings-tray-edit-mode .contextual-region,
+.contextual-region:hover {
+  outline: 1px dashed rgba(178, 178, 178, 0.5);
+  box-shadow: none;
+  outline-offset: 1px;
+}
+
+/* "html" required to override styles from settings_tray.theme.css */
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .contextual-region[data-quickedit-entity-id],
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .settings-tray-editable {
+  outline: 2px dashed rgba(178, 178, 178, 0.3);
+  box-shadow: none;
+  outline-offset: 1px;
+}
+
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .contextual-region:not(.quickedit-entity-active)[data-quickedit-entity-id]:hover,
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .settings-tray-editable:hover,
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .settings-tray-editable.focus,
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .settings-tray-editable.settings-tray-active-editable,
+html .contextual-region.focus {
+  background-color: rgba(12, 155, 237, 0.3);
+  outline: 3px solid rgba(12, 155, 237, 0.37);
+  outline-offset: 0;
+}
+
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .contextual-region:not(.quickedit-entity-active)[data-quickedit-entity-id]:hover .section,
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .settings-tray-editable:hover .section {
+  background: transparent;
+}
+
+html .settings-tray-editable.quickedit-entity-active,
+html .contextual-region.quickedit-entity-active {
+  outline: none !important;
+}

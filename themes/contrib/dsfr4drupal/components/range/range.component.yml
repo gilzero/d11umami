@@ -1,0 +1,58 @@
+name: DSFR - Range
+description: The cursor component is an input composed of digital inputs used to manually delimit a selection in relation to a minimum and maximum value. They are used to show the options chosen in real time and inform decision-making.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    disabled:
+      type: boolean
+      title: Is disabled?
+      default: false
+    double:
+      type: boolean
+      title: Has double cursor?
+      default: false
+    errors:
+      type: array
+      title: Errors
+      items:
+        type: string
+    group_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Group attributes
+    hint_text:
+      type: string
+      title: Hint text
+    input_id:
+      type: string
+      title: Input identifier
+    input_max:
+      type: integer
+      title: Input maximum value
+    input_min:
+      type: integer
+      title: Input minimum value
+    input_title:
+      type: string
+      title: Input name
+    input_value:
+      type: integer
+      title: Input value
+    input2_value:
+      type: integer
+      title: Input2 value
+    label:
+      type: string
+      title: Label
+    label_max:
+      type: string
+      title: Label for maximum value
+    label_min:
+      type: string
+      title: Label for minimum value
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.range

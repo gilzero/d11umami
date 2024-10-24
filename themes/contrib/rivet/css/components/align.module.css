@@ -1,0 +1,117 @@
+/* Floated images are unnecessary on mobile screens. */
+.align-left,
+.align-right {
+  float: none;
+}
+
+/* Center images properly. */
+.align-center.caption-drupal-entity:not(.rvt-layout__break-out),
+.align-center.embedded-entity:not(.rvt-layout__break-out) {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Captioned images may inadvertently receive the break-out class on the inner parent div from Entity Embeds. */
+:where(.caption.align-left, .caption.align-right) .rvt-layout__break-out,
+.rvt-layout__break-out .rvt-layout__break-out {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Make vertical whitespace consistent with captioned images. */
+.rvt-flow > .embedded-entity,
+.rvt-flow > .embedded-entity + * {
+  --flow-space: 3rem;
+}
+
+@media screen and (min-width: 46.25em) {
+  /* Allow for text to flow around floated images comfortably. */
+  .align-left.caption-drupal-entity,
+  .align-left.embedded-entity,
+  .align-right.caption-drupal-entity,
+  .align-right.embedded-entity {
+    max-width: 50%;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  .align-left.caption-drupal-entity,
+  .align-left.embedded-entity {
+    float: left;
+    margin-right: 2rem;
+    margin-left: -4rem;
+  }
+
+  .rvt-layout__wrapper--single .align-left.caption-drupal-entity,
+  .rvt-layout__wrapper--single .align-left.embedded-entity {
+    margin-left: -1.5rem;
+  }
+
+  .align-right.caption-drupal-entity,
+  .align-right.embedded-entity {
+    float: right;
+    margin-right: -1.5rem;
+    margin-left: 2rem;
+  }
+}
+
+/* Fix negative right margin on break-out inside Rivet Container XL. */
+@media screen and (min-width: 78.75em) {
+  .align-right.caption-drupal-entity,
+  .align-right.embedded-entity {
+    margin-right: -4rem;
+  }
+
+  .rvt-container-xl .align-right.caption-drupal-entity,
+  .rvt-container-xl .align-right.embedded-entity {
+    margin-right: -1.5rem;
+  }
+
+  .rvt-container-xl .align-left.caption-drupal-entity,
+  .rvt-container-xl .align-left.embedded-entity {
+    margin-left: -4rem;
+  }
+
+  .rvt-layout__wrapper--single .align-left.caption-drupal-entity,
+  .rvt-layout__wrapper--single .align-left.embedded-entity {
+    margin-left: -4rem;
+  }
+
+  .rvt-container-xl.rvt-layout__wrapper--single
+    .align-left.caption-drupal-entity,
+  .rvt-container-xl.rvt-layout__wrapper--single .align-left.embedded-entity {
+    margin-left: -1.5rem;
+  }
+}
+
+@media screen and (min-width: 86.25em) {
+  .rvt-container-xl .align-right.caption-drupal-entity,
+  .rvt-container-xl .align-right.embedded-entity {
+    margin-right: calc((50vw - (86.25em - 3rem) / 2) * -1);
+  }
+
+  .rvt-container-xl .align-left.caption-drupal-entity,
+  .rvt-container-xl .align-left.embedded-entity {
+    margin-left: -4rem;
+  }
+
+  .rvt-container-xl.rvt-layout__wrapper--single
+    .align-left.caption-drupal-entity,
+  .rvt-container-xl.rvt-layout__wrapper--single .align-left.embedded-entity {
+    margin-left: calc((50vw - (86.25em - 3rem) / 2) * -1);
+  }
+}
+
+@media screen and (min-width: 91.25em) {
+  .rvt-container-xl .align-right.caption-drupal-entity,
+  .rvt-container-xl .align-right.embedded-entity {
+    margin-right: -4rem;
+  }
+
+  .rvt-container-xl.rvt-layout__wrapper--single
+    .align-left.caption-drupal-entity,
+  .rvt-container-xl.rvt-layout__wrapper--single .align-left.embedded-entity {
+    margin-left: -4rem;
+  }
+}

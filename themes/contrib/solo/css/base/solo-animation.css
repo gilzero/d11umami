@@ -1,0 +1,250 @@
+/* button animation  */
+@keyframes btnBorderAnimation {
+  0% {
+    width: 0;
+    height: 0;
+    border-bottom-color: var(--r-br, var(--r-br-b));
+  }
+
+  99.9999% {
+    width: 100%;
+    height: 100%;
+    border-bottom-color: var(--r-br, var(--r-br-b));
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    border-bottom-color: transparent;
+  }
+
+}
+
+.page-wrapper .login-button-open button,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>a,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>button {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-wrapper .login-button-open button::after,
+.page-wrapper .login-button-open button::before,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>a::after,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>a::before,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>button::after,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  right: 0;
+  background-color: transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.page-wrapper .login-button-open button::before,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>a::before,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>button::before {
+  left: 0;
+}
+
+.page-wrapper .login-button-open button::after,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>a::after,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>button::after {
+  right: 0;
+}
+
+.page-wrapper .login-button-open button:hover::after,
+.page-wrapper .login-button-open button:hover::before,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>a:hover::after,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>a:hover::before,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>button:hover::after,
+.page-wrapper nav ul:not(.solo-ul,
+.field ul) li>button:hover::before {
+  animation: btnBorderAnimation 0.5s linear forwards;
+}
+
+a,
+button,
+input.button {
+  transition: 0.3s;
+}
+
+.page-wrapper form input.button.form-submit:hover {
+  animation: wiggle 0.3s;
+}
+
+
+.solo-animate-opacity,
+.solo__fade-in {
+  animation: opac 0.8s;
+  animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+.solo-animate-top {
+  position: relative;
+  animation: animatetop 0.6s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 1, 0.1);
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+
+}
+
+.solo-animate-left {
+  position: relative;
+  animation: animateleft 0.6s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 1, 0.1);
+}
+
+@keyframes animateleft {
+  from {
+    left: -300px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+
+}
+
+.solo-animate-right {
+  position: relative;
+  animation: animateright 0.6s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 1, 0.1);
+}
+
+@keyframes animateright {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+
+  to {
+    right: 0;
+    opacity: 1;
+  }
+
+}
+
+.solo-animate-bottom {
+  position: relative;
+  animation: animatebottom 0.6s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 1, 0.1);
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+
+}
+
+.solo-animate-zoom {
+  animation: animatezoom 0.6s;
+  animation-timing-function: cubic-bezier(0.1, 0.5, 1, 0.1);
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+
+}
+
+.solo-animate-input {
+  transition: width 0.4s ease-in-out;
+}
+
+.solo-animate-input:focus {
+  width: 100% !important;
+}
+
+@keyframes wiggle {
+  0%,
+  7%,
+  100% {
+    transform: rotateZ(0) scale(1);
+  }
+
+  15% {
+    transform: rotateZ(-8deg) scale(1.03);
+  }
+
+  20% {
+    transform: rotateZ(6deg) scale(0.97);
+  }
+
+  25% {
+    transform: rotateZ(-6deg) scale(1.03);
+  }
+
+  30% {
+    transform: rotateZ(4deg) scale(0.97);
+  }
+
+  35% {
+    transform: rotateZ(-2deg) scale(1.03);
+  }
+
+  40% {
+    transform: rotateZ(0) scale(1);
+  }
+}
+
+.dis-anim-submit form input.button.form-submit:hover {
+  animation: none !important;
+}
+
+.dis-anim-link nav ul li>a:hover::after,
+.dis-anim-link nav ul li>a:hover::before,
+.dis-anim-link nav ul li>button:hover::after,
+.dis-anim-link nav ul li>button:hover::before {
+  animation: none !important;
+}

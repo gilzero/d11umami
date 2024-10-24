@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ * - roles: Array of roles for this user.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - base_path: The base path, the result of base_path().
+ * - access_profiles: Does the current user have access to view profiles.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+{%-
+  set classes = [
+    'user',
+    'user--profile',
+    'user--id-' ~ user.id,
+    roles ? roles|join(' '),
+    user.isBlocked() ? 'user--is-blocked' : 'user--is-active',
+    view_mode ? 'user--view-mode-' ~ view_mode|clean_class,
+  ]
+-%}
+<article{{ attributes.addClass(classes).setAttribute('role', 'article')|without('id') }}>
+
+  {%- if user.isBlocked() -%}
+    <span class="user__status user--is-blocked marker marker--warning" aria-label="Status message" role="contentinfo">
+      <span class="visually-hidden">{%- trans %}This user is {% endtrans %}</span>{% trans %}Blocked{% endtrans -%}
+    </span>
+  {%- endif -%}
+
+  {{- title_prefix -}}
+  {%- if label -%}
+    {%- if view_mode == 'full' -%}
+      <h1{{ title_attributes.addClass('user__title') }}>{{- label -}}</h1>
+    {%- else -%}
+      <h2{{ title_attributes.addClass('user__title') }}>
+        {%- if access_profiles -%}
+          <a href="{{ base_path }}user/{{ user.id }}" class="user__title-link" rel="bookmark">{{- label -}}</a>
+        {%- else -%}
+          {{- label -}}
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+  {%- endif -%}
+  {{- title_suffix -}}
+
+  {%- if content -%}
+    {{- content -}}
+  {%- endif -%}
+
+</article>

@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Custom theme implementation for Symfony Email.
+ *
+ * Leverages the non-branded IU email template.
+ *
+ * Variables:
+ * - body: Email body content.
+ *
+ * @see template_preprocess_email()
+ */
+#}
+{% extends '@iu/email/email-template--nonbranded.html.twig' %}
+
+{% block content %}
+{%
+  set classes = [
+    'email-type-' ~ type|clean_class,
+    'email-sub-type-' ~ sub_type|clean_class,
+  ]
+%}
+<div{{attributes.addClass(classes)}}>
+{{ body }}
+</div>
+{% endblock %}
+
+{% block compliance %}
+This e-mail was sent automatically to <strong>{{ to_mail }}</strong>{% if from_name and from_name != site_name %} on behalf of {{ from_name }}{% endif %} by the {{ site_name }} website.
+{% endblock %}

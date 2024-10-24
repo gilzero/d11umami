@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Override the system menu block to match IU Framework expectations.
+ */
+ #}
+{% set hasContent = content['#items'] %}
+{% if hasContent %}
+<nav{{ attributes }} role="navigation" aria-label=" {{ 'Section navigation'|t }}" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+  {{ title_prefix }}{{ title_suffix }}
+  <span class="section-nav-label">In this section</span>
+  {{ content }}
+</nav>
+{% endif %}

@@ -1,0 +1,130 @@
+# Layout
+container_width: 1170
+header_width: 'header_width_contained'
+main_width: 'main_width_contained'
+footer_width: 'footer_width_contained'
+
+# Homepage slider
+slider_show: 1
+slider_code: ''
+slider_image: ''
+slider_image_path: ''
+slider_image_bg: 1
+slider_speed: 5000
+
+# Header
+header_main_default: 1
+header_main_padding_top: 1
+header_main_padding_bottom: 1
+header_page_default: 1
+header_page_padding_top: 5
+header_page_padding_bottom: 5
+header_page_content_position: 'center'
+header_login_links: 1
+
+
+# Sidebar
+front_sidebar: 0
+sidebar_width_default: 1
+sidebar_width_left: 30
+sidebar_width_right: 30
+sidebar_block_default: 1
+sidebar_padding: 20
+sidebar_radius: 6
+sidebar_margin: 2
+sidebar_title_font_size: 1.9
+sidebar_title_transform: 'none'
+
+# Footer
+copyright_text: 1
+
+# Content
+rtl: 0
+node_author_pic: 0
+node_tags: 0
+
+# Social
+all_icons_show: 1
+facebook_url: 'https://www.facebook.com/idewdot'
+twitter_url: 'https://twitter.com/dewdots'
+instagram_url: 'https://www.instagram.com/google'
+linkedin_url: 'https://in.linkedin.com/company/google'
+youtube_url: 'https://www.youtube.com/user/Google'
+vimeo_url: 'https://vimeo.com/'
+telegram_url: 'https://telegram.org/'
+whatsapp_url: 'https://web.whatsapp.com/'
+github_url: 'https://github.com/'
+vk_url: ''
+
+# Font Icons
+fontawesome_four: 0
+fontawesome_five: 0
+bootstrapicons: 0
+
+# comment
+comment_user_pic: 1
+highlight_author_comment: 0
+
+# Typography
+body_font_size: 1
+body_line_height: 1.7
+paragraph_bottom: 1.2
+headings_default: 1
+h1_size: 2.6
+h1_weight: 700
+h1_transform: 'none'
+h1_height: 1.7
+h2_size: 2.2
+h2_weight: 700
+h2_transform: 'none'
+h2_height: 1.7
+h3_size: 1.8
+h3_weight: 700
+h3_transform: 'none'
+h3_height: 1.7
+h4_size: 1.4
+h4_weight: 700
+h4_transform: 'none'
+h4_height: 1.7
+h5_size: 1.2
+h5_weight: 700
+h5_transform: 'none'
+h5_height: 1.7
+h6_size: 1.1
+h6_weight: 700
+h6_transform: 'none'
+h6_height: 1.7
+
+
+# Elements
+logo_default: 1
+site_name_size: 1
+site_name_weight: 700
+site_name_transform: 'none'
+site_name_height: 1.1
+slogan_size: 1
+slogan_transform: 'none'
+slogan_height: 1.1
+slogan_style: 'normal'
+main_menu_default: 1
+main_menu_top_size: 1
+main_menu_top_weight: 700
+main_menu_top_transform: 'none'
+main_menu_sub_size: 0.9
+main_menu_sub_weight: 700
+main_menu_sub_transform: 'none'
+page_title_default: 1
+page_title_size_desktop: 2.6
+page_title_size_mobile: 2.2
+page_title_transform: 'none'
+button_default: 1
+button_padding: '8px 10px'
+button_radius: 8
+
+# Components
+font_src: 'local'
+scrolltotop_on: 1
+
+# Custom styling
+styling: 0
+styling_code: ''

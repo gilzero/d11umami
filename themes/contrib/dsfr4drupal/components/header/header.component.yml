@@ -1,0 +1,86 @@
+name: DSFR - Header
+description: The header helps users identify which site they are on. It can provide access to search and certain key pages or features.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    header_id:
+      type: string
+      title: Header HTML identifier
+    is_front:
+      type: boolean
+      title: Is homepage?
+      default: true
+    logo_operator:
+      type: string
+      title: Logo operator image tag
+    logo_text:
+      type: string
+      title: Logo text
+    navbar:
+      type: string
+      title: Navbar elements
+    navbar_close_button_label:
+      type: string
+      title: Menu close button label
+      description: 'By default: "Close", or the translated string in another language.'
+    navbar_close_button_title:
+      type: string
+      title: Menu close button title attribute
+      description: 'By default: "Close menu", or the translated string in another language.'
+    navbar_button_label:
+      type: string
+      title: Navbar button label
+      description: 'By default: "Menu", or the translated string in another language.'
+    navbar_button_title:
+      type: string
+      title: Navbar button title attribute
+      description: 'By default: "Menu", or the translated string in another language.'
+    search_button_label:
+      type: string
+      title: Search button label
+      description: 'By default: "Search", or the translated string in another language.'
+    search_button_title:
+      type: string
+      title: Search button title attribute
+      description: 'By default: "Search", or the translated string in another language.'
+    service_tagline:
+      type: string
+      title: Service tagline
+    service_tagline_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Service tagline attributes
+    service_tagline_tag:
+      type: string
+      title: Service tagline HTML tag
+      default: p
+    service_title:
+      type: string
+      title: Service title
+    service_title_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Title attributes
+    service_title_tag:
+      type: string
+      title: Title HTML tag
+      default: p
+    tools_links:
+      type: string
+      title: Tools links elements
+    tools_search:
+      type: string
+      title: Tools search elements
+    tools_search_close_button_label:
+      type: string
+      title: Tools search close button label
+      description: 'By default: "Close", or the translated string in another language.'
+    tools_search_close_button_title:
+      type: string
+      title: Tools search close button title attribute
+      description: 'By default: "Close search", or the translated string in another language.'
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.header

@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for local actions (primary admin actions.)
+ */
+#}
+{%
+  set classes = [
+    'action-links',
+  ]
+%}
+{% if content|render|striptags|trim|length %}
+<nav{{ attributes.addClass(classes)|without('id') }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</nav>
+{% endif %}

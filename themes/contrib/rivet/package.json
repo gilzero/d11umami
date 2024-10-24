@@ -1,0 +1,21 @@
+{
+  "name": "rivet",
+  "version": "1.0.0",
+  "license": "BSD-3-Clause",
+  "description": "An implementation of Indiana University's <a href='https://rivet.iu.edu'>Rivet Design System</a> for Drupal.",
+  "author": "James Wilson <jrwilson3@gmail.com>",
+  "devDependencies": {
+    "rivet-core": "^2.8.1",
+    "sass": "^1.79.5"
+  },
+  "scripts": {
+    "sass-watch": "sass --watch --style=expanded scss:css/compiled",
+    "sass-compile": "sass --style=expanded scss:css/compiled",
+    "start": "npm run sass-watch",
+    "build": "npm run sass-compile"
+  },
+  "engines": {
+    "npm": ">=9.6.0",
+    "node": ">=16.18.0"
+  }
+}

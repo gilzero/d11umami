@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Claro's theme implementation for the content of an administrative block.
+ *
+ * Available variables:
+ * - content: List of administrative menu items. Each menu item contains:
+ *   - link: Link to the admin section.
+ *   - title: Short name of the section.
+ *   - description: Description of the administrative menu item.
+ *   - url: URI to the admin section.
+ *   - options: URL options. See \Drupal\Core\Url::fromUri() for details.
+ * - attributes: HTML attributes to be added to the element.
+ * - compact: Boolean indicating whether compact mode is turned on or not.
+ *
+ * @see template_preprocess_admin_block_content()
+ * @see claro_preprocess_admin_block_content()
+ */
+#}
+{%
+  set item_classes = [
+    'admin-item',
+    'nttdata-card'
+  ]
+%}
+
+{%
+  set title_classes = [
+    'admin-item__title',
+    'nttdata-card-title'
+  ]
+%}
+
+{%
+  set description_classes = [
+    'admin-item__description',
+    'nttdata-card-text'
+  ]
+%}
+
+{% if content %}
+  <div{{ attributes.addClass('admin-list') }}>
+    {% for item in content %}
+      <div{{ create_attribute({class: item_classes}) }}>
+        <div{{ create_attribute({class: title_classes}) }}>{{ item.link }}</div>
+        {% if item.description %}
+          <div{{ create_attribute({class: description_classes}) }}>{{ item.description }}</div>
+        {% endif %}
+        <div class="card-icon transition-arrow">
+          <div class="nttdata-icon">
+            <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g class="arrow-group" transform="translate(-7.000000, -7.000000)">
+                  <path d="M12.8824333,7 L18,12.5000197 L12.8824333,18 L11.8125183,16.8502914 L15.097,13.32 L7,13.3203142 L7,11.6788584 L15.097,11.678 L11.8125183,8.14970861 L12.8824333,7 Z" id="Combined-Shape-Copy-2"></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

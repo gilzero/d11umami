@@ -1,0 +1,75 @@
+name: DSFR - Consent (manager)
+description: The consent manager allows the user to define their preferences on the use of their personal data, in particular the deposit of non-functional cookies in their browser).
+status: stable
+group: DSFR
+props:
+  properties:
+    accept_all_label:
+      type: string
+      title: Accept all button label
+      description: 'By default: "Accept all", or the translated string in another language.'
+    accept_label:
+      type: string
+      title: Accept button label
+      description: 'By default: "Accept", or the translated string in another language.'
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    confirm_label:
+      type: string
+      title: Confirm button label
+      description: 'By default: "Confirm my choices", or the translated string in another language.'
+    more_details_label:
+      type: string
+      title: More details button label
+      description: 'By default: "See more details", or the translated string in another language.'
+    refuse_all_label:
+      type: string
+      title: Refuse all button label
+      description: 'By default: "Refuse all", or the translated string in another language.'
+    refuse_label:
+      type: string
+      title: Refuse button label
+      description: 'By default: "Refuse", or the translated string in another language.'
+    services:
+      type: array
+      title: Service items
+      items:
+        type: object
+        properties:
+          attributes:
+            type: object
+            title: Service attributes
+            properties:
+              id:
+                type: string
+                title: Service identifier
+              title:
+                type: string
+                title: Service title
+              below:
+                type: array
+                title: Service items below
+                items:
+                  type: object
+                  properties:
+                    attributes:
+                      type: object
+                      title: Service attributes
+                      properties:
+                        id:
+                          type: string
+                          title: Sub-service identifier
+                        title:
+                          type: string
+                          title: Sub-service title
+    title:
+      type: string
+      title: Title
+      description: 'By default: "Manage consent", or the translated string in another language.'
+  required:
+    - services
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.consent
+    - dsfr4drupal/component.radio

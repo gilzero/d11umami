@@ -1,0 +1,190 @@
+name: Table
+description: "Table can be used to show a list of data in a table format."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/table/"
+variants:
+  xs:
+    title: "Extra small"
+  sm:
+    title: Small
+  md:
+    title: Medium
+  lg:
+    title: Large
+slots:
+  header:
+    title: Header
+    description: "A sequence of cell components."
+  body:
+    title: Header
+    description: "A sequence of cell components."
+  footer:
+    title: Footer
+    description: "A sequence of cell components."
+props:
+  type: object
+  properties:
+    zebra:
+      title: Zebra
+      description: "Table with Zebra display"
+      $ref: "ui-patterns://boolean"
+    pinned_rows:
+      title: "Pinned rows?"
+      description: "Table with pinned-rows"
+      $ref: "ui-patterns://boolean"
+    pinned_cols:
+      title: "Pinned cols?"
+      description: "Table with pinned-cols"
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      header:
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: ""
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: Name
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: Job
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: Company
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: Location
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: ""
+          props:
+            tag: th
+      body:
+        - - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "1"
+            props:
+              tag: th
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "Cy Ganderton"
+            props:
+              tag: td
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "Quality Control Specialist"
+            props:
+              tag: td
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "Littel, Schaden and Vandervort"
+            props:
+              tag: td
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: Canada
+            props:
+              tag: td
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "1"
+            props:
+              tag: th
+        - - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "2"
+            props:
+              tag: th
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "Hart Hagerty"
+            props:
+              tag: td
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "Desktop Support Technician"
+            props:
+              tag: td
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "Zemlak, Daniel and Leannon"
+            props:
+              tag: td
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "United States"
+            props:
+              tag: td
+          - type: component
+            component: "ui_suite_daisyui:table_cell"
+            slots:
+              content: "2"
+            props:
+              tag: th
+      footer:
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: ""
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: Name
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: Job
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: Company
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: Location
+          props:
+            tag: th
+        - type: component
+          component: "ui_suite_daisyui:table_cell"
+          slots:
+            content: ""
+          props:
+            tag: th

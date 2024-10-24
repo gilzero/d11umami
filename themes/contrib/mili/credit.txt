@@ -1,0 +1,46 @@
+Morphist Slider
++-------------------+
+https://github.com/MrSaints/Morphist
+
+
+Google web font
++-------------------+
+https://fonts.google.com/
+
+
+Heebo Font
+https://fonts.google.com/specimen/Heebo
+
+
+Poppins Font
+Indian Type Foundry (info@indiantypefoundry.com)
+
+
+Google material font icons
++-------------------+
+https://material.io/tools/icons
+
+
+FontAwesome font icons
++-------------------+
+https://fontawesome.com/
+
+
+Bootstrap Icons
++-------------------+
+https://icons.getbootstrap.com/
+
+
+Custom font icon library generated using
++-------------------+
+https://iconly.io/
+
+
+
+
+
+Social Icons
+---------------------------
+https://www.flaticon.com/packs/social-media-51
+
+

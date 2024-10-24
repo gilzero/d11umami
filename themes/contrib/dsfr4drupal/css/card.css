@@ -1,0 +1,8 @@
+/**
+ * @file
+ * Fix card styling with "time" html tag.
+ */
+
+.fr-card__detail time {
+  display: contents;
+}

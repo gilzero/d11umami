@@ -1,0 +1,248 @@
+/**
+ * @file
+ * Views.
+ */
+
+.views-edit-view {
+  .views-display-top {
+    color: $text-white;
+    background: $primary;
+    border-bottom: 1px solid $light-grey;
+    .add {
+      a {
+        color: $text-white;
+        &:before {
+          @extend %filter-white;
+        }
+        &:focus {
+          @include focus-outline;
+          color: $text-white;
+          background-color: transparent;
+        }
+        &:hover {
+          color: $smart-navy;
+          background-color: transparent;
+          &:before {
+            filter: invert(80%) sepia(20%) saturate(342%) hue-rotate(-260deg) brightness(23%) contrast(94%);
+          }
+        }
+      }
+      &.open {
+        a {
+          color: $smart-navy;
+          background-color: transparent;
+          &:before {
+            filter: invert(80%) sepia(20%) saturate(342%) hue-rotate(-260deg) brightness(23%) contrast(94%);
+          }
+        }
+      }
+      .action-list {
+        li {
+          .button {
+            background: $white;
+            &:hover {
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+    .views-tabs {
+      align-items: center;
+      li:not(.add) {
+        &.is-active {
+          a {
+            background-color: $smart-navy;
+            &:hover {
+              background-color: $white;
+              color: $text-dark;
+            }
+          }
+        }
+        a {
+          font-size: 0.8rem;
+          border: 1px solid $light-grey;
+          &:hover {
+            background-color: $blue-light;
+            color: $text-dark;
+          }
+          &:focus {
+            @include focus-outline;
+          }
+        }
+      }
+    }
+  }
+  .views-display-tab {
+    .views-ui-display-tab-actions {
+      .views-display-setting {
+        .label,
+        a {
+          font-size: 1rem;
+        }
+      }
+      .dropbutton-wrapper {
+        .dropbutton-action:not(.secondary-action) {
+          .button {
+            background: $white;
+          }
+        }
+      }
+    }
+  }
+  .views-display-columns {
+    .views-ui-display-tab-bucket.views-ui-display-tab-bucket {
+      padding-top: 0;
+      .views-display-setting {
+        color: $border-grey;
+      }
+    }
+  }
+}
+
+.views-preview-wrapper {
+  .view-preview-form {
+    .view-preview-form__title {
+      color: $text-white;
+      background: $primary;
+    }
+    .form-actions {
+      .arguments-preview {
+        @extend %button-primary;
+      }
+    }
+  }
+
+  .form-item--live-preview {
+    .form-checkbox {
+      cursor: pointer;
+      &:focus {
+        @include focus-outline;
+        &:focus:active,
+        &:hover {
+          @include focus-outline;
+        }
+      }
+    }
+    label {
+      color: $text-white;
+    }
+  }
+  > form > .form-actions {
+    position: absolute;
+    top: 72px;
+    right: 0;
+  }
+  .views-live-preview {
+    .section-title {
+      color: $text-grey;
+    }
+    .preview-section {
+      border: 1px dashed $ck-grey;
+    }
+    .views-query-info {
+      table {
+        tr {
+          background-color: $ck-grey;
+          td {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.889rem;
+            height: 3rem;
+            pre {
+              background: $black-pearl;
+              padding: 25px;
+              color: $brown;
+              text-align: initial;
+              margin: -0.5rem -1.5rem;
+            }
+          }
+        }
+      }
+    }
+    .views-exposed-form {
+      .form-actions {
+        flex: 1;
+        justify-content: end;
+      }
+    }
+  }
+}
+
+.view-filters {
+  .views-exposed-form {
+    @extend %section-card;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: $white !important;
+    >.form-actions {
+      margin-right: 0;
+    }
+  }
+}
+
+.view-content {
+  .views-form {
+    @extend %section-card;
+    padding: 1.5rem;
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    [data-drupal-selector=edit-header] {
+      background-color: $link-water;
+      padding: 0 1rem 1rem 1rem;
+      border-radius: $nttdata-radius;
+      .form-type--select {
+        display: flex;
+        align-items: center;
+      }
+      .form-item__label:not([for=edit-select-all]) {
+        font-size: 1rem;
+        margin-right: 1rem;
+      }
+    }
+    .views-table {
+      order: -1;
+      margin-top: 0;
+    }
+  }
+  // Prevent content swkising
+  .views-field-changed time,
+  .views-field-status,
+  .views-field-langcode,
+  .views-field-field-yoast-seo {
+    white-space: nowrap;
+  }
+}
+
+.views-displays {
+  border-top: 1px solid $light-grey;
+  border-right: 1px solid $light-grey;
+  border-left: 1px solid $light-grey;
+}
+
+.views-ui-dialog .views-offset-top:not(:empty) {
+  background-color: $ck-grey;
+}
+
+.views-ui-list-disabled {
+  background: $disabled;
+  opacity: 0.7;
+}
+
+.contextual-region.view {
+  .contextual {
+    display: none;
+  }
+}
+
+.views-bulk-actions {
+  background-color: $link-water;
+  border: none;
+  color: $text-dark;
+  .button--primary {
+    background: $primary !important;
+    color: $text-white !important;
+  }
+}

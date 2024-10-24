@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Theme override to present a list of available bundles.
+ *
+ * Available variables:
+ * - bundles: A list of bundles, each with the following properties:
+ *   - label: Bundle label.
+ *   - description: Bundle description.
+ *   - add_link: \Drupal\Core\Link link instance to create an entity of this
+ *     bundle.
+ * - add_bundle_message: The message shown when there are no bundles. Only
+ *     available if the entity type uses bundle entities.
+ *
+ * @see template_preprocess_entity_add_list()
+ */
+#}
+{%
+  set item_classes = [
+    'admin-item',
+    'nttdata-card'
+  ]
+%}
+
+{%
+  set description_classes = [
+    'admin-item__description',
+    'nttdata-card-text'
+  ]
+%}
+
+{% if bundles is not empty %}
+  <dl{{ attributes.addClass('admin-list') }}>
+    {% for bundle in bundles %}
+      {#
+        Add 'admin-item__link' class to the link attributes.
+        This is needed for keeping the original attributes of the link's url.
+      #}
+      {% set bundle_attributes = bundle.add_link.url.getOption('attributes') ?: {} %}
+      {% set link_attributes = create_attribute(bundle_attributes).addClass('admin-item__link') %}
+      <div{{ create_attribute({ class: item_classes }) }}>
+        <dt class="admin-item__title">
+          <a href="{{ bundle.add_link.url }}"{{ link_attributes|without('href') }}>
+            {{ bundle.add_link.text }}
+          </a>
+        </dt>
+        {# Don't print empty description wrapper if there is no description #}
+        {% if bundle.description %}
+          <dd{{ create_attribute({class: description_classes}) }}>{{ bundle.description }}</dd>
+        {% endif %}
+        <div class="card-icon transition-arrow">
+          <div class="nttdata-icon">
+            <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g class="arrow-group" transform="translate(-7.000000, -7.000000)">
+                  <path d="M12.8824333,7 L18,12.5000197 L12.8824333,18 L11.8125183,16.8502914 L15.097,13.32 L7,13.3203142 L7,11.6788584 L15.097,11.678 L11.8125183,8.14970861 L12.8824333,7 Z" id="Combined-Shape-Copy-2"></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </dl>
+{% elseif add_bundle_message is not empty %}
+  <p>
+    {{ add_bundle_message }}
+  </p>
+{% endif %}

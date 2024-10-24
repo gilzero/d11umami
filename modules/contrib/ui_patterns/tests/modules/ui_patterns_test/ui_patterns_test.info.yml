@@ -1,0 +1,9 @@
+name: "UI Patterns Test"
+type: module
+description: "Provides test plugin."
+package: "Testing"
+
+# Information added by Drupal.org packaging script on 2024-09-24
+version: '2.0.0-beta3'
+project: 'ui_patterns'
+datestamp: 1727217290

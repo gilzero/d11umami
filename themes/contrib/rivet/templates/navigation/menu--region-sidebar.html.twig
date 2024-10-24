@@ -1,0 +1,117 @@
+{{ attach_library('rivet/rvt-c-sidenav')}}
+
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0, region, current_path) }}
+
+{% macro menu_links(items, attributes, menu_level, region, current_path, pullup) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('rvt-sidenav__list') }}>
+    {% endif %}
+    {% for item in items|filter((item) => not (item.original_link.getProvider() == 'menu_position')) %}
+    {#
+      This Rivet Sidenav component has been modified to support Drupal menu
+      items containing <button> and <nolink> routes.
+      See https://codepen.io/jameswilson/pen/gOZbzoV
+    #}
+      {% set is_button = item.url and item.url.isRouted() and item.url.getRouteName() == '<button>' %}
+      {% set is_nolink = item.url and item.url.isRouted() and item.url.getRouteName() == '<nolink>' %}
+      {% set is_link = item.url and not is_button and not is_nolink %}
+      {% set item_path = item.url.toString %}
+      {% set is_open = item.in_active_trail or item_path == current_path %}
+      {% set title = item.title %}
+      {% set link %}{{ link(title, item.url) }}{% endset %}
+      {% set is_menu_heading = 'rvt-dropdown__menu-heading' in link %}
+      {% set is_submenu_pullup = 'rvt-c-header-menu__submenu-pullup' in link %}
+      {% set toggle_id = [region, menu_level, loop.index]|join('-') %}
+
+      {% set highlight_active_trail = false %}
+      {% if item.in_active_trail and item.below|length == 0 %}
+        {% set highlight_active_trail = true %}
+      {% elseif item.in_active_trail and item.below|length == 1 %}
+        {% for child in item.below %}
+          {% if child.in_active_trail and child.original_link.getProvider() == 'menu_position' %}
+            {% set highlight_active_trail = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {%
+        set item_classes = [
+          'rvt-sidenav__item',
+          item.is_expanded ? 'rvt-sidenav__item--expanded',
+          item.is_collapsed ? 'rvt-sidenav__item--collapsed',
+          item.in_active_trail ? 'rvt-sidenav__item--active-trail',
+        ]
+      %}
+      {%
+        set link_classes = [
+          is_link ? 'rvt-sidenav__link',
+          is_button ? 'rvt-c-sidenav__button',
+          is_nolink ? 'rvt-c-sidenav__nolink',
+          is_menu_heading ? 'rvt-c-sidenav__heading',
+        ]
+      %}
+      {% set link_attrs = {
+        'class': link_classes,
+      } %}
+      {% if highlight_active_trail %}
+        {% set link_attrs = link_attrs|merge({'aria-current': 'true'}) %}
+      {% endif %}
+      <li{{ item.attributes.addClass(item_classes) }}>
+        {% if item.url.external %}
+          {% set title %}{{ title }}<span class="rvt-text-nobr">&nbsp;<svg class="rvt-c-sidenav__icon-external-link rvt-icon-link-external" fill="currentColor" width="16" height="16" viewBox="0 0 16 16">
+          <path d="M15 1H9v2h2.586l-3 3L10 7.414l3-3V7h2V1Z"></path>
+          <path d="M7 3H1v12h12V9h-2v4H3V5h4V3Z"></path>
+        </svg></span>
+        {% endset %}
+        {% endif %}
+        {% if is_button %}
+        {% set link_attrs = {
+          'class': link_classes,
+          'data-rvt-sidenav-toggle ': toggle_id,
+        } %}
+        {% set title %}
+          <span class="rvt-c-sidenav__button-text">{{ title }}</span>
+          {% if item.below %}
+          <span class="rvt-sr-only">Expand or hide links nested under the {{ item.title }} section</span>
+          <span class="rvt-c-sidenav__button-toggle">
+            <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16">
+              <path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path>
+            </svg>
+          </span>
+          {% endif %}
+        {% endset %}
+        {% endif %}
+        {% if not item.below or has_active_menu_position_child %}
+        {{ link(title, item.url, link_attrs) }}
+        {% elseif is_submenu_pullup %}
+        {{ link(title, item.url, link_attrs) }}
+        {{ menus.menu_links(item.below, attributes, menu_level + 1, region, current_path, TRUE) }}
+        {% else %}
+        <div class="rvt-sidenav__item-wrapper">
+          {{ link(item.title, item.url, link_attrs) }}
+          <button class="rvt-sidenav__toggle" data-rvt-sidenav-toggle="{{ toggle_id }}"{% if is_open %} aria-expanded="true" {% endif %}>
+            <span class="rvt-sr-only">Expand or hide links nested under the {{ item.title }} section</span>
+            <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16">
+              <path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="rvt-sidenav__list" data-rvt-sidenav-list="{{ toggle_id }}">
+        {{ menus.menu_links(item.below, attributes, menu_level + 1, region, current_path) }}
+        </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+    {% if menu_level == 0 %}
+    </ul>
+    {% endif %}
+  {% endif %}
+{% endmacro %}

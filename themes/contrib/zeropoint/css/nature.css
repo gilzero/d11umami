@@ -1,0 +1,63 @@
+/*** NATURE STYLE ***/
+
+#top_bg, .themed-block {
+	background-color: #EFF6D5;
+	background-image: -webkit-linear-gradient(bottom, #EFF6D5 0%, #fff 180px);
+	background-image: linear-gradient(to top, #EFF6D5 0%, #fff 180px);
+}
+#section2 {
+	background-color: #fff;
+	background-image: -webkit-linear-gradient(bottom, #fff 0%, #EFF6D5 150px);
+	background-image: linear-gradient(to top, #fff 0%, #EFF6D5 150px);
+}
+.region-highlighted {
+	border: solid 1px #ddd;
+}
+a, a:link, h1, h2, h3, .block-title, #name-and-slogan a {
+	color: #4f7f5b;
+}
+a:hover, a:active, a.is-active, ul.menu a.is-active,
+#submenu li a {
+	color: #000;
+}
+.pure-menu-link {
+	color: #fff !important;
+	text-shadow: 0 1px #000;
+	background: #4f7f5b;
+}
+.pure-menu-link:hover, .pure-menu-link:focus {
+	background: #619c70;
+}
+.pure-menu-children .pure-menu-link {
+	background: #4f7f5b;
+	border: 1px solid;
+	border-color: #77aa84 #41674a #41674a #77aa84;
+}
+.pure-menu-children a:hover, .pure-menu-children a:focus {
+	background: #619c70;
+}
+.menu-toggle {
+	background: #e6e6e6;
+}
+.menu-toggle .bars {
+	background: #4f7f5b;
+}
+ul.pure-paginator .is-active, ul.pure-paginator .is-active a {
+	border: none;
+	color: #fff;
+	background: #4f7f5b;
+}
+
+@media screen and (max-width: 48em) {
+	.pure-menu-link, .pure-menu-children,
+	.pure-menu-children .pure-menu-link {
+		color: #4f7f5b !important;
+		text-shadow: none;
+		background: none;
+		border: none;
+	}
+	.pure-menu-link:hover, .pure-menu-link:focus,
+	.pure-menu-children a:hover, .pure-menu-children a:focus {
+		background: #e6e6e6;
+	}
+}

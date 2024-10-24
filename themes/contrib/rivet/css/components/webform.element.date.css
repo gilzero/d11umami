@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Style date element for Rivet.
+ */
+
+.form-item.form-type-date > .rvt-label,
+.form-item.form-type-datetime > .rvt-label,
+.form-item.form-type-datelist > .rvt-label,
+.form-item.form-item-webform-time > .rvt-label {
+  display: block;
+}
+
+.form-item.form-type-date .form-item,
+.form-item.form-item-date .form-date,
+.form-item.form-type-datetime .form-item,
+.form-item.form-item-datetime-time .form-time,
+.form-item.form-item-webform-time .form-time,
+.form-item.form-type-datelist .form-item {
+  display: inline-block;
+  width: auto;
+}

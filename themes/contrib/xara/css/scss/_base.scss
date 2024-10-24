@@ -1,0 +1,82 @@
+/* Variables
+---------------------------------------- */
+:root {
+  --primary: #97C2B8;
+  --secondary: #F9AB51;
+  --dark: #628B82;
+  --light: #F4FCFA;
+  --border: #D2EFE8;
+
+  --color-heading: #111111;
+
+  --font-text: 'Roboto', sans-serif;
+  --font-heading: 'Roboto', sans-serif;
+
+
+  --shadow: 0 0 10px 4px var(--border);
+  --shadow2: 0 0 4px 2px var(--border);
+}
+/* HTML and Body
+---------------------------------------- */
+body {
+  background-color: #ffffff;
+  font-family: var(--font-text);
+}
+
+/* Typography
+---------------------------------------- */
+code, kbd, pre, samp {
+  background: var(--border);
+  color: var(--color-heading);
+}
+blockquote {
+  box-shadow: var(--shadow);
+}
+/* Table
+---------------------------------------- */
+th {
+  background: var(--light);
+  color: var(--color-heading);
+  border: 1px solid var(--border);
+}
+th a {
+  color: var(--color-heading);
+}
+td {
+  border: 1px solid var(--border);
+}
+/* Form
+---------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  outline: 0;
+  border: 0;
+  box-shadow: 0 0 4px 1px var(--border);
+  transition: all 0.3s linear;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  box-shadow: 0 0 4px 1px var(--primary);
+}
+fieldset {
+  border: 1px solid var(--border);
+}
+/* Button */
+.button, button, [type="button"], [type="reset"], [type="submit"] {
+  background-color: var(--light);
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.button:hover, button:hover, [type="button"]:hover, [type="reset"]:hover, [type="submit"]:hover {
+  background-color: var(--border);
+  color: var(--color-heading);
+}

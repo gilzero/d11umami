@@ -1,0 +1,28 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set input_id = input_id|default('segmented-' ~ random()) %}
+{% set input_name = input_name|default('segmented') %}
+{% set elements = elements|default([]) %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-segmented--' ~ variant) %}
+{% endif %}
+
+{% if legend_invisible %}
+  {% set attributes = attributes.addClass('fr-segmented--no-legend') %}
+{% endif %}
+
+<fieldset{{ attributes.addClass('fr-segmented') }}>
+  <legend class="fr-segmented__legend{{ legend_inline ? ' fr-segmented__legend--inline' : '' }}">
+    {{ legend }}
+  </legend>
+  <div class="fr-segmented__elements">
+    {% for element in elements %}
+      <div class="fr-segmented__element">
+        <input value="{{ element.value }}" type="radio" id="{{ input_id ~ '-' ~ loop.index }}" name="{{ input_name }}" />
+        <label class="fr-label {{ element.icon }}" for="{{ input_id ~ '-' ~ loop.index }}">
+          {{ element.label }}
+        </label>
+      </div>
+    {% endfor %}
+  </div>
+</fieldset>

@@ -1,0 +1,73 @@
+name: DSFR - Tile
+description: The tile is a shortcut or entry point that redirects users to content pages. It is usually part of a collection or list of similar tiles. The tile is never presented in isolation.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    description:
+      type: string
+      title: Description
+    detail:
+      type: string
+      title: Detail
+    enlarge_button:
+      type: boolean
+      title: Enlarge button?
+      description: Extend the button to the whole card. Will not be used for cards with footer.
+      default: false
+    enlarge_link:
+      type: boolean
+      title: Enlarge link?
+      description: Extend the link to the whole tile.
+      default: false
+    has_icon:
+      type: boolean
+      title: Has icon?
+      default: true
+    download:
+      type: boolean
+      title: Download tile?
+      default: false
+    grey_hover:
+      type: boolean
+      label: Grey background?
+      description: Adds grey background on tile hover.
+    horizontal:
+      type: boolean
+      title: Horizontal tile?
+      default: false
+    image:
+      type: string
+      title: Image
+      description: Do not forget to add class "fr-responsive-img" to the image.
+    tags_badges:
+      type: string
+      title: Tags badges
+    title:
+      type: string
+      title: Title
+    title_tag:
+      type: string
+      title: Title HTML tag
+      default: h3
+    url:
+      type: string
+      title: Link URL
+    use_button:
+      type: boolean
+      title: Use button?
+      description: Use button instead of link.
+      default: false
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - sm
+  required:
+    - title
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.tile

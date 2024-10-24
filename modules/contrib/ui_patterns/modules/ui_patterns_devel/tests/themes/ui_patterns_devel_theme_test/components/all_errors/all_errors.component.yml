@@ -1,0 +1,336 @@
+name: All errors
+description: Testing component to display all errors from Twig Validator.
+group: Testing
+tags:
+  - tests
+status: experimental
+variants:
+  foo:
+    title: Default
+slots:
+  test_slot_content:
+    title: Test renderable
+    # required: true
+  test_slot_string:
+    title: Test string
+    type: string
+props:
+  type: object
+  properties:
+    # From ui_patterns_test/components/prop_types_tests/prop_types_tests.component.yml
+    nothing:
+      title: 'Unknown (nothing)'
+    object:
+      title: 'Unknown (empty object)'
+      type: 'object'
+    array:
+      title: 'Unknown (empty array)'
+      type: 'array'
+    array_object:
+      title: 'Unknown (array of empty objects)'
+      type: array
+      items:
+        type: object
+    array_object_valid:
+      title: Array of links valid
+      $ref: 'ui-patterns://links'
+    missing_type_enum_valid:
+      title: Missing type with enum valid
+      $ref: 'ui-patterns://enum_list'
+      items:
+        enum:
+          - foo
+          - bar
+        'meta:enum':
+          foo: 'Foo'
+          bar: 'Bar'
+    test_prop_string_all_errors:
+      title: Test string
+      required: true
+      type: string
+    test_prop_string_default:
+      title: String with default
+      type: string
+      default: Default text
+    test_prop_string_enum:
+      title: String with enum
+      type: string
+      enum:
+        - top
+        - bottom
+    test_prop_string_enum_default:
+      title: String with enum with default
+      type: string
+      enum:
+        - top
+        - middle
+        - bottom
+      default: middle
+    test_prop_string_length:
+      title: String with min & max length
+      type: string
+      maxLength: 10
+      minLength: 3
+    test_prop_boolean:
+      title: Boolean
+      type: boolean
+    test_prop_integer:
+      title: Integer
+      type: integer
+    test_prop_number_1:
+      title: Number (float or integer)
+      type: number
+    test_prop_number_default:
+      title: Number, with default
+      type: number
+      default: 4
+    test_prop_number_2:
+      title: Number with min max
+      type: number
+      minimum: 2
+      maximum: 10
+    # test_prop_attributes_implicit:
+    #   title: Attributes (implicit typing)
+    #   type: object
+    #   patternProperties:
+    #     .+:
+    #       anyOf:
+    #         - type:
+    #             - string
+    #             - number
+    #         - type: array
+    #           items:
+    #             anyOf:
+    #               - type: number
+    #               - type: string
+    test_prop_attributes_explicit:
+      title: Attributes (explicit typing)
+      $ref: ui-patterns://attributes
+    test_prop_attributes_sdc:
+      title: Attributes when type is a PHP namespace
+      type: 'Drupal\Core\Template\Attribute'
+    test_prop_url_1:
+      title: Url (explicit typing)
+      $ref: ui-patterns://url
+    test_prop_url_2:
+      title: Url (implicit typing, exact type)
+      type: string
+      format: iri-reference
+    test_prop_url_3:
+      title: Url (implicit typing, other type)
+      description: Test format compatibility
+      type: string
+      format: uri
+    test_prop_color:
+      title: Color RGB (6 or 3 hex)
+      type: string
+      pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+    test_prop_color_6:
+      title: Color RGB (6 hex)
+      description: Test Regexp compatibility API
+      type: string
+      pattern: ^#[A-Fa-f0-9]{6}$
+    test_prop_color_3:
+      title: Color RGB (3 hex)
+      description: Test Regexp compatibility API
+      type: string
+      pattern: ^#[A-Fa-f0-9]{3}$
+    test_prop_object:
+      title: Undefined (Empty object)
+      type: object
+    test_prop_array:
+      title: Empty array
+      type: array
+    test_prop_enum_list:
+      title: List of strings enum
+      type: array
+      items:
+        type: string
+        enum: [one, two, three]
+    test_prop_enum_list_2:
+      title: List of strings enum and numbers, and default
+      type: array
+      items:
+        type: string
+        enum: [one, two, three]
+      default:
+        - one
+        - two
+    test_prop_enum_list_3:
+      title: List of strings enum with max limit
+      type: array
+      items:
+        type: string
+        enum: [one, two, three]
+        maxItems: 2
+    test_prop_links:
+      title: Links
+      type: array
+      items:
+        type: object
+        properties:
+          title: { type: string }
+          attributes: { $ref: ui-patterns://attributes }
+          below: { $ref: ui-patterns://links }
+    test_prop_links_2:
+      title: Links with extra property
+      type: array
+      items:
+        type: object
+        properties:
+          title: { type: string }
+          attributes: { $ref: ui-patterns://attributes }
+          below: { $ref: ui-patterns://links }
+          extra: { type: string }
+    test_prop_machine_name:
+      title: Machine name
+      type: string
+      pattern: '^[A-Za-z]+\w*$'
+    test_prop_list:
+      title: List of strings (not enum)
+      type: array
+      items:
+        type: string
+    # # UI Patterns 2.0.x
+    # v2_test_prop_enum_number:
+    #   title: Test enum number
+    #   $ref: 'ui-patterns://enum'
+    #   enum:
+    #     - 2
+    #     - 3
+    #     - 4
+    # v2_test_prop_enum_string:
+    #   title: Test enum string
+    #   $ref: 'ui-patterns://enum'
+    #   enum:
+    #     - foo
+    #     - bar
+    # v2_test_prop_enum_list:
+    #   title: Test enum list
+    #   $ref: 'ui-patterns://enum_list'
+    #   enum:
+    #     - foo
+    #     - bar
+    # v2_test_prop_url:
+    #   title: Test url
+    #   description: 'The button URL. Optional.'
+    #   $ref: 'ui-patterns://url'
+    # v2_test_prop_bool:
+    #   title: Test bool
+    #   $ref: 'ui-patterns://boolean'
+    # v2_test_prop_number:
+    #   title: Test number
+    #   $ref: 'ui-patterns://number'
+    # v2_test_prop_number_negative:
+    #   title: Test number neg
+    #   $ref: 'ui-patterns://number'
+    # v2_test_prop_number_float:
+    #   title: Test number float
+    #   $ref: 'ui-patterns://number'
+    # v2_test_prop_string:
+    #   title: Test string
+    #   $ref: 'ui-patterns://string'
+    # v2_test_prop_links:
+    #   title: Test links
+    #   $ref: 'ui-patterns://links'
+    # v2_test_prop_attributes:
+    #   title: Test attributes
+    #   $ref: 'ui-patterns://attributes'
+    # v2_test_prop_machine_name:
+    # title: Test machine name
+    # $ref: 'ui-patterns://machine_name'
+stories:
+  preview:
+    title: Preview
+    slots:
+      test_slot_content:
+        type: html_tag
+        tag: span
+        value: Foo
+        attributes:
+          data-attr: bar
+      test_slot_string: Baz
+    props:
+      variant: other
+      array_object_valid:
+        - title: Foo
+          url: /
+        - title: Bar
+          url: '#'
+      missing_type_enum_valid:
+        - bar
+      test_prop_string_all_errors: Qux
+      test_prop_string_default: Quux
+      test_prop_string_enum: bottom
+      test_prop_string_enum_default: middle
+      test_prop_string_length: 'FooBar'
+      test_prop_boolean: true
+      test_prop_integer: 6
+      test_prop_number_1: 6.33
+      test_prop_number_default: 7
+      test_prop_number_2: 4
+      # test_prop_attributes_implicit:
+      #   data-test: "foo"
+      #   class: ["bar", "baz"]
+      # test_prop_attributes_explicit:
+      # class: ["bar"]
+      # test_prop_attributes_sdc:
+      #   -
+      #     data-test: 'foo'
+      #     class: ['bar', 'baz']
+      test_prop_url_1: http://foo.bar
+      test_prop_url_2: <front>
+      test_prop_url_3: mailto:foo@bar.baz
+      test_prop_color: '#123'
+      test_prop_color_3: '#456'
+      test_prop_color_6: '#123456'
+      test_prop_array:
+        - foo
+        - bar
+      test_prop_object:
+        foo: bar
+        bar: baz
+      test_prop_enum_list:
+        - one
+      test_prop_enum_list_2:
+        - one
+        - two
+      test_prop_enum_list_3:
+        - one
+        - two
+      test_prop_links:
+        - title: Foo
+          attributes:
+            class:
+              - foo
+              - bar
+          below:
+            - title: 'Foo 1'
+              url: '#foo1'
+              attributes:
+                data-test: test
+            - title: 'Foo 2'
+              url: '#foo2'
+        - title: Bar
+          url: '#bar'
+      test_prop_links_2:
+        - title: Foo
+          attributes:
+            class:
+              - foo
+              - bar
+          extra: Extra
+          below:
+            - title: 'Foo 1'
+              url: '#foo1'
+              attributes:
+                data-test: test
+            - title: 'Foo 2'
+              url: '#foo2'
+        - title: Bar
+          url: '#bar'
+          extra: Extra
+      test_prop_machine_name: foo_bar
+      test_prop_list:
+        - Foo
+        - Bar

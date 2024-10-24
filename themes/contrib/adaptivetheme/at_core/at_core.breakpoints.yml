@@ -1,0 +1,133 @@
+#
+# Breakpoints - Simple
+#
+# Pixel values based on 1em = 16px.
+#
+# mobile  - 0 to 45em (0 to 720px), small screens only.
+# tablet  - 45.0625em and max-width 60em (721px to 960px), isolate tablets.
+# wide    - 60.0625em (961px) and up.
+#
+#                  45em                60em
+# | mobile --------->|
+#                    | tablet ---------->|
+#                                        | wide ---------------------------->
+#
+at_core.simple.mobile:
+  label: Mobile
+  mediaQuery: 'all and (max-width: 45em)'
+  weight: 4
+  multipliers:
+    - 1x
+  group: at_core.simple
+
+at_core.simple.tablet-isolate:
+  label: Tablet-isolate
+  mediaQuery: 'all and (min-width: 45.0625em) and (max-width: 60em)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: at_core.simple
+
+at_core.simple.wide:
+  label: Wide
+  mediaQuery: 'all and (min-width: 60.0625em)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: at_core.simple
+
+# Breakpoints Advanced
+# ------------------------------------------------------------------------------
+# Pixel values based on 1em = 16px.
+#
+#  mobile-isolate - 0 to 45em (0 to 720px), small screens only.
+#  tablet-isolate - 45.0625em and max-width 65em (721px to 960px), isolate tablets.
+#  wide-isolate   - 60.0625em and max-width 120em (961px to 1920px), isolate tablets.
+#  tablet         - 45.0625em (721px) and up.
+#  wide           - 60.0625em (961px) and up.
+#  huge           - 120.0625em (1921px) and up, for big resolution.
+#
+# Here you can see how each breakpoint cascades or isolates. Most of the time
+# a layout will use tablet-isolate and widescreen OR tablet-isolate, widescreen-isolate
+# and huge.
+#
+# | $mobile-isolate -->|
+#                      | $tablet-isolate -->|
+#                                           | $wide-isolate ----->|
+#                      | $tablet ---------------------------------------------->
+#                                           | $wide --------------------------->
+#                                                                 | $huge ----->
+#
+at_core.advanced.mobile-isolate:
+  label: Mobile-isolate
+  mediaQuery: 'all and (max-width: 45em)'
+  weight: 4
+  multipliers:
+    - 1x
+  group: at_core.advanced
+
+at_core.advanced.tablet-isolate:
+  label: Tablet-isolate
+  mediaQuery: 'all and (min-width: 45.0625em) and (max-width: 60em)'
+  weight: 3
+  multipliers:
+    - 1x
+  group: at_core.advanced
+
+at_core.advanced.wide-isolate:
+  label: Wide-isolate
+  mediaQuery: 'all and (min-width: 60.0625em) and (max-width: 120em)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: at_core.advanced
+
+at_core.advanced.tablet:
+  label: Tablet
+  mediaQuery: 'all and (min-width: 45.0625em)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: at_core.advanced
+
+at_core.advanced.wide:
+  label: Wide
+  mediaQuery: 'all and (min-width: 60.0625em)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: at_core.advanced
+
+at_core.advanced.huge:
+  label: Huge
+  mediaQuery: 'all and (min-width: 120.0625em)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: at_core.advanced
+
+# Breakpoints - Responsive Menus
+#
+# Pixel values based on 1em = 16px.
+#
+#   mobile   - 0 to 60em (0 to 960px)
+#   maxwidth - 0 to 75em (0 to 1200px)
+#
+# | mobile ------------->|
+# | maxwidth ------------------------------->|
+#
+at_core.responsive_menus.mobile:
+  label: Mobile
+  mediaQuery: 'all and (max-width: 60em)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: at_core.responsive_menus
+
+at_core.responsive_menus.max-width:
+  label: Max-width
+  mediaQuery: 'all and (max-width: 75em)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: at_core.responsive_menus

@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Term checkboxes element styles.
+ */
+
+.webform-term-checkboxes-scroll .fieldset-wrapper {
+  overflow: auto;
+  max-height: 11.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid #e2e7e9;
+  border-radius: 0.25rem;
+}

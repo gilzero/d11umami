@@ -1,0 +1,75 @@
+Version 1.0.0
+01 May 2021
++--------------------------------+
+# Initial release.
+
+
+Version 1.0.1
+05 May 2021
++--------------------------------+
+# Fixed minor known bugs.
+# Minor improvements in user interface.
+
+
+Version 1.0.2
+08 May 2021
++--------------------------------+
+# Fixed minor known bugs.
+
+
+
+Version 1.0.3
+19 June 2021
++--------------------------------+
+# Fixed minor known bugs.
+
+
+
+Version 1.0.4
+23 Dec 2021
++--------------------------------+
+# Fixed known bugs.
+# Added Bootstrap icons
+# Removed maintenance custom template file.
+
+
+Version 1.0.5
+05 Mar 2022
++--------------------------------+
+# Fixed known bugs.
+# Fixed auto complete field display issue.
+
+
+Version 10.1.0
+14 Jan 2023
++--------------------------------+
+# Initial release of series 10.x.x
+# Theme now supports Drupal 10
+
+
+Version 10.2.0
+06 Sep 2023
++--------------------------------+
+- Updated for base theme TheX v10.x.x
+- New mobile menu icon.
+- Theme now uses font icons from theX theme.
+- Updated twitter icon by new X icon.
+- Removed option to select Breadcrumb Separator Icon. Theme now uses default icon from TheX theme.
+- Removed template file: breadcrumb.html.twig
+- Removed customization option for 'scroll to top' icon.
+- Other minor improvements.
+
+
+Version 10.2.1
+07 Sep 2023
++--------------------------------+
+- Removed font icons of Ruhi theme.
+- Theme now uses font icons from TheX theme.
+- Other minor improvements.
+
+
+Version 11.0.0
+17 Aug, 2024
++--------------------------------+
+- Initial release of 11.x.x series.
+- Drupal 11 compatible.

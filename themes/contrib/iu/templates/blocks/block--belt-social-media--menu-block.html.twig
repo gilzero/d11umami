@@ -1,0 +1,13 @@
+{% extends "@block/block.html.twig" %}
+{#
+/**
+ * @file
+ * Override the system menu block to match IU Framework expectations for the
+ * social menu in belt region.
+ */
+#}
+{% block content %}
+  {% if content %}
+    {{ content|merge({'#attributes': {'class': ['social']}}) }}
+  {% endif %}
+{% endblock %}

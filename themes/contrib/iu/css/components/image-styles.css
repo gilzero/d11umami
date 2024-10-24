@@ -1,0 +1,104 @@
+.align-center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-style-thumbnail,
+.image-style-iu-one-third,
+.image-style-iu-one-third-square,
+.image-style-iu-one-third-standard,
+.image-style-iu-one-third-wide,
+.image-style-iu-one-half,
+.image-style-iu-one-half-square,
+.image-style-iu-one-half-standard,
+.image-style-iu-one-half-wide,
+.image-style-iu-two-thirds,
+.image-style-iu-two-thirds-screen,
+.image-style-iu-two-thirds-standard {
+  margin-bottom: 1rem;
+}
+
+/* IU Framework sets bottom margin on figure.media container. */
+figure.media img {
+  margin-bottom: 0; /* Removes the bottom margin set on image styles above. */
+}
+
+@media screen and (min-width: 40em) {
+  .align-right .image-style-thumbnail,
+  .align-right .image-style-iu-one-third,
+  .align-right .image-style-iu-one-third-square,
+  .align-right .image-style-iu-one-third-standard,
+  .align-right .image-style-iu-one-third-wide,
+  .align-right .image-style-iu-one-half,
+  .align-right .image-style-iu-one-half-square,
+  .align-right .image-style-iu-one-half-standard,
+  .align-right .image-style-iu-one-half-wide,
+  .align-right .image-style-iu-two-thirds,
+  .align-right .image-style-iu-two-thirds-screen,
+  .align-right .image-style-iu-two-thirds-standard {
+    padding-left: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .align-left .image-style-thumbnail,
+  .align-left .image-style-iu-one-third,
+  .align-left .image-style-iu-one-third-square,
+  .align-left .image-style-iu-one-third-standard,
+  .align-left .image-style-iu-one-third-wide,
+  .align-left .image-style-iu-one-half,
+  .align-left .image-style-iu-one-half-square,
+  .align-left .image-style-iu-one-half-standard,
+  .align-left .image-style-iu-one-half-wide,
+  .align-left .image-style-iu-two-thirds,
+  .align-left .image-style-iu-two-thirds-screen,
+  .align-left .image-style-iu-two-thirds-standard {
+    padding-right: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .image-style-iu-one-third,
+  .image-style-iu-one-third-square,
+  .image-style-iu-one-third-standard,
+  .image-style-iu-one-third-wide {
+    max-width: 276px;
+  }
+
+  .image-style-iu-one-half,
+  .image-style-iu-one-half-square,
+  .image-style-iu-one-half-standard,
+  .image-style-iu-one-half-wide {
+    max-width: 420px;
+  }
+
+  .image-style-iu-two-thirds,
+  .image-style-iu-two-thirds-screen,
+  .image-style-iu-two-thirds-standard {
+    max-width: 564px;
+  }
+
+  .breakout .image-style-iu-one-third,
+  .breakout .image-style-iu-one-third-square,
+  .breakout .image-style-iu-one-third-standard,
+  .breakout .image-style-iu-one-third-wide {
+    max-width: 375px;
+  }
+
+  .breakout .image-style-iu-one-half,
+  .breakout .image-style-iu-one-half-square,
+  .breakout .image-style-iu-one-half-standard,
+  .breakout .image-style-iu-one-half-wide {
+    max-width: 568px;
+  }
+
+  .breakout .style-iu-two-thirds,
+  .breakout .style-iu-two-thirds-screen,
+  .breakout .style-iu-two-thirds-standard {
+    max-width: 761px;
+  }
+
+  /* Images inside grid items should scale to their container. */
+  .grid-item .feature img {
+    max-width: 100%; /* Override the max-width set on image styles above. */
+  }
+}

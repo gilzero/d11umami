@@ -1,0 +1,3 @@
+nttdata_admin.settings:
+  type: theme_settings
+  label: “NTTDATA admin theme settings"

@@ -1,0 +1,31 @@
+name: DSFR - Breadcrumb
+description: Breadcrumbs are a secondary navigation system that allows the user to locate themselves on the site they are viewing.
+status: stable
+group: DSFR
+props:
+  properties:
+    aria_label:
+      type: string
+      title: Breadcrumb "aria-label" attribute
+      description: 'By default: "You are here:", or the translated string in another language.'
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    html_id:
+      type: string
+      title: HTML identifier
+    items:
+      type: array
+      title: Items
+      description: Expected Drupal breadcrumb items.
+      items:
+        type: object
+    title:
+      type: string
+      title: Title
+      description: 'By default: "View breadcrumb", or the translated string in another language.'
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.breadcrumb

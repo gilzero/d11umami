@@ -1,0 +1,30 @@
+# TODO Cleanup when https://www.drupal.org/i/3364885 lands in Drupal core.
+delete: null
+#  - '/.git'
+#  - '/css/'
+#  - '/images/'
+#  - '/js/'
+#  - '/package.json'
+#  - '/package-lock.json'
+#  - '/README.md'
+#  - '/rivet.breakpoints.yml'
+#  - '/rivet.libraries.yml'
+#  - '/rivet.starterkit.yml'
+#  - '/screenshot.png'
+#  - '/src/'
+#  - '/templates/'
+no_edit: null
+#  - '/SUBTHEME.md'
+no_rename: null
+info:
+  'description': 'A subtheme of the <a href="https://www.drupal.org/project/rivet">Rivet Drupal theme</a>.'
+  'base theme': rivet
+  hidden: null
+  starterkit: null
+  version: 1.0.0
+  config_devel: null
+  libraries-extend: null
+  libraries-override: null
+  libraries:
+    - rivet/init
+    - core/normalize

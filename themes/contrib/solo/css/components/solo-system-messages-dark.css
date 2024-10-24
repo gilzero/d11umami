@@ -1,0 +1,37 @@
+.messages__close,
+.messages__close::after,
+.messages__close::before {
+  border-color: var(--solo-gray);
+}
+
+.messages,
+.webform-message .messages.messages--webform {
+  color: var(--solo-white) !important;
+  background-color: var(--solo-dark-gray) !important;
+  border: var(--solo-px1) solid var(--solo-black) !important;
+}
+
+.page-wrapper .system-messages {
+  --r-bg: var(--solo-black) !important;
+  --r-tx: var(--solo-white) !important;
+}
+
+.messages a {
+  color: var(--solo-white) !important;
+}
+
+.messages.messages--error {
+  background: linear-gradient(135deg, #c42d37 0%, #090909 3%, #000 100%);
+}
+
+.messages.messages--warning {
+  background: linear-gradient(135deg, #ffcd3a 0%, #090909 3%, #000 100%);
+}
+
+.messages.messages--status {
+  background: linear-gradient(135deg, #4caf50 0%, #090909 3%, #000 100%);
+}
+
+.messages.messages--info {
+  background: linear-gradient(135deg, #2196f3 0%, #090909 3%, #000 100%);
+}

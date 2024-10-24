@@ -1,0 +1,94 @@
+/**
+ * @file
+ * Buttons.
+ */
+
+%button-dimensions {
+  font-size: 18px;
+  line-height: 30px;
+  padding: 0.5rem 1rem;
+  border-radius: 1px;
+  border: 1px solid transparent;
+}
+
+%button-base {
+  @include button-color($bg-dark, $delightful-yellow, $dark-yellow);
+  &:after,
+  &:before {
+    @extend %filter-black;
+  }
+}
+
+%button-primary {
+  @include button-color($text-white, $primary, $primary, $nttdata-blue-effect, $primary);
+  &:after,
+  &:before {
+    @extend %filter-white;
+  }
+}
+
+%button-danger {
+  @include button-color($text-white, $nttdata-red, $nttdata-red2);
+  &:after,
+  &:before {
+    content: none;
+  }
+}
+
+.button {
+  @extend %button-dimensions;
+  @extend %button-base;
+  &:focus {
+    outline: 3px solid $primary;
+  }
+  &--primary.button {
+    @extend %button-primary;
+    &:disabled {
+      @extend %button-primary;
+      opacity: 0.5;
+    }
+  }
+  &--danger {
+    @extend %button-danger;
+  }
+  &.remove-button,
+  &.button--small {
+    padding: calc(0.5rem - 7px) calc(1rem - 1px);
+  }
+  &.link {
+    background: transparent;
+  }
+  &.action.link span.action-link {
+    color: $text-grey;
+  }
+}
+
+a.action-link {
+  @extend %button-dimensions;
+  font-size: 16px;
+  &--danger {
+    @extend %button-danger;
+  }
+}
+
+#edit-actions-cancel,
+#edit-cancel {
+  @extend %button-danger;
+}
+
+// admin/modules (Extend tab)
+// claro elements
+.claro-details__wrapper--package-listing button.link.tableresponsive-toggle {
+  background: transparent;
+  padding-left: var(--space-m);
+  color: $smart-navy;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  &::before {
+    display: none;
+  }
+}
+// action links for modules
+.system-modules .module-list__description .action-link.module-link {
+  margin-top: 3px;
+}

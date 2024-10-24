@@ -1,0 +1,236 @@
+hero_solid_16:
+  label: Hero solid 16
+  description: "..."
+  extractor: svg
+  config:
+    sources:
+      - "/libraries/heroicons-master/optimized/16/solid/{icon_id}.svg"
+  settings:
+    stroke_width:
+      title: Stroke width
+      type: "integer"
+      enum: [0, 1, 2, 3, 4, 5, 6]
+      default: 1
+    size:
+      title: Size
+      type: "integer"
+      enum:
+        [
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+        ]
+      default: 16
+  template: >
+    <svg xmlns="http://www.w3.org/2000/svg"
+    height="{{ size|default(16) }}" 
+    width="{{ size|default(16) }}" 
+    fill="currentColor" 
+    viewBox="0 0 16 16"
+    {{ content }} 
+    </svg>
+hero_solid_20:
+  label: Hero solid 20
+  description: "..."
+  extractor: svg
+  config:
+    sources:
+      - "/libraries/heroicons-master/optimized/20/solid/{icon_id}.svg"
+  settings:
+    stroke_width:
+      title: Stroke width
+      type: "integer"
+      enum: [0, 1, 2, 3, 4, 5, 6]
+      default: 1
+    size:
+      title: Size
+      type: "integer"
+      enum:
+        [
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+        ]
+      default: 20
+  template: >
+    <svg xmlns="http://www.w3.org/2000/svg"
+    height="{{ size|default(20) }}" 
+    width="{{ size|default(20) }}" 
+    fill="currentColor" 
+    stroke-width="{{ stroke_width|default(1) }}"> 
+    viewBox="0 0 20 20"
+    {{ content }} 
+    </svg>
+hero_solid_24:
+  label: Hero solid 24
+  description: "..."
+  extractor: svg
+  config:
+    sources:
+      - "/libraries/heroicons-master/optimized/24/solid/{icon_id}.svg"
+  settings:
+    stroke_width:
+      title: Stroke width
+      type: "integer"
+      enum: [0, 1, 2, 3, 4, 5, 6]
+      default: 1
+    size:
+      title: Size
+      type: "integer"
+      enum:
+        [
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+        ]
+      default: 24
+  template: >
+    <svg xmlns="http://www.w3.org/2000/svg"
+    height="{{ size|default(24) }}" 
+    width="{{ size|default(24) }}" 
+    fill="currentColor" 
+    stroke-width="{{ stroke_width|default(1) }}"> 
+    viewBox="0 0 24 24"
+    {{ content }} 
+    </svg>
+hero_outline_24:
+  label: Hero outline 24
+  description: "..."
+  extractor: svg
+  config:
+    sources:
+      - "/libraries/heroicons-master/optimized/24/outline/{icon_id}.svg"
+  settings:
+    stroke_width:
+      title: Stroke width
+      type: "integer"
+      enum: [0, 1, 2, 3, 4, 5, 6]
+      default: 1
+    size:
+      title: Size
+      type: "integer"
+      enum:
+        [
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+        ]
+      default: 24
+  template: >
+    <svg xmlns="http://www.w3.org/2000/svg"
+    height="{{ size|default(24) }}" 
+    width="{{ size|default(24) }}" 
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    stroke="currentColor" 
+    stroke-width="{{ stroke_width|default(1) }}"> 
+    {{ content }} 
+    </svg>

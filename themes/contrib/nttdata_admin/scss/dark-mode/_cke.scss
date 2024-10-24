@@ -1,0 +1,68 @@
+body.dark-mode {
+  //CKE
+  .form-textarea-wrapper {
+    .cke {
+      .cke_top {
+        border-bottom: 1px solid $text-dark;
+        background: $white2;
+      }
+      .cke_button_label,
+      .cke_combo_text {
+        color: $text-dark;
+      }
+      .cke_button_icon {
+        filter: brightness(1) invert(1);
+      }
+      .cke_bottom {
+        border-bottom: 1px solid $text-dark;
+        background: $text-dark;
+        a {
+          color: $text-dark;
+          &:hover {
+            background: $text-dark;
+          }
+        }
+        .cke_path_empty:only-child::after {
+          background: $white2;
+        }
+      }
+      textarea.cke_source {
+        background: $white2;
+        color: $text-dark;
+      }
+      span.cke_combo_on,
+      a.cke_combo_button:hover,
+      a.cke_combo_button:active,
+      a.cke_button:hover,
+      a.cke_button_on {
+        background: $white2;
+        border: 1px solid $text-grey;
+      }
+    }
+  }
+
+  .ck-toolbar {
+    background-color: $black-pearl;
+    .ck-button {
+      color: $text-white;
+      &.ck-on {
+        background-color: $primary;
+      }
+      &:hover {
+        background-color: $primary2 !important;
+      }
+    }
+  }
+
+  .ck-content {
+    background-color: $white2 !important;
+    color: $text-white;
+  }
+
+  .ck-list {
+    .ck-list__item {
+      background-color: $white !important;
+    }
+
+  }
+}

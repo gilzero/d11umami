@@ -1,0 +1,41 @@
+/**
+ * @file
+ * States.
+ */
+
+ %is-fixed-to-bottom,
+.is-fixed-to-bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  z-index: 5;
+}
+
+%is-stick-to-bottom,
+.is-stick-to-bottom {
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  z-index: 5;
+}
+
+%is-pattern-1,
+.is-pattern-1 {
+  &:after {
+    content: "";
+    position: absolute;
+    left: -50vw;
+    bottom: -40px;
+    background-image: url('../assets/img/nttdata_pattern_1.png');
+    background-repeat: repeat;
+    background-size: 38px;
+    height: 100px;
+    width: 200vw;
+    z-index: -1;
+    opacity: 0.4;
+  }
+}

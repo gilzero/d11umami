@@ -1,0 +1,9 @@
+{% set attributes = attributes|default(create_attribute()) %}
+
+<ul{{ attributes.addClass('fr-badge-group') }}>
+  {% for item in items %}
+    <li>
+      {{ include('dsfr4drupal:badge', item, with_context=false) }}
+    </li>
+  {% endfor %}
+</ul>

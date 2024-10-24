@@ -1,0 +1,14 @@
+{% set current = current|default(1) %}
+<div class="fr-stepper">
+  <h2 class="fr-stepper__title">
+    {{ items[current - 1].title }}
+    <span class="fr-stepper__state">
+      {{ 'Step @current on @total'|t({'@current': current, '@total': items|length}) }}
+    </span>
+  </h2>
+  <div class="fr-stepper__steps" data-fr-current-step="{{ current }}" data-fr-steps="{{ items|length }}"></div>
+  <p class="fr-stepper__details">
+    <span class="fr-text--bold">{{ 'Next step:'|t }}</span>
+    {{ items[current].title }}
+  </p>
+</div>

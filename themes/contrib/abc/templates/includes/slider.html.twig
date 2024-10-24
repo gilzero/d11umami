@@ -1,0 +1,95 @@
+<div id="slider" {% if slidety == 0 %}style="max-width: {{ wrapper }}; margin: 0 auto;"{% endif %}>
+<ul class="slides">
+{% if show_slide1 %}
+  <li>
+    <div class="post slide1">
+    <div class="entry-container">
+    <div class="txww" {% if slidety == 1 %}style="max-width: {{ wrapper }}; margin: 0 auto;"{% endif %}>
+      <div class="entry-header"><div class="entry-title"><a href="{{ path('<front>') }}{{ slide1_url }}">{{ slide1_head|t }}</a></div></div>
+      <div class="entry-summary">{{ slide1_desc|t|raw }}</div>      
+    </div>
+    </div>
+    <a href="{{ path('<front>') }}{{ slide1_url }}"><img src="{{ slide1_image_url }}" loading="eager" class="pure-img slide-image" alt="{{ slide1_alt }}" {% if slideh %}style="max-height: {{ slideh }}"{% endif %}></a>
+    </div>
+  </li>
+{% endif %}
+{% if show_slide2 %}
+  <li>
+    <div class="post slide2">
+    <div class="entry-container">
+    <div class="txww" {% if slidety == 1 %}style="max-width: {{ wrapper }}; margin: 0 auto;"{% endif %}>
+      <div class="entry-header"><div class="entry-title"><a href="{{ path('<front>') }}{{ slide2_url }}">{{ slide2_head|t }}</a></div></div>
+      <div class="entry-summary">{{ slide2_desc|t|raw }}</div>
+    </div>
+    </div>
+    <a href="{{ path('<front>') }}{{ slide2_url }}"><img src="{{ slide2_image_url }}" loading="lazy" class="pure-img slide-image" alt="{{ slide2_alt }}" {% if slideh %}style="max-height: {{ slideh }}"{% endif %}></a>
+    </div>
+  </li>
+{% endif %}
+{% if show_slide3 %}
+  <li>
+    <div class="post slide3">
+    <div class="entry-container">
+    <div class="txww" {% if slidety == 1 %}style="max-width: {{ wrapper }}; margin: 0 auto;"{% endif %}>
+      <div class="entry-header"><div class="entry-title"><a href="{{ path('<front>') }}{{ slide3_url }}">{{ slide3_head|t }}</a></div></div>
+      <div class="entry-summary">{{ slide3_desc|t|raw }}</div>
+    </div>
+    </div>
+    <a href="{{ path('<front>') }}{{ slide3_url }}"><img src="{{ slide3_image_url }}" loading="lazy" class="pure-img slide-image" alt="{{ slide3_alt }}" {% if slideh %}style="max-height: {{ slideh }}"{% endif %}></a>
+    </div>
+  </li>
+{% endif %}
+{% if show_slide4 %}
+  <li>
+    <div class="post slide4">
+    <div class="entry-container">
+    <div class="txww" {% if slidety == 1 %}style="max-width: {{ wrapper }}; margin: 0 auto;"{% endif %}>
+      <div class="entry-header"><div class="entry-title"><a href="{{ path('<front>') }}{{ slide4_url }}">{{ slide4_head|t }}</a></div></div>
+      <div class="entry-summary">{{ slide4_desc|t|raw }}</div>
+    </div>
+    </div>
+    <a href="{{ path('<front>') }}{{ slide4_url }}"><img src="{{ slide4_image_url }}" loading="lazy" class="pure-img slide-image" alt="{{ slide4_alt }}" {% if slideh %}style="max-height: {{ slideh }}"{% endif %}></a>
+    </div>
+  </li>
+{% endif %}
+{% if show_slide5 %}
+  <li>
+    <div class="post slide5">
+    <div class="entry-container">
+    <div class="txww" {% if slidety == 1 %}style="max-width: {{ wrapper }}; margin: 0 auto;"{% endif %}>
+      <div class="entry-header"><div class="entry-title"><a href="{{ path('<front>') }}{{ slide5_url }}">{{ slide5_head|t }}</a></div></div>
+      <div class="entry-summary">{{ slide5_desc|t|raw }}</div>
+    </div>
+    </div>
+    <a href="{{ path('<front>') }}{{ slide5_url }}"><img src="{{ slide5_image_url }}" loading="lazy" class="pure-img slide-image" alt="{{ slide5_alt }}" {% if slideh %}style="max-height: {{ slideh }}"{% endif %}></a>
+    </div>
+  </li>
+{% endif %}
+{% if show_slide6 %}
+  <li>
+    <div class="post slide6">
+    <div class="entry-container">
+    <div class="txww" {% if slidety == 1 %}style="max-width: {{ wrapper }}; margin: 0 auto;"{% endif %}>
+      <div class="entry-header"><div class="entry-title"><a href="{{ path('<front>') }}{{ slide6_url }}">{{ slide6_head|t }}</a></div></div>
+      <div class="entry-summary">{{ slide6_desc|t|raw }}</div>
+    </div>
+    </div>
+    <a href="{{ path('<front>') }}{{ slide6_url }}"><img src="{{ slide6_image_url }}" loading="lazy" class="pure-img slide-image" alt="{{ slide6_alt }}" {% if slideh %}style="max-height: {{ slideh }}"{% endif %}></a>
+    </div>
+  </li>
+{% endif %}
+{% if show_slide7 %}
+  <li>
+    <div class="post slide7">
+    <div class="entry-container">
+    <div class="txww" {% if slidety == 1 %}style="max-width: {{ wrapper }}; margin: 0 auto;"{% endif %}>
+      <div class="entry-header"><div class="entry-title"><a href="{{ path('<front>') }}{{ slide7_url }}">{{ slide7_head|t }}</a></div></div>
+      <div class="entry-summary">{{ slide7_desc|t|raw }}</div>
+    </div>
+    </div>
+    <a href="{{ path('<front>') }}{{ slide7_url }}"><img src="{{ slide7_image_url }}" loading="lazy" class="pure-img slide-image" alt="{{ slide7_alt }}" {% if slideh %}style="max-height: {{ slideh }}"{% endif %}></a>
+    </div>
+  </li>
+{% endif %}
+</ul>
+</div>

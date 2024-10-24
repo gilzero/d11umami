@@ -1,0 +1,65 @@
+name: "Chat bubble"
+description: "Chat bubbles are used to show one line of conversation and all its data, including the author image, author name, time, etc."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/chat/"
+variants:
+  default:
+    title: Default
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  accent:
+    title: Accent
+  info:
+    title: Info
+  success:
+    title: Success
+  warning:
+    title: Warning
+  error:
+    title: Error
+slots:
+  avatar:
+    title: Avatar
+  header:
+    title: Header
+  time:
+    title: Time
+  text:
+    title: Text
+  footer:
+    title: Footer
+props:
+  type: object
+  properties:
+    position:
+      title: Position
+      description: "Start or end position."
+      $ref: "ui-patterns://enum"
+      enum:
+        - start
+        - end
+      "meta:enum":
+        start: Start
+        end: End
+stories:
+  preview:
+    title: Preview
+    slots:
+      avatar:
+        type: component
+        component: "ui_suite_daisyui:avatar"
+        props:
+          rounded: rounded-full
+          size: "w-10"
+        slots:
+          image:
+            theme: image
+            uri: "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            alt: "Tailwind CSS chat bubble component"
+      header: "Obi-Wan Kenobi"
+      time: "12:45"
+      text: "You were the Chosen One!"
+      footer: Delivered

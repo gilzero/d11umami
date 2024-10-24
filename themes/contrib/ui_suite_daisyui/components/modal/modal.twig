@@ -1,0 +1,41 @@
+{%
+  set classes = [
+    'modal',
+    responsive ? 'modal-' ~ responsive,
+    responsive ? 'sm:modal-middle',
+    'not-prose',
+  ]
+%}
+
+{% set modal_id = modal_id|default('modal-' ~ random()) %}
+
+{% set attributes = attributes.setAttribute('id', modal_id).addClass(classes) %}
+
+<dialog {{ attributes }}>
+  {% if custom_width %}
+    <div class="modal-box w-11/12 max-w-5xl">
+  {% else %}
+    <div class="modal-box">
+  {% endif %}
+  {% if close_corner %}
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+  {% endif %}
+  <h3 class="font-bold text-lg">{{ title }}</h3>
+  <p class="py-4">{{ message }}</p>
+
+  {% if not close_corner and not close_outside %}
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">{{ close_label }}</button>
+      </form>
+    </div>
+  {% endif %}
+  </div>
+  {% if close_outside %}
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  {% endif %}
+</dialog>

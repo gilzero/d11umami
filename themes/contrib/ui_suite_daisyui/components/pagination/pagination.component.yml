@@ -1,0 +1,45 @@
+name: Pagination
+description: "Pagination is a group of buttons that allow the user to navigate between a set of related content."
+group: Navigation
+links:
+  - "https://daisyui.com/components/pagination/"
+props:
+  type: object
+  properties:
+    size:
+      title: Size
+      description: "It is possible to set the size of pagination."
+      $ref: "ui-patterns://enum"
+      enum:
+        - xs
+        - sm
+        - md
+        - lg
+      "meta:enum":
+        xs: "Extra small"
+        sm: Small
+        md: Medium
+        lg: Large
+    items:
+      title: "Pagination items"
+      $ref: "ui-patterns://links"
+stories:
+  preview:
+    title: Preview
+    props:
+      size: md
+      items:
+        - url: "#"
+          title: "« First"
+        - url: "#"
+          title: "‹ Previous"
+        - title: "4"
+        - url: "#"
+          title: "5"
+        - {}
+        - url: "#"
+          title: "6"
+        - url: "#"
+          title: "Next ›"
+        - url: "#"
+          title: "Last »"

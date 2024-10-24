@@ -1,0 +1,17 @@
+name: DSFR - Footer (top menu)
+description: Display footer menu.
+status: stable
+group: DSFR
+props:
+  properties:
+    items:
+      type: array
+      title: Items
+      description: Expected Drupal menu link items.
+      items:
+        type: object
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.footer

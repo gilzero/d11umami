@@ -1,0 +1,17 @@
+{% set attributes = attributes.addClass('badge') %}
+
+{% if variant %}
+{% set attributes = (variant != 'default') ? attributes.addClass('badge-' ~ variant) : attributes %}
+{% endif %}
+
+{% if size %}
+    {% set attributes = attributes.addClass('badge-' ~ size) %}
+{% endif %}
+
+{% if outline %}
+    {% set attributes = attributes.addClass('badge-outline') %}
+{% endif %}
+
+<div{{ attributes }}>
+{{ label }}
+</div>

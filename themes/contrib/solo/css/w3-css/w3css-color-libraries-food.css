@@ -1,0 +1,279 @@
+#page-wrapper .w3-food-apple {
+  --r-tx: var(--solo-black);
+  --r-bg: #76cd26;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-aspargus {
+  --r-tx: var(--solo-white);
+  --r-bg: #77ab56;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-apricot {
+  --r-tx: var(--solo-white);
+  --r-bg: #ffb16d;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-aubergine {
+  --r-tx: var(--solo-white);
+  --r-bg: #3d0734;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-avocado {
+  --r-tx: var(--solo-white);
+  --r-bg: #87a922;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-banana {
+  --r-tx: var(--solo-black);
+  --r-bg: #fafe4b;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-butter {
+  --r-tx: var(--solo-black);
+  --r-bg: #ffff81;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-blueberry {
+  --r-tx: var(--solo-white);
+  --r-bg: #464196;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-carrot {
+  --r-tx: var(--solo-white);
+  --r-bg: #e67e22;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-cherry {
+  --r-tx: var(--solo-white);
+  --r-bg: #cf0234;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-chocolate {
+  --r-tx: var(--solo-white);
+  --r-bg: #411900;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-cranberry {
+  --r-tx: var(--solo-white);
+  --r-bg: #9e003a;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-coffee {
+  --r-tx: var(--solo-white);
+  --r-bg: #a6814c;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-egg {
+  --r-tx: var(--solo-black);
+  --r-bg: #fffcc4;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-grape {
+  --r-tx: var(--solo-white);
+  --r-bg: #6c3461;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-kiwi {
+  --r-tx: var(--solo-black);
+  --r-bg: #8ee53f;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-lemon {
+  --r-tx: var(--solo-black);
+  --r-bg: #fdff52;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-lime {
+  --r-tx: var(--solo-black);
+  --r-bg: #bffe28;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-mango {
+  --r-tx: var(--solo-white);
+  --r-bg: #ffa62b;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-mushroom {
+  --r-tx: var(--solo-white);
+  --r-bg: #ba9e88;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-mustard {
+  --r-tx: var(--solo-white);
+  --r-bg: #ceb301;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-mint {
+  --r-tx: var(--solo-black);
+  --r-bg: #c0fa8b;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-olive {
+  --r-tx: var(--solo-white);
+  --r-bg: #6e750e;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-orange {
+  --r-tx: var(--solo-white);
+  --r-bg: #f97306;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-pea {
+  --r-tx: var(--solo-white);
+  --r-bg: #a4bf20;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-peach {
+  --r-tx: var(--solo-white);
+  --r-bg: #ffb07c;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-pear {
+  --r-tx: var(--solo-black);
+  --r-bg: #cbf85f;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-pistachio {
+  --r-tx: var(--solo-black);
+  --r-bg: #c0fa8b;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-plum {
+  --r-tx: var(--solo-white);
+  --r-bg: #3f012c;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-pomegranate {
+  --r-tx: var(--solo-white);
+  --r-bg: #c0392b;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-pumpkin {
+  --r-tx: var(--solo-white);
+  --r-bg: #d35400;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-raspberry {
+  --r-tx: var(--solo-white);
+  --r-bg: #b00149;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-saffron {
+  --r-tx: var(--solo-white);
+  --r-bg: #feb209;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-salmon {
+  --r-tx: var(--solo-white);
+  --r-bg: #ff796c;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-spearmint {
+  --r-tx: var(--solo-black);
+  --r-bg: #1ef876;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-squash {
+  --r-tx: var(--solo-white);
+  --r-bg: #f2ab15;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-strawberry {
+  --r-tx: var(--solo-white);
+  --r-bg: #fb2943;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-tomato {
+  --r-tx: var(--solo-white);
+  --r-bg: #ec2d01;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-wheat {
+  --r-tx: var(--solo-black);
+  --r-bg: #fbdd7e;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-food-wine {
+  --r-tx: var(--solo-white);
+  --r-bg: #80013f;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}

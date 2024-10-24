@@ -1,0 +1,33 @@
+
+zeropoint.screen-sm:
+  label: screen-sm
+  mediaQuery: 'all and (min-width: 35.5em)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+
+zeropoint.screen-md:
+  label: screen-md
+  mediaQuery: 'all and (min-width: 48em)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+
+zeropoint.screen-lg:
+  label: screen-lg
+  mediaQuery: 'all and (min-width: 64em)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+
+zeropoint.screen-xl:
+  label: screen-xl
+  mediaQuery: 'all and (min-width: 80em)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+

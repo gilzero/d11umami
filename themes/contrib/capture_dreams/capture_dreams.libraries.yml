@@ -1,0 +1,18 @@
+# Global stylings. These CSS files will be loaded on every pages.
+slider:
+  js:
+    js/TweenMax.min.js: {}
+    js/slider.js: {}
+
+global-styling:
+  css:
+    theme:
+      assets/css/vendor/bootstrap.min.css: {}
+      assets/css/styles.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/once

@@ -1,0 +1,41 @@
+# Base library
+global-styling:
+  js:
+    js/global.js: {}
+  css:
+    theme:
+      css/style.css: {}
+      css/dk-style.css: {}
+      "https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700&display=swap": { type: external, minified: true }
+  dependencies:
+  - core/jquery
+  - core/once
+
+# Entity browser custom CSS
+entity-browser-custom:
+  version: VERSION
+  css:
+    theme:
+      css/custom-entity-browser.css: {}
+  js:
+    js/entity_browser.js: {}
+
+# Entity browser entity list inputs
+entity-list:
+  js:
+    js/eb_input.js: {}
+
+# Uninstall Modules page
+uninstall-page:
+  js:
+    js/uninstall-page.js: {}
+
+# Language Switcher block
+language-switcher:
+  js:
+    js/language-switcher.js: {}
+
+# Commerce admin page
+commerce:
+  js:
+    js/commerce.js: {}

@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+{% if breadcrumb -%}
+  {{ attach_library('at_core/at.responsivelists') }}
+  {%
+    set classes = [
+      'breadcrumb',
+      breadcrumb_label ? 'has-title',
+    ]
+  %}
+  {%
+    set title_classes = [
+      breadcrumb_label ? 'is-responsive__item' : 'visually-hidden',
+      'breadcrumb__title',
+    ]
+  %}
+  <div{{ attributes.addClass(classes) }}>
+    <nav class="is-responsive is-horizontal" data-at-responsive-list>
+      <div class="is-responsive__list">
+        <h3{{ title_attributes.addClass(title_classes) }}>{{ breadcrumb_label_value }}</h3>
+        <ol class="breadcrumb__list">
+          {%- for item in breadcrumb -%}
+            {%- if breadcrumb_item_length > 0 -%}
+              {%- set item_text = item.text|length > breadcrumb_item_length ? item.text|slice(0, breadcrumb_item_length) ~ '...' : item.text -%}
+            {%- else -%}
+              {%- set item_text = item.text -%}
+            {%- endif -%}
+            <li class="breadcrumb__list-item is-responsive__item">
+              {%- if item.url -%}
+                <a href="{{ item.url }}" class="breadcrumb__link">{{ item_text }}</a>
+              {%- else -%}
+                <span class="breadcrumb__link">{{ item_text }}</span>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ol>
+      </div>
+    </nav>
+  </div>
+{%- endif %}

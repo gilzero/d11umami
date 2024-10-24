@@ -1,0 +1,146 @@
+border_btn:
+  category: "Component: Button"
+  label: "Button border"
+  type: textfield
+  default_values:
+    ":root": "1px"
+
+p:
+  category: "Colors"
+  label: "Primary color"
+  type: textfield
+  default_values:
+    ":root": "0.4912 0.3096 275.75"
+
+pc:
+  category: "Colors"
+  label: "Primary content color"
+  type: textfield
+  default_values:
+    ":root": "0.89824 0.06192 275.75"
+
+s:
+  category: "Colors"
+  label: "Secondary color"
+  type: textfield
+  default_values:
+    ":root": "0.6971 0.329 342.55"
+
+sc:
+  category: "Colors"
+  label: "Secondary content color"
+  type: textfield
+  default_values:
+    ":root": "0.9871 0.0106 342.55"
+
+a:
+  category: "Colors"
+  label: "Accent color"
+  type: textfield
+  default_values:
+    ":root": "0.7676 0.184 183.61"
+
+ac:
+  category: "Colors"
+  label: "Accent content color"
+  type: textfield
+  default_values:
+    ":root": "0.15352 0.0368 183.61"
+
+n:
+  category: "Colors"
+  label: "Neutral color"
+  type: textfield
+  default_values:
+    ":root": "0.321785 0.02476 255.702"
+
+nc:
+  category: "Colors"
+  label: "Neutral content color"
+  type: textfield
+  default_values:
+    ":root": "0.894994 0.011585 252.096"
+
+b1:
+  category: "Colors"
+  label: "Base 100 color"
+  type: textfield
+  default_values:
+    ":root": "1 0 0"
+
+b2:
+  category: "Colors"
+  label: "Base 200 color"
+  type: textfield
+  default_values:
+    ":root": "0.961151 0 0"
+
+b3:
+  category: "Colors"
+  label: "Base 300 color"
+  type: textfield
+  default_values:
+    ":root": "0.924169 0.00108 197.138"
+
+bc:
+  category: "Colors"
+  label: "Base content color"
+  type: textfield
+  default_values:
+    ":root": "0.278078 0.029596 256.848"
+
+in:
+  category: "Colors"
+  label: "Info color"
+  type: textfield
+  default_values:
+    ":root": "0.7206 0.191 231.6"
+
+inc:
+  category: "Colors"
+  label: "Info content color"
+  type: textfield
+  default_values:
+    ":root": "0 0 0"
+
+su:
+  category: "Colors"
+  label: "Info color"
+  type: textfield
+  default_values:
+    ":root": "0.648 0.15 160"
+
+suc:
+  category: "Colors"
+  label: "Info content color"
+  type: textfield
+  default_values:
+    ":root": "0 0 0"
+
+wa:
+  category: "Colors"
+  label: "Info color"
+  type: textfield
+  default_values:
+    ":root": "0.8471 0.199 83.87"
+
+wac:
+  category: "Colors"
+  label: "Info content color"
+  type: textfield
+  default_values:
+    ":root": "0 0 0"
+
+er:
+  category: "Colors"
+  label: "Info color"
+  type: textfield
+  default_values:
+    ":root": "0.7176 0.221 22.18"
+
+erc:
+  category: "Colors"
+  label: "Info content color"
+  type: textfield
+  default_values:
+    ":root": "0 0 0"

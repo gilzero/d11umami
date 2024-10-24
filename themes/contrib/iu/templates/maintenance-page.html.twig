@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+
+<header id="header">
+  <div id="skipnav">
+    <ul>
+      <li><a href="#content">{{ 'Skip to Content'|t }}</a></li>
+      <li><a href="#nav-main">{{ 'Skip to Main Navigation'|t }}</a></li>
+      <li><a href="#search">{{ 'Skip to Search'|t }}</a></li>
+    </ul>
+    <hr>
+  </div>
+
+  {% include '@iu/parts/header.html.twig' %}
+
+  <div class="site-header visually-hidden" itemscope="itemscope" itemtype="http://schema.org/CollegeOrUniversity"><div class="row pad">
+
+    <h1>
+      <a class="title" href="{{ front_page }}" itemprop="department">{{ site_name }}</a>
+    </h1>
+
+  </div></div>
+
+  {{ page.primary_menu }}
+
+  {{ page.secondary_menu }}
+
+  {{ page.highlighted }}
+
+</header>
+
+<main class="{{ page.section_nav ?: 'no-section-nav' }}">
+
+  {{ page.section_nav }}
+
+  {{ page.help }}
+
+  {{ page.breadcrumb }}
+
+  {% if title %}
+  <div class="section text-center bg-none"><div class="row"><div class="layout">
+    <h1>{{ title }}</h1>
+  </div></div></div>
+  {% endif %}
+
+  <div class="section text text-center bg-none" id="content"><div class="row"><div class="layout">
+    {{ page.content }}
+  </div></div></div>
+</main>
+
+{% if page.belt_nav|render|trim or page.belt_social_media|render|trim %}
+<div aria-label="Social media channels" class="section bg-mahogany bg-dark dark belt" role="complementary"><div class="row pad">
+
+  <div class="one-half belt-nav">
+    {{ page.belt_nav }}
+  </div>
+
+  <div class="one-half belt-social-media">
+    <div class="border invert">
+      {{ page.belt_social_media }}
+    </div>
+  </div>
+
+</div></div>
+{% endif %}
+
+{% if page.skirt_nav|render|trim or page.skirt_connect|render|trim %}
+<div aria-label="Additional links and resources" class="section bg-mahogany bg-dark dark skirt" role="complementary"><div class="row pad">
+
+  {{ page.skirt_nav }}
+
+  {{ page.skirt_connect }}
+
+</div></div>
+{% endif %}
+
+{% include '@iu/parts/footer.html.twig' %}

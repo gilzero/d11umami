@@ -1,0 +1,77 @@
+body.dark-mode {
+  // VIEWS
+  .views-edit-view {
+    .views-displays {
+      .views-display-top {
+        color: $text-dark;
+        background: $white2;
+        border-bottom: 1px solid $text-dark;
+        .views-tabs {
+          li:not(.add) {
+            a {
+              color: $text-dark;
+              background: $white2;
+              &:hover {
+                background-color: $ck-grey;
+              }
+            }
+            &.is-active a {
+              background: $primary;
+              pointer-events: none;
+            }
+          }
+          li.add {
+            a {
+              @extend %button-dark-dk;
+            }
+            .action-list {
+              li {
+                &.last {
+                  padding-bottom: 1px;
+                }
+                .button {
+                  @extend %button-dark-dk;
+                }
+              }
+            }
+          }
+        }
+      }
+      .views-display-tab {
+        a {
+          color: $text-lightgrey;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .views-display-column {
+        > .claro-details__wrapper.details-wrapper {
+          border: 1px solid $ck-grey;
+          box-shadow: 0 2px 5px $ck-grey;
+        }
+      }
+    }
+    form .form-actions {
+      background-color: $white2;
+    }
+    .views-display-setting {
+      span {
+        color: $text-dark;
+      }
+    }
+  }
+  .views-preview-wrapper {
+    .views-live-preview {
+      .views-exposed-form {
+        background-color: $white;
+        .form-actions {
+          input[value="Reset"] {
+            @extend %button-base-dk;
+          }
+        }
+      }
+    }
+  }
+}

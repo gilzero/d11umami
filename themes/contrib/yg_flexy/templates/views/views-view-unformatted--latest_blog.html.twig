@@ -1,0 +1,15 @@
+<div class="blog-area gray-bg ptb-90 latest-blog">
+      <div class="container">
+        <div class="row blog-post-items">
+          <div class="col-md-12 section-title text-center">
+              <h2>
+                  {{view.getTitle()}}
+              </h2>
+          </div>
+          {% for row in rows %}
+              {{ row.content }}
+          {% endfor %}
+        </div>
+      </div>
+</div>            
+<!-- End Latest Blog  -->

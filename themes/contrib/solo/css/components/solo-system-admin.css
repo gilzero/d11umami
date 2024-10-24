@@ -1,0 +1,218 @@
+dl dd {
+  margin-bottom: var(--solo-px8);
+  margin-left: var(--solo-px8);
+}
+
+.panel__title {
+  margin: 0;
+  padding-bottom: var(--solo-px10);
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+ul.admin-list {
+  padding: 0;
+}
+
+.admin-list li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+  border-top: var(--solo-px1) solid #bfbfbf;
+}
+
+.admin-list li a {
+  display: block;
+  min-height: 0;
+  padding: 10px 15px 14px 25px;
+  background: url(../../images/icons/chevron-disc-right.svg) no-repeat 1px 17px;
+}
+
+/*Admin pages */
+.ui-dialog-content .solo-content,
+.admin-context .block-system-main-block .solo-content {
+  max-width: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+.admin-context .block-system-main-block .modules-tabs__menu + form.system-modules {
+  width: auto;
+}
+
+.winnow-clear {
+  top: var(--solo-px4);
+}
+
+.system-modules label,
+.system-modules-uninstall label {
+  font-size: var(--solo-px16);
+}
+
+.modules-tabs__pane table col.checkbox {
+  width: 3%;
+}
+
+.block-system-main-block .modules-tabs tr td {
+  vertical-align: baseline;
+}
+
+.dropbutton input.solo-margin-bottom,
+.dropbutton input.solo-margin-top {
+  margin: 0 !important;
+  width: 100% !important;
+  text-align: left;
+  border: none;
+  transition: 0.4s;
+}
+
+.paragraph-type-top.solo-row::before {
+  display: inline-block;
+  content: none;
+}
+
+.paragraph-type-top {
+  align-items: center;
+}
+
+form .field--widget-entity-reference-paragraphs td.field-multiple-drag {
+  width: auto;
+  padding-left: 0;
+}
+
+.admin-context .block-system-main-block > div,
+.admin-context .block-system-main-block > form {
+  padding: 0 !important;
+}
+
+.admin-context nav.action-links {
+  list-style: none;
+  margin-left: var(--solo-px1);
+}
+
+.admin-context nav.action-links li {
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.admin-context .region-title__action a,
+.admin-context form .form-actions > a {
+  margin: var(--solo-px16) var(--solo-px12);
+  padding: var(--solo-px12) var(--solo-px16);
+  display: inline-block;
+}
+
+.admin-context .region-title__action a {
+  margin: var(--solo-px6);
+}
+
+.admin-context form .form-actions button,
+.admin-context form .form-actions input {
+  margin: var(--solo-px16) var(--solo-px12) var(--solo-px16) 0;
+}
+
+/* admin pages  */
+.admin-context .block-system-main-block .modules-tabs {
+  margin-right: var(--solo-px16);
+  margin-left: var(--solo-px16);
+  border-color: #eaeaea;
+}
+
+.admin-context .modules-tabs__pane {
+  margin: 0 0 0 240px !important;
+  padding: var(--solo-px12) var(--solo-px16) !important;
+  background: #f8f8f8;
+  border-left: 1px solid #eaeaea;
+  width: auto;
+}
+
+.admin-context .block-system-main-block .modules-tabs tr td {
+  padding: var(--solo-px6);
+}
+
+.admin-context .system-modules td details {
+  margin: 0 0 var(--solo-px6) 0 !important;
+}
+
+.admin-context .system-modules td details summary {
+  padding: var(--solo-px6) !important;
+}
+
+.admin-context .modules-wrapper .requirements {
+  max-width: 100%;
+}
+
+.admin-context .modules-wrapper .requirements span {
+  display: inline-block;
+}
+
+.admin-context .item-list--comma-list::before,
+.admin-context .item-list--comma-list::after,
+.admin-context .item-list--comma-list li.solo-panel::after,
+.admin-context .item-list--comma-list li.solo-panel::before {
+  display: inline-block;
+  clear: none !important;
+}
+
+.admin-context .admin-requirements {
+  text-align: left;
+}
+
+.admin-context .item-list--comma-list {
+  display: inline-block;
+}
+
+.admin-context .item-list--comma-list li {
+  padding: var(--solo-px8) var(--solo-px4);
+}
+
+.admin-context .system-status-report__status-title {
+  padding: var(--solo-px8) !important;
+}
+
+.admin-context .system-status-report__requirements-group details,
+.admin-context .system-status-report__requirements-group summary {
+  list-style-type: none;
+}
+
+.admin-context .system-status-report__entry__value {
+  padding-top: 0 !important;
+}
+
+.admin-context .system-status-report__status-icon::before {
+  top: var(--solo-px15);
+  left: -15px;
+}
+
+.admin-context .system-status-report__requirements-group details {
+  margin-bottom: var(--solo-px5) !important;
+}
+
+/**
+ * Reusable colors.
+ */
+.color-success {
+  color: #325e1c;
+  background-color: #ddffdd !important;
+}
+
+.color-warning {
+  color: #734c00;
+  background-color: #ffffcc !important;
+}
+
+.color-error {
+  color: #a51b00;
+  background-color: #ffdddd !important;
+}
+
+/* CKE */

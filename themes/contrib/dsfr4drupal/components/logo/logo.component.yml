@@ -1,0 +1,27 @@
+name: DSFR - Logo
+description: Display Marianne logo
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    has_link:
+      type: boolean
+      title: Has link?
+      default: true
+    is_front:
+      type: boolean
+      title: Is homepage?
+      default: true
+    text:
+      type: string
+      title: Logo text
+      default: 'République\nFrançaise'
+    link_title:
+      type: string
+      title: Link title attribute
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.logo

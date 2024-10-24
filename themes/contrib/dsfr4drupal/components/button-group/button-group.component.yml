@@ -1,0 +1,55 @@
+name: DSFR - Button (group)
+description: The button group allows you to group several button components together.
+status: stable
+group: DSFR
+props:
+  properties:
+    alignment:
+      type: string
+      title: Alignment
+      enum:
+        - between
+        - center
+        - left
+        - right
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    equisized:
+      type: boolean
+      title: Is equisized?
+      default: false
+    inline:
+      type: boolean
+      title: Is inline ?
+      default: false
+    inline_from:
+      type: string
+      title: Is inline from?
+        - sm
+        - md
+        - lg
+    items:
+      type: array
+      title: Items
+      description: 'Each item expects properties of the "dsfr4drupal:button" component.'
+      items:
+        type: object
+    position:
+      type: string
+      title: Position
+      enum:
+        - center
+        - left
+        - right
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - lg
+        - sm
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.button

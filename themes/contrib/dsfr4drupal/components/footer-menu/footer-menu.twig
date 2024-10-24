@@ -1,0 +1,15 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set variant = variant|default('content') %}
+{% set html_id = html_id|default('footer-menu' ~ random()) %}
+<ul{{ attributes.addClass('fr-footer__' ~ variant ~ '-list').setAttribute('id', html_id|clean_id) }}>
+  {% for item in items %}
+    {% set link_attributes = item.link_attributes|default(create_attribute()) %}
+    <li{{ item.attributes.addClass('fr-footer__' ~ variant ~ '-item') }}>
+      {% if item.url %}
+        {{ link(item.title, item.url, link_attributes.addClass('fr-footer__' ~ variant ~ '-link')) }}
+      {% else %}
+        {{ item.text }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

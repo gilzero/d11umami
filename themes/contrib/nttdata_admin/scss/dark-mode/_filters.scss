@@ -1,0 +1,12 @@
+body.dark-mode {
+  //FILTERS
+  .table-filter,
+  .views-exposed-form {
+    .form-element {
+      background-color: $ck-grey;
+    }
+    .form-element--type-select {
+      background-image: $grey-arrow-down;
+    }
+  }
+}

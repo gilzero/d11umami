@@ -1,0 +1,79 @@
+name: 'Black Hole'
+description: 'An advanced responsive mobile-first dark theme with a highly customized and feature-rich design that goes beyond the basic look and feel of a typical Drupal website. It uses <a href="https://purecss.io/">Yahoo Pure.css</a>, a ridiculously tiny yet powerful responsive CSS framework. <br /> <em>Developed by <a href="https://www.radut.com/">Dr. Radut</a>.</em>'
+
+type: theme
+base theme: false
+package: Black Hole
+core_version_requirement: ^8.9 || ^9.3 || ^10 || ^11
+
+# version: VERSION
+
+# Logo
+logo: logo.png
+
+# Libraries
+libraries:
+  - black_hole/base
+  - black_hole/messages
+  - black_hole/black_hole-style
+  - black_hole/black_hole-custom
+  - core/normalize
+
+libraries-extend:
+  user/drupal.user:
+    - black_hole/user
+  core/drupal.dropbutton:
+    - black_hole/dropbutton
+  core/drupal.dialog:
+    - black_hole/dialog
+  core/drupal.progress:
+    - black_hole/progress
+  file/drupal.file:
+    - black_hole/file
+  media/media_embed_ckeditor_theme:
+    - black_hole/media_embed_ckeditor_theme
+  media_library/view:
+    - black_hole/media_library
+  media_library/widget:
+    - black_hole/media_library
+
+ckeditor_stylesheets:
+  - css/components/media-embed-error.css
+
+ckeditor5-stylesheets: false
+
+# Regions
+regions:
+  page_top: 'Page top'
+  topreg: 'Top region'
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  breadcrumb: Breadcrumb
+  user1: 'User 1'
+  user2: 'User 2'
+  user3: 'User 3'
+  user4: 'User 4'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  help: 'Help'
+  highlighted: 'Highlighted'
+  content_above: 'Content above'
+  content: 'Content'
+  content_below: 'Content below'
+  user5: 'User 5'
+  user6: 'User 6'
+  user7: 'User 7'
+  user8: 'User 8'
+  tertiary_menu: 'Tertiary menu'
+  footer: 'Footer'
+  footer_right: 'Footer right'
+  footer_below: 'Footer below'
+  page_bottom: 'Page bottom'
+
+block_default_region: 'content'
+
+# Information added by Drupal.org packaging script on 2024-09-04
+version: '8.x-1.18'
+project: 'black_hole'
+datestamp: 1725411017

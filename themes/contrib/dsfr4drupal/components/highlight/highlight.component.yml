@@ -1,0 +1,30 @@
+name: DSFR - Highlight
+description: Highlighting allows the user to distinguish and locate information easily.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    color_schema:
+      type: string
+      title: Color schema
+      description: 'Example: brown-caramel'
+    content:
+      type: string
+      title: Content
+    content_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Content attributes
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - lg
+        - sm
+  required:
+    - content
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.highlight

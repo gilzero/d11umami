@@ -1,0 +1,62 @@
+/*** RED-SUPERGIANT STYLE ***/
+
+#top_bg, #top_left, #top_right,
+#body_left, #body_right {
+	background: none;
+}
+#top_bg, #body_bg {
+	border-bottom: 3px solid #900;
+}
+.himg #headimg {
+	border: none;
+}
+#slider {
+	background: none !important;
+}
+#slider .post {
+	padding: 1% 0;
+}
+.region-highlighted {
+	border: solid 1px #900;
+}
+a, a:link, h1, h2, h3, .block-title {
+	color: #f00;
+}
+a:hover, a:active, a.is-active, ul.menu a.is-active {
+	color: #acacac;
+}
+#name-and-slogan a {
+	color: #f00;
+}
+.pure-menu-link {
+	color: #fff !important;
+	text-shadow: 1px 1px #000;
+	background: #900;
+}
+.pure-menu-link:hover, .pure-menu-link:focus {
+	background: #ca0000;
+}
+.pure-menu-children .pure-menu-link {
+	background: #ca0000;
+	border: 1px solid;
+	border-color: #df0000 #900 #900 #df0000;
+}
+.pure-menu-children a:hover, .pure-menu-children a:focus {
+	background: #b90000;
+}
+
+@media screen and (max-width: 48em) {
+	.pure-menu-link, .pure-menu-children,
+	.pure-menu-children .pure-menu-link {
+		color: #999 !important;
+		text-shadow: none;
+		background: none;
+		border: none;
+	}
+	.pure-menu-link:hover,
+	.pure-menu-link:focus,
+	.pure-menu-children a:hover,
+	.pure-menu-children a:focus {
+		background: #191919;
+	}
+}

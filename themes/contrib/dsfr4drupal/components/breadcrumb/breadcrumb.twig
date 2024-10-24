@@ -1,0 +1,25 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set aria_label = aria_label|default('You are here:'|t) %}
+{% set html_id = html_id|default('breadcrumb-' ~ random()) %}
+{% set title = title|default('View breadcrumb'|t) %}
+<nav{{ attributes.addClass('fr-breadcrumb').setAttribute('aria-label', aria_label).setAttribute('role', 'navigation') }}>
+  <button class="fr-breadcrumb__button" aria-expanded="false" aria-controls="{{ html_id }}">
+    {{ title }}
+  </button>
+  <div class="fr-collapse" id="{{ html_id }}">
+    <ol class="fr-breadcrumb__list">
+      {% for item in items %}
+        <li>
+          {% set item_attributes = create_attribute({'class': 'fr-breadcrumb__link'}) %}
+          {% if item.url %}
+            {% set item_attributes = item_attributes.setAttribute('href', item.url) %}
+          {% else %}
+            {% set item_attributes = item_attributes.setAttribute('aria-current', 'page') %}
+          {% endif %}
+          <a{{ item_attributes }}>{{ item.text }}</a>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</nav>
+{{ attach_library('dsfr4drupal/component.breadcrumb') }}

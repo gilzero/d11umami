@@ -1,0 +1,62 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set has_icon = has_icon ?? true %}
+{% set title_tag = title_tag|default('h3') %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-tile--' ~ variant) %}
+{% endif %}
+
+{% if download %}
+  {% set attributes = attributes.addClass('fr-tile--download') %}
+{% endif %}
+
+{% if horizontal %}
+  {% set attributes = attributes.addClass('fr-tile--horizontal') %}
+{% endif %}
+
+{% if enlarge_button %}
+  {% set attributes = attributes.addClass('fr-enlarge-button') %}
+{% endif %}
+
+{% if enlarge_link %}
+  {% set attributes = attributes.addClass('fr-enlarge-link') %}
+{% endif %}
+
+{% if not has_icon %}
+  {% set attributes = attributes.addClass('fr-tile--no-icon') %}
+{% endif %}
+
+{% if grey_hover %}
+  {% set attributes = attributes.addClass('fr-tile--grey') %}
+{% endif %}
+
+<div{{ attributes.addClass('fr-tile') }}>
+  <div class="fr-tile__body">
+    <div class="fr-tile__content">
+      <{{ title_tag }} class="fr-tile__title">
+          {% if use_button %}
+            <buton{{ link_attributes }}>{{ title }}</buton>
+          {% elseif url %}
+            {{ link(title, url, {'class': 'fr-tile__link'}) }}
+          {% else %}
+            {{ title }}
+          {% endif %}
+      </{{ title_tag }}>
+      {% if description %}
+        <p class="fr-tile__desc">{{ description }}</p>
+      {% endif %}
+      {% if detail %}
+        <p class="fr-tile__detail">{{ detail }}</p>
+      {% endif %}
+      {% if tags_badges %}
+        <div class="fr-tile__start">{{ tags_badges }}</div>
+      {% endif %}
+    </div>
+  </div>
+  {% if image %}
+    <div class="fr-tile__img">
+      {# Do not forget to add class "fr-responsive-img" to the image. #}
+      {{ image }}
+    </div>
+  {% endif %}
+</div>

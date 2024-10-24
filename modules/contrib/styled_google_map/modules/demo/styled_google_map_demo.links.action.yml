@@ -1,0 +1,5 @@
+entity.real_estate.add_form:
+  route_name: entity.real_estate.add_form
+  title: 'Add Real estate'
+  appears_on:
+    - entity.real_estate.collection

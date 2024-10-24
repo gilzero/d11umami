@@ -1,0 +1,15 @@
+body.dark-mode {
+  .modules-tabs {
+      background: none;
+      .modules-tabs__menu-item {
+          background: none;
+      }
+      .modules-tabs__pane {
+          background: solid $white2;
+      }
+      .modules-wrapper tr{
+          background: none;
+          border-bottom: 10px solid $white2;
+      }
+  }
+}

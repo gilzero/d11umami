@@ -1,0 +1,163 @@
+/* Main -> Admin Tabs */
+.page-tabs {
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  border-bottom: 2px solid var(--border-color);
+}
+ul.page-tabs li {
+  padding: 0;
+}
+ul.page-tabs li a {
+  padding: 4px 10px;
+  background: var(--border-color);
+  color: var(--bold-color);
+  transition: all 0.3s ease;
+}
+ul.page-tabs li a:hover {
+  background: var(--color-secondary);
+  color: #ffffff;
+}
+ul.page-tabs li.active-page-tab a {
+  background: var(--theme-color);
+  color: #ffffff;
+}
+/* Main -> Node */
+.node,
+.node-promoted,
+.node-sticky,
+.node-unpublished,
+.node-view-mode-full {
+  position: relative;
+}
+.node-content .field--name-body {
+  text-shadow: 1px 1px #ffffff;
+}
+.node-view-mode-teaser.node-sticky {
+  position: relative;
+  padding: 0 1em 1em 1em;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+/* Main -> node -> teaser view */
+.node-view-mode-teaser {
+  position: relative;
+  margin-bottom: 60px;
+  padding-bottom: 80px;
+  border-bottom: 3px double var(--border-color);
+}
+.node-view-mode-full .node-taxonomy-container {
+  margin: 0;
+}
+
+/* Main -> node -> submitted details */
+.node-header {
+  width: 100%;
+  margin: 0 0 0.5rem 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+.node-submitted-details {
+  display: flex;
+  gap: 1rem;
+}
+.node-submitted-details,
+.node-submitted-details a {
+  color: #757575;
+}
+.node-submitted-details a:hover {
+  color: var(--color-primary);
+}
+.node-submitted-details i {
+  color: var(--color-primary);
+}
+
+/* Main -> node -> taxonomy and links */
+.node-taxonomy-container,
+.node-links-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 16px 0 16px 0;
+  border-top: 1px solid var(--border-color);
+}
+.node-links-container {
+  border-bottom: 1px solid var(--border-color);
+}
+h3.term-title {
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 1;
+}
+.term-title i {
+  font-size: 1.1em;
+  color: var(--theme-color);
+}
+ul.taxonomy-terms {
+  margin: 1em 0 0.2em 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+li.taxonomy-term {
+  display: inline-block;
+}
+li.taxonomy-term a {
+  padding: 4px 10px;
+  background: #ffffff;
+  border: 1px dashed var(--theme-color);
+  border-radius: 4px;
+  transition: all 0.4s ease;
+}
+li.taxonomy-term a:hover {
+  background: var(--theme-color);
+  color: #ffffff;
+}
+.node-links-container ul.links {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+ul.inline,
+ul.links.inline {
+  display: inline;
+  padding-left: 0;
+}
+ul.inline li {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  list-style-type: none;
+}
+.node-links-container li {
+  float: left;
+  margin-right: 20px;
+}
+.node-links-container li.node-readmore {
+  float: right;
+  margin-left: 0;
+}
+li.node-readmore a {
+  padding: 6px 12px;
+  background: var(--theme-color);
+  color: #ffffff;
+  -webkit-transition: background 0.4s ease;
+  -moz-transition: background 0.4s ease;
+  transition: background 0.4s ease;
+}
+li.node-readmore a:hover {
+  background: #222;
+  color: #ffffff;
+}
+.node-view-mode-teaser li.comment-add,
+.node-view-mode-teaser li.comment-forbidden {
+  text-align: right;
+}

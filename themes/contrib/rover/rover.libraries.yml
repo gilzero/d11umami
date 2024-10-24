@@ -1,0 +1,28 @@
+rover-styling:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/main.js: {}
+
+bootstrap:
+  version: 1.x
+  css:
+    theme:
+      vendor/bootstrap/bootstrap.min.css: {}
+  js:
+    vendor/bootstrap/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/underscore
+    - core/backbone
+    - core/jquery.form
+    - core/jquery.ui.position
+    - core/drupal
+    - core/drupal.displace
+    - core/drupal.form
+    - core/drupal.ajax
+    - core/drupal.debounce
+    - core/drupalSettings

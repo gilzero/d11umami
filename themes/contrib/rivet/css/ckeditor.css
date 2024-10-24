@@ -1,0 +1,4 @@
+/* stylelint-disable-next-line import-notation */
+@import url("https://unpkg.com/rivet-core@2.8.1/css/rivet.min.css");
+
+/* @todo add postcss processing to replace .rvt-prose with .ck.ck-content */

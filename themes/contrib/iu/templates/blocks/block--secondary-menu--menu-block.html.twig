@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Override the system menu block to match IU Framework expectations.
+ */
+#}
+<div{{ attributes }}>
+  {{ title_prefix }}{{ title_suffix }}
+  <nav role="navigation" aria-label=" {{ 'Secondary navigation'|t }}" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+    {{ content|merge({'#attributes': {'class': ['inline', 'separators']}}) }}
+  </nav>
+</div>

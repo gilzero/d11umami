@@ -1,0 +1,59 @@
+{% if focus and not details %}
+  {% set attributes = attributes.setAttribute('tabindex', '0') %}
+{% endif %}
+
+{% if border %}
+  {% set attributes = attributes.addClass('border') %}
+{% endif %}
+
+{% if arrow %}
+  {% set attributes = attributes.addClass('collapse-arrow') %}
+{% endif %}
+
+{% if plus %}
+  {% set attributes = attributes.addClass('collapse-plus') %}
+{% endif %}
+
+{% if open and not details %}
+  {% set attributes = attributes.addClass('collapse-open') %}
+{% endif %}
+
+{% if close and not details %}
+  {% set attributes = attributes.addClass('collapse-close') %}
+{% endif %}
+
+{% set attributes = attributes.addClass('collapse', 'not-prose') %}
+
+{% if details %}
+  <details {{ attributes }}>
+  {% if title %}
+    <summary class="collapse-title text-xl font-medium">
+      {{ title }}
+    </summary>
+  {% endif %}
+{% else %}
+  <div {{ attributes }}>
+  {% if accordion_id %}
+      {% set accordion_item_attributes = create_attribute().setAttribute('type', 'radio').setAttribute('name', accordion_id) %}
+      {% if checked %}
+        {% set accordion_item_attributes = accordion_item_attributes.setAttribute('checked', 'checked') %}
+      {% endif %}
+      <input {{ accordion_item_attributes }}/>
+  {% else %}
+    {% if checkbox %}
+      <input type="checkbox" />
+    {% endif %}
+  {% endif %}
+  {% if title %}
+    <div class="collapse-title text-xl font-medium">
+      {{ title }}
+    </div>
+  {% endif %}
+{% endif %}
+
+{% if content %}
+  <div class="collapse-content">
+    {{ content }}
+  </div>
+{% endif %}
+</div>

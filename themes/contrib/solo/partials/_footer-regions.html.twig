@@ -1,0 +1,78 @@
+{% set footer_first = page.footer_first is not empty ? page.footer_first : null %}
+{% set footer_second = page.footer_second is not empty ? page.footer_second : null %}
+{% set footer_third = page.footer_third is not empty ? page.footer_third : null %}
+
+{% if footer_first or footer_second or footer_third %}
+
+{% set footer_regions = 0 %}
+
+{% if footer_first%}
+  {% set footer_regions = footer_regions + 1 %}
+  {% set footer_first_outer_classes = 'region-outer footer-box footer-box-first' %}
+  {% set footer_first_inner_classes = 'region-inner footer-box-inner footer-box-first-inner fade-inner' ~ (classes_footer_first ? ' ' ~ classes_footer_first) %}
+{% endif %}
+
+{% if footer_second %}
+  {% set footer_regions = footer_regions + 1 %}
+  {% set footer_second_outer_classes = 'region-outer footer-box footer-box-second' %}
+  {% set footer_second_inner_classes = 'region-inner footer-box-inner footer-box-second-inner fade-inner' ~ (classes_footer_second ? ' ' ~ classes_footer_second) %}
+{% endif %}
+
+{% if footer_third %}
+  {% set footer_regions = footer_regions + 1 %}
+  {% set footer_third_outer_classes = 'region-outer footer-box footer-box-third' %}
+  {% set footer_third_inner_classes = 'region-inner footer-box-inner footer-box-third-inner fade-inner' ~ (classes_footer_third ? ' ' ~ classes_footer_third) %}
+{% endif %}
+
+{% set footer_active = 'active-footer-' ~ footer_regions %}
+
+{% set footer_outer = 'solo-outer multi footer-container' ~
+  (footer_active ? ' ' ~ footer_active) ~
+  (site_regions_footer_border ? ' has-border') ~
+  (site_regions_footer_rounded ? ' ' ~ site_regions_footer_rounded) ~
+  (site_regions_footer_animate_border ? ' animate-border') ~
+  (site_regions_footer_animate_hover ? ' animate-hover') ~
+  (classes_footer_container ? ' ' ~ classes_footer_container) %}
+
+{% set footer_inner = 'solo-inner solo-col footer-container-inner' ~
+  (footer_layout ? ' ' ~ footer_layout) %}
+
+  <!-- start: Footer -->
+  <div id="footer-container" class="{{ footer_outer }}" {{ attributes_footer_container }}>
+    <div id="footer-container-inner" class="{{ footer_inner }}">
+
+    {% if footer_first %}
+      <!-- Start: Footer First  -->
+      <div id="footer-box-first" class="{{ footer_first_outer_classes }}">
+        <div class="{{ footer_first_inner_classes }}" {{ attributes_footer_first }}>
+          {{ footer_first }}
+        </div>
+      </div>
+      <!-- End: Footer First -->
+    {% endif %}
+
+    {% if footer_second %}
+      <!-- Start: Footer Second Region -->
+      <div id="footer-box-second" class="{{ footer_second_outer_classes }}">
+        <div class="{{ footer_second_inner_classes }}" {{ attributes_footer_second }}>
+          {{ footer_second }}
+        </div>
+      </div>
+      <!-- End: Footer Second -->
+    {% endif %}
+
+    {% if footer_third %}
+      <!-- Start: Footer Third -->
+      <div id="footer-box-third" class="{{ footer_third_outer_classes }}">
+        <div class="{{ footer_third_inner_classes }}" {{ attributes_footer_third }}>
+          {{ footer_third }}
+        </div>
+      </div>
+      <!-- End: Footer Third -->
+    {% endif %}
+
+    </div>
+  </div>
+  <!-- End: Footer -->
+{% endif %}
+

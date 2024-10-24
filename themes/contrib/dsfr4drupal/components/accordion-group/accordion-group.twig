@@ -1,0 +1,11 @@
+{% set attributes = attributes|default(create_attribute()) %}
+
+{% if dissociated %}
+  {% set attributes = attributes.setAttribute('data-fr-group', 'false') %}
+{% endif %}
+
+<div{{ attributes.addClass('fr-accordions-group') }}>
+  {% for item in items %}
+    {{ include('dsfr4drupal:accordion', item, with_context=false) }}
+  {% endfor %}
+</div>

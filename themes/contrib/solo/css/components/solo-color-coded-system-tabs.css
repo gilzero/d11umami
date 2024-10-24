@@ -1,0 +1,104 @@
+/* Custom core buttons hover */
+.page-wrapper ul.primary li.core-task a.view-link {
+  --r-lk: var(--solo-green);
+}
+
+.page-wrapper ul.primary li.core-task a.edit-link {
+  --r-lk: var(--solo-blue);
+}
+
+.page-wrapper ul.primary li.core-task a.delete-link {
+  --r-lk: var(--solo-red);
+}
+
+.page-wrapper ul.primary li.core-task a.revisions-link {
+  --r-lk: var(--solo-purple);
+}
+
+.page-wrapper ul.primary > li.core-task > a {
+  position: relative;
+  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.page-wrapper ul.primary > li.core-task > a:hover {
+  --r-bg: transparent !important;
+}
+
+.page-wrapper ul.primary > li.core-task > a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: transform 0.3s ease-out;
+  z-index: -1;
+  transform: translateY(100%);
+}
+
+.page-wrapper ul.primary > li.core-task > a.view-link::before {
+  background-color: var(--solo-green);
+}
+
+.page-wrapper ul.primary > li.core-task > a.edit-link::before {
+  background-color: var(--solo-blue);
+}
+
+.page-wrapper ul.primary > li.core-task > a.delete-link::before {
+  background-color: var(--solo-red);
+}
+
+.page-wrapper ul.primary > li.core-task > a.revisions-link::before {
+  background-color: var(--solo-purple);
+}
+
+.page-wrapper ul.primary > li.core-task > a:hover::before {
+  transform: translateY(0);
+}
+
+.page-wrapper ul.primary > li.core-task,
+.page-wrapper ul.primary > li.core-task a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-wrapper ul.primary > li.core-task a {
+  padding-left: var(--solo-px32);
+}
+
+.page-wrapper ul.primary > li.core-task .task-icon {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  left: var(--solo-px6);
+  pointer-events: none;
+}
+
+.page-wrapper ul.primary > li.core-task .task-icon.icon-view {
+  fill: var(--solo-green);
+}
+
+.page-wrapper ul.primary > li.core-task .task-icon.icon-edit {
+  fill: var(--solo-blue);
+}
+
+.page-wrapper ul.primary > li.core-task .task-icon.icon-delete {
+  fill: var(--solo-red);
+}
+
+.page-wrapper ul.primary > li.core-task .task-icon.icon-revisions {
+  fill: var(--solo-purple);
+}
+
+.page-wrapper ul.primary > li.core-task > a:hover {
+  --r-lk-h: var(--solo-white);
+}
+
+.page-wrapper ul.primary > li.core-task a:hover + .task-icon {
+  fill: var(--solo-white);
+}

@@ -1,0 +1,33 @@
+<style>
+  @media (min-width: 1200px) {
+  .container {
+    max-width: {{ container_width }}px;
+  }
+}
+{# Layout #}
+{% if header_width == 'header_width_full' %}
+.header .container,
+.page-header .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+{% if main_width == 'main_width_full' %}
+.main-wrapper .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+
+{% if footer_width == 'footer_width_full' %}
+.footer .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+{% if highlight_author_comment %}
+.comment-by-author {
+  box-shadow: 0 0 3px var(--color-primary);
+}
+{% endif %}
+</style>

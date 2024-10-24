@@ -1,0 +1,20 @@
+// Nav tabs scss
+.vt-nav {
+  border-bottom: solid 1px $gray-dark;
+  padding: 0;
+  .vt-nav-item {
+    display: inline-block;
+    a {
+      padding: 0.5rem 1rem;
+      color: $gray-dark;
+      display: block;
+      &.is-active {
+        border: solid 1px $gray-dark;
+        border-bottom: solid 1px #fff;
+        margin-bottom: -1px;
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+      }
+    }
+  }
+}

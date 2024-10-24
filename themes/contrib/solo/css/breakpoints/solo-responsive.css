@@ -1,0 +1,185 @@
+@media (min-width:62rem) {
+  #primary-sidebar-menu {
+    min-width: 25rem;
+    max-width: 36rem;
+  }
+
+  .site-name {
+    font-size: var(--solo-px36);
+    line-height: calc(2 * var(--solo-px22));
+  }
+
+  .site-slogan {
+    font-size: var(--solo-px20);
+    line-height: calc(2 * var(--solo-px12));
+  }
+
+  /* HTML tags */
+  h1 {
+    line-height: calc(2 * var(--solo-px22));
+  }
+
+  h2 {
+    line-height: calc(2 * var(--solo-px20));
+  }
+
+  h3 {
+    line-height: calc(2 * var(--solo-px18));
+  }
+
+}
+
+@media (max-width:62rem) {
+  .site-name {
+    font-size: var(--solo-px24);
+    line-height: calc(2 * var(--solo-px14));
+  }
+
+  .site-slogan {
+    font-size: var(--solo-px18);
+    line-height: var(--solo-px22);
+  }
+
+  h1 {
+    font-size: var(--solo-px26);
+  }
+
+  h2 {
+    font-size: var(--solo-px22);
+  }
+
+  h3 {
+    font-size: var(--solo-px20);
+  }
+
+  h4 {
+    font-size: var(--solo-px18);
+  }
+
+  #primary-sidebar-menu {
+    min-width: 18rem;
+    max-width: 32rem;
+  }
+
+}
+
+@media (max-width:48rem) {
+  .node--view-mode-teaser .field--name-field-image {
+    min-width: 100%;
+  }
+
+  .view .node--view-mode-teaser .node__title,
+  .view .node--view-mode-teaser .node__content .field--name-field-image {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h1 {
+    font-size: var(--solo-px22);
+  }
+
+  h2 {
+    font-size: var(--solo-px20);
+  }
+
+  h3 {
+    font-size: var(--solo-px18);
+  }
+
+  h4 {
+    font-size: var(--solo-px16);
+  }
+
+  #primary-sidebar-menu {
+    min-width: 18rem;
+    max-width: 25rem;
+  }
+
+}
+
+@media (min-width:36rem) {
+  #page-wrapper .views-exposed-form .exposed-form>* {
+    width: auto;
+  }
+}
+
+@media (max-width:36rem) {
+  h1 {
+    font-size: var(--solo-px20);
+  }
+
+  h2 {
+    font-size: var(--solo-px18);
+  }
+
+  h3 {
+    font-size: var(--solo-px16);
+  }
+
+  .field p,
+  .field li,
+  .field span {
+    line-height: var(--solo-px28);
+  }
+
+  #primary-sidebar-menu {
+    min-width: 18rem;
+    max-width: 22rem;
+  }
+
+  form ol,
+  form ul,
+  .field ol,
+  .field ul {
+    padding-left: var(--solo-px24);
+  }
+
+  form ol ul,
+  form ol ol,
+  form ul ul,
+  form ul ol,
+  .field ol ul,
+  .field ol ol,
+  .field ul ul,
+  .field ul ol {
+    padding-left: var(--solo-px12);
+  }
+
+  .button,
+  .solo-button {
+    white-space: normal;
+  }
+
+  #page-wrapper .views-exposed-form .exposed-form > div {
+    margin: var(--solo-px8); auto;
+    width: 100%;
+  }
+  #page-wrapper .views-exposed-form .exposed-form .form-actions,
+  #page-wrapper .views-exposed-form .exposed-form {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+
+}
+
+@media (max-width:20rem) {
+  #primary-sidebar-menu {
+    min-width: 12rem;
+    max-width: 16rem;
+  }
+
+  .solo-input,
+  .solo-select,
+  .solo-textarea {
+    max-width: 220px;
+    min-width: 120px;
+  }
+
+  .form-actions input {
+    min-width: 80px;
+  }
+
+}

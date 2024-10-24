@@ -1,0 +1,188 @@
+%menu-item {
+  display: inline-block;
+  position: relative;
+}
+.vt_header_top {
+  background: $gray-dark;
+  padding: 0.25rem 0;
+  .vt-region-top-header {
+    @include flexbox;
+    @include flex-direction;
+    @include justify-content($value: end);
+    padding: 0 15px;
+    .vt-menu--account {
+      .vt-user-menu-account {
+        @include flexbox;
+        @include flex-direction($direction: row);
+        @include justify-content($value: end);
+        padding: 0;
+        gap: 15px;
+        .vt-item {
+          @extend %menu-item;
+          a {
+            color: $white;
+            &:hover {
+              color: $brand-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.vt-header {
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  .vt-region-header {
+    @include flexbox;
+    @include flex-direction;
+    @include justify-content($value: space-between);
+    padding: 0 15px;
+    @include md {
+      padding: 0
+    }
+    nav#block-mainnavigation {
+      @include flexbox;
+      @include flex-direction($direction: column);
+      @include justify-content($value: center);
+    }
+    .burger {
+      @include md {
+        display: none;
+      }
+      width: 40px;
+      cursor: pointer;
+      overflow: auto;
+      span.burger-line {
+        height: 2px;
+        width: 75%;
+        background-color: $brand-color;
+        display: block;
+        margin: 4px 0;
+        float: right;
+        &:last-child {
+          margin-bottom: 0;
+          width: 100%;
+        }
+        &:first-child{
+          margin-top: 0;
+          width: 100%;
+        }
+      }
+    }
+    .vt-menu-main {
+      display: none;
+      @include md {
+        display: block;
+      }
+      > .vt-item {
+        @extend %menu-item;
+        a.vt-link,
+        span.vt-link {
+          padding: 2rem 1rem;
+          display: block;
+          color: $gray-dark;
+          font-weight: 700;
+          font-size: 1.05rem;
+          &:hover {
+            color: $brand-color;
+          }
+          &.is-active {
+            color: $brand-color;
+          }
+        }
+        .vt-submenu {
+          position: absolute;
+          width: 170px;
+          background: #fff;
+          left: 0;
+          top: 120%;
+          visibility: hidden;
+          opacity: 0;
+          box-shadow: 0 0 10px 3px rgba(0,0,0,0.05);
+          padding: 17px 0;
+          border-top: 5px solid $brand-color;
+          -webkit-transition: .3s;
+          -moz-transition: .3s;
+          -o-transition: .3s;
+          transition: .3s;
+          z-index: 1;
+          .vt-item {
+            list-style: none;
+            a.vt-link {
+              padding: 1rem;
+            }
+          }
+        }
+        &.menu-item--expanded {
+          &:hover {
+            .vt-submenu {
+              opacity: 1;
+              top: 100%;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+    .vt-mobile-main-menu{
+      .vt-menu-main{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        display: block;
+        position: fixed;
+        top: 0;
+        z-index: 502;
+        overflow-x: hidden;
+        transition: 0.5s;
+        width: 250px;
+        min-height: 100vh;
+        right: 0px;
+        background: $white;
+        padding: 3rem 1.2rem 1.2rem 1.2rem;
+        -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInRight;
+        animation: 500ms ease-in-out 0s normal none 1 running fadeInRight;
+        &::after {
+          content: "";
+          width: 1rem;
+          display: block;
+          height: 1rem;
+          background: red;
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
+          z-index: 9;
+          border-radius: 50%;    
+          background-image: url(../images/close.svg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-color: transparent;
+        }
+        .vt-item {
+          display: block;
+          a.vt-link {
+            padding: .25rem .5rem;
+          }
+        }
+      }
+    }
+    .vt-block-system-branding-block {
+      .vt-logo {
+        max-height: 80px;
+      }
+    }
+  }
+  &.sticky-bar {
+    left: 0;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    -webkit-box-shadow: 0 10px 15px rgba(25,25,25,0.1);
+    box-shadow: 0 10px 15px rgba(25,25,25,0.1);
+    z-index: 9999;
+    -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+    animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+    -webkit-box-shadow: 0 10px 15px rgba(25,25,25,0.1);
+    background: $white;
+  }
+}

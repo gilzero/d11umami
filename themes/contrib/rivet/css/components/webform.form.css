@@ -1,0 +1,19 @@
+.webform-readonly input[type="date"],
+.webform-readonly input[type="datetime-local"],
+.webform-readonly input[type="email"],
+.webform-readonly input[type="number"],
+.webform-readonly input[type="password"],
+.webform-readonly input[type="search"],
+.webform-readonly input[type="tel"],
+.webform-readonly input[type="text"],
+.webform-readonly input[type="time"],
+.webform-readonly input[type="url"],
+.webform-readonly textarea {
+  border-color: #75838f;
+  background-color: #e2e7e9;
+}
+
+.calculation.form-wrapper .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+}

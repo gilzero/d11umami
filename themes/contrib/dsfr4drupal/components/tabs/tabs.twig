@@ -1,0 +1,13 @@
+{% set attributes = attributes|default(create_attribute()) %}
+<div{{ attributes.addClass('fr-tabs') }}>
+  <ul class="fr-tabs__list" role="tablist"{{ label ? ' aria-label="' ~ label ~ '"' : '' }}>
+    {% for tab in tabs %}
+      <li role="presentation">
+        {{ tab }}
+      </li>
+    {% endfor %}
+  </ul>
+  {% for panel in panels %}
+    {{ panel }}
+  {% endfor %}
+</div>

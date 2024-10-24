@@ -1,0 +1,71 @@
+<div class="ui-patterns-test-component">
+  <div class="ui-patterns-props-string">
+    {{ string }}
+  </div>
+  <div class="ui-patterns-props-integer">
+    {{ integer }}
+  </div>
+  <div class="ui-patterns-props-number">
+    {{ number }}
+  </div>
+  <div class="ui-patterns-props-url">
+    {{ url }}
+  </div>
+  <div class="ui-patterns-props-machine_name">
+    {{ machine_name }}
+  </div>
+  <div class="ui-patterns-props-boolean">
+    {{ boolean }}
+  </div>
+  <div class="ui-patterns-props-links">
+    {% for item in links %}
+      {% if item.url %}
+        <li>
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        </li>
+      {% else %}
+        <li>
+          {{ item.title }}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-enum_integer">
+    {{ enum_integer }}
+  </div>
+  <div class="ui-patterns-props-enum_string">
+    {{ enum_string }}
+  </div>
+  <div class="ui-patterns-props-enum_list">
+    {% for item in enum_list %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-list_string">
+    {% for item in list_string %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-list_integer">
+    {% for item in list_integer %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-list_mixed">
+    {% for item in list_mixed %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-attributes_implicit">
+    {{ attributes_implicit }}
+  </div>
+  <div class="ui-patterns-props-attributes_ui_patterns">
+    {{ attributes_ui_patterns }}
+  </div>
+  <div class="ui-patterns-props-attributes_class">
+    {{ attributes_class }}
+  </div>
+  <div class="ui-patterns-slots-slot">
+    {{ slot }}
+  </div>
+</div>

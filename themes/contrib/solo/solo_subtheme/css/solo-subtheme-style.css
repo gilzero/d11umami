@@ -1,0 +1,101 @@
+/* Add your css code here */
+/*
+Variable Definitions:
+  --r-bg: Sets the background color.
+  --r-tx: Sets the text color.
+  --r-h1: Sets the color for h1, h2, and h3 headings.
+  --r-lk: Sets the link text color.
+  --r-lk-h: Sets the hover color for link text.
+  --r-br: Sets the border color.
+  --r-bg-fr: Sets the background color for input forms.
+  --r-tx-lk: Sets the menu link text color.
+  --r-tx-lk-h: Sets the hover color for menu link text.
+  --r-bg-lk: Sets the background color for menu links.
+  --r-bg-lk-h: Sets the hover background color for menu links.
+  --r-tx-bt: Sets the button text color.
+  --r-tx-bt-h: Sets the hover color for button text.
+  --r-bg-bt: Sets the button background color.
+  --r-bg-bt-h: Sets the hover background color for buttons.
+*/
+
+/*
+Regions Names, each region has an ID and a Class with the same name.
+You can use .page-wrapper or #page-wrapper
+#page-wrapper {}
+#primary-sidebar-menu {}
+#fixed-search-block {}
+#popup-login-block {}
+#header {}
+#primary-menu {}
+#welcome-text {}
+
+#top-container {}
+#top-box-first {}
+#top-box-second {}
+#top-box-third {}
+
+#system-messages {}
+#breadcrumb {}
+#page-title {}
+
+#main-container {}
+#sidebar-box-first {}
+#sidebar-box-main {}
+#sidebar-box-second {}
+
+#bottom-container {}
+#bottom-box-first {}
+#bottom-box-second {}
+#bottom-box-third {}
+#bottom-box-fourth {}
+
+#footer-container {}
+#footer-box-first {}
+#footer-box-second {}
+#footer-box-third {}
+
+#footer-menu {}
+#copyright {}
+
+Examples:
+
+#page-wrapper {
+  background-color: var(--r-bg);
+  color: var(--r-tx);
+  border-color: var(--r-br);
+}
+
+h1, h2, h3 {
+  color: var(--r-h1);
+}
+
+a:not(li.nav__menu-item a) {
+  color: var(--r-lk);
+  color: var(--r-lk-h);
+}
+
+input:not(.button) {
+  background-color: var(--r-bg-fr);
+}
+
+li.nav__menu-item a {
+  color: var(--r-tx-lk);
+  background-color: var(--r-bg-lk);
+}
+
+li.nav__menu-item a:hover {
+  color: var(--r-tx-lk-h);
+  background-color: var(--r-bg-lk-h);
+}
+
+button:not(li.nav__menu-item button) {
+  color: var(--r-tx-bt);
+  background-color: var(--r-bg-bt);
+}
+
+button:not(li.nav__menu-item button):hover {
+  color: var(--r-tx-bt-h);
+  background-color: var(--r-bg-bt-h);
+}
+https://www.drupal.org/docs/extending-drupal/themes/contributed-themes/solo/instructions-for-developers-on-using-colors-in-solo-theme
+*/

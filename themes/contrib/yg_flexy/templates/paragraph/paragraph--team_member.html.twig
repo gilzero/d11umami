@@ -1,0 +1,29 @@
+
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+    <article class="item">
+        <figure>
+            <img src="{{ file_url(content.field_member_image['#items'].entity.uri.value)}}" 
+             alt="{{ content.field_member_image['#items'].alt }}">
+            <div class="socials">
+                <ul>
+                    {% if content.field_facebook.0['#url'] %}
+                        <li><a href="{{content.field_facebook.0['#url']}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    {% if content.field_twitter.0['#url'] %}
+                        <li><a href="{{content.field_twitter.0['#url']}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    {% if content.field_google.0['#url'] %}
+                        <li><a href="{{content.field_google.0['#url']}}"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    {% if content.field_linkedin.0['#url'] %}
+                        <li><a href="{{content.field_linkedin.0['#url']}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </figure>
+        <div class="info">
+            <h4 class="title">{{content.field_member_name.0}}</h4>
+            <span class="job-title">{{content.field_designation.0}}</span>
+        </div>
+    </article>
+</div>

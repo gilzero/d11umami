@@ -1,0 +1,23 @@
+<div class="blog-wrapper mb-40">
+  <div class="blog-thumb">
+    <a href="{{fields.view_node.content}}">
+        {{fields.field_image.content}}
+    </a>
+  </div>
+  <div class="meta-info">
+    <ul>
+      <li class="posts-time">{{fields.created.content}}</li>
+    </ul>
+  </div>
+  <div class="blog-content">
+    <h2 class="blog-title">
+      <a href="{{fields.view_node.content}}">
+        {{fields.title.content}}
+      </a>
+    </h2>
+    {{ fields.body.content }}
+  </div>
+  <div class="link-box">
+    <a href="{{fields.view_node.content}}">Read More</a>
+  </div>
+</div>

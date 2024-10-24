@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override of the text format filter help container.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - children: The rendered child elements of the container.
+ * - has_parent: A flag to indicate that the container has one or more parent
+     containers.
+ *
+ * @see template_preprocess_container()
+ */
+#}
+
+{%
+  set classes = [
+    'rvt-c-description',
+    'rvt-c-text-format-filter-help',
+  ]
+%}
+<div{{attributes.addClass(classes)}}>
+{% set item = element.about %}
+{%
+  set attrs = {
+    'class': ['icon-help'],
+    'style': 'float:right'
+  }
+%}
+{{ link(item['#title'], item['#url'], item['#attributes']|merge(attrs)) }}
+</div>
+

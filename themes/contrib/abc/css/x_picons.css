@@ -1,0 +1,189 @@
+/* PAGE ICONS */
+
+
+.pi .sections li a.is-active,
+.pi #middlecontainer li a.is-active,
+.pi li.comment-approve a,
+.pi .comment-add a,
+.pi .comment-comments a,
+.pi li.comment-edit a,
+.pi li.comment_forbidden a,
+.pi .field--name-field-nofollow.field--label-hidden,
+.pi .field--name-field-nofollow .field__item a,
+.pi .more-link a,
+.pi .book-add-child a,
+.pi .book-printer a,
+.pi .file--application-pdf,
+.pi .node-readmore a,
+.pi li.comment-reply a,
+/*.pi .field--label-hidden.is-term,*/
+.pi li.comment-delete a,
+.pi .blog-usernames-blog a,
+.pi .menu--account li a {
+	background: url(../images/_sprites_page.png) no-repeat -99px 99px; /* LTR */
+}
+
+
+.pi .sections li a.is-active,
+.pi #middlecontainer li a.is-active {
+	background-position: right -102px; /* LTR */
+	padding: 0 20px 0 0; /* LTR */
+}
+[dir="rtl"] .pi .sections li a.is-active,
+[dir="rtl"] .pi #middlecontainer li a.is-active {
+	background-position: left -132px;
+	padding: 0 0 0 20px;
+}
+.pi li.comment-approve a {
+	background-position: left -106px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi li.comment-approve a {
+	background-position: right -132px;
+	padding: 0 20px 0 0;
+}
+.pi .comment-add a {
+	background-position: left -158px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi .comment-add a {
+	background-position: right -158px;
+	padding: 0 20px 0 0;
+}
+.pi .comment-comments a {
+	background-position: left -184px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi .comment-comments a {
+	background-position: right -184px;
+	padding: 0 20px 0 0;
+}
+.pi li.comment-edit a {
+	background-position: left -210px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi li.comment-edit a {
+	background-position: right -210px;
+	padding: 0 20px 0 0;
+}
+.pi li.comment_forbidden a {
+	background-position: left -262px; /* LTR */
+	padding: 0 4px 0 20px; /* LTR */
+}
+[dir="rtl"] .pi li.comment_forbidden a {
+	background-position: right -262px;
+	padding: 0 20px 0 4px;
+}
+.pi .field--name-field-nofollow.field--label-hidden,
+.pi .field--name-field-nofollow .field__item a {
+	background-position: left -314px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi .field--name-field-nofollow.field--label-hidden,
+[dir="rtl"] .pi .field--name-field-nofollow .field__item a {
+	background-position: right -314px; /* LTR */
+	padding: 0 20px 0 0; /* LTR */
+}
+.pi .more-link a {
+	background-position: left -340px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+	font-size: .8em;
+}
+[dir="rtl"] .pi .more-link a {
+	background-position: right -366px;
+	padding: 0 20px 0 0;
+}
+.pi .book-add-child a {
+	background-position: left -392px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi .book-add-child a {
+	background-position: right -392px;
+	padding: 0 20px 0 0;
+}
+.pi .file--application-pdf {
+	background-position: left -418px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi .file--application-pdf {
+	background-position: right -418px;
+	padding: 0 20px 0 0;
+}
+.pi .book-printer a {
+	background-position: left -444px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi .book-printer a {
+	background-position: right -444px;
+	padding: 0 20px 0 0;
+}
+.pi .node-readmore a {
+	background-position: left -470px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi .node-readmore a {
+	background-position: right -496px;
+	padding: 0 20px 0 0;
+}
+.pi li.comment-reply a {
+	background-position: left -522px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi li.comment-reply a {
+	background-position: right -522px;
+	padding: 0 20px 0 0;
+}
+.pi .field--label-hidden.is-term {
+	/*background-position: left -545px; /* LTR */
+	background: url(../images/icons/page/tag.png) no-repeat 0 3px; /* LTR */
+	padding: 0 0 0 12px; /* LTR */
+}
+[dir="rtl"] .pi .field--label-hidden.is-term  {
+	/*background-position: right -545px;*/
+	background: url(../images/icons/page/tag.png) no-repeat right 3px;
+	padding: 0 12px 0 0;
+}
+.pi li.comment-delete a {
+	background-position: left -574px; /* LTR */
+	padding: 0 0 0 20px; /* LTR */
+}
+[dir="rtl"] .pi li.comment-delete a {
+	background-position: right -574px;
+	padding: 0 20px 0 0;
+}
+.pi .blog-usernames-blog a {
+	background-position: left -600px; /* LTR */
+	padding: 0 4px 0 20px; /* LTR */
+}
+[dir="rtl"] .pi .blog-usernames-blog a {
+	background-position: right -600px;
+	padding: 0 20px 0 4px;
+}
+
+
+/*
+* .region-topreg 
+*/
+
+.pi .menu--account li {
+	border: none;
+	padding: 0;
+	list-style: none;
+}
+.pi .menu--account li a {
+	margin: 0 5px;
+	padding: 0 0 0 20px;
+}
+[dir="rtl"] .pi .menu--account li a {
+	padding: 0 20px 0 0;
+}
+
+.pi .menu--account li a[href*="user"] { background-position: left -626px; }
+.pi .menu--account li a[href*="blog"] { background-position: left -730px; }
+.pi .menu--account li a[href*="logout"] { background-position: left -288px; }
+.pi .menu--account li a[href*="login"] { background-position: left -262px; }
+
+[dir="rtl"] .pi .menu--account li a[href*="user"] { background-position: right -626px; }
+[dir="rtl"] .pi .menu--account li a[href*="blog"] { background-position: right -730px; }
+[dir="rtl"] .pi .menu--account li a[href*="logout"] { background-position: right -288px; }
+[dir="rtl"] .pi .menu--account li a[href*="login"] { background-position: right -262px; }

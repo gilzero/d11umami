@@ -1,0 +1,53 @@
+/* Comments
+--------------------------------------*/
+#comments {
+  border-top: 1px solid var(--border);
+}
+#comments i {
+  color: var(--primary);
+}
+.comments-title::before,
+.comment-form-wrap .add-comment-title::before {
+  font-family: 'thex';
+  color: var(--primary);
+  padding-right: 6px;
+}
+.comments-title::before {
+  content: "\e008";
+}
+.comment-form-wrap .add-comment-title::before {
+  content: "\e024";
+}
+/* Comments -> single comment */
+.comment {
+  background-color: var(--light);
+  box-shadow: 0 0 6px 1px var(--border);
+}
+.comment-header {
+  background-color: #F9F5F0;
+  border: 0;
+  box-shadow: 0 0 4px var(--border);
+}
+.comment-user-picture {
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+}
+.comment-title,
+.comment-title a {
+  color: var(--dark);
+}
+.comment-reply a,
+.comment-delete a,
+.comment-edit a {
+  padding: 4px 12px;
+  background: #ffffff;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.comment-reply a:hover,
+.comment-delete a:hover,
+.comment-edit a:hover {
+  background: var(--primary);
+  color: #ffffff;
+}

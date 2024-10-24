@@ -1,0 +1,12 @@
+name: 'UI Examples Defaults'
+type: module
+description: 'Provide some defaults examples for standard Drupal elements.'
+core_version_requirement: ^10 || ^11
+package: 'User interface'
+dependencies:
+  - ui_examples:ui_examples
+
+# Information added by Drupal.org packaging script on 2024-10-17
+version: '1.0.0'
+project: 'ui_examples'
+datestamp: 1729181739

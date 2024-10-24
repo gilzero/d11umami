@@ -1,0 +1,96 @@
+name: DSFR - Card
+description: The card is a link to an editorial page of which it gives an overview. It is usually part of a collection or preview list of similar content. The card is never presented in isolation.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    bg_boxes:
+      type: string
+      title: Backgrounds and boxes
+      description: Card offers different variations in terms of background and box.
+    description:
+      type: string
+      title: Description
+    detail:
+      type: string
+      title: Top detail
+    detail_end:
+      type: string
+      title: Bottom detail
+    detail_end_icon:
+      title: Bottom detail icon
+    detail_icon:
+      type: string
+      title: Top detail icon
+    enlarge_button:
+      type: boolean
+      title: Enlarge button?
+      description: Extend the button to the whole card. Will not be used for cards with footer.
+      default: false
+    enlarge_link:
+      type: boolean
+      title: Enlarge link?
+      description: Extend the link to the whole card. Will not be used for cards with footer.
+      default: false
+    footer:
+      type: string
+      title: Footer
+      description: Should be button or link group.
+    horizontal:
+      type: boolean
+      title: Horizontal card?
+      default: false
+    horizontal_ratio:
+      type: string
+      title: Ratio for horizontal cards
+      description: The default ratio is 40% for the image. Can also be 33/66 or 50/50.
+      enum:
+        - tier
+        - half
+    image:
+      type: string
+      title: Image
+      description: Do not forget to add class "fr-responsive-img" to the image.
+    image_badges:
+      type: string
+      title: Image badges
+    link_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Link attributes
+    no_arrow:
+      type: boolean
+      title: Hide an arrow?
+      description: Hides an arrow in the card bottom.
+      default: false
+    tags_badges:
+      type: string
+      title: Tags or badges groups
+    title:
+      type: string
+      title: Title
+    title_tag:
+      type: string
+      title: Title HTML tag
+      default: h3
+    url:
+      type: string
+      title: URL
+    use_button:
+      type: boolean
+      title: Use button?
+      description: Use button instead of link.
+      default: false
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - lg
+        - sm
+  required:
+    - title
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.card

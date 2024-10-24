@@ -1,0 +1,24 @@
+favicon:
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  use_default: true
+slideshow_display: 0
+slide_title: "Test title config"
+slide_image: {}
+slide_url: /contact
+slide_url_title: "Title test wer"
+banner_display: 1
+banner_title: "Helping Dreams Do test"
+banner_image:
+  - "13"
+banner_url: /contact
+banner_url_title: "see more"
+banner_desc:
+  value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+  format: full_html
+banner_align: start

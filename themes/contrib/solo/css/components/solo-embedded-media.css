@@ -1,0 +1,81 @@
+figcaption {
+  padding: 0.5rem;
+  font-family: serif;
+  font-size: 0.875rem;
+  font-style: italic;
+  line-height: 1.5rem;
+}
+
+.align-right,
+.align-left,
+.align-center {
+  float: none;
+  max-width: 100%;
+  margin: 1rem 0;
+}
+
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width:36rem) {
+  figcaption {
+    padding: 1rem;
+  }
+
+  .align-right {
+    float: right;
+    max-width: 75%;
+    margin: 1rem 0 1rem 1rem;
+  }
+
+  [dir="rtl"] .align-right {
+    float: left;
+  }
+
+  .align-left {
+    float: left;
+    max-width: 75%;
+    margin: 1rem 1rem 1rem 0;
+  }
+
+  [dir="rtl"] .align-left {
+    float: right;
+  }
+
+}
+
+@media (min-width:48rem) {
+  .align-right {
+    float: right;
+    max-width: 50%;
+    margin: 1rem 0 1rem 1rem;
+  }
+
+  [dir="rtl"] .align-right {
+    float: left;
+  }
+
+  .align-left {
+    float: left;
+    max-width: 50%;
+    margin: 1rem 1rem 1rem 0;
+  }
+
+  [dir="rtl"] .align-left {
+    float: right;
+  }
+
+}
+
+.align-center img,
+.align-center video,
+.align-center audio {
+  margin-inline: auto;
+}
+
+.media-oembed-content {
+  display: block;
+  max-width: 100%;
+}

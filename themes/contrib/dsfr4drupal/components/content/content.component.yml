@@ -1,0 +1,34 @@
+name: DSFR - Content (media)
+description: Media content refers to your photo and video content. When integrated into a content page, it is recommended to follow the rules described below.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    caption:
+      type: string
+      title: Caption
+    image:
+      type: string
+      title: Image
+      description: Do not forget to add class "fr-responsive-img" to the image.
+    transcription:
+      type: string
+      title: Transcription
+    transcription_title:
+      type: string
+      title: Transcription title
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - lg
+        - sm
+    video:
+      type: string
+      title: Video
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.content

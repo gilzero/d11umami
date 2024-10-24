@@ -1,0 +1,37 @@
+name: Foo
+description: Testing component with a simple variant.
+group: Testing
+tags:
+  - tests
+status: experimental
+variants:
+  default:
+    title: Default
+  test:
+    title: Test
+slots:
+  test_slot_string:
+    title: Test string
+    type: string
+props:
+  type: object
+  properties:
+    test_prop_string_foo:
+      title: Test string
+      type: string
+stories:
+  preview:
+    title: Preview
+    description: Preview for the `foo` component.
+    slots:
+      test_slot_string: Baz
+    props:
+      variant: test
+      test_prop_string_foo: Qux
+  test:
+    title: Test
+    description: Story for the `foo` component.
+    slots:
+      test_slot_string: Foo
+    props:
+      test_prop_string_foo: Bar

@@ -1,0 +1,50 @@
+{% if items.previous or items.next %}
+  {% set aria_label = aria_label|default('Pagination'|t) %}
+  {% set attributes = attributes|default(create_attribute()) %}
+  {% set current_attributes = current_attributes|default(create_attribute()) %}
+  {% set current_title = current_title|default('Current page'|t) %}
+  {% set next_label = next_label|default('Next page'|t) %}
+  {% set next_title = next_title|default('Go to next page'|t) %}
+  {% set previous_label = previous_label|default('Previous page'|t) %}
+  {% set previous_title = previous_title|default('Go to previous page'|t) %}
+  {# There is a conflict between DSFR structure and Drupal behavior on the <a> tag. #}
+  {# If there are no href on <a> tag, javascript will crash when ajax is enabled. #}
+  {# DSFR doesn't expect href on disabled <a> are replaces with <span> to prevent error. #}
+  {% set next_tag = items.next is defined ? 'a' : 'span' %}
+  {% set previous_tag = items.previous is defined ? 'a' : 'span' %}
+  <nav{{ attributes.removeClass('js-pager__items').addClass('fr-pagination').setAttribute('role', 'navigation').setAttribute('aria-label', aria_label) }}>
+    <ul class="fr-pagination__list pager__items js-pager__items">
+      <li>
+        {% if not items.previous %}
+          {% set previous = {
+            attributes: create_attribute()
+          } %}
+        {% else %}
+          {% set previous = items.previous %}
+        {% endif %}
+        <{{ previous_tag }}{{ previous.attributes.addClass('fr-pagination__link', 'fr-pagination__link--prev', 'fr-pagination__link--lg-label').setAttribute('title', previous_title).setAttribute('href', items.previous.href) }}>
+          {{ previous_label }}
+        </{{ previous_tag }}>
+      </li>
+      {% if items.current %}
+        <li>
+          <span{{ current_attributes.addClass('fr-pagination__link').setAttribute('aria-current', 'page').setAttribute('title', current_title) }}>
+            {{ items.current }}
+          </span>
+        </li>
+      {% endif %}
+      <li>
+        {% if not items.next %}
+          {% set next = {
+            attributes: create_attribute()
+          } %}
+        {% else %}
+          {% set next = items.next %}
+        {% endif %}
+        <{{ next_tag }}{{ next.attributes.addClass('fr-pagination__link', 'fr-pagination__link--next', 'fr-pagination__link--lg-label').setAttribute('title', next_title).setAttribute('href', items.next.href) }}>
+          {{ next_label }}
+        </{{ next_tag }}>
+      </li>
+    </ul>
+  </nav>
+{% endif %}

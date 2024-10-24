@@ -1,0 +1,8 @@
+<div{{ wrapper_attributes }}>
+  <textarea{{ attributes.addClass('fr-input') }}>{{ value }}</textarea>
+</div>
+{% if errors %}
+  <p id="{{ error_id }}" class="fr-error-text">
+    {{ errors }}
+  </p>
+{% endif %}

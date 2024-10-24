@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+<div class="rvt-avatar rvt-avatar--xs rvt-bg-black-200 rvt-m-right-xs">
+  {% if user.user_picture.value %}
+    {{- content.user_picture -}}
+  {% else %}
+    <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16">
+      <path d="M8 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM6 9a3 3 0 0 0-3 3v4h10v-4a3 3 0 0 0-3-3H6Z"></path>
+    </svg>
+  {% endif %}
+</div>
+

@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function styled_google_map_data_install() {
+  $files = [];
+  $pins = \Drupal::service('file_system')->scanDirectory(\Drupal::service('extension.list.module')->getPath('styled_google_map_data') . '/images', '/.png/');
+  foreach (array_keys($pins) as $file_path) {
+    $file_content = file_get_contents($file_path);
+    // For Drupal >= 9.3.
+    if (\Drupal::hasService('file.repository')) {
+      $files[] = \Drupal::service('file.repository')
+        ->writeData($file_content, 'public://');
+    }
+    // For other supported versions of Drupal.
+    else {
+      $files[] = file_save_data($file_content);
+    }
+  }
+  // Create property types.
+  $property_types = [
+    'Condo',
+    'Multi-Family',
+    'Residential',
+  ];
+  $terms = [];
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  foreach ($property_types as $key => $property_type) {
+    $term = $term_storage->create([
+      'vid' => 'real_estate',
+      'name' => $property_type,
+      'field_icon' => $files[$key],
+    ]);
+    if ($term->save()) {
+      $terms[$term->id()] = $property_type;
+    }
+  }
+
+  // Update all term depths.
+  batch_set([
+    'operations' => [
+      ['import_real_estate', [$terms]],
+    ],
+    'finished' => 'demo_real_estate_finished',
+    'title' => t('Updating depths for all terms'),
+    'file' => \Drupal::service('extension.list.module')->getPath('styled_google_map_data') . '/demo.batch.inc',
+  ]);
+
+  // Processes the batch in cli mode.
+  if (function_exists('drush_backend_batch_process')) {
+    $batch =& batch_get();
+    $batch['progressive'] = FALSE;
+    drush_backend_batch_process();
+  }
+}
+
+/**
+ *
+ */
+function styled_google_map_data_uninstall() {
+  // Delete demo data.
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $terms = $term_storage->loadByProperties(['vid' => 'real_estate']);
+  $term_storage->delete($terms);
+
+  // Update all term depths.
+  batch_set([
+    'operations' => [
+      ['delete_real_estate', []],
+    ],
+    'finished' => 'demo_real_estate_finished',
+    'title' => t('Delete real estate'),
+    'file' => \Drupal::service('extension.list.module')->getPath('styled_google_map_data'). '/demo.batch.inc',
+  ]);
+
+  // Processes the batch in cli mode.
+  if (function_exists('drush_backend_batch_process')) {
+    $batch =& batch_get();
+    $batch['progressive'] = FALSE;
+    drush_backend_batch_process();
+  }
+}

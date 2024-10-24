@@ -1,0 +1,5 @@
+.rvt-c-card-image-square img {
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 1;
+}

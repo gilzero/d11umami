@@ -1,0 +1,67 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set group_attributes = attributes|default(create_attribute()) %}
+{% set input_id = input_id|default('range-' ~ random()) %}
+{% set input_max = input_max|default(100) %}
+{% set input_min = input_min|default(0) %}
+{% set input_name = input_name|default('range') %}
+{% set input_value = input_value|default(input_max / (double ? 3 : 2)) %}
+{% set input2_max = input2_max|default(input_max) %}
+{% set input2_min = input2_min|default(input_min) %}
+{% set input2_value = input_value|default(input_max / 3 * 2) %}
+
+{% if disabled %}
+  {% set group_attributes = group_attributes.addClass('fr-range-group--disabled') %}
+{% endif %}
+
+{% if errors is not empty %}
+  {% set group_attributes = group_attributes.addClass('fr-range-group--error') %}
+{% endif %}
+
+<div{{ group_attributes.addClass('fr-range-group') }}>
+  <label class="fr-label">
+    {{ label }}
+    {% if hint_text -%}
+      <span class="fr-hint-text">{{ hint_text }}</span>
+    {%- endif %}
+  </label>
+  <div{{ attributes.addClass('fr-range') }}>
+    <span class="fr-range__output">{{ input_value }}</span>
+    <input
+      id="{{ input_id }}"
+      name="{{ input_name }}"
+      type="range"
+      aria-labelledby="{{ input_id }}-label"
+      {% if input_min %} min="{{ input_min }}"{% endif %}
+      {% if input_max %} max="{{ input_max }}"{% endif %}
+      {% if disabled %} disabled{% endif %}
+      value="{{ input_value }}"
+      aria-describedby="{{ input_id }}-messages"
+    />
+    {% if double %}
+      <input
+        id="{{ input_id }}-2"
+        name="{{ input_name }}-2"
+        type="range"
+        aria-labelledby="{{ input_id }}-label"
+        {% if input2_min %} min="{{ input2_min }}"{% endif %}
+        {% if input2_max %} max="{{ input2_max }}"{% endif %}
+        {% if disabled %} disabled{% endif %}
+        value="{{ input2_value }}"
+        aria-describedby="{{ input_id }}-messages"
+      />
+    {% endif %}
+    {% if label_min %}
+      <span class="fr-range__min" aria-hidden="true">{{ label_min }}</span>
+    {% endif %}
+    {% if label_max %}
+      <span class="fr-range__max" aria-hidden="true">{{ label_max }}</span>
+    {% endif %}
+  </div>
+  {% if errors %}
+    <div class="fr-messages-group" id="{{ input_id }}-messages" aria-live="polite">
+      {% for error in errors %}
+        <p class="fr-message fr-message--error">{{ error }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if breadcrumb %}
+  {{ component('ui_suite_daisyui:breadcrumbs', {}, {items: breadcrumb}) }}
+{% endif %}

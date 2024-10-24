@@ -1,0 +1,8 @@
+// Neutralize the Toolbar, sometimes I just want it all to go away.
+#toolbar-administration {
+  display: none;
+}
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+}

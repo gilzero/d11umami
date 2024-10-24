@@ -1,0 +1,35 @@
+label[for="edit-mili"] {
+	width: 100%;
+	text-align: center;
+}
+
+.settings-form-title {
+	background-color: #d1392b;
+	background-image: url("../images/logo.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 90px;
+	margin: 0 auto;
+  border-radius: 4px;
+}
+
+/* Fieldset */
+.fieldset__label {
+	background-color: #eef4fb;
+}
+fieldset.set-default-fieldset,
+details.set-default-fieldset {
+	background-color: #ffeaa7;
+}
+fieldset.info-fieldset,
+details.info-fieldset {
+	background-color: #bbd9ff;
+	border: 1px solid #2e86de;
+}
+mark {
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+li {
+	padding: 6px 0;
+}

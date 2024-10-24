@@ -1,0 +1,11 @@
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  logo: true
+  name: true
+  node_user_picture: true
+  slogan: true
+zen_breadcrumb: yes
+zen_breadcrumb_separator: ' › '
+zen_breadcrumb_home: 1

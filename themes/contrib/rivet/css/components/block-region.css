@@ -1,0 +1,35 @@
+/* Block demo mode */
+/* Mimic .rvt-empty-state */
+.block-region {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: #4c5a69;
+  border: 0.25rem dashed rgba(174, 180, 183, 0.3);
+  border-radius: 0.5rem;
+  background-color: rgba(212, 215, 217, 0.3);
+}
+
+.rvt-footer-social .block-region,
+.rvt-header-wrapper .block-region {
+  padding: 1rem 1.5rem;
+}
+
+.rvt-footer-social .block-region,
+.rvt-footer-resources .block-region {
+  color: #fff;
+}
+
+.rvt-footer-social .block-region,
+.rvt-footer-resources .block-region,
+.rvt-header-wrapper .block-region {
+  margin: 0;
+}
+
+a.block-demo-backlink,
+a.block-demo-backlink:link,
+a.block-demo-backlink:visited {
+  z-index: 501;
+}

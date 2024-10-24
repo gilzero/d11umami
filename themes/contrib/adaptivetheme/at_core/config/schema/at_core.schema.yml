@@ -1,0 +1,6 @@
+# Schema for the configuration files of the AT Core theme.
+
+at_core.settings:
+  type: theme_settings
+  label: 'AT Core settings'
+

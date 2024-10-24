@@ -1,0 +1,8 @@
+{% set h3_attributes = h3_attributes|default(create_attribute()) %}
+{% extends '@dsfr4drupal/templates/base/base-field-single-value.html.twig' %}
+
+{% block item_content %}
+  <h3{{ h3_attributes }}>
+    {{ item.content }}
+  </h3>
+{% endblock item_content %}

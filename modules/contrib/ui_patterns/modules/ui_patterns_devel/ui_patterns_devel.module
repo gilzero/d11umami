@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * UI Patterns Devel module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ui_patterns_devel_theme(): array {
+  return [
+    'status_report_errors' => [
+      'variables' => ['amount' => NULL, 'text' => NULL, 'severity' => NULL],
+    ],
+  ];
+}

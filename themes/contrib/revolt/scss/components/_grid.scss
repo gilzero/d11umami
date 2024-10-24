@@ -1,0 +1,8 @@
+// Virasat theme grid system is working on flex
+.vt-view-grid{
+  padding-bottom: 1rem;
+  overflow: hidden;
+  .vt-view-row.vt-flex {
+    gap: 1rem;
+  }
+}

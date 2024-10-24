@@ -1,0 +1,35 @@
+/* Overrides .rvt-select[multiple] to increase height and move padding from select tag to option tag. */
+.rvt-c-select--multiple[multiple] {
+  height: 100%;
+  max-height: 12.5rem;
+  padding: 0;
+}
+
+.rvt-c-select--multiple[multiple] option {
+  padding: 0.5rem;
+}
+
+.rvt-c-select--multiple[multiple] option:checked {
+  color: #243142;
+  background: #e2e7e9 linear-gradient(0deg, #e2e7e9 0%, #e2e7e9 100%);
+}
+
+.rvt-c-select--multiple[multiple]:focus option:checked {
+  color: #006298 !important;
+  background: #c6ecf6 linear-gradient(0deg, #c6ecf6 0%, #c6ecf6 100%);
+  box-shadow: inset 0.25rem 0 0 #006298;
+}
+
+.rvt-c-select--multiple[multiple] option:hover {
+  color: #006298;
+  background: #edfafd linear-gradient(0deg, #edfafd 0%, #edfafd 100%);
+  box-shadow: inset 0 0 0 0.125rem #006298;
+}
+
+.rvt-c-select--multiple[multiple] option:checked:hover {
+  color: #006298 !important;
+  background: #c6ecf6 linear-gradient(0deg, #c6ecf6 0%, #c6ecf6 100%);
+  box-shadow:
+    inset 0.25rem 0 0 #006298,
+    inset 0 0 0 0.125rem #006298;
+}

@@ -1,0 +1,16 @@
+.main-content {
+    width: 100%;
+    @include md {
+        width: 75%;
+        float: right;
+    }
+}
+.local-tasks-block {
+    .content {
+        .nav-tabs {
+            .nav-item {
+             margin: em(0px) em(5px);
+            }
+        }
+    }
+}

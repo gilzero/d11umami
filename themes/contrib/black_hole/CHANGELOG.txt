@@ -1,0 +1,111 @@
+CHANGELOG - BLACK HOLE responsive theme for Drupal 8, 9 and 10.
+
+Black Hole 8.x-1.18 (Sep 4, 2024)
+------------------------------
+	- Simplified CSS for social links.
+	- Reset the font size for the site name.
+	- Made a few CSS adjustments to pass WAVE validation.
+
+
+Black Hole 8.x-1.17 (Aug 15, 2024)
+------------------------------
+	- #3467172: Above and below region of content. 4 regions added: content_above, content_below, footer_right, footer_below
+	- libraries.yml updated
+	- CSS updates
+	- small bugs addressed 
+
+Black Hole 8.x-1.16 (July 10, 2024)
+------------------------------
+	- #3452454: Fix pagination styling
+	- #3452607: Fix slider controls position
+	- #3369201: Drupal 10 compatibility fixes
+	- #3433287, #3428265: Drupal 11 compatibility fixes
+
+Black Hole 8.x-1.15 (May 5, 2024)
+------------------------------
+	- #3444269: incorrect path to required.svg.
+	- Slider SEO optimized.
+	- Loading and execution optimization of scripts by using async and defer attributes.
+	- Small bugs addressed.
+
+Black Hole 8.x-1.14 (Mar 29, 2024)
+------------------------------
+	- #3437012: Top Region Not Clickable.
+
+Black Hole 8.x-1.13 (Mar 20, 2024)
+------------------------------
+	- Webform templates have been added.
+	- Eu Cookie Compliance styling have been added in example.custom-style.css.
+	- Sidebars' blocks adaptive display have been added in example.custom-style.css.
+	- Slideshow images animation have been added in example.custom-style.css.
+
+Black Hole 8.x-1.12 (Feb 23, 2024)
+---------------------------------
+	- #3418199: CKeditor 5 CSS.
+	- Revamp of the theme's slideshow. It now features two distinct variations, 
+	  each comprising 7 slides: one showcasing full-page images and the other 
+	  displaying half-page images.
+	- Additional high-resolution images have been incorporated into the slideshow.
+	- The custom-style.css file now includes new CSS helper lines.
+	- New white on black X (Tweeter) icon.
+	- CSS tweeks.
+	- Fine tuned media queries breakpoints.
+	- Sidebars' blocks adaptive display in custom-style.css.
+
+Black Hole 8.x-1.11 (Jan 29, 2024)
+---------------------------------
+	- #3413039: Commerce Cart improved
+	- added new font "Merriweather"
+	- various tweeks
+
+Black Hole 8.x-1.10 (Dec 8, 2023)
+---------------------------------
+	- #3403028: settings config per language translations
+
+Black Hole 8.x-1.9 (Nov 1, 2023)
+---------------------------------
+	- new tweeter icon and releated settings update
+	- alternate node backgrounds on homepage/views added in _custom-style.css
+	- CSS tweeks
+
+Black Hole 8.x-1.8 (Oct 18, 2023)
+---------------------------------
+	- #3385726: HTML filter somewhere...
+	- #3392893: Image field is extending out of view port in mobile view
+
+Black Hole 8.x-1.7 (Aug 29, 2023)
+---------------------------------
+	- #3383355: Use Layout Builder.
+
+Black Hole 8.x-1.6 (Jun 16, 2023)
+---------------------------------
+	- #3366164: Unused variable $cols.
+	- Logged-out body class added.
+	- New CSS for "centered block images" in custom-style.css.
+
+Black Hole 8.x-1.5 (Jun 8, 2023)
+---------------------------------
+	- #3364353: Replace README.txt with README.md and update README.md file.
+	- #3364130: Slider button is overlapping with the text.
+	- #3364174: Image is going out of container.
+	- Added the possibility to change the author and date information on blog posts and forum topics, different from other types of content.
+	- CSS improvements
+
+Black Hole 8.x-1.4 (May 1, 2023)
+---------------------------------
+	- Page display issue (when aggregate js) solved by dropdown js modification
+	- Minor CSS tuning
+
+Black Hole 8.x-1.3 (Mar 31, 2023)
+---------------------------------
+	- Page display issue, when aggregate js (workaround)
+
+Black Hole 8.x-1.2 (Mar 19, 2023)
+---------------------------------
+	- CSS and twig templates improvement.
+	- Reworking some images.
+
+Black Hole 8.x-1.1 (Feb 22, 2023)
+---------------------------------
+	- New Black Hole release for Drupal 8, 9 and 10, using Yahoo Pure.css Framework (https://purecss.io).
+	- A complete theme redesign made with mobile and compatibility in mind: compatible, light and fast.

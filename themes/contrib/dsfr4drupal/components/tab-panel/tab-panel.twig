@@ -1,0 +1,10 @@
+{% set attributes = attributes.setAttribute('tabindex', "-1") %}
+{% set selected = selected ?? false %}
+
+{% if selected %}
+  {% set attributes = attributes.setAttribute('tabindex', "0").addClass('fr-tabs__panel--selected') %}
+{% endif %}
+
+<div{{ attributes.addClass('fr-tabs__panel').setAttribute('role', 'tabpanel').setAttribute('id', html_id).setAttribute('aria-labelledby', tab_id) }}>
+  {{ content }}
+</div>

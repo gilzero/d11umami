@@ -1,0 +1,72 @@
+{#
+/**
+ * @file
+ * Override entity pager to leverage Series Nav Rivet component.
+ *
+ * Available variables:
+ * - attributes: HTML attributes to apply to the wrapper element.
+ * - content_attributes: HTML attributes to apply to the list element.
+ * - links: An array of links to render, each containing 'url', 'title',
+ *   'attributes':
+ *   - prev: Link to previous node.
+ *   - all_link: Link to All listing group of records.
+ *   - next: Link to next node in the sequence.
+ *  - display_count: Flag for whether to display the count text.
+ *  - count: The total number of items that can be paged through.
+ *  - current: The current item number of the pager.
+ *
+ * @see template_preprocess_entity_pager()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{attributes.addClass('rvt-m-tb-xxl')}}>
+  {% if display_count and current %}
+  <p class="rvt-m-bottom-sm">{{ current }} of {{ count }}</p>
+  {% endif %}
+  <nav class="rvt-seriesnav">
+    {% for link in links %}
+      {% set is_prev = link.attributes.hasClass('entity-pager-item-prev') %}
+      {% set is_next = link.attributes.hasClass('entity-pager-item-next') %}
+      {% set is_all = link.attributes.hasClass('entity-pager-item-all') %}
+      {% set link_text %}
+        {% if is_prev %}
+          <div class="rvt-seriesnav__text">
+            {% if not link.title  matches '/.*rvt-seriesnav__label.*/' %}
+            <span class="rvt-seriesnav__label">Previous:</span>
+            <span class="rvt-seriesnav__item">{{ link.title }}</span>
+            {% else %}
+              {{ link.title }}
+            {% endif %}
+          </div>
+          <span class="rvt-seriesnav__icon" aria-hidden="true">
+            <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="M15 7H4.156l4.107-4.854L6.737.854.69 8l6.047 7.146 1.526-1.292L4.156 9H15V7Z"></path></svg>
+          </span>
+        {% elseif is_all %}
+          <div class="rvt-seriesnav__text rvt-flex rvt-justify-center rvt-items-center">
+            {{ link.title }}
+          </div>
+        {% elseif is_next %}
+          <div class="rvt-seriesnav__text">
+            {% if not link.title matches '/.*rvt-seriesnav__label.*/' %}
+            <span class="rvt-seriesnav__label">Next:</span>
+            <span class="rvt-seriesnav__item">{{ link.title }}</span>
+            {% else %}
+              {{ link.title }}
+            {% endif %}
+          </div>
+          <span class="rvt-seriesnav__icon" aria-hidden="true">
+            <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="M1 7h10.844L7.737 2.146 9.263.854 15.31 8l-6.047 7.146-1.526-1.292L11.844 9H1V7Z"></path></svg>
+          </span>
+        {% endif %}
+      {% endset %}
+      {% set link_classes = [
+          is_prev or is_all ? 'rvt-seriesnav__previous',
+          is_next or is_all ? 'rvt-seriesnav__next',
+          'rvt-flex rvt-justify-center rvt-items-center',
+        ]
+      %}
+      {{ link(link_text, link.url, {'class': link_classes}) }}
+    {% endfor %}
+  </nav>
+</div>

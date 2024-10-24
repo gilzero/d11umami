@@ -1,0 +1,8 @@
+provider_lmstudio.settings_form:
+  path: '/admin/config/ai/providers/lmstudio'
+  defaults:
+    _form: '\Drupal\provider_lmstudio\Form\LmStudioConfigForm'
+    _title: 'Setup LM Studio Authentication'
+  requirements:
+    _permission: 'administer ai providers'
+

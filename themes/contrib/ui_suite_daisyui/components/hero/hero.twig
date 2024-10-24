@@ -1,0 +1,41 @@
+{% set attributes = attributes.addClass(['hero', 'not-prose']) %}
+
+{% set heading_level = heading_level|default(1) %}
+
+{% set content_attributes = create_attribute().addClass('hero-content') %}
+{% if aside %}
+  {% set content_attributes = content_attributes.addClass('flex-col') %}
+  {% if reverse %}
+    {% set content_attributes = content_attributes.addClass('lg:flex-row-reverse') %}
+  {% else %}
+    {% set content_attributes = content_attributes.addClass('lg:flex-row') %}
+  {% endif %}
+{% endif %}
+
+{% set text_attributes = create_attribute() %}
+{% if not aside %}
+  {% set text_attributes = text_attributes.addClass('max-w-md') %}
+{% endif %}
+{% if centered or responsive_centered %}
+  {% set text_attributes = text_attributes.addClass('text-center') %}
+  {% if responsive_centered %}
+    {% set text_attributes = text_attributes.addClass('lg:text-left') %}
+  {% endif %}
+{% endif %}
+
+{% if overlay_image %}
+<div {{ attributes.setAttribute('style', 'background-image: url(' ~ overlay_image ~ ')') }}>
+<div class="hero-overlay bg-opacity-60"></div>
+{% set text_attributes = text_attributes.addClass('text-neutral-content') %}
+{% else %}
+<div {{ attributes }}>
+{% endif %}
+  <div {{ content_attributes }}>
+    {{ aside|add_class(['max-w-sm', 'rounded-lg', 'shadow-2xl']) }}
+    <div {{ text_attributes }}>
+      <h{{ heading_level }} class="text-5xl font-bold">{{ title }}</h1>
+      {{ text|add_class('py-6') }}
+      {{ button }}
+    </div>
+  </div>
+</div>

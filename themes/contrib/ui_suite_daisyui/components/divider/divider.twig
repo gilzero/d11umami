@@ -1,0 +1,17 @@
+{% set attributes = attributes.addClass('divider') %}
+
+{% if variant %}
+{% set attributes = (variant != 'default') ? attributes.addClass('divider-' ~ variant) : attributes %}
+{% endif %}
+
+{% if orientation and orientation != 'responsive' %}
+    {% set attributes = (orientation != 'default') ? attributes.addClass('divider-' ~ orientation) : attributes %}
+{% elseif orientation == 'responsive' %}
+  {% set attributes = attributes.addClass('lg:divider-horizontal') %}
+{% endif %}
+
+{% if position %}
+    {% set attributes = (position != 'default') ? attributes.addClass('divider-' ~ position) : attributes %}
+{% endif %}
+
+<div {{ attributes }}>{{ content }}</div>

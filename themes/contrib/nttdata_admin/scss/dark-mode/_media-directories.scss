@@ -1,0 +1,10 @@
+body.dark-mode {
+  .media-browser--full {
+    .browser--header {
+      background: $nttdata-effect;
+    }
+    .browser--body .browser--tree {
+      background: unset;
+    }
+  }
+}

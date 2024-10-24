@@ -1,0 +1,28 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set buttons = buttons|default([
+  {
+    'label': 'Accept all'|t,
+    'attributes': create_attribute({'title': 'Accept all cookies'|t}),
+  },
+  {
+    'label': 'Refuse all'|t,
+    'attributes': create_attribute({'title': 'Refuse all cookies'|t}),
+  },
+  {
+    'label': 'Personalize'|t,
+    'attributes': create_attribute({'data-fr-opened': 'false', 'aria-controls': 'modal-consent', title: 'Personalize cookies'|t}),
+  },
+]) %}
+
+<div{{ attributes.addClass('fr-consent-banner') }}>
+  {% if title %}<h2 class="fr-h6">{{ title }}</h2>{% endif %}
+  <div class="fr-consent-banner__content">
+    <p class="fr-text--sm">{{ content }}</p>
+  </div>
+  {{ include('dsfr4drupal:button-group', {
+    'attributes': create_attribute({'class': ['fr-consent-banner__buttons']}),
+    'items': buttons,
+    'inline': true,
+    'inline_from': 'sm',
+  }, with_context=false) }}
+</div>

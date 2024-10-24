@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Tara's theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+ #}
+<header class="header dark" role="banner">
+   <div class="container">
+		<div class="site-brand">
+			{% if logo %}
+				<div class="site-logo">
+					<a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+						<img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+					</a>
+			</div>
+			{% elseif site_name or site_slogan %}
+			<div class="site-name-slogan">
+				{% if site_name %}
+					<div class="site-name">
+						<a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+					</div>
+				{% endif %}
+				{% if site_slogan %}
+					<div class="site-slogan">{{ site_slogan }}</div>
+				{% endif %}
+			</div>
+			{% endif %}
+		</div>
+   </div><!--/.container -->
+</header>
+<main role="main">
+	<div class="container maintenance-main">
+		{% if title %}
+			<h1 class="title">{{ title }}</h1>
+		{% endif %}
+		<div class="maintenance-icon">{% include "@mahi/../images/maintenance.svg" %}</div>
+	{{ page.content }}
+	</div> <!-- /.container -->
+</main> <!-- /#maintenance -->

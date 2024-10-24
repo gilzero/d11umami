@@ -1,0 +1,33 @@
+name: DSFR - Quote
+description: The citation allows you to cite a text in an editorial page. The quote may come from an extract from an oral speech formulated by a third person or from a written text.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    author:
+      type: string
+      title: Quote author
+    color_schema:
+      type: string
+      title: Schema color
+      description: 'The icon element can use illustrative colors (example: brown-caramel).'
+    image:
+      type: string
+      title: Image
+      description: Do not forget to add class "fr-responsive-img" to the image.
+    quote:
+      type: string
+      title: Quote
+    source:
+      type: array
+      title: Quote source(s)
+      items:
+        type: string
+  required:
+    - quote
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.quote

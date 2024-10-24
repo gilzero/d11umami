@@ -1,0 +1,383 @@
+.region-primary-menu{
+	width: 100%;
+}
+.role-administrator .sticky{
+	top: 70px;
+	z-index: 500;
+}
+.path-comment .region-content{
+    width: 80%;
+    margin: auto;
+    padding: 50px 0px;
+}
+.top-banner-overlay .container,
+.top-banner-overlay .row,
+.top-banner-overlay .top-banner-caption{
+    height: 100%;
+}
+
+/*Comment Form Section Start*/
+.comment-form label
+{
+  float:left;
+  width:100px;
+  padding-right: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.comment-form input[type=text], .comment-form textarea {
+    width: 79%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+    margin-left: 40px;
+}
+@media screen and (min-width:320px) and (max-width:992px) {
+    .comment-form input[type=text], .comment-form textarea {
+        margin-left: 0px;
+     }
+}
+@media screen and (min-width:320px) and (max-width:575px) {
+    .comment-form input[type=text], .comment-form textarea {
+        width: 100%;
+    }
+}
+
+/*Comment Form Section End*/
+
+.form-group{
+    margin-top: 0px;
+}    
+.indented{
+    margin-left: 50px;
+}
+.node__meta,
+.node__submitted,.viewsreference--view-title{
+	display: none;
+}
+#top-banner{
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left;
+}
+.user-banner-caption{
+    color: #fefefe;
+    margin: auto;
+    text-align: center;
+    padding: 185px 0px;
+
+}
+.form-required:after{
+    display: none;
+}
+
+@media screen and (max-width: 400px){
+    .comment-comment-form .btn{
+        padding: 14px !important;
+    }    
+}
+
+@media screen and (max-width: 1100px) and (min-width: 992px){
+    .section-services.service-layout-3 h3.service-item-title>a{
+        font-size: 21px;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px){
+    .section-services.service-layout-3 h3.service-item-title>a{
+        font-size: 21px;
+    }
+}
+
+/*Footer Section Start*/
+.region-footer-col-1 p,
+.region-footer-col-4 .field__item{
+	margin-top: 28px;
+    color: #d2d2d2;
+}
+/*Footer Section End*/
+
+/*Blog Detail Section Start*/
+.blog-details img{
+    height: 606px;
+}
+@media screen and (max-width: 1060px){
+    .blog-details img{
+        height: 506px;
+    }
+}
+@media screen and (max-width: 991px){
+    .blog-details img{
+        height: 374px;
+    }
+}
+@media screen and (max-width: 767px){
+    .blog-details img{
+        height: 334px;
+    }
+}
+@media screen and (max-width: 575px){
+    .blog-details img{
+        height: 234px;
+    }
+}
+/*Blog Detail Section End*/
+
+/*Team Section STart*/
+@media screen and (max-width: 992px){
+    .our-team-content .item .info {
+        margin-bottom: 30px;
+    }
+}
+/*Team Section End*/
+
+.blog-wrapper:last-child{
+	margin-bottom: 0px; 
+}
+
+/* page not found */
+#not-found-section {
+    padding: 100px 0px 100px;
+}
+
+.not-found{
+  height: 650px !important;
+}
+.not-found-body {
+    width: 70%;
+    margin: auto;
+}
+
+.not-found-body h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.not-title {
+    border: 2px solid #16b6ea;;
+    padding: 40px 50px;
+    width: 45%;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.not-title h1 {
+    font-size: 125px;
+    font-family: monospace;
+    color: #16b6ea;
+}
+
+.not-title h2 {
+    font-size: 25px;
+    margin: 0px;
+    color: #16b6ea;
+}
+.not-p{
+    margin-bottom: 20px !important;
+}
+
+@media (min-width: 320px) and (max-width: 480px){
+    .not-title h1 {
+        font-size: 92px !important;
+        margin: 0px !important;
+        color: #16b6ea !important;
+    }
+    .not-title h2 {
+        font-size: 22px !important;
+        margin: 0px !important;
+        color: #16b6ea !important;
+    }
+    .not-title {
+        border: 2px solid #16b6ea !important;
+        padding: 10px 50px 30px 50px !important;
+        width: 100% !important;
+        margin: auto !important;
+        margin-bottom: 40px !important;
+        border-radius: 10px !important;
+     }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .not-title h1 {
+        font-size: 92px !important;
+        margin: 0px !important;
+        color: #16b6ea !important;
+    }
+    .not-title h2 {
+        font-size: 22px !important;
+        margin: 0px !important;
+        color: #16b6ea !important;
+    }
+    .not-title {
+        border: 2px solid #16b6ea !important;
+        padding: 30px 50px !important;
+        width: 100% !important;
+        margin: auto !important;
+        margin-bottom: 40px !important;
+        border-radius: 10px !important;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+.not-title h1 {
+    font-size: 92px !important;
+    margin: 0px !important;
+    color: #16b6ea !important;
+}
+.not-title h2 {
+    font-size: 22px !important;
+    margin: 0px !important;
+    color: #16b6ea !important;
+}
+.not-title {
+    border: 2px solid #16b6ea !important;
+    padding: 40px 50px 30px 50px !important;
+    width: 70% !important;
+    margin: auto !important;
+    margin-bottom: 40px !important;
+    border-radius: 10px !important;
+}
+}
+/* end page not found */
+
+/* User login Section Start */
+#user-login {
+    max-width: 45%;
+    margin: auto;
+    padding: 20px 40px 40px;
+    border: 2px solid #16b6ea;
+    margin-bottom: 40px; 
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.login-text .form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.not-found-body a,
+.login-button a{
+    text-decoration: none !important;
+    font-weight: 600 !important;    
+}
+.not-found-body a,
+.login-button a,
+.path-user input[type="submit"]:not(.butn) {
+    font-size: 18px;
+    padding: 13px 51px;
+    border-radius: 34px;
+    letter-spacing: 1px;
+    width:auto;
+    border:none;
+    font-weight:bolder;
+    background-color: #16b6ea;
+    color: #fff;
+}
+.login-button a{
+    padding: 18px 51px;
+} 
+.not-found-body a:hover,
+.login-button a:hover,
+.path-user input[type="submit"]:hover{
+    background-color: rgba(22,182,234,0.78);
+    transition: 0.6s;
+}
+
+.login-button , #user-register-form .form-actions ,#user-pass .form-actions{
+    text-align: center;
+}
+.login-button .form-actions{
+    display: inline-flex;
+}
+#user-register-form , #user-pass{
+    max-width: 60%;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    border: 2px solid #16b6ea;
+    padding: 20px 20px 40px;
+    overflow: hidden;
+}
+
+#user-register-form .js-form-item {
+    margin-bottom: 20px !important;
+}
+#user-register-form .image-widget-data input[type="file"]::-webkit-file-upload-button {
+    font-size: 18px;
+    padding: 5px 15px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    width:auto;
+    border:none;
+    font-weight:bolder;
+    background-color: #16b6ea;
+    color: #fff;
+    cursor: pointer;
+}
+#user-register-form select{
+    background-color: #16b6ea;
+    color: #fff;
+    border-radius: 5px;
+}
+#user-register-form .image-widget-data input[type="submit"]{
+    width: fit-content !important;
+}
+#user-register-form .js-form-item input:not([type="checkbox"]),
+#user-pass .js-form-item input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 610px) {
+    #user-login {
+        max-width: 95% !important;
+        margin: auto;
+        border: 2px solid #16b6ea;
+        margin-bottom: 40px;
+        margin-top: 80px;
+        overflow: hidden;
+    }
+    #user-register-form , #user-pass{
+        max-width: 95% !important;
+        margin: auto;
+        margin-top: 80px;
+        margin-bottom: 40px;
+        border: 2px solid #16b6ea;
+        padding: 20px 20px 40px;
+        overflow: hidden;
+    }
+    .blog-detail-body {
+        padding: 50px;
+    }
+}
+@media (min-width: 611px) and (max-width: 992px) {
+    #user-login {
+        max-width: 60% !important;
+        margin: auto;
+        margin-top: 80px;
+        margin-bottom: 40px;
+        overflow: hidden;
+    }
+
+    #user-register-form , #user-pass{
+        max-width: 95% !important;
+        margin: auto;
+        margin-top: 80px;
+        margin-bottom: 40px;
+        border: 2px solid #16b6ea;
+        padding: 20px 20px 40px;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 400px){
+    .path-user #user-register-form input[type="submit"] {
+        padding: 13px 20px;
+    } 
+}
+/* User login Section End */

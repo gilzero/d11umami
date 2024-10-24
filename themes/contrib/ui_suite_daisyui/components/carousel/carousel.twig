@@ -1,0 +1,67 @@
+{% set carousel_id = carousel_id|default('carousel-' ~ random()) %}
+
+{% set attributes = (variant != 'default') ? attributes.addClass('carousel-' ~ variant) : attributes %}
+{% set item_attributes = create_attribute().addClass('carousel-item') %}
+{% if full_width %}
+  {% set item_attributes = item_attributes.addClass('w-full') %}
+{% endif %}
+{% if vertical %}
+  {% set attributes = attributes.addClass('carousel-vertical') %}
+  {% set item_attributes = item_attributes.addClass('h-full') %}
+{% endif %}
+{% if half_width %}
+  {% set item_attributes = item_attributes.addClass('w-1/2') %}
+{% endif %}
+{% if indicator_buttons or next_prev_buttons %}
+  {% set attributes = attributes.addClass('w-full') %}
+  {% set item_attributes = item_attributes.addClass('w-full') %}
+{% endif %}
+{% if indicator_buttons %}
+  {% set item_attributes = item_attributes.addClass('relative') %}
+{% endif %}
+
+{% if items %}
+  <div {{ attributes.addClass('carousel', 'not-prose') }}>
+  {% for item in items %}
+    {% set item_id = carousel_id ~ '-item-' ~ loop.index %}
+    <div {{ item_attributes.setAttribute('id', item_id) }}>
+    {% if full_width or half_width or indicator_buttons or next_prev_buttons %}
+      {{ item|add_class('w-full') }}
+    {% elseif full_bleed %}
+      {{ item|add_class('rounded-box') }}
+    {% else %}
+      {{ item }}
+    {% endif %}
+    {% if next_prev_buttons %}
+      {{ _self.next_prev(loop, items|length, carousel_id) }}
+    {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+  {% if indicator_buttons %}
+    {{ _self.indicator(items, carousel_id) }}
+  {% endif %}
+{% endif %}
+
+{% macro next_prev(loop, length, carousel_id) %}
+<div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+  {% set prev_id = carousel_id ~ '-item-' ~ (loop.index - 1) %}
+  {% set next_id = carousel_id ~ '-item-' ~ (loop.index + 1) %}
+  {% if loop.first %}
+    {% set prev_id = carousel_id ~ '-item-' ~ length %}
+  {% elseif loop.last %}
+    {% set next_id = carousel_id ~ '-item-1' %}
+  {% endif %}
+  <a href="#{{ prev_id }}" class="btn btn-circle not-prose">❮</a>
+  <a href="#{{ next_id }}" class="btn btn-circle not-prose">❯</a>
+</div>
+{% endmacro %}
+
+{% macro indicator(items, carousel_id) %}
+<div class="flex w-full justify-center gap-2 py-2">
+{% for item in items %}
+  {% set item_id = carousel_id ~ '-item-' ~ loop.index %}
+  <a class="btn btn-xs not-prose" href="#{{ item_id }}">{{ loop.index }}</a>
+{% endfor %}
+</div>
+{% endmacro %}

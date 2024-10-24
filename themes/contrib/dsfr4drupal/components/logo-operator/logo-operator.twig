@@ -1,0 +1,21 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set has_link = has_link ?? true %}
+{% set is_front = is_front ?? true %}
+{% set text = text|default('République\nFrançaise') %}
+
+{% if has_link %}
+  {% set t_args = {'@text': text|replace({"\n": ' '})} %}
+  {% if is_front %}
+    {% set link_title = link_title|default('Homepage - @text'|t(t_args)) %}
+  {% else %}
+    {% set link_title = link_title|default('Back to the homepage - @text'|t(t_args)) %}
+  {% endif %}
+
+  <a{{ attributes.setAttribute('href', url('<front>')|render).setAttribute('title', link_title) }}>
+{% endif %}
+
+  {{ logo }}
+
+{% if has_link %}
+  </a>
+{% endif %}

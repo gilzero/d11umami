@@ -1,0 +1,26 @@
+{
+  "name": "drupal/feeds",
+  "description": "Aggregates RSS/Atom/RDF feeds, imports CSV files and more.",
+  "type": "drupal-module",
+  "keywords": ["Drupal"],
+  "homepage": "https://www.drupal.org/project/feeds",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/feeds",
+    "source": "https://git.drupalcode.org/project/feeds"
+  },
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "laminas/laminas-feed": "^2.22"
+  },
+  "require-dev": {
+    "drupal/pathauto": "^1.0",
+    "megachriz/drupalbook": "^1.0 || ^2.0"
+  },
+  "extra": {
+    "drush": {
+      "services": {
+        "drush.services.yml": ">=9"
+      }
+    }
+  }
+}

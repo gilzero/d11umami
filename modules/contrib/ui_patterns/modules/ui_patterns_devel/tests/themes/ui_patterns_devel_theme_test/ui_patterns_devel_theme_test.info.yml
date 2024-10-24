@@ -1,0 +1,11 @@
+name: "UI Patterns Devel test theme"
+type: theme
+description: "Test theme for UI Patterns Devel."
+core_version_requirement: ^10
+base theme: starterkit_theme
+# enforce_prop_schemas: false
+
+# Information added by Drupal.org packaging script on 2024-09-24
+version: '2.0.0-beta3'
+project: 'ui_patterns'
+datestamp: 1727217290

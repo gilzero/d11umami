@@ -1,0 +1,67 @@
+<!-- Start: Footer -->
+<footer class="footer">
+  <div class="container">
+  {% if page.footer_top %}
+    <section class="footer-top">
+      {{ page.footer_top }}
+    </section>
+  {% endif %}<!-- /footer-top -->
+
+  {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+    <section class="footer-blocks">
+      {% if page.footer_first %}
+        <div class="footer-block">
+          {{ page.footer_first }}
+        </div> <!--/footer-first -->
+      {% endif %}
+      {% if page.footer_second %}
+        <div class="footer-block">
+          {{ page.footer_second }}
+        </div> <!--/footer-second -->
+      {% endif %}
+      {% if page.footer_third %}
+        <div class="footer-block">
+          {{ page.footer_third }}
+        </div> <!--/footer-third -->
+      {% endif %}
+      {% if page.footer_fourth %}
+        <div class="footer-block">
+          {{ page.footer_fourth }}
+        </div> <!--/footer-fourth -->
+      {% endif %}  
+    </section> <!--/footer-blocks -->
+  {% endif %} {# end if for footer one, two, three, four blocks #}
+    {% if copyright_text or all_icons_show %}
+    <section class="footer-bottom-section">
+      {% if copyright_text %}
+        <div class="copyright">
+          &copy; {{ "now"|date("Y") }} {{ site_name }}, All rights reserved.
+        </div>
+      {% endif %}
+      {% if all_icons_show %}
+        {% include '@mili/template-parts/social-icons.html.twig' %}
+      {% endif %}
+    </section><!-- /footer-bottom-section -->
+    {% endif %}
+    {% if page.footer_bottom %}
+    <section class="footer-bottom">
+      {{ page.footer_bottom }}
+    </section> <!-- /footer-bottom -->
+    {% endif %}
+  </div><!-- /.container -->
+</footer>
+{% if scrolltotop_on %}
+<div class="scrolltop"><i class="icon-arrow-up" aria-hidden="true"></i></div>
+{% endif %}
+{% if font_icon_material %}
+{{ attach_library('mili/material') }}
+{% endif %}
+{% if fontawesome_four %}
+  {{ attach_library('mili/fontawesome4') }}
+{% endif %}
+{% if fontawesome_six %}
+  {{ attach_library('mili/fontawesome6') }}
+{% endif %}
+{% if bootstrapicons %}
+  {{ attach_library('mili/bootstrap-icons') }}
+{% endif %}

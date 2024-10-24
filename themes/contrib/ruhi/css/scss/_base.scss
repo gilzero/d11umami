@@ -1,0 +1,201 @@
+/* Variables
+---------------------------------------- */
+ :root {
+  --primary: #E25B0E;
+  --secondary: #52CAE4;
+  --dark: #212736;
+  --light: #FBF1E2;
+  --border: #DABF98;
+  --text-color: #383549;
+  --color-text: #383549;
+  --bold-color: #212736;
+  --color-heading: #212736;
+  --content-bg: #FBF1E2;
+  --body-font: 'Noto Sans', sans-serif;
+  --heading-font: 'Josefin Sans', sans-serif;
+}
+/* HTML and Body
+---------------------------------------- */
+body {
+  font-family: var(--body-font);
+  background-color: #F9F5F0;
+  color: var(--text-color);
+}
+/* Typography
+---------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--bold-color);
+  font-weight: 600;
+}
+strong {
+  color: var(--bold-color);
+}
+em {
+  color: var(--primary);
+}
+a {
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+a,
+a:active,
+li a.active {
+  color: var(--primary);
+}
+a:hover {
+  color: var(--secondary);
+}
+
+/* Typography-> code tags */
+code,
+kbd,
+pre,
+samp {
+  background-color: var(--border);
+  color: var(--dark);
+}
+mark {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 0 6px;
+}
+figcaption {
+  background-color: var(--border);
+  color: var(--text-color);
+}
+
+/* Form
+---------------------------------------- */
+/* Form -> Button */
+a.button,
+.button,
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+a.button:hover,
+.button:hover,
+button:hover,
+[type="button"]:hover,
+[type="reset"]:hover,
+[type="submit"]:hover {
+  background-color: var(--secondary);
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  color: var(--text-color);
+  background-color: var(--light);
+  border: 1px solid var(--border);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  background-color: transparent;
+  border: 1px solid var(--border);
+}
+fieldset {
+  border: 1px solid var(--border);
+}
+/* Form -> Label */
+.form-item label,
+form label,
+summary {
+  font-weight: bold;
+  color: var(--bold-color);
+}
+/* Form -> Radio buttons */
+select {
+  color: var(--text-color);
+  background-color: var(--light);
+  border: 1px solid var(--border);
+}
+::-webkit-input-placeholder {
+  color: var(--border);
+}
+::placeholder {
+  color: var(--border);
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: var(--border);
+}
+::-ms-input-placeholder {
+  color: #969696;
+}
+:-moz-placeholder {
+  color: var(--border);
+}
+::-moz-placeholder {
+  color: var(--border);
+}
+/* Table
+---------------------------------------- */
+th {
+  background-color: var(--border);
+  color: var(--bold-color);
+  border: 1px solid var(--border);
+}
+th a {
+  color: var(--bold-color);
+}
+td {
+  border: 1px solid var(--border);
+}
+
+/* Common HTML Elements
+---------------------------------------- */
+hr {
+  background: var(--border);
+}
+dt {
+  color: var(--bold-color);
+}
+blockquote {
+  background-color: var(--light);
+  box-shadow: 0 0 6px 2px var(--border);
+  border-left: 8px solid var(--primary);
+}
+
+/* Selection
+---------------------------------------- */
+::-moz-selection {
+  background: var(--dark);
+  color: #ffffff;
+  text-shadow: none;
+}
+::selection {
+  background: var(--dark);
+  color: #ffffff;
+  text-shadow: none;
+}

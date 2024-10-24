@@ -1,0 +1,42 @@
+/* Field Label */
+.node-content > .field:not(:last-child) {
+  margin-bottom: 
+  1rem;
+}
+
+.field-label {
+  position: relative;
+  font-weight: bold;
+}
+.field-label::before {
+  font-family: 'zuvi';
+  content: "\e025";
+  font-weight: 400;
+  color: var(--color-primary);
+  padding-right: 4px;
+ }
+[dir=ltr] .field--label-inline .field-label, [dir=ltr] .field--label-inline .field__items{
+  float:left;
+}
+
+[dir=rtl] .field--label-inline .field-label, [dir=rtl] .field--label-inline .field__items{
+  float:right;
+}
+
+[dir=ltr] .field--label-inline .field-label, [dir=ltr] .field--label-inline > .field__item, [dir=ltr] .field--label-inline .field__items{
+  padding-right:0.5em;
+}
+
+[dir=rtl] .field--label-inline .field-label, [dir=rtl] .field--label-inline > .field__item, [dir=rtl] .field--label-inline .field__items{
+  padding-left:0.5em;
+}
+
+.field--label-inline .field-label::after{
+  content:":";
+}
+/* Field itsms */
+.field-items {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

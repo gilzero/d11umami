@@ -1,0 +1,213 @@
+:root {
+  --ck-border-radius: 0.25rem !important;
+  --ck-color-base-border: #75838f !important;
+  --ck-color-focus-border: #328bb8 !important;
+}
+
+/* Style like Rivet 'em' rule. */
+i {
+  font-style: italic;
+}
+
+/* Style like Rivet 'strong' rule. */
+b {
+  font-weight: 700;
+}
+
+/* Fix smaller element font sizes. */
+sub,
+sup,
+small {
+  font-size: smaller;
+}
+
+/* Mimic rvt-validation-danger */
+.form-item textarea.error + .ck-editor {
+  --ck-color-base-border: #df3603 !important;
+  --ck-color-focus-border: #fff3f0 !important;
+  --ck-color-base-background: #fff3f0 !important;
+  /* border-color: #df3603;
+  box-shadow: 0 0 0 0.0625rem #df3603;
+  background-color: #fff3f0; */
+}
+
+/* Show header underneath Drupal toolbar. */
+.rvt-header-wrapper {
+  position: relative;
+  z-index: 500;
+}
+
+/* Style buttons adjacent to the primary button as secondary */
+.rvt-button--primary ~ .rvt-button:not(.rvt-button--danger) {
+  color: #006298;
+  border-color: #c6ecf6;
+  background-color: transparent;
+}
+
+.rvt-button--primary ~ .rvt-button:not(.rvt-button--danger):hover {
+  color: #004f80;
+  border-color: #c6ecf6;
+  background-color: #edfafd;
+}
+
+.rvt-button--primary ~ .rvt-button:not(.rvt-button--danger):focus {
+  outline: none;
+  box-shadow:
+    0 0 0 0.125rem #fff,
+    0 0 0 0.25rem #328bb8;
+}
+
+.rvt-button--primary ~ .rvt-button:not(.rvt-button--danger):active {
+  color: #004f80;
+  border-color: #94d2e7;
+  background-color: #c6ecf6;
+}
+
+/* Override form style for 'new' marker. */
+.marker {
+  color: #df3603;
+}
+
+.entity--unpublished,
+.node--unpublished {
+  background-color: #fff7f8;
+}
+
+.comment__meta,
+.comment__submitted,
+.search-result__info {
+  color: #4c5a69;
+  font-size: smaller;
+  font-size: 0.875rem;
+}
+
+.rvt-avatar svg {
+  width: 75%;
+  height: 75%;
+}
+
+.progress__track,
+.progress__bar {
+  height: 1.25rem;
+}
+
+.progress__bar {
+  border: 1px #004f80 solid;
+  border-radius: 10em;
+  background: #006298;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.15)
+    ),
+    linear-gradient(
+      to right bottom,
+      #328bb8 0%,
+      #328bb8 25%,
+      #006298 25%,
+      #006298 50%,
+      #328bb8 50%,
+      #328bb8 75%,
+      #328bb8 100%
+    );
+  background-size: 40px 40px;
+}
+
+.rvt-pagination__item {
+  width: auto;
+  min-width: 2.5rem;
+}
+
+.error-with-backtrace {
+  font-family: monospace;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.error-with-backtrace .placeholder {
+  font-style: normal;
+}
+
+.error-with-backtrace .backtrace {
+  margin: 12px 0;
+  padding: 0 8px;
+  color: #666;
+  border-left: 8px solid rgba(102, 102, 102, 0.33333);
+  font-size: 12px;
+}
+
+.rvt-layout__wrapper--single.rvt-p-tb-xxl + .rvt-c-region {
+  margin-top: -4rem;
+}
+
+/* Expand Rivet containers inside two-column layouts. */
+.rvt-layout__wrapper--details [class*="rvt-container"] {
+  max-width: initial;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Fix margins on Breakout and Feature Slot in Rivet Container XL. */
+/* @todo remove when https://github.com/indiana-university/rivet-source/issues/755 lands */
+@media screen and (min-width: 78.75em) {
+  .rvt-container-xl .rvt-layout__feature-slot {
+    margin-right: 0;
+  }
+  .rvt-container-xl .rvt-layout__break-out {
+    margin-right: -1.5rem;
+  }
+
+  .rvt-container-xl .rvt-layout__break-out {
+    margin-left: -4rem;
+  }
+
+  .rvt-container-xl.rvt-layout__wrapper--single .rvt-layout__break-out {
+    margin-left: -1.5rem;
+  }
+}
+
+@media screen and (min-width: 86.25em) {
+  .rvt-container-xl .rvt-layout__feature-slot {
+    margin-right: 0;
+  }
+  .rvt-container-xl .rvt-layout__break-out {
+    margin-right: calc((50vw - (86.25em - 3rem) / 2) * -1);
+  }
+
+  .rvt-container-xl .rvt-layout__break-out {
+    margin-left: -4rem;
+  }
+
+  .rvt-container-xl.rvt-layout__wrapper--single .rvt-layout__break-out {
+    margin-left: calc((50vw - (86.25em - 3rem) / 2) * -1);
+  }
+}
+
+@media screen and (min-width: 91.25em) {
+  .rvt-container-xl .rvt-layout__feature-slot,
+  .rvt-container-xl .rvt-layout__break-out {
+    margin-right: -4rem;
+  }
+
+  .rvt-container-xl .rvt-layout__break-out,
+  .rvt-container-xl.rvt-layout__wrapper--single .rvt-layout__break-out {
+    margin-left: -4rem;
+  }
+}
+
+/* Style Sidenav parent link in active trail. */
+/* Mimics .rvt-sidenav__link[aria-current="page"] styles. */
+.rvt-sidenav__link[aria-current="true"] {
+  background-color: #fff3f0;
+}
+
+.rvt-sidenav__link[aria-current="true"]::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0.25rem;
+  height: 100%;
+  content: "";
+  background-color: #900;
+}

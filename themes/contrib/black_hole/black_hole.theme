@@ -1,0 +1,810 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming.
+ *
+ * Filename:     black_hole.theme
+ * Website:      https://www.radut.com
+ * Description:  template
+ * Author:       Dr. Florian Radut, M.D.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\views\Form\ViewsForm;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Render\Markup;
+
+
+/**
+ *Allow is_front to be used on other templates
+ */
+function black_hole_preprocess(&$variables, $hook) {
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+  // Ensure the cache varies correctly (new in Drupal 8.3).
+  $variables['#cache']['contexts'][] = 'url.path.is_front';
+  // This is extra, in order to be able to output base_path ~ directory in theme.
+  $variables['base_path'] = base_path();
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function black_hole_preprocess_html(&$variables) {
+
+  $hvar = [
+  // Layout variables.
+    'headerimg',
+  ];
+  foreach ($hvar as $value) {
+    $variables[$value] = theme_get_setting($value);
+  }
+
+  $variables['attributes']['class'][] = 'html';
+ // Add information about the number of sidebars.
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'two-sidebars';
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['attributes']['class'][] = 'one-sidebar';
+    $variables['attributes']['class'][] = 'sidebar-first';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'one-sidebar';
+    $variables['attributes']['class'][] = 'sidebar-second';
+  }
+  else {
+    $variables['attributes']['class'][] = 'no-sidebars';
+  }
+
+  if (!empty($variables['page']['highlighted'])) {
+    $variables['attributes']['class'][] = 'highlighted';
+  }
+
+  // Add to array of helpful body classes
+  	$variables['is_front'] = \Drupal::service('path.matcher')
+      ->isFrontPage();
+  $variables['attributes']['class'][] = ($variables['is_front']) ? 'front' : 'not-front';
+  $variables['attributes']['class'][] = ($variables['is_admin']) ? 'admin' : '';
+  $variables['attributes']['class'][] = ($variables['logged_in']) ? 'logged-in' : 'logged-out';
+  $variables['attributes']['class'][] = ($variables['db_is_active']) ? '' : 'offline';
+
+  // Add node-TYPE to the body class.
+  if (isset($variables['node_type'])) {
+    $variables['attributes']['class'][] = ('node-' . $variables['node_type']);
+  }
+
+  // Add different ids to the body class (node id, vocabulary name & term id, user id).
+  $routeMatch = \Drupal::routeMatch();
+  // Test route name.
+  switch ($routeMatch->getRouteName()) {
+
+    // Add node id to the body class.
+    case 'entity.node.canonical':
+      $node_id = $routeMatch->getParameter('node')->id();
+
+      if ($node_id) {
+        $variables['attributes']['class'][] = 'node-' . $node_id;
+      }
+      break;
+
+    // Add vocabulary name and term id to the body class.
+    case 'entity.taxonomy_term.canonical':
+      $term = $routeMatch->getParameter('taxonomy_term');
+
+      if ($term->bundle()) {
+        $variables['attributes']['class'][] = 'vocabulary-' . Html::cleanCssIdentifier($term->bundle());
+      }
+      if ($term->id()) {
+        $variables['attributes']['class'][] = 'taxonomy-term-' . $term->id();
+      }
+      break;
+
+    // Add user id to the body class.
+    case 'entity.user.canonical':
+      $user_id = $routeMatch->getParameter('user')->id();
+
+      if ($user_id) {
+        $variables['attributes']['class'][] = 'user-' . $user_id;
+      }
+      break;
+  }
+
+  // Add view id name to the body class.
+  $view_id = $routeMatch->getParameter('view_id');
+
+  if ($view_id) {
+    $variables['attributes']['class'][] = 'view-' . Html::cleanCssIdentifier($view_id);
+  }
+
+  // Add unique classes for each page and website section based on path
+  $current_path = \Drupal::service('path.current')->getPath();
+  $internal_path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $variables['attributes']['class'][] = str_replace("/", " ", $internal_path);
+
+  // Build array of additional body classes and retrieve custom theme settings
+  $blockicons = theme_get_setting('blockicons');
+    if ($blockicons == '1' or $blockicons == '3'){
+      $variables['attributes']['class'][] = 'bi32';
+    }
+    if ($blockicons == '2' or $blockicons == '4'){
+      $variables['attributes']['class'][] = 'bi48';
+    }
+  $navpos = theme_get_setting('navpos');
+    if ($navpos == '0'){
+      $variables['attributes']['class'][] = 'ml';
+    }
+    if ($navpos == '1'){
+      $variables['attributes']['class'][] = 'mc';
+    }
+    if ($navpos == '2'){
+      $variables['attributes']['class'][] = 'mr';
+    }
+  $fntsize = theme_get_setting('fntsize');
+    if ($fntsize == '0'){
+  	  $variables['attributes']['class'][] = 'fs0';
+    }
+    if ($fntsize == '1'){
+  	  $variables['attributes']['class'][] = 'fs1';
+    }
+    if ($fntsize == '2'){
+  	  $variables['attributes']['class'][] = 'fs2';
+    }
+  $mob = theme_get_setting('mobile_blocks');
+    if ($mob == '1'){
+  	  $variables['attributes']['class'][] = 'nb1';
+    }
+    if ($mob == '2'){
+  	  $variables['attributes']['class'][] = 'nb1 nbl';
+    }
+    if ($mob == '3'){
+  	  $variables['attributes']['class'][] = 'nb1 nb2';
+    }
+    if ($mob == '4'){
+  	  $variables['attributes']['class'][] = 'nb1 nb2 nbl';
+    }
+    if ($mob == '5'){
+  	  $variables['attributes']['class'][] = 'nb1 nb2 nbl nbr';
+    }
+  if(theme_get_setting('roundcorners')) {
+    $variables['attributes']['class'][] = 'rnd';
+  }
+  if(theme_get_setting('pageicons')) {
+    $variables['attributes']['class'][] = 'pi';
+  }
+  if(theme_get_setting('headerimg')) {
+    $variables['attributes']['class'][] = 'himg';
+  }
+
+  // Add language and site ID classes
+  $variables['attributes']['class'][] = 'lg-' . \Drupal::languageManager()->getCurrentLanguage()->getId(); // Page has lang-x
+  $siteid = theme_get_setting('siteid');
+  $variables['attributes']['class'][] = $siteid;
+
+  // Remove empty elements
+  $variables['attributes']['class'] = array_filter($variables['attributes']['class']);
+}
+
+
+/**
+ * Implements hook_preprocess_page() for page templates.
+ */
+function black_hole_preprocess_page(&$variables) {
+  $pvar = [
+// Pure.CSS variables.
+	'css_zone',
+    'wrapper',
+    'first_width',
+    'second_width',
+    'mobile_blocks',
+// Layout variables.
+	'style',
+	'fntfam',
+	'themedblocks',
+	'blockicons',
+	'pageicons',
+	'roundcorners',
+    'headerimg',
+    'devlink',
+// Breadcrumb variable.
+    'breadcrumb_display',
+// Slideshow variables
+    'slideshow_display',
+    'slideshow_all',
+    'slidety',
+    'slideh',
+    'show_slide1',
+    'slide1_head',
+    'slide1_image_url',
+    'slide1_desc',
+    'slide1_url',
+    'slide1_alt',
+    'show_slide2',
+    'slide2_head',
+    'slide2_image_url',
+    'slide2_desc',
+    'slide2_url',
+    'slide2_alt',
+    'show_slide3',
+    'slide3_head',
+    'slide3_image_url',
+    'slide3_desc',
+    'slide3_url',
+    'slide3_alt',
+    'show_slide4',
+    'slide4_head',
+    'slide4_image_url',
+    'slide4_desc',
+    'slide4_url',
+    'slide4_alt',
+    'show_slide5',
+    'slide5_head',
+    'slide5_image_url',
+    'slide5_desc',
+    'slide5_url',
+    'slide5_alt',
+    'show_slide6',
+    'slide6_head',
+    'slide6_image_url',
+    'slide6_desc',
+    'slide6_url',
+    'slide6_alt',
+    'show_slide7',
+    'slide7_head',
+    'slide7_image_url',
+    'slide7_desc',
+    'slide7_url',
+    'slide7_alt',
+// Social links variables
+    'social_links_display',
+    'facebook_url',
+    'google_plus_url',
+    'twitter_url',
+    'instagram_url',
+    'telegram_url',
+    'pinterest_url',
+    'linkedin_url',
+    'youtube_url',
+    'vimeo_url',
+    'flickr_url',
+    'tumblr_url',
+    'skype_url',
+    'drupal_url',
+    'rss_url',
+    'myother_url',
+// Other settings
+    'toolbarfix',
+  ];
+  foreach ($pvar as $value) {
+    $variables[$value] = theme_get_setting($value);
+  }
+
+  //*** Pure Grid settings 
+  // Pure.css variables for user regions classes.
+    $cols1 = (bool) $variables['page']['user1'] + (bool) $variables['page']['user2'] + (bool) $variables['page']['user3'] + (bool) $variables['page']['user4'];
+    $cols2 = (bool) $variables['page']['user5'] + (bool) $variables['page']['user6'] + (bool) $variables['page']['user7'] + (bool) $variables['page']['user8'];
+
+    if ($cols1 == '1') {
+      $variables['section_class_1'] = 'pure-u-1';
+    }
+    if ($cols1 == '2') {
+      $variables['section_class_1'] = 'pure-u-1 pure-u-md-1-2';
+    }
+    if ($cols1 == '3') {
+      $variables['section_class_1'] = 'pure-u-1 pure-u-lg-1-3';
+    }
+    if ($cols1 == '4') {
+      $variables['section_class_1'] = 'pure-u-1 pure-u-md-1-2 pure-u-lg-1-4';
+    }
+    if ($cols2 == '1') {
+      $variables['section_class_2'] = 'pure-u-1';
+    }
+    if ($cols2 == '2') {
+      $variables['section_class_2'] = 'pure-u-1 pure-u-md-1-2';
+    }
+    if ($cols2 == '3') {
+      $variables['section_class_2'] = 'pure-u-1 pure-u-lg-1-3';
+    }
+    if ($cols2 == '4') {
+      $variables['section_class_2'] = 'pure-u-1 pure-u-md-1-2 pure-u-lg-1-4';
+    }
+
+  // Add divider class for user regions.
+  $themedblocks = theme_get_setting('themedblocks');
+  if ($themedblocks == '0' or $themedblocks == '3') {
+    $variables['divider'] = 'divider';
+  }
+
+  // Pure.css variables for sidebars width.
+  $w1 = theme_get_setting('first_width');
+  $w2 = theme_get_setting('second_width');
+  $variables['first_width'] = 'pure-u-1 pure-u-lg-'.$w1.'-24';
+  $variables['second_width'] = 'pure-u-1 pure-u-lg-'.$w2.'-24';
+
+  // Pure.css variables for main cointainer width.
+  /*$cols = (bool) $variables['page']['sidebar_first'] + (bool) $variables['page']['sidebar_second'];*/
+  $cont1 = 24 - $w1;
+  $cont2 = 24 - $w2;
+  $cont0 = 24 - ($w1+$w2);
+  if (($variables['page']['sidebar_first']) && (!$variables['page']['sidebar_second'])) {
+    $variables['cont_class'] = 'pure-u-1 pure-u-lg-'.$cont1.'-24';
+  }
+  if ((!$variables['page']['sidebar_first']) && ($variables['page']['sidebar_second'])) {
+    $variables['cont_class'] = 'pure-u-1 pure-u-lg-'.$cont2.'-24';
+  }
+  if (($variables['page']['sidebar_first']) && ($variables['page']['sidebar_second'])) {
+    $variables['cont_class'] = 'pure-u-1 pure-u-lg-'.$cont0.'-24';
+  }
+  if ((!$variables['page']['sidebar_first']) && (!$variables['page']['sidebar_second'])) {
+    $variables['cont_class'] = 'pure-u-1 pure-u-lg-24-24';
+  }
+
+// Devlink
+  $devlink = theme_get_setting('devlink');
+  if ($devlink == '0'){
+	  $dvlk = 'byy';
+  }
+  if ($devlink == '1'){
+	  $dvlk = 'by';
+  }
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    //$nodeTypeName = $node->bundle();
+    $nodeTypeLabel = $node->type->entity->label();
+    //$nodeTitle = $node->getTitle();
+    $nt = ' | '.$nodeTypeLabel;
+  }
+  else {
+    $nt = '';
+  }
+  $variables['devlk'] = '<div class="'.$dvlk.'"><a href="https://www.radut.com/lean-six-sigma" title="LSS'.$nt.'">by Dr. Radut</a></div>';
+
+// Adding assets (CSS, JS) to a Drupal module via *.libraries.yml
+  $csszone = theme_get_setting('css_zone');
+  if ($csszone == '0') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-purecss-local';
+  }
+  if ($csszone == '1') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-purecss';
+  }
+  $style = theme_get_setting('style');
+  if ($style == '0') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-star-nebula';
+  }
+  if ($style == '1') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-protostar';
+  }
+  if ($style == '2') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-star';
+  }
+  if ($style == '3') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-red-giant';
+  }
+  if ($style == '4') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-planetary-nebula';
+  }
+  if ($style == '5') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-planet';
+  }
+  if ($style == '6') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-white-dwarf';
+  }
+  if ($style == '7') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-massive-star';
+  }
+  if ($style == '8') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-red-supergiant';
+  }
+  if ($style == '9') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-supernova';
+  }
+  if ($style == '10') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-neutronstar';
+  }
+  if ($style == '11') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-style-black-hole';
+  }
+  $fntfam = theme_get_setting('fntfam');
+  if ($fntfam == '1') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-montserrat';
+  }
+  if ($fntfam == '2') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-merriweather';
+  }
+  $slideshow = theme_get_setting('slideshow_display');
+  $slidetype = theme_get_setting('slidety');
+  if ($slideshow == '1') {
+    if ($slidetype == '0') {
+      $variables['#attached']['library'][] = 'black_hole/black_hole-slider';
+    }
+    if ($slidetype == '1') {
+      $variables['#attached']['library'][] = 'black_hole/black_hole-slider-full';
+    }
+  }
+  $bicons = theme_get_setting('blockicons');
+  if ($bicons == '1' or $bicons == '2') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-bicons';
+  }
+  if ($bicons == '3' or $bicons == '4') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-biconsn';
+  }
+  $picons = theme_get_setting('pageicons');
+  if ($picons == '1') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-picons';
+  }
+  if ($picons == '2') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-piconsn';
+  }
+  $sociald = theme_get_setting('social_links_display');
+  if ($sociald == '1') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-social';
+  }
+  $toolbarfix = theme_get_setting('toolbarfix');
+  if ($toolbarfix == '1') {
+    $variables['#attached']['library'][] = 'black_hole/black_hole-toolbarfix';
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for page title templates.
+ */
+function black_hole_preprocess_page_title(&$variables) {
+  // Since the title and the shortcut link are both block level elements,
+  // positioning them next to each other is much simpler with a wrapper div.
+  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {
+    // Add a wrapper div using the title_prefix and title_suffix render elements.
+    $variables['title_prefix']['shortcut_wrapper'] = [
+      '#markup' => '<div class="shortcut-wrapper clearfix">',
+      '#weight' => 100,
+    ];
+    $variables['title_suffix']['shortcut_wrapper'] = [
+      '#markup' => '</div>',
+      '#weight' => -99,
+    ];
+    // Make sure the shortcut link is the first item in title_suffix.
+    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
+ */
+function black_hole_preprocess_maintenance_page(&$variables) {
+  // By default, site_name is set to Drupal if no db connection is available
+  // or during site installation. Setting site_name to an empty string makes
+  // the site and update pages look cleaner.
+  // @see template_preprocess_maintenance_page
+  if (!$variables['db_is_active']) {
+    $variables['site_name'] = '';
+  }
+
+  // 0 Point has custom styling for the maintenance page.
+  $variables['#attached']['library'][] = 'black_hole/maintenance_page';
+}
+
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function black_hole_page_attachments_alter(array &$attachments) {
+  $httpheaders = theme_get_setting('httpheaders');
+  if ($httpheaders == '1') {
+    foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+      // Remove META tag & X-Generator for Drupal
+      if ($attachment[1] == 'system_meta_generator') {
+        unset($attachments['#attached']['html_head'][$key]);
+      }
+    }
+  }
+  $fntfam = theme_get_setting('fntfam');
+    if ($fntfam != '0') {
+    $attachments['#attached']['html_head_link'][] = [
+      [
+        'rel' => 'preconnect',
+        'href' => 'https://fonts.gstatic.com',
+        'crossorigin' => TRUE,
+      ],
+    ];
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function black_hole_preprocess_node(&$variables) {
+  // Remove the "Add new comment" link on teasers or when the comment form is displayed on the page.
+  if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
+    unset($variables['content']['links']['comment']['#links']['comment-add']);
+  }
+  $pvar = [
+// Submitted by Author & Date variables.
+    'submitted_dateuser',
+    'submitted_dateuser_blog',
+    'submitted_dateuser_forum',
+    'submitted_txt',
+  ];
+  foreach ($pvar as $value) {
+    $variables[$value] = theme_get_setting($value);
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for comment.html.twig.
+ */
+function black_hole_preprocess_comment(&$variables) {
+  $pvar = [
+// Submitted by Author & Date variables.
+    'submitted_txt',
+  ];
+  foreach ($pvar as $value) {
+    $variables[$value] = theme_get_setting($value);
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for forum-submitted.html.twig.
+ */
+function black_hole_preprocess_forum_submitted(&$variables) {
+  $pvar = [
+// Submitted by Author & Date variables.
+    'submitted_txt',
+  ];
+  foreach ($pvar as $value) {
+    $variables[$value] = theme_get_setting($value);
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function black_hole_preprocess_block(&$variables) {
+  $pvar = [
+// Other settings
+    'show_intl_logo',
+    'intl_logo_path',
+  ];
+  foreach ($pvar as $value) {
+    $variables[$value] = theme_get_setting($value);
+  }
+
+  $region = [];
+  if (isset($variables['elements']['#id'])) {
+    $region = Block::load($variables['elements']['#id'])->getRegion();
+    if (!empty($region)) {
+      $variables['content']['#attributes']['data-block']['region'] = $region;
+    }
+  }
+
+  $themedblocks = theme_get_setting('themedblocks');
+  if ($themedblocks == '0'){
+    $themed_regions = array('sidebar_first','sidebar_second');
+  }
+  if ($themedblocks == '1'){
+    $themed_regions = array('sidebar_first','sidebar_second','user1','user2','user3','user4','user5','user6','user7','user8');
+  }
+  if ($themedblocks == '2'){
+    $themed_regions = array('user1','user2','user3','user4','user5','user6','user7','user8');
+  }
+  if (isset($themed_regions) && is_array($themed_regions))
+    $variables['themed_block'] = (in_array($region, $themed_regions)) ? TRUE : FALSE;
+  else $variables['themed_block'] = FALSE;
+
+   if ($variables['themed_block'] == TRUE) {
+    $variables['attributes']['class'][] = 'themed-block';
+  }
+
+  $blockicons = theme_get_setting('blockicons');
+  if ($blockicons){
+     $blockicons_regions = array('sidebar_first','sidebar_second','user1','user2','user3','user4','user5','user6','user7','user8');
+  }
+  if (isset($blockicons_regions) && is_array($blockicons_regions))
+    $variables['block_icon'] = (in_array($region, $blockicons_regions)) ? TRUE : FALSE;
+  else $variables['block_icon'] = FALSE;
+
+  $variables['page_seo'] = theme_get_setting('page_seo');
+  $variables['block_seo'] = theme_get_setting('block_seo');
+
+  // Add a clearfix class to system branding block.
+  //if ($variables['plugin_id'] == 'block-system-branding-block') {
+  //  $variables['attributes']['class'][] = 'clearfix';
+  //}
+
+  // Disable cache for all blocks
+  $variables['blockscache'] = theme_get_setting('blockscache');
+  if ($variables['blockscache'] == '1') {
+    $variables['#cache']['max-age'] = 0;
+  }
+}
+
+
+/**
+ * Replace the Search Submit Button with a Font Awesome Character.
+ */
+function black_hole_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+//  $form['keys']['#attributes']['title'] = t('Search'); //Adds a mousehover title to input box
+//  $form['actions']['submit']['#value'] = html_entity_decode('&#xf002;'); // Change the text on the submit button [= t('?')]
+
+  $variables['searchimg'] = theme_get_setting('searchimg');
+
+  if ($variables['searchimg'] == '1') {
+    $theme = \Drupal::theme()->getActiveTheme();
+    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => $theme->getPath() . '/images/search.svg');
+    $form['actions']['submit']['#attributes']['alt'] = t('Search');
+    $form['actions']['submit']['#attributes']['class'][] = 'pure-button';
+    $form['keys']['#attributes']['placeholder'][] = t('Search');
+  }
+  if ($variables['searchimg'] == '2') {
+    $theme = \Drupal::theme()->getActiveTheme();
+    $form['actions']['submit'] = array('#type' => '');
+    $form['keys']['#attributes']['placeholder'][] = t('Search');
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for commerce-cart-block.html.twig.
+ */
+function black_hole_preprocess_commerce_cart_block(&$variables) {
+  $theme = \Drupal::theme()->getActiveTheme();
+  $variables['icon']['#uri'] = $theme->getPath() . '/images/icons/blocksn/icon_28_32.png';
+  // Add a library asset when the cart block is displayed
+  $variables['#attached']['library'][] = 'black_hole/black_hole-cart-block';
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for menu.html.twig.
+ */
+function black_hole_preprocess_menu(&$variables) {
+  // Convert menu to HTML if contains `fas fa-` or `fab fa-`.
+  foreach ($variables['items'] as $menu_id => $menu) {
+    $title = $variables['items'][$menu_id]['title'];
+    if ((strpos($title, 'fas fa-') === 0) || (strpos($title, 'fab fa-') === 0) || (strpos($title, 'fa fa-') === 0)) {
+      $variables['items'][$menu_id]['title'] = Markup::create('<i class="' . $title . '"></i>');
+    }
+  }
+  // Adds clearfix CSS class, just in case
+  $variables['attributes']['class'][] = 'clearfix';
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function black_hole_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  if (isset($variables['attributes']['data-block']['region'])) {
+    $region = $variables['attributes']['data-block']['region'];
+    $suggestions[] = $variables['theme_hook_original'] . '__' . $region;
+    $suggestions[] = 'menu__' . $region;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_links__media_library_menu().
+ *
+ * This targets the menu of available media types in the media library's modal
+ * dialog.
+ *
+ * @todo Do this in the relevant template once
+ *   https://www.drupal.org/project/drupal/issues/3088856 is resolved.
+ */
+function black_hole_preprocess_links__media_library_menu(array &$variables) {
+  foreach ($variables['links'] as &$link) {
+    // This conditional exists because the media-library-menu__link class is currently 
+    // added by Classy, but 0 Point will eventually not use Classy as a base theme.
+    // @todo remove conditional, keep class addition in https://drupal.org/node/3110137
+    // @see https://www.drupal.org/node/3109287
+    // @see classy_preprocess_links__media_library_menu()
+    if (!isset($link['link']['#options']['attributes']['class']) || !in_array('media-library-menu__link', $link['link']['#options']['attributes']['class'])) {
+      $link['link']['#options']['attributes']['class'][] = 'media-library-menu__link';
+    }
+  }
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function black_hole_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add class to the Media Library views form.
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof ViewsForm && strpos($form_object->getBaseFormId(), 'views_form_media_library') === 0) {
+    $form['#attributes']['class'][] = 'media-library-views-form';
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_image_widget().
+ *
+ * @todo Revisit in https://drupal.org/node/3117430
+ */
+function black_hole_preprocess_image_widget(&$variables) {
+  if (!empty($variables['element']['fids']['#value'])) {
+    $file = reset($variables['element']['#files']);
+    //$variables['data']["file_{$file->id()}"]['filename']['#suffix'] = ' <span class="file-size">(' . format_size($file->getSize()) . ')</span> ';
+    // Drupal 11 
+    $variables['data']["file_{$file->id()}"]['filename']['#suffix'] = ' <span class="file-size">(' . \Drupal\Component\Utility\DeprecationHelper::backwardsCompatibleCall(\Drupal::VERSION, '10.2.0', fn() => \Drupal\Core\StringTranslation\ByteSizeMarkup::create($file->getSize()), fn() => format_size($file->getSize())) . ')</span> ';
+  }
+}
+
+
+/**
+ * Implements template_preprocess_links().
+ *
+ * This makes it so array keys of #links items are added as a class. This
+ * functionality was removed in Drupal 8.1, but still necessary in some
+ * instances.
+ *
+ * @todo remove in https://drupal.org/node/3120962
+ */
+function black_hole_preprocess_links(&$variables) {
+  if (!empty($variables['links'])) {
+    foreach ($variables['links'] as $key => $value) {
+      if (!is_numeric($key)) {
+        $class = Html::getClass($key);
+        $variables['links'][$key]['attributes']->addClass($class);
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements template_preprocess_field().
+ */
+function black_hole_preprocess_field(&$variables, $hook) {
+  if ($variables['field_type'] == 'entity_reference') {
+    $items = $variables['element']['#items'];
+    $fd = $items->getFieldDefinition();
+    if (method_exists($fd,'getSettings')) {
+      $settings = $fd->getSettings();
+      if ($settings['target_type'] == 'taxonomy_term') {
+        $variables['is_term'] = TRUE;
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_js_alter().
+ */
+/*
+function black_hole_js_alter(&$js) {
+  foreach ($js as $path => &$values) {
+    if (is_string($values['data']) && strpos($values['data'], 'js/toggles.min.js') !== FALSE) {
+      $values['preprocess'] = FALSE;
+    }
+  }
+}
+*/
+
+
+/**
+ * Use language code for the language switcher
+ */
+/*
+function black_hole_preprocess_links__language_block(&$variables) {
+  foreach ($variables['links'] as $i => $link) {
+    $linkLanguage = $link['link']['#options']['language'];
+    $variables['links'][$i]['link']['#title'] = $linkLanguage->get('id');
+  }
+}
+*/

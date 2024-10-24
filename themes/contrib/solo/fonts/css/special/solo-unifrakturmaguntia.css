@@ -1,0 +1,4 @@
+.page-wrapper .unifrakturmaguntia {
+  --solo-font-s: 'UnifrakturMaguntia', cursive;
+  font-family: var(--solo-font-s) !important;
+}

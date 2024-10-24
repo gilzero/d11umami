@@ -1,0 +1,52 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% block content %}
+
+<div class="branding-wrapper">
+  {% if site_logo %}
+  <div class="branding-first">
+  {% if site_logo and logo_default != 1 %}
+    <a class="site-logo" href="{{ path('<front>') }}" title="{{ logo_alt | t }}" rel="{{ logo_alt | t }}">
+      <img src="{{ site_logo }}" class="site-logo-img" alt="{{ logo_alt | t }}" />
+    </a>
+  {% endif %}
+
+  {% if site_logo and logo_default == 1 %}
+    <a class="site-logo" href="{{ path('<front>') }}" title="{{ logo_alt | t }}" rel="{{ logo_alt | t }}">
+      {% include '@solo/partials/svg/_svg-logo.html.twig' with { solo_path: solo_path } only %}
+    </a>
+  {% endif %}
+  </div>
+  {% endif %}
+
+  {% if site_name or site_slogan %}
+  <div class="branding-second{{ site_name ? ' site-name-outer' : '' }}{{ site_slogan ? ' site-slogan-outer' : '' }}">
+    {% if site_name %}
+      <div class="site-name">
+        <a class="site-name-link" href="{{ path('<front>') }}" title="{{ logo_alt | t }}" rel="{{ logo_alt | t }}">
+        {{ site_name }}
+      </a>
+      </div>
+    {% endif %}
+
+    {% if site_slogan %}
+      <div class="site-slogan">{{ site_slogan }}</div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

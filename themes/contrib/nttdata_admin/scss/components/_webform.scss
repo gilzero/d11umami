@@ -1,0 +1,173 @@
+/**
+ * @file
+ * Webform.
+ */
+
+.webform-bulk-form {
+  @extend %section-card;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  > .container-inline {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $link-water;
+    padding: 1rem;
+    border-radius: $nttdata-radius;
+    .form-type-select {
+      label {
+        display: inline;
+        position: unset;
+        overflow: unset;
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+        font-size: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+  table {
+    order: -1;
+    margin-top: 0;
+    .webform-icon {
+      @extend %filter-white;
+      margin: 0 10px;
+    }
+    td {
+      vertical-align: middle;
+    }
+  }
+}
+
+a.button.button-webform-table-setting {
+  float: none;
+}
+
+.webform-ui-element-form {
+  .form-actions {
+    @extend %is-stick-to-bottom;
+    bottom: -16px;
+    left: unset;
+    background-color: $link-water;
+    input[data-drupal-selector="edit-submit"] {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.form-textarea-wrapper {
+  .CodeMirror {
+    background-color: $white2;
+    * {
+      color: $text-dark;
+    }
+    &-gutters,
+    &-linenumber {
+      background-color: $black-pearl;
+      color: $cornflower-blue;
+      text-align: center;
+    }
+  }
+}
+
+.claro-details.webform-element-help-container--title {
+  > summary.claro-details__summary {
+    justify-content: flex-start !important;
+    .webform-element-help {
+      border: 1px solid $cornflower-blue;
+      background: $cornflower-blue;
+      margin-left: 0.75rem;
+      &:hover {
+        border: 1px solid $cornflower-blue;
+        background: $cornflower-blue;
+        opacity: 0.8;
+      }
+      span {
+        color: $primary2;
+      }
+    }
+  }
+  > .claro-details__wrapper {
+    .admin-item {
+      &__link {
+        &:before {
+          filter: invert(0.25) brightness(1) !important;
+        }
+      }
+    }
+  }
+}
+
+#webform-handlers,
+#edit-submission-user-columns {
+  tr td {
+    vertical-align: middle;
+    padding: 7.5px;
+  }
+}
+
+a.button.button-webform-play {
+  @extend %button-base;
+  margin-left: 1rem;
+}
+
+.webform-tableselect {
+  tbody tr {
+    td {
+      padding-top: 0.75rem !important;
+    }
+    > td.tabledrag-cell {
+      position: relative;
+      .form-type-checkbox {
+        position: absolute;
+        top: 0;
+        left: 25%;
+      }
+    }
+  }
+}
+
+
+// Addons page
+.webform-addons-projects details {
+  background-color: $white !important;
+  .details-wrapper {
+    padding: 0 20px;
+  }
+  .color-success {
+    padding: 0 5px;
+    color: $white;
+    background-color: $beautiful-green;
+  }
+}
+
+.webform-help-support {
+  &__header {
+    background-color: $ck-grey;
+  }
+  &__item {
+    background: $ck-grey2;
+  }
+}
+
+.region-content {
+  &:has(.webform-element-plugin-table) {
+    max-width: 100vw;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    .sticky-header {
+      display: none;
+    }
+    .webform-element-plugin-table {
+      tbody tr td {
+        vertical-align: top;
+      }
+      td,
+      th {
+        width: auto;
+      }
+    }
+  }
+}

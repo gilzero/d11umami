@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in Adaptivetheme sub-themes.
+ */
+
+require_once __DIR__ . '/includes/misc.inc';
+require_once __DIR__ . '/includes/theme.inc';
+require_once __DIR__ . '/includes/alters.inc';
+require_once __DIR__ . '/includes/form_alters.inc';
+require_once __DIR__ . '/includes/suggestions.inc';
+require_once __DIR__ . '/includes/preprocess.inc';

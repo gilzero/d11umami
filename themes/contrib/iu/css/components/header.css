@@ -1,0 +1,9 @@
+/**
+ * Required for nav-secondary to keep its place when toolbar or site alert
+ * is enabled.
+ */
+@media only screen and (min-width: 977px) {
+  #header {
+    position: relative;
+  }
+}

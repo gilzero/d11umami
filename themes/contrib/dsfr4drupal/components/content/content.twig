@@ -1,0 +1,37 @@
+{% set attributes = attributes|default(create_attribute()) %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-content-media--' ~ variant) %}
+{% endif %}
+
+{% if caption or transcription %}
+  {% set attributes = attributes.setAttribute('role', 'group') %}
+{% endif %}
+
+{% if caption %}
+  {% set attributes = attributes.setAttribute('aria-label', caption) %}
+{% endif %}
+
+<figure{{ attributes.addClass('fr-content-media') }}>
+  {% if image %}
+    <div class="fr-content-media__img">
+      {# Do not forget to add class "fr-responsive-img" to the image. #}
+      {{ image }}
+    </div>
+  {% elseif video %}
+    <div class="fr-responsive-vid{{ ratio == '4x3' ? ' fr-responsive-vid--4x3' }}">
+      {{ video|add_class('fr-responsive-vid__player') }}
+    </div>
+  {% endif %}
+
+  {% if caption %}
+    <figcaption class="fr-content-media__caption">{{ caption }}</figcaption>
+  {% endif %}
+</figure>
+
+{% if transcription %}
+  {{ include('dsfr4drupal:transcription', {
+    'content': transcription,
+    'title': transcription_title,
+  }, with_context=false) }}
+{% endif %}

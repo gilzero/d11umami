@@ -1,0 +1,25 @@
+name: Capture Dreams
+type: theme
+base theme: false
+description: "Capture Dreams: Capture Dreams is a bold free template for photography portfolio websites. With the dark, courageous, and impactful design."
+package: virasat
+core_version_requirement: ^9 || ^10 || ^11
+
+libraries:
+  - capture_dreams/global-styling
+
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+  hidden: Hidden
+
+# Information added by Drupal.org packaging script on 2024-03-29
+# version: "1.0.1"
+# project: "capture_dreams"
+# datestamp: 1711715663
+
+# Information added by Drupal.org packaging script on 2024-09-03
+version: '1.0.2'
+project: 'capture_dreams'
+datestamp: 1725349902

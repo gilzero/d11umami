@@ -1,0 +1,35 @@
+{% set attributes = attributes|default(create_attribute()) %}
+
+{% if image %}
+  {% set attributes = attributes.addClass('fr-quote--column') %}
+{% endif %}
+
+{% if color_schema %}
+  {% set attributes = attributes.addClass('fr-quote--' ~ color_schema) %}
+{% endif %}
+
+<figure{{ attributes.addClass('fr-quote') }}>
+  <blockquote>
+    <p>{{ quote }}</p>
+  </blockquote>
+  {% if author or source or image %}
+    <figcaption>
+      {% if author %}
+        <p class="fr-quote__author">{{ author }}</p>
+      {% endif %}
+      {% if source %}
+        <ul class="fr-quote__source">
+          {% for sr in source %}
+            <li>{{ sr }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if image %}
+        <div class="fr-quote__image">
+          {# Do not forget to add class "fr-responsive-img" to the image. #}
+          {{ image }}
+        </div>
+      {% endif %}
+    </figcaption>
+  {% endif %}
+</figure>

@@ -1,0 +1,4 @@
+# Required to validate default theme settings.
+capture_dreams.settings:
+  type: theme_settings
+  label: "Capture Dreams"

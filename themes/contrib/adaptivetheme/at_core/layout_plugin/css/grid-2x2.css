@@ -1,0 +1,40 @@
+.atl__lr {
+  margin: 0 -0.625em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.atl__lc {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 0 0.625em;
+  width: 100%;
+}
+
+.atl--grid-2x2 > .atl__cw > .atl__lc {
+  margin-bottom: 0;
+}
+
+.bp--at-core-simple-tablet-isolate .atl--grid-2x2 > .atl__cw > .atl__lc,
+.bp--at-core-simple-wide .atl--grid-2x2 > .atl__cw > .atl__lc {
+  width: 50%;
+}
+
+.bp--at-core-simple-tablet-isolate .atl--grid-2x2 > .atl__cw > .lc-3:last-child,
+.bp--at-core-simple-wide .atl--grid-2x2 > .atl__cw > .lc-3:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+/*# sourceMappingURL=grid-2x2.css.map */

@@ -1,0 +1,9 @@
+/**
+ * Display workaround to account for webform progress tracker not
+ * linking the steps in Rivet Step Indicator.
+ */
+.rvt-c-steps__indicator--current {
+  color: #fff;
+  border-color: #900;
+  background-color: #900;
+}

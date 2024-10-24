@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+{% if breadcrumb %}
+  <nav role="navigation" aria-label="{{ 'Breadcrumb'|t }}">
+    <ol class="rvt-breadcrumbs">
+    {% for item in breadcrumb %}
+      {% set text = item.text %}
+      {% if text == 'Home' %}
+      {% set text %}
+      <span class="rvt-sr-only">Home</span>
+      <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m8 .798 7 4.667V15H9v-4.444H7V15H1V5.465L8 .798ZM3 6.535V13h2V8.556h6V13h2V6.535L8 3.202 3 6.535Z"></path></svg>
+      {% endset %}
+      {% endif %}
+      {% if item.url %}
+        <li><a href="{{ item.url }}">{{ text }}</a></li>
+      {% else %}
+        <li aria-current="page">{{ text }}</li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

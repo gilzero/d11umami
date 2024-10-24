@@ -1,0 +1,24 @@
+name: DSFR - Accordion (group)
+description: The accordion group allows you to group several accordion components together and associate their opening and closing.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    dissociated:
+      type: boolean
+      title: Are dissociated?
+      default: false
+    items:
+      type: array
+      title: Items
+      description: 'Each item expects properties of the "dsfr4drupal:accordion" component.'
+      items:
+        type: object
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.accordion

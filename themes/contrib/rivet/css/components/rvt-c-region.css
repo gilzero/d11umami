@@ -1,0 +1,17 @@
+/* Workaround to hide Drupal's lazy-rendered regions. */
+.rvt-c-region:empty {
+  display: none;
+}
+
+/* Hide the region wrapper when an inner region is empty. */
+.rvt-c-region:has(.rvt-c-region__inner:empty) {
+  display: none;
+}
+
+.rvt-c-region--content-top {
+  padding-top: 2rem;
+}
+
+.rvt-c-region--featured:has(.rvt-hero) + .rvt-c-region--content-top {
+  padding-top: 0;
+}

@@ -1,0 +1,30 @@
+splide
++---------------------------+
+https://github.com/Splidejs/splide
+
+
+Google web font
++---------------------------+
+https://fonts.google.com/
+https://fonts.google.com/specimen/Poppins
+https://fonts.google.com/specimen/Plus+Jakarta+Sans
+
+
+Demo images
++---------------------------+
+https://undraw.co/
+
+
+FontAwesome font icons
++---------------------------+
+https://fontawesome.com
+
+
+Bootstrap Icons
++---------------------------+
+https://icons.getbootstrap.com/
+
+
+Theme Font Icons:
++---------------------------+
+Font icons used in the theme is created using iconly.io

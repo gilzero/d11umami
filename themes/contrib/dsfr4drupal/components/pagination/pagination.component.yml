@@ -1,0 +1,48 @@
+name: DSFR - Pagination
+description: Pagination allows the user to navigate between different pages of a list of items.
+status: stable
+group: DSFR
+props:
+  properties:
+    aria_label:
+      type: string
+      title: Pagination "aria-label" attribute
+      description: 'By default: "Pagination", or the translated string in another language.'
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    first_label:
+      type: string
+      title: First page item label
+      description: 'By default: "First page", or the translated string in another language.'
+    ellipses:
+      type: object
+      title: Ellipses
+      properties:
+        previous:
+          type: boolean
+          title: Add ellipses after previous page item?
+        next:
+          type: boolean
+          title: Add ellipses after next page item?
+    items:
+      type: object
+      title: Items
+      description: Drupal pager items.
+    last_label:
+      type: string
+      title: Last page item label
+      description: 'By default: "Last page", or the translated string in another language.'
+    next_label:
+      type: string
+      title: Next page item label
+      description: 'By default: "Next page", or the translated string in another language.'
+    previous_label:
+      type: string
+      title: Previous page item label
+      description: 'By default: "Previous page", or the translated string in another language.'
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.pagination

@@ -1,0 +1,11 @@
+{% embed 'dsfr4drupal:modal' with {
+  html_id: 'modal-consent',
+  title: title|default('Manage consent'|t)
+} %}
+  {% block modal_content %}
+    {{ include('dsfr4drupal:consent-manager', {
+      'title': title,
+      'services': services,
+    }, with_context=false) }}
+  {% endblock %}
+{% endembed %}

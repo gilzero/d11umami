@@ -1,0 +1,28 @@
+<section id="user-login">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 yg-creative-login">
+            <div class="login-text">
+                <h2 class="title" style="text-align:center;"><strong>USER <span>LOGIN</span></strong></h2> 
+                <form role="form" id="sub-form">
+                    <div class="form-group">
+                     {{ form.name }}
+                    </div>
+                    <div class="form-group">
+                    {{ form.pass }}
+                    </div>
+                    <div class="form-group">
+                        <a href="password" alt="Request new password via email">Forgot password?</a>
+                    </div>
+                    {{ form.form_build_id }}
+                    {{ form.form_id }}
+                    <div class="login-button">
+                        <a href="register">Sign Up</a>
+                        {{ form.actions }}
+                    </div>
+                </form>
+            </div>        
+        </div>                  
+    </div>
+  </div>
+</section>  

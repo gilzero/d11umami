@@ -1,0 +1,152 @@
+{# ------------
+   string
+------------ #}
+
+<h3>string</h3>
+{{ string }}
+
+<h3>string_default</h3>
+{{ string_default }}
+
+<h3>string_length</h3>
+{{ string_length }}
+
+{# ------------
+   machine_name
+------------ #}
+
+<h3>machine_name</h3>
+{{ machine_name }}
+
+{# ------------
+   url
+------------ #}
+
+<h3>url_1</h3>
+<a href="{{ url_1 }}">{{ url_1 }}</a>
+
+<h3>url_2</h3>
+<a href="{{ url_2 }}">{{ url_2 }}</a>
+
+<h3>url_3</h3>
+<a href="{{ url_3 }}">{{ url_3 }}</a>
+
+{# ------------
+   boolean
+------------ #}
+
+<h3>boolean</h3>
+{{ boolean }}
+
+{# ------------
+   number
+------------ #}
+
+<h3>integer</h3>
+{{ integer }}
+
+<h3>number_1</h3>
+{{ number_1 }}
+
+<h3>number_2</h3>
+{{ number_2 }}
+
+<h3>number_default</h3>
+{{ number_default }}
+
+{# ------------
+   list
+------------ #}
+
+<h3>list</h3>
+<ul>
+  {% for item in list %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+{# ------------
+   enum
+------------ #}
+
+<h3>string_enum</h3>
+{{ string_enum }}
+
+<h3>string_enum_default</h3>
+{{ string_enum_default }}
+
+<h3>enum_with_meta</h3>
+{{ enum_with_meta }}
+
+<h3>enum_with_missing_value</h3>
+{{ enum_with_missing_value }}
+
+{# ------------
+   attributes
+------------ #}
+
+<h3>attributes_implicit</h3>
+{{ create_attribute(attributes_implicit|default({})) }}
+
+<h3>attributes_explicit</h3>
+{{ create_attribute(attributes_explicit|default({})) }}
+
+<h3>attributes_sdc</h3>
+{{ create_attribute(attributes_sdc|default({})) }}
+
+{# ------------
+   enum_list
+------------ #}
+
+<h3>enum_list</h3>
+<ul>
+  {% for item in enum_list %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+<h3>enum_list_2</h3>
+<ul>
+  {% for item in enum_list_2 %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+<h3>enum_list_3</h3>
+<ul>
+  {% for item in enum_list_3 %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+<h3>enum_list_meta</h3>
+<ul>
+  {% for item in enum_list_meta %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+<h3>enum_list_meta_missing</h3>
+<ul>
+  {% for item in enum_list_meta_missing %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+{# ------------
+   links
+------------ #}
+
+<h3>links</h3>
+<ul>
+  {% for item in links %}
+  <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<h3>links_2</h3>
+<ul>
+  {% for item in links_2 %}
+  <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>

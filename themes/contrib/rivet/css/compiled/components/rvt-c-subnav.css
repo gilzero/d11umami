@@ -1,0 +1,13 @@
+/**
+* @file
+* Custom Rivet Header styles and overrides.
+*/
+/**
+ * Do not edit directly
+ * Generated on Mon, 05 Aug 2024 14:58:12 GMT
+ */
+.rvt-p-bottom-xl > .rvt-c-subnav:last-child {
+  margin-bottom: -2.5rem;
+}
+
+/*# sourceMappingURL=rvt-c-subnav.css.map */

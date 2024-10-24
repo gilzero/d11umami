@@ -1,0 +1,531 @@
+at.settings:
+  version: VERSION
+  drupalSettings:
+    # These placeholder values will be set by system_js_settings_alter().
+    ajaxPageState:
+      theme: null
+
+# Breakpoints
+at.breakpoints:
+  version: VERSION
+  js:
+    scripts/min/at.breakpoints.min.js: { minified: true }
+    scripts/min/matchMedia.min.js: { minified: true }
+    scripts/min/matchMedia.addListener.min.js: { minified: true }
+    #scripts/at.breakpoints.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - core/drupalSettings
+    - at_core/at.enquire
+
+# Layout
+at.layout:
+  version: VERSION
+  js:
+    scripts/min/at.layout.min.js: { minified: true }
+    scripts/min/matchMedia.min.js: { minified: true }
+    scripts/min/matchMedia.addListener.min.js: { minified: true }
+    #scripts/at.layout.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+  weight: -1000
+
+# Status Messages (removes if empty)
+at.status_messages:
+  version: VERSION
+  js:
+    scripts/min/at.StatusMessages.min.js: { minified: true }
+    #scripts/at.StatusMessages.js: {}
+  dependencies:
+    - core/jquery
+  weight: -1000
+
+# Responsive Menus
+at.responsivemenus:
+  version: VERSION
+  js:
+    scripts/min/at.responsiveMenus.min.js: { minified: true }
+    scripts/min/matchMedia.min.js: { minified: true }
+    scripts/min/matchMedia.addListener.min.js: { minified: true }
+    #scripts/at.responsiveMenus.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/modernizr
+    - at_core/at.enquire
+    - at_core/at.doubletaptogo
+
+# Responsive Tables
+at.responsivetables:
+  version: VERSION
+  js:
+    scripts/min/at.responsiveTables.min.js: { minified: true }
+    #scripts/at.responsiveTables.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+# Responsive Lists
+at.responsivelists:
+  version: VERSION
+  js:
+    scripts/min/at.responsiveLists.min.js: { minified: true }
+    #scripts/at.responsiveLists.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - core/drupal.debounce
+
+# Node form
+at.responsivecolumns:
+  version: VERSION
+  js:
+    scripts/min/at.responsiveColumns.min.js: { minified: true }
+    #scripts/at.responsiveColumns.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - core/drupal.debounce
+
+# Orientation Change Reload
+at.orientationchangereload:
+  version: VERSION
+  js:
+    scripts/min/at.orientationChangeReload.min.js: { minified: true }
+    #scripts/at.orientationChangeReload.js: {}
+
+# Vertical and horizontal positioning
+at.flex_position:
+  version: VERSION
+  js:
+    scripts/min/at.flexPosition.min.js: { minified: true }
+    #scripts/at.flexPosition.js: {}
+  dependencies:
+    - core/jquery
+
+# AT Slideshow settings
+at.slideshow_settings:
+  version: VERSION
+  js:
+    scripts/min/at.flexsliderSettings.min.js: { minified: true }
+    #scripts/at.flexsliderSettings.js: {}
+  dependencies:
+    - at_core/at.slideshow
+
+# Typekit loader
+at.typekit:
+  version: VERSION
+  header: true
+  weight: 1000
+  js:
+    scripts/min/at.typekit.min.js: { minified: true }
+    #scripts/at.typekit.js: {}
+
+## Addons.
+
+# Slidedshow
+at.slideshow:
+  remote: https://github.com/woothemes/FlexSlider
+  version: "2.7.2"
+  license:
+    name: GNU-GPL-2.0-or-later
+    url: https://github.com/woothemes/FlexSlider/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+# Waypoints
+at.waypoints:
+  remote: https://github.com/imakewebthings/waypoints
+  version: "4.0.0"
+  license:
+    name: MIT
+    url: https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+# Waypoints Sticky
+at.waypoints_sticky:
+  remote: https://github.com/imakewebthings/waypoints
+  version: "4.0.0"
+  license:
+    name: MIT
+    url: https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/shortcuts/sticky.min.js: { type: external, minified: true }
+  dependencies:
+    - at_core/at.waypoints
+
+# Waypoints InView
+at.waypoints_inview:
+  remote: https://github.com/imakewebthings/waypoints
+  version: "4.0.0"
+  license:
+    name: MIT
+    url: https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/shortcuts/inview.min.js: { type: external, minified: true }
+  dependencies:
+    - at_core/at.waypoints
+
+# Waypoints Infinite
+at.waypoints_infinite:
+  remote: https://github.com/imakewebthings/waypoints
+  version: "4.0.0"
+  license:
+    name: MIT
+    url: https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/shortcuts/infinite.min.js: { type: external, minified: true }
+  dependencies:
+    - at_core/at.waypoints
+
+# Waypoints Initialize
+at.waypoints_initialize:
+  version: VERSION
+  js:
+    scripts/min/at.waypoints.min.js: { minified: true }
+    #scripts/at.waypoints.js: {}
+  dependencies:
+    - at_core/at.waypoints_sticky
+
+# matchHeight
+at.matchheight:
+  remote: https://github.com/liabru/jquery-match-height
+  version: "0.7.2"
+  license:
+    name: MIT
+    url: https://github.com/liabru/jquery-match-height/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+# enquire
+at.enquire:
+  remote: https://github.com/WickyNilliams/enquire.js
+  version: "2.1.6"
+  license:
+    name: MIT
+    url: https://github.com/WickyNilliams/enquire.js/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/enquire.js/2.1.6/enquire.min.js: { type: external, minified: true }
+    scripts/min/matchMedia.min.js: { minified: true }
+    scripts/min/matchMedia.addListener.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+# Fontfaceobserver
+at.fontfaceobserver:
+  remote: https://github.com/bramstein/fontfaceobserver
+  version: "2.1.0"
+  license:
+    name: BSD
+    url: https://github.com/bramstein/fontfaceobserver/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.1.0/fontfaceobserver.js: { type: external, minified: true }
+
+# Headroom
+at.headroom:
+  remote: https://github.com/WickyNilliams/headroom.js
+  version: "0.12.0"
+  license:
+    name: MIT
+    url: https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/headroom/0.12.0/headroom.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+# Masonary
+at.masonry:
+  remote: https://github.com/desandro/masonry
+  version: "4.2.2"
+  license:
+    name: MIT
+    url: https://github.com/desandro/masonry/blob/master/README.md
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+# Double tap to go
+at.doubletaptogo:
+  version: VERSION
+  js:
+    scripts/min/doubletaptogo.min.js: { minified: true }
+    #scripts/doubletaptogo.js: {}
+  dependencies:
+    - core/jquery
+
+# html5shiv
+at.html5shiv:
+  # Block the page from being loaded until html5shiv is initialized.
+  header: true
+  remote: https://github.com/aFarkas/html5shiv
+  version: "3.7.3"
+  license:
+    name: GNU-GPL-2.0-or-later
+    url: http://www.gnu.org/licenses/gpl-2.0.html
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js: { weight: -22, browsers: { IE: 'lte IE 8', '!IE': false }, minified: true }
+
+# Respond
+at.respond:
+  remote: https://github.com/scottjehl/Respond
+  version: "1.4.2"
+  license:
+    name: MIT
+    url: https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js: { type: external, browsers: { IE: 'lte IE 8', '!IE': false }, minified: true }
+
+# Selectivizr
+at.selectivizr:
+  remote: https://github.com/keithclark/selectivizr
+  version: "1.0.2"
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/mit-license.php
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js: { type: external, browsers: { IE: 'lte IE 8', '!IE': false }, minified: true }
+  dependencies:
+    - at_core/at.yui3
+
+# test with YUI3 for selectivizr
+at.yui3:
+  remote: https://github.com/yui/yui3
+  version: "3.18.1"
+  license:
+    name: BSD
+    url: https://github.com/yui/yui3/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js:  { type: external, browsers: { IE: 'lte IE 8', '!IE': false }, minified: true }
+
+# AT Core libs for theme dev.
+# Window size widget (AT Core)
+at.windowsize:
+  version: VERSION
+  css:
+    component:
+      styles/css/at--windowSize.css: {}
+  js:
+    scripts/min/at.windowSize.min.js: { minified: true }
+    #scripts/at.windowSize.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+at.devel_debug_layout:
+  version: VERSION
+  css:
+    theme:
+      styles/css/at--devel-debug-layout.css: {}
+
+at.devel_colorize_regions:
+  version: VERSION
+  css:
+    theme:
+      styles/css/at--devel-colorize-regions.css: {}
+
+at.livereload:
+  version: VERSION
+  js:
+    //localhost:35729/livereload.js: {}
+
+at.devel_nuke_toolbar:
+  version: VERSION
+  css:
+    theme:
+      styles/css/at--devel-nuke-toolbar.css: {}
+
+# Appearance settings scripts
+at.appearance_settings:
+  version: VERSION
+  css:
+    theme:
+      styles/css/at.css: {}
+  js:
+    scripts/min/at.appearance.min.js: { minified: true }
+    #scripts/at.appearance.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+# Toolbar themes
+at.toolbar_themes.base:
+  version: VERSION
+  css:
+    theme:
+      toolbar_theme/at_toolbar_theme.css: {}
+  dependencies:
+    - toolbar_themes/toolbar_themes_base.base
+
+at.toolbar_themes.icons:
+  version: VERSION
+  css:
+    theme:
+      toolbar_theme/at_toolbar_icons.css: {}
+  dependencies:
+    - toolbar_themes/toolbar_themes_base.icons
+
+# Backwards compatibility CSS.
+at.bc:
+  version: VERSION
+  css:
+    component:
+      styles/css/at--bc.css: {}
+
+# Layout Discovery layouts. On Drupal 8.3.x and over Layout Discovery replaces
+# Layout Plugin and uses standard libraries.
+# Two columns
+at.twocol-2-10:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-2-10.css: {}
+
+at.twocol-3-9:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-3-9.css: {}
+
+at.twocol-4-8:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-4-8.css: {}
+
+at.twocol-5-7:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-5-7.css: {}
+
+at.twocol-6-6:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-6-6.css: {}
+
+at.twocol-7-5:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-7-5.css: {}
+
+at.twocol-8-4:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-8-4.css: {}
+
+at.twocol-9-3:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-9-3.css: {}
+
+at.twocol-10-2:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/twocol-10-2.css: {}
+
+# Three columns
+at.threecol-2-8-2:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/threecol-2-8-2.css: {}
+
+at.threecol-2-2-8:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/threecol-2-2-8.css: {}
+
+at.threecol-8-2-2:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/threecol-8-2-2.css: {}
+
+at.threecol-3-6-3:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/threecol-3-6-3.css: {}
+
+at.threecol-3-3-6:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/threecol-3-3-6.css: {}
+
+at.threecol-6-3-3:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/threecol-6-3-3.css: {}
+
+at.threecol-4-4-4:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/threecol-4-4-4.css: {}
+
+# Fourcol
+at.fourcol-3-3-3-3:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/fourcol-3-3-3-3.css: {}
+
+# Grids
+at.grid-2x2:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/grid-2x2.css: {}
+
+at.grid-3x3:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/grid-3x3.css: {}
+
+at.grid-4x4:
+  version: VERSION
+  css:
+    theme:
+      layout_plugin/css/grid-4x4.css: {}

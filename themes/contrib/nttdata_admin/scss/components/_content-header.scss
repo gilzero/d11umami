@@ -1,0 +1,51 @@
+/**
+ * @file
+ * Content header.
+ */
+
+.content-header {
+  background: $nttdata-effect;
+  min-height: 115px;
+  position: relative;
+  z-index: 100;
+  overflow: visible;
+  .layout-container {
+    position: relative;
+  }
+  @include respond-to-max("small") {
+    .region-breadcrumb {
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .region-header {
+      display: flex;
+      flex-direction: column;
+      .block-page-title-block {
+        width: 100%;
+      }
+      .block-system-branding-block {
+        height: 90px;
+        .site-slogan {
+          display: none;
+        }
+      }
+
+    }
+  }
+  @include respond-to-max("x-small") {
+    .region-header { 
+      .block-system-branding-block {
+        height: 85px;
+        top: 25px;
+        width: 50%;
+        justify-content: flex-start;
+        .site-name {
+          text-align: right;
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

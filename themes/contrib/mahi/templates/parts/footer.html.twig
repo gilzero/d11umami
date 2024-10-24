@@ -1,0 +1,36 @@
+<footer class="footer dark">
+  <div class="container footer-container">
+    {% if page.footer_top %}
+      <section class="footer-top footer-region">
+        {{ page.footer_top }}
+      </section>
+    {% endif %}<!-- /footer-top -->
+    {% if page.footer %}
+      <section class="footer-blocks footer-region">
+        {{ page.footer }}
+      </section>
+    {% endif %}<!-- /footer -->
+    {% if page.footer_bottom %}
+      <section class="footer-bottom footer-region">
+        {{ page.footer_bottom }}
+      </section>
+    {% endif %}<!-- /footer-bottom -->
+    {% if copyright_text or all_icons_show %}
+    <section class="footer-bottom-last footer-region">
+      {% if copyright_text %}
+        <div class="copyright">
+          &copy; {{ "now"|date("Y") }} {{ site_name }}, All rights reserved.
+        </div>
+      {% endif %} <!-- end if copyright -->
+        {% if all_icons_show %}
+          <div class="footer-social">
+            {% include '@mahi/parts/social.html.twig' %}
+          </div>
+        {% endif %} <!-- end if all_icons_show -->
+    </section><!-- /footer-bottom-last -->
+    {% endif %}
+  </div><!-- /container -->
+</footer>
+{% if scrolltotop_on %}
+<div class="scrolltop"><i class="icon-arrow-up size-large"></i></div>
+{% endif %}

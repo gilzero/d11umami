@@ -1,0 +1,9 @@
+  {% if page.breadcrumb|render|striptags|trim and not is_front %}
+    <!-- Start: Page Title -->
+    <div id="breadcrumb" class="solo-outer lone breadcrumb{{ classes_breadcrumb ? ' ' ~ classes_breadcrumb }}" {{ attributes_breadcrumb }}>
+      <div id="breadcrumb-inner" class="solo-inner solo-col solo-col-1 fade-inner breadcrumb-inner">
+        {{ page.breadcrumb }}
+      </div>
+    </div>
+    <!-- End: Page Title -->
+  {% endif %}

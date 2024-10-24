@@ -1,0 +1,7 @@
+.page-wrapper h1,
+.page-wrapper h2,
+.page-wrapper h3,
+#page-wrapper .doppio-one {
+  --solo-h1: 'Doppio One', sans-serif;
+  font-family: var(--solo-h1);
+}

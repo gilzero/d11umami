@@ -1,0 +1,23 @@
+  {% if footer_copyright or footer_link %}
+    <!-- Start: Copyright -->
+    <div id="copyright" class="solo-outer lone copyright{{ classes_credit_copyright ? ' ' ~ classes_credit_copyright }}" {{ attributes_credit_copyright }}>
+      <div id="copyright-inner" class="solo-inner solo-col copyright-inner{{ (footer_copyright and footer_link) ? ' solo-col-2' : ' solo-col-1' }}">
+      {% if footer_copyright %}
+      <!-- Start: Copyright -->
+      <p class="copyright-first">
+        {% set current_date = "now"|date("Y") %}
+        {{ footer_copyright|replace({"%year%": current_date}) }}
+      </p>
+      <!-- End: Copyright -->
+      {% endif %}
+      {% if footer_link %}
+          <!-- Start: Credit Link -->
+      <p class="copyright-second">
+        {{ footer_link_label }} <a href="{{ footer_link }}" title="{{ footer_link_text }}" target="_blank">{{ footer_link_text }}</a>
+      </p>
+      <!-- End: Credit Link -->
+      {% endif %}
+      </div>
+    </div>
+    <!-- End: Copyright -->
+  {% endif %}

@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="container">
+    <div class="header-main">
+    {% if page.site_branding %}
+      <div class="site-brand">
+        {{ page.site_branding }}
+      </div>
+    {% endif %}
+    {% if page.primary_menu or page.search_box %}
+      <div class="header-main-right">
+        {% if page.primary_menu %}
+          <div class="mobile-menu" aria-label="Main Menu">
+            <div class="menu-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>{# mobile-menu #}
+          <div class="primary-menu-wrapper">
+            <div class="menu-wrap">
+              <div class="close-mobile-menu" aria-label="Close Main Menu"><i class="icon-close"></i></div>
+              {{ page.primary_menu }}
+            </div><!-- /.menu-wrap -->
+          </div><!-- /.primary-menu-wrapper -->
+        {% endif %}
+        {% if page.search_box %}
+          {% include '@zuvi/template-parts/search.html.twig' %}
+        {% endif %}
+      </div> <!-- /.header-right -->
+    {% endif %}
+    </div> <!-- /.header-main -->
+  </div><!-- /.container -->
+  {% if not is_front %}
+    {% include '@zuvi/template-parts/page_header.html.twig' %}
+  {% endif %}
+  {% if page.slider %}
+    {% include '@zuvi/template-parts/slider.html.twig' %}
+  {% endif %}
+</header>
+{% if page.slider %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"><path fill="#020312" fill-opacity="1" d="M0,32L60,26.7C120,21,240,11,360,42.7C480,75,600,149,720,154.7C840,160,960,96,1080,74.7C1200,53,1320,75,1380,85.3L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+{% endif %}

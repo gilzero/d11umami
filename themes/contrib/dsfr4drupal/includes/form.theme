@@ -1,0 +1,253 @@
+<?php
+
+/**
+ * @file
+ * Functions to support forms theming in the "DSFR for Drupal" theme.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Component\Utility\Crypt;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for "node_preview_form_select".
+ */
+function dsfr4drupal_form_node_preview_form_select_alter(array &$form, FormStateInterface $form_state): void {
+  // Apply backlink classes.
+  $form['backlink']['#options']['attributes']['class'][] = 'fr-link';
+  $form['backlink']['#options']['attributes']['class'][] = 'fr-icon-arrow-left-line';
+  $form['backlink']['#options']['attributes']['class'][] = 'fr-link--icon-left';
+  $form['backlink']['#options']['attributes']['class'][] = 'fr-mr-6v';
+  $form['#attached']['library'][] = 'dsfr4drupal/component.link';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "fieldset".
+ */
+function dsfr4drupal_preprocess_fieldset(array &$variables): void {
+  unset($variables['attributes']['aria-describedby']);
+  $variables['attributes']['class'][] = 'fr-fieldset';
+  $name = $variables['element']['#name'] = $variables['element']['#name'] ?? 'fs-' . Crypt::randomBytesBase64(8);
+  $legend_id = 'fs-legend--' . $name;
+  $variables['attributes']['aria-labelledby'] = $legend_id;
+  $variables['legend']['attributes']['id'] = $legend_id;
+
+  // In case of error we need additional attributes.
+  if (!empty($variables['errors'])) {
+    $variables['attributes']['class'][] = 'fr-fieldset--error';
+    $variables['error_id'] = 'error-desc--' . $name;
+    $variables['attributes']['aria-labelledby'] .= ' ' . $variables['error_id'];
+  }
+
+  $variables['#attached']['library'][] = 'dsfr4drupal/component.form';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "form".
+ */
+function dsfr4drupal_preprocess_form(array &$variables): void {
+  // Disable browser validation of form fields.
+  if (theme_get_setting('form_novalidate')) {
+    $variables['attributes']['novalidate'] = 'novalidate';
+  }
+
+  // Add specific class on search form.
+  if ($variables['element']['#form_id'] === 'search_block_form') {
+    $variables['attributes']['class'][] = 'fr-search-bar';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "webform".
+ */
+function dsfr4drupal_preprocess_webform(array &$variables): void {
+  // Disable browser validation of form fields.
+  if (theme_get_setting('form_novalidate')) {
+    $variables['attributes']['novalidate'] = 'novalidate';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "form_element".
+ */
+function dsfr4drupal_preprocess_form_element(array &$variables): void {
+  $class = 'fr-input-group';
+  $error_class = $class . '--error';
+
+  switch ($variables['element']['#type']) {
+    case 'checkbox':
+    case 'radio':
+      $class = $variables['element']['#type'] === 'radio' ? 'fr-radio-group' : 'fr-checkbox-group';
+      // Here we need to add error in form element template only for
+      // single checkbox. These variable is used in "form_element.twig.html" template.
+      $variables['show_error'] = isset($variables['element']['#delta']);
+      $variables['error_id'] = 'error-desc--';
+      if (isset($variables['element']['#name'])) {
+        $variables['error_id'] .= $variables['element']['#name'];
+      }
+      $error_class = isset($variables['element']['#delta']) ? $class . '--error' : NULL;
+      break;
+
+    case 'managed_file':
+      $class = 'fr-upload-group';
+      $error_class = 'fr-input-group--error';
+      break;
+
+    case 'select':
+      $class = 'fr-select-group';
+      $error_class = 'fr-select-group--error';
+      break;
+
+    case 'password':
+      $variables['attributes']['class'][] = 'fr-password';
+      break;
+
+    default:
+      // Do nothing.
+      break;
+  }
+  $variables['attributes']['class'][] = $class;
+
+  if (!empty($variables['errors']) && isset($error_class)) {
+    $variables['attributes']['class'][] = $error_class;
+  }
+
+  // We need to have description in form element label template.
+  $variables['label']['#description'] = $variables['description'] ?? [];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "form_element_label".
+ */
+function dsfr4drupal_preprocess_form_element_label(array &$variables): void {
+  // We need to have description in form element label template.
+  $variables['description'] = $variables['element']['#description'];
+
+  $variables['#attached']['library'][] = 'dsfr4drupal/component.form';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "input".
+ */
+function dsfr4drupal_preprocess_input(array &$variables): void {
+  if (in_array($variables['element']['#type'], ['hidden', 'token'])) {
+    return;
+  }
+
+  if (in_array($variables['element']['#type'], ['submit', 'button'])) {
+    $variables['attributes']['class'][] = 'fr-btn';
+
+    if (!empty($variables['element']['#button_type'])) {
+      if ($variables['element']['#button_type'] !== 'primary') {
+        $variables['attributes']['class'][] = 'fr-btn--secondary';
+      }
+    }
+    else {
+      $variables['attributes']['class'][] = 'fr-btn--secondary';
+    }
+    return;
+  }
+
+  $variables['#attached']['library'][] = 'dsfr4drupal/component.input';
+  if ($variables['element']['#type'] === 'checkbox') {
+    $variables['#attached']['library'][] = 'dsfr4drupal/component.checkbox';
+  }
+  elseif ($variables['element']['#type'] === 'radio') {
+    $variables['#attached']['library'][] = 'dsfr4drupal/component.radio';
+  }
+
+  $error_id = 'error-desc--';
+  if (isset($variables['element']['#name'])) {
+    $error_id .= $variables['element']['#name'];
+  }
+  // Here we need to add aria-describedby prop for single checkbox only.
+  if (in_array($variables['element']['#type'], ['checkbox', 'radio'])) {
+    if (isset($variables['element']['#delta'])
+      && !empty($variables['element']['#errors'])) {
+      $variables['attributes']['aria-describedby'] = $error_id;
+    }
+    return;
+  }
+
+  $class = 'fr-input';
+  if ($variables['element']['#type'] === 'file') {
+    $class = 'fr-upload';
+  }
+  if ($variables['element']['#type'] === 'checkboxes') {
+    $class = 'fr-fieldset';
+  }
+
+  $variables['attributes']['class'][] = $class;
+  if (!empty($variables['element']['#errors'])) {
+    _dsfr4drupal_preprocess_form_error($variables, $class);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "input__password".
+ */
+function dsfr4drupal_preprocess_input__password(array &$variables): void {
+  $variables['show_password_button'] = (bool) theme_get_setting('show_password_button');
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "select".
+ */
+function dsfr4drupal_preprocess_select(array &$variables): void {
+  $class = 'fr-select';
+  $variables['attributes']['class'][] = $class;
+
+  $variables['#attached']['library'][] = 'dsfr4drupal/component.select';
+
+  if (!empty($variables['element']['#errors'])) {
+    _dsfr4drupal_preprocess_form_error($variables, $class);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for "input".
+ */
+function dsfr4drupal_theme_suggestions_input_alter(array &$suggestions, array $variables): void {
+  // Specific case for "reset" button of Views exposed form.
+  // The button needs to have a "value" attribute to work.
+  // @see \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginBase::exposedFormSubmit().
+  if (
+    $variables['element']['#type'] === 'submit' &&
+    isset($variables['element']['#parents']) &&
+    end($variables['element']['#parents']) === 'reset'
+  ) {
+    $new_suggestions = [];
+    foreach ($suggestions as &$suggestion) {
+      $new_suggestions[] = $suggestion;
+      $new_suggestions[] = $suggestion . '__reset';
+    }
+
+    $suggestions = $new_suggestions;
+  }
+}
+
+/**
+ * Preprocess form errors.
+ *
+ * @param array $variables
+ *   The variables available.
+ * @param string $class
+ *   The form element class.
+ */
+function _dsfr4drupal_preprocess_form_error(array &$variables, string $class): void {
+  if (empty($variables['element']['#errors'])) {
+    return;
+  }
+
+  $error_id = 'error-desc--';
+  if (isset($variables['element']['#name'])) {
+    $error_id .= $variables['element']['#name'];
+  }
+  $variables['attributes']['class'][] = $class . '--error';
+
+  // Move error to input, so can be used in select template.
+  $variables['errors'] = $variables['element']['#errors'];
+  $variables['attributes']['aria-describedby'] = $error_id;
+  $variables['error_id'] = $error_id;
+}

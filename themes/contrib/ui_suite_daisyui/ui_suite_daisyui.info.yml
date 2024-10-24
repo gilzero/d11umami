@@ -1,0 +1,24 @@
+name: UI Suite DaisyUI
+description: "DaisyUI adds component class names to Tailwind CSS so you can make beautiful websites faster than ever."
+type: theme
+base theme: false
+core_version_requirement: ^10.3 || ^11
+logo: logo.png
+dependencies:
+  - ui_patterns:ui_patterns (>=2.0)
+  - ui_styles:ui_styles_block
+libraries:
+  - ui_suite_daisyui/daisy
+  - ui_suite_daisyui/custom_css
+regions:
+  navbar_start: Navbar start
+  navbar_center: Navbar center
+  navbar_end: Navbar end
+  content: Content
+  side: Sidebar
+  footer: Footer
+
+# Information added by Drupal.org packaging script on 2024-09-27
+version: '4.0.0-alpha2'
+project: 'ui_suite_daisyui'
+datestamp: 1727435757

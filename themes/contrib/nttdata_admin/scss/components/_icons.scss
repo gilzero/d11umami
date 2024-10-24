@@ -1,0 +1,48 @@
+/**
+ * @file
+ * Icons.
+ */
+
+.nttdata-icon {
+  transition: all .6s cubic-bezier(0,1,.5,1);
+  svg {
+    vertical-align: middle;
+    path {
+      fill: $delightful-yellow;
+    }
+  }
+}
+
+.transition-arrow {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.75rem 1.25rem;
+  &:after {
+    content: "";
+    background: $dark-yellow;
+    width: 4.9rem;
+    height: 4.9rem;
+    display: block;
+    position: absolute;
+    right: -5.5rem;
+    bottom: -4.5rem;
+    border-radius: 3rem;
+    -webkit-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+    transition: all .6s cubic-bezier(0,.5,.75,1);
+    z-index: -2;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .nttdata-icon {
+    align-self: flex-end;
+    width: 16px;
+    height: 24px;
+    margin-left: auto;
+  }
+}

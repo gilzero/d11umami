@@ -1,0 +1,219 @@
+// Global styles for appearance.
+
+[class*="admin-theme"] {
+
+  // Ensure some long urls or hyphenated strings don't
+  // break the layout.
+  &#system-theme-settings {
+    word-wrap: break-word;
+    word-break: break-word; // Non standard for webkit
+  }
+
+  &#system-theme-settings .vertical-tabs,
+  &#system-theme-settings .form-type-vertical-tabs {
+    margin: 0;
+    padding: 0;
+    //clear: both;
+  }
+
+  &#system-theme-settings {
+    .form-actions {
+      background: none repeat scroll 0 0 #fcfcfa;
+      border-top: 1px solid #bfbfba;
+      clear: both;
+      margin: 0;
+      padding: 1em 0.5em;
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  &#system-theme-settings label {
+    margin: 0 0 3px;
+  }
+
+  .form-item {
+    margin: 1em 0;
+  }
+
+  label.option {
+    font-weight: 700;
+  }
+
+  details > .details-wrapper {
+    padding: 0;
+  }
+
+  #block-seven-help,
+  legend {
+    @include visually-hidden;
+  }
+
+  .visually-hidden-off legend {
+    @include visually-hidden-off;
+    font-weight: bold;
+  }
+
+  fieldset {
+    margin: 0;
+    border: 0;
+  }
+
+  .form-type-vertical-tabs {
+    fieldset {
+      padding: 0;
+    }
+  }
+
+  details {
+    margin: 0.5em 0;
+    border-radius: 4px;
+    background: #FCFCFA;
+
+    details {
+      background: inherit;
+    }
+
+    summary {
+     // padding-top: .75em;
+     // padding-bottom: .75em;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+
+  ul.tips,
+  .description,
+  div.description,
+  .form-item .description,
+  .details-description {
+    color: #757575;
+  }
+
+  blockquote {
+    border-left: 10px solid #A6A5A1;
+    padding-left: 10px;
+  }
+
+  code, pre, kbd {
+    font-size: 1em !important;
+  }
+
+  code {
+    font-weight: 700;
+  }
+
+  pre code {
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+  }
+
+  pre.code-block {
+    background: #F5F5F2;
+    border: 1px solid #ccc;
+    font-weight: 400;
+    margin: 0;
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  .radios-inline .form-type-radio {
+    display: inline-block;
+    margin: 0.5em 1em 1em 0;
+  }
+
+  // Hide visually all descriptions by default, this massively cleans up the form but leaves
+  // important non-visual clues and directions for unsighted users.
+  .form-item .description {
+    //@include visually-hidden;
+  }
+
+  .subsystem-enabled-container {
+    box-sizing: border-box;
+    float: right;
+    margin-top: -2em;
+    padding: 0;
+
+    .form-type-checkbox {
+      display: block;
+      float: right;
+      margin: 0;
+      padding-right: 10px;
+    }
+  }
+
+  .layouts-column {
+    border: 0;
+    margin: 0;
+    padding-top: 12px;
+    box-sizing: border-box;
+  }
+
+  .user-register-form {
+    .button {
+      background: #82ccce;
+      border-color: #82ccce;
+    }
+  }
+  
+  // master column layout
+  @media all and (min-width: 60em) {
+
+    &#system-theme-settings {
+      .layouts-column {
+        float: left;
+      }
+
+      .layouts-column-onethird {
+        width: 34%;
+      }
+
+      .layouts-column-twothirds {
+        width: 66%;
+      }
+
+      .layouts-column-onequarter {
+        width: 25%;
+      }
+
+      .layouts-column-half {
+        width: 50%;
+      }
+
+      .layouts-column-threequarters {
+        width: 75%;
+      }
+
+      .column-select-layouts {
+        border-right: 1px solid #BFBFBA;
+      	margin-bottom: -99999px;
+      	padding-bottom: 99999px;
+      }
+
+
+    }
+  }
+
+
+  // message warning sub-sub themes inherit settings.
+  .message-skin {
+    padding: 1em;
+    background: rgba(242, 242, 240, 0.7);
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  // Toolbar tray, while being awesome to use, messes up responsive design so much
+  // it's unusable in the front end, however we must try to support it at least
+  // in admin.
+  @media all and (max-width: 75em) {
+    .toolbar-tray-open #system-theme-settings fieldset {
+      &[class*="layouts-column-"] {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+
+}

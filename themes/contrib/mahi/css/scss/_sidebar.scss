@@ -1,0 +1,17 @@
+.region-sidebar-first,
+.region-sidebar-second {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.sidebar .block {
+  padding: 1rem;
+  border-radius: 8px;
+}
+.sidebar .block p:last-of-type {
+  margin: 0;
+}
+/* search block in sidebar */
+.sidebar .form-search {
+  width: 100%;
+}

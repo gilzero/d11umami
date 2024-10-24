@@ -1,0 +1,29 @@
+{%- if attributes is not empty -%}
+  <div{{ attributes }}>
+{%- endif -%}
+
+{% if not label_hidden -%}
+  {% set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ] %}
+
+  <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+{%- endif -%}
+
+{% block items_content %}
+  {% for item in items %}
+    {%- if item.attributes is not empty -%}
+      <div{{ item.attributes }}>
+    {%- endif -%}
+
+    {{ item.content }}
+
+    {%- if item.attributes is not empty -%}
+      </div>
+    {%- endif -%}
+  {% endfor %}
+{% endblock items_content %}
+
+{%- if attributes is not empty -%}
+  </div>
+{%- endif -%}

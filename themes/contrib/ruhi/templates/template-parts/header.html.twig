@@ -1,0 +1,38 @@
+<header class="header">
+{% if page.header_top_left or page.header_top_right %}
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-container">
+        {% include '@thex/template-parts/header/header-top-left.html.twig' %}
+        {% include '@thex/template-parts/header/header-top-right.html.twig' %}
+      </div><!-- /header-top-container -->
+    </div><!-- /container -->
+  </div><!-- /header-top -->
+{% endif %}
+<div class="header-main">
+  <div class="container">
+    <div class="header-container">
+      {% if page.header %}
+        <div class="site-brand">
+          {{ page.header }}
+        </div> <!--/.site-branding -->
+      {% endif %}
+      {% if page.primary_menu or page.search_box %}
+      <div class="header-right">
+        {% if page.primary_menu %}
+          {% include '@thex/template-parts/header/header-primary-menu.html.twig' %}
+        {% endif %}        
+        {% if page.search_box %}
+          {% include '@thex/template-parts/header/search.html.twig' %}
+        {% endif %}
+      </div> <!-- /.header-right -->
+    {% endif %}
+    </div><!-- /header-container -->
+  </div><!-- /container -->
+</div><!-- /header main -->
+{% if is_front and slider_show %}
+  {% include '@ruhi/template-parts/slider.html.twig' %}
+{% elseif not is_front and page.page_header %}
+  {% include '@thex/template-parts/header/header-page.html.twig' %}
+{% endif %}
+</header>

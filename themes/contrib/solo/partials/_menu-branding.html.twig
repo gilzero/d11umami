@@ -1,0 +1,21 @@
+<div class="menu-branding">
+
+  {% if site_logo and logo_default != 1 %}
+    <a href="{{ path('<front>') }}" class="menu-branding-logo" title="{{ logo_alt | t }}" rel="{{ logo_alt | t }}">
+      <img src="{{ site_logo }}" class="site-logo-img" alt="{{ logo_alt | t }}" />
+    </a>
+  {% endif %}
+
+  {% if site_logo and logo_default == 1 %}
+    <a href="{{ path('<front>') }}" class="menu-branding-logo" title="{{ logo_alt | t }}" rel="{{ logo_alt | t }}">
+      {% include '@solo/partials/svg/_svg-logo.html.twig' with { solo_path: solo_path } only %}
+    </a>
+  {% endif %}
+
+  {% if site_name %}
+    <a href="{{ path('<front>') }}" class="menu-branding-site-name" title="{{ logo_alt | t }}" rel="{{ logo_alt | t }}">
+      {% if site_name %}<span>{{ site_name }}</span>{% endif %}
+    </a>
+  {% endif %}
+
+</div>

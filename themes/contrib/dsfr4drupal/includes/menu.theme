@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Functions to support menus theming in the "DSFR for Drupal" theme.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_preprocess_HOOK() for "menu".
+ */
+function dsfr4drupal_preprocess_menu(array &$variables): void {
+  $menu_name = &$variables['menu_name'];
+
+  // On main menu only.
+  if (isset($menu_name) && $menu_name === 'main') {
+    $variables['is_mega_menu'] = (bool) theme_get_setting('mega_menu');
+  }
+
+  // Define menu "aria-label".
+  $variables['aria_label'] = \Drupal::entityTypeManager()
+    ->getStorage('menu')
+    ->load($menu_name)
+    ->label();
+}

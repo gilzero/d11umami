@@ -1,0 +1,138 @@
++===============================+
+Version 1.0.0
+01 May, 2023
++===============================+
+# Initial version
+
++===============================+
+Version 1.0.1
+06 May, 2023
++===============================+
+# FIxed main menu
+# Minor improvements
+
+
++===============================+
+Version 1.0.2
+07 May, 2023
++===============================+
+# Minor improvements
+
+
++===============================+
+Version 1.0.3
+09 May, 2023
++===============================+
+# Added default block regions.
+# Other minor improvements
+
+
++===============================+
+Version 1.0.4
+11 May, 2023
++===============================+
+# New option to add custom css codes.
+# Other minor improvements
+
+
++===============================+
+Version 1.0.5
+14 May, 2023
++===============================+
+# Fixed known bugs.
+# Other minor improvements
+
+
++===============================+
+Version 1.0.6
+16 May, 2023
++===============================+
+# minor improvements
+
+
++===============================+
+Version 1.0.7
+18 May, 2023
++===============================+
+# Added maintenance page.
+# Completed theming of book pages.
+# Completed theming of comments and comment form.
+# Other minor improvements.
+
+
++===============================+
+Version 1.0.8
+20 May, 2023
++===============================+
+# Added fontawesome 5 and fontawesome 6 with option to enable / disable.
+# Added Bootstrap Icons with option to enable / disable.
+# Added option to highlight node author comments.
+
+
++===============================+
+Version 1.0.9
+21 May, 2023
++===============================+
+# Updated readme.md and readme.txt
+# Added new component - button
+# Added option to set container width.
+# Added option for full width or contained layout (header / main / footer).
+# Other minor improvements.
+# Fixed minor known bugs.
+
+
++===============================+
+Version 1.0.10
+22 May, 2023
++===============================+
+# Added template file views-view.html.twig
+# Other minor improvements.
+
+
++===============================+
+Version 1.0.11
+25 May, 2023
++===============================+
+# minor improvements
+
+
++===============================+
+Version 1.0.12
+29 June, 2023
++===============================+
+# Fixed third level drop down menu
+# Deleted /images/shapes folder.
+# Fixed overlapping comment form.
+# Added non-minified css files for reference.
+# Other minor improvements.
+
+
++===============================+
+Version 1.0.13
+06 July, 2023
++===============================+
+# Other minor improvements.
+
+
++===============================+
+Version 1.0.14
+27 Dec, 2023
++===============================+
+- Updated twitter icon.
+- Minor improvements.
+
+
++===============================+
+Version 1.0.15
+20 Jan, 2024
++===============================+
+# Removed template file: field--entity-reference.html.twig
+# Fixed inline display of field label.
+# New scss file: field.scss
+
++===============================+
+Version 1.1.0
+11 Aug, 2024
++===============================+
+- Initial release of 1.1.x series.
+- Drupal 11 compatible.

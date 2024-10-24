@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Override the system menu block to match IU Framework expectations.
+ */
+#}
+<div{{ attributes.addClass('sticky-nav') }}>
+  {{ title_prefix }}{{ title_suffix }}
+  <nav role="navigation" aria-label=" {{ 'Main navigation'|t }}" id="nav-main" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" class="main show-for-large dropdown">
+    <div class="row pad">
+    {{ content }}
+    </div>
+  </nav>
+</div>

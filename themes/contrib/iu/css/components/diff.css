@@ -1,0 +1,20 @@
+.diff-header,
+.diff-controls,
+.diff-responsive-table-wrapper > .detail-meta {
+  max-width: 54rem;
+  margin: 0 auto;
+}
+
+.diff-header {
+  padding: 1rem 1rem .5rem;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  margin-top: 2rem;
+}
+
+.diff-controls {
+  padding: .5rem 1rem 1rem;
+  border: 1px solid #ccc;
+  border-top: 0;
+  margin-bottom: 2rem;
+}

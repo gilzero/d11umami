@@ -1,0 +1,26 @@
+name: "(Table Cell)"
+description: "Internal: to be used in the 'Table' and 'Table Row' components."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/table/"
+slots:
+  content:
+    title: "Cell content"
+    description: "The cell content."
+props:
+  type: object
+  properties:
+    tag:
+      title: "HTML tag"
+      $ref: "ui-patterns://enum"
+      enum:
+        - th
+        - td
+      "meta:enum":
+        th: "Head"
+        td: "Data (default)"
+stories:
+  preview:
+    title: Preview
+    slots:
+      content: "Cell content"

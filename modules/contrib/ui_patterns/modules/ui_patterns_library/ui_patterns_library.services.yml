@@ -1,0 +1,10 @@
+services:
+  ui_patterns_library.component_element_alter:
+    class: Drupal\ui_patterns_library\Element\ComponentElementAlter
+    arguments:
+      - "@plugin.manager.sdc"
+      - "@ui_patterns.component_element_alter"
+  ui_patterns_library.twig.extension:
+    class: Drupal\ui_patterns_library\Template\TwigExtension
+    tags:
+      - { name: twig.extension }

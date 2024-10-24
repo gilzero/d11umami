@@ -1,0 +1,48 @@
+/*
+ * Layout
+ */
+
+/* Layout -> container */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+/*
+ * Page Layout
+ */
+ #main-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 1.6rem 0;
+}
+.main-container {
+  position: relative;
+  display: grid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.no-sidebar .main-container {
+  grid-template-columns: 100%;
+}
+.sidebar-left .main-container {
+  grid-template-columns: 27% 73%;
+}
+.sidebar-right .main-container {
+  grid-template-columns: 73% 27%;
+}
+.two-sidebar .main-container {
+  grid-template-columns: 27% 46% 27%;
+}
+#sidebar-left {
+  order: 1;
+}
+#main {
+  order: 2;
+}
+#sidebar-right {
+  order: 3;
+}

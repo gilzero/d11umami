@@ -1,0 +1,9 @@
+name: 'UI Examples Test Disabled'
+type: module
+description: 'Disables test plugin.'
+package: 'Testing'
+
+# Information added by Drupal.org packaging script on 2024-10-17
+version: '1.0.0'
+project: 'ui_examples'
+datestamp: 1729181739

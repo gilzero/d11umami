@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * @ingroup themeable
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items|length %}
+
+    {% set is_multi_level = menu_level == 0 and items|length > 1 and items|length == items|filter((item) => (item.below is not empty and item.url and item.url.isRouted() and item.url.getRouteName() == '<nolink>'))|length %}
+
+    {% if is_multi_level %}
+      <div{{attributes.addClass('rvt-row')}}><div class="rvt-cols-lg">
+        {% for item in items %}
+          <h3 class="rvt-footer-resources__heading">{{ item.title }}</h3>
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% if not loop.last %}
+          </div>
+          <div class="rvt-cols-lg">
+          {% endif %}
+        {% endfor %}
+      </div></div>
+    {% else %}
+      <ul class="rvt-footer-resources__list rvt-m-top-none rvt-m-bottom-none">
+        {% for item in items %}
+          {%
+            set classes = [
+              'rvt-footer-resources__list-item',
+              item.in_active_trail ? 'rvt-footer-resources__list-item--current',
+            ]
+          %}
+          <li{{ item.attributes.addClass(classes) }}>
+            {{ link(item.title, item.url) }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %}
+{% endmacro %}

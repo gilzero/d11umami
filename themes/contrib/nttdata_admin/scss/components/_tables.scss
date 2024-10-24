@@ -1,0 +1,414 @@
+/**
+ * @file
+ * Tables.
+ */
+
+table,
+table.treetable,
+#locale-translation-status-form table {
+  background-color: $white;
+  thead {
+    th {
+      color: $text-white;
+      background-color: $primary;
+      border: 0;
+      &:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+      &:only-child {
+        border-radius: $nttdata-radius;
+      }
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+      &.sortable-heading {
+        a {
+          &:after {
+            @extend %filter-white;
+          }
+          &:hover {
+            color: $text-white;
+            &:before {
+              border-bottom-width: 0.25rem;
+              border-bottom-color: $text-white;
+            }
+            &:after {
+              @extend %filter-white;
+            }
+            &:after {
+              @extend %filter-black;
+            }
+          }
+        }
+        &.is-active {
+          a {
+            color: $text-white;
+            &:before {
+              border-bottom: 0.25rem solid $text-white;
+            }
+            .tablesort {
+              @extend %filter-white;
+            }
+          }
+        }
+      }
+      .form-checkbox {
+        cursor: pointer;
+        &:checked,
+        &[disabled] {
+          border-color: $u-smart-navy;
+          background-color: $u-smart-navy;
+        }
+      }
+    }
+  }
+  tbody {
+    tr,
+    tr.branch {
+      background-color: $white;
+      color: $text-dark;
+      @include transition(0.3s all);
+      border-bottom: 0.0625rem solid $cornflower-blue;
+      &:hover {
+        background-color: $blue-light;
+        color: $text-dark;
+      }
+      &:focus {
+        color: $text-dark;
+      }
+      th {
+        background-color: $white2;
+        color: $text-dark;
+      }
+      td {
+        vertical-align: middle;
+        &.diff-context {
+          color: $text-dark;
+          &:not(.diff-addedline):not(.diff-deletedline) {
+            background-color: $white !important;
+          }
+          &.diff-addedline,
+          &.diff-deletedline {
+            color: $black-pearl;
+          }
+        }
+        &.module-list__module {
+          color: $text-dark;
+          border-bottom: inherit;
+        }
+        .module-list__module-details,
+        .module-list__module-details[open] {
+          background-color: $white2;
+          > summary.claro-details__summary {
+            color: $text-dark;
+            background: $white;
+            display: flex;
+            justify-content: space-between;
+            .claro-details__summary-summary {
+              color: $text-dark;
+            }
+            &:before {
+              background-image: $dark-arrow;
+            }
+            &:after {
+              box-shadow: none;
+              border: none;
+            }
+            &:focus {
+              @include focus-outline;
+              color: $text-dark;
+              &:before {
+                background-image: $dark-arrow;
+              }
+              &:hover {
+                &:before {
+                  background-image: $light-blue-arrow;
+                }
+              }
+            }
+            &:hover {
+              color: $primary;
+              font-weight: 500;
+              &:before {
+                background-image: $light-blue-arrow;
+              }
+            }
+          }
+          > .module-details__wrapper {
+            color: $text-dark;
+          }
+        }
+        .module-list__module-details[open] {
+          > summary.claro-details__summary {
+            background: $white2;
+          }
+        }
+        .tabledrag-handle::after {
+          display: inline-block;
+          width: 1.0625rem;
+          height: 1.0625rem;
+          margin-left: -1rem;
+          padding: 0.5rem 1rem;
+          content: '';
+          transition: transform 0.1s ease-in-out 0s;
+          background-image: $drag-icon;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        span.indenter {
+          margin-right: 10px;
+        }
+        .field-plugin-settings-edit-wrapper {
+          justify-content: center;
+          .image-button {
+            @extend %filter-dark-grey;
+          }
+          + a {
+            color: transparent;
+            display: flex;
+            justify-content: flex-end;
+            width: 1rem;
+            height: 1.5rem;
+            text-decoration: none;
+            overflow: hidden;
+            &:after {
+              @include icon($icon-trash, $text-white);
+              padding-left: 1rem;
+              @extend %filter-dark-grey;
+            }
+
+          }
+        }
+        &.field-plugin-summary-cell + td {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 8px;
+          margin: 1rem 0.25rem;
+        }
+      }
+      &.region-message {
+        color: $text-grey;
+      }
+    }
+    .region-title {
+      color: $smart-navy;
+    }
+  }
+}
+
+.draggable-table {
+  .draggable {
+    td {
+      padding: 5px;
+    }
+    &.drag-previous{
+      background-color: $ck-grey;
+    }
+    &.drag{
+      background-color: $ck-grey;
+    }
+    .field-plugin-summary,
+    .field-plugin-settings-edit-form {
+      margin: 1rem 1.5rem;
+    }
+    .field-plugin-settings-edit-form {
+      text-align: left;
+      .button:not(.button--primary) {
+        @extend %button-danger;
+      }
+    }
+    &.block-disabled {
+      background: transparent;
+      opacity: 0.5;
+    }
+  }
+  &.tabledrag-disabled {
+    tr {
+      color: $text-dark;
+      background: $white;
+    }
+  }
+}
+
+.field-group-html-element {
+  .paragraphs-content .media-library-item {
+    width: 100%;
+  }
+  table.draggable-table .draggable td {
+    max-width: 50px;
+  }
+}
+
+table[data-drupal-selector*='edit-style-options-map-marker']{
+  th div {
+    color: $white !important;
+  }
+}
+
+#locale-translation-status-form table {
+  .locale-translation-update {
+    &__wrapper {
+      color: $text-dark;
+      background: none;
+    }
+    &__details {
+      color: $text-dark;
+    }
+  }
+}
+
+// RESPONSIVE VIEWS
+// admin/modules (Extend tab)
+// claro elements
+@media only screen and (max-width: $md) {
+  .module-list__module,
+  .system-modules-uninstall .responsive-enabled tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    td.module-list__module {
+      line-height: 26px;
+      border-bottom: 0;
+    }
+    td.module-list__description,
+    .description {
+      width: 100%;
+      padding-left: 28px;
+    }
+  }
+  .system-modules-uninstall .responsive-enabled {
+    thead tr th:not(:first-child) {
+      display: none;
+    }
+    thead tr th:first-child {
+      border-radius: 5px;
+    }
+    tbody tr td {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  table.responsive-enabled.draggable-table tbody tr,
+  table.responsive-enabled.custom-responsive-enabled tbody tr,
+  table.permissions tbody tr {
+    display: block;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;  
+    &.region-message.region-populated {
+      display: none;
+    }
+    &.region-title {
+      border: none;
+    }
+    &.menu-enabled {
+      width: auto;
+    }
+    &#links.tabledrag-leaf {
+      td:not(.tabledrag-cell) {
+        display: none;
+      }
+    }
+    td {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 0;
+      &.tabledrag-cell {
+        padding-bottom: 10px;
+        .tabledrag-cell-content__item {
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+      &.checkbox.menu-enabled {
+        display: flex;
+        margin-bottom: var(--space-s);
+        strong {
+          padding-top: 3px;
+        }
+        .checkbox.menu-enabled,
+        .checkbox.menu-enabled label {
+          margin: 0;
+        }
+      }
+      .field-plugin-summary {
+        float: none;
+        margin-right: 2rem;
+      }
+      &.field-plugin-summary-cell + td {
+        .field-plugin-settings-edit-wrapper {
+          display: block;
+          float: right;
+          position: relative;
+          bottom: 36px;
+        }
+      }
+      .field-plugin-settings-edit-wrapper {
+        display: flex;
+        align-items: flex-end;
+      }
+      .inline-element {
+        display: inline-block;
+        margin-right: 0.5rem;
+        margin-bottom: var(--space-s);
+      }
+      .item-list--comma-list {
+        display: block;
+        margin-bottom: var(--space-s);
+      }
+      .dropbutton-wrapper {
+        display: block;
+        margin-top: var(--space-s);
+        margin-bottom: calc(var(--space-s) + 0.5rem);
+      }
+      strong {
+        font-weight: 600;
+      }
+      strong + em {
+        display: block;
+        margin-bottom: var(--space-s);
+      }
+    }
+  }
+  table.permissions tbody tr {
+    &.module {
+      border: none;
+      font-size: 18px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    td,
+    .roles-toggle-button {
+      display: flex;
+      margin: 0.5rem 0;
+      padding: 0 0.5rem;
+    }
+    td.checkbox {
+      display: none;
+      justify-content: space-between;
+      .form-type--checkbox {
+        width: 50%;
+        margin: 0;
+      }
+    }
+    td.checkbox.visible { 
+      display: flex;
+    }
+    .permission {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  td.module-list__module {
+    width: 25%;
+  }
+}

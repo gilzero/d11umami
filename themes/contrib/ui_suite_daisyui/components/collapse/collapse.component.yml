@@ -1,0 +1,71 @@
+name: Collapse
+description: "Collapse is used for showing and hiding content."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/collapse/"
+slots:
+  title:
+    title: Title
+    description: "The collapse title."
+  content:
+    title: Content
+    description: "The collapse renderable content."
+props:
+  type: object
+  properties:
+    focus:
+      title: "With focus"
+      description: "This collapse works with focus. When div loses focus, it gets closed"
+      $ref: "ui-patterns://boolean"
+    checkbox:
+      title: "With checkbox?"
+      description: "This collapse works with checkbox instead of focus. It needs to get clicked again to get closed."
+      $ref: "ui-patterns://boolean"
+    details:
+      title: "With details and summary tags?"
+      description: "Focusm, checkbox, `collapse-open` and `collapse-close` doesn't work with this method. You can add/remove `open` attribute to the <details> instead"
+      $ref: "ui-patterns://boolean"
+    border:
+      title: "With border?"
+      description: "It is possible to set border for collapses."
+      $ref: "ui-patterns://boolean"
+    arrow:
+      title: "With arrow icon?"
+      description: "It is possible to set arrow icon for collapses."
+      $ref: "ui-patterns://boolean"
+    plus:
+      title: "With arrow plus/minus icon?"
+      description: "It is possible to set plus/minus icon for collapses."
+      $ref: "ui-patterns://boolean"
+    open:
+      title: "Force open?"
+      description: "It is possible to force collapse to be opened."
+      $ref: "ui-patterns://boolean"
+    close:
+      title: "Force close?"
+      description: "It is possible to force collapse to be closed."
+      $ref: "ui-patterns://boolean"
+    accordion_id:
+      title: "Accordion ID"
+      description: "To fill for collapse used inside an Accordion component."
+      $ref: "ui-patterns://string"
+      pattern: "^[A-Za-z][A-Za-z0-9-_]*$"
+    checked:
+      title: "Checked?"
+      description: "To set to true for a collapse used inside an Accordion component."
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      title: "Focus me to see content"
+      content:
+        type: html_tag
+        tag: p
+        value: 'tabindex="0" attribute is necessary to make the div focusable'
+    props:
+      focus: true
+      border: true
+      plus: true
+      attributes:
+        class: bg-base-200

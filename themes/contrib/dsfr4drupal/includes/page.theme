@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Functions to support pages theming in the "DSFR for Drupal" theme.
+ */
+
+declare(strict_types=1);
+
+use Drupal\dsfr4drupal\Dsfr4DrupalInterface;
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function dsfr4drupal_page_attachments_alter(array &$attachments): void {
+  if (isset($attachments['#attached']['html_head_link'])) {
+    foreach ($attachments['#attached']['html_head_link'] as $key => $links) {
+      foreach ($links as $index => $link) {
+        if (str_contains($link['href'], 'favicon')) {
+          unset($attachments['#attached']['html_head_link'][$key][$index]);
+        }
+      }
+      if (empty($attachments['#attached']['html_head_link'][$key])) {
+        unset($attachments['#attached']['html_head_link'][$key]);
+      }
+    }
+    $attachments['#attached']['html_head_link'] = array_filter($attachments['#attached']['html_head_link']);
+  }
+
+  $attachments['#attached']['html_head_link'][] = [
+    [
+      'rel' => 'apple-touch-icon',
+      'href' => Dsfr4DrupalInterface::LIBRARY_PATH . 'favicon/apple-touch-icon.png',
+    ],
+  ];
+  $attachments['#attached']['html_head_link'][] = [
+    [
+      'rel' => 'icon',
+      'href' => Dsfr4DrupalInterface::LIBRARY_PATH . 'favicon/favicon.svg',
+      'type' => 'image/svg+xml',
+    ],
+  ];
+  $attachments['#attached']['html_head_link'][] = [
+    [
+      'rel' => 'shortcut icon',
+      'href' => Dsfr4DrupalInterface::LIBRARY_PATH . 'favicon/favicon.ico',
+      'type' => 'image/x-icon',
+    ],
+  ];
+  $attachments['#attached']['html_head_link'][] = [
+    [
+      'rel' => 'manifest',
+      'href' => Dsfr4DrupalInterface::LIBRARY_PATH . 'favicon/manifest.webmanifest',
+      'crossorigin' => 'use-credentials',
+    ],
+  ];
+
+  $attachments['#attached']['html_head'][] = [
+    [
+      '#attributes' => [
+        'name' => 'format-detection',
+        'content' => 'telephone=no,date=no,address=no,email=no,url=no',
+      ],
+      '#tag' => 'meta',
+    ],
+    'format_detection',
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for "page".
+ */
+function dsfr4drupal_theme_suggestions_page_alter(array &$suggestions, array $variables): void {
+  $exception = Drupal::requestStack()->getCurrentRequest()
+    ->attributes->get('exception');
+
+  // Add error page suggestions.
+  if (!is_null($exception)) {
+    $suggestions[] = 'page__' . $exception->getStatusCode();
+  }
+}

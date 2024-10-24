@@ -1,0 +1,31 @@
+/* Sidebar
+---------------------------------------- */
+.sidebar .block {
+  background-color: var(--light);
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+.sidebar .block-title {
+  font-size: 2.2rem;
+  text-transform: none;
+  text-align: center;
+}
+.sidebar .block-title::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background-color: var(--primary);
+  transform: translateX(-34px);
+}
+.sidebar .block-title::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background-color: var(--primary);
+  transform: translateX(10px);
+}

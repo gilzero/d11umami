@@ -1,0 +1,18 @@
+{% set title_attributes = title_attributes|default(create_attribute()) %}
+{% set tooltip_attributes = tooltip_attributes|default(create_attribute()) %}
+{% set tooltip_id = title_id|default('tooltip-' ~ random()) %}
+
+{% set title_attributes = title_attributes.setAttribute('aria-describedby', tooltip_id) %}
+
+{{ if url }}
+  {{ link(title, url, title_attributes.addClass('fr-link')) }}
+  {{ attach_library('dsfr4drupal/component.link') }}
+{% else %}
+  <button{{ title_attributes.addClass(['fr-btn', 'fr-btn--tooltip']) }}>
+    {{ title }}
+  </button>
+  {{ attach_library('dsfr4drupal/component.button') }}
+{% endif %}
+<span{{ tooltip_attributes.addClass(['fr-tooltip', 'fr-placement']).setAttribute('id', tooltip_id).setAttribute('role', 'tooltip').setAttribute('aria-hidden', 'true') }}>
+  {{ tooltip }}
+</span>

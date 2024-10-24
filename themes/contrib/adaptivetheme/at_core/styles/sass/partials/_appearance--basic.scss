@@ -1,0 +1,47 @@
+// Core (basic settings - toggle, logo, favicon etc)
+
+[class*="admin-theme"] {
+  #edit-basic-settings {
+    overflow: hidden;
+    padding: 0;
+    //color: pink !important;
+
+    details {
+      margin-left: 0.625em;
+      margin-right: 0.625em;
+
+      .details-wrapper {
+        padding: 10px;
+      }
+    }
+  }
+
+  .theme-settings-bottom {
+    clear: none;
+  }
+
+  #edit-jquery {
+    .form-type-checkbox {
+      .description {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  #edit-drupal-core {
+    .form-type-checkbox {
+      margin-bottom: 0;
+    }
+
+    small {
+      display: block;
+      margin-left: 2em;
+
+      &:before {
+        content: "- ";
+      }
+    }
+  }
+
+}
+

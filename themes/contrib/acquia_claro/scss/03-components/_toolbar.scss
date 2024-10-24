@@ -1,0 +1,216 @@
+$color_1: #168ec4;
+$color_2: #fff;
+$color_3: #8eacc0;
+$background-color_1: #ffffff;
+
+/* Primary Toolbar */
+/* Secondary Toolbar - Environment Styles */
+.toolbar-tray-horizontal {
+  ul {
+    li.menu-item--expanded {
+      &:hover {
+        &:before {
+          -webkit-transform: translate(6px, 0px);
+          transform: translate(6px, 0px);
+        }
+      }
+    }
+  }
+}
+.toolbar {
+  #toolbar-bar {
+    .toolbar-tray {
+      .menu-item--active-trail {
+        >.toolbar-box {
+          a {
+            color: $color_1;
+          }
+        }
+      }
+      .menu-item {
+        >.toolbar-icon.is-active {
+          color: $color_1;
+        }
+        >.toolbar-box {
+          >.toolbar-icon.is-active {
+            color: $color_1;
+          }
+        }
+      }
+      a.is-active {
+       color: $color_1;
+      }
+      a {
+        &:hover {
+          color: $color_1;
+        }
+      }
+      span {
+        &:hover {
+          color: $color_1;
+        }
+      }
+    }
+    .toolbar {
+      .toolbar-menu {
+        .toolbar-menu {
+          a {
+            &:hover {
+              color: $color_1;
+            }
+          }
+          span {
+            &:hover {
+              color: $color_1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .toolbar-bar {
+    .toolbar-tab {
+      .toolbar-icon-environment {
+        color: $color_2;
+        &:before {
+          background-image: url(../images/acacac/env-ffffff.svg);
+          max-width: 55px;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.acquia-cms-toolbar {
+  .toolbar {
+    .toolbar-icon.toolbar-handle {
+      &:before {
+        background-image: url(../images/acacac/chevron-outline-disc-down.svg);
+        -webkit-transition: .25s;
+        transition: .25s;
+      }
+    }
+    .menu-item--expanded {
+      background-color: $background-color_1;
+    }
+    .toolbar-tray-horizontal {
+      .menu-item {
+        + {
+          .menu-item {
+            border-right: none;
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+  .toolbar-tray-horizontal {
+    ul {
+      li.menu-item--expanded {
+        ul {
+          li.menu-item--expanded {
+            position: relative;
+            background-image: none;
+            >a {
+              &:after {
+                position: absolute;
+                top: 50%;
+                right: 5px;
+                color: $color_3;
+                font-size: 16px;
+                -webkit-transform: translateY(-8px);
+                transform: translateY(-8px);
+                -webkit-transition: all .2s;
+                transition: all .2s;
+                content: url(../images/0084d7/chevron-right.svg);
+                pointer-events: none;
+              }
+              &:hover {
+                &:after {
+                  -webkit-transform: translate(6px, -8px);
+                  transform: translate(6px, -8px);
+                  content: url(../images/0084d7/chevron-right.svg);
+                }
+              }
+            }
+          }
+        }
+      }
+      li.menu-item {
+        border-top: none transparent;
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+      }
+    }
+  }
+  .toolbar-tray {
+    .toolbar-menu {
+      li {
+        background: #ffffff;
+      }
+    }
+  }
+}
+[dir="rtl"] {
+  .acquia-cms-toolbar {
+    .toolbar {
+      .toolbar-tray-horizontal {
+        .menu-item {
+          + {
+            .menu-item {
+              border-right: none;
+              border-left: none;
+            }
+          }
+        }
+      }
+    }
+    .toolbar-tray-horizontal {
+      ul {
+        li.menu-item--expanded {
+          ul {
+            li.menu-item--expanded {
+              position: relative;
+              background-image: none;
+              &:after {
+                top: 30%;
+                right: auto;
+                left: 5px;
+                transform: scaleX(-1);
+                -webkit-filter: FlipH;
+                filter: FlipH;
+                -moz-transform: scaleX(-1);
+                -o-transform: scaleX(-1);
+                -webkit-transform: scaleX(-1);
+                -ms-filter: "FlipH";
+              }
+              &:hover {
+                &:after {
+                  transform: scaleX(-1);
+                  -webkit-transform-origin: 40% top;
+                  transform-origin: 40% top;
+                  -webkit-filter: FlipH;
+                  filter: FlipH;
+                  -moz-transform: scaleX(-1);
+                  -o-transform: scaleX(-1);
+                  -webkit-transform: scaleX(-1);
+                  -ms-filter: "FlipH";
+                }
+              }
+            }
+          }
+          .menu-item {
+            &:hover {
+              ul {
+                margin: -39px 200px 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+name: DSFR - Footer
+description: The footer offers information on the site and secondary navigation for the user so that they can continue their journey. It is modular according to the needs and requirements of the site.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    bottom:
+      type: string
+      title: Footer bottom elements
+    bottom_copy:
+      type: string
+      title: Footer bottom copy
+    content:
+      type: string
+      title: Footer content elements
+    content_description:
+      type: string
+      title: Footer content description elements
+    is_front:
+      type: boolean
+      title: Is homepage?
+      default: true
+    logo_operator:
+      type: string
+      title: Logo operator image tag
+    logo_text:
+      type: string
+      title: Logo text
+      default: 'République\nFrançaise'
+    partners:
+      type: string
+      title: Footer partners elements
+    service_title:
+      type: string
+      title: Service title
+    top:
+      type: string
+      title: Footer top elements
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.footer

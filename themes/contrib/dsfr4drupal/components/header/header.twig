@@ -1,0 +1,114 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set header_id = header_id|default('fr-header-' ~ random()) %}
+{% set is_front = is_front ?? true %}
+{% set mobile_menu_bid = header_id ~ '--mobile-menu-btn' %}
+{% set mobile_menu_id = header_id ~ '--mobile-menu' %}
+{% set search_bid = header_id ~ '--search-btn' %}
+{% set search_id = header_id ~ '--search' %}
+{% set service_tagline_attributes = service_tagline_attributes|default(create_attribute()) %}
+{% set service_tagline_tag = service_tagline_tag|default('p') %}
+{% set service_title_attributes = service_title_attributes|default(create_attribute()) %}
+{% set service_title_tag = service_title_tag|default('p') %}
+
+<header{{ attributes.addClass('fr-header').setAttribute('role', 'banner') }}>
+  <div class="fr-header__body">
+    <div class="fr-container">
+      <div class="fr-header__body-row">
+        <div class="fr-header__brand fr-enlarge-link">
+          <div class="fr-header__brand-top">
+
+            {# Header logo #}
+            <div class="fr-header__logo">
+              {{ include('dsfr4drupal:logo', {'has_link': (not logo_operator and not service_title), 'is_front': is_front, 'text': logo_text}, with_context=false) }}
+            </div>
+
+            {# Operator logo #}
+            {% if logo_operator %}
+              <div class="fr-header__operator">
+                {{ include('dsfr4drupal:logo-operator', {'has_link': not service_title, 'is_front': is_front, 'logo': logo_operator, 'text': logo_text}, with_context=false) }}
+              </div>
+            {% endif %}
+
+            {# Header navbar #}
+            {% if tools_search or navbar %}
+              <div class="fr-header__navbar">
+                {% if tools_search %}
+                  {% set search_button_label = search_button_label|default('Search'|t) %}
+                  {% set search_button_title = search_button_title|default('Search'|t) %}
+                  <button class="fr-btn--search fr-btn" data-fr-opened="false" aria-controls="{{ search_id }}" title="{{ search_button_title }}" id="{{ search_bid }}">
+                    {{ search_button_label }}
+                  </button>
+                {% endif %}
+                {% if navbar %}
+                  {% set navbar_button_label = navbar_button_label|default('Menu'|t) %}
+                  {% set navbar_button_title = navbar_button_title|default('Menu'|t) %}
+                  <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="{{ mobile_menu_id }}" title="{{ navbar_button_title }}" id="{{ mobile_menu_bid }}">
+                    {{ navbar_button_label }}
+                  </button>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+
+          {# Header service #}
+          {% if service_title or service_tagline %}
+            <div class="fr-header__service">
+              {# Header service title #}
+              {% if service_title %}
+                {% set t_args = {'@service_title': service_title, '@text': logo_text|replace({"\n": ' '})} %}
+                {% if is_front %}
+                  {% set service_title_title = service_title_title|default('Homepage - @service_title - @text'|t(t_args)) %}
+                {% else %}
+                  {% set service_title_title = service_title_title|default('Back to the homepage - @service_title - @text'|t(t_args)) %}
+                {% endif %}
+                <a href="{{ url('<front>') }}" title="{{ service_title_title }}">
+                  <{{ service_title_tag }}{{ service_title_attributes.addClass('fr-header__service-title') }}>{{ service_title }}</{{ service_title_tag }}>
+                </a>
+              {% endif %}
+              {# Header service tagline #}
+              {% if service_tagline %}
+                <{{ service_tagline_tag }}{{ service_tagline_attributes.addClass('fr-header__service-tagline') }}>{{ service_tagline }}</{{ service_title_tag }}>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+        {# Header tools #}
+        {% if tools_links or tools_search %}
+          <div class="fr-header__tools">
+            {# Header tools links #}
+            {% if tools_links %}
+              <div class="fr-header__tools-links">
+                {{ tools_links }}
+              </div>
+            {% endif %}
+            {# Header tools bottom (can be used for search bar) #}
+            {% if tools_search %}
+              {% set tools_search_close_button_label = tools_search_close_button_label|default('Close'|t) %}
+              {% set tools_search_close_button_title = tools_search_close_button_title|default('Close search'|t) %}
+              <div class="fr-header__search fr-modal" id="{{ search_id }}" aria-labelledby="{{ search_bid }}">
+                <div class="fr-container fr-container-lg--fluid">
+                  <button class="fr-btn fr-btn--close" aria-controls="{{ search_id }}" title="{{ tools_search_close_button_title }}">{{ tools_search_close_button_label }}</button>
+                  {{ attach_library('dsfr4drupal/component.modal') }}
+                  {{ tools_search }}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if navbar %}
+    <div class="fr-header__menu fr-modal" id="{{ mobile_menu_id }}" aria-labelledby="{{ mobile_menu_bid }}">
+      <div class="fr-container">
+        {% set navbar_close_button_label = navbar_close_button_label|default('Close'|t) %}
+        {% set navbar_close_button_title = navbar_close_button_title|default('Close menu'|t) %}
+        <button class="fr-btn fr-btn--close" aria-controls="{{ mobile_menu_id }}" title="{{ navbar_close_button_title }}">{{ navbar_close_button_label }}</button>
+        {{ attach_library('dsfr4drupal/component.modal') }}
+        <div class="fr-header__menu-links"></div>
+        {{ navbar }}
+      </div>
+    </div>
+  {% endif %}
+</header>

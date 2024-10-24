@@ -1,0 +1,112 @@
+.vt-view-header {
+  margin-bottom: 0.5rem;
+}
+.vt-views-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+.vt-view-item,
+.vt-view-row{
+  &:not(:last-child){
+    margin-bottom: 1rem;
+  }
+}
+.vt-views-field {
+  margin-bottom: 0.5rem;
+}
+.vt-view-items-lists{
+  padding-bottom: 1rem;
+}
+.vt-pager {
+  justify-content: center;
+  margin: 1rem 0;
+  .vt-Pagination {
+    gap: 0.5rem;
+  }
+}
+.vt-pager-item{
+  display: flex;
+  text-align: center;
+  width: max-content;
+  a{
+    text-align: center;
+    padding: 0.2rem 0.6rem;
+    display: block;
+    border: 1px solid $brand-color;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    &:hover {
+      background: $brand-color;
+      color: $white;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      transform: translateY(-2px);
+    }
+  }
+}
+.vt-mini-Pagination{
+  .vt-pager-item{
+    line-height: 2rem;
+    a{
+      line-height: 20px;
+      padding-bottom: 5px;
+    }
+  }
+}
+.vt-pager-item.is-active {
+  a {
+    background: $brand-color;
+    color: $white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}
+.vt-view-grid {
+  .vt-view-col {
+    .vt-views-field {
+      img.vt-image {
+        max-height: 265px;
+        min-height: 265px;
+      }
+    }
+  }
+}
+.vt-views-field-view-node{
+  span {
+    display: flex;
+    justify-content: center;
+    a{
+      line-height: 40px;
+      padding: 0 30px;
+      font-size: .8em;
+      color: #fff;
+      background: #140c40;
+      border: 1px solid transparent;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 0.25rem;
+      margin-top: 1rem;
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      &:hover{
+        color: #140C40;
+        border: 1px solid #140C40;
+        background: #fff;
+        transform: translateY(-5px);
+        border-radius: 1.5rem;
+      }
+    }
+  }
+}
+.vt-block-views {
+  margin-top: 1rem;
+}

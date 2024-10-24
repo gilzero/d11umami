@@ -1,0 +1,63 @@
+/**
+ * @file
+ * CK Editor.
+ */
+
+.form-textarea-wrapper {
+  .cke {
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    &.cke_chrome.cke_focus {
+      @include focus-outline;
+    }
+    .cke_chrome:hover,
+    .cke:hover .cke_contents,
+    .cke:hover .cke_top,
+    .cke:hover .cke_bottom {
+      border-color: inherit;
+    }
+    .cke_contents {
+      border: none;
+    }
+    .cke_wysiwyg_frame,
+    .cke_wysiwyg_div {
+      background-color: $text-lightgrey;
+    }
+    .cke_top {
+      border-bottom: 1px solid $ck-grey;
+      background: $ck-grey;
+      padding: 6px 8px 2px;
+      white-space: normal;
+      color: $text-dark;
+    }
+    .cke_bottom {
+      border-bottom: 1px solid $ck-grey;
+      background: $ck-grey;
+      a {
+        color: $text-dark;
+        cursor: pointer;
+        &:hover {
+          background: $ck-grey;
+        }
+        .cke_button_icon {
+          cursor: pointer;
+        }
+      }
+      .cke_path_empty:only-child::after {
+        background: $ck-grey;
+      }
+    }
+    textarea.cke_source {
+      background: $black-pearl;
+      padding: 25px;
+      color: $text-white;
+      margin: 0;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+}

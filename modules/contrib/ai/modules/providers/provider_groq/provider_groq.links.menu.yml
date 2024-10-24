@@ -1,0 +1,5 @@
+provider_groq.settings_menu:
+  title: "Groq Configuration"
+  description: "Setup Groq"
+  route_name: provider_groq.settings_form
+  parent: ai.admin_providers

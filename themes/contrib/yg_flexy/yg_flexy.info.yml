@@ -1,0 +1,24 @@
+name: 'YG Flexy'
+description: 'YG Flexy is a Responsive Drupal 10 theme.'
+core_version_requirement:  ^10 || ^11
+type: theme
+base theme: bootstrap_barrio
+screenshot: yg_flexy.png
+
+regions:
+  header: Header
+  logo: Logo
+  primary_menu: Primary menu
+  content: Content
+  footer_col_1: Footer First
+  footer_col_2: Footer Second
+  footer_col_3: Footer Third
+  footer_col_4: Footer Four
+
+libraries:
+  - yg_flexy/global-styling
+
+# Information added by Drupal.org packaging script on 2024-06-10
+version: '2.0.1'
+project: 'yg_flexy'
+datestamp: 1718004349

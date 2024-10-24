@@ -1,0 +1,5 @@
+provider_lmstudio.settings_menu:
+  title: "LM Studio Configuration"
+  description: "Setup LM Studio"
+  route_name: provider_lmstudio.settings_form
+  parent: ai.admin_providers

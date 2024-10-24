@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override for a dropbutton wrapper.
+ *
+ * Available variables:
+ * - children: Contains the child elements of the dropbutton menu.
+ *
+ * @see template_preprocess()
+ */
+#}
+{% if children %}
+  {% apply spaceless %}
+    <div class="rvt-dropdown" data-rvt-dropdown>
+      {{ children }}
+    </div>
+  {% endapply %}
+{% endif %}

@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Theme override for search form.
+ *
+ * Rivet requires a special layout for input groups that cannot easily be
+ * achieved with normal form element templates.
+ *
+ * Available variables:
+ * - form: The search form.
+ */
+#}
+<div class="rvt-input-group rvt-m-tb-md">
+  {% set id = form.basic.keys['#id']|clean_unique_id %}
+  <label for="{{ id }}" class="rvt-sr-only">{{ element.basic.keys['#title'] }}</label>
+  <input
+    type="search"
+    name="keys"
+    id="{{ id }}"
+    class="rvt-text-input rvt-input-group__input"
+    size="30"
+    maxlength="128"
+    placeholder=""
+    value="{{ form.basic.keys['#value'] }}">
+  <div class="rvt-input-group__append">
+    <button type="submit" class="rvt-button">Search</button>
+  </div>
+</div>
+{% set item = form.help_link %}
+{%
+  set attrs = {
+    'class': ['icon-help'],
+    'style': 'float:right'
+  }
+%}
+{{ link(item['#title'], item['#url'], item['#attributes']|merge(attrs)) }}
+
+{{ form|without('basic', 'help_link') }}

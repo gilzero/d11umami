@@ -1,0 +1,47 @@
+name: DSFR - Button
+description: The button is an element of interaction with the interface allowing the user to perform an action.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    disabled:
+      type: boolean
+      title: Is disabled?
+      default: false
+    icon:
+      type: string
+      title: Icon
+    icon_position:
+      type: string
+      title: Icon position
+      enum:
+        - left
+        - right
+    label:
+      type: string
+      title: Label
+    target:
+      type: string
+      target: Target attribute
+      description: 'Without "_" on prefix. External links have a target "_blank" attribute by default.'
+    title:
+      type: string
+      title: Title attribute
+    url:
+      type: string
+      title: URL
+      description: If you want a link to look like a button.
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - secondary
+        - tertiary
+  required:
+    - label
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.button

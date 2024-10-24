@@ -1,0 +1,16 @@
+{% if page.fixed_search_block %}
+  <div id="fixed-search-block" class="solo-outer lone fixed-search-block{{ classes_fixed_search_block ? ' ' ~ classes_fixed_search_block }}" role="search" aria-label="{{ 'Search Bar'|t }}" {{ attributes_fixed_search_block }}>
+    <div id="fixed-search-block-inner" class="solo-inner solo-col solo-col-1 fixed-search-block-inner">
+      <div class="fixed-search-wrapper">
+        <div id="search-button-close" class="hamburger-icon hamburger-icon-close search-button-close">
+          <!-- Button for closing the search bar -->
+          <button class="btn-animate solo-button-menu" data-drupal-selector="search-block-button-close-inner" aria-label="{{ 'Close Search Block'|t }}" aria-controls="fixed-search-block" aria-expanded="false">
+            <span>{{ svg_bars|raw }}</span>
+            <span class="visually-hidden">{{ 'Close Search Block'|t }}</span>
+          </button>
+        </div>
+        {{ page.fixed_search_block }}
+      </div>
+    </div>
+  </div>
+{% endif %}

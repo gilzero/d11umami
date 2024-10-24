@@ -1,0 +1,4 @@
+.page-wrapper .monoton {
+  --solo-font-s: 'Monoton', cursive;
+  font-family: var(--solo-font-s) !important;
+}

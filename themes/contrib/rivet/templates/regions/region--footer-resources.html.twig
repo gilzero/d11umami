@@ -1,0 +1,18 @@
+{% if content %}
+{{ attach_library('rivet/rvt-c-region') }}
+{% apply spaceless %}
+<div aria-labelledby="resources-heading" class="rvt-footer-resources rvt-c-region rvt-c-region--footer-resources" role="complementary">
+  <h2 class="rvt-sr-only" id="resources-heading">Additional resources</h2>
+  <div class="{{ page_width }}">
+    <div class="rvt-row">
+    {% set filtered_items = elements|filter((item, key) => key|first != '#') %}
+    {% for key, item in filtered_items %}
+      <div class="rvt-c-region__inner rvt-cols-md">
+        {{ item }}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endapply %}
+{% endif %}

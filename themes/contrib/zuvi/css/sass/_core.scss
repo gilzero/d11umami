@@ -1,0 +1,15 @@
+/* Admin Toolbar */
+button.toolbar-item,
+button.toolbar-icon {
+  background: none;
+}
+
+/* Filter Module */
+.filter-wrapper {
+  border: 1px solid var(--border-color);
+}
+
+/* contextual buttons */
+.contextual button:hover {
+  background-color: var(--color-primary);
+}

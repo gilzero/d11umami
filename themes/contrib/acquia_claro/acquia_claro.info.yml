@@ -1,0 +1,23 @@
+name: Acquia Claro
+type: theme
+base theme: claro
+description: 'A clean, accessible, and powerful Drupal administration theme.'
+package: Custom
+core_version_requirement: ^9.4 || ^10 || ^11
+libraries:
+  - acquia_claro/global
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+
+# Information added by Drupal.org packaging script on 2024-07-23
+version: '1.4.1'
+project: 'acquia_claro'
+datestamp: 1721733775

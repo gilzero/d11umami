@@ -1,0 +1,17 @@
+---
+attributes_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      attributes:
+        source_id: attributes
+        source:
+          value: 'key="value"'
+  entity:
+    body:
+      value: 'value_text_1'
+  output:
+    props:
+      attributes:
+        same:
+          key: value

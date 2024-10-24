@@ -1,0 +1,29 @@
+{% set attributes = attributes|default(create_attribute()) %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-tag--' ~ variant) %}
+{% endif %}
+
+{% if not dismissible and icon %}
+  {% set attributes = attributes.addClass(icon).addClass('fr-tag--icon-left') %}
+{% endif %}
+
+{% if url %}
+  {% if color_schema %}
+    {% set attributes = attributes.addClass('fr-tag--' ~ color_schema) %}
+  {% endif %}
+
+  <a{{ attributes.addClass('fr-tag').setAttribute('href', url) }}>
+    {{ label }}
+  </a>
+{% else %}
+  {% set tag = tag|default(attributes.hasAttribute('aria-pressed') or dismissible ? 'button' : 'p') %}
+
+  {% if dismissible and not attributes.hasAttribute('aria-pressed') %}
+    {% set attributes = attributes.addClass('fr-tag--dismiss').setAttribute('onclick', 'event.preventDefault(); this.parentNode.removeChild(this);') %}
+  {% endif %}
+
+  <{{ tag }}{{ attributes.addClass('fr-tag') }}>
+    {{ label }}
+  </{{ tag }}>
+{% endif %}

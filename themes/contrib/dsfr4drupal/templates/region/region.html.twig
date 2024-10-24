@@ -1,0 +1,11 @@
+{% if content %}
+  {% if attributes is not empty %}
+  <div{{ attributes }}>
+  {% endif %}
+
+    {{ content }}
+
+  {% if attributes is not empty %}
+  </div>
+  {% endif %}
+{% endif %}

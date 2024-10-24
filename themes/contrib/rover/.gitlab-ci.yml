@@ -1,0 +1,22 @@
+stages:
+  - lint
+
+phpcs:
+  stage: lint
+  image: php:8.1
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y git unzip
+    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    - composer --version
+    - composer config --global allow-plugins true
+    - composer require dealerdirect/phpcodesniffer-composer-installer
+    - composer require drupal/coder
+    - composer require vincentlanglet/twig-cs-fixer
+  script:
+    - ./vendor/bin/phpcs --version
+    - ./vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml --ignore=*/vendor/*,*/node_modules/*,README.md,./components/fonts.css,./components/style.scss,./dist/style.css ./
+    - ./vendor/bin/twig-cs-fixer lint  ./
+
+  # only:
+  #   - merge_requests 

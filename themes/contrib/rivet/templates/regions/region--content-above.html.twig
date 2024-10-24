@@ -1,0 +1,13 @@
+{#
+Use the Content Above region for Marketing pages where breadcrumb and page title
+are displayed just before the content region.
+#}
+{% if content %}
+{{ attach_library('rivet/rvt-c-region') }}
+{% apply spaceless %}
+<div class="rvt-c-region rvt-c-region--content-above">
+  {{ content }}
+</div>
+{% endapply %}
+{% endif %}
+

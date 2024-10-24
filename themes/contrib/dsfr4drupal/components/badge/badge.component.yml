@@ -1,0 +1,39 @@
+name: DSFR - Badge
+description: The badge component allows you to highlight "status" or "state" type information on an element of the site.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    color_schema:
+      type: string
+      title: Color schema
+      description: 'Example: brown-caramel'
+    label:
+      type: string
+      title: Label
+    system_type:
+      type: string
+      title: System type
+      enum:
+        - error
+        - info
+        - new
+        - success
+        - warning
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - sm
+    has_icon:
+      type: boolean
+      title: Has icon?
+      default: true
+  required:
+    - label
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.badge

@@ -1,0 +1,48 @@
+#page-wrapper .w3-highway-brown {
+  --r-tx: var(--solo-white);
+  --r-bg: #633517;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-highway-red {
+  --r-tx: var(--solo-white);
+  --r-bg: #a6001a;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-highway-orange {
+  --r-tx: var(--solo-white);
+  --r-bg: #e06000;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-highway-schoolbus {
+  --r-tx: var(--solo-white);
+  --r-bg: #ee9600;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-highway-yellow {
+  --r-tx: var(--solo-white);
+  --r-bg: #ffab00;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-highway-green {
+  --r-tx: var(--solo-white);
+  --r-bg: #004d33;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-highway-blue {
+  --r-tx: var(--solo-white);
+  --r-bg: #00477e;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}

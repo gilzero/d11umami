@@ -1,0 +1,39 @@
+name: Progress
+description: "Progress bar can be used to show the progress of a task or to show the passing of time."
+group: Feedback
+links:
+  - "https://daisyui.com/components/progress/"
+variants:
+  default:
+    title: Default
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  accent:
+    title: Accent
+  info:
+    title: Info
+  success:
+    title: Success
+  warning:
+    title: Warning
+  error:
+    title: Error
+props:
+  type: object
+  properties:
+    value:
+      title: Value
+      description: "Value of progress"
+      $ref: "ui-patterns://number"
+    max:
+      title: Max
+      description: "Max of progress, if missing component will display as indeterminate"
+      $ref: "ui-patterns://number"
+stories:
+  preview:
+    title: Preview
+    props:
+      value: 10
+      max: 100

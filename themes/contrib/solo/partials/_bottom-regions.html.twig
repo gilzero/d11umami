@@ -1,0 +1,95 @@
+{% set bottom_first = page.bottom_first is not empty ? page.bottom_first : null %}
+{% set bottom_second = page.bottom_second is not empty ? page.bottom_second : null %}
+{% set bottom_third = page.bottom_third is not empty ? page.bottom_third : null %}
+{% set bottom_fourth = page.bottom_fourth is not empty ? page.bottom_fourth : null %}
+
+{% if bottom_first or bottom_second or bottom_third or bottom_fourth %}
+
+{% set bottom_regions = 0 %}
+
+{% if bottom_first %}
+  {% set bottom_regions = bottom_regions + 1 %}
+  {% set bottom_first_outer_classes = 'region-outer bottom-box bottom-box-first' %}
+  {% set bottom_first_inner_classes = 'region-inner bottom-box-inner bottom-box-first-inner fade-inner' ~ (classes_bottom_first ? ' ' ~ classes_bottom_first) %}
+{% endif %}
+
+{% if bottom_second %}
+  {% set bottom_regions = bottom_regions + 1 %}
+  {% set bottom_second_outer_classes = 'region-outer bottom-box bottom-box-second' %}
+  {% set bottom_second_inner_classes = 'region-inner bottom-box-inner bottom-box-second-inner fade-inner' ~ (classes_bottom_second ? ' ' ~ classes_bottom_second) %}
+{% endif %}
+
+{% if bottom_third %}
+  {% set bottom_regions = bottom_regions + 1 %}
+  {% set bottom_third_outer_classes = 'region-outer bottom-box bottom-box-third' %}
+  {% set bottom_third_inner_classes = 'region-inner bottom-box-inner bottom-box-third-inner fade-inner' ~ (classes_bottom_third ? ' ' ~ classes_bottom_third) %}
+{% endif %}
+
+{% if bottom_fourth %}
+  {% set bottom_regions = bottom_regions + 1 %}
+  {% set bottom_fourth_outer_classes = 'region-outer bottom-box bottom-box-fourth' %}
+  {% set bottom_fourth_inner_classes = 'region-inner bottom-box-inner bottom-box-fourth-inner fade-inner' ~ (classes_bottom_fourth ? ' ' ~ classes_bottom_fourth) %}
+{% endif %}
+
+{% set bottom_active = 'active-bottom-' ~ bottom_regions %}
+
+{% set bottom_outer = 'solo-outer multi bottom-container' ~
+  (bottom_active ? ' ' ~ bottom_active) ~
+  (site_regions_bottom_border ? ' has-border') ~
+  (site_regions_bottom_rounded ? ' ' ~ site_regions_bottom_rounded) ~
+  (site_regions_bottom_animate_border ? ' animate-border') ~
+  (site_regions_bottom_animate_hover ? ' animate-hover') ~
+  (classes_bottom_container ? ' ' ~ classes_bottom_container) %}
+
+{% set bottom_inner = 'solo-inner solo-col bottom-container-inner' ~
+  (bottom_layout ? ' ' ~ bottom_layout) %}
+
+  <!-- Start: Bottom Container -->
+  <div id="bottom-container" class="{{ bottom_outer }}" {{ attributes_bottom_container }}>
+    <div id="bottom-container-inner" class="{{ bottom_inner }}">
+
+    {% if bottom_first %}
+      <!-- Start: Bottom First -->
+      <div id="bottom-box-first" class="{{ bottom_first_outer_classes }}">
+        <div class="{{ bottom_first_inner_classes }}" {{ attributes_bottom_first }}>
+          {{ bottom_first }}
+        </div>
+      </div>
+      <!-- End: Bottom First -->
+    {% endif %}
+
+    {% if bottom_second %}
+      <!-- Start: Bottom Second -->
+      <div id="bottom-box-second" class="{{ bottom_second_outer_classes }}">
+        <div class="{{ bottom_second_inner_classes }}" {{ attributes_bottom_second }}>
+          {{ bottom_second }}
+        </div>
+      </div>
+      <!-- End: Bottom Second -->
+    {% endif %}
+
+    {% if bottom_third %}
+      <!-- Start: Bottom Third -->
+      <div id="bottom-box-third" class="{{ bottom_third_outer_classes }}">
+        <div class="{{ bottom_third_inner_classes }}" {{ attributes_bottom_third }}>
+          {{ bottom_third }}
+        </div>
+      </div>
+      <!-- End: Bottom Third -->
+    {% endif %}
+
+    {% if bottom_fourth %}
+      <!-- Start: Bottom Fourth -->
+      <div id="bottom-box-fourth" class="{{ bottom_fourth_outer_classes }}">
+        <div class="{{ bottom_fourth_inner_classes }}" {{ attributes_bottom_fourth }}>
+          {{ bottom_fourth }}
+        </div>
+      </div>
+      <!-- End: Bottom Fourth -->
+    {% endif %}
+
+    </div>
+  </div>
+  <!-- End: Bottom -->
+{% endif %}
+

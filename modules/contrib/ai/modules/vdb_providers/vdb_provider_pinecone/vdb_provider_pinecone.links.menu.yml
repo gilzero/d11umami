@@ -1,0 +1,5 @@
+vdb_provider_pinecone.settings_menu:
+  title: "Pinecone Configuration"
+  description: "Configure Pinecone Vector Database"
+  route_name: vdb_provider_pinecone.settings_form
+  parent: ai.admin_vdb_providers

@@ -1,0 +1,441 @@
+/**
+ * at_toolbar_theme
+ * Theme styles for menus and other toolbar elements. SVG icons are styled in
+ * the [theme]_icons.scss file, while click handles, e.g. origination buttons
+ * are styled here.
+ */
+body .toolbar-no-tabs {
+  padding-top: 1.75rem !important;
+}
+
+#toolbar-administration {
+  font-family: Helvetica, arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  height: 3.5rem;
+  background-color: #fafafa;
+  tap-highlight-color: transparent;
+}
+
+.toolbar-vertical #toolbar-administration,
+.toolbar-no-tabs #toolbar-administration,
+#toolbar-administration .toolbar-tab,
+#toolbar-administration .toolbar-tray {
+  height: 1.75rem;
+}
+
+#toolbar-administration .toolbar-tray {
+  top: 1.75rem;
+}
+
+#toolbar-administration .toolbar-tab a:hover, #toolbar-administration .toolbar-tab a:focus,
+#toolbar-administration .toolbar-item a:hover,
+#toolbar-administration .toolbar-item a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+#toolbar-administration .toolbar-item {
+  padding: 0.35em 1em 0.2em;
+}
+
+#toolbar-administration .toolbar__link-label {
+  font-size: 1em;
+}
+
+#toolbar-administration .toolbar-lining button:focus {
+  outline: none;
+}
+
+#toolbar-administration .toolbar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#toolbar-administration .toolbar-box a:focus {
+  outline: none;
+}
+
+#toolbar-administration .toolbar-box a:hover:focus {
+  text-decoration: none;
+}
+
+#toolbar-administration .toolbar-bar {
+  background-color: #fafafa;
+  color: #666;
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+#toolbar-administration .toolbar-bar .toolbar-tab .toolbar-tab__items-wrapper a {
+  color: #666;
+  font-size: 0.9em;
+  padding: 0.5em 1em 0.65em 2em;
+}
+
+#toolbar-administration .toolbar-bar .toolbar-tab .toolbar-tab__items-wrapper a:hover, #toolbar-administration .toolbar-bar .toolbar-tab .toolbar-tab__items-wrapper a:focus, #toolbar-administration .toolbar-bar .toolbar-tab .toolbar-tab__items-wrapper a.is-active {
+  color: rgba(133, 178, 61, 0.95);
+  text-decoration: none;
+}
+
+#toolbar-administration .toolbar-bar .toolbar-tab .toolbar-tab__items-wrapper a:focus {
+  outline: none;
+}
+
+#toolbar-administration .toolbar-bar .tour-toolbar-tab.toolbar-tab {
+  float: none;
+}
+
+#toolbar-administration .toolbar-bar .tour-toolbar-tab button.toolbar-item {
+  padding: 0.35em 1em 0.2em;
+}
+
+#toolbar-administration .toolbar-bar .contextual-toolbar-tab {
+  right: 0.25em;
+  top: 0;
+  padding-left: 0;
+}
+
+#toolbar-administration .toolbar-bar .contextual-toolbar-tab button {
+  top: 0.15em;
+  font-size: 0.9em;
+}
+
+#toolbar-administration .toolbar-bar .contextual-toolbar-tab button:hover, #toolbar-administration .toolbar-bar .contextual-toolbar-tab button:focus, #toolbar-administration .toolbar-bar .contextual-toolbar-tab button.is-active {
+  color: rgba(133, 178, 61, 0.95);
+  background: none !important;
+}
+
+#toolbar-administration .toolbar-bar .contextual-toolbar-tab button i.toolbar-icon {
+  margin-right: .25em;
+}
+
+#toolbar-administration .toolbar-bar.no-tabs .toolbar-tab__items-wrapper a {
+  width: 3.3em;
+  height: 2.75em;
+  padding: 0;
+}
+
+#toolbar-administration .toolbar-bar.no-tabs .toolbar-tab__items-wrapper a:before {
+  left: 1.25em;
+  top: 0.675em;
+}
+
+#toolbar-administration .toolbar-tray {
+  background-color: rgba(133, 178, 61, 0.95);
+}
+
+#toolbar-administration .toolbar-tray a {
+  color: #fff;
+  cursor: pointer;
+  padding: 0.35em 1em 0.2em;
+}
+
+#toolbar-administration .toolbar-tray a:hover, #toolbar-administration .toolbar-tray a:active, #toolbar-administration .toolbar-tray a:focus, #toolbar-administration .toolbar-tray a.is-active {
+  color: #fff;
+}
+
+#toolbar-administration .toolbar-tray a.is-active[href="/"] {
+  color: #fff;
+}
+
+#toolbar-administration .toolbar-tray-horizontal {
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+#toolbar-administration .toolbar-tray-horizontal a:focus {
+  outline: none;
+  background-color: rgba(133, 178, 61, 0.95);
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > a:hover, #toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > a:active, #toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > a:focus, #toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > a.is-active,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box a:hover,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box a:active,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box a:focus,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box a.is-active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > a.is-active[href="/"],
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box a.is-active[href="/"] {
+  background-color: transparent;
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > a.is-active[href="/"]:hover, #toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > a.is-active[href="/"]:active, #toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > a.is-active[href="/"]:focus,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box a.is-active[href="/"]:hover,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box a.is-active[href="/"]:active,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box a.is-active[href="/"]:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#toolbar-administration .toolbar-tray-horizontal .edit-shortcuts {
+  float: none;
+  position: absolute;
+  right: 3.5em;
+  top: 0;
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration .toolbar-menu .toolbar-menu {
+  background-color: #f7f7f7;
+  -webkit-box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration .toolbar-menu .toolbar-menu a {
+  padding: 0.35em 1em;
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration .toolbar-menu .toolbar-menu .menu-item {
+  border-bottom: 1px solid rgba(133, 178, 61, 0.95);
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration .toolbar-menu .toolbar-menu .menu-item:first-child {
+  border-top: 1px solid rgba(133, 178, 61, 0.95);
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration .toolbar-menu .toolbar-menu .toolbar-menu {
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.35);
+          box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration .toolbar-menu .toolbar-menu > .menu-item--expanded > .toolbar-menu {
+  top: -1px;
+}
+
+#toolbar-administration .toolbar-tray-horizontal .menu-level-2 {
+  font-size: 0.95em;
+}
+
+#toolbar-administration .toolbar-tray-horizontal .menu-item .menu-item a {
+  color: #150304;
+}
+
+#toolbar-administration .toolbar-tray-horizontal .menu-item .menu-item a:hover, #toolbar-administration .toolbar-tray-horizontal .menu-item .menu-item a:focus {
+  color: #150304;
+}
+
+#toolbar-administration .toolbar-tray-horizontal .menu-item .menu-item:hover, #toolbar-administration .toolbar-tray-horizontal .menu-item .menu-item:focus {
+  background-color: rgba(133, 178, 61, 0.1);
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu .toolbar-menu > .menu-item--expanded > a:after,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu .toolbar-menu > .menu-item--expanded > .toolbar-box > a:after {
+  color: rgba(133, 178, 61, 0.95);
+  right: 0.65em;
+  top: 0.2em;
+  display: block;
+}
+
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu .toolbar-menu > .menu-item--expanded > a:hover:after, #toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu .toolbar-menu > .menu-item--expanded > a:focus:after,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu .toolbar-menu > .menu-item--expanded > .toolbar-box > a:hover:after,
+#toolbar-administration .toolbar-tray-horizontal .toolbar-menu-administration > .toolbar-menu .toolbar-menu > .menu-item--expanded > .toolbar-box > a:focus:after {
+  color: #150304;
+}
+
+#toolbar-administration .no-tabs .toolbar-tray-horizontal {
+  left: 3em;
+}
+
+#toolbar-administration .toolbar-tray-vertical {
+  background-color: rgba(133, 178, 61, 0.95);
+  border-right: 1px solid #ccc;
+  height: 100%;
+  -webkit-box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.35);
+}
+
+[dir="rtl"] #toolbar-administration .toolbar-tray-vertical {
+  border-left: 1px solid #ccc;
+  border-right: 0 none;
+  -webkit-box-shadow: 1px 0 5px 2px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 0 5px 2px rgba(0, 0, 0, 0.35);
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu .toolbar-menu {
+  display: none;
+}
+
+#toolbar-administration .toolbar-tray-vertical .menu-item--expanded.open > .toolbar-menu {
+  display: block;
+  border-bottom-width: 0;
+}
+
+#toolbar-administration .toolbar-tray-vertical .menu-item--expanded.open > .toolbar-menu .toolbar-menu {
+  border-bottom-width: 1px;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-handle + a {
+  margin-right: 3em;
+}
+
+[dir="rtl"] #toolbar-administration .toolbar-tray-vertical .toolbar-handle + a {
+  margin-left: 3em;
+  margin-right: 0;
+}
+
+#toolbar-administration .toolbar-tray-vertical .menu-item + .menu-item {
+  border-top: 1px solid #e6e6e6;
+}
+
+#toolbar-administration .toolbar-tray-vertical .menu-item:last-child {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#toolbar-administration .toolbar-tray-vertical .menu-item .menu-item {
+  border: 0 none;
+}
+
+#toolbar-administration .toolbar-tray-vertical .menu-item .menu-item a {
+  color: #150304;
+}
+
+#toolbar-administration .toolbar-tray-vertical .menu-item .toolbar-box:hover,
+#toolbar-administration .toolbar-tray-vertical .menu-item .toolbar-box:focus {
+  background-color: rgba(146, 192, 72, 0.95);
+}
+
+#toolbar-administration .toolbar-tray-vertical .menu-item .menu-level-2 .toolbar-box:hover,
+#toolbar-administration .toolbar-tray-vertical .menu-item .menu-level-2 .toolbar-box:focus {
+  background-color: rgba(203, 225, 167, 0.95);
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu.root {
+  border: 0;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu .toolbar-menu {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu > .level-1 > ul {
+  background-color: #ededed;
+  border-bottom-color: #d9d9d9;
+  border-top-color: #d9d9d9;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu > .level-2 > ul {
+  background-color: #e1e1e1;
+  border-bottom-color: #cdcdcd;
+  border-top-color: #cdcdcd;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu > .level-3 > ul {
+  background-color: #d4d4d4;
+  border-bottom-color: silver;
+  border-top-color: silver;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu > .level-4 > ul {
+  background-color: #c7c7c7;
+  border-bottom-color: #b3b3b3;
+  border-top-color: #b3b3b3;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu > .level-5 > ul {
+  background-color: #bababa;
+  border-bottom-color: #a6a6a6;
+  border-top-color: #a6a6a6;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu > .level-6 > ul {
+  background-color: #aeaeae;
+  border-bottom-color: #9a9a9a;
+  border-top-color: #9a9a9a;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu > .level-7 > ul {
+  background-color: #a1a1a1;
+  border-bottom-color: #8d8d8d;
+  border-top-color: #8d8d8d;
+}
+
+#toolbar-administration .toolbar-tray-vertical .toolbar-menu > .level-8 > ul {
+  background-color: #949494;
+  border-bottom-color: gray;
+  border-top-color: gray;
+}
+
+#toolbar-administration .menu-item:last-child > .toolbar-menu {
+  border-bottom: 0;
+}
+
+#toolbar-administration .toolbar-icon.toolbar-handle:before {
+  color: #fff;
+  top: 0.65em;
+}
+
+#toolbar-administration .toolbar-icon.toolbar-handle.open:before {
+  color: #fff;
+}
+
+#toolbar-administration .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle:before {
+  color: #150304;
+  top: 0.65em;
+}
+
+#toolbar-administration .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle.open:before {
+  color: #150304;
+}
+
+#toolbar-administration .toolbar-toggle-orientation button.toolbar-icon:after, #toolbar-administration .toolbar-toggle-orientation button.toolbar-icon:before {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#toolbar-administration .toolbar-toggle-orientation button.toolbar-icon:hover, #toolbar-administration .toolbar-toggle-orientation button.toolbar-icon:focus, #toolbar-administration .toolbar-toggle-orientation button.toolbar-icon:hover:after, #toolbar-administration .toolbar-toggle-orientation button.toolbar-icon:focus:before {
+  color: rgba(255, 255, 255, 0.95);
+  background-color: transparent;
+}
+
+#toolbar-administration .toolbar-toggle-orientation button.toolbar-icon {
+  width: 3.5em;
+  height: 2.5em;
+  padding: 0;
+}
+
+#toolbar-administration .toolbar-toggle-orientation button.toolbar-icon[value="vertical"]:before {
+  top: 0.625em;
+  right: 0;
+}
+
+[dir="rtl"] #toolbar-administration .toolbar-toggle-orientation button.toolbar-icon[value="vertical"]:before {
+  left: 0;
+  right: auto;
+}
+
+#toolbar-administration .toolbar-toggle-orientation button.toolbar-icon[value="horizontal"]:after {
+  top: 0.5em;
+  right: 1em;
+}
+
+[dir="rtl"] #toolbar-administration .toolbar-toggle-orientation button.toolbar-icon[value="horizontal"]:after {
+  left: 1em;
+  right: 0;
+}
+
+.adminimal #toolbar-bar {
+  font: normal 83.1%/1.5 "Open Sans", sans-serif !important;
+}
+
+.adminimal.toolbar-tray-open.toolbar-fixed.toolbar-horizontal.toolbar-themes {
+  padding-top: 4.75em !important;
+}
+
+.adminimal.toolbar-tray-open.toolbar-fixed.toolbar-horizontal #toolbar-administration {
+  background-color: #333;
+}
+
+.adminimal.toolbar-tray-open.toolbar-fixed.toolbar-horizontal.toolbar-has-tabs #toolbar-administration {
+  min-height: 4em;
+}
+
+.adminimal.toolbar-tray-open.toolbar-fixed.toolbar-horizontal.toolbar-no-tabs #toolbar-administration {
+  min-height: 2em;
+}
+
+.adminimal.toolbar-fixed.toolbar-vertical.toolbar-has-tabs, .adminimal.toolbar-fixed.toolbar-horizontal.toolbar-no-tabs, .adminimal.toolbar-fixed.toolbar-vertical.toolbar-no-tabs, .adminimal.toolbar-tray-open.toolbar-fixed.toolbar-horizontal.toolbar-no-tabs {
+  padding-top: 2.4em !important;
+}
+/*# sourceMappingURL=at_toolbar_theme.css.map */

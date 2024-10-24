@@ -1,0 +1,24 @@
+.webform-submission-form input.form-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.webform-submission-form input.form-color::-webkit-color-swatch {
+  border: none;
+}
+
+input.form-color {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+}
+
+input.form-color.form-color-output {
+  width: 6em;
+  padding: 0 0.5em;
+  border-left: 0;
+}
+
+input.form-color:last-child {
+  margin-right: 0;
+}

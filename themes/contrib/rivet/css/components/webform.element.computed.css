@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Style Webform Computed element for Rivet.
+ */
+
+.js-webform-computed-wrapper {
+  margin-left: -0.15rem;
+  padding: 0 0.15rem;
+  line-height: normal;
+}
+
+.webform-computed-loading {
+  background-color: #ffe694;
+}

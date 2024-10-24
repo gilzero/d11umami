@@ -1,0 +1,21 @@
+name: DSFR - Footer (partners)
+description: Display footer partners.
+status: stable
+group: DSFR
+props:
+  properties:
+    items:
+      type: array
+      title: Items
+      description: Expected Drupal menu link items.
+      items:
+        type: object
+    title:
+      type: string
+      title: Title
+      description: 'By default: "Our partners", or the translated string in another language.'
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.footer

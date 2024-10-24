@@ -1,0 +1,70 @@
+.solo-col,
+.page-wrapper,
+.solo-outer {
+  display: grid;
+  margin: 0 auto;
+}
+
+.page-wrapper {
+  grid-auto-columns: 100%;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-rows: 1fr;
+  justify-content: start;
+  align-content: start;
+  justify-items: start;
+  align-items: start;
+}
+
+.solo-col,
+.solo-col>*,
+.page-wrapper,
+.page-wrapper>* {
+  width: 100%;
+}
+
+.lone>.solo-col:not(.header-inner,
+.primary-menu-inner,
+.fixed-search-block-inner) {
+  grid-auto-flow: row;
+}
+
+.solo-outer .region-inner {
+  height: 100%;
+}
+
+.solo-inner:empty {
+  padding: 0 !important;
+}
+
+.solo-inner:not(.primary-menu-inner,
+.primary-sidebar-menu-inner,
+.system-messages-inner,
+.highlighted-inner) {
+  padding: var(--solo-px16);
+}
+
+.solo-outer .region-inner {
+  padding: var(--solo-px16);
+}
+
+/* We change it in big screen */
+.multi>.solo-col {
+  gap: var(--solo-px16);
+  grid-auto-flow: column;
+}
+
+.top-box,
+.top-box-inner,
+.main-box,
+.main-box-inner,
+.bottom-box,
+.bottom-box-inner,
+.footer-box,
+.footer-box-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+}

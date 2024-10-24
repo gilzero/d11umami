@@ -1,0 +1,49 @@
+# A Secondary color option for the background color on page sections. The
+# default is mahogany (a shade of brown).
+#
+# Possible values include:
+# - crimson
+# - mahogany
+# - gray
+# - gold
+# - gold-dark
+# - mint
+# - mint-dark
+# - midnight
+# - midnight-dark
+# - magestic
+# - magestic-dark
+# - limestone
+# - limestone-dark
+# - black
+secondary_color: mahogany
+
+# Whether to show or hide the Home link in breadcrumb trail.
+#
+# Possible values include:
+# - '0': Show Home in breadcrumb trail (Drupal’s default behavior)
+# - '1': Remove Home from breadcrumb trail
+# - '2': Remove Home when it is the only breadcrumb in trail
+hide_home_breadcrumb: '1'
+
+# Mobile menu position
+#
+# Possible values include:
+# - left: Slide in from the left side
+# - right: Slide in from the right side
+off_canvas_position: right
+
+# Which university campus to link in the header branding bar.
+#
+# Possible values include:
+# - iu:    Indiana University (for iu.edu)
+# - iub:   IU Bloomington (for indiana.edu)
+# - iue:   IU East (for iue.edu)
+# - iuk:   IU Kokomo (for iuk.edu)
+# - iun:   IU Northwest (for iun.edu)
+# - iupui: IUPUI (for iupui.edu)
+# - ius:   IU Southeast (for ius.edu)
+# - iusb:  IU South Bend (for iusb.edu)
+# - iufw:  IU Fort Wayne (for iufw.edu)
+# - iupuc: IUPUC (for iupuc.edu)
+campus: iub

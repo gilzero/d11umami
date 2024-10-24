@@ -1,0 +1,60 @@
+%button-primary-dk {
+  @include button-dk-color($text-dark, $primary, $primary2);
+  &:before,
+  &:after {
+    @extend %filter-white;
+  }
+}
+
+%button-base-dk {
+  @include button-dk-color($bg-dark, $delightful-yellow, $dark-yellow);
+  &:before,
+  &:after {
+    @extend %filter-black;
+  }
+}
+
+%button-dark-dk {
+  @include button-dk-color($text-dark, $ck-grey, $primary);
+  &:before,
+  &:after {
+    @extend %filter-white;
+  }
+}
+
+%button-icon-dk {
+  box-shadow: none;
+  color: $text-dark;
+  background-color: transparent;
+  &:focus {
+    @include focus-outline;
+  }
+}
+
+body.dark-mode {
+  // BUTTONS
+  .button {
+    &:not(.button--primary):not(.icon-link),
+    &.button--extrasmall,
+    &.button--small {
+      @extend %button-base-dk;
+    }
+    &--primary {
+      @extend %button-primary-dk;
+    }
+  }
+  // LINKS
+  .js-text-format-wrapper {
+    button {
+      color: $delightful-yellow;
+      // &.ck-button {
+      //   color: $black-pearl;
+      // }
+    }
+  }
+  .views-exposed-form__item--actions {
+    input[type="submit"] {
+      color: $white;
+    }
+  }
+}

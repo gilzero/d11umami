@@ -1,0 +1,115 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the UI Suite DaisyUI theme.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Render\Element;
+use Drupal\ui_patterns\Plugin\UiPatterns\PropType\LinksPropType;
+
+/**
+ * Implements hook_preprocess_HOOK() for 'pager'.
+ */
+function ui_suite_daisyui_preprocess_pager(array &$variables): void {
+  if (!isset($variables['items'])) {
+    return;
+  }
+
+  $before = LinksPropType::normalize(\array_filter([
+    $variables['items']['first'] ?? [],
+    $variables['items']['previous'] ?? [],
+  ]));
+
+  $pages = LinksPropType::normalize($variables['items']['pages'] ?? []);
+  if (isset($variables['current'])) {
+    $current_page_index = $variables['current'] - 1;
+    unset($pages[$current_page_index]['url']);
+  }
+
+  $after = LinksPropType::normalize(\array_filter([
+    $variables['items']['next'] ?? [],
+    $variables['items']['last'] ?? [],
+  ]));
+
+  $variables['items'] = \array_merge($before, $pages, $after);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'views_mini_pager'.
+ */
+function ui_suite_daisyui_preprocess_views_mini_pager(array &$variables): void {
+  if (!isset($variables['items'])) {
+    return;
+  }
+
+  $variables['items'] = LinksPropType::normalize(\array_filter([
+    $variables['items']['previous'] ?? [],
+    [
+      'title' => $variables['items']['current'],
+    ],
+    $variables['items']['next'] ?? [],
+  ]));
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ui_suite_daisyui_form_alter(&$form, &$form_state, $form_id) {
+  // Style form buttons like button patterns.
+  if (isset($form['actions'])) {
+    $actions = Element::children($form['actions']);
+    foreach ($actions as $action) {
+      if (array_key_exists('#type', $form['actions'][$action]) && $form['actions'][$action]['#type'] == 'submit') {
+        $form['actions'][$action]['#attributes']['class'][] = 'btn';
+        $form['actions'][$action]['#attributes']['class'][] = 'btn-primary';
+        if ($form_id == 'search_block_form') {
+          continue;
+        }
+        if (!empty($form['actions'][$action]['#button_type'])) {
+          if ($form['actions'][$action]['#button_type'] !== 'primary') {
+            $form['actions'][$action]['#attributes']['class'][] = 'btn-secondary';
+          }
+        }
+        else {
+          $form['actions'][$action]['#attributes']['class'][] = 'btn-secondary';
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_form_input().
+ */
+function ui_suite_daisyui_preprocess_input(array &$variables) {
+  if (in_array($variables['element']['#type'],
+    ['hidden', 'submit', 'token', 'button'])) {
+    return;
+  }
+  if ($variables['element']['#type'] == 'file') {
+    $variables['attributes']['class'][] = 'file-input';
+    $variables['attributes']['class'][] = 'file-input-bordered';
+    return;
+  }
+  $variables['attributes']['class'][] = 'input';
+  $variables['attributes']['class'][] = 'input-bordered';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'field'.
+ */
+function ui_suite_daisyui_preprocess_field(array &$variables): void {
+  // Type accepting HTML markup.
+  $types_with_formatting = [
+    "text",
+    "text_long",
+    "text_with_summary",
+  ];
+  if (in_array($variables["field_type"], $types_with_formatting)) {
+    // For Taiwlind prose. To keep the look of WYSIWYG elements.
+    $variables["attributes"]["class"][] = "prose";
+  }
+}

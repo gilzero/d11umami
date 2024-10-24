@@ -1,0 +1,60 @@
+
+// Help pages
+
+#edit-help,
+#edit-subtheme-help {
+
+  h1 {
+    font-size: 1.25em;
+    text-transform: uppercase;
+  }
+
+  h2, h3, h4  {
+    margin: 2em 0 0;
+    padding-bottom: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+
+  ol, ul {
+    margin-bottom: 1em;
+    padding: 0;
+  }
+}
+
+#edit-help-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.status-block {
+  float: right;
+  width: 200px;
+  padding: 10px;
+  margin: 0 0 10px 20px;
+
+  &.warning {
+    //border: 1px solid #F4DAA6;
+    background: #FDF8ED;
+    //box-shadow: -8px 0 0 #E09600;
+    color: #734C00;
+  }
+
+  &.status {
+    //border: 1px solid #325e1c;
+    background: #f3faef;
+    //box-shadow: -8px 0 0 #325e1c;
+    color: #325e1c;
+  }
+
+
+  h2 {
+    font-size: 1em !important;
+  }
+
+  p, h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

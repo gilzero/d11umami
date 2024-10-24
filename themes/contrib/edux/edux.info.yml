@@ -1,0 +1,38 @@
+name: Edu X
+type: theme
+base theme: thex
+description: 'Theme For Educational Institutes by <a href="https://drupar.com/" target="_blank">Drupar.com</a>'
+package: Drupar
+# version: 11.0.0
+core_version_requirement: ^9 || ^10 || ^11
+libraries:
+  - edux/global-styling
+regions:
+  header_top_left: 'Header Top Left'
+  header_top_right: 'Header Top Right'
+  header: Header
+  primary_menu: 'Primary menu'
+  search_box: 'Search Box'
+  page_header: 'Page Header'
+  highlighted: Highlighted
+  content: Content
+  content_top: 'Content Top'
+  content_bottom: 'Content Bottom'
+  content_home_top: 'Homepage Content Top'
+  content_home_bottom: 'Homepage Content Bottom'
+  sidebar_first: 'Sidebar Left'
+  sidebar_second: 'Sidebar Right'
+  footer_top: 'Footer Top'
+  footer_one: 'Footer First Column'
+  footer_two: 'Footer Second Column'
+  footer_three: 'Footer Third Column'
+  footer_four: 'Footer Fourth Column'
+  footer_bottom_left: 'Footer Bottom Left'
+  footer_bottom_right: 'Footer Bottom Right'
+  footer_bottom_last: 'Footer Bottom Last'
+  hidden: Hidden Blocks
+
+# Information added by Drupal.org packaging script on 2024-08-17
+version: '11.0.0'
+project: 'edux'
+datestamp: 1723866544

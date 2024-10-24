@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+<div class="page maintenance-page">
+
+  <header class="l-pr page__row pr-header" id="masthead">
+    <div class="site-branding">
+
+      {% if logo %}
+        <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home" class="site-branding__logo-link">
+          <img src="{{ logo }}" alt="{{ 'Home'|t }}" class="site-branding__logo-img"/>
+        </a>
+      {% endif %}
+
+      {% if site_name or site_slogan %}
+        <span class="site-branding__text">
+          {% if site_name %}
+            <strong class="site-branding__name">
+             <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home" class="site-branding__name-link">{{ site_name }}</a>
+            </strong>
+          {% endif %}
+          {% if site_slogan %}
+            <em class="site-branding__slogan">{{ site_slogan }}</em>
+          {% endif %}
+        </span>
+      {% endif %}
+
+    </div>
+  </header>
+
+  <main class="l-pr page__row pr-main" id="main-content">
+    {% if title %}
+      <h1 class="page__title">{{ title }}</h1>
+    {% endif %}
+    {{ page.content }}
+  </main>
+
+</div>

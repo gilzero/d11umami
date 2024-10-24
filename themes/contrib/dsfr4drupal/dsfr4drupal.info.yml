@@ -1,0 +1,55 @@
+name: DSFR for Drupal
+type: theme
+base theme: false
+description: 'DSFR for Drupal default theme'
+package: DSFR for Drupal
+core_version_requirement: ^10.3 || ^11
+
+dependencies:
+  - drupal:inline_form_errors
+
+enforce_prop_schemas: true
+
+interface translation project: dsfr4drupal
+interface translation server pattern: themes/contrib/%project/translations/%language.po
+
+regions:
+  header_tools_links: Header Tools Links
+  header_tools_search: Header Tools Search
+  header_navbar: Header Navbar
+  breadcrumb: Breadcrumb
+  content: Content
+  footer_top: Footer Top
+  footer_content: Footer Content
+  footer_bottom: Footer Bottom
+
+# @todo: Remove in Drupal 11
+ckeditor_stylesheets:
+  - /libraries/dsfr/dist/utility/utility.min.css
+  - /libraries/dsfr/dist/dsfr.min.css
+
+# Cannot load DSFR styles into CKEditor 5 without ".ck-content" wrapper.
+ckeditor5-stylesheets:
+  - css/ckeditor5.css
+
+libraries:
+  - dsfr4drupal/utility
+
+libraries-extend:
+  core/drupal.message:
+    - dsfr4drupal/drupal.message
+  navigation/navigation.layout:
+    - dsfr4drupal/navigation.layout
+  node/drupal.node.preview:
+    - dsfr4drupal/drupal.node.preview
+  tarte_au_citron/tarte_au_citron_lib:
+    - dsfr4drupal/tarteaucitron
+  tacjs/tarteaucitron.js:
+    - dsfr4drupal/tarteaucitron
+  toolbar/toolbar:
+    - dsfr4drupal/toolbar
+
+# Information added by Drupal.org packaging script on 2024-10-17
+version: '1.2.3'
+project: 'dsfr4drupal'
+datestamp: 1729159104

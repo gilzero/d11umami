@@ -1,0 +1,75 @@
+/* BLOCK ICONS */
+
+.block-icon {
+	background: url(../images/_sprites_sg.png) no-repeat 0 -120px; /* grey */
+	position: absolute;
+	width: 12px;
+	height: 24px;
+	margin: 10px 0 0 -5px; /* LTR */
+}
+[dir="rtl"] .block-icon {
+	margin: 10px -5px 0 0;
+}
+
+.block-title {
+	margin: 0;
+	padding: 6px 6px 10px 12px; /* LTR */
+}
+[dir="rtl"] .block-title {
+	padding: 6px 12px 10px 6px;
+}
+#mission .block-title,
+#content-above .block-title,
+#content-below .block-title {
+	padding: .83em 0;
+}
+
+
+/*.block-icon { background-position: 0 -120px; } /* grey */
+.bt1 .block-icon { background-position: 0 -180px; } /* pink */
+.bt2 .block-icon { background-position: 0 -60px; } 	/* green */
+.bt3 .block-icon { background-position: 0 -150px; } /* orange */
+.bt4 .block-icon { background-position: 0 0; } 		/* blue */
+.bt5 .block-icon { background-position: 0 -120px; } /* grey */
+
+.bt6 .region-user1 .block-icon,
+.bt6 #sidebar-right .block_1 .block-icon,
+.bt6 #sidebar-right .block_5 .block-icon {
+	background-position: 0 0; /* blue */
+}
+.bt6 .region-user2 .block-icon,
+.bt6 #sidebar-right .block_2 .block-icon,
+.bt6 #sidebar-right .block_6 .block-icon {
+	background-position: 0 -60px; /* green */
+}
+.bt6 .region-user3 .block-icon,
+.bt6 #sidebar-right .block_3 .block-icon,
+.bt6 #sidebar-right .block_7 .block-icon {
+	background-position: 0 -180px; /* pink */
+}
+.bt6 .region-user4 .block-icon,
+.bt6 #sidebar-right .block_4 .block-icon,
+.bt6 #sidebar-right .block_8 .block-icon {
+	background-position: 0 -150px; /* orange */
+}
+
+.bt6 .region-user5 .block-icon,
+.bt6 #sidebar-left .block_1 .block-icon,
+.bt6 #sidebar-left .block_5 .block-icon {
+	background-position: 0 -180px; /* pink */
+}
+.bt6 .region-user6 .block-icon,
+.bt6 #sidebar-left .block_2 .block-icon,
+.bt6 #sidebar-left .block_6 .block-icon {
+	background-position: 0 -60px; /* green */
+}
+.bt6 .region-user7 .block-icon,
+.bt6 #sidebar-left .block_3 .block-icon,
+.bt6 #sidebar-left .block_7 .block-icon {
+	background-position: 0 -150px; /* orange */
+}
+.bt6 .region-user8 .block-icon,
+.bt6 #sidebar-left .block_4 .block-icon,
+.bt6 #sidebar-left .block_8 .block-icon {
+	background-position: 0 0; /* blue */
+}

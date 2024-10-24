@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for a submit form button element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{%
+  set classes = [
+    'rvt-button',
+    attributes.hasClass('webform-button--previous') ? 'rvt-button--secondary',
+    attributes.hasClass('button--primary') ? 'rvt-button--primary',
+    attributes.hasClass('button--secondary') ? 'rvt-button--secondary',
+    attributes.hasClass('button--danger') ? 'rvt-button--danger',
+  ]
+%}
+<input{{ attributes.addClass(classes).removeClass('button','button--primary','button--secondary','button--danger') }}/>
+

@@ -1,0 +1,15 @@
+{% set attributes = attributes.addClass('loading') %}
+
+{% if variant %}
+{% set attributes = (variant != 'default') ? attributes.addClass('loading-' ~ variant) : attributes %}
+{% endif %}
+
+{% if size %}
+    {% set attributes = attributes.addClass('loading-' ~ size) %}
+{% endif %}
+
+{% if color %}
+    {% set attributes = attributes.addClass('text-' ~ color) %}
+{% endif %}
+
+<span {{ attributes }}></span>

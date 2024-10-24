@@ -1,0 +1,9 @@
+ui_patterns_devel.overview:
+  route_name: ui_patterns_devel.twig_validator
+  title: "Overview"
+  base_route: ui_patterns_devel.twig_validator
+
+ui_patterns_devel.overview_details:
+  route_name: ui_patterns_devel.twig_validator.details
+  title: "Details"
+  base_route: ui_patterns_devel.twig_validator

@@ -1,0 +1,108 @@
+/* Main
+---------------------------------------- */
+/* Main -> Admin tabs */
+ul.page-tabs {
+  border-bottom: 2px solid var(--border);
+}
+.page-tabs li a {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.page-tabs li a {
+  background: var(--light);
+  color: var(--primary);
+  border-right: 2px solid var(--border);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.page-tabs li.active-page-tab a,
+.page-tabs li a:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+/* Main -> Entity reference */
+.taxonomy-term a {
+  background-color: var(--light);
+  border: 0;
+  border-radius: 40px;
+  box-shadow: 0 0 4px 1px var(--primary);
+}
+.taxonomy-term a:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+/* Main -> Filter Module */
+.filter-wrapper {
+  border: 1px solid var(--border);
+}
+/* Main -> node -> Title */
+.node-title a {
+  position: relative;
+  transition: color 0.4s;
+}
+.node-readmore,
+.node-links-container .comment-forbidden,
+.node-links-container .comment-add {
+  position: relative;
+  transition: all 0.4s;
+}
+.node-readmore::after {
+  content: '\2192';
+  transition: all 0.4s;
+  padding-left: 2px;
+}
+.node-readmore:hover::after {
+  padding-left: 12px;
+}
+.node-links-container .comment-forbidden::before,
+.node-links-container .comment-add::before {
+  content: "+";
+  padding-right: 6px;
+}
+.node-title a:hover,
+.node-links-container .node-readmore a:hover,
+.comment-forbidden a:hover,
+.node-links-container .comment-add a:hover,
+.node-links-container .comment-comments a:hover {
+  color: var(--dark);
+}
+.node-links-container .node-readmore a,
+.node-links-container .comment-forbidden a,
+.node-links-container .comment-add a,
+.node-links-container .comment-comments a {
+  position: relative;
+}
+.node-title a::after,
+.node-links-container .node-readmore a::before,
+.node-links-container .comment-forbidden a::before,
+.node-links-container .comment-add a::before,
+.node-links-container .comment-comments a::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--theme-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.node-title a:hover::after,
+.node-links-container .node-readmore a:hover::before,
+.comment-forbidden a:hover::before,
+.node-links-container .comment-add a:hover::before,
+.node-links-container .comment-comments a:hover::before {
+  transform: scaleX(1);
+}
+/* Node Content */
+.node-content input[type="text"]:focus,
+.node-content input[type="email"]:focus,
+.node-content input[type="url"]:focus,
+.node-content input[type="password"]:focus,
+.node-content input[type="search"]:focus,
+.node-content textarea:focus {
+  box-shadow: 0 0 3px var(--secondary);
+}

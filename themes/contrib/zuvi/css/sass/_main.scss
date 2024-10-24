@@ -1,0 +1,217 @@
+/* Main -> Content top and content bottom block regions */
+.region-content-top,
+.region-content-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.content-top .block {
+  padding-bottom: 1.5rem;
+}
+.content-bottom .block {
+  padding-top: 1.5rem;
+}
+
+/* Main -> Admin Tabs */
+.page-tabs {
+  margin: 0 0 0.6em 0;
+  padding: 0 0 1px 0;
+  border-bottom: 1px solid var(--border-color);
+  list-style: none;
+}
+.page-tabs li {
+  display: inline-block;
+  padding: 0;
+}
+.page-tabs li a {
+  background-color: var(--border-color);
+  color: #ffffff;
+  padding: 4px 10px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.page-tabs li.active-page-tab a,
+.page-tabs li a:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Main -> Node */
+.node,
+.node-promoted,
+.node-sticky,
+.node-view-mode-full,
+.node-unpublished {
+  position: relative;
+}
+
+/* Main -> node -> teaser view */
+.node-view-mode-teaser {
+  position: relative;
+  background-color: var(--bg-content);
+  padding: 1rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.node-view-mode-teaser.node-sticky {
+  border: 1px solid var(--border-color);
+}
+.node-view-mode-full .node-taxonomy-container {
+  margin: 0;
+}
+
+/* Main -> node -> Title */
+.node-title a {
+  position: relative;
+  transition: color 0.4s;
+}
+.node-title a::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.node-title a:hover::after {
+  transform: scaleX(1);
+}
+.node-title a:hover {
+  color: #ffffff;
+}
+
+/* Main -> node -> submitted details */
+.node-header {
+  position: relative;
+  display: block;
+  font-size: 0.8rem;
+  width: 100%;
+  margin: 0 0 1rem 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.author-picture img {
+  width: auto;
+  height: 25px;
+  margin: 0 6px 0 0;
+}
+.node-submitted-details {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+.node-submitted-details a,
+.node-submitted-details a:visited {
+  color: #ffffff;
+}
+.node-submitted-details a:hover {
+  border-bottom: 1px dotted var(--border-color);
+}
+.node-submitted-details i {
+  margin: 0 0 0 1em;
+  color: var(--color-primary);
+}
+.node-submitted-details i.user-icon {
+  margin-left: 0;
+}
+
+/* Main -> node -> taxonomy and links */
+.node-taxonomy-container,
+.node-links-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 1em 0;
+  border-top: 1px solid var(--border-color);
+}
+h3.term-title {
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 1;
+}
+ul.taxonomy-terms {
+  margin: 1em 0 0.2em 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+li.taxonomy-term {
+  position: relative;
+  display: inline-block;
+}
+li.taxonomy-term a {
+  padding: 6px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+li.taxonomy-term a:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+li.taxonomy-term a::before {
+  content: '#';
+  margin-right: 5px;
+}
+.node-links-container ul.links {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+
+/* read more link */
+li.node-readmore {
+  float: right;
+  margin: 0;
+}
+li.node-readmore a {
+  position: relative;
+  color: #ffffff;
+  border: 2px solid var(--color-primary);
+  border-radius: 50px;
+  padding: 0.4em 0.8em;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+li.node-readmore a:hover {
+  color: var(--color-primary);
+  padding: 0.6em 3em 0.6em 1em;
+}
+li.node-readmore a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  height: 2px;
+  width: 0;
+  background: var(--color-primary);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+li.node-readmore a:hover::after {
+  width: 2em;
+}
+/* Node content (page or articles) */
+.field--name-body input[type="text"],
+.field--name-body input[type="email"],
+.field--name-body input[type="url"],
+.field--name-body input[type="password"],
+.field--name-body input[type="search"],
+.field--name-body textarea {
+  display: block;
+  margin-bottom: 0.8em;
+}

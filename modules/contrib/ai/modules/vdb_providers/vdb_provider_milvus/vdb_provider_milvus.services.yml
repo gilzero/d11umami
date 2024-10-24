@@ -1,0 +1,4 @@
+services:
+  milvus_v2.api:
+    class: Drupal\vdb_provider_milvus\MilvusV2
+    arguments: ['@http_client']

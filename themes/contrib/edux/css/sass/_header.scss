@@ -1,0 +1,113 @@
+/* Header Top
+------------------------------- */
+.header-top {
+  background: var(--dark);
+  color: var(--light);
+}
+.header-top a {
+  color: var(--light);
+}
+.header-top a:hover,
+.header-top i {
+  color: var(--primary);
+}
+.header-top-container {
+  display: flex;
+  justify-content: space-between;
+}
+.header-top-block {
+  text-align: center;
+}
+.header-top-block .block-title {
+  color: var(--primary);
+}
+/* Header
+------------------------------- */
+.header {
+  background: var(--secondary);
+  color: #ffffff;
+}
+.header a,
+.page-header a{
+  color: var(--primary);
+}
+.header-container {
+  padding: 1rem 0;
+}
+.site-brand img {
+  max-height: 50px;
+  display: block;
+}
+.site-name {
+  color: var(--primary);
+  font-weight: 700;
+}
+.site-name a:hover {
+  color: var(--primary);
+}
+/* Header -> Main menu */
+.mobile-menu span:nth-child(2) {
+  background-color: #ffffff;
+}
+.menu-wrap {
+  font-family: var(--heading-font);
+}
+.menu-wrap ul.menu > li {
+  margin-left: 0;
+}
+.menu-wrap ul.menu li > a {
+  padding: 10px;
+}
+/* Header -> search block region */
+.search-icon {
+  width: 36px;
+  height: 36px;
+  margin: 0;
+}
+.search-icon img {
+  max-height: 30px;
+}
+.search-box {
+  background-color: var(--dark);
+}
+.search-box-content .block-title,
+.search-box-content form label {
+  color: var(--light);
+}
+.search-box-content input[type="search"] {
+  background: url(../images/icons/search-icon.svg) top right no-repeat;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  border-bottom: 2px solid var(--border);
+}
+.search-box-content input[type="search"]:focus {
+  background: url(../images/icons/search-icon.svg) top right no-repeat;
+  border: 0;
+  border-bottom: 2px solid var(--border);
+}
+.search-box-content input[type="search"]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--dark) inset;
+  background-color: transparent;
+  color: #ffffff;
+}
+.header-search-close {
+  color: #ffffff;
+  border: 3px solid var(--primary);
+}
+/* Header -> Page header */
+.page-header {
+  background: var(--secondary);
+  color: #ffffff;
+}
+.page-header a:hover {
+  color: #ffffff;
+}
+.region-page-header {
+  align-items: center;
+}
+.breadcrumb {
+  color: var(--light);
+}
+.page-header .page-title {
+  color: #ffffff;
+}

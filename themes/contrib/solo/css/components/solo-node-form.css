@@ -1,0 +1,291 @@
+details.form-wrapper::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+details.form-wrapper {
+  padding: 0 !important;
+  margin-bottom: var(--solo-px16) !important;
+  line-height: inherit;
+  color: inherit;
+  box-shadow: 0 1px 4px var(--r-br, var(--r-br-b));
+}
+
+details.form-wrapper > summary {
+  cursor: pointer;
+  padding: var(--solo-px8) var(--solo-px16);
+}
+
+form div.container-inline>* {
+  margin: var(--solo-px8) var(--solo-px8) var(--solo-px8) 0;
+}
+
+form .fieldset-wrapper .form-item {
+  margin-top: var(--solo-px8);
+  margin-bottom: var(--solo-px8);
+}
+
+.details-wrapper {
+  margin: var(--solo-px16);
+  display: grid;
+}
+
+.modules-wrapper details[open] {
+  padding: var(--solo-px8) var(--solo-px16) !important;
+}
+
+.vertical-tabs details[open] {
+  padding: 0 !important;
+}
+
+form .tableselect-sort th:first-child,
+form .tableselect-sort td:first-child {
+  width: 85px;
+}
+
+form tr.draggable td > a,
+form tr.draggable td > div.form-type-radio,
+form tr.draggable td > div.form-type-checkbox {
+  float: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  clear: none !important;
+}
+
+form a.tabledrag-handle .handle {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+form .draggable a.tabledrag-handle {
+  margin: -3px 5px 0 0 !important;
+  width: 25px;
+}
+
+form tr.draggable .solo-check,
+form tr.draggable .solo-radio {
+  top: 0;
+}
+
+form .field-multiple-drag {
+  width: 50px;
+}
+
+form div.form-type-datelist.solo-section.form-item {
+  width: auto;
+  clear: none;
+}
+
+.form-type-datelist > div {
+  padding-left: 0;
+}
+
+form #edit-datelist,
+form #edit-datetime {
+  padding: 0;
+  margin: 0;
+}
+
+form #edit-datetime > div {
+  float: left;
+  margin: 0 !important;
+  width: 50%;
+}
+
+form  #edit-datetime > div input {
+  min-width: 165px;
+}
+
+form .form-type-date,
+form .form-type-datetime,
+form .form-type-webform-time {
+  width: 50% !important;
+  float: left;
+  clear: none;
+}
+
+form .form-type-date input,
+form .form-type-datetime input,
+form .form-type-webform-time input {
+  width: calc(100% - 2px);
+}
+
+form .form-item-range > span.field-suffix,
+form .form-item-range .form-item-range__output {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+form .form-item-range .form-item-range__output input {
+  width: 4em;
+  display: inline-block;
+  clear: none;
+}
+
+form .form-item-datelist #edit-datelist > div select {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+form .table-sort-weight.form-select {
+  width: auto;
+}
+
+form select {
+  min-width: 75px;
+}
+
+.messages.messages--info {
+  background-position: 2px  17px;
+}
+
+.js-filter-guidelines {
+  font-size: 85%;
+}
+
+.js-filter-guidelines li {
+  padding-bottom: 0;
+}
+
+form .form-item {
+  text-align: left;
+}
+
+fieldset.form-item > .fieldset-wrapper {
+  padding: var(--solo-px8);
+}
+
+.field-ui-overview .field-plugin-settings-edit {
+  width: auto !important;
+  max-width: 40px;
+}
+
+form .form-item label {
+  padding-right: 10px;
+}
+
+table ul.dropbutton li.solo-left.dropbutton-action {
+  float: none !important;
+  z-index: 1;
+  margin-right: 0 !important;
+  line-height: 26px;
+}
+
+table ul.dropbutton,
+.js .dropbutton-widget .dropbutton {
+  padding: 0 !important;
+}
+
+.dropbutton li {
+  padding: 0;
+}
+
+.dropbutton li a {
+  padding: 6px 12px;
+  line-height: 26px;
+  font-size: 14px;
+}
+
+.dropbutton button {
+  border-left: none;
+}
+
+.js td .dropbutton-wrapper {
+  min-height: 50px;
+}
+
+table ul.dropbutton li:first-child {
+  margin-right: 10px !important;
+}
+
+.node-form table ul.dropbutton li:first-child {
+  margin-right: 0 !important;
+}
+
+table ul.dropbutton li.dropbutton-toggle {
+  margin-right: 0 !important;
+  margin-left: 10px;
+}
+
+/* Node preview */
+.node-preview-container {
+  position: relative;
+  background-color: transparent;
+}
+
+.node-preview-container .node-preview-form-select {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  height: 100%;
+  margin: 0 auto !important;
+}
+
+.node-preview-container a.node-preview-backlink {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.node-preview-container a.node-preview-backlink:hover {
+  text-decoration: underline;
+}
+
+div.node-preview-container .form-item-view-mode {
+  display: inline-flex;
+  align-items: center;
+}
+
+div.node-preview-container .form-item-view-mode label,
+div.node-preview-container .form-item-view-mode select {
+  display: inline-block;
+  width: auto;
+  border: none !important;
+}
+
+div.node-preview-container .form-item-view-mode select {
+  min-width: 130px;
+}
+
+.ui-dialog .ui-widget-content.ui-dialog-buttonpane .button {
+  margin: 10px auto;
+}
+
+.ui-dialog,
+.ui-dialog > div {
+  border-width: 0 !important;
+}
+
+body .ui-dialog {
+  z-index: 1001 !important;
+}
+
+span.admin-link button,
+span.field-edit-link button {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.fieldset-wrapper>.form-checkboxes {
+  display: grid;
+}
+
+form .form--inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+form .form--inline .form-actions {
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+
+form .pb-tab-display [data-drupal-selector="para-color-picker"] .form-color {
+  min-height: 54px;
+}

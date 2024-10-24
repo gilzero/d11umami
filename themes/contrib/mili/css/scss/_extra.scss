@@ -1,0 +1,23 @@
+/*
+ * CLearing
+ */
+
+/* Clearing -> main and blocks */
+.home-content .block::before,
+.home-content .block::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Clearing -> Node contents */
+.node-taxonomy-container::before,
+.node-taxonomy-container::after,
+.node-links-container::before,
+.node-links-container::after,
+nav.pager::before,
+nav.pager::after {
+    content: "";
+    display: table;
+    clear: both;
+}

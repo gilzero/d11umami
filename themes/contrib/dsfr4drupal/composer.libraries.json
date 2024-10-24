@@ -1,0 +1,26 @@
+{
+    "name": "drupal/dsfr4drupal",
+    "type": "drupal-theme",
+    "description": "Base theme based on DSFR.",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "gouv/dsfr": "^1.12"
+    },
+    "repositories": {
+        "dsfr": {
+            "type": "package",
+            "package": {
+                "name": "gouv/dsfr",
+                "version": "1.12.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/GouvernementFR/dsfr/releases/download/v1.12.1/dsfr-v1.12.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0 || ~2.0"
+                }
+            }
+        }
+    }
+}

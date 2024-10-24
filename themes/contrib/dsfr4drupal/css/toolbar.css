@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Fix toolbar styling.
+ */
+
+.toolbar a {
+  background-image: none;
+  cursor: pointer;
+
+  --hover-tint: none;
+  --active-tint: none;
+}
+
+.toolbar-oriented .toolbar-bar {
+  z-index: calc(var(--ground) + 1000)
+}

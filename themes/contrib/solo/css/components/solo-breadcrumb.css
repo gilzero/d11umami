@@ -1,0 +1,50 @@
+.breadcrumb>.breadcrumb-inner {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.breadcrumb-nav {
+  display: grid;
+}
+
+ul.breadcrumb-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+ul.breadcrumb-menu li {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  border-bottom: none;
+}
+
+ul.breadcrumb-menu li > a {
+  display: flex;
+  align-items: center;
+  padding: var(--solo-px16) var(--solo-px6) var(--solo-px16) var(--solo-px12);
+}
+
+ul.breadcrumb-menu li > span {
+  display: flex;
+  align-items: center;
+  padding: var(--solo-px16) var(--solo-px6) var(--solo-px16) var(--solo-px5);
+}
+
+.breadcrumb-menu li .breadcrumb-sep {
+  display: flex;
+  align-items: center;
+  fill: var(--r-tx);
+}
+
+.solo__bc-scroll ul.breadcrumb-menu {
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}

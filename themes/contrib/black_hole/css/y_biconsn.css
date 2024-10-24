@@ -1,0 +1,187 @@
+/* BLOCK ICONS (negative images) */
+
+.bi32 .block-icon {
+	background: url(../images/_sprites_block_32n.png) no-repeat 0 99px;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	margin: -5px 0 0 -5px; /* LTR */
+}
+[dir="rtl"] .bi32 .block-icon {
+	margin: -5px -5px 0 0;
+}
+.bi48 .block-icon {
+	background: url(../images/_sprites_block_48n.png) no-repeat 0 99px;
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	margin: -15px 0 0 -18px; /* LTR */
+}
+[dir="rtl"] .bi48 .block-icon {
+	margin: -15px -18px 0 0;
+}
+.bi32 .block-title, 
+.bi48 .block-title {
+	margin: 0;
+	padding: 6px 6px 10px 32px; /* LTR */
+}
+[dir="rtl"] .bi32 .block-title, 
+[dir="rtl"] .bi48 .block-title {
+	padding: 6px 32px 10px 6px;
+}
+#mission .block-title,
+#content-above .block-title,
+#content-below .block-title {
+	padding: .83em 0;
+}
+
+
+
+/*--- menu default / catalog (icon_7 table) ---*/
+.bi32 .block-menu .block-icon, .bi32 .block-uc_catalog .block-icon { background-position: 0 -252px; }
+.bi48 .block-menu .block-icon, .bi48 .block-uc_catalog .block-icon { background-position: 0 -348px; }
+
+/*--- views default (icon_11 notebook_1) ---*/
+.bi32 .block-views .block-icon { background-position: 0 -420px; }
+.bi48 .block-views .block-icon { background-position: 0 -580px; }
+
+
+
+/*--- user login (icon_1 keys) ---*/
+.bi32 .block-user-login-block .block-icon { background-position: 0 0; }
+.bi48 .block-user-login-block .block-icon { background-position: 0 0; }
+
+/*--- tools (icon_2 star) ---*/
+.bi32 .menu--tools .block-icon { background-position: 0 -42px; }
+.bi48 .menu--tools .block-icon { background-position: 0 -58px; }
+
+/*--- shortcut(icon_3 star/folder) ---*/
+.bi32 .block-shortcut .block-icon { background-position: 0 -84px; }
+.bi48 .block-shortcut .block-icon { background-position: 0 -116px; }
+
+/*--- admin (icon_4 gear) ---*/
+.bi32 .menu--admin .block-icon, .bi32 [id^="block-primaryadmin"] .block-icon { background-position: 0 -126px; }
+.bi48 .menu--admin .block-icon, .bi48 [id^="block-primaryadmin"] .block-icon { background-position: 0 -174px; }
+
+/*--- search (icon_5) ---*/
+.bi32 .block-search .block-icon, .bi32 .block-google_cse .block-icon { background-position: 0 -168px; }
+.bi48 .block-search .block-icon, .bi48 .block-google_cse .block-icon { background-position: 0 -232px; }
+
+/*--- locale (icon_6) ---*/
+.bi32 .block-language .block-icon { background-position: 0 -210px; }
+.bi48 .block-language .block-icon { background-position: 0 -290px; }
+
+/*--- image gallery views (icon_8 image) ---*/
+.bi32 [id^="block-views-block-image-gallery"] .block-icon { background-position: 0 -294px; }
+.bi48 [id^="block-views-block-image-gallery"] .block-icon { background-position: 0 -406px; }
+
+/*--- blog views (icon_9 calendar) ---*/
+.bi32 [id^="block-views-block-blog"] .block-icon {	background-position: 0 -336px; }
+.bi48 [id^="block-views-block-blog"] .block-icon {	background-position: 0 -464px; }
+
+/*--- book (icon_10) ---*/
+.bi32 .block-book .block-icon { background-position: 0 -378px; }
+.bi48 .block-book .block-icon { background-position: 0 -522px; }
+
+/*--- recent content views (icon_12 notebook_2) ---*/
+.bi32 [id^="block-views-block-content-recent-block"] .block-icon { background-position: 0 -462px; }
+.bi48 [id^="block-views-block-content-recent-block"] .block-icon { background-position: 0 -638px; }
+
+/*--- popular content (icon_13 pin) ---*/
+.bi32 .block-statistics-popular-block .block-icon { background-position: 0 -504px; }
+.bi48 .block-statistics-popular-block .block-icon { background-position: 0 -696px; }
+
+/*--- comments views (icon_14) ---*/
+.bi32 [id^="block-views-block-comments-recent-block"] .block-icon { background-position: 0 -546px; }
+.bi48 [id^="block-views-block-comments-recent-block"] .block-icon { background-position: 0 -754px; }
+
+/*--- forums views (icon_15) ---*/
+.bi32 .block-forum .block-icon { background-position: 0 -588px; }
+.bi48 .block-forum .block-icon { background-position: 0 -812px; }
+
+/*--- poll views (icon_16) ---*/
+.bi32 .block-poll .block-icon { background-position: 0 -630px; }
+.bi48 .block-poll .block-icon { background-position: 0 -870px; }
+
+/*--- who's new (icon_17) ---*/
+.bi32 [id^="block-views-block-who-s-online"] .block-icon { background-position: 0 -672px; }
+.bi48 [id^="block-views-block-who-s-online"] .block-icon { background-position: 0 -928px; }
+
+/*--- (icon_18 add) ---*
+{ background-position: 0 -714px; }
+{ background-position: 0 -986px; }*/
+
+/*--- help (icon_19) ---*/
+.bi32 .block-help .block-icon { background-position: 0 -756px; }
+.bi48 .block-help .block-icon { background-position: 0 -1044px; }
+
+/*--- entity view user (icon_20) ---*/
+.bi32 .menu--account .block-icon, .bi32 .block-entity-viewuser .block-icon { background-position: 0 -798px; }
+.bi48 .menu--account .block-icon, .bi48 .block-entity-viewuser .block-icon { background-position: 0 -1102px; }
+
+/*--- who's online, swich users (icon_21) ---*/
+.bi32 [id^="block-views-block-who-s-new"] .block-icon, .bi32 #block-switchuser .block-icon { background-position: 0 -840px; }
+.bi48 [id^="block-views-block-who-s-new"] .block-icon, .bi48 #block-switchuser .block-icon { background-position: 0 -1160px; }
+
+/*--- weather (icon_22) ---*/
+.bi32 .block-weather .block-icon { background-position: 0 -882px; }
+.bi48 .block-weather .block-icon { background-position: 0 -1218px; }
+
+/*--- timezone (icon_23) ---*/
+.bi32 .block-mtc .block-icon { background-position: 0 -924px; }
+.bi48 .block-mtc .block-icon { background-position: 0 -1276px; }
+
+/*--- syndicate (icon_24) ---*/
+.bi32 #block-syndicate .block-icon { background-position: 0 -966px; }
+.bi48 #block-syndicate .block-icon { background-position: 0 -1334px; }
+
+/*--- (icon_25 email) ---*/
+.bi32 [id^="block-contact"] .block-icon { background-position: 0 -1008px; }
+.bi48 [id^="block-contact"] .block-icon { background-position: 0 -1392px; }
+
+/*--- (icon_26 home) ---*
+{ background-position: 0 -1050px; }
+{ background-position: 0 -1450px; }*/
+
+/*--- aggregator views (icon_27 newspaper) ---*/
+.bi32 .block-aggregator .block-icon { background-position: 0 -1092px; }
+.bi48 .block-aggregator .block-icon { background-position: 0 -1508px; }
+
+/*--- shopping cart (icon_28) ---*/
+.bi32 .block-commerce-cart .block-icon, .bi32 .block-uc_cart .block-icon { background-position: 0 -1134px; }
+.bi48 .block-commerce-cart .block-icon, .bi48 .block-uc_cart .block-icon { background-position: 0 -1566px; }
+
+.bi32 .cart-block-icon-empty, .bi32 .cart-block-icon-full,
+.bi48 .cart-block-icon-empty, .bi48 .cart-block-icon-full {
+	background: none;
+	margin: 0;
+	width: 0;
+}
+
+/*--- (icon_29 multimedia) ---*
+{ background-position: 0 -1176px; }
+{ background-position: 0 -1624px; }*/
+
+/*--- (icon_30 check) ---*
+{ background-position: 0 -1218px; }
+{ background-position: 0 -1682px; }*/
+
+/*--- (icon_31 charts) ---*
+{ background-position: 0 -1260px; }
+{ background-position: 0 -1740px; }*/
+
+/*--- entity view taxonomy term (icon_32) ---*/
+.bi32 .block-entity-viewtaxonomy-term .block-icon { background-position: 0 -1302px; }
+.bi48 .block-entity-viewtaxonomy-term .block-icon { background-position: 0 -1798px; }
+
+/*--- print links (icon_33) ---*/
+.bi32 .block-print-links .block-icon { background-position: 0 -1344px; }
+.bi48 .block-print-links .block-icon { background-position: 0 -1856px; }
+
+/*--- (icon_34 download) ---*
+{ background-position: 0 -1386px; }
+{ background-position: 0 -1914px; }*/
+
+/*--- addtoany (icon_35 globe) ---*/
+.bi32 .block-addtoany .block-icon { background-position: 0 -1428px; }
+.bi48 .block-addtoany .block-icon { background-position: 0 -1972px; }

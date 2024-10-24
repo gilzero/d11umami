@@ -1,0 +1,55 @@
+/**
+ * @file
+ * Alerts.
+ */
+
+ .messages.messages {
+	border-width: 2px 2px 2px 5px;
+	background-color: $ck-grey;
+	color: $text-dark;
+	a {
+		color: $text-dark;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	&--error {
+		border-color: $nttdata-red;
+		background-color: $nttdata-red-background;
+	}
+	&--status {
+		border-color: $beautiful-green;
+		background-color: $beautiful-green-background;
+	}
+	&--warning {
+		border-color: $delightful-yellow;
+		background-color: $delightful-yellow-background;
+	}
+	&--info {
+		border-color: $u-smart-navy;
+		background-color: $blue-light;
+	}
+	&--info,
+	&--webform.messages-list__item {
+		border-width: 1px 1px 1px 5px;
+		border-color: $black-pearl;
+		background-color: $black-pearl-background !important;
+		.messages__content {
+			color: $text-dark;
+			.button-action {
+				@extend %button-primary;
+				margin: 2.5px 10px 0;
+			}
+			.webform-message__link {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.system-themes-list .card__footer.clear--padding {
+	padding-left: 0;
+	.theme-info__requires {
+		margin-bottom: var(--space-m);
+	}
+}

@@ -1,0 +1,21 @@
+/* Fonts
+------------------------- */
+/* poppins-regular */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins.woff2') format('woff2'),
+       url('../fonts/poppins.woff') format('woff');
+}
+
+/* plus-jakarta-sans-700 */
+@font-face {
+  font-display: swap;
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/plus-jakarta-sans.woff2') format('woff2'),
+       url('../fonts/plus-jakarta-sans.woff') format('woff');
+}

@@ -1,0 +1,15 @@
+{% set attributes = attributes.addClass('join') %}
+
+{% if variant and variant != 'vertical_responsive' %}
+  {% set attributes = (variant != 'default') ? attributes.addClass('join-' ~ variant) : attributes %}
+{% elseif variant == 'vertical_responsive' %}
+  {% set attributes = attributes.addClass(['join-vertical', 'lg:join-horizontal']) %}
+{% endif %}
+
+{% if items %}
+<div {{ attributes }}>
+{% for item in items %}
+  {{ item|add_class('join-item') }}
+{% endfor %}
+</div>
+{% endif %}

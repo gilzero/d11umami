@@ -1,0 +1,35 @@
+{{ attach_library('edux/slider') }}
+<section class="slider">
+  <div class="container slider-container">
+    <div class="slider-text">
+      <ul class="js-rotating">
+        {% if slider_code != '' %}
+          {{ slider_code | striptags('<ol>,<ul>,<li>,<p>,<a>,<img>,<video>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<em>,<strong>,<br>,<i>,<button>,<mark>,<hr>') | raw }}
+        {% else %}
+        <li>
+  				<h1>Limitless <em>Learning</em> And Get More Possibilities</h1>
+  				<p>EduX Theme is packed full of all the amazing features and options for you to create an amazing education website.</p>
+  				<a class="button-dark" href="#">Get Started</a>
+  			</li>
+  			<li>
+  				<h1><em>Pratical</em> Teachings and <em>Social</em> Development</h1>
+  				<p>Learn anytime with our free online study materials and videos. Get your doubts cleared by expert teachers.</p>
+  				<a class="button-dark" href="#">Get Started</a>
+  			</li>
+  			<li>
+  				<h1>Learn New <em>Skills</em>, Advance Your <em>Career</em></h1>
+  				<p>We have high academic programs and fully qualified faculties with over 12 years of teaching experience.</p>
+  				<a class="button-dark" href="#">Get Started</a>
+  			</li>
+        {% endif %}
+      </ul> <!--/.home-slider -->
+    </div><!-- /slider-text -->
+    <div class="slider-image">
+      {% if slider_image_path != '' %}
+        <img src="{{ slider_image_path }}" alt="slider image" />
+      {% else %}
+        <img src="{{ directory }}/images/demo/slider.svg" alt="slider image" />
+      {% endif %}
+    </div><!-- /slider-image -->
+  </div> <!--/.container -->
+</section>

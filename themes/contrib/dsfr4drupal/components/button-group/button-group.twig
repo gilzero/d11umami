@@ -1,0 +1,34 @@
+{% set attributes = attributes|default(create_attribute()) %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-btns-group--' ~ variant) %}
+{% endif %}
+
+{% if inline %}
+  {% if inline_from %}
+    {% set attributes = attributes.addClass('fr-btns-group--inline-' ~ inline_from) %}
+  {% else %}
+    {% set attributes = attributes.addClass('fr-btns-group--inline') %}
+  {% endif %}
+{% endif %}
+
+{% if position %}
+  {% set attributes = attributes.addClass('fr-btns-group--' ~ position) %}
+{% endif %}
+
+{% if inline %}
+  {% set attributes = attributes.addClass('fr-btns-group--inline') %}
+{% endif %}
+
+{% if equisized %}
+  {% set attributes = attributes.addClass('fr-btns-group--equisized') %}
+{% endif %}
+
+<ul{{ attributes.addClass('fr-btns-group') }}>
+  {% for item in items %}
+    <li>
+      {{ include('dsfr4drupal:button', item, with_context=false) }}
+    </li>
+  {% endfor %}
+</ul>
+{{ attach_library('dsfr4drupal/component.button') }}

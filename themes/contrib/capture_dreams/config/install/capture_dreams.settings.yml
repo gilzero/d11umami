@@ -1,0 +1,25 @@
+favicon:
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  use_default: true
+slideshow_display: 1
+slide_num: 2
+slide_title_1: 'What is Lorem Ipsum?'
+slide_desc_1:
+  value: "<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>"
+  format: basic_html
+slide_image_1: {  }
+slide_url_1: '#'
+slide_url_title_1: 'Button text'
+slide_title_2: 'Why do we use it?'
+slide_desc_2:
+  value: '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>'
+  format: basic_html
+slide_image_2: {  }
+slide_url_2: 'https://virasatsolutions.com/'
+slide_url_title_2: 'virasat solutions'

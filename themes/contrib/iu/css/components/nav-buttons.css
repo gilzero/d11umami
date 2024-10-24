@@ -1,0 +1,59 @@
+/* Add support to IU Framework for buttons in main and mobile menus */
+nav.main .button {
+  color: #fff;
+  text-transform: none;
+  margin: 0;
+}
+nav.main .button::after {
+  display: none !important;
+}
+nav.main .button:focus,
+nav.main .button:hover {
+  color: #900;
+}
+nav.main .button.invert:focus,
+nav.main .button.invert:hover {
+  color: #fff;
+}
+nav.main .button.invert {
+  color: #900;
+}
+nav.main.is-sticky .button {
+  margin: -8px 0;
+}
+nav.main.is-sticky .button:focus,
+nav.main.is-sticky .button:hover {
+  border-color: #fff;
+  color: #fff;
+}
+nav.main.is-sticky .button.invert {
+  border-color: #fff;
+  color: #fff;
+}
+nav.main.is-sticky .button.invert:focus,
+nav.main.is-sticky .button.invert:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #900;
+}
+
+nav.mobile .button,
+nav.mobile .button:focus,
+nav.mobile .button:hover,
+nav.mobile .button.invert,
+nav.mobile .button.invert:focus,
+nav.mobile .button.invert:hover {
+  color: #243142;
+  background-color: transparent;
+  border-top: 1px solid #fff;
+  border-bottom: 0 !important;
+  border-left: 3px solid transparent;
+  border-right: 0;
+  border-radius: 0;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+nav.mobile .button.is-active {
+  border-left-color: #900;
+}

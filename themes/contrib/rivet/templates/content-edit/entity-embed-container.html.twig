@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Template display for embedded entities.
+ */
+#}
+{% set has_breakout = 'rvt_layout__breakout' in attributes['data-entity-embed-display']|render %}
+{% set has_alignment = 'align-' in attributes.class|render %}
+{% set is_left_align = 'align-left' in attributes.class|render %}
+{% set is_right_align = 'align-right' in attributes.class|render %}
+{% set is_center_align = 'align-center' in attributes.class|render %}
+{% set is_breakout = has_breakout and not is_left_align and not is_right_align %}
+
+{%
+  set classes = [
+    is_breakout ? 'rvt-layout__break-out',
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>{{ children }}</div>

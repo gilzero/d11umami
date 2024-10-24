@@ -1,0 +1,46 @@
+name: "(Avatar group)"
+description: "Avatar groups are used to show a group of avatar."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/avatar/"
+slots:
+  items:
+    title: Items
+    description: "Expect a list of Avatar item components"
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: component
+          component: "ui_suite_daisyui:avatar"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          props:
+            size: w-12
+        - type: component
+          component: "ui_suite_daisyui:avatar"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          props:
+            size: w-12
+        - type: component
+          component: "ui_suite_daisyui:avatar"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          props:
+            size: w-12
+        - type: component
+          component: "ui_suite_daisyui:avatar"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          props:
+            size: w-12

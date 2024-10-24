@@ -1,0 +1,102 @@
+<?php
+/**
+ * Mahi theme overrides and preprocess functions.
+ */
+use Drupal\file\Entity\File;
+/**
+ * Sanitise input urls.
+ */
+function santise_val_url($url) {
+	if ($url != '') {
+		// Sanitise (remove all illegal characters) from url.
+		$url = filter_var($url, FILTER_SANITIZE_URL);
+		// Validate url.
+		if (filter_var($url, FILTER_VALIDATE_URL) == TRUE) {
+			$url = $url;
+		} else {
+			$url = '#';
+		}
+		return $url;
+	}
+}
+
+/**
+ * page preprocess
+ */
+function mahi_preprocess_page(array &$variables) {
+	$config = \Drupal::config('system.site');
+	$variables['site_name'] = $config->get('name');
+	$variables['site_slogan'] = $config->get('slogan');
+	$variables['slider_show'] = theme_get_setting('slider_show', 'mahi');
+	$variables['slider_code'] = theme_get_setting('slider_code', 'mahi');
+	$variables['all_icons_show'] = theme_get_setting('all_icons_show', 'mahi');
+	$variables['facebook_url'] = santise_val_url(theme_get_setting('facebook_url', 'mahi'));
+	$variables['twitter_url'] = santise_val_url(theme_get_setting('twitter_url', 'mahi'));
+	$variables['instagram_url'] = santise_val_url(theme_get_setting('instagram_url', 'mahi'));
+	$variables['linkedin_url'] = santise_val_url(theme_get_setting('linkedin_url', 'mahi'));
+	$variables['youtube_url'] = santise_val_url(theme_get_setting('youtube_url', 'mahi'));
+	$variables['vk_url'] = santise_val_url(theme_get_setting('vk_url', 'mahi'));
+	$variables['vimeo_url'] = santise_val_url(theme_get_setting('vimeo_url', 'mahi'));
+	$variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'mahi'));
+	$variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'mahi'));
+	$variables['telegram_url'] = santise_val_url(theme_get_setting('telegram_url', 'mahi'));
+	$variables['scrolltotop_on'] = theme_get_setting('scrolltotop_on', 'mahi');
+	$variables['copyright_text'] = theme_get_setting('copyright_text', 'mahi');
+}
+
+/* *
+ * Node preprocess.
+ */
+function mahi_preprocess_node(array &$variables) {
+	$variables['node_author_pic'] = theme_get_setting('node_author_pic', 'mahi');
+	$variables['node_tags'] = theme_get_setting('node_tags', 'mahi');
+}
+
+/**
+ * Html preprocess for Mahi theme.
+ */
+function mahi_preprocess_html(&$variables) {
+	$variables['base_path'] = base_path();
+	$variables['font_src'] = theme_get_setting('font_src', 'mahi');
+	// Layout
+	$variables['container_width'] = theme_get_setting('container_width', 'mahi');
+	$variables['header_width'] = theme_get_setting('header_width', 'mahi');
+	$variables['main_width'] = theme_get_setting('main_width', 'mahi');
+	$variables['footer_width'] = theme_get_setting('footer_width', 'mahi');
+  $variables['css_extra'] = theme_get_setting('css_extra', 'mahi');
+  $variables['css_code'] = theme_get_setting('css_code', 'mahi');
+	$variables['highlight_author_comment'] = theme_get_setting('highlight_author_comment', 'mahi');
+  $variables['fontawesome_five'] = theme_get_setting('fontawesome_five', 'mahi');
+  $variables['fontawesome_six'] = theme_get_setting('fontawesome_six', 'mahi');
+	$variables['bootstrapicons'] = theme_get_setting('bootstrapicons', 'mahi');
+  $variables['slider_time'] = theme_get_setting('slider_time', 'mahi');
+  $variables['slider_dots'] = theme_get_setting('slider_dots', 'mahi');
+	$variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+	/* Slider image */
+	$slider_images = theme_get_setting('slider_images', 'mahi');
+	if(!empty($slider_images)) {
+		foreach ($slider_images as $fid) {
+			$file = File::load($fid);
+			$file->setPermanent();
+			$file->save();
+			$file_usage = \Drupal::service('file.usage');
+			$file_usage->add($file, 'mahi', 'theme', $fid);
+		}
+	}
+}
+
+/* *
+ * Add current page to breadcrumb.
+ */
+function mahi_preprocess_breadcrumb(&$variables) {
+	$request = \Drupal::request();
+	$route_match = \Drupal::routeMatch();
+	$page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+	if (!empty($page_title)) {
+		$variables['breadcrumb'][] = [
+			'text' => $page_title,
+		];
+		// Add cache context based on url.
+		$variables['#cache']['contexts'][] = 'url';
+	}
+}

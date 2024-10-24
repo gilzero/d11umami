@@ -1,0 +1,436 @@
+/********************/
+/* CUSTOM STYLE CSS */
+/********************/
+/* 
+Place your custom CSS and CSS overrides in this file, after renaming it to 
+'custom-style.css'.
+
+Steps for customizing your theme:
+1. Incorporate your custom CSS into this file.
+2. Uncomment various examples below and adjust the data to your preferences.
+3. Clear cached data at /admin/config/development/performance or use 
+   "Flush all caches" in the Admin Menu, then press CTRL+F5.
+*/
+
+
+
+/* Erase or comment the lines below to get rid of the image in the right 
+   sidebar and the brand image at the bottom */
+#middlecontainer {
+	background: transparent url(../images/_sidebarimg.png) 99% 99% no-repeat;
+}
+#brand {
+	background: url(../images/_brand.png) 50% 0 no-repeat;
+	margin: 0 auto 1em;
+	height: 50px;
+}
+
+
+/******* THEMER STYLE *******/
+/* Put here your custom CSS */
+/****************************/
+
+/*
+#top_bg, .themed-block {
+	background-color: #fff;
+	background-image: -webkit-linear-gradient(bottom, yellow 0%, #fff 150px);
+	background-image: linear-gradient(to top, yellow 0%, #fff 150px);
+}
+#section2 {
+	background-color: #fff;
+	background-image: -webkit-linear-gradient(bottom, #fff 0%, yellow 100px);
+	background-image: linear-gradient(to top, #fff 0%, yellow 100px);
+}
+.region-highlighted {
+	border: solid 1px red;
+}
+h1, h2, h3, .block-title {
+	color: blue;
+}
+a, a:link, #name-and-slogan a {
+	color: red;
+}
+a:hover, a:active, a.is-active, ul.menu a.is-active {
+	color: green;
+}
+.pure-menu-link {
+	color: white !important;
+	background: green;
+}
+.pure-menu-link:hover, .pure-menu-link:focus {
+	background: magenta;
+}
+.pure-menu-children a:hover, .pure-menu-children a:focus {
+	background: magenta;
+}
+.pure-menu-children .pure-menu-link {
+	background: green;
+	border: 1px solid;
+	border-color: red yellow blue lime;
+}
+.menu-toggle .bars {
+	background: #000;
+}
+
+@media screen and (max-width: 48em) {
+	.pure-menu-link, .pure-menu-children,
+	.pure-menu-children .pure-menu-link {
+		color: green !important;
+		background: none;
+		border: none;
+	}
+	.pure-menu-link:hover,
+	.pure-menu-link:focus,
+	.pure-menu-children a:hover,
+	.pure-menu-children a:focus {
+		color: black !important;
+		background: acqua;
+	}
+}
+*/
+
+
+/**************/
+/* TYPOGRAPHY */
+/**************/
+/*
+html {
+	line-height: 1.25;
+}
+p:first-of-type:first-letter {
+	font-size: 200%;
+}*/
+
+
+/************************/
+/* CHANGE LOGO POSITION */
+/************************/
+/*
+.logoimg {
+	padding: .5em 1em;
+}*/
+
+
+/**********************/
+/* ROUND USER PICTURE */
+/**********************/
+/*
+.field--name-user-picture img {
+	border-radius: 100% !important;
+}*/
+
+
+/**********************************/
+/* CHANGES MENU TOGGLE BARS COLOR */
+/**********************************/
+/*
+.menu-toggle { background: #ffd; }
+.menu-toggle .bars { background: #900; }
+*/
+
+
+/*************************/
+/* DROP DOWN ADJUSTMENTS */
+/*************************/
+
+/* no dropdown shadows */
+/*
+.pure-menu-children {
+	box-shadow: none;
+}*/
+
+/* big arrows */
+/*
+.pure-menu-horizontal .pure-menu-has-children > .pure-menu-link:after {
+	content: "\25BC";
+}
+.pure-menu-has-children .pure-menu-has-children > .pure-menu-link:after {
+	content: "\25B6";
+}*/
+
+
+/**************************/
+/* INDIVIDUAL MENU COLORS */
+/**************************/
+/* Uncomment the following lines to have different colors for menu items. */
+
+/* First & last level-1 menu items */
+/*
+.first .primary-nav__menu-link--level-1 {
+	background: #631F3A;
+}
+.last .primary-nav__menu-link--level-1 {
+	background: #777;
+}*/
+
+/* Middle menu items */
+/*
+.pure-menu-link {
+	background: #YYY;
+}*/
+
+/* Children color */
+/*
+.pure-menu-children .pure-menu-link {
+	color: #YYY !important;
+	background: YYY;
+}*/
+
+
+/******************************/
+/* HIDE some TITLES, READMORE */
+/******************************/
+/* Uncomment the first declaration below to hide all titles on the front page 
+   Addapt the second declaration to hide a node type titles on the frontpage. 
+   Third one is for no "Read more" on the front page. */ 
+/*
+.front #main h2 .field--name-title { display: none; }
+.front #main .node--type-article h2 .field--name-title { display: none; }
+.front .node-readmore { display: none; }
+*/
+
+
+/**********************************/
+/* IMAGE POSITION for ALL CONTENT */
+/**********************************/
+.field-item .pure-img, 
+.colorbox .pure-img {
+	float: left; /* LTR */
+	margin: 0 1em 1em 0; /* LTR */
+}
+[dir="rtl"] .field-item .pure-img, 
+[dir="rtl"] .colorbox .pure-img {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+
+/***********************************/
+/* IMAGE POSITION per CONTENT TYPE */
+/***********************************/
+/*
+.node-book .field-item .pure-img,
+.node-book .colorbox .pure-img {
+	float: right;
+	margin: .6em 0 .6em .6em;
+}
+.node-blog_post .field-item .pure-img,
+.node-blog_post .colorbox .pure-img {
+	float: right;
+	margin: .6em 0 .6em .6em;
+}*/
+
+
+/*************************/
+/* CENTERED BLOCK IMAGES */
+/*************************/
+/*
+.block img:not(.region-content img, .region-header img) {
+	margin: 0 auto;
+}*/
+
+
+/*************/
+/* SLIDESHOW */
+/*************/
+/* Centered text */
+/*
+.txww {
+	text-align: center;
+}*/
+/* min height on mobiles */
+#slider img {
+	min-height: 10em;
+}
+/* Images animation */
+/*
+#slider img {
+	animation-name: zoom;
+	animation-duration: 30s;
+	animation-iteration-count: infinite;
+}
+@keyframes zoom {
+	0% {transform: scale(1)}
+	50% {transform: scale(1.15)}
+	100% {transform: scale(1)}
+}*/
+
+
+/********************************/
+/* BORDER FOR NON-THEMED BLOCKS */
+/********************************/
+#sidebar-left .block, #sidebar-right .block {
+	border: 1px solid #ddd;
+}
+
+
+/*******************************/
+/* UPDATE ICONS FOR NEW BLOCKS */
+/*******************************/
+/* where ID is the block id */
+/*
+#ID .block-icon {
+	background: transparent url(../images/icons/blocks/icon_35_48.png) no-repeat;
+}*/
+
+
+/****************************************/
+/* USER BLOCKS EQUAL VERTICAL ALIGNMENT */
+/****************************************/
+/*
+@media screen and (min-width: 48em) {
+	#section1 .block {
+		min-height: 250px;
+	}
+}*/
+
+
+/****************/
+/* LINKS COLOR  */
+/****************/
+/*
+.region-content .field--name-fid a,
+.region-content .field--name-body a,
+.region-content .item-description a {
+	color: #c09;
+}*/
+
+
+/***************************/
+/* INLINE LINKS & ADDTOANY */
+/***************************/
+/*
+.addtoany_list, .node__links {
+	display: inline-block;
+}*/
+
+
+/***********************/
+/* CHANGE HEADER IMAGE */
+/***********************/
+/* Deactivate the image rotator in theme's settings, put your new image in 
+   the _custom folder and uncomment the lines below */
+/*
+.himg #headimg, #headimg {
+	background: #fff url(YOUR_IMAGE.png) no-repeat 100% 100%;
+}*/
+
+
+/************************/
+/* OTHER SOCIAL NETWORK */
+/************************/
+#soclinks .myother {
+	background: transparent url(../images/icons/blocks/icon_35_32.png) no-repeat center center;
+}
+
+
+/*****************************************************/
+/* Bad alignment of Author and Date line in Drupal 8 */
+/*****************************************************/
+/*
+.node__submitted, p.comment__submitted {
+	display: flex;
+}
+.node__submitted .field, p.comment__submitted .field, p.comment__submitted a {
+	margin: 0 .3em;
+}*/
+
+
+/************************************************/
+/* Alternate node backgrounds on homepage/views */
+/************************************************/
+/*
+.region-content .node--view-mode-teaser {
+	padding: .5em;
+}
+.region-content li:nth-child(2n+2) .node--view-mode-teaser,
+.region-content .views-row:nth-child(2n+1) .node--view-mode-teaser {
+	background: #eee;
+	padding: .5em;
+}*/
+
+
+/************************/
+/* EU COOKIE COMPLIANCE */
+/************************/
+div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {
+	background: #069;
+}
+.agree-button.eu-cookie-compliance-secondary-button {
+	cursor: pointer;
+	margin-right: 5px;
+	margin-top: 1em;
+	vertical-align: middle;
+	overflow: visible;
+	width: auto;
+	-moz-box-shadow: inset 0 1px 0 0 #ffffff;
+	-webkit-box-shadow: inset 0 1px 0 0 #ffffff;
+	box-shadow: inset 0 1px 0 0 #ffffff;
+	background-color: #ededed;
+	background-image: -moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf));
+	background-image: -webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background-image: -o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background-image: -ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background-image: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	color: #000;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	padding: 4px 8px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #ffffff;
+}
+
+
+
+/*** MEDIA SCREENS (35.5, 48 & 64em) ***/
+
+@media screen and (max-width: 64em) {
+
+/* HEADER IMAGE */
+/* You can change images rotator with a static image like "mobi-dot.png" or 
+  "mobi-sq.png", use your own, or simply none. */
+	.himg #headimg, #headimg {
+		/*background: #fff url(../images/mobi-dot.png) repeat;*/
+		background: none;
+	}
+
+	/* Increase contrast for header when Header image rotator is enabled */
+	/*
+	.himg #header {
+		background: rgba(255, 255, 255, 0.5);
+	}*/
+	
+	/* Increase contrast for site title */
+	/*
+	.himg .block-system-branding-block {
+		background: rgba(255, 255, 255, 0.5);
+	}*/
+}
+
+
+
+/*************************************/
+/* Sidebars' blocks adaptive display */
+/*************************************/
+@media screen and (max-width: 64em) {
+	#sidebar-left .block-wrapper,
+	#sidebar-right .block-wrapper {
+		width: 48%;
+		padding: 0 1.5% 0 0;
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+@media screen and (max-width: 48em) {
+	#sidebar-left .block-wrapper,
+	#sidebar-right .block-wrapper {
+		width: 100%;
+		padding: 0;
+		display: block;
+	}
+}

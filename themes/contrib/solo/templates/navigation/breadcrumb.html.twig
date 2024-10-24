@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{% if breadcrumb %}
+  <nav class="solo-block breadcrumb-nav" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
+    <ul class="solo-ul solo-medium breadcrumb-menu">
+      {% for item in breadcrumb %}
+        <li>
+          {% if item.text %}
+            {% if item.url %}
+              <a class="btn-animate" href="{{ item.url }}">{{ item.text }}</a>
+            {% else %}
+              <span class="breadcrumb-title">{{ item.text }}</span>
+            {% endif %}
+            {# Add the separator if it's not the last item and the text is not empty. #}
+            {% if not loop.last %}
+              <svg class="breadcrumb-sep" height="24" viewBox="0 -960 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="m504-480-184-184 56-56 240 240-240 240-56-56z"/>
+              </svg>
+            {% endif %}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
+
+

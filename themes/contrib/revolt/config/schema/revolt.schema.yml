@@ -1,0 +1,4 @@
+# Required to validate default theme settings.
+revolt.settings:
+  type: theme_settings
+  label: "Revolt theme"

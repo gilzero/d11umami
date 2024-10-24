@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override for the default Drupal branding block.
+ *
+ * Prevent site_logo and site_slogan from appearing, in accordance with
+ * IU styleguide.
+ *
+ * @todo refactor this to potentially allow a logo image if desired?
+ */
+#}
+<div{{ attributes.addClass('clearfix') }}>
+{{ title_prefix }}{{ title_suffix }}
+<h1>
+  <a class="title" href="/" itemprop="department">{{ site_name }}</a>
+</h1>
+</div>

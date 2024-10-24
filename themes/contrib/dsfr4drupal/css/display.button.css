@@ -1,0 +1,10 @@
+/**
+ * @file
+ * Manage display button positioning.
+ */
+
+.fr-display-button {
+  position: fixed;
+  bottom: 3.5rem;
+  right: 2rem;
+}

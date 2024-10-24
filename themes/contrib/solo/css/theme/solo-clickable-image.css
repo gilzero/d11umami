@@ -1,0 +1,34 @@
+@keyframes animateimg {
+  0% {
+    transform: scale(1);
+}
+  50% {
+    transform: scale(1.1);
+}
+  100% {
+    transform: scale(1);
+}
+}
+
+a.img--is-clickable {
+  overflow: hidden;
+  display: block;
+  height: 100%;
+  min-width: 100%;
+}
+
+a.img--is-clickable > img.solo-image,
+a.img--is-clickable > picture > img.solo-image {
+  width: 100%;
+  float: left;
+}
+
+.image-auto a.img--is-clickable > img.solo-image,
+.image-auto a.img--is-clickable > picture > img.solo-image {
+  width: auto !important;
+}
+
+a.img--is-clickable:hover > img.solo-image,
+a.img--is-clickable:hover > picture > img.solo-image {
+  animation: animateimg 5s;
+}

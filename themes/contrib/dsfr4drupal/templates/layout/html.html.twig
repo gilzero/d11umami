@@ -1,0 +1,40 @@
+{% set skiplinks = skiplinks|default([
+  {
+    'anchor': 'main',
+    'title': 'To main content'|t,
+  },
+  {
+    'anchor': 'menu--main',
+    'title': 'Go to menu'|t,
+  },
+  {
+    'anchor': 'footer',
+    'title': 'Go to footer'|t,
+  },
+]) %}
+{% set skiplinks_label = skiplinks_label|default('Quick access'|t) %}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+<head>
+  <head-placeholder token="{{ placeholder_token }}">
+  <title>{{ head_title|safe_join(' | ') }}</title>
+  <css-placeholder token="{{ placeholder_token }}">
+  <js-placeholder token="{{ placeholder_token }}">
+</head>
+<body class="{{ attributes.class }}"{{ attributes }}>
+  {{ include('dsfr4drupal:skiplinks', {
+    'items': skiplinks,
+    'label': skiplinks_label,
+  }, with_context=false) }}
+  {{ page_top }}
+  {{ page }}
+  {{ page_bottom }}
+
+  {% if scheme_choose %}
+    {{ include('dsfr4drupal:display-button', {}, with_context=false) }}
+    {{ include('dsfr4drupal:display-modal', {}, with_context=false) }}
+  {% endif %}
+
+  <js-bottom-placeholder token="{{ placeholder_token }}">
+</body>
+</html>

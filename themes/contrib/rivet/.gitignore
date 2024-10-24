@@ -1,0 +1,5 @@
+.editorconfig
+.gitattributes
+/vendor/
+/web/
+phpcs.xml.dist

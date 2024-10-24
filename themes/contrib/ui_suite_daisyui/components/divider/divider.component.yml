@@ -1,0 +1,59 @@
+name: Divider
+description: "Divider will be used to separate content vertically or horizontally."
+group: Layout
+links:
+  - "https://daisyui.com/components/divider/"
+variants:
+  default:
+    title: Default
+  neutral:
+    title: Neutral
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  accent:
+    title: Accent
+  success:
+    title: Success
+  warning:
+    title: Warning
+  info:
+    title: Info
+  error:
+    title: Error
+slots:
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    orientation:
+      title: Orientation
+      description: "Horizontal, vertical or responsive orientation."
+      $ref: "ui-patterns://enum"
+      enum:
+        - default
+        - horizontal
+        - responsive
+      "meta:enum":
+        default: Default
+        horizontal: Vertical
+        responsive: Responsive
+    position:
+      title: Position
+      description: "Start, default or end position."
+      $ref: "ui-patterns://enum"
+      enum:
+        - start
+        - default
+        - end
+      "meta:enum":
+        start: Start
+        default: Default
+        end: End
+stories:
+  preview:
+    title: Preview
+    slots:
+      content: OR

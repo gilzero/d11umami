@@ -1,0 +1,96 @@
+<!-- End NavBar -->
+<header id="header" class="site-header header-style-1">
+  <div class="topbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-9 col-md-9 col-lg-9">
+                <div class="contact-info">
+                    <ul>
+                        {% if company_phone_no %}
+                        <li><a href="tel:{{company_phone_no}}"><i class="fa fa-phone" aria-hidden="true"></i>{{company_phone_no}}</a></li>
+                    {% endif %} 
+                    {% if company_email %}
+                          <li><a href="mailto:{{company_email}}"><i class="fa fa-envelope" aria-hidden="true"></i>{{company_email}}</a></li>
+                      {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                <div class="social-links">
+                    <ul>
+                      {% if facebook %}
+                          <li><a href="{{facebook}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                      {% endif %}
+                      {% if twitter %}
+                          <li><a href="{{twitter}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        {% endif %}
+                        {% if linkedin %}
+                          <li><a href="{{linkedin}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        {% endif %}
+                        {% if pinterest %}
+                            <li><a href="{{pinterest}}"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        {% endif %}
+                        {% if dribbble %}
+                          <li><a href="{{dribbble}}"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                      {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+  </div> <!-- end topbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-white site-navigation navbar-togglable">
+     <div class="container">
+        {{page.logo}}
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+        </button>
+          {{page.primary_menu}}
+      </div>
+    </nav>
+  </header>
+<!-- End NavBar -->
+
+<section id="top-banner" style="background-image:url('{{bg_image_url}}'); ">
+    <div class="top-banner-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-lg-7 mx-auto top-banner-caption">
+          <h1>{{page['#title']}}</h1>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+{{page.content}}
+
+<!-- start footer section -->
+<footer class="bg-theme">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 sm-margin-30px-bottom">
+                {{page.footer_col_1}}
+            </div>
+            <div class="col-lg-2 col-md-6 sm-margin-30px-bottom">
+              {{page.footer_col_2}}
+            </div>
+            <div class="col-lg-2 col-md-6 sm-margin-30px-bottom">
+                {{page.footer_col_3}}
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="padding-30px-left sm-no-padding-left">
+                    {{page.footer_col_4}}
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="fot-copyright">
+      <div class="col-md-6 mx-auto text-center">
+           <p>&copy; 2024<span> <a href="#"> YG Flexy</a></span>. All rights reserved. Developed by <a href="https://ygthemes.drupalfreethemes.com/" target="_blank">YG Themes</a></p>
+      </div>  
+  </div>
+</footer>
+<!-- end footer section -->

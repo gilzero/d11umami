@@ -1,0 +1,30 @@
+version 10.1.0
+28 Dec 2022
++-----------------------------+
+# Initial release of 10.x.x series.
+
+
+version 10.1.1
+22 Jan 2023
++-----------------------------+
+# Fixed slider image upload issue.
+
+
+version 10.2.0
+05 Sep 2023
++-----------------------------+
+- Updated for base theme TheX v10.x.x
+- New mobile menu icon.
+- Theme now uses font icons from theX theme.
+- Updated twitter icon by new X icon.
+- Removed option to select Breadcrumb Separator Icon. Theme now uses default icon from TheX theme.
+- Removed template file: breadcrumb.html.twig
+- Removed customization option for 'scroll to top' icon.
+- Other minor improvements.
+
+
+version 11.0.0
+17 Aug, 2024
++-----------------------------+
+# Initial release of 11.x.x series.
+# Drupal 11 compatible.

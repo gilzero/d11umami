@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Override two-column layout for IU Framework grid compatibility.
+ *
+ * Note the default 'layout' class provided by core interferes with IU
+ * Framework classes, and has therefore been replaced with compatible grid
+ * classes.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ */
+#}
+{%
+  set classes = [
+    'grid',
+    'halves',
+  ]
+%}
+{% if content %}
+  {% if content.top %}
+    <div {{ region_attributes.top }}>
+      {{ content.top }}
+    </div>
+  {% endif %}
+
+  <div{{ attributes.addClass(classes) }}>
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('grid-item') }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass('grid-item') }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if content.bottom %}
+    <div {{ region_attributes.bottom }}>
+      {{ content.bottom }}
+    </div>
+  {% endif %}
+{% endif %}

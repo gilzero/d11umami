@@ -1,0 +1,24 @@
+body {
+	font-family: "Muli",sans-serif;
+	color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $heading-color;
+	// font-weight: 500;
+}
+
+h1 {
+	margin-bottom: 1.25rem;
+	font-size: 2.5rem;
+}
+h2 {
+	margin-bottom: 1rem;
+}
+h3 {
+	font-size: 1.6rem;
+}
+
+.text-center {
+	text-align: center;
+}

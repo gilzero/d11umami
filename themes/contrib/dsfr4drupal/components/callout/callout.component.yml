@@ -1,0 +1,34 @@
+name: DSFR - Callout
+description: Highlighting allows the user to quickly distinguish information that complements the content viewed.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    button:
+      type: string
+      title: Button
+    color_schema:
+      type: string
+      title: Color schema
+      description: 'Example: brown-caramel'
+    content:
+      type: string
+      title: Content
+    icon:
+      type: string
+      title: Icon
+    title:
+      type: string
+      title: Title
+    title_tag:
+      type: string
+      title: Title HTML tag
+      default: h3
+  required:
+    - content
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.callout

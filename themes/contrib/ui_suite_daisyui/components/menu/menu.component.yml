@@ -1,0 +1,91 @@
+name: Menu
+description: "Used to show a navigation bar on the top of the page."
+group: Navigation
+links:
+  - "https://daisyui.com/components/navbar/"
+variants:
+  vertical__xs:
+    title: "Vertical XS"
+  vertical__sm:
+    title: "Vertical SM"
+  vertical__md:
+    title: "Vertical MD (Default)"
+  vertical__lg:
+    title: "Vertical LG"
+  horizontal__xs:
+    title: "Horizontal XS"
+  horizontal__sm:
+    title: "Horizontal SM"
+  horizontal__md:
+    title: "Horizontal MD (Default)"
+  horizontal__lg:
+    title: "Horizontal LG"
+props:
+  type: object
+  properties:
+    items:
+      title: "Menu items"
+      $ref: "ui-patterns://links"
+    collapsible:
+      title: "Collapsible"
+      $ref: "ui-patterns://enum"
+      description: Menu items are not collapsible if this prop is missing or empty.
+      enum:
+        - open
+        - closed
+      "meta:enum":
+        open: Open by default
+        closed: Closed by default
+stories:
+  flat:
+    title: Flat
+    props:
+      items:
+        - title: "Item 1"
+          url: "#"
+        - title: "Item 2"
+        - title: "Item 3"
+          url: "#"
+  not_collapsible:
+    title: Not collapsible
+    props:
+      items:
+        - title: "Item 1"
+          url: "#"
+        - title: Parent
+          below:
+            - title: "Submenu 1"
+              url: "#"
+            - title: "Submenu 2"
+              url: "#"
+            - title: "Parent with link"
+              url: "#"
+              below:
+                - title: "Submenu 1"
+                  url: "#"
+                - title: "Submenu 2"
+                  url: "#"
+        - title: "Item 3"
+          url: "#"
+  collapsible_closed:
+    title: Collapsible, closed by default
+    props:
+      collapsible: "closed"
+      items:
+        - title: "Item 1"
+          url: "#"
+        - title: Parent
+          below:
+            - title: "Submenu 1"
+              url: "#"
+            - title: "Submenu 2"
+              url: "#"
+            - title: "Parent with link"
+              url: "#"
+              below:
+                - title: "Submenu 1"
+                  url: "#"
+                - title: "Submenu 2"
+                  url: "#"
+        - title: "Item 3"
+          url: "#"

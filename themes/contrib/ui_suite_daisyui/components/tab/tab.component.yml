@@ -1,0 +1,28 @@
+name: (Tab)
+description: "Tab item shows a link in a tabbed format."
+group: Navigation
+links:
+  - "https://daisyui.com/components/tab/"
+slots:
+  link:
+    title: Link
+    description: "The link item."
+props:
+  type: object
+  properties:
+    active:
+      title: "Active link"
+      description: "Css class for whether the link corresponds to the current url."
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      link:
+        type: html_tag
+        tag: a
+        value: Link
+        attributes:
+          href: "https://example.com"
+    props:
+      active: true

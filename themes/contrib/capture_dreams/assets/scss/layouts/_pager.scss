@@ -1,0 +1,31 @@
+nav[aria-labelledby="pagination-heading"] {
+    margin: 10px 0;
+    ul.js-pager__items {
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+      flex-wrap: wrap;
+      gap: 10px;
+      li {
+        list-style: none;
+        color: #fff;
+        &.is-active a {
+          color: #000;
+          background-color: #fff;
+        }
+        a {
+          text-decoration: none;
+          padding: 5px 12px;
+          color: #fff;
+          border-radius: 3px;
+          transition: all 0.3s;
+          &:hover {
+            background: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+  

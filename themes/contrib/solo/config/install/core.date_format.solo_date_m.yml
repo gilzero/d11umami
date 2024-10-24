@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - solo
+id: solo_date_m
+label: 'Solo Date Medium'
+locked: false
+pattern: 'D F d, o'

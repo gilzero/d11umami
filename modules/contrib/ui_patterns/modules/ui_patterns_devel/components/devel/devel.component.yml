@@ -1,0 +1,34 @@
+name: Devel component
+description: Devel component to catch Twig Syntax errors.
+group: UI Patterns devel
+tags:
+  - tests
+status: experimental
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    type:
+      title: Error type
+      type: string
+    message:
+      title: Error message
+      type: string
+    line:
+      title: Error line
+      type: number
+    file:
+      title: Error file
+      type: string
+    trace:
+      title: Error trace
+      type: string
+stories:
+  preview:
+    title: Preview
+    props:
+      type: Error
+      message: This is a sample Error
+      line: 1
+      file: my_file.twig
+      trace: "#0 here is the trace message!"

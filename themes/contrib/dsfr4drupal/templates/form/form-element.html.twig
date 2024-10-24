@@ -1,0 +1,30 @@
+{% set classes = [
+  'js-form-item',
+  'form-item',
+  'js-form-type-' ~ type|clean_class,
+  'form-item-' ~ name|clean_class,
+  'js-form-item-' ~ name|clean_class,
+  title_display not in ['after', 'before'] ? 'form-no-label',
+  disabled == 'disabled' ? 'form-disabled',
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if label_display not in ['after'] %}
+    {{ label }}
+  {% endif %}
+  {% if prefix is not empty %}
+    <span class="field-prefix">{{ prefix }}</span>
+  {% endif %}
+
+  {{ children }}
+  {% if suffix is not empty %}
+    <span class="field-suffix">{{ suffix }}</span>
+  {% endif %}
+  {% if label_display == 'after' %}
+    {{ label }}
+  {% endif %}
+  {# In case of we need to display errors in form element. #}
+  {% if show_error %}
+    {% include '@dsfr4drupal/templates/form/form-element.error.html.twig' %}
+  {% endif %}
+</div>

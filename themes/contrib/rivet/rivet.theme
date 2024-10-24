@@ -1,0 +1,629 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Rivet theme.
+ */
+
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityPublishedInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_css_alter().
+ */
+function rivet_css_alter(&$css, AttachedAssetsInterface $assets) {
+  if (isset($css['//unpkg.com/rivet-core@2.5.1/css/rivet.min.css'])) {
+    $css['//unpkg.com/rivet-core@2.5.1/css/rivet.min.css']['group'] = CSS_BASE;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function rivet_theme($existing, $type, $theme, $path) {
+  return [
+    'confirm_form' => [
+      'render element' => 'form',
+      'path' => $path . '/templates/forms',
+    ],
+    'search_block_form' => [
+      'render element' => 'form',
+      'path' => $path . '/templates/forms',
+    ],
+    'search_form' => [
+      'render element' => 'form',
+      'path' => $path . '/templates/forms',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for all Twig templates.
+ */
+function rivet_preprocess(array &$variables): void {
+  // Allow subthemes to modify page and content width values using additional
+  // theme_preprocess() hooks. Since subtheme_preprocess() runs after
+  // rivet_preprocess(), subtheme preprocess must call rivet_preprocess()
+  // afterward to keep the changes. Then, here, when the values are already
+  // set, they will take $variables take precedence.
+  //
+  // Call stack:
+  // - rivet_preprocess() first run. Variables are unset. Theme defaults used.
+  // - subtheme_preprocess() runs. Variables are modified.
+  // - subtheme_preprocess() calls rivet_preprocess() to register the changes.
+  // - rivet_preprocess() second run. Variables modified by subtheme are used
+  //   while re-calculating computed values like content width and two column
+  //   width.
+  $page_width = $variables['page_width'] ?? theme_get_setting('page_width') ?? 'rvt-container-lg';
+  $content_width = $variables['content_width'] ?? theme_get_setting('content_width') ?? 'rvt-container-md';
+
+  // Iterate over all parameters and check for entities.
+  $route_match = \Drupal::routeMatch();
+  $found_a_field = FALSE;
+  foreach ($route_match->getParameters() as $parameter) {
+    /** @var Drupal\Core\Entity\FieldableEntityInterface $parameter */
+    if ($parameter instanceof FieldableEntityInterface) {
+      if (
+        $parameter->hasField('field_page_width')
+        && !empty($parameter->get('field_page_width')->value)
+      ) {
+        $content_width = $variables['content_width'] ?? $parameter->get('field_page_width')->value;
+        $found_a_field = TRUE;
+      }
+
+      if ($parameter->hasField('field_hide_breadcrumb')) {
+        $variables['hide_breadcrumb'] = $parameter->get('field_hide_breadcrumb_location')->value;
+        $found_a_field = TRUE;
+      }
+
+      if ($parameter->hasField('field_hide_title')) {
+        $variables['hide_title'] = $parameter->get('field_hide_title')->value;
+        $found_a_field = TRUE;
+      }
+
+      if ($parameter->hasField('field_hide_sidebar')) {
+        $variables['hide_sidebar'] = $parameter->get('field_hide_sidebar')->value;
+        $found_a_field = TRUE;
+      }
+
+      if ($found_a_field) {
+        // Stop once we find the first match.
+        break;
+      }
+    }
+  }
+
+  $two_column_width = $page_width;
+
+  // Finally, export the variables for use in templates.
+  $variables['page_width'] = $page_width;
+  $variables['content_width'] = $content_width;
+  $variables['two_column_width'] = $two_column_width;
+}
+
+/**
+ * Prepares variables for html.html.twig.
+ */
+function rivet_preprocess_html(array &$variables): void {
+  // Add a visual indicator when the current page is unpublished.
+  if (in_array('Unpublished', array_keys(_rivet_page_status()))) {
+    $variables['attributes']['class'][] = 'entity--unpublished';
+  }
+}
+
+/**
+ * Prepares an array of page status information for for the current route.
+ */
+function _rivet_page_status(): array {
+  static $status = NULL;
+
+  // Return the cached value if it has been set.
+  if ($status !== NULL) {
+    return $status;
+  }
+
+  $route_match = \Drupal::routeMatch();
+  foreach ($route_match->getParameters() as $parameter) {
+    if (
+      $parameter instanceof EntityPublishedInterface
+      && $parameter->isPublished() == FALSE
+    ) {
+      $status['Unpublished'] = 'danger';
+    }
+    if (
+      $parameter instanceof FieldableEntityInterface
+      && $parameter->hasField('status')
+      && $parameter->get('status')->value == 0
+    ) {
+      $status['Unpublished'] = 'danger';
+    }
+    if (
+      $parameter instanceof FieldableEntityInterface
+      && $parameter->hasField('field_archived')
+      && $parameter->get('field_archived')->value == 1
+    ) {
+      $status['Archived'] = 'base';
+    }
+    if ($status !== NULL) {
+      break;
+    }
+  }
+  if ($status == NULL) {
+    $status = [];
+  }
+  return $status;
+}
+
+/**
+ * Prepares variables for page.html.twig.
+ */
+function rivet_preprocess_page(array &$variables): void {
+  // Uncomment these lines to theme Status messages.
+  // @codingStandardsIgnoreStart
+  # $default = t('This is a default message <a href="#">with link</a>.');
+  # $info = t('This is an info message <a href="#">with link</a>.');
+  # $error = t('This is an error message <a href="#">with link</a>.');
+  # $warning = t('This is a warning message <a href="#">with link</a>.');
+  # $status = t('This is a successful message <a href="#">with link</a>.');
+  # $lorem = t('Lorem ipsum dolor sit amet.');
+  # \Drupal::messenger()->addMessage($default, 'default');
+  # \Drupal::messenger()->addMessage($info, 'info');
+  # \Drupal::messenger()->addError($error);
+  # \Drupal::messenger()->addWarning($warning);
+  # \Drupal::messenger()->addStatus($status);
+  # \Drupal::messenger()->addStatus(str_repeat($lorem . ' ', 6));
+  // @codingStandardsIgnoreEnd
+  $variables['page_status'] = _rivet_page_status();
+  $variables['privacy_url'] = theme_get_setting('privacy_url') ?? '';
+  $variables['footer_variant'] = theme_get_setting('footer_variant') ?? 'default';
+  $variables['sidebar_border_right'] = theme_get_setting('sidebar_border_right') ?? 1;
+
+  $status = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
+  $status_code = $status && $status->getStatusCode() ? $status->getStatusCode() : 0;
+  if ($status_code >= 400) {
+    $variables['status_code'] = $status_code;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for page templates.
+ */
+function rivet_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Check if 'sidebar' is empty initially.
+  $no_sidebar = empty($variables['page']['sidebar']);
+  if (!$no_sidebar) {
+    // Render the 'sidebar' region if not empty.
+    $renderer = \Drupal::service('renderer');
+    $rendered_sidebar = $renderer->render($variables['page']['sidebar']);
+
+    // Check if the rendered sidebar contains visible content.
+    $allowed_tags = '<drupal-render-placeholder><form><embed><hr><iframe><img><input><link><object><script><source><style><video>';
+    $rendered_sidebar = strip_tags($rendered_sidebar, $allowed_tags);
+    $rendered_sidebar = str_replace(["\r", "\n", "\t"], [], $rendered_sidebar);
+    $rendered_sidebar = trim($rendered_sidebar);
+    $no_sidebar = empty($rendered_sidebar);
+  }
+
+  // Check if the current entity has set a flag to hide the sidebar.
+  $route_match = \Drupal::routeMatch();
+  foreach ($route_match->getParameters() as $parameter) {
+    /** @var Drupal\Core\Entity\FieldableEntityInterface $parameter */
+    if ($parameter instanceof FieldableEntityInterface) {
+      if (
+        $parameter->hasField('field_hide_sidebar')
+        && !empty($parameter->get('field_hide_sidebar')->value)
+      ) {
+        $no_sidebar = TRUE;
+      }
+    }
+  }
+
+  // Add template suggestions based on the presence of sidebar content.
+  if ($no_sidebar) {
+    $suggestions[] = 'page__no_sidebar';
+  }
+  else {
+    $suggestions[] = 'page__has_sidebar';
+  }
+}
+
+/**
+ * Prepares variables for `breadcrumb.html.twig`.
+ */
+function rivet_preprocess_breadcrumb(&$variables) {
+
+  // Remove 'Home' from breadcrumb trail based on theme settings variable.
+  //
+  // Possible values:
+  // - 0: do not remove
+  // - 1: remove
+  // - 2: remove if its the only item.
+  $hide_home_breadcrumb = theme_get_setting('hide_home_breadcrumb');
+  if ($hide_home_breadcrumb == '1' && count($variables['breadcrumb'])) {
+    array_shift($variables['breadcrumb']);
+  }
+  elseif ($hide_home_breadcrumb == '2' && count($variables['breadcrumb']) == 1) {
+    array_shift($variables['breadcrumb']);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for block templates.
+ */
+function rivet_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $name = '';
+  $id = $variables['elements']['#id'] ?? '';
+  $block_content = $variables['elements']['content']['#block_content'] ?? '';
+  $region = $id ? (Block::load($id) ? Block::load($id)->getRegion() : '') : '';
+  $plugin = $variables['elements']['#base_plugin_id'] ?? '';
+  $derivative = $variables['elements']['#derivative_plugin_id'] ?? '';
+  $suggestion = $variables['elements']['#configuration']['suggestion'] ?? '';
+
+  if ($derivative && preg_match('/^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$/', $derivative) === 1) {
+    $derivative = '';
+  }
+
+  // Reset all suggestions.
+  $suggestions = [];
+
+  // Normal blocks.
+  if ($id) {
+    $name = $id;
+  }
+
+  // Custom block content blocks.
+  if (is_object($block_content)) {
+    $name = $block_content->bundle();
+  }
+
+  if (!$name) {
+    $name = 'unnamed';
+  }
+
+  if ($region) {
+    $suggestions[] = 'block__region_' . $region;
+  }
+
+  if ($plugin) {
+    $suggestions[] = 'block__' . $plugin;
+  }
+
+  if ($plugin && $name) {
+    $suggestions[] = 'block__' . $plugin . '__' . $name;
+
+    if ($id) {
+      $suggestions[] = 'block__' . $plugin . '__' . $id;
+    }
+  }
+  elseif (!$plugin && $name) {
+    $suggestions[] = 'block__bundle__' . $name;
+    if ($id && $name != $id) {
+      $suggestions[] = 'block__bundle__' . $id;
+    }
+  }
+
+  if ($plugin && $suggestion) {
+    $suggestions[] = 'block__' . $plugin . '__' . $suggestion;
+  }
+  elseif (!$plugin && $suggestion) {
+    $suggestions[] = 'block__' . $suggestion;
+  }
+
+  if ($plugin && $derivative && $plugin != $derivative) {
+    $suggestions[] = 'block__' . $plugin . '__' . $derivative;
+  }
+
+  if ($region) {
+
+    if ($plugin) {
+      $suggestions[] = 'block__region_' . $region . '__' . $plugin;
+    }
+
+    if ($plugin && $name) {
+      $suggestions[] = 'block__region_' . $region . '__' . $plugin . '__' . $name;
+
+      if ($id) {
+        $suggestions[] = 'block__region_' . $region . '__' . $plugin . '__' . $id;
+      }
+    }
+    elseif ($name) {
+      $suggestions[] = 'block__region_' . $region . '__' . $name;
+
+      if ($id) {
+        $suggestions[] = 'block__region_' . $region . '__' . $id;
+      }
+    }
+
+    if ($plugin && $suggestion) {
+      $suggestions[] = 'block__region_' . $region . '__' . $plugin . '__' . $suggestion;
+    }
+
+    if ($plugin && $derivative && $plugin != $derivative) {
+      $suggestions[] = 'block__region_' . $region . '__' . $plugin . '__' . $derivative;
+    }
+  }
+
+  // Underscore and lowercase theme suggestions.
+  foreach ($suggestions as &$suggestion) {
+    $suggestion = str_replace('-', '_', strtolower($suggestion));
+  }
+
+  // Remove duplicate suggestions.
+  $suggestions = array_unique($suggestions);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function rivet_preprocess_block(array &$variables): void {
+  $id = $variables['elements']['#id'] ?? '';
+  $plugin = $variables['elements']['#base_plugin_id'] ?? '';
+  $derivative = $variables['elements']['#derivative_plugin_id'] ?? '';
+  if (!empty($id)) {
+    $region = Block::load($id) ? Block::load($id)->getRegion() : '';
+    if (!empty($region)) {
+      $variables['content']['#attributes']['data-block']['region'] = $region;
+    }
+  }
+  if (!empty($plugin) && $plugin !== $id) {
+    $variables['content']['#attributes']['data-block']['plugin'] = $plugin;
+  }
+  if (!empty($derivative) && $derivative !== $plugin && $derivative !== $id) {
+    $variables['content']['#attributes']['data-block']['derivative'] = $derivative;
+  }
+
+  switch ($variables['base_plugin_id']) {
+    case 'system_branding_block':
+
+      // Rivet supports the Site Settings Drupal contrib module to allow
+      // per-site overrides of theme and site configs.
+      $site_settings = [];
+      if (\Drupal::hasService('site_settings.loader')) {
+        $site_settings = \Drupal::service('site_settings.loader')->loadAll();
+      }
+
+      // Add site name as defined in Rivet theme settings with fallback to Site
+      // Settings or Site information configuration page.
+      $site_name = Drupal::configFactory()->get('system.site')->get('name');
+      $site_name = $site_settings['site_name'] ?? $site_name;
+      if (!empty(theme_get_setting('site_name'))) {
+        $site_name = theme_get_setting('site_name');
+      }
+      $variables['site_name'] = $site_name;
+
+      // Add subtitle as defined in Rivet theme settings with fallback to Site
+      // Settings.
+      $subtitle = '';
+      $subtitle = $site_settings['subtitle'] ?? $subtitle;
+      if (!empty(theme_get_setting('subtitle'))) {
+        $subtitle = theme_get_setting('subtitle');
+      }
+      $variables['subtitle'] = $subtitle;
+      break;
+  }
+
+  // Show custom Content Blocks' description (aka block info) as the title.
+  if (
+    !empty($variables['configuration']['label_display'])
+     && isset($variables['content']['#block_content'])
+     && $variables['content']['#block_content']->hasField('info')
+     && !empty($variables['content']['#block_content']->get('info')->value)
+  ) {
+    $variables['label'] = trim($variables['content']['#block_content']->get('info')->value);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for menu.
+ */
+function rivet_theme_suggestions_menu_alter(array &$suggestions, array $variables): void {
+
+  $name = $variables['menu_name'] ?? '';
+  $region = $variables['attributes']['data-block']['region'] ?? '';
+  $plugin = $variables['attributes']['data-block']['plugin'] ?? '';
+  $derivative = $variables['attributes']['data-block']['derivative'] ?? '';
+  $suggestion = $variables['menu_block_configuration']['suggestion'] ?? '';
+
+  if (empty($name)) {
+    return;
+  }
+
+  if (!empty($region)) {
+    // Add suggestion for menu block region name.
+    $suggestions[] = 'menu__region_' . $region;
+  }
+
+  if (!empty($region) && $region != $name) {
+    $suggestions[] = 'menu__region_' . $region . '__' . $name;
+  }
+
+  if (!empty($plugin)) {
+    // Add suggestion for block plugin name.
+    $suggestions[] = 'menu__' . $plugin;
+    $suggestions[] = 'menu__' . $plugin . '__' . $name;
+    if (!empty($derivative) && $plugin != $derivative) {
+      $suggestions[] = 'menu__' . $plugin . '__' . $derivative;
+      if ($derivative != $name && $plugin != $name) {
+        $suggestions[] = 'menu__' . $plugin . '__' . $derivative . '__' . $name;
+      }
+    }
+  }
+
+  // Add the menu block suggestion removed in hook_preprocess_block.
+  if (!empty($suggestion)) {
+
+    $suggestions[] = 'menu__' . $suggestion;
+    if (!empty($plugin)) {
+      $suggestions[] = 'menu__' . $suggestion . '__' . $plugin;
+    }
+    if (!empty($region)) {
+      $suggestions[] = 'menu__' . $suggestion . '__region_' . $region;
+
+      if ($suggestion != $name) {
+        $suggestions[] = 'menu__' . $suggestion . '__region_' . $region . '__' . $name;
+      }
+    }
+    elseif ($suggestion != $name) {
+      $suggestions[] = 'menu__' . $suggestion . '__' . $name;
+    }
+  }
+
+  // Underscore and lowercase theme suggestions.
+  foreach ($suggestions as &$suggestion) {
+    $suggestion = str_replace('-', '_', strtolower($suggestion));
+  }
+
+  // Remove duplicate suggestions.
+  $suggestions = array_unique($suggestions);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function rivet_preprocess_menu(array &$variables): void {
+  if (isset($variables['attributes']['region'])) {
+    unset($variables['attributes']['region']);
+  }
+
+  // Expose the current_path to the menu template in order to determine if
+  // the current page matches the current menu item being iterated, and has
+  // children, the dropdown should display as expanded in the sidenav.
+  // @see menu--region-sidebar.html.twig
+  $path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+  $variables['current_path'] = $path_alias;
+}
+
+/**
+ * Prepares variables for node.html.twig.
+ */
+function rivet_preprocess_node(array &$variables): void {
+
+}
+
+/**
+ * Prepares variables for image_widget.html.twig.
+ */
+function rivet_preprocess_image_widget(array &$variables): void {
+  $data = &$variables['data'];
+
+  // This prevents image widget templates from rendering preview container HTML
+  // to users that do not have permission to access these previews.
+  // @todo revisit in https://drupal.org/node/953034
+  // @todo revisit in https://drupal.org/node/3114318
+  if (isset($data['preview']['#access']) && $data['preview']['#access'] === FALSE) {
+    unset($data['preview']);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function rivet_theme_suggestions_form_alter(array &$suggestions, array $variables): void {
+  if (isset($variables['element']) && isset($variables['element']['#id'])) {
+    $suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-', '_', $variables['element']['#id']);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function rivet_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // var_dump($form['#theme']);.
+  $form['#theme'] = str_replace('-', '_', $form_id);
+}
+
+/**
+ * Improve template suggestions for form-element.html.twig.
+ */
+function rivet_theme_suggestions_form_element_alter(array &$suggestions, array $variables): void {
+  $suggestions[] = 'form_element__' . $variables['element']['#type'];
+}
+
+/**
+ * Improve template suggestions for form-element-label.html.twig.
+ */
+function rivet_theme_suggestions_form_element_label_alter(array &$suggestions, array $variables): void {
+  if (isset($variables['element']['#form_element_type'])) {
+    $suggestions[] = 'form_element_label__' . $variables['element']['#form_element_type'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function rivet_preprocess_form_element(array &$variables): void {
+  if (!isset($variables['label']) || !isset($variables['element']['#type'])) {
+    return;
+  }
+
+  $variables['label']['#form_element_type'] = $variables['element']['#type'];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for fieldset.html.twig.
+ */
+function rivet_theme_suggestions_fieldset_alter(array &$suggestions, array $variables): void {
+  if (isset($variables['element']['#type'])) {
+    $suggestions[] = 'fieldset__' . $variables['element']['#type'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function rivet_theme_suggestions_user_alter(array &$suggestions, array $variables): void {
+
+  // Add a theme hook suggestion for the view mode, eg 'full' or 'compact'.
+  $view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $suggestions[] = 'user__' . $view_mode;
+}
+
+/**
+ * Prepares a cache key string containing the current entity type and id.
+ */
+function _rivet_get_entity_cache_id() {
+  $route_match = \Drupal::routeMatch();
+  foreach ($route_match->getParameters() as $param) {
+    if ($param instanceof EntityInterface) {
+      $entity_type = $param->getEntityTypeId();
+      $entity_id = $param->id();
+      return "{$entity_type}:{$entity_id}";
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function rivet_preprocess_page_title(&$variables) {
+  if ($entity_id_cache_tag = _rivet_get_entity_cache_id()) {
+    $cid = 'route_has_hero_h1:' . $entity_id_cache_tag;
+    if ($cache = \Drupal::cache('data')->get($cid)) {
+      $variables['route_has_hero_h1'] = $cache->data;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_summary().
+ */
+function rivet_preprocess_views_view_summary(&$variables) {
+  // Add the link destination for the "view all" link.
+  if (isset($variables['options']['base_path'])) {
+    $view_all_link = Url::fromUri('internal:/' . $variables['options']['base_path'] . '/all')->toString();
+    $variables['view_all_link'] = $view_all_link;
+  }
+  else {
+    $variables['view_all_link'] = '';
+  }
+
+  // // Check if the current path ends with '/all'.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $variables['is_all'] = (substr($current_path, -4) === '/all');
+}

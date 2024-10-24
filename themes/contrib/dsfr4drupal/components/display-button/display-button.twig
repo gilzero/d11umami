@@ -1,0 +1,5 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set label = label|default('Display settings'|t) %}
+<button{{ attributes.addClass(['fr-display-button', 'fr-background-default--grey', 'fr-btn', 'fr-btn--lg', 'fr-icon-theme-fill', 'fr-btn--secondary']).setAttribute('aria-controls', 'modal-display-settings').setAttribute('data-fr-opened', 'false') }}>
+  {{ label }}
+</button>

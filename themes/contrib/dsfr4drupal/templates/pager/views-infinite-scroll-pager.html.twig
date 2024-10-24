@@ -1,0 +1,20 @@
+{% if items.next %}
+  {% set aria_label = arial_label|default('Pagination'|t) %}
+  {% set button_title = button_title|default('Load more items'|t) %}
+
+  <nav{{ attributes.removeClass('js-pager__items').addClass('fr-mt-4v').setAttribute('role', 'navigation').setAttribute('aria-label', aria_label) }}>
+    {{ include('dsfr4drupal:button-group', {
+      'attributes': create_attribute({'class': 'js-pager__items'}),
+      'equisized': true,
+      'items': [
+        {
+          'label': options.button_text,
+          'title': button_title,
+          'url': items.next.href,
+          'attributes': create_attribute({'rel': 'next'}),
+        },
+      ],
+      'position': 'center',
+    }, with_context=false) }}
+  </nav>
+{% endif %}

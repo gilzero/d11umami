@@ -1,0 +1,19 @@
+/* Rivet Custom Fieldset with border and whitespace. */
+.rvt-c-fieldset {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border: 1px solid #e2e7e9;
+  border-radius: 0.25rem;
+}
+
+.rvt-c-fieldset.webform-composite-hidden-title {
+  padding: 0;
+  border: 0;
+}
+
+.rvt-c-fieldset__legend {
+  width: auto;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+  font-weight: 500;
+}

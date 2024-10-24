@@ -1,0 +1,208 @@
+.header-inner .contextual-region.block-system-branding-block .contextual {
+  top: auto !important;
+  bottom: 0 !important;
+}
+
+.header-inner nav.contextual-region .contextual {
+  top: 3.125rem !important;
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+}
+
+.header-inner>*,
+.header-inner .solo-block {
+  width: initial;
+  display: flex;
+}
+
+.header-inner > div,
+.header-inner > nav {
+  margin-bottom: var(--solo-px12);
+}
+
+.header-inner .branding-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.header-inner .branding-wrapper .branding-first,
+.header-inner .branding-wrapper .branding-second {
+  justify-content: flex-start;
+}
+
+.header-inner .branding-wrapper .branding-second .site-name {
+  text-align: left;
+}
+
+/* Site name, slogan and logo */
+.header-inner .block-system-branding-block {
+  margin-right: auto;
+}
+
+.branding-wrapper .site-name,
+.branding-wrapper .site-slogan {
+  flex-grow: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  max-height: 100%;
+}
+
+.branding-wrapper .site-name a {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.branding-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.branding-second {
+  display: grid;
+}
+
+.branding-wrapper .branding-first a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.branding-wrapper .branding-first {
+  margin-right: var(--solo-px12);
+  display: flex;
+}
+
+.branding-second.site-name-outer.site-slogan-outer .site-name {
+  margin-bottom: 0;
+}
+
+.branding-second.site-name-outer.site-slogan-outer .site-slogan {
+  margin-top: 0;
+}
+
+/* header buttons (Menu, Search) */
+#sidebar-button-open {
+  z-index: 1;
+  text-align: center !important;
+}
+
+#sidebar-button-close svg,
+#sidebar-button-open svg {
+  height: calc(2 * var(--solo-px20));
+}
+
+#search-button-open svg {
+  width: var(--solo-px32);
+  height: var(--solo-px32);
+}
+
+#sidebar-button-close button,
+#sidebar-button-open button,
+#search-button-open button {
+  display: flex;
+  justify-content: center;
+}
+
+#sidebar-button-close button span,
+#sidebar-button-open button span,
+#search-button-open button span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.625rem;
+}
+
+#search-button-open button span {
+  padding: var(--solo-px8) var(--solo-px16) !important;
+}
+
+#sidebar-button-close button span {
+  padding: var(--solo-px8) 0 !important;
+  min-width: initial;
+}
+
+#sidebar-button-open button span {
+  padding: var(--solo-px4) var(--solo-px16) !important;
+}
+
+#sidebar-button-close button {
+  width: 100%;
+}
+
+#sidebar-button-close button {
+  justify-content: right;
+  align-items: center;
+}
+
+/* Add class to switch the header icon and site name */
+.header-inner.hs-icons-left {
+  justify-content: left;
+  flex-direction: revert;
+}
+
+.primary-sidebar-menu.hs-icons-left {
+  inset-inline-start: -600px;
+  box-shadow: 3.125rem 0 3.125rem -1.875rem rgba(0, 0, 0, 0.2);
+}
+
+.primary-sidebar-menu.hs-icons-left.toggled {
+  visibility: visible;
+  transform: translateX(600px);
+}
+
+#sidebar-button-close.hs-icons-left button {
+  justify-content: right;
+}
+
+.header-inner.hs-icons-left .block-system-branding-block {
+  flex-basis: 100%;
+}
+
+.user-logged-in .toolbar-bar {
+  z-index: 1300;
+}
+
+.header-inner.header-sitename-center .block-system-branding-block {
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+}
+
+.header-inner.header-sitename-center .branding-wrapper {
+  display: grid;
+}
+
+.header-inner.header-sitename-center .branding-wrapper>* {
+  width: 100%;
+}
+
+.header-inner.header-sitename-center .branding-wrapper .branding-first,
+.header-inner.header-sitename-center .branding-wrapper .branding-first a,
+.header-inner.header-sitename-center .branding-wrapper .site-name,
+.header-inner.header-sitename-center .branding-wrapper .site-name a,
+.header-inner.header-sitename-center .branding-wrapper .site-slogan,
+.header-inner.header-sitename-center .branding-wrapper .branding-second {
+  justify-content: center;
+  text-align: center;
+}
+
+.header-inner.header-sitename-center-default .branding-wrapper {
+  justify-content: center;
+}
+
+.header-inner.header-sitename-center-default .block-system-branding-block {
+  width: 100%;
+  margin: 0 auto;
+}

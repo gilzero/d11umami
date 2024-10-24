@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Progress elements.
+ */
+
+ .config-admin-import-form {
+  #edit-list .dropbutton__item.dropbutton-action {
+    .ajax-progress {
+      min-width: 6rem;
+      &__throbber {
+        display: inline-block;
+        justify-content: center;
+      }
+    }
+  }
+}

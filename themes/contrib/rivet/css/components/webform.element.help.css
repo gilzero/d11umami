@@ -1,0 +1,11 @@
+.webform-element-help {
+  border-color: #a0abb4;
+  background: #a0abb4;
+}
+
+.webform-element-help:focus,
+.webform-element-help:active,
+.webform-element-help:hover {
+  border-color: #006298;
+  background: #006298;
+}

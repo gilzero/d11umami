@@ -1,0 +1,8 @@
+solo-subtheme-global:
+  version: VERSION
+  css:
+    theme:
+      css/solo-subtheme-style.css: {}
+
+  js:
+    js/solo-subtheme-script.js: {}

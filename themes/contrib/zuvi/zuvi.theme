@@ -1,0 +1,115 @@
+<?php
+use Drupal\file\Entity\File;
+/**
+ * @file
+ * Contains Zuvi theme override and preprocess functions.
+ */
+
+ /**
+  * Sanitise input urls.
+  */
+ function santise_val_url($url) {
+ 	if ($url != '') {
+
+ 		// Sanitise (remove all illegal characters) from url.
+ 		$url = filter_var($url, FILTER_SANITIZE_URL);
+
+ 		// Validate url.
+ 		if (filter_var($url, FILTER_VALIDATE_URL) == TRUE) {
+ 			$url = $url;
+ 		} else {
+ 			$url = '#';
+ 		}
+ 		return $url;
+ 	}
+ }
+
+ /* *
+ * Zuvi page preprocess.
+ */
+function zuvi_preprocess_page(array &$variables) {
+	$config = \Drupal::config('system.site');
+	$variables['site_name'] = $config->get('name');
+	$variables['site_slogan'] = $config->get('slogan');
+	$variables['container_width'] = theme_get_setting('container_width', 'zuvi');
+	$variables['header_width'] = theme_get_setting('header_width', 'zuvi');
+	$variables['main_width'] = theme_get_setting('main_width', 'zuvi');
+	$variables['footer_width'] = theme_get_setting('footer_width', 'zuvi');
+  $variables['slider_image'] = theme_get_setting('slider_image', 'zuvi');
+	$variables['all_icons_show'] = theme_get_setting('all_icons_show', 'zuvi');
+	$variables['facebook_url'] = santise_val_url(theme_get_setting('facebook_url', 'zuvi'));
+	$variables['twitter_url'] = santise_val_url(theme_get_setting('twitter_url', 'zuvi'));
+	$variables['instagram_url'] = santise_val_url(theme_get_setting('instagram_url', 'zuvi'));
+	$variables['linkedin_url'] = santise_val_url(theme_get_setting('linkedin_url', 'zuvi'));
+	$variables['youtube_url'] = santise_val_url(theme_get_setting('youtube_url', 'zuvi'));
+	$variables['vimeo_url'] = santise_val_url(theme_get_setting('vimeo_url', 'zuvi'));
+  $variables['telegram_url'] = santise_val_url(theme_get_setting('telegram_url', 'zuvi'));
+  $variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'zuvi'));
+  $variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'zuvi'));
+	$variables['vk_url'] = santise_val_url(theme_get_setting('vk_url', 'zuvi'));
+	$variables['front_sidebar'] = theme_get_setting('front_sidebar', 'zuvi');
+
+	// Components -> Font icons
+	$variables['fontawesome_four'] = theme_get_setting('fontawesome_four', 'zuvi');
+	$variables['fontawesome_five'] = theme_get_setting('fontawesome_five', 'zuvi');
+	$variables['bootstrapicons'] = theme_get_setting('bootstrapicons', 'zuvi');
+
+	$variables['scrolltotop_on'] = theme_get_setting('scrolltotop_on', 'zuvi');
+	$variables['copyright_text'] = theme_get_setting('copyright_text', 'zuvi');
+	$variables['highlight_author_comment'] = theme_get_setting('highlight_author_comment', 'zuvi');
+	$slider_image_id = theme_get_setting('slider_image', 'zuvi');
+	if(!empty($slider_image_id)) {
+		$slider_image_file = File::load($slider_image_id[0]);
+		$slider_image_file->setPermanent();
+		$slider_image_file->save();
+		$slider_image_file_usage = \Drupal::service('file.usage');
+		$slider_image_file_usage->add($slider_image_file, 'zuvi', 'theme', $slider_image_id[0]);
+	}
+	if(!empty($slider_image_file)) {
+		$imageuri = $slider_image_file->getFileUri();
+		$variables['slider_image_path'] = \Drupal::service('file_url_generator')->generateAbsoluteString($imageuri);
+	}
+}
+
+/* *
+ * Node preprocess.
+ */
+function zuvi_preprocess_node(array &$variables) {
+	$variables['node_author_pic'] = theme_get_setting('node_author_pic', 'zuvi');
+	$variables['node_tags'] = theme_get_setting('node_tags', 'zuvi');
+}
+
+/* *
+ * Comment preprocess.
+ */
+function zuvi_preprocess_comment(array &$variables) {
+	$variables['comment_user_pic'] = theme_get_setting('comment_user_pic', 'zuvi');
+}
+
+ /**
+  * Html preprocess for zuvi theme.
+  * Adds body classes if certain regions have content.
+  * Used for creating different page layout.
+  */
+function zuvi_preprocess_html(&$variables) {
+	$variables['base_path'] = base_path();
+	$variables['styling'] = theme_get_setting('styling', 'zuvi');
+	$variables['styling_code'] = theme_get_setting('styling_code', 'zuvi');
+	$is_front = \Drupal::service('path.matcher')->isFrontPage();
+}
+
+/* *
+ * Add current page to breadcrumb.
+ */
+function zuvi_preprocess_breadcrumb(&$variables) {
+	$request = \Drupal::request();
+	$route_match = \Drupal::routeMatch();
+	$page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+	if (!empty($page_title)) {
+		$variables['breadcrumb'][] = [
+			'text' => $page_title,
+		];
+		// Add cache context based on url.
+		$variables['#cache']['contexts'][] = 'url';
+	}
+}

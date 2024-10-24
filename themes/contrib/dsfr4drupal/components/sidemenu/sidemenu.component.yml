@@ -1,0 +1,44 @@
+name: DSFR - Sidemenu
+description: The side menu allows users to navigate between the different pages of a section or the same theme. The side menu is a vertical navigation system presenting a list of links placed next to the content (on the left or right of the page) and providing access to up to 3 tree levels.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    button_label:
+      type: string
+      title: Button label
+      description: 'By default: "In this section", or the translated string in another language.'
+    html_id:
+      type: string
+      title: HTML identifier
+    items:
+      type: array
+      title: Items
+      description: Expected Drupal menu link items.
+      items:
+        type: object
+    position:
+      type: string
+      title: Component position
+      description: 'Example: right'
+    title:
+      type: string
+      title: Title
+    title_id:
+      type: string
+      title: Title identifier
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - sticky
+        - sticky-full-height
+  required:
+    - items
+    - title
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.sidemenu

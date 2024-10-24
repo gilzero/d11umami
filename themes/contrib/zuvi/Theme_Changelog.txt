@@ -1,0 +1,111 @@
++===============================+
+Version 10.1.0
+21 Dec, 2022
++===============================+
+# Initial version of 10.x.x series.
+
+
+
++===============================+
+Version 10.2.0
+30 Dec, 2023
++===============================+
+# Changed close cursor icon of full page search.
+# Changed font icon library.
+# Updated twitter icon with the new X icon.
+
+
++===============================+
+Version 10.2.1
+31 Dec, 2023
++===============================+
+# Minor improvements.
+
+
++===============================+
+Version 10.2.2
+01 Jan, 2024
++===============================+
+# Minor improvements in footer regions.
+
+
++===============================+
+Version 10.2.3
+02 Jan, 2024
++===============================+
+# Minor improvements in sidebar region.
+# Added options for layout: container width, header, main, footer.
+# Other minor improvements.
+
+
++===============================+
+Version 10.2.4
+02 Jan, 2024
++===============================+
+# Removed material font icons.
+# Added fontawesome 5.
+# Added Bootstrap font icons.
+# Added option for Highlight Author Comments.
+# Added styling for full pager and mini pager.
+# Other minor improvements.
+
+
++===============================+
+Version 10.2.5
+02 Jan, 2024
++===============================+
+# Removed animated circles from slider.
+# Removed animated circles from header.
+# Added new block region: slider
+# Slider code should now be added using a custom block.
+# Unlimited unique slider can now be created. User can now create separate slider for each page.
+# Slider code now support Drupal multi-lingual.
+
+
++===============================+
+Version 10.2.6
+04 Jan, 2024
++===============================+
+# Other minor improvements.
+
+
++===============================+
+Version 10.2.7
+06 Jan, 2024
++===============================+
+# Removed field--entity-reference.html.twig
+# minor improvements.
+
+
++===============================+
+Version 10.2.8
+06 Jan, 2024
++===============================+
+# Removed menu--main.html.twig
+# Improved main menu.
+
+
++===============================+
+Version 10.2.9
+07 Jan, 2024
++===============================+
+# Custom scrollbar.
+# Removed Inline content shortcode.
+# Added styling for EU Cookie Compliance module.
+# Other minor improvements.
+
+
++===============================+
+Version 10.2.10
+07 Jan, 2024
++===============================+
+# Fixed path of slider image.
+# Removed header circle options from theme settings.
+
+
++===============================+
+Version 11.0.0
+09 Aug, 2024
++===============================+
+# Initial release of 11.x.x series.
+# Drupal 11 compatible.

@@ -1,0 +1,165 @@
+global-styling:
+  css:
+    theme:
+      css/theme.css: {}
+      css/components/off-canvas.css: {}
+      css/components/is-active.css: {}
+      css/components/header.css: {}
+      css/components/nav.css: {}
+      css/components/nav-buttons.css: {}
+      css/components/alert.css: {}
+      css/components/field.css: {}
+      css/components/form.css: {}
+      css/components/marker.css: {}
+  js:
+    js/init.js: {}
+
+email:
+  css:
+    theme:
+      css/mail.css: {}
+
+address:
+  css:
+    theme:
+      css/components/address.css: {}
+
+contextual:
+  css:
+    theme:
+      css/components/contextual.css: {}
+
+color-block:
+  css:
+    theme:
+      css/components/color-block.css: {}
+
+diff:
+  css:
+    theme:
+      css/components/diff.css: {}
+
+dropbutton:
+  css:
+    theme:
+      css/components/dropbutton.css: {}
+
+filter-alpha-link:
+  css:
+    theme:
+      css/components/filter-alpha-link.css: {}
+
+feed-items:
+  css:
+    theme:
+      css/components/feed-items.css: {}
+
+image-styles:
+  css:
+    theme:
+      css/components/image-styles.css: {}
+
+local-tasks:
+  css:
+    theme:
+      css/components/local-tasks.css: {}
+
+paragraphs.admin:
+  css:
+    theme:
+      css/components/paragraphs.admin.css: {}
+
+progress:
+  css:
+    component:
+      css/components/progress.css: {}
+
+settings-tray:
+  css:
+    theme:
+      # Set the weight higher than that of settings_tray.theme.css to ensure
+      # proper override. Reasess after https://www.drupal.org/node/1945262
+      css/components/settings-tray.css: { weight: 10 }
+
+tabledrag:
+  css:
+    theme:
+      css/components/tabledrag.css: { weight: 10 }
+  js:
+    js/tabledrag.js: {}
+
+tabs:
+  css:
+    theme:
+      css/components/tabs.css: {}
+
+toolbar:
+  css:
+    theme:
+      css/components/toolbar.css: {}
+
+user:
+  css:
+    theme:
+      css/components/user.css: {}
+
+vertical-tabs:
+  css:
+    theme:
+      css/components/vertical-tabs.css: {}
+
+quickedit:
+  css:
+    theme:
+      css/components/quickedit.css: {}
+
+modernizr:
+  js:
+    //assets.iu.edu/web/1.5/libs/modernizr.min.js: { type: external, minified: true }
+
+# By default, we depend on the latest production release of the IU Framework
+# assets. However, this can be overridden to use the dev release in your site's
+# settings.local.php file. Eg, $settings['iu_framework_assets'] = 'dev';
+iu-framework-prod:
+  css:
+    base:
+      //assets.iu.edu/web/3.3.x/css/iu-framework.min.css: { type: external, minified: true }
+      //assets.iu.edu/web/fonts/icon-font.css: {type: external, minified: true }
+    component:
+      //assets.iu.edu/brand/3.3.x/brand.min.css: { type: external, minified: true }
+  js:
+    //assets.iu.edu/web/3.3.x/js/iu-framework.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - iu/modernizr
+
+iu-framework-dev:
+  css:
+    base:
+      //assets.iu.edu/web/3.3.x-dev/css/iu-framework.css: { type: external, minified: true }
+      //assets.iu.edu/web/fonts/icon-font.css: {type: external, minified: true }
+    component:
+      //assets.iu.edu/brand/3.3.x-dev/brand.css: { type: external, minified: true }
+  js:
+    //assets.iu.edu/web/3.3.x-dev/js/iu-framework.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - iu/modernizr
+
+search-prod:
+  css:
+    component:
+      //assets.iu.edu/search/3.3.x/search.min.css: { type: external, minified: true }
+  js:
+    //assets.iu.edu/search/3.3.x/search.min.js: { type: external, minified: true }
+  dependencies:
+    - iu/iu-framework-prod
+
+search-dev:
+  css:
+    component:
+      //assets.iu.edu/search/3.3.x-dev/search.css: { type: external, minified: true }
+  js:
+    //assets.iu.edu/search/3.3.x-dev/search.js: { type: external, minified: true }
+  dependencies:
+    - iu/iu-framework-dev

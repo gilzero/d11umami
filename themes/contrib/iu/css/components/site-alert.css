@@ -1,0 +1,36 @@
+.iu-notice .contents {
+  padding: 1rem;
+  margin: 0 auto;
+  font-size: 18px;
+  max-width: 1150px;
+  text-align: center;
+}
+
+.iu-notice .contents p {
+  margin: 0;
+}
+
+.iu-notice .contents p + p {
+  margin-top: 1em;
+}
+
+.iu-notice.minor a {
+  color: #143b5f;
+}
+
+.iu-notice.severe a {
+  color: #4d0f03;
+}
+
+.iu-notice.moderate a {
+  color: #7a1705;
+}
+
+.iu-notice.minor a:hover,
+.iu-notice.minor a:focus,
+.iu-notice.severe a:hover,
+.iu-notice.severe a:focus,
+.iu-notice.moderate a:hover,
+.iu-notice.moderate a:focus {
+  color: #000;
+}

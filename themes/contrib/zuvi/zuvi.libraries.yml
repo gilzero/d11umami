@@ -1,0 +1,65 @@
+# Global stylings. These CSS files will be loaded on every pages.
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/style.css: {}
+
+# Global Javascripts. These will be loaded on every pages.
+global-scripts:
+  version: VERSION
+  js:
+    js/zuvi.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+# Slider
+slider:
+  version: 2.1.2
+  js:
+    js/slider.js: {}
+  dependencies:
+    - core/jquery
+
+# FontAwesome 4
+fontawesome4:
+  version: 4.7.0
+  css:
+    component:
+      css/font-awesome.css: {}
+
+# FontAwesome 5
+fontawesome5:
+  version: 5.15.4
+  css:
+    component:
+      css/fontawesome5.css: {weight: -10}
+
+# Bootstrap Icons
+bootstrap-icons:
+  version: 1.10.5
+  css:
+    component:
+      css/bootstrap-icons.css: {}
+
+# Book
+book:
+  version: VERSION
+  css:
+    component:
+      css/book.css: {}
+
+# maintenance page
+maintenance:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance.css: {}
+
+# Theme settings page 
+theme-settings:
+  version: VERSION
+  css:
+    theme:
+      css/theme-settings.css: {}

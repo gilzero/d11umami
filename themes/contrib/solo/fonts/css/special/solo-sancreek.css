@@ -1,0 +1,4 @@
+.page-wrapper .sancreek {
+  --solo-font-s: 'Sancreek', cursive;
+  font-family: var(--solo-font-s) !important;
+}

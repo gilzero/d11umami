@@ -1,0 +1,45 @@
+/**
+ * @file
+ * Panels.
+ */
+.panel {
+  border: solid 1px $white;
+  border-radius: 0 3rem 0 0;
+  &__title {
+    border-bottom: solid 2px $delightful-yellow;
+    border-radius: 0 3rem 0 0;
+    background-color: $u-smart-navy;
+    color: $text-white;
+  }
+  &__content {
+    position: relative;
+    .nttdata-card {
+      border-radius: 0;
+      padding: 0.75rem 1.5rem 1.25rem;
+      @extend %parent-focus;
+      &:not(:last-child) {
+        border-bottom: 0.0625em solid $primary;
+      }
+      &-title {
+        height: 1.5rem;
+        position: unset;
+        a {
+          @extend %stretched-link;
+          font-size: 1rem;
+          color: $cornflower-blue;
+          width: calc(100% + 1rem);
+          position: unset;
+          &:focus {
+            box-shadow: none;
+          }
+          &:before {
+            display: none;
+          }
+        }
+      }
+      &-text {
+        height: 2.5rem;
+      }
+    }
+  }
+}

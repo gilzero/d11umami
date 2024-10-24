@@ -1,0 +1,14 @@
+name: LM Studio Provider
+description: This enables the use of LM Studio for the AI module.
+package: AI Providers
+type: module
+core_version_requirement: ^10.2 || ^11
+configure: provider_lmstudio.settings_form
+
+dependencies:
+  - ai:ai
+
+# Information added by Drupal.org packaging script on 2024-10-10
+version: '1.0.0-alpha8'
+project: 'ai'
+datestamp: 1728569766

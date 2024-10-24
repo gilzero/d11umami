@@ -1,0 +1,41 @@
+{#
+/**
+  * @file
+  * Default theme implementation to display a single Drupal page while offline.
+  *
+  * All available variables are mirrored in page.html.twig.
+  * Some may be blank but they are provided for consistency.
+  *
+  * @see template_preprocess_maintenance_page()
+  *
+  * @ingroup themeable
+  */
+#}
+
+{%
+  set classes = [
+    'vt-flex',
+    'vt-direction-column',
+    'container',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  <header role="banner">
+    {% if logo %}
+      <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+        <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+      </a>
+    {% endif %}
+  </header>
+
+  <main role="main">
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+
+    {{ page.highlighted }}
+
+    {{ page.content }}
+  </main>
+</div>

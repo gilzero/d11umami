@@ -1,0 +1,75 @@
+name: Some errors
+description: Testing simple error component for Twig Validator.
+group: Testing
+tags:
+  - tests
+status: experimental
+variants:
+  default:
+    title: Default
+slots:
+  test_slot_string:
+    title: Test string
+    required: true
+    type: string
+props:
+  type: object
+  properties:
+    nothing:
+      title: 'Unknown (nothing)'
+    object:
+      title: 'Unknown (empty object)'
+      type: 'object'
+    array:
+      title: 'Unknown (empty array)'
+      type: 'array'
+    array_object:
+      title: 'Unknown (array of empty objects)'
+      type: array
+      items:
+        type: object
+    test_prop_string_error:
+      title: Test string
+      required: true
+      type: string
+    test_enum_string:
+      title: Test enum string
+      type: string
+      enum:
+        - h1
+        - h2
+        - h3
+      default: h4
+    test_prop_bool:
+      title: Test bool
+      type: boolean
+    test_prop_links:
+      title: Test links
+      $ref: 'ui-patterns://links'
+    test_enum_items:
+      title: Test enum items
+      $ref: 'ui-patterns://enum_list'
+      items:
+        enum:
+          - foo
+          - bar
+        'meta:enum':
+          foo: 'Foo'
+          bar: 'Bar'
+stories:
+  preview:
+    title: Preview
+    slots:
+      test_slot_string: Baz
+    props:
+      variant: test
+      test_prop_string_error: Qux
+      test_enum_string: h2
+      test_prop_bool: true
+      test_prop_links:
+        - title: Foo
+          url: /
+        - title: Bar
+          url: '#'
+      test_enum_items:
+        - bar

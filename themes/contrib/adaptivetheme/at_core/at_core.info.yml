@@ -1,0 +1,17 @@
+name: 'AT Core'
+type: theme
+base theme: stable
+description: 'Base theme only - do not set to default. Use the AT Theme Generator to generate or clone a theme to get started. This is a new version of the original Adaptive Theme Project. Credit to Jeff Burnz, developer of the original. Now using Gitlab CI. Updated branch and tagging conventions'
+alt text: 'Adaptivetheme core. The base theme for all AT sub-themes.'
+tags: 'base theme, theme generator, starter theme'
+core_version_requirement: ^10 || ^11
+package: adaptivetheme
+hidden: true
+features:
+dependencies:
+  - stable:stable
+
+# Information added by Drupal.org packaging script on 2024-06-20
+version: '7.1.0'
+project: 'adaptivetheme'
+datestamp: 1718882814

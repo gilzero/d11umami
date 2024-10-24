@@ -1,0 +1,201 @@
+.layout-region-node-footer__content .description {
+  margin: 0;
+}
+
+.node-from .layout-node-form {
+  height: 100%;
+}
+
+.layout-region-node-secondary,
+.layout-region-node-footer,
+.layout-region-node-main {
+  border: 1px solid var(--r-br, var(--r-br-b));
+  border-radius: 10px;
+  background-color: var(--r-bg);
+  width: 100%;
+  margin: var(--solo-px20) 0;
+  padding: 0;
+  -webkit-box-shadow: 0px 0px 19px 19px rgba(180, 180, 180, 0.1);
+  box-shadow: 0px 0px 19px 19px rgba(180, 180, 180, 0.1);
+}
+
+.layout-region-node-footer {
+  padding-top: var(--solo-px20);
+  padding-bottom: var(--solo-px20);
+  background-color: var(--r-bg);
+}
+
+.layout-region-node-footer__content {
+  padding: var(--solo-px16);
+  margin: var(--solo-px16) 0;
+  background-color: var(--r-bg);
+}
+
+.layout-region-node-main>div,
+.layout-region-node-secondary>div {
+  padding: var(--solo-px16);
+}
+
+.page-content {
+  margin-bottom: 80px;
+}
+
+.layout-icon__region {
+  fill: #f5f5f2;
+  stroke: #666;
+}
+
+.layout__region--content .solo-table-all {
+  border-color: var(--r-br, var(--r-br-b)) !important;
+}
+
+.layout-node-form .solo-row > fieldset > div,
+.layout-node-form .solo-row > fieldset > div > div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.layout__region--content > .solo-row > fieldset {
+  margin-bottom: var(--solo-px16) !important;
+  padding-bottom: var(--solo-px16) !important;
+}
+
+.admin-context .block-local-tasks-block,
+.admin-context #drupal-off-canvas:not(.drupal-off-canvas-reset),
+.admin-context #drupal-off-canvas-wrapper,
+.admin-context .block-system-main-block {
+  font-family: "Helvetica", sans-serif;
+}
+
+.layout-node-form .solo-responsive {
+  overflow-x: unset;
+}
+
+.layout-node-form .paragraph-type-label,
+.layout-node-form .form-item label,
+.layout-node-form .form-item .label {
+  display: inline-block;
+  padding-bottom: var(--solo-px8);
+  font-weight: normal;
+}
+
+.layout-node-form .paragraph-type-label {
+  padding-bottom: 0;
+}
+
+.layout-node-form  .form-type-radio label,
+.layout-node-form  .form-type-checkbox label {
+  padding-bottom: 0;
+  display: inline;
+}
+
+.layout-region-node-footer__content {
+  border-top: none;
+}
+
+.layout-node-form [type=checkbox],
+.layout-node-form [type=radio] {
+  float: left;
+  top: 0;
+}
+
+.layout-node-form th .paragraphs-actions {
+  margin-right: 0 !important;
+}
+
+.layout-node-form .paragraph-top {
+  align-items: center !important;
+}
+
+.layout-node-form .field-multiple-drag {
+  vertical-align: middle !important;
+}
+
+.layout-node-form .paragraphs-actions > .button + .paragraphs-dropdown {
+  margin: 0 var(--solo-px8) !important;
+}
+
+.layout-node-form .form-wrapper .paragraphs-dropdown-action.button,
+.layout-node-form .paragraphs-dropdown-actions input {
+  margin: 0 !important;
+}
+
+.layout-region-node-footer__content .form-actions {
+  display: flex;
+}
+
+.layout-node-form .form-actions>input:last-of-type {
+  margin-right: 0;
+}
+
+.layout-node-form div.description,
+.layout-node-form .form-item .solo-small,
+.layout-node-form .form-item .description {
+  padding: var(--solo-px3) !important;
+  margin: var(--solo-px1) 0 !important;
+}
+
+.layout-node-form .description ul,
+.layout-node-form .description ul li {
+  list-style: none;
+  margin: 0;
+}
+
+.layout-node-form .description .des-spacer {
+  font-weight: bold;
+}
+
+.layout-region-node-secondary .entity-meta div,
+.layout-region-node-secondary .entity-meta table,
+.layout-region-node-secondary .entity-meta details {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.layout-region-node-secondary .entity-meta summary {
+  padding: 0 !important;
+}
+
+.layout-region-node-secondary .entity-meta > div > div,
+.layout-region-node-secondary .entity-meta > details > div {
+  margin: 0 !important;
+}
+
+.vertical-tabs .solo-panel,
+.vertical-tabs .solo-container,
+.vertical-tabs .solo-section {
+  margin-bottom: 0;
+}
+
+.vertical-tabs .solo-panel,
+.vertical-tabs .solo-container,
+.layout-region-node-secondary .entity-meta details .solo-panel,
+.layout-region-node-secondary .entity-meta .fieldset-wrapper,
+.layout-region-node-secondary .entity-meta fieldset {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.layout-region-node-secondary .entity-meta > details {
+  padding: var(--solo-px8) !important;
+  background-color: var(--r-bg) !important;
+}
+
+.layout-region-node-secondary .entity-meta > details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}

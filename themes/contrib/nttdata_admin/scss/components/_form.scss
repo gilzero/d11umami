@@ -1,0 +1,170 @@
+/**
+ * @file
+ * Form.
+ */
+
+input[type='checkbox'] {
+  border-radius: 4px;
+}
+
+.layout-region--node-footer {
+  width: 100%;
+  .form-actions {
+    position: fixed;
+    background-color: $link-water;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0;
+    z-index: 10;
+    input[data-drupal-selector='edit-submit'] {
+      margin-left: 50px;
+    }
+  }
+  input[type='text'] {
+    width: 100%;
+  }
+  .claro-autocomplete {
+    width: 100%;
+  }
+  #edit-moderation-state-0 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .js-form-item-moderation-state-0-state {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      .form-item__label{
+        flex-shrink: 0;
+      }
+      .form-element--type-select{
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Claro form--inline fixes
+.form--inline,
+[data-drupal-selector*='-bulk-form']:not([data-drupal-selector*='-webform-bulk-form']):not([data-drupal-selector*='-comment-bulk-form']):not([data-drupal-selector*='-webform-submission-bulk-form-actions']),
+.layout-region-node-footer__content {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 16px;
+
+  .form-item,
+  .form-actions {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    align-self: flex-start;
+  }
+
+  .button,
+  .action-link {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .form-actions {
+    align-self: flex-end;
+  }
+
+  .field-add-more-submit {
+    margin-top: 0.75rem;
+  }
+}
+
+.form-item__description {
+  color: $text-grey;
+  &.is-disabled {
+    color: $border-grey;
+  }
+  a {
+    color: $text-grey;
+    &:hover {
+      color: $text-grey;
+    }
+  }
+}
+
+.form-boolean {
+  border: 1px solid $border-grey;
+  background: $white no-repeat 50% 50%;
+}
+
+.form-element {
+  padding: calc(0.75rem - 3px) calc(2.5rem - 1px) calc(0.75rem - 3px) calc(0.75rem - 3px);
+  min-height: 2rem;
+  color: $text-dark;
+  border: 1px solid $border-grey;
+  background-color: $white;
+  &--type-select {
+    &--small {
+      font-size: 0.8rem;
+      padding: 0.5rem calc(2.5rem - 1px) 0.5rem 1rem;
+      line-height: 1.2;
+      min-height: 2rem;
+    }
+  }
+  &--type-search {
+    padding: calc(0.75rem - 3px) 0.75rem calc(0.75rem - 3px) calc(0.75rem - 3px);
+  }
+  &[disabled] {
+    color: $border-grey;
+    border-color: $light-grey;
+    background-color: $ck-grey;
+    -webkit-text-fill-color: $border-grey;
+  }
+  &.form-date,
+  &.form-time,
+  &.form-number {
+    padding: calc(0.75rem - 3px) 1rem calc(0.75rem - 3px) calc(0.75rem - 3px);
+  }
+  &--language-switcher {
+    margin-bottom: 1rem;
+  }
+}
+
+.form-edit .form-actions {
+  border-right: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+  border-left: 1px solid $light-grey;
+  background-color: $ck-grey;
+}
+
+.form-item__label{
+  &.is-disabled {
+    color: $border-grey;
+  }
+  &.form-required {
+    &:after {
+      color: $nttdata-red;
+    }
+  }
+}
+
+.fieldset__label {
+  &.form-required {
+    &:after {
+      color: $nttdata-red;
+    }
+  }
+}
+
+.file__size {
+  color: $text-lightgrey;
+}
+
+// DROPZONEJS
+form {
+  .dropzone-enable.dropzone.dz-clickable {
+    background: $white;
+    border: 3px dashed $border-grey;
+    a {
+      @extend %button-base;
+      margin: 0;
+    }
+  }
+}

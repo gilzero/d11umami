@@ -1,0 +1,54 @@
+name: Timeline
+description: "Timeline component shows a list of events in chronological order."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/timeline/"
+variants:
+  default:
+    title: Default
+  vertical:
+    title: Vertical
+slots:
+  items:
+    title: Items
+    description: "Expect a list of Timeline item components"
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: component
+          component: "ui_suite_daisyui:timeline_item"
+          slots:
+            timeline_start: "1984"
+            timeline_end: "First Macintosh computer"
+          props:
+            timeline_box_end: true
+        - type: component
+          component: "ui_suite_daisyui:timeline_item"
+          slots:
+            timeline_start: "1998"
+            timeline_end: iMac
+          props:
+            timeline_box_end: true
+        - type: component
+          component: "ui_suite_daisyui:timeline_item"
+          slots:
+            timeline_start: "2001"
+            timeline_end: iPod
+          props:
+            timeline_box_end: true
+        - type: component
+          component: "ui_suite_daisyui:timeline_item"
+          slots:
+            timeline_start: "2007"
+            timeline_end: iPhone
+          props:
+            timeline_box_end: true
+        - type: component
+          component: "ui_suite_daisyui:timeline_item"
+          slots:
+            timeline_start: "2015"
+            timeline_end: "Apple Watch"
+          props:
+            timeline_box_end: true

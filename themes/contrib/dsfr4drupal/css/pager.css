@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Fix pagination to allow AJAX use.
+ */
+
+.fr-pagination__link[href=""],
+.fr-pagination__link:not([href])
+{
+  color: var(--text-disabled-grey);
+  cursor: not-allowed;
+}
+
+.fr-pagination__link[aria-current="page"] {
+  pointer-events: none;
+  color: var(--blue-france-975-75);
+}

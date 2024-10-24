@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override for a node edit form.
+ *
+ * Two column template for the node add/edit form. The clearfix is for backwards
+ * compatibility with early sub-themes that did not use flexbox.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+ * @see at_core_form_node_form_alter()
+ */
+#}
+<div data-at-responsive-columns>
+  <div class="layout-region">
+    <h1 class="page__title h2">{{ title }}</h1>
+  </div>
+  <div class="layout-node-form clearfix is-responsive__layout">
+    <div class="layout-region layout-region-node-main is-responsive__column">
+      <div class="layout-region__inner layout-region-node-main__inner">
+       {{ form|without('advanced', 'actions') }}
+      </div>
+    </div>
+    <div class="layout-region layout-region-node-secondary is-responsive__column">
+      <div class="layout-region__inner layout-region-node-secondary__inner">
+        {{ form.advanced }}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="layout-node-form-footer clearfix">
+  <div class="layout-region layout-region-node-footer">
+    <div class="layout-region__inner layout-region-node-footer__inner">
+      {{ form.actions }}
+    </div>
+  </div>
+</div>

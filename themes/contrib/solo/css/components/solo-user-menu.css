@@ -1,0 +1,34 @@
+.solo-inner .navigation__menubar-account,
+.solo-inner .navigation__menubar-account li {
+  margin: 0;
+  padding: 0;
+}
+
+.solo-inner.navigation__menubar-account {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  margin: 0;
+  padding: 0;
+}
+
+.header-inner .navigation__menubar-account {
+  justify-content: center;
+}
+
+.solo-inner .navigation__menubar-account li {
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+}
+
+.solo-inner .navigation__menubar-account li a {
+  text-align: center;
+  padding: var(--solo-px8) var(--solo-px16) !important;
+  min-width: 90px;
+}
+
+.solo-inner .navigation__menubar-account li a span {
+  width: 100%;
+}

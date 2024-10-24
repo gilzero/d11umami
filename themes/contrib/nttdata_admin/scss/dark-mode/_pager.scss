@@ -1,0 +1,33 @@
+body.dark-mode {
+  // PAGER
+  .pager {
+    .pager__item {
+      a {
+        color: $text-dark;
+        background: transparent;
+        &:before,
+        &:after {
+          @extend %filter-white;
+        }
+        &:hover {
+          border-color: $primary2;
+          box-shadow: inset 0px 0px 3px 3px $primary2;
+        }
+      }
+      &--active {
+        a {
+          background: $primary;
+        }
+      }
+      &--mini {
+        border-radius: 50%;
+      }
+      &--current {
+        background: $primary;
+      }
+      &--number {
+        border-radius: 50%;
+      }
+    }
+  }
+}

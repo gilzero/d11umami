@@ -1,0 +1,105 @@
+//Entity browser
+@mixin eb_icon(
+  $icon,
+  $background-effect,
+  $background-color-hover: $primary
+  ) {
+  background-image: $icon, $background-effect;
+  &:hover {
+    background-image: $icon, linear-gradient($background-color-hover, $background-color-hover);
+  }
+  &:focus {
+    @include focus-outline;
+  }
+}
+
+.entity-browser-iframe-container {
+  a {
+    display: inline-block;
+    margin-top: 1rem;
+    @include button-dk-color($bg-dark, $delightful-yellow, $dark-yellow);
+    @extend %button-dimensions;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  iframe {
+    z-index: 5;
+  }
+}
+
+.field--type-entity-reference .entities-list {
+  display: grid;
+  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  grid-template-rows: auto;
+  align-content: space-around;
+  justify-content: center;
+  @media only screen and (max-width: 1200px) and (min-width: 976px) {
+    grid-template-columns: 50% 50%;
+  }
+  @media only screen and (max-width: 767px) {
+    grid-template-columns: 50% 50%;
+  }
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: 100%;
+  }
+  .item-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+      opacity: 1;
+    }
+    article {
+      width: fit-content;
+      margin-bottom: 0.5rem;
+      &:hover {
+        cursor: move;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.field--type-entity-reference .entities-list .item-container,
+table.entities-list {
+  .input-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .input-parent-element {
+    width: 50px;
+  }
+  input.button:not(.button--primary):not(.icon-link) {
+    font-size: 1rem;
+    border-radius: 50%;
+    color: $cornflower-blue;
+    background-color: $blue-dark;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    margin: 6px;
+    display: block;
+    height: 32px;
+    width: 32px;
+    text-indent: -9999px;
+    border: 0 !important;
+    &.remove-button {
+      @include eb_icon($remove, $nttdata-blue-effect);
+    }
+    &.edit-button {
+      @include eb_icon($edit, $nttdata-blue-effect);
+    }
+    &.replace-button {
+      @include eb_icon($replace, $nttdata-blue-effect);
+    }
+  }
+}
+
+@media screen and (min-width: 1251px) {
+  .entities-list {
+    table-layout: auto;
+  }
+}

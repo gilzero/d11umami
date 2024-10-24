@@ -1,0 +1,129 @@
+/**
+ * @file
+ * Visual styles for Drupals's dropbutton component to match IU Framework styles.
+ */
+
+.js .dropbutton-widget {
+  border: 2px solid;
+  border-color: #006298;
+  cursor: pointer;
+  text-align: left;
+  margin: .125em 0;
+  border-radius: 1.5em;
+  overflow: hidden;
+}
+
+.dropbutton-widget,
+.dropbutton-widget a,
+.dropbutton-widget ul,
+.dropbutton-toggle button,
+.dropbutton-widget .button,
+.dropbutton-widget .button.tiny {
+  font-size: .825rem;
+  font-family: BentonSans, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+.dropbutton-widget,
+.dropbutton-toggle button,
+.dropbutton-widget .button,
+.dropbutton-widget .button.secondary,
+.dropbutton-widget .dropbutton a {
+  background: #fff;
+  color: #006298;
+  transition: all .2s;
+}
+
+.dropbutton-widget:hover,
+.dropbutton-widget:hover button,
+.dropbutton-widget:hover .button,
+.dropbutton-widget:hover .button.secondary,
+.dropbutton-widget:hover .dropbutton a {
+  background: #56b7f7;
+  color: #fff;
+}
+
+.dropbutton-toggle button:hover,
+.dropbutton-toggle button:focus,
+.dropbutton-widget .button:hover,
+.dropbutton-widget .button:focus,
+.dropbutton-widget .button.secondary:hover,
+.dropbutton-widget .button.secondary:focus,
+.dropbutton-widget .button[disabled]:hover,
+.dropbutton-widget .button[disabled]:focus,
+.dropbutton-widget .dropbutton a:hover,
+.dropbutton-widget .dropbutton a:focus {
+  background: #006298;
+  color: #fff;
+}
+
+.dropbutton-widget .button[disabled],
+.dropbutton-widget .button[disabled]:hover,
+.dropbutton-widget .button[disabled]:focus,
+.dropbutton-widget .button.secondary[disabled],
+.dropbutton-widget .button.secondary[disabled]:hover,
+.dropbutton-widget .button.secondary[disabled]:focus {
+  background: #56b7f7;
+  color: #eaeaea;
+  opacity: 1;
+}
+
+.js .dropbutton-widget a,
+.js .dropbutton-widget .button {
+  padding: .3em .7em .3em 1em;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: top;
+  text-align: left;
+  transition: all .2s;
+}
+
+.js .dropbutton-multiple .dropbutton-widget,
+.js[dir='rtl'] .dropbutton-multiple .dropbutton-widget {
+  padding: 0;
+}
+.js .dropbutton-multiple .dropbutton-widget .dropbutton {
+  padding-right: 2em; /* LTR */
+  position: relative;
+}
+.js[dir='rtl'] .dropbutton-multiple .dropbutton-widget .dropbutton {
+  padding-right: 0;
+  padding-left: 2em;
+}
+.js .dropbutton-multiple .dropbutton-widget .dropbutton-action a {
+  margin-right: 0; /* LTR */
+}
+.js td .dropbutton-multiple .dropbutton-action a,
+.js td .dropbutton-multiple .dropbutton-action input,
+.js td .dropbutton-multiple .dropbutton-action button {
+  display: block;
+  width: 100%;
+}
+
+[dir='rtl'].js .dropbutton-multiple .dropbutton-widget .dropbutton-action a {
+  margin-left: 0;
+}
+
+.dropbutton-toggle {
+  width: 2em;
+}
+
+.js .dropbutton-toggle button {
+  border-radius: 0 1rem 1rem 0;
+  padding: 0;
+  border-left: 1px solid #006298;
+}
+
+.dropbutton .secondary-action {
+  border-top: 1px solid #006298;
+}
+
+/*.js .dropbutton .dropbutton-action:hover,
+.js .dropbutton a:hover {
+  border: 0;
+}*/
+
+.js td .dropbutton-wrapper {
+  min-height: 1.8em;
+}

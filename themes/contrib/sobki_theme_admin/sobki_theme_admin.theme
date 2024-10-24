@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the sobki_theme_admin theme.
+ */
+
+declare(strict_types=1);
+
+use Drupal\sobki_theme_admin\HookHandler\PreprocessMenuToolbarGin;
+
+/**
+ * Implements hook_preprocess_HOOK() for 'menu__toolbar__gin'.
+ */
+function sobki_theme_admin_preprocess_menu__toolbar__gin(array &$variables): void {
+  /** @var \Drupal\sobki_theme_admin\HookHandler\PreprocessMenuToolbarGin $instance */
+  $instance = \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(PreprocessMenuToolbarGin::class);
+  $instance->preprocess($variables);
+}

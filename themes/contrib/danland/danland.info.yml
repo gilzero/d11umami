@@ -1,0 +1,40 @@
+name: Danland
+type: theme
+base theme: stable9
+description: Drupal Theme provided by <a href="http://www.danetsoft.com">Danetsoft</a> developed by <a href="http://www.danpros.com">Danang Probo Sayekti</a> inspired by <a href="http://www.maksimer.no">Maksimer</a>.
+core_version_requirement: ^9.3 || ^10 || ^11
+regions:
+  header: Header
+  search_box: Search region
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  slideshow: 'Slideshow'
+  preface: Preface top
+  highlighted: Highlighted
+  preface_first: Preface first
+  preface_middle: Preface middle
+  preface_last: Preface last
+  sidebar_first: Left sidebar
+  sidebar_second: Right sidebar
+  content_top: Content top
+  help: Help
+  messages: Messages
+  breadcrumb: Breadcrumb
+  content: Main content
+  content_bottom: Content bottom
+  bottom_first: Bottom first
+  bottom_middle: Bottom middle
+  bottom_last: Bottom last
+  bottom_1: Bottom 1
+  bottom_2: Bottom 2
+  bottom_3: Bottom 3
+  bottom_4: Bottom 4
+  footer: Footer
+screenshot: screenshot.png
+libraries:
+  - danland/global
+
+# Information added by Drupal.org packaging script on 2024-06-01
+version: '8.x-1.2-beta1'
+project: 'danland'
+datestamp: 1717259503

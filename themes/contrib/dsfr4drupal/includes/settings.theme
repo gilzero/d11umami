@@ -1,0 +1,176 @@
+<?php
+
+/**
+ * @file
+ * Manage settings for DSFR theme.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function dsfr4drupal_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state): void {
+  // Hide logo and favicon field because is not used (display DSFR default logo and icon).
+  hide($form['favicon']);
+  hide($form['logo']);
+
+  // DSFR global settings.
+  $form['dsfr_settings_global'] = [
+    '#type' => 'details',
+    '#title' => t('DSFR - Global settings'),
+    '#open' => TRUE,
+  ];
+  $form['dsfr_settings_global']['scheme'] = [
+    '#type' => 'radios',
+    '#title' => t('Theme'),
+    '#options' => [
+      'system' => t('Automatic detection'),
+      'light' => t('Theme Light'),
+      'dark' => t('Theme Dark'),
+    ],
+    '#description' => t('Select the theme to use for your site. <a href=":url" lang="fr">More informations</a>.', [
+      ':url' => 'https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametre-d-affichage',
+    ]),
+    '#default_value' => theme_get_setting('scheme'),
+    '#required' => TRUE,
+  ];
+  $form['dsfr_settings_global']['mourning_mode'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable mourning mode'),
+    '#description' => t('Displays the Marianne in mourning.'),
+    '#default_value' => theme_get_setting('mourning_mode'),
+  ];
+  $form['dsfr_settings_global']['scheme_choose'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable display settings'),
+    '#description' => t('Uses the user theme selection functionality offered by the <a href=":url" lang="fr">DSFR</a>.', [
+      ':url' => 'https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametre-d-affichage',
+    ]),
+    '#default_value' => theme_get_setting('scheme_choose'),
+  ];
+  $form['dsfr_settings_global']['container_class'] = [
+    '#type' => 'select',
+    '#title' => t('Container'),
+    '#default_value' => theme_get_setting('container_class'),
+    '#description' => t('Select the type of container that will be used on your site.'),
+    '#options' => [
+      'fr-container' => t('Default', [], ['context' => 'DSFR container']),
+      'fr-container--fluid' => t('Fluid'),
+    ],
+    '#required' => TRUE,
+  ];
+  $form['dsfr_settings_global']['logo_text'] = [
+    '#type' => 'textarea',
+    '#title' => t('Logo text'),
+    '#description' => t('Displays text under the logo of the Marianne.'),
+    '#default_value' => theme_get_setting('logo_text'),
+    '#required' => TRUE,
+  ];
+  $form['dsfr_settings_global']['logo_operator'] = [
+    '#type' => 'managed_file',
+    '#title' => t('Logo operator'),
+    '#default_value' => theme_get_setting('logo_operator') ? [theme_get_setting('logo_operator')] : [],
+    '#upload_validators' => [
+      'FileIsImage' => [],
+    ],
+    '#upload_location' => 'public://',
+    '#description' => t("Logo operator is an image displayed to the right of the Marianne logo in site's header."),
+  ];
+
+  // DSFR header settings.
+  $form['dsfr_settings_header'] = [
+    '#type' => 'details',
+    '#title' => t('DSFR - Header settings'),
+    '#open' => TRUE,
+  ];
+  $form['dsfr_settings_header']['mega_menu'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Use mega menu'),
+    '#description' => t('Use the mega menu rendering instead of the drop-down menu offered by the <a href=":url" lang="fr">DSFR</a>.', [
+      ':url' => 'https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/navigation-principale',
+    ]),
+    '#default_value' => theme_get_setting('mega_menu'),
+  ];
+
+  // DSFR footer settings.
+  $form['dsfr_settings_footer'] = [
+    '#type' => 'details',
+    '#title' => t('DSFR - Footer settings'),
+    '#open' => TRUE,
+  ];
+  $form['dsfr_settings_footer']['footer_content_description'] = [
+    '#type' => 'text_format',
+    '#title' => t('Footer description'),
+    '#description' => t('Allows you to display presentation text in the footer.'),
+    '#default_value' => theme_get_setting('footer_content_description')['value'] ?? '',
+    '#format' => theme_get_setting('footer_content_description')['format'] ?? 'plain_text',
+  ];
+  $form['dsfr_settings_footer']['footer_copy'] = [
+    '#type' => 'text_format',
+    '#title' => t('Copyright notice'),
+    '#description' => t('Defines a copyright notice which will appear at the bottom of the page.'),
+    '#default_value' => theme_get_setting('footer_copy')['value'] ?? t(
+        '<p>Unless otherwise stated, all text on this site is under <a href=":url" rel="nofollow noopener" title="etalab-2.0 license - Open in new window" target="_blank">etalab-2.0 license</a>.</p>',
+        [
+          ':url' => 'https://github.com/etalab/licence-ouverte/blob/master/LO.md',
+        ]
+    ),
+    '#format' => theme_get_setting('footer_copy')['format'] ?? 'plain_text',
+  ];
+
+  // DSFR form settings.
+  $form['dsfr_settings_form'] = [
+    '#type' => 'details',
+    '#title' => t('DSFR - Form settings'),
+    '#open' => TRUE,
+  ];
+  $form['dsfr_settings_form']['form_novalidate'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Disable browser validation of form fields'),
+    '#description' => t('Disables browser validation of form fields. <a href=":url">More informations</a>.', [
+      ':url' => 'https://www.w3schools.com/tags/att_form_novalidate.asp',
+    ]),
+    '#default_value' => theme_get_setting('form_novalidate'),
+  ];
+  $form['dsfr_settings_form']['show_password_button'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable "Show password" feature'),
+    '#description' => t('Display the "Show password" button. Allowing users to read their password in clear text.'),
+    '#default_value' => theme_get_setting('show_password_button'),
+  ];
+
+  $form['#submit'][] = 'dsfr4drupal_form_system_theme_settings_submit';
+}
+
+/**
+ * Submit "DSFR for Drupal" settings form handler.
+ *
+ * @param array $form
+ *   An associative array containing the structure of the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function dsfr4drupal_form_system_theme_settings_submit(array &$form, FormStateInterface $form_state): void {
+  $theme = \Drupal::routeMatch()->getParameter('theme');
+  $config = \Drupal::configFactory()->getEditable($theme . '.settings');
+
+  $logo_operator = $form_state->getValue('logo_operator');
+  // Save integer instead of sequence of integers.
+  if (!empty($logo_operator)) {
+    foreach ($form_state->getValue('logo_operator') as $fid) {
+      /** @var \Drupal\file\FileInterface $file */
+      $file = \Drupal::entityTypeManager()->getStorage('file')->load($fid);
+      if (!$file->isPermanent()) {
+        $file->setPermanent();
+        $file->save();
+      }
+    }
+
+    $config
+      ->set('logo_operator', reset($logo_operator))
+      ->save();
+  }
+}

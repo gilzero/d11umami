@@ -1,0 +1,4 @@
+services:
+  provider_ollama.control_api:
+    class: Drupal\provider_ollama\OllamaControlApi
+    arguments: ['@http_client']

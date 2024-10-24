@@ -1,0 +1,52 @@
+{% set attributes = attributes.addClass('card', 'not-prose') %}
+
+{% if variant and variant != 'responsive' %}
+  {% set attributes = (variant != 'default') ? attributes.addClass('card-' ~ variant) : attributes %}
+{% elseif variant == 'responsive' %}
+  {% set attributes = attributes.addClass('lg:card-side') %}
+{% endif %}
+
+{% if image_full %}
+  {% set attributes = attributes.addClass('image-full') %}
+{% endif %}
+
+{% set heading_level = heading_level|default(2) %}
+
+{% set body_attributes = create_attribute().addClass('card-body') %}
+
+{% if centered %}
+  {% set body_attributes = body_attributes.addClass(['items-center', 'text-center']) %}
+{% endif %}
+
+<div {{ attributes }}>
+  {% if image and not image_bottom %}
+    <figure>
+      {{ image }}
+    </figure>
+  {% endif %}
+  {% if title or text or actions %}
+  <div {{ body_attributes }}>
+    {% if actions and actions_top %}
+    <div class="card-actions justify-end">
+      {{ actions }}
+    </div>
+    {% endif %}
+    {% if title %}
+    <h{{ heading_level }} class="card-title">{{ title }}</h{{ heading_level }}>
+    {% endif %}
+    {% if text %}
+    <div>{{ text }}</div>
+    {% endif %}
+    {% if actions and not actions_top %}
+    <div class="card-actions justify-end">
+      {{ actions }}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% if image and image_bottom %}
+    <figure>
+      {{ image }}
+    </figure>
+  {% endif %}
+</div>

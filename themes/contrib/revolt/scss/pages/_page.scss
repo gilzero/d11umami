@@ -1,0 +1,26 @@
+#back-top {
+  background: $brand-color;
+  height: 50px;
+  width: 50px;
+  right: 31px;
+  bottom: 18px;
+  position: fixed;
+  color: $white;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 48px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 10px 3px rgba(108,98,98,0.2);
+  .fa-level-up-alt{
+    border-left: 2px solid $white;
+    border-top: 2px solid $white;
+    transform: rotate( 45deg);
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    position: fixed;
+    bottom: 38px;
+    right: 52px;
+  }
+}

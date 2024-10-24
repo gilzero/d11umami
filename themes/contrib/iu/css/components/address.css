@@ -1,0 +1,7 @@
+[itemprop='address'] span::after {
+  content: ', ';
+}
+
+[itemprop='address'] span:last-child::after {
+  content: '';
+}

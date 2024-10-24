@@ -1,0 +1,61 @@
+/* See also settings-tray.css */
+
+/* Important rule to override overqualified styles from iu-framework */
+.contextual-region.focus {
+  outline: 2px dashed rgba(178, 178, 178, .5);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .7);
+}
+
+.contextual-region .contextual {
+  z-index: 500;
+}
+.contextual-region:hover .contextual,
+.contextual-region.focus .contextual {
+  z-index: 501;
+}
+.contextual-region .contextual.open {
+  z-index: 502;
+}
+.contextual-region .contextual .contextual-links {
+  padding: .1em 0;
+  height: auto !important;
+}
+.contextual-region .contextual .contextual-links a {
+  font-weight: bold;
+  color: #243142;
+  font-size: 1rem;
+}
+
+.contextual-region .contextual .contextual-links li {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+.contextual-region .contextual .contextual-links::before,
+.contextual-region .contextual .contextual-links::after,
+.contextual-region .contextual .contextual-links li::before,
+.contextual-region .contextual .contextual-links li::after {
+  display: none !important;
+}
+
+.contextual-region .contextual .contextual-links li a:focus,
+.contextual-region .contextual .contextual-links li a:active,
+.no-touchevents .contextual-region .contextual .contextual-links li a:hover {
+  color: #fff;
+  background: #006298;
+}
+
+.contextual-region.feature .contextual {
+  top: auto;
+  bottom: 6px;
+}
+
+nav.main.is-sticky {
+  z-index: 600 !important;
+}
+
+/* Ensures toolbar dropdowns appear above sticky IU top menu */
+body.toolbar-fixed .toolbar-oriented .toolbar-bar {
+  z-index: 601;
+}

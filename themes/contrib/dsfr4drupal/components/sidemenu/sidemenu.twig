@@ -1,0 +1,42 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set button_label = button_label|default('In this section'|t) %}
+{% set html_id = html_id|default('sidemenu-' ~ random()) %}
+{% set title_id = title_id|default('sidemenu__title-' ~ random()) %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-sidemenu--' ~ variant) %}
+{% endif %}
+
+{% if position %}
+  {% set attributes = attributes.addClass('fr-sidemenu--' ~ position) %}
+{% endif %}
+
+<nav{{ attributes.addClass('fr-sidemenu') }} role="navigation" aria-labelledby="{{ title_id|clean_id }}" id="{{ html_id|clean_id }}">
+  <div class="fr-sidemenu__inner">
+    <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper-{{ html_id|clean_id }}" aria-expanded="false">{{ button_label }}</button>
+    <div class="fr-collapse" id="fr-sidemenu-wrapper-{{ html_id|clean_id }}">
+      <div id="{{ title_id|clean_id }}" class="fr-sidemenu__title">{{ title }}</div>
+      {{ _self.menu_links(items, attributes, 0) }}
+    </div>
+  </div>
+</nav>
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% if items %}
+    <ul class="fr-sidemenu__list">
+      {% for item in items %}
+        <li{{ item.attributes.addClass('fr-sidemenu__item') }}>
+          {% if item.below %}
+            {% set item_id = 'fr-sidemenu-item-' ~ loop.index ~ '-' ~ random() %}
+            <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="{{ item_id }}"{% if item.in_active_trail %} aria-current="page"{% endif %}>{{ item.title }}</button>
+            <div class="fr-collapse" id="{{ item_id }}">
+              {{ _self.menu_links(item.below, create_attribute(), menu_level + 1) }}
+            </div>
+          {% else %}
+            <a class="fr-sidemenu__link" href="{{ item.url }}">{{ item.title }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

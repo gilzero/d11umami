@@ -1,0 +1,50 @@
+.vt-status-message {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 75vh;
+  z-index: 9999;
+  -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInUp;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInUp;
+  .vt-message {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -6px 24px;
+    color: #333;
+    border: 1px solid;
+    display: flex;
+    padding: 1rem 3rem 1rem 1rem;
+    .vt-btn-close {
+      position: absolute;
+      top: 1.4rem;
+      right: 1rem;
+      opacity: 0.5;
+      z-index: 2;
+      padding: 0.4rem;
+      background-image: url( '../images/close.svg' );
+      border: 0;
+      background-repeat: no-repeat;
+      background-size:cover;
+      background-color: transparent;
+    }
+  }
+  .vt-message.vt-alert-success{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  .vt-message.vt-alert-warning{
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+  }
+  .vt-message.vt-alert-danger{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  .vt-message.vt-alert-info{   
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+  }
+}

@@ -1,0 +1,63 @@
+name: DSFR - Notice
+description: The important information banner allows users to see or access important and temporary information.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    button_label:
+      type: string
+      title: Button label
+      description: 'By default: "Hide message", or the translated string in another language.'
+    button_title:
+      type: string
+      title: Button title attribute
+      description: 'By default: "Hide message", or the translated string in another language.'
+    content:
+      type: string
+      title: Content
+    has_button:
+      type: boolean
+      title: Has button?
+      default: false
+    icon:
+      type: string
+      title: Icon
+      description: Allows you to define the weather icon of the notice.
+      enum:
+        - avalanches
+        - flood
+        - heavy-showers
+        - snowy
+        - sun
+        - temp-cold
+        - thunderstorms
+        - windy
+    link:
+      type: string
+      title: Link
+      description: A Drupal Link object.
+    title:
+      type: string
+      title: Title
+    variant:
+      type: string
+      title: Component variant
+      default: info
+      enum:
+        - alert
+        - attack
+        - cyberattack
+        - info
+        - warning
+        - weather-orange
+        - weather-purple
+        - weather-red
+        - witness
+  required:
+    - title
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.notice

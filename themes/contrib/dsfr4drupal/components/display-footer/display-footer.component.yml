@@ -1,0 +1,16 @@
+name: DSFR - Display (footer)
+description: The "Display Settings" path allows the user to choose whether to display the site in a light theme or a dark theme (to find out more about these two themes, see the Colors page).
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    label:
+      type: string
+      title: Label
+      description: 'By default: "Display settings", or the translated string in another language.'
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.display

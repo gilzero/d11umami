@@ -1,0 +1,81 @@
+/* Comments
+--------------------------------------*/
+#node-comment {
+  position: relative;
+  margin: 0;
+  border-top: 1px solid var(--border-color);
+}
+#node-comment i {
+  color: var(--color-primary);
+}
+.comments-title i {
+  font-size: 1em;
+}
+
+/* Comments -> comment form. */
+.comment-form-wrap {
+  position: relative;
+  margin: 2em 0 1em 0;
+}
+.add-comment-title {
+  margin: 0;
+}
+.add-comment-title i {
+  font-size: 1em;
+}
+.comment-form label {
+  display: block;
+}
+
+/* Comments -> single comment */
+.single-comment {
+  position: relative;
+  background-color: var(--bg-content);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 10px 0;
+}
+.comment-user-picture {
+  position: relative;
+  padding: 0 4px;
+  border-right: 1px solid var(--border-color);
+  text-align: center;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 60px;
+  flex: 0 0 60px;
+}
+.comment-user-picture img {
+  max-width: 100px;
+  height: auto;
+}
+h3.single-comment-title {
+  margin: 0.1em 0;
+  font-size: 1.2em;
+}
+.single-comment-meta {
+  width: 100%;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  font-size: 0.9em;
+  border-bottom: 1px solid var(--border-color);
+}
+.single-comment-content-body {
+  position: relative;
+  padding: 0 10px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+#node-comment .indented {
+  margin-left: 2rem;
+}
+.single-comment-content .inline a {
+  padding: 4px 0.5rem;
+  border: 3px solid var(--border-color);
+}
+.single-comment-content .inline a:hover {
+  background-color: var(--border-color);
+}

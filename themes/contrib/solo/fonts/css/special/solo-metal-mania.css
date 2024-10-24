@@ -1,0 +1,4 @@
+.page-wrapper .metal-mania {
+  --solo-font-s: 'Metal Mania', cursive;
+  font-family: var(--solo-font-s) !important;
+}

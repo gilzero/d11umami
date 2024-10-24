@@ -1,0 +1,9 @@
+{% if content %}
+  <div class="skirt-nav">
+    {% for key, value in elements|filter((value, key) => key|first != '#') %}
+      <div class="column column--{{key}}">
+        {{ value }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

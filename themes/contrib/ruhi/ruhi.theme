@@ -1,0 +1,184 @@
+<?php
+/**
+ * @file
+ * Extra Functions for Ruhi theme.
+ */
+use Drupal\file\Entity\File;
+/**
+ * Sanitise input urls.
+ */
+function santise_val_url($url) {
+	if ($url != '') {
+
+		// Sanitise (remove all illegal characters) from url.
+		$url = filter_var($url, FILTER_SANITIZE_URL);
+
+		// Validate url.
+		if (filter_var($url, FILTER_VALIDATE_URL) == TRUE) {
+			$url = $url;
+		} else {
+			$url = '#';
+		}
+		return $url;
+	}
+}
+function ruhi_preprocess_html(&$variables) {
+	$variables['base_path'] = base_path();
+	$variables['ruhi_path'] = \Drupal::service('extension.list.theme')->getPath('ruhi');
+	$variables['font_src'] = theme_get_setting('font_src', 'ruhi');
+	$variables['styling'] = theme_get_setting('styling', 'ruhi');
+	$variables['styling_code'] = theme_get_setting('styling_code', 'ruhi');
+	$variables['slider_show'] = theme_get_setting('slider_show', 'ruhi');
+	$variables['slider_speed'] = theme_get_setting('slider_speed', 'ruhi');
+}
+function ruhi_preprocess_page(array &$variables) {
+	// theme path
+	$variables['page_ruhi_path'] = \Drupal::service('extension.list.theme')->getPath('ruhi');
+	
+	// Layout
+	$variables['container_width'] = theme_get_setting('container_width', 'ruhi');
+	$variables['header_width'] = theme_get_setting('header_width', 'ruhi');
+	$variables['main_width'] = theme_get_setting('main_width', 'ruhi');
+	$variables['footer_width'] = theme_get_setting('footer_width', 'ruhi');
+
+	// homepage slider
+	$variables['slider_show'] = theme_get_setting('slider_show', 'ruhi');
+	$variables['slider_code'] = theme_get_setting('slider_code', 'ruhi');
+	$variables['slider_image'] = theme_get_setting('slider_image', 'ruhi');
+	$slider_image_id = theme_get_setting('slider_image', 'ruhi');
+	if(!empty($slider_image_id)) {
+		$slider_image_file = File::load($slider_image_id[0]);
+		$slider_image_file->setPermanent();
+		$slider_image_file->save();
+		$slider_image_file_usage = \Drupal::service('file.usage');
+		$slider_image_file_usage->add($slider_image_file, 'ruhi', 'theme', $slider_image_id[0]);
+	};
+	if(!empty($slider_image_file)) {
+    $imageuri = $slider_image_file->getFileUri();
+		$variables['slider_image_path'] = \Drupal::service('file_url_generator')->generateAbsoluteString($imageuri);
+	};
+
+	// Header
+	$variables['header_main_default'] = theme_get_setting('header_main_default', 'ruhi');
+	$variables['header_main_padding_top'] = theme_get_setting('header_main_padding_top', 'ruhi');
+	$variables['header_main_padding_bottom'] = theme_get_setting('header_main_padding_bottom', 'ruhi');
+	$variables['header_page_default'] = theme_get_setting('header_page_default', 'ruhi');
+	$variables['header_page_padding_top'] = theme_get_setting('header_page_padding_top', 'ruhi');
+	$variables['header_page_padding_bottom'] = theme_get_setting('header_page_padding_bottom', 'ruhi');
+	$variables['header_page_content_position'] = theme_get_setting('header_page_content_position', 'ruhi');
+
+	// Sidebar
+	$variables['front_sidebar'] = theme_get_setting('front_sidebar', 'ruhi');
+	$variables['sidebar_width_default'] = theme_get_setting('sidebar_width_default', 'ruhi');
+	$variables['sidebar_width_left'] = theme_get_setting('sidebar_width_left', 'ruhi');
+	$variables['sidebar_width_right'] = theme_get_setting('sidebar_width_right', 'ruhi');
+	$variables['sidebar_block_default'] = theme_get_setting('sidebar_block_default', 'ruhi');	
+	$variables['sidebar_padding'] = theme_get_setting('sidebar_padding', 'ruhi');
+	$variables['sidebar_radius'] = theme_get_setting('sidebar_radius', 'ruhi');
+	$variables['sidebar_margin'] = theme_get_setting('sidebar_margin', 'ruhi');
+	$variables['sidebar_title_font_size'] = theme_get_setting('sidebar_title_font_size', 'ruhi');
+	$variables['sidebar_title_transform'] = theme_get_setting('sidebar_title_transform', 'ruhi');
+
+	// Footer
+	$variables['copyright_text'] = theme_get_setting('copyright_text', 'ruhi');
+
+	// content
+	$variables['rtl'] = theme_get_setting('rtl', 'ruhi');
+
+	// Social
+	$variables['all_icons_show'] = theme_get_setting('all_icons_show', 'ruhi');
+	$variables['facebook_url'] = santise_val_url(theme_get_setting('facebook_url', 'ruhi'));
+	$variables['twitter_url'] = santise_val_url(theme_get_setting('twitter_url', 'ruhi'));
+	$variables['instagram_url'] = santise_val_url(theme_get_setting('instagram_url', 'ruhi'));
+	$variables['linkedin_url'] = santise_val_url(theme_get_setting('linkedin_url', 'ruhi'));
+	$variables['youtube_url'] = santise_val_url(theme_get_setting('youtube_url', 'ruhi'));
+	$variables['vimeo_url'] = santise_val_url(theme_get_setting('vimeo_url', 'ruhi'));
+  $variables['telegram_url'] = santise_val_url(theme_get_setting('telegram_url', 'ruhi'));
+  $variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'ruhi'));
+  $variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'ruhi'));
+	$variables['vk_url'] = santise_val_url(theme_get_setting('vk_url', 'ruhi'));
+
+	// Typography
+	$variables['body_font_size'] = theme_get_setting('body_font_size', 'ruhi');
+	$variables['body_line_height'] = theme_get_setting('body_line_height', 'ruhi');
+	$variables['paragraph_bottom'] = theme_get_setting('paragraph_bottom', 'ruhi');
+	$variables['headings_default'] = theme_get_setting('headings_default', 'ruhi');
+	$variables['h1_size'] = theme_get_setting('h1_size', 'ruhi');
+	$variables['h1_weight'] = theme_get_setting('h1_weight', 'ruhi');
+	$variables['h1_transform'] = theme_get_setting('h1_transform', 'ruhi');
+	$variables['h1_height'] = theme_get_setting('h1_height', 'ruhi');
+	$variables['h2_size'] = theme_get_setting('h2_size', 'ruhi');
+	$variables['h2_weight'] = theme_get_setting('h2_weight', 'ruhi');
+	$variables['h2_transform'] = theme_get_setting('h2_transform', 'ruhi');
+	$variables['h2_height'] = theme_get_setting('h2_height', 'ruhi');
+	$variables['h3_size'] = theme_get_setting('h3_size', 'ruhi');
+	$variables['h3_weight'] = theme_get_setting('h3_weight', 'ruhi');
+	$variables['h3_transform'] = theme_get_setting('h3_transform', 'ruhi');
+	$variables['h3_height'] = theme_get_setting('h3_height', 'ruhi');
+	$variables['h4_size'] = theme_get_setting('h4_size', 'ruhi');
+	$variables['h4_weight'] = theme_get_setting('h4_weight', 'ruhi');
+	$variables['h4_transform'] = theme_get_setting('h4_transform', 'ruhi');
+	$variables['h4_height'] = theme_get_setting('h4_height', 'ruhi');
+	$variables['h5_size'] = theme_get_setting('h5_size', 'ruhi');
+	$variables['h5_weight'] = theme_get_setting('h5_weight', 'ruhi');
+	$variables['h5_transform'] = theme_get_setting('h5_transform', 'ruhi');
+	$variables['h5_height'] = theme_get_setting('h5_height', 'ruhi');
+	$variables['h6_size'] = theme_get_setting('h6_size', 'ruhi');
+	$variables['h6_weight'] = theme_get_setting('h6_weight', 'ruhi');
+	$variables['h6_transform'] = theme_get_setting('h6_transform', 'ruhi');
+	$variables['h6_height'] = theme_get_setting('h6_height', 'ruhi');
+
+	// Element -> Logo
+	$variables['logo_default'] = theme_get_setting('logo_default', 'ruhi');
+	$variables['site_name_size'] = theme_get_setting('site_name_size', 'ruhi');
+	$variables['site_name_weight'] = theme_get_setting('site_name_weight', 'ruhi');
+	$variables['site_name_transform'] = theme_get_setting('site_name_transform', 'ruhi');
+	$variables['site_name_height'] = theme_get_setting('site_name_height', 'ruhi');
+	$variables['slogan_size'] = theme_get_setting('slogan_size', 'ruhi');
+	$variables['slogan_transform'] = theme_get_setting('slogan_transform', 'ruhi');
+	$variables['slogan_height'] = theme_get_setting('slogan_height', 'ruhi');
+	$variables['slogan_style'] = theme_get_setting('slogan_style', 'ruhi');
+	$variables['main_menu_default'] = theme_get_setting('main_menu_default', 'ruhi');
+	$variables['main_menu_top_size'] = theme_get_setting('main_menu_top_size', 'ruhi');
+	$variables['main_menu_top_weight'] = theme_get_setting('main_menu_top_weight', 'ruhi');
+	$variables['main_menu_top_transform'] = theme_get_setting('main_menu_top_transform', 'ruhi');
+	$variables['main_menu_sub_size'] = theme_get_setting('main_menu_sub_size', 'ruhi');
+	$variables['main_menu_sub_weight'] = theme_get_setting('main_menu_sub_weight', 'ruhi');
+	$variables['main_menu_sub_transform'] = theme_get_setting('main_menu_sub_transform', 'ruhi');
+	
+	// Element -> Page title
+	$variables['page_title_default'] = theme_get_setting('page_title_default', 'ruhi');
+	$variables['page_title_size_desktop'] = theme_get_setting('page_title_size_desktop', 'ruhi');
+	$variables['page_title_size_mobile'] = theme_get_setting('page_title_size_mobile', 'ruhi');
+	$variables['page_title_transform'] = theme_get_setting('page_title_transform', 'ruhi');
+
+	// Element -> Button
+	$variables['button_default'] = theme_get_setting('button_default', 'ruhi');
+	$variables['button_padding'] = theme_get_setting('button_padding', 'ruhi');
+	$variables['button_radius'] = theme_get_setting('button_radius', 'ruhi');
+
+	// Components -> Font icons
+	$variables['fontawesome_four'] = theme_get_setting('fontawesome_four', 'ruhi');
+	$variables['fontawesome_five'] = theme_get_setting('fontawesome_five', 'ruhi');
+	$variables['bootstrapicons'] = theme_get_setting('bootstrapicons', 'ruhi');
+	
+	// Components -> scroll to top
+	$variables['scrolltotop_on'] = theme_get_setting('scrolltotop_on', 'ruhi');
+	
+	// Comment
+	$variables['highlight_author_comment'] = theme_get_setting('highlight_author_comment', 'ruhi');
+}
+/**
+ * Node preprocess.
+ */
+function ruhi_preprocess_node(array &$variables) {
+	$variables['node_author_pic'] = theme_get_setting('node_author_pic', 'ruhi');
+	$variables['node_tags'] = theme_get_setting('node_tags', 'ruhi');
+}
+
+/**
+ * Comment preprocess.
+ */
+function ruhi_preprocess_comment(array &$variables) {
+	$variables['comment_user_pic'] = theme_get_setting('comment_user_pic', 'ruhi');
+}

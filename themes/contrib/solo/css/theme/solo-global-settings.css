@@ -1,0 +1,171 @@
+/* Font zie 18 */
+@media (min-width:26rem) {
+  html.fs-18,
+  html.fs-18 body {
+    font-size: var(--solo-px18);
+  }
+
+  html.fs-18 #sidebar-button-close button span,
+  html.fs-18 #search-button-open button span {
+    padding-top: var(--solo-px10) !important;
+    padding-bottom: var(--solo-px10) !important;
+  }
+
+  html.fs-18 #sidebar-button-open button span {
+    padding-top: var(--solo-px6) !important;
+    padding-bottom: var(--solo-px6) !important;
+  }
+
+  html.fs-18 .solo-search-block-form .form-type-search::before {
+    top: 25px;
+    left: 7px;
+  }
+
+  html.fs-18 .fixed-search-block-inner .solo-search-block-form .form-type-search::before {
+    top: 30px;
+  }
+
+  html.fs-18 .solo-inner .login-button-open>button,
+  html.fs-18 .solo-inner .navigation__menubar-account li a {
+    padding: var(--solo-px10) !important;
+  }
+
+  /* Font zie 20 */
+  html.fs-20,
+  html.fs-20 body {
+    font-size: var(--solo-px20);
+  }
+
+  html.fs-20 #sidebar-button-close button span,
+  html.fs-20 #search-button-open button span {
+    padding-top: var(--solo-px12) !important;
+    padding-bottom: var(--solo-px12) !important;
+  }
+
+  html.fs-20 #sidebar-button-open button span {
+    padding-top: var(--solo-px8) !important;
+    padding-bottom: var(--solo-px8) !important;
+  }
+
+  html.fs-20 .solo-search-block-form .form-type-search::before {
+    top: 28px;
+    left: 8px;
+  }
+
+  html.fs-20 .fixed-search-block-inner .solo-search-block-form .form-type-search::before {
+    top: 34px;
+  }
+
+  html.fs-20 .solo-inner .login-button-open>button,
+  html.fs-20 .solo-inner .navigation__menubar-account li a {
+    padding: var(--solo-px12) !important;
+  }
+
+  /* Region gaps 0 */
+  html.gap-no .solo-inner:not(.primary-menu-inner,
+  .primary-sidebar-menu-inner) {
+    padding: var(--solo-px0);
+  }
+
+  html.gap-no .solo-outer .region-inner {
+    padding: var(--solo-px0);
+  }
+
+  html.gap-no .multi>.solo-col {
+    gap: var(--solo-px0);
+    grid-auto-flow: column;
+  }
+
+  /* Region gaps 24 */
+  html.gap-24 .solo-inner:not(.primary-menu-inner,
+  .primary-sidebar-menu-inner,
+  .system-messages-inner,
+  .highlighted-inner) {
+    padding: var(--solo-px24);
+  }
+
+  html.gap-24 .solo-outer .region-inner {
+    padding: var(--solo-px24);
+  }
+
+  html.gap-24 .multi>.solo-col {
+    gap: var(--solo-px24);
+    grid-auto-flow: column;
+  }
+
+  html.gap-24 .solo-inner .navigation__menubar li.nav__menu-item>a,
+  html.gap-24 .solo-inner .navigation__menubar li.nav__menu-item>button {
+    padding-top: var(--solo-px18);
+    padding-bottom: var(--solo-px18);
+  }
+
+  /* Region gaps 36 */
+  html.gap-36 .solo-inner:not(.primary-menu-inner,
+  .primary-sidebar-menu-inner,
+  .system-messages-inner,
+  .highlighted-inner) {
+    padding: var(--solo-px36);
+  }
+
+  html.gap-36 .solo-outer .region-inner {
+    padding: var(--solo-px36);
+  }
+
+  html.gap-36 .multi>.solo-col {
+    gap: var(--solo-px36);
+    grid-auto-flow: column;
+  }
+
+  html.gap-36 .solo-inner .navigation__menubar li.nav__menu-item>a,
+  html.gap-36 .solo-inner .navigation__menubar li.nav__menu-item>button {
+    padding-top: var(--solo-px20);
+    padding-bottom: var(--solo-px20);
+  }
+
+  /* Region gaps 48 */
+  html.gap-48 .solo-inner:not(.primary-menu-inner,
+  .primary-sidebar-menu-inner,
+  .system-messages-inner,
+  .highlighted-inner) {
+    padding: var(--solo-px48);
+  }
+
+  html.gap-48 .solo-outer .region-inner {
+    padding: var(--solo-px48);
+  }
+
+  html.gap-48 .multi>.solo-col {
+    gap: var(--solo-px48);
+    grid-auto-flow: column;
+  }
+
+  html.gap-48 .solo-inner .navigation__menubar li.nav__menu-item>a,
+  html.gap-48 .solo-inner .navigation__menubar li.nav__menu-item>button {
+    padding-top: var(--solo-px24);
+    padding-bottom: var(--solo-px24);
+  }
+
+  /* Region gaps 64 */
+  html.gap-64 .solo-inner:not(.primary-menu-inner,
+  .primary-sidebar-menu-inner,
+  .system-messages-inner,
+  .highlighted-inner) {
+    padding: var(--solo-px64);
+  }
+
+  html.gap-64 .solo-outer .region-inner {
+    padding: var(--solo-px64);
+  }
+
+  html.gap-64 .multi>.solo-col {
+    gap: var(--solo-px64);
+    grid-auto-flow: column;
+  }
+
+  html.gap-64 .solo-inner .navigation__menubar li.nav__menu-item>a,
+  html.gap-64 .solo-inner .navigation__menubar li.nav__menu-item>button {
+    padding-top: var(--solo-px32);
+    padding-bottom: var(--solo-px32);
+  }
+
+}

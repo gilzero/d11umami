@@ -1,0 +1,106 @@
+#page-wrapper .w3-camo-brown {
+  --r-tx: var(--solo-white);
+  --r-bg: #594d45;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-red {
+  --r-tx: var(--solo-white);
+  --r-bg: #79533d;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-olive {
+  --r-tx: var(--solo-white);
+  --r-bg: #595142;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-field {
+  --r-tx: var(--solo-white);
+  --r-bg: #745d46;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-earth {
+  --r-tx: var(--solo-white);
+  --r-bg: #ac7e54;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-sand {
+  --r-tx: var(--solo-white);
+  --r-bg: #a9947b;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-tan {
+  --r-tx: var(--solo-white);
+  --r-bg: #b49d80;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-sandstone {
+  --r-tx: var(--solo-white);
+  --r-bg: #bcab90;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-dark-green {
+  --r-tx: var(--solo-white);
+  --r-bg: #535640;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-forest {
+  --r-tx: var(--solo-white);
+  --r-bg: #54504b;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-light-green {
+  --r-tx: var(--solo-white);
+  --r-bg: #63613e;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-green {
+  --r-tx: var(--solo-white);
+  --r-bg: #4a5444;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-dark-gray,
+#page-wrapper .w3-camo-dark-grey {
+  --r-tx: var(--solo-white);
+  --r-bg: #5c5c5b;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-gray,
+#page-wrapper .w3-camo-grey {
+  --r-tx: var(--solo-white);
+  --r-bg: #9495a5;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-camo-black {
+  --r-tx: var(--solo-white);
+  --r-bg: #373538;
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}

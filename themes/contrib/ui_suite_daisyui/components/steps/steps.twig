@@ -1,0 +1,19 @@
+{% set attributes = attributes.addClass('steps', 'not-prose') %}
+
+{% if variant and variant != 'vertical_responsive' %}
+  {% set attributes = (variant != 'default') ? attributes.addClass('steps-' ~ variant) : attributes %}
+{% elseif variant == 'vertical_responsive' %}
+  {% set attributes = attributes.addClass(['steps-vertical', 'lg:steps-horizontal']) %}
+{% endif %}
+
+{% if items %}
+  {% if scrollable %}
+  <div class="overflow-x-auto">
+  {% endif %}
+  <ul {{ attributes }}>
+  {{ items }}
+  </ul>
+  {% if scrollable %}
+  </div>
+  {% endif %}
+{% endif %}

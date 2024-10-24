@@ -1,0 +1,24 @@
+ui_patterns_devel.twig_validator:
+  path: "/admin/reports/ui-components"
+  defaults:
+    _title: "Components status report"
+    _controller: '\Drupal\ui_patterns_devel\Controller\ComponentValidatorOverview::overview'
+  requirements:
+    _permission: "access patterns page+access site reports"
+
+ui_patterns_devel.twig_validator.details:
+  path: "/admin/reports/ui-components/details"
+  defaults:
+    _title: "Components status report"
+    _controller: '\Drupal\ui_patterns_devel\Controller\ComponentValidatorOverview::overviewDetails'
+  requirements:
+    _permission: "access patterns page+access site reports"
+
+ui_patterns_devel.twig_validator.component:
+  path: "/admin/reports/ui-components/component/{component_id}"
+  defaults:
+    _title_callback: '\Drupal\ui_patterns_devel\Controller\ComponentValidatorOverview::overviewSingleTitle'
+    _controller: '\Drupal\ui_patterns_devel\Controller\ComponentValidatorOverview::overviewSingle'
+    component_id: ""
+  requirements:
+    _permission: "access patterns page+access site reports"

@@ -1,0 +1,97 @@
+name: Button
+description: "Buttons allow the user to take actions or make choices."
+group: Actions
+links:
+  - "https://daisyui.com/components/button/"
+variants:
+  default:
+    title: Default
+  neutral:
+    title: Neutral
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  accent:
+    title: Accent
+  ghost:
+    title: Ghost
+  link:
+    title: Link
+  info:
+    title: Info
+  success:
+    title: Success
+  warning:
+    title: Warning
+  error:
+    title: Error
+slots:
+  label:
+    title: Label
+props:
+  type: object
+  properties:
+    active:
+      title: "Active?"
+      description: "It is possible to set button as active?"
+      $ref: "ui-patterns://boolean"
+    outline:
+      title: "Outlined?"
+      description: "It is possible to outline any button?"
+      $ref: "ui-patterns://boolean"
+    size:
+      title: Size
+      description: "It is possible to set the size of buttons."
+      $ref: "ui-patterns://enum"
+      enum:
+        - xs
+        - sm
+        - md
+        - lg
+      "meta:enum":
+        xs: "Extra small"
+        sm: Small
+        md: Medium
+        lg: Large
+    wide:
+      title: "Wide?"
+      description: "It is possible to display a wide button."
+      $ref: "ui-patterns://boolean"
+    glass:
+      title: "Glass?"
+      description: "It is possible to display a glass button."
+      $ref: "ui-patterns://boolean"
+    url:
+      title: URL
+      description: "The button URL. Optional."
+      $ref: "ui-patterns://url"
+    modal_id:
+      title: "Modal ID"
+      description: "To use in combination with Modal component, with same modal ID."
+      $ref: "ui-patterns://string"
+      pattern: "^[A-Za-z][A-Za-z0-9-_]*$"
+    disabled:
+      title: "Disable?"
+      description: "It is possible to set button as disabled?"
+      $ref: "ui-patterns://boolean"
+    square:
+      title: "Square?"
+      description: "It is possible to display button as squared?"
+      $ref: "ui-patterns://boolean"
+    circle:
+      title: "Circle?"
+      description: "It is possible to display button as circled?"
+      $ref: "ui-patterns://boolean"
+    _block:
+      title: "Block?"
+      description: "It is possible to display button as a block?"
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      label: Label
+    props:
+      size: md
+      url: "https://example.com"

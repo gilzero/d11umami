@@ -1,0 +1,8 @@
+/* Montserrat font */
+@font-face {
+	font-family: 'Montserrat';
+	font-display: swap;
+}
+html, body, .pure-g [class*="pure-u"] {
+	font-family: 'Montserrat', sans-serif;
+}

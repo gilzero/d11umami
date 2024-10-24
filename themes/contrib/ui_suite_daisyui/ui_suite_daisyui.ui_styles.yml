@@ -1,0 +1,877 @@
+################################################################################
+# DaisyUI classes.
+################################################################################
+
+daisyui_glass:
+  category: "DaisyUI effects"
+  label: "Glass"
+  description: "Utilities for applying a glass effect."
+  links:
+    - "https://daisyui.com/docs/utilities/#-2"
+  options:
+    glass: "glass"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+daisyui_mask:
+  category: "DaisyUI effects"
+  label: "Mask"
+  description: "Utilities for applying a mask effect to images or components."
+  links:
+    - "https://daisyui.com/components/mask/"
+  options:
+    mask mask-squircle: "Squircle"
+    mask mask-heart: "Heart"
+    mask mask-hexagon: "Hexagon"
+    mask mask-hexagon-2: "Hexagon-2"
+    mask mask-decagon: "Decagon"
+    mask mask-pentagon: "Pentagon"
+    mask mask-diamond: "Diamond"
+    mask mask-square: "Square"
+    mask mask-circle: "Circle"
+    mask mask-parallelogram: "Parallelogram"
+    mask mask-parallelogram-2: "Parallelogram-2"
+    mask mask-parallelogram-3: "Parallelogram-3"
+    mask mask-parallelogram-4: "Parallelogram-4"
+    mask mask-star: "Star"
+    mask mask-star-2: "Star-2"
+    mask mask-triangle: "Triangle"
+    mask mask-triangle-2: "Triangle-2"
+    mask mask-triangle-3: "Triangle-3"
+    mask mask-triangle-4: "Triangle-4"
+  previewed_with:
+    - bg-neutral
+    - my-3
+    - p-2
+
+################################################################################
+# Colors.
+################################################################################
+
+colors_background_color:
+  category: "Colors"
+  label: "Background color"
+  description: "Utilities for controlling an element's background color."
+  links:
+    - "https://daisyui.com/docs/colors/"
+  options:
+    bg-primary: "Primary"
+    bg-primary-content: "Primary content"
+    bg-secondary: "Secondary"
+    bg-secondary-content: "Secondary content"
+    bg-accent: "Accent"
+    bg-accent-content:
+      label: "Accent content"
+      previewed_with: ["text-secondary-content"]
+    bg-neutral:
+      label: "Neutral"
+      previewed_with: ["text-secondary-content"]
+    bg-neutral-content: "Neutral content"
+    bg-base-100: "Base 100"
+    bg-base-200: "Base 200"
+    bg-base-300: "Base 300"
+    bg-base-content:
+      label: "Base content"
+      previewed_with: ["text-secondary-content"]
+    bg-info: "Info"
+    bg-info-content:
+      label: "Info content"
+      previewed_with: ["text-secondary-content"]
+    bg-success: "Success"
+    bg-success-content:
+      label: "Success content"
+      previewed_with: ["text-secondary-content"]
+    bg-warning: "Warning"
+    bg-warning-content:
+      label: "Warning content"
+      previewed_with: ["text-secondary-content"]
+    bg-error: "Error"
+    bg-error-content:
+      label: "Error content"
+      previewed_with: ["text-secondary-content"]
+  previewed_with:
+    - p-2
+    - my-2
+
+colors_text_color:
+  category: "Colors"
+  label: "Text color"
+  description: "Utilities for controlling the text color of an element."
+  links:
+    - "https://daisyui.com/docs/colors/"
+  options:
+    text-primary: "primary"
+    text-primary-content: "primary-content"
+    text-secondary: "secondary"
+    text-secondary-content: "secondary-content"
+    text-accent: "accent"
+    text-accent-content: "accent-content"
+    text-neutral: "neutral"
+    text-neutral-content: "neutral-content"
+    text-base-100: "base-100"
+    text-base-200: "base-200"
+    text-base-300: "base-300"
+    text-base-content: "base-content"
+    text-info: "info"
+    text-info-content: "info-content"
+    text-success: "success"
+    text-success-content: "success-content"
+    text-warning: "warning"
+    text-warning-content: "warning-content"
+    text-error: "error"
+    text-error-content: "error-content"
+  previewed_with:
+    - p-2
+
+colors_border_color:
+  category: "Colors"
+  label: "Border color"
+  description: "Utilities for controlling the color of an element's borders."
+  links:
+    - "https://daisyui.com/docs/colors/"
+  options:
+    border-primary: "primary"
+    border-primary-content: "primary-content"
+    border-secondary: "secondary"
+    border-secondary-content: "secondary-content"
+    border-accent: "accent"
+    border-accent-content: "accent-content"
+    border-neutral: "neutral"
+    border-neutral-content: "neutral-content"
+    border-base-100: "base-100"
+    border-base-200: "base-200"
+    border-base-300: "base-300"
+    border-base-content: "base-content"
+    border-info: "info"
+    border-info-content: "info-content"
+    border-success: "success"
+    border-success-content: "success-content"
+    border-warning: "warning"
+    border-warning-content: "warning-content"
+    border-error: "error"
+    border-error-content: "error-content"
+  previewed_with:
+    - border
+    - p-2
+    - my-2
+
+################################################################################
+# Typography.
+################################################################################
+
+typography_font_size:
+  category: "Typography"
+  label: "Font size"
+  description: "Utilities for controlling the font size of an element."
+  links:
+    - "https://tailwindcss.com/docs/font-size"
+  options:
+    text-xs: "xs"
+    text-sm: "sm"
+    text-base: "base"
+    text-lg: "lg"
+    text-xl: "xl"
+    text-2xl: "2xl"
+    text-3xl: "3xl"
+    text-4xl: "4xl"
+    text-5xl: "5xl"
+    text-6xl: "6xl"
+    text-7xl: "7xl"
+    text-8xl: "8xl"
+    text-9xl: "9xl"
+  previewed_with:
+    - p-2
+
+typography_font_weight:
+  category: "Typography"
+  label: "Font weight"
+  description: "Utilities for controlling the font weight of an element."
+  links:
+    - "https://tailwindcss.com/docs/font-weight"
+  options:
+    font-thin: "thin"
+    font-extralight: "extralight"
+    font-light: "light"
+    font-normal: "normal"
+    font-medium: "medium"
+    font-semibold: "semibold"
+    font-bold: "bold"
+    font-extrabold: "extrabold"
+    font-black: "black"
+  previewed_with:
+    - p-2
+
+typography_text_align:
+  category: "Typography"
+  label: "Text align"
+  description: "Utilities for controlling the alignment of text."
+  links:
+    - "https://tailwindcss.com/docs/text-align"
+  options:
+    text-start: "start"
+    text-center: "center"
+    text-justify: "justify"
+    text-end: "end"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+################################################################################
+# Layout.
+################################################################################
+
+layout_aspect_ratio:
+  category: "Layout"
+  label: "Aspect ratio"
+  description: "Utilities for controlling the aspect ratio of an element."
+  links:
+    - "https://tailwindcss.com/docs/aspect-ratio"
+  options:
+    aspect-auto: "auto"
+    aspect-square: "square"
+    aspect-video: "video"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+layout_container:
+  category: "Layout"
+  label: "Container"
+  description: "A component for fixing an element's width to the current breakpoint."
+  links:
+    - "https://tailwindcss.com/docs/container"
+  options:
+    container: "container"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+layout_display:
+  category: "Layout"
+  label: "Display"
+  description: "Utilities for controlling the display box type of an element."
+  links:
+    - "https://tailwindcss.com/docs/display"
+  options:
+    block: "block"
+    inline-block: "inline-block"
+    inline: "inline"
+    flex: "flex"
+    inline-flex: "inline-flex"
+    table: "table"
+    inline-table: "inline-table"
+    table-caption: "table-caption"
+    table-cell: "table-cell"
+    table-column: "table-column"
+    table-column-group: "table-column-group"
+    table-footer-group: "table-footer-group"
+    table-header-group: "table-header-group"
+    table-row-group: "table-row-group"
+    table-row: "table-row"
+    flow-root: "flow-root"
+    grid: "grid"
+    inline-grid: "inline-grid"
+    contents: "contents"
+    list-item: "list-item"
+    hidden: "hidden"
+  previewed_with:
+    - p-2
+
+layout_overflow:
+  category: "Layout"
+  label: "Overflow"
+  description: "Utilities for controlling how an element handles content that is too large for the container."
+  links:
+    - "https://tailwindcss.com/docs/overflow"
+  options:
+    overflow-auto: "auto"
+    overflow-hidden: "hidden"
+    overflow-clip: "clip"
+    overflow-visible: "visible"
+    overflow-scroll: "scroll"
+    overflow-x-auto: "x-auto"
+    overflow-y-auto: "y-auto"
+    overflow-x-hidden: "x-hidden"
+    overflow-y-hidden: "y-hidden"
+    overflow-x-clip: "x-clip"
+    overflow-y-clip: "y-clip"
+    overflow-x-visible: "x-visible"
+    overflow-y-visible: "y-visible"
+    overflow-x-scroll: "x-scroll"
+    overflow-y-scroll: "y-scroll"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+################################################################################
+# Flexbox & Grid.
+################################################################################
+
+flexbox_grid_align_items:
+  category: "Flexbox & Grid"
+  label: "Align items"
+  description: "Utilities for controlling how flex and grid items are positioned along a container's cross axis."
+  links:
+    - "https://tailwindcss.com/docs/align-items"
+  options:
+    items-start: "start"
+    items-end: "end"
+    items-center: "center"
+    items-baseline: "baseline"
+    items-stretch: "stretch"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+flexbox_grid_place_content:
+  category: "Flexbox & Grid"
+  label: "Place content"
+  description: "Utilities for controlling how content is justified and aligned at the same time."
+  links:
+    - "https://tailwindcss.com/docs/place-content"
+  options:
+    place-content-center: "center"
+    place-content-start: "start"
+    place-content-end: "end"
+    place-content-between: "between"
+    place-content-around: "around"
+    place-content-evenly: "evenly"
+    place-content-baseline: "baseline"
+    place-content-stretch: "stretch"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+flexbox_grid_justify_content:
+  category: "Flexbox & Grid"
+  label: "Justify content"
+  description: "Utilities for controlling how flex and grid items are positioned along a container's main axis."
+  links:
+    - "https://tailwindcss.com/docs/justify-content"
+  options:
+    justify-normal: "normal"
+    justify-start: "start"
+    justify-end: "end"
+    justify-center: "center"
+    justify-between: "between"
+    justify-around: "around"
+    justify-evenly: "evenly"
+    justify-stretch: "stretch"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+flexbox_grid_flex_direction:
+  category: "Flexbox & Grid"
+  label: "Flex direction"
+  description: "Utilities for controlling the direction of flex items."
+  links:
+    - "https://tailwindcss.com/docs/flex-direction"
+  options:
+    flex-row: "row"
+    flex-row-reverse: "row-reverse"
+    flex-col: "col"
+    flex-col-reverse: "col-reverse"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+################################################################################
+# Effects.
+################################################################################
+
+effects_box_shadow:
+  category: "Effects"
+  label: "Box shadow"
+  description: "Utilities for controlling the box shadow of an element."
+  links:
+    - "https://tailwindcss.com/docs/box-shadow"
+  options:
+    shadow-sm: "sm"
+    shadow: "default"
+    shadow-md: "md"
+    shadow-lg: "lg"
+    shadow-xl: "xl"
+    shadow-2xl: "2xl"
+    shadow-inner: "inner"
+    shadow-none: "none"
+  previewed_with:
+    - p-2
+    - my-3
+    - border
+
+################################################################################
+# Sizing.
+################################################################################
+
+sizing_width:
+  category: "Sizing"
+  label: "Width"
+  description: "Utilities for setting the width of an element."
+  links:
+    - "https://tailwindcss.com/docs/width"
+  options:
+    w-4: "4"
+    w-5: "5"
+    w-6: "6"
+    w-7: "7"
+    w-8: "8"
+    w-9: "9"
+    w-10: "10"
+    w-11: "11"
+    w-12: "12"
+    w-14: "14"
+    w-16: "16"
+    w-20: "20"
+    w-24: "24"
+    w-28: "28"
+    w-32: "32"
+    w-36: "36"
+    w-40: "40"
+    w-44: "44"
+    w-48: "48"
+    w-52: "52"
+    w-56: "56"
+    w-60: "60"
+    w-64: "64"
+    w-72: "72"
+    w-80: "80"
+    w-96: "96"
+    w-auto: "auto"
+    w-1/2: "1/2"
+    w-1/3: "1/3"
+    w-2/3: "2/3"
+    w-1/4: "1/4"
+    w-2/4: "2/4"
+    w-3/4: "3/4"
+    w-1/5: "1/5"
+    w-2/5: "2/5"
+    w-3/5: "3/5"
+    w-4/5: "4/5"
+    w-1/6: "1/6"
+    w-2/6: "2/6"
+    w-3/6: "3/6"
+    w-4/6: "4/6"
+    w-5/6: "5/6"
+    w-1/12: "1/12"
+    w-2/12: "2/12"
+    w-3/12: "3/12"
+    w-4/12: "4/12"
+    w-5/12: "5/12"
+    w-6/12: "6/12"
+    w-7/12: "7/12"
+    w-8/12: "8/12"
+    w-9/12: "9/12"
+    w-10/12: "10/12"
+    w-11/12: "11/12"
+    w-full: "full"
+    w-screen: "screen"
+    w-min: "min"
+    w-max: "max"
+    w-fit: "fit"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+sizing_height:
+  category: "Sizing"
+  label: "Height"
+  description: "Utilities for setting the height of an element."
+  links:
+    - "https://tailwindcss.com/docs/height"
+  options:
+    h-4: "4"
+    h-5: "5"
+    h-6: "6"
+    h-7: "7"
+    h-8: "8"
+    h-9: "9"
+    h-10: "10"
+    h-11: "11"
+    h-12: "12"
+    h-14: "14"
+    h-16: "16"
+    h-20: "20"
+    h-24: "24"
+    h-28: "28"
+    h-32: "32"
+    h-36: "36"
+    h-40: "40"
+    h-44: "44"
+    h-48: "48"
+    h-52: "52"
+    h-56: "56"
+    h-60: "60"
+    h-64: "64"
+    h-72: "72"
+    h-80: "80"
+    h-96: "96"
+    h-auto: "auto"
+    h-screen: "screen"
+    h-min: "min"
+    h-max: "max"
+    h-fit: "fit"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+sizing_max_width:
+  category: "Sizing"
+  label: "Max width"
+  description: "Utilities for setting the maximum width of an element."
+  links:
+    - "https://tailwindcss.com/docs/max-width"
+  options:
+    max-w-none: "none"
+    max-w-xs: "xs"
+    max-w-sm: "sm"
+    max-w-md: "md"
+    max-w-lg: "lg"
+    max-w-xl: "xl"
+    max-w-2xl: "2xl"
+    max-w-3xl: "3xl"
+    max-w-4xl: "4xl"
+    max-w-5xl: "5xl"
+    max-w-6xl: "6xl"
+    max-w-7xl: "7xl"
+    max-w-full: "full"
+    max-w-fit: "fit"
+    max-w-prose: "prose"
+    max-w-screen-sm: "screen sm"
+    max-w-screen-md: "screen md"
+    max-w-screen-lg: "screen lg"
+    max-w-screen-xl: "screen xl"
+    max-w-screen-2xl: "screen 2xl"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+sizing_min_heigth:
+  category: "Sizing"
+  label: "Min height"
+  description: "Utilities for setting the minimum height of an element."
+  links:
+    - "https://tailwindcss.com/docs/min-height"
+  options:
+    min-h-0: "0"
+    min-h-screen: "screen"
+    min-h-min: "min"
+    min-h-max: "max"
+    min-h-fit: "fit"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+    - p-2
+
+################################################################################
+# Spacing.
+################################################################################
+
+spacing_padding:
+  category: "Spacing"
+  label: "Padding"
+  description: "Utilities for controlling an element's padding."
+  links:
+    - "https://tailwindcss.com/docs/padding"
+  options:
+    p-0: "0"
+    p-px: "px"
+    p-0.5: "0.5"
+    p-1: "1"
+    p-1.5: "1.5"
+    p-2: "2"
+    p-2.5: "2.5"
+    p-3: "3"
+    p-3.5: "3.5"
+    p-4: "4"
+    p-5: "5"
+    p-6: "6"
+    p-7: "7"
+    p-8: "8"
+    p-9: "9"
+    p-10: "10"
+    p-11: "11"
+    p-12: "12"
+    p-14: "14"
+    p-16: "16"
+    p-20: "20"
+    p-24: "24"
+    p-28: "28"
+    p-32: "32"
+    p-36: "36"
+    p-40: "40"
+    p-44: "44"
+    p-48: "48"
+    p-52: "52"
+    p-56: "56"
+    p-60: "60"
+    p-64: "64"
+    p-72: "72"
+    p-80: "80"
+    p-96: "96"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+
+spacing_padding_top:
+  category: "Spacing"
+  label: "Padding top"
+  description: "Utilities for controlling an element's padding top."
+  links:
+    - "https://tailwindcss.com/docs/padding"
+  options:
+    pt-0: "0"
+    pt-px: "px"
+    pt-0.5: "0.5"
+    pt-1: "1"
+    pt-1.5: "1.5"
+    pt-2: "2"
+    pt-2.5: "2.5"
+    pt-3: "3"
+    pt-3.5: "3.5"
+    pt-4: "4"
+    pt-5: "5"
+    pt-6: "6"
+    pt-7: "7"
+    pt-8: "8"
+    pt-9: "9"
+    pt-10: "10"
+    pt-11: "11"
+    pt-12: "12"
+    pt-14: "14"
+    pt-16: "16"
+    pt-20: "20"
+    pt-24: "24"
+    pt-28: "28"
+    pt-32: "32"
+    pt-36: "36"
+    pt-40: "40"
+    pt-44: "44"
+    pt-48: "48"
+    pt-52: "52"
+    pt-56: "56"
+    pt-60: "60"
+    pt-64: "64"
+    pt-72: "72"
+    pt-80: "80"
+    pt-96: "96"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+
+spacing_padding_horizontal:
+  category: "Spacing"
+  label: "Padding horizontal"
+  description: "Utilities for controlling an element's padding horizontal."
+  links:
+    - "https://tailwindcss.com/docs/padding"
+  options:
+    px-0: "0"
+    px-px: "px"
+    px-0.5: "0.5"
+    px-1: "1"
+    px-1.5: "1.5"
+    px-2: "2"
+    px-2.5: "2.5"
+    px-3: "3"
+    px-3.5: "3.5"
+    px-4: "4"
+    px-5: "5"
+    px-6: "6"
+    px-7: "7"
+    px-8: "8"
+    px-9: "9"
+    px-10: "10"
+    px-11: "11"
+    px-12: "12"
+    px-14: "14"
+    px-16: "16"
+    px-20: "20"
+    px-24: "24"
+    px-28: "28"
+    px-32: "32"
+    px-36: "36"
+    px-40: "40"
+    px-44: "44"
+    px-48: "48"
+    px-52: "52"
+    px-56: "56"
+    px-60: "60"
+    px-64: "64"
+    px-72: "72"
+    px-80: "80"
+    px-96: "96"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+
+spacing_padding_vertical:
+  category: "Spacing"
+  label: "Padding vertical"
+  description: "Utilities for controlling an element's padding vertical."
+  links:
+    - "https://tailwindcss.com/docs/padding"
+  options:
+    py-0: "0"
+    py-px: "px"
+    py-0.5: "0.5"
+    py-1: "1"
+    py-1.5: "1.5"
+    py-2: "2"
+    py-2.5: "2.5"
+    py-3: "3"
+    py-3.5: "3.5"
+    py-4: "4"
+    py-5: "5"
+    py-6: "6"
+    py-7: "7"
+    py-8: "8"
+    py-9: "9"
+    py-10: "10"
+    py-11: "11"
+    py-12: "12"
+    py-14: "14"
+    py-16: "16"
+    py-20: "20"
+    py-24: "24"
+    py-28: "28"
+    py-32: "32"
+    py-36: "36"
+    py-40: "40"
+    py-44: "44"
+    py-48: "48"
+    py-52: "52"
+    py-56: "56"
+    py-60: "60"
+    py-64: "64"
+    py-72: "72"
+    py-80: "80"
+    py-96: "96"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+
+spacing_space_between_horizontal:
+  category: "Spacing"
+  label: "Space Between"
+  description: "Utilities for controlling the horizontal space between child elements."
+  links:
+    - "https://tailwindcss.com/docs/space"
+  options:
+    space-x-0: "0"
+    space-x-px: "px"
+    space-x-0.5: "0.5"
+    space-x-1: "1"
+    space-x-1.5: "1.5"
+    space-x-2: "2"
+    space-x-2.5: "2.5"
+    space-x-3: "3"
+    space-x-3.5: "3.5"
+    space-x-4: "4"
+    space-x-5: "5"
+    space-x-6: "6"
+    space-x-7: "7"
+    space-x-8: "8"
+    space-x-9: "9"
+    space-x-10: "10"
+    space-x-11: "11"
+    space-x-12: "12"
+    space-x-14: "14"
+    space-x-16: "16"
+    space-x-20: "20"
+    space-x-24: "24"
+    space-x-28: "28"
+    space-x-32: "32"
+    space-x-36: "36"
+    space-x-40: "40"
+    space-x-44: "44"
+    space-x-48: "48"
+    space-x-52: "52"
+    space-x-56: "56"
+    space-x-60: "60"
+    space-x-64: "64"
+    space-x-72: "72"
+    space-x-80: "80"
+    space-x-96: "96"
+    space-x-reverse: "reverse"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3
+
+spacing_margin_bottom:
+  category: "Spacing"
+  label: "Margin bottom"
+  description: "Utilities for controlling an element's margin bottom."
+  links:
+    - "https://tailwindcss.com/docs/margin"
+  options:
+    mb-0: "0"
+    mb-px: "px"
+    mb-0.5: "0.5"
+    mb-1: "1"
+    mb-1.5: "1.5"
+    mb-2: "2"
+    mb-2.5: "2.5"
+    mb-3: "3"
+    mb-3.5: "3.5"
+    mb-4: "4"
+    mb-5: "5"
+    mb-6: "6"
+    mb-7: "7"
+    mb-8: "8"
+    mb-9: "9"
+    mb-10: "10"
+    mb-11: "11"
+    mb-12: "12"
+    mb-14: "14"
+    mb-16: "16"
+    mb-20: "20"
+    mb-24: "24"
+    mb-28: "28"
+    mb-32: "32"
+    mb-36: "36"
+    mb-40: "40"
+    mb-44: "44"
+    mb-48: "48"
+    mb-52: "52"
+    mb-56: "56"
+    mb-60: "60"
+    mb-64: "64"
+    mb-72: "72"
+    mb-80: "80"
+    mb-96: "96"
+  previewed_with:
+    - border
+    - bg-neutral-content
+    - my-3

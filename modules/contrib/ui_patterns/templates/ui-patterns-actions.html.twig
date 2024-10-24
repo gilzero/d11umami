@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a ui-patterns actions component.
+ *
+ * Available variables:
+ * - actions - default actions, always visible and not in dropdown.
+ * - dropdown_actions - actions for dropdown subcomponent.
+ *
+ * @see template_preprocess()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="ui-patterns-actions">
+  {{ actions }}
+  {# We are still using access attribute on some places to disable dropdown
+     actions and that is why we will first render dropdown_actions and then
+     render dropdown subcomponent if needed. #}
+  {% set dropdown_actions_output = render_var(dropdown_actions) %}
+  {% if dropdown_actions_output %}
+    <div class="ui-patterns-dropdown">
+      <button class="ui-patterns-dropdown-toggle"><span class="visually-hidden">{{ 'Toggle Actions'|t }}</span></button>
+      <div class="ui-patterns-dropdown-actions">
+        {{ dropdown_actions_output }}
+      </div>
+    </div>
+  {% endif %}
+</div>

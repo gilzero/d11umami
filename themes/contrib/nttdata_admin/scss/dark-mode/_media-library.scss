@@ -1,0 +1,66 @@
+body.dark-mode {
+  //MEDIA LIBRARY
+  .media-library {
+    &-widget {
+      .fieldset__label,
+      .fieldset__prefix {
+        color: $text-white;
+      }
+    }
+    &-item--grid {
+      background: unset;
+      &.is-hover:before {
+        border-color: $primary2;
+      }
+      .field--name-thumbnail {
+        background-color: unset;
+      }
+    }
+    &-item__attributes {
+      color: $text-white;
+      background: unset;
+      background-color: $white2;
+    }
+    &-item__remove {
+      background-image: $white-cross !important;
+    }
+    &-item__preview {
+      .field--type-image {
+        background-color: $link-water;
+      }
+    }
+    &-add-form__input-wrapper {
+      background-color: unset;
+    }
+    &-selected-count {
+      color: $text-white;
+    }
+    &-wrapper .views-display-link {
+      background-blend-mode: difference;
+      color: $text-white;
+    }
+    &-add-form__description {
+      color: $text-white;
+    }
+    &-add-form__preview {
+      background: unset;
+    }
+    &-add-form__fields {
+      color: $text-white;
+    }
+    &-add-form__remove-button {
+      background-image: none;
+      bottom: 0;
+      &:hover {
+        background-image: none;
+      }
+      &.button--extrasmall {
+        padding: calc(0.25rem - 1px) calc(0.75rem - 1px);
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  .dk-thumbnail {
+    @extend %filter-white;
+  }
+}

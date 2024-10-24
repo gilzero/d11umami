@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override for search block form.
+ *
+ * Rivet requires a special layout for input groups that cannot easily be
+ * achieved with normal form element templates.
+ *
+ * Available variables:
+ * - form: The search block form.
+ */
+#}
+<div class="rvt-input-group">
+  <input
+    type="search"
+    name="keys"
+    class="rvt-text-input rvt-input-group__input"
+    size="30"
+    maxlength="128"
+    placeholder=""
+    value="{{ form.keys['#value'] }}">
+  <div class="rvt-input-group__append">
+    <button type="submit" class="rvt-button">Search</button>
+  </div>
+</div>
+{{ form|without('keys', 'actions')}}

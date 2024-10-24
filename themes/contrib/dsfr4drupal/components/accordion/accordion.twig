@@ -1,0 +1,17 @@
+{% set accordion_id = accordion_id|default('accordion-' ~ random()) %}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set title_tag = title_tag|default('h3') %}
+
+<section{{ attributes.addClass('fr-accordion') }}>
+  <{{ title_tag }} class="fr-accordion__title">
+    <button class="fr-accordion__btn"
+            aria-expanded="{{ expanded ? 'true' : 'false' }}"
+            aria-controls="{{ accordion_id }}"
+            type="button">
+      {{ title }}
+    </button>
+  </{{ title_tag }}>
+  <div class="fr-collapse" id="{{ accordion_id }}">
+    {{ content }}
+  </div>
+</section>

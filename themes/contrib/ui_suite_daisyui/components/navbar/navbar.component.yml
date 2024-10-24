@@ -1,0 +1,37 @@
+name: Navbar
+description: "Used to show a navigation bar on the top of the page."
+group: Navigation
+links:
+  - "https://daisyui.com/components/navbar/"
+slots:
+  start:
+    title: Start
+    description: Fills 50% of width to be on start
+  center:
+    title: Center
+    description: Fills remaining space to be on center
+  end:
+    title: End
+    description: Fills 50% of width to be on end
+stories:
+  preview:
+    title: Preview
+    slots:
+      start:
+        type: component
+        component: ui_suite_daisyui:button
+        slots:
+          label: daisyUI
+        props:
+          variant: ghost
+      center:
+        type: component
+        component: ui_suite_daisyui:menu
+        story: flat
+        props:
+          variant: horizontal__md
+      end:
+        type: component
+        component: ui_suite_daisyui:button
+        slots:
+          label: Button

@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * A non-branded email template, for simple system notification emails.
+ *
+ * @see http://brand.iu.edu/downloads
+ */
+ #}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{{ subject }}</title>
+<style type="text/css">
+body {
+  color: #414042;
+  font-size: 16px;
+}
+a {
+  color: #006298;
+}
+</style>
+</head>
+
+<body style="padding:0; margin:0;">
+<div style="padding:0; margin:30px 0; font-family:Arial,Helvetica,sans-serif; font-weight:normal; font-size:16px; color:#414042; line-height:24px; max-width: 600px;">
+{% block content %}
+{{ content }}
+{% endblock %}
+</div>
+<div style="padding:0; margin: 30px 0 10px; max-width: 225px; border-top: 1px solid #ccc; font-size:1px;">&nbsp;</div>
+<div style="padding:0; margin:10px 0; font-style:normal; font-family:Arial,Helvetica,sans-serif; font-size:13px; font-weight:normal; line-height:17px; color:#767676; max-width: 600px;">
+{% block compliance %}
+This e-mail was sent automatically to <strong>{{ to_mail }}</strong>{% if from_name %} on behalf of {{ from_name }}{% endif %} by the {{ site_name }} website.
+{% endblock %}
+</div>
+{% block online_version %}
+{% if online_version_url %}
+<div style="padding:0; margin:10px 0; color:#990000; font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:17px;">
+<a style="color:#990000; text-decoration:none;" target="_blank" href="{{ online_version_url }}">View online.</a>
+</div>
+{% endif %}
+{% endblock %}
+</body>
+</html>

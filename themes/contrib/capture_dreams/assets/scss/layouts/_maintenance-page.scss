@@ -1,0 +1,11 @@
+// 
+.maintenance-page {
+    text-align: center;
+    header {
+        margin-top: em(200px);
+        .logo {
+            max-width: em(300px);
+            margin-bottom: em(30px);
+        }
+    }
+}

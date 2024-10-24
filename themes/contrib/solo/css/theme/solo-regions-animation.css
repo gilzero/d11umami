@@ -1,0 +1,162 @@
+/* Border animation  */
+@keyframes animateregion {
+  0% {
+    transform: scale(1);
+}
+  50% {
+    transform: scale(1.01);
+}
+  100% {
+    transform: scale(1);
+}
+}
+
+.page-wrapper .solo-outer.animate-hover .region-inner:not(.main-box-inner),
+.page-wrapper .solo-outer.animate-border .region-inner:not(.main-box-inner) {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.page-wrapper .solo-outer.animate-hover .region-inner:not(.main-box-inner):hover {
+  animation: animateregion 2s;
+}
+
+.page-wrapper .solo-outer.animate-border .region-inner:not(.main-box-inner)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border: var(--solo-px4) solid transparent;
+}
+
+.page-wrapper .solo-outer.animate-border .region-inner:not(.main-box-inner):hover::before {
+  animation: borderLeftColors 1.5s linear forwards;
+}
+
+.page-wrapper .solo-outer.animate-border .region-inner:not(.main-box-inner)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border: var(--solo-px4) solid transparent;
+}
+
+.page-wrapper .solo-outer.animate-border .region-inner:not(.main-box-inner):hover::after {
+  animation: borderRightColors 1.5s linear forwards;
+}
+
+/* Shadows */
+.page-wrapper .solo-outer.animate-border .region-inner:not(.main-box-inner) {
+  transition: 0.4s !important;
+  overflow: hidden !important;
+}
+
+/* Radios */
+.page-wrapper .solo-outer.radius-4 .region-inner,
+.page-wrapper .solo-outer.animate-border.radius-4 .region-inner:not(.main-box-inner)::before,
+.page-wrapper .solo-outer.animate-border.radius-4 .region-inner:not(.main-box-inner)::after {
+  border-radius: var(--solo-px4);
+}
+
+.page-wrapper .solo-outer.radius-8 .region-inner,
+.page-wrapper .solo-outer.animate-border.radius-8 .region-inner:not(.main-box-inner)::before,
+.page-wrapper .solo-outer.animate-border.radius-8 .region-inner:not(.main-box-inner)::after {
+  border-radius: var(--solo-px8);
+}
+
+.page-wrapper .solo-outer.radius-16 .region-inner,
+.page-wrapper .solo-outer.animate-border.radius-16 .region-inner:not(.main-box-inner)::before,
+.page-wrapper .solo-outer.animate-border.radius-16 .region-inner:not(.main-box-inner)::after {
+  border-radius: var(--solo-px16);
+}
+
+.page-wrapper .solo-outer.radius-24 .region-inner,
+.page-wrapper .solo-outer.animate-border.radius-24 .region-inner:not(.main-box-inner)::before,
+.page-wrapper .solo-outer.animate-border.radius-24 .region-inner:not(.main-box-inner)::after {
+  border-radius: var(--solo-px24);
+}
+
+/* Border animation  */
+@keyframes borderLeftColors {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: var(--r-br, var(--r-br-b));
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: var(--r-br, var(--r-br-b));
+    border-right-color: var(--r-br, var(--r-br-b));
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  99.9999% {
+    width: 100%;
+    height: 100%;
+    border-top-color: var(--r-br, var(--r-br-b));
+    border-right-color: var(--r-br, var(--r-br-b));
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+}
+
+@keyframes borderRightColors {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--r-br, var(--r-br-b));
+    border-left-color: transparent;
+  }
+
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--r-br, var(--r-br-b));
+    border-left-color: var(--r-br, var(--r-br-b));
+  }
+
+  99.9999% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--r-br, var(--r-br-b));
+    border-left-color: var(--r-br, var(--r-br-b));
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+}

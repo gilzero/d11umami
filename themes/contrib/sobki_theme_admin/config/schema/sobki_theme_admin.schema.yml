@@ -1,0 +1,3 @@
+sobki_theme_admin.settings:
+  type: gin.settings
+  label: 'Sobki Admin Theme settings'

@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Horizontal rule element style overrides for Rivet.
+ */
+hr.webform-horizontal-rule--dashed,
+hr.webform-horizontal-rule--dotted,
+hr.webform-horizontal-rule--flaired,
+hr.webform-horizontal-rule--flaired::before,
+hr.webform-horizontal-rule--glyph,
+hr.webform-horizontal-rule--solid {
+  border-color: #a0abb4;
+}
+
+hr.webform-horizontal-rule--gradient {
+  /* rgb(117 131 143) == #75838f */
+  background-image: linear-gradient(
+    to right,
+    rgba(117, 131, 143, 0),
+    rgba(117, 131, 143, 1),
+    rgba(117, 131, 143, 0)
+  );
+}
+
+hr.webform-horizontal-rule--glyph {
+  color: #a0abb4;
+}

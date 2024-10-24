@@ -1,0 +1,8 @@
+{% set attributes = attributes|default(create_attribute()) %}
+<ul{{ attributes.addClass('fr-tags-group') }}>
+  {% for item in items %}
+    <li>
+      {{ include('dsfr4drupal:tag', item, with_context=false) }}
+    </li>
+  {% endfor %}
+</ul>

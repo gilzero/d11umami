@@ -1,0 +1,61 @@
+.webform-multiple-add {
+  display: none;
+}
+
+.webform-multiple-add .field-suffix {
+  white-space: nowrap;
+}
+
+.webform-multiple-add input[type="number"] {
+  width: 4rem;
+  text-align: right;
+}
+
+.webform-multiple-table thead {
+  background-color: transparent;
+}
+
+.webform-multiple-table thead,
+.webform-multiple-table tr {
+  border: 0;
+}
+
+.webform-multiple-table th,
+.webform-multiple-table td {
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+}
+
+.webform-multiple-table th:last-child,
+.webform-multiple-table td:last-child {
+  padding-right: 0;
+}
+
+.webform-multiple-table td.webform-multiple-table--handle {
+  padding-right: 0.5rem;
+  padding-left: 0;
+  line-height: 1px;
+}
+
+.webform-multiple-table td.webform-multiple-table--operations-two {
+  width: 48px;
+  padding-right: 0.5rem;
+  line-height: 1px;
+}
+
+.webform-multiple-table thead th {
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: bottom;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.rvt-label:not(.rvt-sr-only)
+  + .webform-multiple-table
+  thead
+  th:has(.visually-hidden) {
+  padding: 0;
+}

@@ -1,0 +1,110 @@
+name: Avatar
+description: "Avatars are used to show a thumbnail representation of an individual or business in the interface."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/avatar/"
+variants:
+  default:
+    title: Default
+  online:
+    title: Online
+  offline:
+    title: Offline
+slots:
+  image:
+    title: Image
+props:
+  type: object
+  properties:
+    size:
+      title: Size
+      description: "It is possible to set the size of avatars."
+      $ref: "ui-patterns://enum"
+      enum:
+        - w-8
+        - w-10
+        - w-12
+        - w-16
+        - w-20
+        - w-24
+        - w-28
+        - w-32
+      "meta:enum":
+        w-8: "8"
+        w-10: "10"
+        w-12: "12"
+        w-16: "16"
+        w-20: "20"
+        w-24: "24"
+        w-28: "28"
+        w-32: "32"
+    rounded:
+      title: Rounded
+      description: "It is possible to set rounded size of avatars."
+      $ref: "ui-patterns://enum"
+      enum:
+        - rounded
+        - rounded-xl
+        - rounded-full
+      "meta:enum":
+        rounded: Default
+        rounded-xl: "Extra large"
+        rounded-full: Full
+    mask:
+      title: Mask
+      description: "It is possible to set mask display to avatars."
+      $ref: "ui-patterns://enum"
+      enum:
+        - mask-squircle
+        - mask-heart
+        - mask-hexagon
+        - mask-hexagon-2
+        - mask-decagon
+        - mask-pentagon
+        - mask-diamond
+        - mask-square
+        - mask-circle
+        - mask-parallelogram
+        - mask-parallelogram-2
+        - mask-parallelogram-3
+        - mask-parallelogram-4
+        - mask-star
+        - mask-star-2
+        - mask-triangle
+        - mask-triangle-2
+        - mask-triangle-3
+        - mask-triangle-4
+      "meta:enum":
+        mask-squircle: Squircle
+        mask-heart: Heart
+        mask-hexagon: Hexagon
+        mask-hexagon-2: Hexagon-2
+        mask-decagon: Decagon
+        mask-pentagon: Pentagon
+        mask-diamond: Diamond
+        mask-square: Square
+        mask-circle: Circle
+        mask-parallelogram: Parallelogram
+        mask-parallelogram-2: Parallelogram-2
+        mask-parallelogram-3: Parallelogram-3
+        mask-parallelogram-4: Parallelogram-4
+        mask-star: Star
+        mask-star-2: Star-2
+        mask-triangle: Triangle
+        mask-triangle-2: Triangle-2
+        mask-triangle-3: Triangle-3
+        mask-triangle-4: Triangle-4
+    ring:
+      title: Ring
+      description: "Do you want to set ring around avatar?"
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      image:
+        theme: image
+        uri: "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+    props:
+      size: w-24
+      rounded: rounded

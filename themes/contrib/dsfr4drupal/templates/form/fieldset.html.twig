@@ -1,0 +1,31 @@
+{% set classes = [
+  'js-form-item',
+  'form-item',
+  'js-form-wrapper',
+  'form-wrapper',
+] %}
+{% set legend_classes = [
+  'fr-fieldset__legend',
+  'fr-text--regular',
+  required ? 'js-form-required',
+  required ? 'form-required',
+] %}
+<div class="fr-form-group">
+  <fieldset{{ attributes.setAttribute('role', 'group').addClass(classes) }}>
+    <legend{{ legend.attributes.addClass(legend_classes) }}>{{ legend.title }}
+      {% if description.content %}
+        <span class="fr-hint-text">{{ description.content }}</span>
+      {% endif %}
+    </legend>
+    <div class="fr-fieldset__content">
+      {% if prefix %}
+        <span class="field-prefix">{{ prefix }}</span>
+      {% endif %}
+      {{ children }}
+      {% if suffix %}
+        <span class="field-suffix">{{ suffix }}</span>
+      {% endif %}
+    </div>
+    {% include '@dsfr4drupal/templates/form/form-element.error.html.twig' %}
+  </fieldset>
+</div>

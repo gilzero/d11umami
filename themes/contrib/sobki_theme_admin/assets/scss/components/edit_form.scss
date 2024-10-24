@@ -1,0 +1,7 @@
+// Node layout.
+.gin--edit-form {
+  // Show delete tab.
+  [data-drupal-link-system-path*="/delete"] {
+    display: flex;
+  }
+}

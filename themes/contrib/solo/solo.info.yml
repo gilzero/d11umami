@@ -1,0 +1,49 @@
+name: Solo
+description: 'Solo is the third generation of the <a target=_blank href=https://www.drupal.org/project/d8w3css>W3CSS Theme</a>. Should you wish to construct a more intricate website, consider utilizing the <a target=_blank href=https://www.drupal.org/project/paragraphs_bundles>Paragraphs Bundles Module.</strong></a><br/><strong><a target=_blank href=https://www.drupal.org/node/3405889>Doocumentation</a> - <a href=https://www.drupal.org/project/issues/solo>Create Issue on Drupal</a> - <a target=_blank href=http://unitedstarsofamerica.com>Try Out Demonstration</a> - <a target=_blank href=https://unitedstarsofamerica.com/color-schemes>Color Schemes</a></strong><br/>Developed & Designed by <strong><a target=_blank href=https://www.alaahaddad.com>Alaa Haddad</a></strong> - <a target=_blank href=https://www.flashwebcenter.com>Drupal Development</a> and <a target=_blank href=https://www.drupalcare.com>Drupal Maintenance</a>'
+package: Solo
+type: theme
+base theme: false
+core_version_requirement: ^10.1 || ^11
+
+#Libraries
+libraries:
+  - solo/solo-global
+  - solo/solo-menu
+
+ckeditor_stylesheets:
+  - css/theme/solo-ckeditor-iframe.css
+
+ckeditor5-stylesheets:
+  - css/theme/solo-ckeditor5.css
+
+#Regions
+regions:
+  highlighted: 'Highlighted'
+  popup_login_block: 'Popup Login Block'
+  fixed_search_block: 'Fixed Search Block'
+  header: 'Header'
+  primary_sidebar_menu: 'Primary Sidebar Menu'
+  primary_menu: 'Primary Menu'
+  welcome_text: 'Welcome Text'
+  top_first: 'Top First Container'
+  top_second: 'Top Second Container'
+  top_third: 'Top Third Container'
+  system_messages: 'System Messages'
+  page_title: 'Page Title'
+  breadcrumb: 'Breadcrumb'
+  sidebar_first: 'Left Sidebar'
+  content: 'Content'
+  sidebar_second: 'Right Sidebar'
+  bottom_first: 'Bottom First Container'
+  bottom_second: 'Bottom Second Container'
+  bottom_third: 'Bottom Third Container'
+  bottom_fourth: 'Bottom Fourth Container'
+  footer_first: 'Footer First Container'
+  footer_second: 'Footer Second Container'
+  footer_third: 'Footer Third Container'
+  footer_menu: 'Footer Menu Container'
+
+# Information added by Drupal.org packaging script on 2024-08-25
+version: '1.0.11'
+project: 'solo'
+datestamp: 1724547887

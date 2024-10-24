@@ -1,0 +1,246 @@
+/**
+ * @file
+ * Elements.
+ */
+
+// Focus.
+.page-wrapper *:focus,
+.ui-dialog *:focus,
+.cke_dialog_container .cke_dialog_body input[type="text"]:focus {
+  @include focus-outline;
+}
+
+.page-wrapper a {
+  &:focus {
+    @include focus-outline;
+    &:hover {
+      @include focus-outline;
+    }
+  }
+}
+
+// Selects.
+.form-element--type-select {
+  background-image: $grey-arrow-down;
+  &:focus {
+    @include focus-outline;
+  }
+  &:hover:focus {
+    box-shadow: none;
+  }
+}
+
+// Checkboxs.
+.form-type--checkbox {
+  .form-checkbox {
+    cursor: pointer;
+    &:checked,
+    &[disabled] {
+      border-color: $primary2;
+      background-color: $primary;
+      background-image: $blue-checkbox;
+    }
+    &[disabled] {
+      opacity: 0.5;
+    }
+    &:hover,
+    &:focus {
+      @include focus-outline;
+      &:focus:active,
+      &:hover {
+        @include focus-outline;
+      }
+    }
+  }
+}
+.form-boolean--type-radio:checked {
+  border-color: $strong-blue;
+  box-shadow: inset 0 0 0 1px $strong-blue;
+}
+
+
+// Dropdowns.
+.dropbutton__toggle {
+  background: $ck-grey;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 10px $shadow-15;
+  &:focus {
+    @include focus-outline;
+  }
+  &:hover {
+    background-color: $medium-grey;
+    cursor: pointer;
+  }
+  button {
+    background-color: $ck-grey;
+  }
+}
+
+.dropbutton__item {
+  box-shadow: 0 2px 10px $shadow-15;
+  min-width: 100%;
+  &:first-of-type {
+    min-width: 0;
+    > *:focus:hover,
+    > .button:focus:hover {
+      @include focus-outline;
+    }
+    > * {
+      color: $text-dark;
+      background-color: $ck-grey;
+      &:hover {
+        color: $text-dark;
+        background-color: $medium-grey;
+      }
+    }
+    ~ .dropbutton__item {
+      border: 1px solid $ck-grey;
+      box-shadow: 0 2px 10px $shadow-15;
+    }
+    ~ .dropbutton__item > a,
+    ~ .dropbutton__item > .button {
+      color: $text-grey;
+      background: $white;
+    }
+  }
+}
+
+.dropbutton-wrapper {
+  box-shadow: 0 1px 2px $shadow-25;
+  &:first-of-type ~ .dropbutton__item > *:hover {
+    color: $text-dark;
+    background-color: $ck-grey;
+  }
+}
+
+.dropbutton-wrapper:has(a.icon-link) {
+  box-shadow: none;
+}
+
+.dropbutton-wrapper {
+  .dropbutton-widget {
+    background-color: transparent;
+    .dropbutton__item.dropbutton-action {
+      background: $white;
+      a {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        // overflow: hidden;
+      }
+      @include respond-to-max("medium") {
+        a {
+          width: calc(100% - 10px);
+          padding: 10px;
+        }
+        &.secondary-action {
+          a {
+            width: 100%;
+            padding: 12.5px 10px;
+          }
+        }
+      }   
+    }
+    @include respond-to-max("medium") {
+      button.dropbutton__toggle {
+        padding: 16px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.icon-actions {
+  display: flex;
+  justify-content: space-around;
+  .icon-link {
+    @extend %button-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.5rem;
+    padding: 0.25rem;
+    border-radius: 50%;
+    text-decoration: none;
+    &:before {
+      @include icon($icon-inbox-check, $text-white);
+    }
+    &.edit {
+      &:before {
+        @include icon($icon-edit-pencil, $text-white);
+      }
+    }
+    &.delete,
+    &.uninstall {
+      &:before {
+        @include icon($icon-trash, $text-white);
+      }
+    }
+    &.storage-settings {
+      &:before {
+        @include icon($icon-box, $text-white);
+      }
+    }
+    &.duplicate,
+    &.quick-clone {
+      &:before {
+        @include icon($icon-copy, $text-white);
+      }
+    }
+    &.settings {
+      &:before {
+        @include icon($icon-cog, $text-white);
+        transform: rotate(180deg);
+      }
+    }
+    &.devel {
+      &:before {
+        @include icon($icon-letter-d-icon, $text-white);
+      }
+    }
+    &.translate {
+      &:before {
+        @include icon($icon-translation-icon, $text-white);
+      }
+    }
+  }
+}
+
+.config-admin-import-form {
+  #edit-list .dropbutton__item.dropbutton-action {
+    .ajax-progress {
+      min-width: 6rem;
+      &__throbber {
+        display: inline-block;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+%tag,
+.tag {
+  width: fit-content;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $text-white;
+  background-color: $black-pearl;
+}
+
+// RESPONSIVE
+// content types - manage fields buttons
+.local-actions {
+  display: flex;
+  @media only screen and (max-width: $sm) {
+    flex-direction: column;
+    .local-actions__item {
+      margin: 0;
+      &:last-child {
+        margin-top: 6px;
+      }
+    }
+  }
+}

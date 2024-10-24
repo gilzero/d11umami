@@ -1,0 +1,11 @@
+form.user-register-form .form-actions,
+form.user-login-form .form-actions,
+form.user-pass .form-actions {
+  text-align: center;
+}
+
+form.user-register-form .form-actions .solo-button,
+form.user-login-form .form-actions .solo-button,
+form.user-pass .form-actions .solo-button {
+  float: none;
+}

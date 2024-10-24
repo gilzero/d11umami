@@ -1,0 +1,123 @@
+<?php
+
+/**
+ * Returns the paths where we want to inclue/exclude elements to have a specific styling
+ */
+function get_paths($type) {
+  // Returns the paths where we don't want admin list items to have card styling
+  if ($type == 'admin-list') {
+    return [
+      '/admin/index',
+      '/admin/structure/webform/config'
+    ];
+  }
+  // Returns the paths where we want to replace dropdown actions for icon actions
+  else if ($type == 'icon-actions') {
+    return [
+      '/admin/content',
+      '/admin/content/media',
+      '/admin/content/comment',
+      '/admin/content/comment/approval',
+      '/admin/structure/block/block-content',
+      '/admin/structure/display-modes/form',
+      '/admin/structure/display-modes/view',
+      '/admin/config/media/responsive-image-style'
+    ];
+  }
+  else {
+    \Drupal::logger('nttdata_admin.theme')->error('Type ' . $type . ' is not configured for this action');
+  };
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function nttdata_admin_theme_suggestions_table_alter(array &$suggestions, array $variables, $hook) {
+  // Add twig name suggestions based on page title for HOOK -> table
+  if ($route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject()) {
+    $title = $route->getDefault('_title');
+    // Convert title to lowercase and replace spaces with dashes
+    $titleReplaced = str_replace(' ', '_', strtolower($title ?? ''));
+    if ($titleReplaced !== null) {
+      $suggestions[] = 'table__'.$titleReplaced;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function nttdata_admin_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if (strpos($hook, 'admin_block_content') !== FALSE) {
+    if ($current_path = \Drupal::service('path.current')->getPath()) {
+      // Add twig template only for intended pages
+      if (!in_array($current_path, get_paths('admin-list'))) {
+        $suggestions[] = $hook . '__cards';
+      }
+    }
+  }
+  else if (strpos($hook, 'links') !== FALSE) {
+    if (strpos($variables['theme_hook_original'], 'language')) {
+      return;
+    }
+    if ($current_path = \Drupal::service('path.current')->getPath()) {
+      // Add twig template only for intended pages
+      if (in_array($current_path, get_paths('icon-actions'))) {
+        $suggestions[] = $hook . '__icons';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function nttdata_admin_form_alter(&$form, $form_state, $form_id) {
+  if (strpos($form_id, 'views_form') !== FALSE) {
+    if (isset($form['header'])) {
+      $form['header']['#attributes']['class'][] = 'is-fixed-to-bottom';
+      $bulk_form = current(preg_grep('/_bulk_form/', array_keys($form['header'])));
+      if (isset($form['header'][$bulk_form])) {
+        // Bulk forms: update action & actions to small variants.
+        $form['header'][$bulk_form]['action']['#attributes']['class'][] = 'form-element--type-select--small';
+        $form['header'][$bulk_form]['actions']['submit']['#attributes']['class'][] = 'button--small';
+
+        // Bulk forms: change action submit text
+        $form['header'][$bulk_form]['actions']['submit']['#attributes']['value'][] = t('Apply');
+
+        // Bulk forms: remove double entry of submit button.
+        unset($form['actions']);
+      }
+    }
+  }
+  if (strpos($form_id, 'webform_bulk_form') !== FALSE) {
+    if (isset($form['operations'])) {
+      // Bulk forms: update action & actions to small variants.
+      $form['operations']['action']['#attributes']['class'][] = 'form-element--type-select--small';
+      $form['operations']['apply_above']['#attributes']['class'][] = 'button--small';
+      // Bulk forms: change action submit text
+      $form['operations']['apply_above']['#attributes']['value'][] = t('Apply');
+      // Bulk forms: remove double entry of submit button.
+      unset($form['apply_below']);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function nttdata_admin_preprocess_page(&$variables) {
+  // Check if we are on the /admin/modules/uninstall page.
+  if (\Drupal::routeMatch()->getRouteName() == 'system.modules_uninstall') {
+    // Add library for custom JavaScript and CSS.
+    $variables['#attached']['library'][] = 'nttdata_admin/uninstall-page';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function nttdata_admin_preprocess_links(&$variables) {
+  $variables['current_language'] = \Drupal::languageManager()->getCurrentLanguage()->getName();
+}

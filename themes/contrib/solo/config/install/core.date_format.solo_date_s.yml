@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - solo
+id: solo_date_s
+label: 'Solo Date Short'
+locked: false
+pattern: 'j  F,  Y'

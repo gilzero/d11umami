@@ -1,0 +1,38 @@
+/* Drupal Ubercart */
+.cart-block-title-bar .arrow-up {
+	background: transparent url(../images/menu-up.png) no-repeat center center !important;
+}
+.cart-block-title-bar .arrow-down {
+	background: transparent url(../images/menu-expanded.png) no-repeat center center !important;
+}
+
+/* Drupal Commerce Cart */
+.cart-block--summary {
+	max-width: 2em;
+	margin: .25em auto 1.25em;
+}
+.cart-block--summary__icon {
+	display: block;
+	margin-bottom: -2em;
+}
+.cart-block--summary__count {
+	display: block;
+	margin-bottom: 1em;
+	text-align: center;
+	font-family: 'Times';
+	font-weight: bold;
+	color: #dc2323;
+}
+.cart-block--summary__icon img {
+	margin: 0 auto;
+}
+.cart-block--link__expand {
+	border-bottom: none !important;
+}
+.cart-block--contents__inner {
+	padding: 0;
+	text-align: center;
+}
+.cart-block--contents {
+	background: #f2f2f2;
+}

@@ -1,0 +1,31 @@
+#maintenance-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #d1392b;
+  color: #fff;
+}
+/* header -> maintenance-page header */
+.maintenance-page .header {
+  background: var(--theme-color);
+}
+.maintenance-header {
+  position: relative;
+  width: 100%;
+}
+#maintenance {
+  position: relative;
+  padding: 20px 0;
+}
+.maintenance {
+  color: #fff;
+  text-align: center;
+}
+.maintenance-title {
+  margin-top: 2%;
+  color: #fff;
+}
+.maintenance-icon {
+  margin-top: 7%;
+  padding: 0 0 20px 0;
+}

@@ -1,0 +1,13 @@
+{% if content %}
+{{ attach_library('rivet/rvt-c-sidenav')}}
+<nav{{attributes.addClass('rvt-sidenav')|without('id')}} aria-labelledby="sidenav-label" data-rvt-sidenav>
+  {{ title_prefix }}
+  {% if label %}
+    <span{{title_attributes.addClass('rvt-sidenav__label')}} id="sidenav-label">
+    {{ label }}
+    </span>
+  {% endif %}
+  {{ content }}
+  {{ title_suffix }}
+</nav>
+{% endif %}

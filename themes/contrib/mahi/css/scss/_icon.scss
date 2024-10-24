@@ -1,0 +1,139 @@
+@font-face {
+  font-display: auto;
+  font-family: "mahi";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/mahi.woff2") format("woff2");
+}
+
+[class="icon"], [class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  font-family: "mahi" !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-map:before {
+  content: "\e000";
+}
+.icon-facebook:before {
+  content: "\e001";
+}
+.icon-minus:before {
+  content: "\e002";
+}
+.icon-instagram:before {
+  content: "\e003";
+}
+.icon-linkedin:before {
+  content: "\e004";
+}
+.icon-youtube:before {
+  content: "\e005";
+}
+.icon-vimeo:before {
+  content: "\e006";
+}
+.icon-vk:before {
+  content: "\e007";
+}
+.icon-whatsapp:before {
+  content: "\e008";
+}
+.icon-github:before {
+  content: "\e009";
+}
+.icon-telegram:before {
+  content: "\e00a";
+}
+.icon-search:before {
+  content: "\e00b";
+}
+.icon-phone:before {
+  content: "\e00c";
+}
+.icon-mail:before {
+  content: "\e00d";
+}
+.icon-arrow-up:before {
+  content: "\e00e";
+}
+.icon-check:before {
+  content: "\e00f";
+}
+.icon-alert:before {
+  content: "\e010";
+}
+.icon-alert-circle:before {
+  content: "\e011";
+}
+.icon-arrow-left:before {
+  content: "\e012";
+}
+.icon-clock:before {
+  content: "\e013";
+}
+.icon-quote:before {
+  content: "\e014";
+}
+.icon-arrow-right:before {
+  content: "\e015";
+}
+.icon-calendar:before {
+  content: "\e016";
+}
+.icon-user:before {
+  content: "\e017";
+}
+.icon-angle-right:before {
+  content: "\e018";
+}
+.icon-angle-left:before {
+  content: "\e019";
+}
+.icon-comment-plus:before {
+  content: "\e01a";
+}
+.icon-comment:before {
+  content: "\e01b";
+}
+.icon-file:before {
+  content: "\e01c";
+}
+.icon-info:before {
+  content: "\e01d";
+}
+.icon-horn:before {
+  content: "\e01e";
+}
+.icon-bell:before {
+  content: "\e01f";
+}
+.icon-feed:before {
+  content: "\e020";
+}
+.icon-plus:before {
+  content: "\e021";
+}
+.icon-bookmark:before {
+  content: "\e022";
+}
+.icon-close:before {
+  content: "\e023";
+}
+.icon-share:before {
+  content: "\e024";
+}
+.icon-twitter:before {
+  content: "\e025";
+}
+.icon-hash:before {
+  content: "\e026";
+}
+.icon-comments:before {
+  content: "\e027";
+}

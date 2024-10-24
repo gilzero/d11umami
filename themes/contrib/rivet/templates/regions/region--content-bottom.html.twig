@@ -1,0 +1,15 @@
+{#
+Use the Content Bottom region where content should be displayed in a
+constrained container below any edge-to-edge regions. Useful for
+webforms, post series navigation, or author blurbs.
+#}
+{% if content %}
+  {{ attach_library('rivet/rvt-c-region') }}
+  {% apply spaceless %}
+  <div class="rvt-c-region rvt-m-top-xl">
+    <div class="rvt-c-region__inner {{ content_width }} rvt-prose rvt-flow rvt-m-bottom-xl">
+      {{ content }}
+    </div>
+  </div>
+  {% endapply %}
+{% endif %}

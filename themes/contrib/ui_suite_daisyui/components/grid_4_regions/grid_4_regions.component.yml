@@ -1,0 +1,1534 @@
+name: "Grid 4 regions"
+description: "The grid system of tailwind CSS uses a series of utility classes for layouts and alignment of content. 'Grid 4 regions' offers an off-the-shelf component to add a 4-colummns configurable section. For more powerful needs, please refer to the Tailwind CSS documentation."
+group: "Grid"
+links:
+  - "https://daisyui.com/docs/layout-and-typography/"
+  - "https://tailwindcss.com/docs/container"
+  - "https://tailwindcss.com/docs/grid-template-columns"
+  - "https://tailwindcss.com/docs/grid-column"
+  - "https://tailwindcss.com/docs/gap"
+icon_map:
+  - [col_first, col_second, col_third, col_fourth]
+slots:
+  col_first:
+    title: First col
+  col_second:
+    title: Second col
+  col_third:
+    title: Third col
+  col_fourth:
+    title: Fourth col
+props:
+  type: object
+  properties:
+    container_type:
+      title: "Container type"
+      description: "Utilities for controlling if container class is injected in the markup."
+      $ref: "ui-patterns://enum"
+      enum:
+        - container mx-auto
+        - breakout
+        - bg-breakout
+      "meta:enum":
+        container mx-auto: "Container (default)"
+        breakout: "Breakout"
+        bg-breakout: "Bg breakout"
+    background_image:
+      title: Background image
+      description: "The background image URL. Optional."
+      $ref: "ui-patterns://url"
+    background_size:
+      title: "Background size"
+      description: "Utilities for controlling the background size of an element's background image."
+      $ref: "ui-patterns://enum"
+      enum:
+        - bg-auto
+        - bg-cover
+        - bg-contain
+      "meta:enum":
+        bg-auto: "Background auto"
+        bg-cover: "Background cover"
+        bg-contain: "Background contain"
+    background_position:
+      title: "Background position"
+      description: "Utilities for controlling the position of an element's background image."
+      $ref: "ui-patterns://enum"
+      enum:
+        - bg-bottom
+        - bg-center
+        - bg-left
+        - bg-left-bottom
+        - bg-left-top
+        - bg-right
+        - bg-right-bottom
+        - bg-right-top
+        - bg-top
+      "meta:enum":
+        bg-bottom: "Background bottom"
+        bg-center: "Background center"
+        bg-left: "Background left"
+        bg-left-bottom: "Background left bottom"
+        bg-left-top: "Background left top"
+        bg-right: "Background right"
+        bg-right-bottom: "Background right bottom"
+        bg-right-top: "Background right top"
+        bg-top: "Background top"
+    background_repeat:
+      title: "Background repeat"
+      description: "Utilities for controlling the repetition of an element's background image."
+      $ref: "ui-patterns://enum"
+      enum:
+        - bg-repeat
+        - bg-no-repeat
+        - bg-repeat-x
+        - bg-repeat-y
+        - bg-repeat-round
+        - bg-repeat-space
+      "meta:enum":
+        bg-repeat: "Background repeat"
+        bg-no-repeat: "Background no repeat"
+        bg-repeat-x: "Background repeat x"
+        bg-repeat-y: "Background repeat y"
+        bg-repeat-round: "Background repeat round"
+        bg-repeat-space: "Background repeat space"
+    gap:
+      title: "Gap"
+      description: "Utilities for controlling gutters between grid and flexbox items, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - gap-0
+        - gap-2
+        - gap-4
+        - gap-8
+        - gap-12
+      "meta:enum":
+        gap-0: "0rem"
+        gap-2: "0.5rem"
+        gap-4: "1rem"
+        gap-8: "2rem"
+        gap-12: "3rem"
+    gap_lg:
+      title: "Gap (lg)"
+      description: "Utilities for controlling gutters between grid and flexbox items, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:gap-0
+        - lg:gap-2
+        - lg:gap-4
+        - lg:gap-8
+        - lg:gap-12
+      "meta:enum":
+        lg:gap-0: "0rem"
+        lg:gap-2: "0.5rem"
+        lg:gap-4: "1rem"
+        lg:gap-8: "2rem"
+        lg:gap-12: "3rem"
+    gap_md:
+      title: "Gap (md)"
+      description: "Utilities for controlling gutters between grid and flexbox items, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:gap-0
+        - md:gap-2
+        - md:gap-4
+        - md:gap-8
+        - md:gap-12
+      "meta:enum":
+        md:gap-0: "0rem"
+        md:gap-2: "0.5rem"
+        md:gap-4: "1rem"
+        md:gap-8: "2rem"
+        md:gap-12: "3rem"
+    gap_sm:
+      title: "Gap (sm)"
+      description: "Utilities for controlling gutters between grid and flexbox items, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:gap-0
+        - sm:gap-2
+        - sm:gap-4
+        - sm:gap-8
+        - sm:gap-12
+      "meta:enum":
+        sm:gap-0: "0rem"
+        sm:gap-2: "0.5rem"
+        sm:gap-4: "1rem"
+        sm:gap-8: "2rem"
+        sm:gap-12: "3rem"
+    grid_cols:
+      title: "Grid Template Columns"
+      description: "Utilities for specifying the columns in a grid layout, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - grid-cols-1
+        - grid-cols-2
+        - grid-cols-3
+        - grid-cols-4
+        - grid-cols-5
+        - grid-cols-6
+        - grid-cols-7
+        - grid-cols-8
+        - grid-cols-9
+        - grid-cols-10
+        - grid-cols-11
+        - grid-cols-12
+      "meta:enum":
+        grid-cols-1: "1 column"
+        grid-cols-2: "2 columns"
+        grid-cols-3: "3 columns"
+        grid-cols-4: "4 columns"
+        grid-cols-5: "5 columns"
+        grid-cols-6: "6 columns"
+        grid-cols-7: "7 columns"
+        grid-cols-8: "8 columns"
+        grid-cols-9: "9 columns"
+        grid-cols-10: "10 columns"
+        grid-cols-11: "11 columns"
+        grid-cols-12: "12 columns"
+    grid_cols_lg:
+      title: "Grid Template Columns (lg)"
+      description: "Utilities for specifying the columns in a grid layout, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:grid-cols-1
+        - lg:grid-cols-2
+        - lg:grid-cols-3
+        - lg:grid-cols-4
+        - lg:grid-cols-5
+        - lg:grid-cols-6
+        - lg:grid-cols-7
+        - lg:grid-cols-8
+        - lg:grid-cols-9
+        - lg:grid-cols-10
+        - lg:grid-cols-11
+        - lg:grid-cols-12
+      "meta:enum":
+        lg:grid-cols-1: "1 column"
+        lg:grid-cols-2: "2 columns"
+        lg:grid-cols-3: "3 columns"
+        lg:grid-cols-4: "4 columns"
+        lg:grid-cols-5: "5 columns"
+        lg:grid-cols-6: "6 columns"
+        lg:grid-cols-7: "7 columns"
+        lg:grid-cols-8: "8 columns"
+        lg:grid-cols-9: "9 columns"
+        lg:grid-cols-10: "10 columns"
+        lg:grid-cols-11: "11 columns"
+        lg:grid-cols-12: "12 columns"
+    grid_cols_md:
+      title: "Grid Template Columns (md)"
+      description: "Utilities for specifying the columns in a grid layout, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:grid-cols-1
+        - md:grid-cols-2
+        - md:grid-cols-3
+        - md:grid-cols-4
+        - md:grid-cols-5
+        - md:grid-cols-6
+        - md:grid-cols-7
+        - md:grid-cols-8
+        - md:grid-cols-9
+        - md:grid-cols-10
+        - md:grid-cols-11
+        - md:grid-cols-12
+      "meta:enum":
+        md:grid-cols-1: "1 column"
+        md:grid-cols-2: "2 columns"
+        md:grid-cols-3: "3 columns"
+        md:grid-cols-4: "4 columns"
+        md:grid-cols-5: "5 columns"
+        md:grid-cols-6: "6 columns"
+        md:grid-cols-7: "7 columns"
+        md:grid-cols-8: "8 columns"
+        md:grid-cols-9: "9 columns"
+        md:grid-cols-10: "10 columns"
+        md:grid-cols-11: "11 columns"
+        md:grid-cols-12: "12 columns"
+    grid_cols_sm:
+      title: "Grid Template Columns (sm)"
+      description: "Utilities for specifying the columns in a grid layout, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:grid-cols-1
+        - sm:grid-cols-2
+        - sm:grid-cols-3
+        - sm:grid-cols-4
+        - sm:grid-cols-5
+        - sm:grid-cols-6
+        - sm:grid-cols-7
+        - sm:grid-cols-8
+        - sm:grid-cols-9
+        - sm:grid-cols-10
+        - sm:grid-cols-11
+        - sm:grid-cols-12
+      "meta:enum":
+        sm:grid-cols-1: "1 column"
+        sm:grid-cols-2: "2 columns"
+        sm:grid-cols-3: "3 columns"
+        sm:grid-cols-4: "4 columns"
+        sm:grid-cols-5: "5 columns"
+        sm:grid-cols-6: "6 columns"
+        sm:grid-cols-7: "7 columns"
+        sm:grid-cols-8: "8 columns"
+        sm:grid-cols-9: "9 columns"
+        sm:grid-cols-10: "10 columns"
+        sm:grid-cols-11: "11 columns"
+        sm:grid-cols-12: "12 columns"
+    col_span_first:
+      title: "Grid Column Span first"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-span-1
+        - col-span-2
+        - col-span-3
+        - col-span-4
+        - col-span-5
+        - col-span-6
+        - col-span-7
+        - col-span-8
+        - col-span-9
+      "meta:enum":
+        col-span-1: "span 1"
+        col-span-2: "span 2"
+        col-span-3: "span 3"
+        col-span-4: "span 4"
+        col-span-5: "span 5"
+        col-span-6: "span 6"
+        col-span-7: "span 7"
+        col-span-8: "span 8"
+        col-span-9: "span 9"
+    col_start_first:
+      title: "Grid Column Start first"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-start-1
+        - col-start-2
+        - col-start-3
+        - col-start-4
+        - col-start-5
+        - col-start-6
+        - col-start-7
+        - col-start-8
+        - col-start-9
+      "meta:enum":
+        col-start-1: "start 1"
+        col-start-2: "start 2"
+        col-start-3: "start 3"
+        col-start-4: "start 4"
+        col-start-5: "start 5"
+        col-start-6: "start 6"
+        col-start-7: "start 7"
+        col-start-8: "start 8"
+        col-start-9: "start 9"
+    col_end_first:
+      title: "Grid Column End first"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-end-2
+        - col-end-3
+        - col-end-4
+        - col-end-5
+        - col-end-6
+        - col-end-7
+        - col-end-8
+        - col-end-9
+        - col-end-10
+      "meta:enum":
+        col-end-2: "end 2"
+        col-end-3: "end 3"
+        col-end-4: "end 4"
+        col-end-5: "end 5"
+        col-end-6: "end 6"
+        col-end-7: "end 7"
+        col-end-8: "end 8"
+        col-end-9: "end 9"
+        col-end-10: "end 10"
+    col_span_second:
+      title: "Grid Column Span second"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-span-1
+        - col-span-2
+        - col-span-3
+        - col-span-4
+        - col-span-5
+        - col-span-6
+        - col-span-7
+        - col-span-8
+        - col-span-9
+      "meta:enum":
+        col-span-1: "span 1"
+        col-span-2: "span 2"
+        col-span-3: "span 3"
+        col-span-4: "span 4"
+        col-span-5: "span 5"
+        col-span-6: "span 6"
+        col-span-7: "span 7"
+        col-span-8: "span 8"
+        col-span-9: "span 9"
+    col_start_second:
+      title: "Grid Column Start second"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-start-2
+        - col-start-3
+        - col-start-4
+        - col-start-5
+        - col-start-6
+        - col-start-7
+        - col-start-8
+        - col-start-9
+        - col-start-10
+      "meta:enum":
+        col-start-2: "start 2"
+        col-start-3: "start 3"
+        col-start-4: "start 4"
+        col-start-5: "start 5"
+        col-start-6: "start 6"
+        col-start-7: "start 7"
+        col-start-8: "start 8"
+        col-start-9: "start 9"
+        col-start-10: "start 10"
+    col_end_second:
+      title: "Grid Column End second"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-end-3
+        - col-end-4
+        - col-end-5
+        - col-end-6
+        - col-end-7
+        - col-end-8
+        - col-end-9
+        - col-end-10
+        - col-end-11
+      "meta:enum":
+        col-end-3: "end 3"
+        col-end-4: "end 4"
+        col-end-5: "end 5"
+        col-end-6: "end 6"
+        col-end-7: "end 7"
+        col-end-8: "end 8"
+        col-end-9: "end 9"
+        col-end-10: "end 10"
+        col-end-11: "end 11"
+    col_span_third:
+      title: "Grid Column Span third"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-span-1
+        - col-span-2
+        - col-span-3
+        - col-span-4
+        - col-span-5
+        - col-span-6
+        - col-span-7
+        - col-span-8
+        - col-span-9
+      "meta:enum":
+        col-span-1: "span 1"
+        col-span-2: "span 2"
+        col-span-3: "span 3"
+        col-span-4: "span 4"
+        col-span-5: "span 5"
+        col-span-6: "span 6"
+        col-span-7: "span 7"
+        col-span-8: "span 8"
+        col-span-9: "span 9"
+    col_start_third:
+      title: "Grid Column Start third"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-start-3
+        - col-start-4
+        - col-start-5
+        - col-start-6
+        - col-start-7
+        - col-start-8
+        - col-start-9
+        - col-start-10
+        - col-start-11
+      "meta:enum":
+        col-start-3: "start 3"
+        col-start-4: "start 4"
+        col-start-5: "start 5"
+        col-start-6: "start 6"
+        col-start-7: "start 7"
+        col-start-8: "start 8"
+        col-start-9: "start 9"
+        col-start-10: "start 10"
+        col-start-11: "start 11"
+    col_end_third:
+      title: "Grid Column End third"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-end-4
+        - col-end-5
+        - col-end-6
+        - col-end-7
+        - col-end-8
+        - col-end-9
+        - col-end-10
+        - col-end-11
+        - col-end-12
+      "meta:enum":
+        col-end-4: "end 4"
+        col-end-5: "end 5"
+        col-end-6: "end 6"
+        col-end-7: "end 7"
+        col-end-8: "end 8"
+        col-end-9: "end 9"
+        col-end-10: "end 10"
+        col-end-11: "end 11"
+        col-end-12: "end 12"
+    col_span_fourth:
+      title: "Grid Column Span fourth"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-span-1
+        - col-span-2
+        - col-span-3
+        - col-span-4
+        - col-span-5
+        - col-span-6
+        - col-span-7
+        - col-span-8
+        - col-span-9
+      "meta:enum":
+        col-span-1: "span 1"
+        col-span-2: "span 2"
+        col-span-3: "span 3"
+        col-span-4: "span 4"
+        col-span-5: "span 5"
+        col-span-6: "span 6"
+        col-span-7: "span 7"
+        col-span-8: "span 8"
+        col-span-9: "span 9"
+    col_start_fourth:
+      title: "Grid Column Start fourth"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-start-4
+        - col-start-5
+        - col-start-6
+        - col-start-7
+        - col-start-8
+        - col-start-9
+        - col-start-10
+        - col-start-11
+        - col-start-12
+      "meta:enum":
+        col-start-4: "start 4"
+        col-start-5: "start 5"
+        col-start-6: "start 6"
+        col-start-7: "start 7"
+        col-start-8: "start 8"
+        col-start-9: "start 9"
+        col-start-10: "start 10"
+        col-start-11: "start 11"
+        col-start-12: "start 12"
+    col_end_fourth:
+      title: "Grid Column End fourth"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - col-end-5
+        - col-end-6
+        - col-end-7
+        - col-end-8
+        - col-end-9
+        - col-end-10
+        - col-end-11
+        - col-end-12
+        - col-end-13
+      "meta:enum":
+        col-end-5: "end 5"
+        col-end-6: "end 6"
+        col-end-7: "end 7"
+        col-end-8: "end 8"
+        col-end-9: "end 9"
+        col-end-10: "end 10"
+        col-end-11: "end 11"
+        col-end-12: "end 12"
+        col-end-13: "end 13"
+    col_span_first_lg:
+      title: "Grid Column Span first (lg)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-span-1
+        - lg:col-span-2
+        - lg:col-span-3
+        - lg:col-span-4
+        - lg:col-span-5
+        - lg:col-span-6
+        - lg:col-span-7
+        - lg:col-span-8
+        - lg:col-span-9
+      "meta:enum":
+        lg:col-span-1: "span 1"
+        lg:col-span-2: "span 2"
+        lg:col-span-3: "span 3"
+        lg:col-span-4: "span 4"
+        lg:col-span-5: "span 5"
+        lg:col-span-6: "span 6"
+        lg:col-span-7: "span 7"
+        lg:col-span-8: "span 8"
+        lg:col-span-9: "span 9"
+    col_start_first_lg:
+      title: "Grid Column Start first (lg)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-start-1
+        - lg:col-start-2
+        - lg:col-start-3
+        - lg:col-start-4
+        - lg:col-start-5
+        - lg:col-start-6
+        - lg:col-start-7
+        - lg:col-start-8
+        - lg:col-start-9
+      "meta:enum":
+        lg:col-start-1: "start 1"
+        lg:col-start-2: "start 2"
+        lg:col-start-3: "start 3"
+        lg:col-start-4: "start 4"
+        lg:col-start-5: "start 5"
+        lg:col-start-6: "start 6"
+        lg:col-start-7: "start 7"
+        lg:col-start-8: "start 8"
+        lg:col-start-9: "start 9"
+    col_end_first_lg:
+      title: "Grid Column End first (lg)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-end-2
+        - lg:col-end-3
+        - lg:col-end-4
+        - lg:col-end-5
+        - lg:col-end-6
+        - lg:col-end-7
+        - lg:col-end-8
+        - lg:col-end-9
+        - lg:col-end-10
+      "meta:enum":
+        lg:col-end-2: "end 2"
+        lg:col-end-3: "end 3"
+        lg:col-end-4: "end 4"
+        lg:col-end-5: "end 5"
+        lg:col-end-6: "end 6"
+        lg:col-end-7: "end 7"
+        lg:col-end-8: "end 8"
+        lg:col-end-9: "end 9"
+        lg:col-end-10: "end 10"
+    col_span_second_lg:
+      title: "Grid Column Span second (lg)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-span-1
+        - lg:col-span-2
+        - lg:col-span-3
+        - lg:col-span-4
+        - lg:col-span-5
+        - lg:col-span-6
+        - lg:col-span-7
+        - lg:col-span-8
+        - lg:col-span-9
+      "meta:enum":
+        lg:col-span-1: "span 1"
+        lg:col-span-2: "span 2"
+        lg:col-span-3: "span 3"
+        lg:col-span-4: "span 4"
+        lg:col-span-5: "span 5"
+        lg:col-span-6: "span 6"
+        lg:col-span-7: "span 7"
+        lg:col-span-8: "span 8"
+        lg:col-span-9: "span 9"
+    col_start_second_lg:
+      title: "Grid Column Start second (lg)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-start-2
+        - lg:col-start-3
+        - lg:col-start-4
+        - lg:col-start-5
+        - lg:col-start-6
+        - lg:col-start-7
+        - lg:col-start-8
+        - lg:col-start-9
+        - lg:col-start-10
+      "meta:enum":
+        lg:col-start-2: "start 2"
+        lg:col-start-3: "start 3"
+        lg:col-start-4: "start 4"
+        lg:col-start-5: "start 5"
+        lg:col-start-6: "start 6"
+        lg:col-start-7: "start 7"
+        lg:col-start-8: "start 8"
+        lg:col-start-9: "start 9"
+        lg:col-start-10: "start 10"
+    col_end_second_lg:
+      title: "Grid Column End second (lg)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-end-3
+        - lg:col-end-4
+        - lg:col-end-5
+        - lg:col-end-6
+        - lg:col-end-7
+        - lg:col-end-8
+        - lg:col-end-9
+        - lg:col-end-10
+        - lg:col-end-11
+      "meta:enum":
+        lg:col-end-3: "end 3"
+        lg:col-end-4: "end 4"
+        lg:col-end-5: "end 5"
+        lg:col-end-6: "end 6"
+        lg:col-end-7: "end 7"
+        lg:col-end-8: "end 8"
+        lg:col-end-9: "end 9"
+        lg:col-end-10: "end 10"
+        lg:col-end-11: "end 11"
+    col_span_third_lg:
+      title: "Grid Column Span third (lg)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-span-1
+        - lg:col-span-2
+        - lg:col-span-3
+        - lg:col-span-4
+        - lg:col-span-5
+        - lg:col-span-6
+        - lg:col-span-7
+        - lg:col-span-8
+        - lg:col-span-9
+      "meta:enum":
+        lg:col-span-1: "span 1"
+        lg:col-span-2: "span 2"
+        lg:col-span-3: "span 3"
+        lg:col-span-4: "span 4"
+        lg:col-span-5: "span 5"
+        lg:col-span-6: "span 6"
+        lg:col-span-7: "span 7"
+        lg:col-span-8: "span 8"
+        lg:col-span-9: "span 9"
+    col_start_third_lg:
+      title: "Grid Column Start third (lg)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-start-3
+        - lg:col-start-4
+        - lg:col-start-5
+        - lg:col-start-6
+        - lg:col-start-7
+        - lg:col-start-8
+        - lg:col-start-9
+        - lg:col-start-10
+        - lg:col-start-11
+      "meta:enum":
+        lg:col-start-3: "start 3"
+        lg:col-start-4: "start 4"
+        lg:col-start-5: "start 5"
+        lg:col-start-6: "start 6"
+        lg:col-start-7: "start 7"
+        lg:col-start-8: "start 8"
+        lg:col-start-9: "start 9"
+        lg:col-start-10: "start 10"
+        lg:col-start-11: "start 11"
+    col_end_third_lg:
+      title: "Grid Column End third (lg)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-end-4
+        - lg:col-end-5
+        - lg:col-end-6
+        - lg:col-end-7
+        - lg:col-end-8
+        - lg:col-end-9
+        - lg:col-end-10
+        - lg:col-end-11
+        - lg:col-end-12
+      "meta:enum":
+        lg:col-end-4: "end 4"
+        lg:col-end-5: "end 5"
+        lg:col-end-6: "end 6"
+        lg:col-end-7: "end 7"
+        lg:col-end-8: "end 8"
+        lg:col-end-9: "end 9"
+        lg:col-end-10: "end 10"
+        lg:col-end-11: "end 11"
+        lg:col-end-12: "end 12"
+    col_span_fourth_lg:
+      title: "Grid Column Span fourth (lg)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-span-1
+        - lg:col-span-2
+        - lg:col-span-3
+        - lg:col-span-4
+        - lg:col-span-5
+        - lg:col-span-6
+        - lg:col-span-7
+        - lg:col-span-8
+        - lg:col-span-9
+      "meta:enum":
+        lg:col-span-1: "span 1"
+        lg:col-span-2: "span 2"
+        lg:col-span-3: "span 3"
+        lg:col-span-4: "span 4"
+        lg:col-span-5: "span 5"
+        lg:col-span-6: "span 6"
+        lg:col-span-7: "span 7"
+        lg:col-span-8: "span 8"
+        lg:col-span-9: "span 9"
+    col_start_fourth_lg:
+      title: "Grid Column Start fourth (lg)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-start-4
+        - lg:col-start-5
+        - lg:col-start-6
+        - lg:col-start-7
+        - lg:col-start-8
+        - lg:col-start-9
+        - lg:col-start-10
+        - lg:col-start-11
+        - lg:col-start-12
+      "meta:enum":
+        lg:col-start-4: "start 4"
+        lg:col-start-5: "start 5"
+        lg:col-start-6: "start 6"
+        lg:col-start-7: "start 7"
+        lg:col-start-8: "start 8"
+        lg:col-start-9: "start 9"
+        lg:col-start-10: "start 10"
+        lg:col-start-11: "start 11"
+        lg:col-start-12: "start 12"
+    col_end_fourth_lg:
+      title: "Grid Column End fourth (lg)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:col-end-5
+        - lg:col-end-6
+        - lg:col-end-7
+        - lg:col-end-8
+        - lg:col-end-9
+        - lg:col-end-10
+        - lg:col-end-11
+        - lg:col-end-12
+        - lg:col-end-13
+      "meta:enum":
+        lg:col-end-5: "end 5"
+        lg:col-end-6: "end 6"
+        lg:col-end-7: "end 7"
+        lg:col-end-8: "end 8"
+        lg:col-end-9: "end 9"
+        lg:col-end-10: "end 10"
+        lg:col-end-11: "end 11"
+        lg:col-end-12: "end 12"
+        lg:col-end-13: "end 13"
+    col_span_first_md:
+      title: "Grid Column Span first (md)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-span-1
+        - md:col-span-2
+        - md:col-span-3
+        - md:col-span-4
+        - md:col-span-5
+        - md:col-span-6
+        - md:col-span-7
+        - md:col-span-8
+        - md:col-span-9
+      "meta:enum":
+        md:col-span-1: "span 1"
+        md:col-span-2: "span 2"
+        md:col-span-3: "span 3"
+        md:col-span-4: "span 4"
+        md:col-span-5: "span 5"
+        md:col-span-6: "span 6"
+        md:col-span-7: "span 7"
+        md:col-span-8: "span 8"
+        md:col-span-9: "span 9"
+    col_start_first_md:
+      title: "Grid Column Start first (md)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-start-1
+        - md:col-start-2
+        - md:col-start-3
+        - md:col-start-4
+        - md:col-start-5
+        - md:col-start-6
+        - md:col-start-7
+        - md:col-start-8
+        - md:col-start-9
+      "meta:enum":
+        md:col-start-1: "start 1"
+        md:col-start-2: "start 2"
+        md:col-start-3: "start 3"
+        md:col-start-4: "start 4"
+        md:col-start-5: "start 5"
+        md:col-start-6: "start 6"
+        md:col-start-7: "start 7"
+        md:col-start-8: "start 8"
+        md:col-start-9: "start 9"
+    col_end_first_md:
+      title: "Grid Column End first (md)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-end-2
+        - md:col-end-3
+        - md:col-end-4
+        - md:col-end-5
+        - md:col-end-6
+        - md:col-end-7
+        - md:col-end-8
+        - md:col-end-9
+        - md:col-end-10
+      "meta:enum":
+        md:col-end-2: "end 2"
+        md:col-end-3: "end 3"
+        md:col-end-4: "end 4"
+        md:col-end-5: "end 5"
+        md:col-end-6: "end 6"
+        md:col-end-7: "end 7"
+        md:col-end-8: "end 8"
+        md:col-end-9: "end 9"
+        md:col-end-10: "end 10"
+    col_span_second_md:
+      title: "Grid Column Span second (md)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-span-1
+        - md:col-span-2
+        - md:col-span-3
+        - md:col-span-4
+        - md:col-span-5
+        - md:col-span-6
+        - md:col-span-7
+        - md:col-span-8
+        - md:col-span-9
+      "meta:enum":
+        md:col-span-1: "span 1"
+        md:col-span-2: "span 2"
+        md:col-span-3: "span 3"
+        md:col-span-4: "span 4"
+        md:col-span-5: "span 5"
+        md:col-span-6: "span 6"
+        md:col-span-7: "span 7"
+        md:col-span-8: "span 8"
+        md:col-span-9: "span 9"
+    col_start_second_md:
+      title: "Grid Column Start second (md)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-start-2
+        - md:col-start-3
+        - md:col-start-4
+        - md:col-start-5
+        - md:col-start-6
+        - md:col-start-7
+        - md:col-start-8
+        - md:col-start-9
+        - md:col-start-10
+      "meta:enum":
+        md:col-start-2: "start 2"
+        md:col-start-3: "start 3"
+        md:col-start-4: "start 4"
+        md:col-start-5: "start 5"
+        md:col-start-6: "start 6"
+        md:col-start-7: "start 7"
+        md:col-start-8: "start 8"
+        md:col-start-9: "start 9"
+        md:col-start-10: "start 10"
+    col_end_second_md:
+      title: "Grid Column End second (md)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-end-3
+        - md:col-end-4
+        - md:col-end-5
+        - md:col-end-6
+        - md:col-end-7
+        - md:col-end-8
+        - md:col-end-9
+        - md:col-end-10
+        - md:col-end-11
+      "meta:enum":
+        md:col-end-3: "end 3"
+        md:col-end-4: "end 4"
+        md:col-end-5: "end 5"
+        md:col-end-6: "end 6"
+        md:col-end-7: "end 7"
+        md:col-end-8: "end 8"
+        md:col-end-9: "end 9"
+        md:col-end-10: "end 10"
+        md:col-end-11: "end 11"
+    col_span_third_md:
+      title: "Grid Column Span third (md)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-span-1
+        - md:col-span-2
+        - md:col-span-3
+        - md:col-span-4
+        - md:col-span-5
+        - md:col-span-6
+        - md:col-span-7
+        - md:col-span-8
+        - md:col-span-9
+      "meta:enum":
+        md:col-span-1: "span 1"
+        md:col-span-2: "span 2"
+        md:col-span-3: "span 3"
+        md:col-span-4: "span 4"
+        md:col-span-5: "span 5"
+        md:col-span-6: "span 6"
+        md:col-span-7: "span 7"
+        md:col-span-8: "span 8"
+        md:col-span-9: "span 9"
+    col_start_third_md:
+      title: "Grid Column Start third (md)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-start-3
+        - md:col-start-4
+        - md:col-start-5
+        - md:col-start-6
+        - md:col-start-7
+        - md:col-start-8
+        - md:col-start-9
+        - md:col-start-10
+        - md:col-start-11
+      "meta:enum":
+        md:col-start-3: "start 3"
+        md:col-start-4: "start 4"
+        md:col-start-5: "start 5"
+        md:col-start-6: "start 6"
+        md:col-start-7: "start 7"
+        md:col-start-8: "start 8"
+        md:col-start-9: "start 9"
+        md:col-start-10: "start 10"
+        md:col-start-11: "start 11"
+    col_end_third_md:
+      title: "Grid Column End third (md)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-end-4
+        - md:col-end-5
+        - md:col-end-6
+        - md:col-end-7
+        - md:col-end-8
+        - md:col-end-9
+        - md:col-end-10
+        - md:col-end-11
+        - md:col-end-12
+      "meta:enum":
+        md:col-end-4: "end 4"
+        md:col-end-5: "end 5"
+        md:col-end-6: "end 6"
+        md:col-end-7: "end 7"
+        md:col-end-8: "end 8"
+        md:col-end-9: "end 9"
+        md:col-end-10: "end 10"
+        md:col-end-11: "end 11"
+        md:col-end-12: "end 12"
+    col_span_fourth_md:
+      title: "Grid Column Span fourth (md)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-span-1
+        - md:col-span-2
+        - md:col-span-3
+        - md:col-span-4
+        - md:col-span-5
+        - md:col-span-6
+        - md:col-span-7
+        - md:col-span-8
+        - md:col-span-9
+      "meta:enum":
+        md:col-span-1: "span 1"
+        md:col-span-2: "span 2"
+        md:col-span-3: "span 3"
+        md:col-span-4: "span 4"
+        md:col-span-5: "span 5"
+        md:col-span-6: "span 6"
+        md:col-span-7: "span 7"
+        md:col-span-8: "span 8"
+        md:col-span-9: "span 9"
+    col_start_fourth_md:
+      title: "Grid Column Start fourth (md)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-start-4
+        - md:col-start-5
+        - md:col-start-6
+        - md:col-start-7
+        - md:col-start-8
+        - md:col-start-9
+        - md:col-start-10
+        - md:col-start-11
+        - md:col-start-12
+      "meta:enum":
+        md:col-start-4: "start 4"
+        md:col-start-5: "start 5"
+        md:col-start-6: "start 6"
+        md:col-start-7: "start 7"
+        md:col-start-8: "start 8"
+        md:col-start-9: "start 9"
+        md:col-start-10: "start 10"
+        md:col-start-11: "start 11"
+        md:col-start-12: "start 12"
+    col_end_fourth_md:
+      title: "Grid Column End fourth (md)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:col-end-5
+        - md:col-end-6
+        - md:col-end-7
+        - md:col-end-8
+        - md:col-end-9
+        - md:col-end-10
+        - md:col-end-11
+        - md:col-end-12
+        - md:col-end-13
+      "meta:enum":
+        md:col-end-5: "end 5"
+        md:col-end-6: "end 6"
+        md:col-end-7: "end 7"
+        md:col-end-8: "end 8"
+        md:col-end-9: "end 9"
+        md:col-end-10: "end 10"
+        md:col-end-11: "end 11"
+        md:col-end-12: "end 12"
+        md:col-end-13: "end 13"
+    col_span_first_sm:
+      title: "Grid Column Span first (sm)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-span-1
+        - sm:col-span-2
+        - sm:col-span-3
+        - sm:col-span-4
+        - sm:col-span-5
+        - sm:col-span-6
+        - sm:col-span-7
+        - sm:col-span-8
+        - sm:col-span-9
+      "meta:enum":
+        sm:col-span-1: "span 1"
+        sm:col-span-2: "span 2"
+        sm:col-span-3: "span 3"
+        sm:col-span-4: "span 4"
+        sm:col-span-5: "span 5"
+        sm:col-span-6: "span 6"
+        sm:col-span-7: "span 7"
+        sm:col-span-8: "span 8"
+        sm:col-span-9: "span 9"
+    col_start_first_sm:
+      title: "Grid Column Start first (sm)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-start-1
+        - sm:col-start-2
+        - sm:col-start-3
+        - sm:col-start-4
+        - sm:col-start-5
+        - sm:col-start-6
+        - sm:col-start-7
+        - sm:col-start-8
+        - sm:col-start-9
+      "meta:enum":
+        sm:col-start-1: "start 1"
+        sm:col-start-2: "start 2"
+        sm:col-start-3: "start 3"
+        sm:col-start-4: "start 4"
+        sm:col-start-5: "start 5"
+        sm:col-start-6: "start 6"
+        sm:col-start-7: "start 7"
+        sm:col-start-8: "start 8"
+        sm:col-start-9: "start 9"
+    col_end_first_sm:
+      title: "Grid Column End first (sm)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-end-2
+        - sm:col-end-3
+        - sm:col-end-4
+        - sm:col-end-5
+        - sm:col-end-6
+        - sm:col-end-7
+        - sm:col-end-8
+        - sm:col-end-9
+        - sm:col-end-10
+      "meta:enum":
+        sm:col-end-2: "end 2"
+        sm:col-end-3: "end 3"
+        sm:col-end-4: "end 4"
+        sm:col-end-5: "end 5"
+        sm:col-end-6: "end 6"
+        sm:col-end-7: "end 7"
+        sm:col-end-8: "end 8"
+        sm:col-end-9: "end 9"
+        sm:col-end-10: "end 10"
+    col_span_second_sm:
+      title: "Grid Column Span second (sm)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-span-1
+        - sm:col-span-2
+        - sm:col-span-3
+        - sm:col-span-4
+        - sm:col-span-5
+        - sm:col-span-6
+        - sm:col-span-7
+        - sm:col-span-8
+        - sm:col-span-9
+      "meta:enum":
+        sm:col-span-1: "span 1"
+        sm:col-span-2: "span 2"
+        sm:col-span-3: "span 3"
+        sm:col-span-4: "span 4"
+        sm:col-span-5: "span 5"
+        sm:col-span-6: "span 6"
+        sm:col-span-7: "span 7"
+        sm:col-span-8: "span 8"
+        sm:col-span-9: "span 9"
+    col_start_second_sm:
+      title: "Grid Column Start second (sm)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-start-2
+        - sm:col-start-3
+        - sm:col-start-4
+        - sm:col-start-5
+        - sm:col-start-6
+        - sm:col-start-7
+        - sm:col-start-8
+        - sm:col-start-9
+        - sm:col-start-10
+      "meta:enum":
+        sm:col-start-2: "start 2"
+        sm:col-start-3: "start 3"
+        sm:col-start-4: "start 4"
+        sm:col-start-5: "start 5"
+        sm:col-start-6: "start 6"
+        sm:col-start-7: "start 7"
+        sm:col-start-8: "start 8"
+        sm:col-start-9: "start 9"
+        sm:col-start-10: "start 10"
+    col_end_second_sm:
+      title: "Grid Column End second (sm)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-end-3
+        - sm:col-end-4
+        - sm:col-end-5
+        - sm:col-end-6
+        - sm:col-end-7
+        - sm:col-end-8
+        - sm:col-end-9
+        - sm:col-end-10
+        - sm:col-end-11
+      "meta:enum":
+        sm:col-end-3: "end 3"
+        sm:col-end-4: "end 4"
+        sm:col-end-5: "end 5"
+        sm:col-end-6: "end 6"
+        sm:col-end-7: "end 7"
+        sm:col-end-8: "end 8"
+        sm:col-end-9: "end 9"
+        sm:col-end-10: "end 10"
+        sm:col-end-11: "end 11"
+    col_span_third_sm:
+      title: "Grid Column Span third (sm)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-span-1
+        - sm:col-span-2
+        - sm:col-span-3
+        - sm:col-span-4
+        - sm:col-span-5
+        - sm:col-span-6
+        - sm:col-span-7
+        - sm:col-span-8
+        - sm:col-span-9
+      "meta:enum":
+        sm:col-span-1: "span 1"
+        sm:col-span-2: "span 2"
+        sm:col-span-3: "span 3"
+        sm:col-span-4: "span 4"
+        sm:col-span-5: "span 5"
+        sm:col-span-6: "span 6"
+        sm:col-span-7: "span 7"
+        sm:col-span-8: "span 8"
+        sm:col-span-9: "span 9"
+    col_start_third_sm:
+      title: "Grid Column Start third (sm)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-start-3
+        - sm:col-start-4
+        - sm:col-start-5
+        - sm:col-start-6
+        - sm:col-start-7
+        - sm:col-start-8
+        - sm:col-start-9
+        - sm:col-start-10
+        - sm:col-start-11
+      "meta:enum":
+        sm:col-start-3: "start 3"
+        sm:col-start-4: "start 4"
+        sm:col-start-5: "start 5"
+        sm:col-start-6: "start 6"
+        sm:col-start-7: "start 7"
+        sm:col-start-8: "start 8"
+        sm:col-start-9: "start 9"
+        sm:col-start-10: "start 10"
+        sm:col-start-11: "start 11"
+    col_end_third_sm:
+      title: "Grid Column End third (sm)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-end-4
+        - sm:col-end-5
+        - sm:col-end-6
+        - sm:col-end-7
+        - sm:col-end-8
+        - sm:col-end-9
+        - sm:col-end-10
+        - sm:col-end-11
+        - sm:col-end-12
+      "meta:enum":
+        sm:col-end-4: "end 4"
+        sm:col-end-5: "end 5"
+        sm:col-end-6: "end 6"
+        sm:col-end-7: "end 7"
+        sm:col-end-8: "end 8"
+        sm:col-end-9: "end 9"
+        sm:col-end-10: "end 10"
+        sm:col-end-11: "end 11"
+        sm:col-end-12: "end 12"
+    col_span_fourth_sm:
+      title: "Grid Column Span fourth (sm)"
+      description: "Use the col-span-* utilities to make an element span n columns, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-span-1
+        - sm:col-span-2
+        - sm:col-span-3
+        - sm:col-span-4
+        - sm:col-span-5
+        - sm:col-span-6
+        - sm:col-span-7
+        - sm:col-span-8
+        - sm:col-span-9
+      "meta:enum":
+        sm:col-span-1: "span 1"
+        sm:col-span-2: "span 2"
+        sm:col-span-3: "span 3"
+        sm:col-span-4: "span 4"
+        sm:col-span-5: "span 5"
+        sm:col-span-6: "span 6"
+        sm:col-span-7: "span 7"
+        sm:col-span-8: "span 8"
+        sm:col-span-9: "span 9"
+    col_start_fourth_sm:
+      title: "Grid Column Start fourth (sm)"
+      description: "Use the col-start-* utilities to make an element start at the nth grid line, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-start-4
+        - sm:col-start-5
+        - sm:col-start-6
+        - sm:col-start-7
+        - sm:col-start-8
+        - sm:col-start-9
+        - sm:col-start-10
+        - sm:col-start-11
+        - sm:col-start-12
+      "meta:enum":
+        sm:col-start-4: "start 4"
+        sm:col-start-5: "start 5"
+        sm:col-start-6: "start 6"
+        sm:col-start-7: "start 7"
+        sm:col-start-8: "start 8"
+        sm:col-start-9: "start 9"
+        sm:col-start-10: "start 10"
+        sm:col-start-11: "start 11"
+        sm:col-start-12: "start 12"
+    col_end_fourth_sm:
+      title: "Grid Column End fourth (sm)"
+      description: "Use the col-end-* utilities to make an element end at the nth grid line, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:col-end-5
+        - sm:col-end-6
+        - sm:col-end-7
+        - sm:col-end-8
+        - sm:col-end-9
+        - sm:col-end-10
+        - sm:col-end-11
+        - sm:col-end-12
+        - sm:col-end-13
+      "meta:enum":
+        sm:col-end-5: "end 5"
+        sm:col-end-6: "end 6"
+        sm:col-end-7: "end 7"
+        sm:col-end-8: "end 8"
+        sm:col-end-9: "end 9"
+        sm:col-end-10: "end 10"
+        sm:col-end-11: "end 11"
+        sm:col-end-12: "end 12"
+        sm:col-end-13: "end 13"
+stories:
+  preview:
+    title: Preview
+    slots:
+      col_first:
+        type: component
+        component: "ui_suite_daisyui:card"
+        slots:
+          image:
+            theme: image
+            uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt: Shoes
+          title: Shoes!
+          text:
+            type: html_tag
+            tag: p
+            value: "If a dog chews shoes whose shoes does he choose?"
+          actions:
+            type: component
+            component: "ui_suite_daisyui:button"
+            slots:
+              label: "Buy Now"
+            props:
+              variant: primary
+              size: sm
+        props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+      col_second:
+        type: component
+        component: "ui_suite_daisyui:card"
+        slots:
+          image:
+            theme: image
+            uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt: Shoes
+          title: Shoes!
+          text:
+            type: html_tag
+            tag: p
+            value: "If a dog chews shoes whose shoes does he choose?"
+          actions:
+            type: component
+            component: "ui_suite_daisyui:button"
+            slots:
+              label: "Buy Now"
+            props:
+              variant: primary
+              size: sm
+        props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+      col_third:
+        type: component
+        component: "ui_suite_daisyui:card"
+        slots:
+          image:
+            theme: image
+            uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt: Shoes
+          title: Shoes!
+          text:
+            type: html_tag
+            tag: p
+            value: "If a dog chews shoes whose shoes does he choose?"
+          actions:
+            type: component
+            component: "ui_suite_daisyui:button"
+            slots:
+              label: "Buy Now"
+            props:
+              variant: primary
+              size: sm
+        props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+      col_fourth:
+        type: component
+        component: "ui_suite_daisyui:card"
+        slots:
+          image:
+            theme: image
+            uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt: Shoes
+          title: Shoes!
+          text:
+            type: html_tag
+            tag: p
+            value: "If a dog chews shoes whose shoes does he choose?"
+          actions:
+            type: component
+            component: "ui_suite_daisyui:button"
+            slots:
+              label: "Buy Now"
+            props:
+              variant: primary
+              size: sm
+        props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+    props:
+      col_span_first: "col-span-3"
+      col_span_second: "col-span-3"
+      col_span_third: "col-span-3"
+      col_span_fourth: "col-span-3"

@@ -1,0 +1,33 @@
+/* Feed text */
+.feed-icon {
+  display: block;
+  font-size: 0;
+  width: 32px;
+  height: 32px;
+  background: url(../images/icons/rss.svg) no-repeat;
+}
+/* Components -> Social icons */
+.social-icons {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.social-icons li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.social-icons li a:hover {
+  background-color: var(--primary);
+}

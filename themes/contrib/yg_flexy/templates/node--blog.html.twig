@@ -1,0 +1,25 @@
+{{content.field_banner}}
+<!--  Blog Details page -->
+<section id="blog-details-page">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-10 mx-auto blog-details">
+          <h4>{{ node.title.value }}</h4>          
+          <div class="blog-info">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            {{ node.created.value|date("d M Y")  }}
+            <i class="fa fa-user" aria-hidden="true"></i>
+            {{ node.Owner.name.value }}
+          </div>
+          <img src="{{ file_url(node.field_image.entity.fileuri) }}"
+              alt= "{{ node.field_image.alt }}" >
+          <div class="blog-details-description">
+            {{ content.body }}
+          </div> 
+        </div>
+        {{ content.comment }}
+      </div>
+    </div>
+  </section>
+<!--  Blog Details page -->

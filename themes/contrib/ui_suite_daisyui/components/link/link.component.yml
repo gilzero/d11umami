@@ -1,0 +1,46 @@
+name: Link
+description: "Link adds the missing underline style to links."
+group: Navigation
+links:
+  - "https://daisyui.com/components/link/"
+variants:
+  default:
+    title: Default
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  accent:
+    title: Accent
+  neutral:
+    title: Neutral
+  success:
+    title: Success
+  info:
+    title: Info
+  warning:
+    title: Warning
+  error:
+    title: Error
+slots:
+  label:
+    title: Label
+props:
+  type: object
+  properties:
+    url:
+      title: URL
+      description: "The link URL. Optional."
+      $ref: "ui-patterns://url"
+    underline_hover:
+      title: "Underline on hover"
+      description: "Show underline only on hover."
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      label: "Simple Link"
+    props:
+      url: /
+      underline_hover: true

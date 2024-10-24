@@ -1,0 +1,20 @@
+/**
+ * @file
+ * Breadcrumb.
+ */
+
+.breadcrumb__item {
+  color: $primary;
+  .breadcrumb__link {
+    color: $text-white;
+    @include transition(0.3s all);
+    &:hover {
+      color: $delightful-yellow;
+    }
+  }
+}
+
+.breadcrumb__item + .breadcrumb__item::before {
+  color: $text-white;
+  content: '/';
+}

@@ -1,0 +1,10 @@
+services:
+  plugin.manager.ui_examples:
+    class: Drupal\ui_examples\ExamplePluginManager
+    arguments:
+      - '@cache.discovery'
+      - '@module_handler'
+      - '@theme_handler'
+
+  ui_examples.example_syntax_converter:
+    class: Drupal\ui_examples\ExampleSyntaxConverter

@@ -1,0 +1,30 @@
+.region-content-home {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+.region-content-home .block {
+  padding: 1rem 0;
+}
+.region-content-home .block-title {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.region-content-home .block-title::before,
+.region-content-home .block-title::after  {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  height: 2px;
+}
+.region-content-home .block-title::before {
+  background-color: var(--color-secondary);
+  left: calc(50% - 1.2rem);
+  width: 0.5rem;
+}
+.region-content-home .block-title::after {
+  background-color: var(--color-primary);
+  left: calc(50% - 0.4rem);
+  width: 1.6rem;
+}

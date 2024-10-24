@@ -1,0 +1,79 @@
+name: Hero
+description: "Hero is a component for displaying a large box or image with a title and description."
+group: Layout
+links:
+  - "https://daisyui.com/components/hero/"
+slots:
+  aside:
+    title: Aside
+    description: "Aside inside Hero."
+  title:
+    title: Title
+    description: "Hero title. Plain text."
+  text:
+    title: Text
+    description: "Hero text."
+  button:
+    title: Button
+props:
+  type: object
+  properties:
+    heading_level:
+      title: "Heading level"
+      $ref: "ui-patterns://enum"
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      "meta:enum":
+        1: "h1 (Default)"
+        2: h2
+        3: h3
+        4: h4
+        5: h5
+        6: h6
+    reverse:
+      title: "Reverse order"
+      description: "Do you want to display hero in reverse order ?"
+      $ref: "ui-patterns://boolean"
+    centered:
+      title: "Centered content"
+      description: "Do you want centered hero?"
+      $ref: "ui-patterns://boolean"
+    responsive_centered:
+      title: "Centered responsive content"
+      description: "Do you want centered responsive hero?"
+      $ref: "ui-patterns://boolean"
+    overlay_image:
+      title: "Overlay iamge"
+      description: "The image overlay. Optional."
+      $ref: "ui-patterns://url"
+stories:
+  preview:
+    title: Preview
+    slots:
+      aside:
+        theme: image
+        uri: "https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+        alt: Shoes
+      title: "Hello there"
+      text:
+        type: html_tag
+        tag: p
+        value: "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi."
+      button:
+        type: component
+        component: "ui_suite_daisyui:button"
+        slots:
+          label: "Get Started"
+        props:
+          variant: primary
+    props:
+      heading_level: 1
+      reverse: true
+      responsive_centered: true
+      attributes:
+        class: ["bg-base-200", "rounded", "min-h-[30rem]"]

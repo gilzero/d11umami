@@ -1,0 +1,32 @@
+chat:
+  input:
+    description: 'Input provided to the model.'
+    type: 'array'
+    default:
+      - { role: "system", content: "You are a helpful assistant." }
+      - { role: "user", content: "Introduce yourself!" }
+    required: true
+  authentication:
+    description: 'Mistral API Key.'
+    type: 'string'
+    default: ''
+    required: true
+embeddings:
+  input:
+    description: 'Textual representation of the speech.'
+    type: 'string'
+    default: 'Once upon a time in London.'
+    required: true
+  configuration:
+    dimensions:
+      label: 'Vector Dimension'
+      type: 'integer'
+      default: 1024
+      required: false
+image_classification:
+  input:
+    description: 'Binary of image to classify.'
+    type: 'string'
+    default: ''
+    required: true
+

@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Functions to support links theming in the "DSFR for Drupal" theme.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_preprocess_HOOK() for "links__language_block".
+ */
+function dsfr4drupal_preprocess_links__language_block(array &$variables): void {
+  $links = &$variables['links'];
+
+  // Get current langcode.
+  $variables['current_langcode'] = \Drupal::service('language_manager')
+    ->getCurrentLanguage()
+    ->getId();
+
+  foreach ($links as $langcode => &$link) {
+    // Keep original values.
+    $link['langcode'] = $langcode;
+    $link['language'] = $link['text'];
+
+    $link['text'] = t('@code - @label', [
+      '@code' => mb_strtoupper($langcode),
+      '@label' => $link['text'],
+    ]);
+    $link['text_attributes']['class'][] = 'fr-translate__language';
+
+    if ($langcode === $variables['current_langcode']) {
+      $link['text_attributes']['aria-current'] = 'true';
+    }
+
+    if (isset($link['link'])) {
+      $link['link']['#title'] = $link['text'];
+      $link['link']['#options']['attributes']['class'] = ['fr-translate__language', 'fr-nav__link'];
+
+      if ($langcode === $variables['current_langcode']) {
+        $link['link']['#options']['attributes']['aria-current'] = 'true';
+      }
+    }
+  }
+}

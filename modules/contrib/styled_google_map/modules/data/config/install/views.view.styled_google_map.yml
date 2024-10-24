@@ -1,0 +1,1305 @@
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.real_estate
+  enforced:
+    module:
+      - styled_google_map_data
+  module:
+    - geofield
+    - styled_google_map
+    - styled_google_map_demo
+    - svg_image
+    - taxonomy
+id: styled_google_map
+label: 'Styled Google Map'
+module: views
+description: ''
+tag: ''
+base_table: real_estate
+base_field: id
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: some
+        options:
+          items_per_page: 1000
+          offset: 0
+      style:
+        type: styled_google_map
+        options:
+          grouping: {  }
+          data_source: location__value
+          pin_source: ''
+          default_pin_source: ''
+          popup_source: name
+          marker_label: ''
+          category_source: category
+          main:
+            styled_google_map_view_width: 100%
+            styled_google_map_view_height: 600px
+            styled_google_map_view_style: "[\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            },\r\n            {\r\n                \"weight\": \"0.20\"\r\n            },\r\n            {\r\n                \"lightness\": \"28\"\r\n            },\r\n            {\r\n                \"saturation\": \"23\"\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#494949\"\r\n            },\r\n            {\r\n                \"lightness\": 13\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.icon\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#144b53\"\r\n            },\r\n            {\r\n                \"lightness\": 14\r\n            },\r\n            {\r\n                \"weight\": 1.4\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#08304b\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"poi\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0c4152\"\r\n            },\r\n            {\r\n                \"lightness\": 5\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b434f\"\r\n            },\r\n            {\r\n                \"lightness\": 25\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b3d51\"\r\n            },\r\n            {\r\n                \"lightness\": 16\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.local\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"transit\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#146474\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#021019\"\r\n            }\r\n        ]\r\n    }\r\n]"
+            styled_google_map_view_active_pin: ''
+            styled_google_map_view_pin_height: ''
+            styled_google_map_view_pin_width: ''
+            styled_google_map_view_maptype: ROADMAP
+            styled_google_map_gesture_handling: cooperative
+            styled_google_map_view_zoom_default: '10'
+            styled_google_map_view_zoom_max: '29'
+            styled_google_map_view_zoom_min: '1'
+            styled_google_map_view_maptypecontrol: 1
+            styled_google_map_view_scalecontrol: 1
+            styled_google_map_view_rotatecontrol: 1
+            styled_google_map_view_draggable: 1
+            styled_google_map_view_mobile_draggable: 0
+            styled_google_map_view_streetviewcontrol: 1
+            styled_google_map_view_zoomcontrol: 1
+            styled_google_map_view_fullscreen: 1
+            styled_google_map_default_map_center:
+              lat: '38.5'
+              lon: '-121.3'
+          marker_label_settings:
+            color: '#fff'
+            fontFamily: Verdana
+            fontSize: 12px
+            fontWeight: bold
+          cluster_settings:
+            cluster_enabled: 1
+            pin_image: ''
+            text_color: '#ffffff'
+            height: '72'
+            width: '72'
+            text_size: '18'
+            min_size: '4'
+          spider_settings:
+            spider_enabled: 1
+            markers_wont_move: 0
+            markers_wont_hide: 0
+            basic_format_events: 1
+            pin_image: ''
+            keep_spiderfied: 1
+            nearby_distance: '50'
+            circle_spiral_switchover: '9'
+            leg_weight: '2'
+          heatmap_settings:
+            heatmap_enabled: 0
+            data_source: ''
+            dissipating: 1
+            gradient: "rgba(0, 255, 255, 0)\r\nrgba(0, 255, 255, 1)\r\nrgba(0, 191, 255, 1)\r\nrgba(0, 127, 255, 1)\r\nrgba(0, 63, 255, 1)\r\nrgba(0, 0, 255, 1)\r\nrgba(0, 0, 223, 1)\r\nrgba(0, 0, 191, 1)\r\nrgba(0, 0, 159, 1)\r\nrgba(0, 0, 127, 1)\r\nrgba(63, 0, 91, 1)\r\nrgba(127, 0, 63, 1)\r\nrgba(191, 0, 31, 1)\r\nrgba(255, 0, 0, 1)"
+            opacity: '0.6'
+            radius: '20'
+            maxIntensity: '100'
+          popup:
+            second_click: '0'
+            close_button_source: ''
+            open_event: click
+            styled_google_map_view_shadow_style: '0'
+            styled_google_map_view_padding: '13'
+            styled_google_map_view_border_radius: '7'
+            styled_google_map_view_border_width: '1'
+            styled_google_map_view_border_color: '#cccccc'
+            styled_google_map_view_background_color: '#ffffff'
+            styled_google_map_view_min_width: auto
+            styled_google_map_view_max_width: auto
+            styled_google_map_view_min_height: auto
+            styled_google_map_view_max_height: auto
+            styled_google_map_view_arrow_style: '0'
+            styled_google_map_view_arrow_size: '10'
+            styled_google_map_view_arrow_position: '50'
+            styled_google_map_view_disable_auto_pan: '0'
+            styled_google_map_view_hide_close_button: '0'
+            styled_google_map_view_disable_animation: '1'
+          popup_classes:
+            styled_google_map_view_content_container_class: sgmpopup-content-wrapper
+            styled_google_map_view_background_class: sgmpopup-content
+            styled_google_map_view_arrow_class: sgmpopup-arrow
+            styled_google_map_view_arrow_outer_class: sgmpopup-arrow-outer
+            styled_google_map_view_arrow_inner_class: sgmpopup-arrow-inner
+      row:
+        type: fields
+      fields:
+        name:
+          table: real_estate
+          field: name
+          id: name
+          entity_type: null
+          entity_field: name
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        category:
+          id: category
+          table: real_estate
+          field: category
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: real_estate
+          entity_field: category
+          plugin_id: field
+        location__value:
+          id: location__value
+          table: real_estate
+          field: location__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: geofield_default
+          settings:
+            output_format: wkt
+            output_escape: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: real_estate
+          entity_field: location
+          plugin_id: field
+        price:
+          id: price
+          table: real_estate
+          field: price
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: real_estate
+          entity_field: price
+          plugin_id: field
+      filters: {  }
+      sorts: {  }
+      title: 'Heatmap Example'
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+      tags: {  }
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Heatmap
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: heatmap
+      display_description: ''
+      style:
+        type: styled_google_map
+        options:
+          grouping: {  }
+          data_source: location__value
+          pin_source: ''
+          default_pin_source: 'https://www.drupal.org/files/issues/2020-05-09/pin_red.png'
+          active_pin_source: ''
+          popup_source: name
+          marker_label: ''
+          category_source: category
+          main:
+            styled_google_map_view_width: 100%
+            styled_google_map_view_height: 600px
+            styled_google_map_view_style: "[\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            },\r\n            {\r\n                \"weight\": \"0.20\"\r\n            },\r\n            {\r\n                \"lightness\": \"28\"\r\n            },\r\n            {\r\n                \"saturation\": \"23\"\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#494949\"\r\n            },\r\n            {\r\n                \"lightness\": 13\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.icon\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#144b53\"\r\n            },\r\n            {\r\n                \"lightness\": 14\r\n            },\r\n            {\r\n                \"weight\": 1.4\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#08304b\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"poi\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0c4152\"\r\n            },\r\n            {\r\n                \"lightness\": 5\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b434f\"\r\n            },\r\n            {\r\n                \"lightness\": 25\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b3d51\"\r\n            },\r\n            {\r\n                \"lightness\": 16\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.local\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"transit\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#146474\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#021019\"\r\n            }\r\n        ]\r\n    }\r\n]"
+            styled_google_map_view_active_pin: ''
+            styled_google_map_view_pin_height: ''
+            styled_google_map_view_pin_width: ''
+            styled_google_map_view_maptype: ROADMAP
+            styled_google_map_gesture_handling: cooperative
+            styled_google_map_view_zoom_default: '9'
+            styled_google_map_view_zoom_max: '29'
+            styled_google_map_view_zoom_min: '1'
+            styled_google_map_view_maptypecontrol: 1
+            styled_google_map_view_scalecontrol: 1
+            styled_google_map_view_rotatecontrol: 1
+            styled_google_map_view_draggable: 1
+            styled_google_map_view_mobile_draggable: 0
+            styled_google_map_view_streetviewcontrol: 1
+            styled_google_map_view_zoomcontrol: 1
+            styled_google_map_view_fullscreen: 1
+            styled_google_map_default_map_center:
+              lat: '38.5'
+              lon: '-121.3'
+          marker_label_settings:
+            color: '#fff'
+            fontFamily: Verdana
+            fontSize: 12px
+            fontWeight: bold
+          cluster_settings:
+            cluster_enabled: 0
+            pin_image: ''
+            text_color: '#ffffff'
+            height: '72'
+            width: '72'
+            text_size: '18'
+            min_size: '4'
+          spider_settings:
+            spider_enabled: 0
+            markers_wont_move: 0
+            markers_wont_hide: 0
+            basic_format_events: 1
+            pin_image: ''
+            keep_spiderfied: 1
+            nearby_distance: '50'
+            circle_spiral_switchover: '9'
+            leg_weight: '2'
+          heatmap_settings:
+            heatmap_enabled: 1
+            data_source: ''
+            dissipating: 1
+            gradient: "rgba(0, 255, 255, 0)\r\nrgba(0, 255, 255, 1)\r\nrgba(0, 191, 255, 1)\r\nrgba(0, 127, 255, 1)\r\nrgba(0, 63, 255, 1)\r\nrgba(0, 0, 255, 1)\r\nrgba(0, 0, 223, 1)\r\nrgba(0, 0, 191, 1)\r\nrgba(0, 0, 159, 1)\r\nrgba(0, 0, 127, 1)\r\nrgba(63, 0, 91, 1)\r\nrgba(127, 0, 63, 1)\r\nrgba(191, 0, 31, 1)\r\nrgba(255, 0, 0, 1)"
+            opacity: '0.6'
+            radius: '20'
+            maxIntensity: '100'
+          popup:
+            second_click: '0'
+            close_button_source: ''
+            open_event: click
+            styled_google_map_view_shadow_style: '0'
+            styled_google_map_view_padding: '13'
+            styled_google_map_view_border_radius: '7'
+            styled_google_map_view_border_width: '1'
+            styled_google_map_view_border_color: '#cccccc'
+            styled_google_map_view_background_color: '#ffffff'
+            styled_google_map_view_min_width: auto
+            styled_google_map_view_max_width: auto
+            styled_google_map_view_min_height: auto
+            styled_google_map_view_max_height: auto
+            styled_google_map_view_arrow_style: '0'
+            styled_google_map_view_arrow_size: '10'
+            styled_google_map_view_arrow_position: '50'
+            styled_google_map_view_disable_auto_pan: '0'
+            styled_google_map_view_hide_close_button: '0'
+            styled_google_map_view_disable_animation: '1'
+          popup_classes:
+            styled_google_map_view_content_container_class: sgmpopup-content-wrapper
+            styled_google_map_view_background_class: sgmpopup-content
+            styled_google_map_view_arrow_class: sgmpopup-arrow
+            styled_google_map_view_arrow_outer_class: sgmpopup-arrow-outer
+            styled_google_map_view_arrow_inner_class: sgmpopup-arrow-inner
+      defaults:
+        style: false
+        row: false
+      row:
+        type: fields
+        options: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+      tags: {  }
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: Cluster
+    position: 2
+    display_options:
+      display_extenders: {  }
+      title: 'Cluster Example'
+      defaults:
+        title: false
+        style: false
+        row: false
+      display_description: ''
+      path: cluster-map
+      style:
+        type: styled_google_map
+        options:
+          grouping: {  }
+          data_source: location__value
+          pin_source: ''
+          default_pin_source: 'https://www.drupal.org/files/issues/2020-05-09/pin_red.png'
+          active_pin_source: ''
+          popup_source: name
+          marker_label: ''
+          category_source: category
+          main:
+            styled_google_map_view_width: 100%
+            styled_google_map_view_height: 600px
+            styled_google_map_view_style: "[\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            },\r\n            {\r\n                \"weight\": \"0.20\"\r\n            },\r\n            {\r\n                \"lightness\": \"28\"\r\n            },\r\n            {\r\n                \"saturation\": \"23\"\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#494949\"\r\n            },\r\n            {\r\n                \"lightness\": 13\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.icon\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#144b53\"\r\n            },\r\n            {\r\n                \"lightness\": 14\r\n            },\r\n            {\r\n                \"weight\": 1.4\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#08304b\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"poi\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0c4152\"\r\n            },\r\n            {\r\n                \"lightness\": 5\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b434f\"\r\n            },\r\n            {\r\n                \"lightness\": 25\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b3d51\"\r\n            },\r\n            {\r\n                \"lightness\": 16\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.local\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"transit\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#146474\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#021019\"\r\n            }\r\n        ]\r\n    }\r\n]"
+            styled_google_map_view_active_pin: ''
+            styled_google_map_view_pin_height: ''
+            styled_google_map_view_pin_width: ''
+            styled_google_map_view_maptype: ROADMAP
+            styled_google_map_gesture_handling: cooperative
+            styled_google_map_view_zoom_default: '10'
+            styled_google_map_view_zoom_max: '29'
+            styled_google_map_view_zoom_min: '1'
+            styled_google_map_view_maptypecontrol: 1
+            styled_google_map_view_scalecontrol: 1
+            styled_google_map_view_rotatecontrol: 1
+            styled_google_map_view_draggable: 1
+            styled_google_map_view_mobile_draggable: 0
+            styled_google_map_view_streetviewcontrol: 1
+            styled_google_map_view_zoomcontrol: 1
+            styled_google_map_view_fullscreen: 1
+            styled_google_map_default_map_center:
+              lat: '38.5'
+              lon: '-121.3'
+          marker_label_settings:
+            color: '#fff'
+            fontFamily: Verdana
+            fontSize: 12px
+            fontWeight: bold
+          cluster_settings:
+            cluster_enabled: 1
+            pin_image: 'https://www.drupal.org/files/issues/2020-05-09/cluster_L.png'
+            text_color: '#ffffff'
+            height: '64'
+            width: '64'
+            text_size: '18'
+            min_size: '4'
+          spider_settings:
+            spider_enabled: 0
+            markers_wont_move: 0
+            markers_wont_hide: 0
+            basic_format_events: 1
+            pin_image: ''
+            keep_spiderfied: 1
+            nearby_distance: '50'
+            circle_spiral_switchover: '9'
+            leg_weight: '2'
+          heatmap_settings:
+            heatmap_enabled: 0
+            data_source: ''
+            dissipating: 1
+            gradient: "rgba(0, 255, 255, 0)\r\nrgba(0, 255, 255, 1)\r\nrgba(0, 191, 255, 1)\r\nrgba(0, 127, 255, 1)\r\nrgba(0, 63, 255, 1)\r\nrgba(0, 0, 255, 1)\r\nrgba(0, 0, 223, 1)\r\nrgba(0, 0, 191, 1)\r\nrgba(0, 0, 159, 1)\r\nrgba(0, 0, 127, 1)\r\nrgba(63, 0, 91, 1)\r\nrgba(127, 0, 63, 1)\r\nrgba(191, 0, 31, 1)\r\nrgba(255, 0, 0, 1)"
+            opacity: '0.6'
+            radius: '20'
+            maxIntensity: '100'
+          popup:
+            second_click: '0'
+            close_button_source: ''
+            open_event: click
+            styled_google_map_view_shadow_style: '0'
+            styled_google_map_view_padding: '13'
+            styled_google_map_view_border_radius: '7'
+            styled_google_map_view_border_width: '1'
+            styled_google_map_view_border_color: '#cccccc'
+            styled_google_map_view_background_color: '#ffffff'
+            styled_google_map_view_min_width: auto
+            styled_google_map_view_max_width: auto
+            styled_google_map_view_min_height: auto
+            styled_google_map_view_max_height: auto
+            styled_google_map_view_arrow_style: '0'
+            styled_google_map_view_arrow_size: '10'
+            styled_google_map_view_arrow_position: '50'
+            styled_google_map_view_disable_auto_pan: '0'
+            styled_google_map_view_hide_close_button: '0'
+            styled_google_map_view_disable_animation: '1'
+          popup_classes:
+            styled_google_map_view_content_container_class: sgmpopup-content-wrapper
+            styled_google_map_view_background_class: sgmpopup-content
+            styled_google_map_view_arrow_class: sgmpopup-arrow
+            styled_google_map_view_arrow_outer_class: sgmpopup-arrow-outer
+            styled_google_map_view_arrow_inner_class: sgmpopup-arrow-inner
+      row:
+        type: fields
+        options: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+      tags: {  }
+  page_3:
+    display_plugin: page
+    id: page_3
+    display_title: 'Cluster with Spiderify'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      title: 'Cluster with Spiderify Example'
+      defaults:
+        title: false
+        style: false
+        row: false
+      display_description: ''
+      path: cluster-map-spiderified
+      style:
+        type: styled_google_map
+        options:
+          grouping: {  }
+          data_source: location__value
+          pin_source: ''
+          default_pin_source: 'https://www.drupal.org/files/issues/2020-05-09/pin_red.png'
+          active_pin_source: ''
+          popup_source: name
+          marker_label: ''
+          category_source: category
+          main:
+            styled_google_map_view_width: 100%
+            styled_google_map_view_height: 600px
+            styled_google_map_view_style: "[\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            },\r\n            {\r\n                \"weight\": \"0.20\"\r\n            },\r\n            {\r\n                \"lightness\": \"28\"\r\n            },\r\n            {\r\n                \"saturation\": \"23\"\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#494949\"\r\n            },\r\n            {\r\n                \"lightness\": 13\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.icon\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#144b53\"\r\n            },\r\n            {\r\n                \"lightness\": 14\r\n            },\r\n            {\r\n                \"weight\": 1.4\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#08304b\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"poi\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0c4152\"\r\n            },\r\n            {\r\n                \"lightness\": 5\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b434f\"\r\n            },\r\n            {\r\n                \"lightness\": 25\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b3d51\"\r\n            },\r\n            {\r\n                \"lightness\": 16\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.local\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"transit\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#146474\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#021019\"\r\n            }\r\n        ]\r\n    }\r\n]"
+            styled_google_map_view_active_pin: ''
+            styled_google_map_view_pin_height: ''
+            styled_google_map_view_pin_width: ''
+            styled_google_map_view_maptype: ROADMAP
+            styled_google_map_gesture_handling: cooperative
+            styled_google_map_view_zoom_default: '10'
+            styled_google_map_view_zoom_max: '29'
+            styled_google_map_view_zoom_min: '1'
+            styled_google_map_view_maptypecontrol: 1
+            styled_google_map_view_scalecontrol: 1
+            styled_google_map_view_rotatecontrol: 1
+            styled_google_map_view_draggable: 1
+            styled_google_map_view_mobile_draggable: 0
+            styled_google_map_view_streetviewcontrol: 1
+            styled_google_map_view_zoomcontrol: 1
+            styled_google_map_view_fullscreen: 1
+            styled_google_map_default_map_center:
+              lat: '38.5'
+              lon: '-121.3'
+          marker_label_settings:
+            color: '#fff'
+            fontFamily: Verdana
+            fontSize: 12px
+            fontWeight: bold
+          cluster_settings:
+            cluster_enabled: 1
+            pin_image: 'https://www.drupal.org/files/issues/2020-05-09/cluster_L.png'
+            text_color: '#ffffff'
+            height: '64'
+            width: '64'
+            text_size: '18'
+            min_size: '4'
+          spider_settings:
+            spider_enabled: 1
+            markers_wont_move: 0
+            markers_wont_hide: 1
+            basic_format_events: 1
+            pin_image: 'https://www.drupal.org/files/issues/2020-05-09/pin_rose.png'
+            height: '64'
+            width: '64'
+            keep_spiderfied: 1
+            nearby_distance: '150'
+            circle_spiral_switchover: '9'
+            leg_weight: '2'
+            circleFootSeparation: '50'
+            spiralFootSeparation: '55'
+          heatmap_settings:
+            heatmap_enabled: 0
+            data_source: ''
+            dissipating: 1
+            gradient: "rgba(0, 255, 255, 0)\r\nrgba(0, 255, 255, 1)\r\nrgba(0, 191, 255, 1)\r\nrgba(0, 127, 255, 1)\r\nrgba(0, 63, 255, 1)\r\nrgba(0, 0, 255, 1)\r\nrgba(0, 0, 223, 1)\r\nrgba(0, 0, 191, 1)\r\nrgba(0, 0, 159, 1)\r\nrgba(0, 0, 127, 1)\r\nrgba(63, 0, 91, 1)\r\nrgba(127, 0, 63, 1)\r\nrgba(191, 0, 31, 1)\r\nrgba(255, 0, 0, 1)"
+            opacity: '0.6'
+            radius: '20'
+            maxIntensity: '100'
+          popup:
+            second_click: '0'
+            close_button_source: ''
+            open_event: click
+            styled_google_map_view_shadow_style: '0'
+            styled_google_map_view_padding: '13'
+            styled_google_map_view_border_radius: '7'
+            styled_google_map_view_border_width: '1'
+            styled_google_map_view_border_color: '#cccccc'
+            styled_google_map_view_background_color: '#ffffff'
+            styled_google_map_view_min_width: auto
+            styled_google_map_view_max_width: auto
+            styled_google_map_view_min_height: auto
+            styled_google_map_view_max_height: auto
+            styled_google_map_view_arrow_style: '0'
+            styled_google_map_view_arrow_size: '10'
+            styled_google_map_view_arrow_position: '50'
+            styled_google_map_view_disable_auto_pan: '0'
+            styled_google_map_view_hide_close_button: '0'
+            styled_google_map_view_disable_animation: '1'
+          popup_classes:
+            styled_google_map_view_content_container_class: sgmpopup-content-wrapper
+            styled_google_map_view_background_class: sgmpopup-content
+            styled_google_map_view_arrow_class: sgmpopup-arrow
+            styled_google_map_view_arrow_outer_class: sgmpopup-arrow-outer
+            styled_google_map_view_arrow_inner_class: sgmpopup-arrow-inner
+      row:
+        type: fields
+        options: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+      tags: {  }
+  page_4:
+    display_plugin: page
+    id: page_4
+    display_title: Controls
+    position: 4
+    display_options:
+      display_extenders: {  }
+      path: map-controls
+      style:
+        type: styled_google_map
+        options:
+          grouping: {  }
+          data_source: location__value
+          pin_source: field_icon
+          default_pin_source: 'https://www.drupal.org/files/issues/2020-05-09/pin_red.png'
+          active_pin_source: ''
+          popup_source: name
+          marker_label: ''
+          category_source: category
+          main:
+            styled_google_map_view_width: 100%
+            styled_google_map_view_height: 600px
+            styled_google_map_view_style: "[\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            },\r\n            {\r\n                \"weight\": \"0.20\"\r\n            },\r\n            {\r\n                \"lightness\": \"28\"\r\n            },\r\n            {\r\n                \"saturation\": \"23\"\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#494949\"\r\n            },\r\n            {\r\n                \"lightness\": 13\r\n            },\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.icon\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"administrative\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#144b53\"\r\n            },\r\n            {\r\n                \"lightness\": 14\r\n            },\r\n            {\r\n                \"weight\": 1.4\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#08304b\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"poi\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0c4152\"\r\n            },\r\n            {\r\n                \"lightness\": 5\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b434f\"\r\n            },\r\n            {\r\n                \"lightness\": 25\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#0b3d51\"\r\n            },\r\n            {\r\n                \"lightness\": 16\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.local\",\r\n        \"elementType\": \"geometry\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#000000\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"transit\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#146474\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#021019\"\r\n            }\r\n        ]\r\n    }\r\n]"
+            styled_google_map_view_active_pin: ''
+            styled_google_map_view_pin_height: ''
+            styled_google_map_view_pin_width: ''
+            styled_google_map_view_maptype: ROADMAP
+            styled_google_map_gesture_handling: cooperative
+            styled_google_map_view_zoom_default: '10'
+            styled_google_map_view_zoom_max: '29'
+            styled_google_map_view_zoom_min: '1'
+            styled_google_map_view_maptypecontrol: 1
+            styled_google_map_view_scalecontrol: 1
+            styled_google_map_view_rotatecontrol: 1
+            styled_google_map_view_draggable: 1
+            styled_google_map_view_mobile_draggable: 0
+            styled_google_map_view_streetviewcontrol: 1
+            styled_google_map_view_zoomcontrol: 1
+            styled_google_map_view_fullscreen: 1
+            styled_google_map_default_map_center:
+              lat: '38.5'
+              lon: '-121.3'
+          marker_label_settings:
+            color: '#fff'
+            fontFamily: Verdana
+            fontSize: 12px
+            fontWeight: bold
+          cluster_settings:
+            cluster_enabled: 0
+            pin_image: ''
+            text_color: '#ffffff'
+            height: '72'
+            width: '72'
+            text_size: '18'
+            min_size: '4'
+          spider_settings:
+            spider_enabled: 0
+            markers_wont_move: 0
+            markers_wont_hide: 0
+            basic_format_events: 1
+            pin_image: ''
+            keep_spiderfied: 1
+            nearby_distance: '50'
+            circle_spiral_switchover: '9'
+            leg_weight: '2'
+          heatmap_settings:
+            heatmap_enabled: 0
+            data_source: ''
+            dissipating: 1
+            gradient: "rgba(0, 255, 255, 0)\r\nrgba(0, 255, 255, 1)\r\nrgba(0, 191, 255, 1)\r\nrgba(0, 127, 255, 1)\r\nrgba(0, 63, 255, 1)\r\nrgba(0, 0, 255, 1)\r\nrgba(0, 0, 223, 1)\r\nrgba(0, 0, 191, 1)\r\nrgba(0, 0, 159, 1)\r\nrgba(0, 0, 127, 1)\r\nrgba(63, 0, 91, 1)\r\nrgba(127, 0, 63, 1)\r\nrgba(191, 0, 31, 1)\r\nrgba(255, 0, 0, 1)"
+            opacity: '0.6'
+            radius: '20'
+            maxIntensity: '100'
+          popup:
+            second_click: '0'
+            close_button_source: ''
+            open_event: click
+            styled_google_map_view_shadow_style: '0'
+            styled_google_map_view_padding: '13'
+            styled_google_map_view_border_radius: '7'
+            styled_google_map_view_border_width: '1'
+            styled_google_map_view_border_color: '#cccccc'
+            styled_google_map_view_background_color: '#ffffff'
+            styled_google_map_view_min_width: auto
+            styled_google_map_view_max_width: auto
+            styled_google_map_view_min_height: auto
+            styled_google_map_view_max_height: auto
+            styled_google_map_view_arrow_style: '0'
+            styled_google_map_view_arrow_size: '10'
+            styled_google_map_view_arrow_position: '50'
+            styled_google_map_view_disable_auto_pan: '0'
+            styled_google_map_view_hide_close_button: '0'
+            styled_google_map_view_disable_animation: '1'
+          popup_classes:
+            styled_google_map_view_content_container_class: sgmpopup-content-wrapper
+            styled_google_map_view_background_class: sgmpopup-content
+            styled_google_map_view_arrow_class: sgmpopup-arrow
+            styled_google_map_view_arrow_outer_class: sgmpopup-arrow-outer
+            styled_google_map_view_arrow_inner_class: sgmpopup-arrow-inner
+      defaults:
+        style: false
+        row: false
+        relationships: false
+        fields: false
+        header: false
+        filters: false
+        filter_groups: false
+        title: false
+      row:
+        type: fields
+        options: {  }
+      relationships:
+        category:
+          id: category
+          table: real_estate
+          field: category
+          relationship: none
+          group_type: group
+          admin_label: 'Taxonomy term'
+          required: true
+          entity_type: real_estate
+          entity_field: category
+          plugin_id: standard
+      fields:
+        name:
+          table: real_estate
+          field: name
+          id: name
+          entity_type: null
+          entity_field: name
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        category:
+          id: category
+          table: real_estate
+          field: category
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: real_estate
+          entity_field: category
+          plugin_id: field
+        location__value:
+          id: location__value
+          table: real_estate
+          field: location__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: geofield_default
+          settings:
+            output_format: wkt
+            output_escape: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: real_estate
+          entity_field: location
+          plugin_id: field
+        price:
+          id: price
+          table: real_estate
+          field: price
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: real_estate
+          entity_field: price
+          plugin_id: field
+        field_icon:
+          id: field_icon
+          table: taxonomy_term__field_icon
+          field: field_icon
+          relationship: category
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: ''
+            image_link: ''
+            svg_render_as_image: true
+            svg_attributes:
+              width: null
+              height: null
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      header:
+        google_map_control:
+          id: google_map_control
+          table: views
+          field: google_map_control
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: 0
+          content:
+            value: '[view:label] displays [view:total-rows] items'
+            format: basic_html
+          position: BOTTOM_RIGHT
+          plugin_id: google_map_control
+      filters:
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: category
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: tid_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: tid_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: tid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: real_estate
+          hierarchy: false
+          error_message: true
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      display_description: ''
+      title: 'Controls Example'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+      tags:
+        - 'config:field.storage.taxonomy_term.field_icon'

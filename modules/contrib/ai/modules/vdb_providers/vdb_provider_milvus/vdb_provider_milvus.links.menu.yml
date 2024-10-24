@@ -1,0 +1,5 @@
+vdb_provider_milvus.settings_menu:
+  title: "Milvus Configuration"
+  description: "Configure Milvus Vector Database"
+  route_name: vdb_provider_milvus.settings_form
+  parent: ai.admin_vdb_providers

@@ -1,0 +1,25 @@
+{% set direct_download = direct_download ?? false %}
+
+{% if link['#attributes'].class %}
+  {% set attributes = attributes.addClass(link['#attributes'].class) %}
+{% endif %}
+{% if link['#attributes'].rel %}
+  {% set attributes = attributes.setAttribute('rel', link['#attributes'].rel) %}
+{% endif %}
+{% if link['#attributes'].target %}
+  {% set attributes = attributes.setAttribute('target', link['#attributes'].target) %}
+{% endif %}
+{% if link['#attributes'].title %}
+  {% set attributes = attributes.setAttribute('title', link['#attributes'].title) %}
+{% endif %}
+
+{% if direct_download %}
+  {% set attributes = attributes.setAttribute('download', true) %}
+{% endif %}
+
+{{ include('dsfr4drupal:link', {
+  'detail': file_size,
+  'label': link['#title'],
+  'url': link['#url'],
+  'variant': 'download',
+}) }}

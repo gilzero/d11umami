@@ -1,0 +1,10 @@
+ai_models.settings:
+  label: 'AI Settings'
+  type: config_object
+  mapping:
+    models:
+      type: sequence
+      label: The overriden/added models.
+      required: false
+      sequence:
+        type: ignore

@@ -1,0 +1,13 @@
+/* Montserrat font */
+@font-face {
+	font-family: 'Montserrat';
+	font-display: swap;
+}
+html, body, .pure-g [class*="pure-u"] {
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* No need for DIV height correction if Montserrat font is used, so margin must be reset. */
+.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children {
+	margin: 0 !important; 
+}

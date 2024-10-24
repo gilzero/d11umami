@@ -1,0 +1,78 @@
+{#
+/**
+ * @file
+ * Theme override for a fieldset element for checkboxes.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the fieldset element.
+ * - errors: (optional) Any errors for this fieldset element, may not be set.
+ * - required: Boolean indicating whether the fieldset element is required.
+ * - legend: The legend element containing the following properties:
+ *   - title: Title of the fieldset, intended for use as the text of the legend.
+ *   - attributes: HTML attributes to apply to the legend.
+ * - description: The description element containing the following properties:
+ *   - content: The description content of the fieldset.
+ *   - attributes: HTML attributes to apply to the description container.
+ * - children: The rendered child elements of the fieldset.
+ * - prefix: The content to add before the fieldset children.
+ * - suffix: The content to add after the fieldset children.
+ *
+ * @see template_preprocess_fieldset()
+ */
+#}
+{%
+  set classes = [
+    'rvt-fieldset',
+    'js-form-item',
+    'form-item',
+    'js-form-wrapper',
+    'form-wrapper',
+  ]
+%}
+<fieldset{{ attributes.addClass(classes) }}>
+  {%
+    set legend_span_classes = [
+      'rvt-label',
+      required ? 'js-form-required',
+      required ? 'form-required',
+    ]
+  %}
+  {%
+    set description_classes = [
+      'rvt-c-description',
+      'rvt-c-description--' ~ description_display|clean_class,
+      description_display == 'invisible' ? 'rvt-sr-only',
+    ]
+  %}
+  {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
+  <legend{{ legend.attributes }}>
+    <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
+  </legend>
+  <div class="fieldset-wrapper">
+    {% if description_display == 'before' and description.content %}
+      <div{{ description.attributes.addClass(description_classes) }}>
+        {{ description.content }}
+      </div>
+    {% endif %}
+    {% if errors %}
+    <div class="rvt-inline-alert rvt-inline-alert--danger">
+      <span class="rvt-inline-alert__icon">
+        <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m8 6.586-2-2L4.586 6l2 2-2 2L6 11.414l2-2 2 2L11.414 10l-2-2 2-2L10 4.586l-2 2Z"></path><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2 8a6 6 0 1 1 12 0A6 6 0 0 1 2 8Z"></path></svg>
+      </span>
+      <span class="rvt-inline-alert__message">{{ errors }}</span>
+    </div>
+    {% endif %}
+    {% if prefix %}
+      <span class="field-prefix">{{ prefix }}</span>
+    {% endif %}
+    {{ children }}
+    {% if suffix %}
+      <span class="field-suffix">{{ suffix }}</span>
+    {% endif %}
+    {% if description_display in ['after', 'invisible'] and description.content %}
+      <div{{ description.attributes.addClass(description_classes) }}>
+        {{ description.content }}
+      </div>
+    {% endif %}
+  </div>
+</fieldset>

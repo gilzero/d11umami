@@ -1,0 +1,19 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set has_icon = has_icon ?? true %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-badge--' ~ variant) %}
+{% endif %}
+
+{% if system_type %}
+  {% set attributes = attributes.addClass('fr-badge--' ~ system_type) %}
+  {% if not has_icon %}
+    {% set attributes = attributes.addClass('fr-badge--no-icon') %}
+  {% endif %}
+{% elseif color_schema %}
+  {% set attributes = attributes.addClass('fr-badge--' ~ color_schema) %}
+{% endif %}
+
+<p{{ attributes.addClass('fr-badge') }}>
+  {{ label }}
+</p>

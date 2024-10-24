@@ -1,0 +1,9 @@
+{% if page_status is not empty %}
+<div class="rvt-p-bottom-sm">
+  {% for text, level in page_status %}
+    <span class="rvt-badge rvt-badge--{{ level }} [ rvt-ts-xxs ]">
+      {{ text }}
+    </span>
+  {% endfor %}
+</div>
+{% endif %}

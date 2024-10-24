@@ -1,0 +1,32 @@
+name: DSFR - Accordion
+description: Accordions allow users to show and hide sections of content presented within a page.
+status: stable
+group: DSFR
+props:
+  properties:
+    accordion_id:
+      type: string
+      title: Accordion identifier
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    content:
+      type: string
+      title: Content
+    expanded:
+      type: boolean
+      title: Is expanded?
+      default: false
+    title:
+      type: string
+      title: Title
+    title_tag:
+      type: string
+      title: Html tag
+      default: h3
+  required:
+    - content
+    - title
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.accordion

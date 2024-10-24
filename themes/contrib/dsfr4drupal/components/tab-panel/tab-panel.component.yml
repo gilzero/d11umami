@@ -1,0 +1,29 @@
+name: DSFR - Tab panel
+description: The tab component allows users to navigate different sections of content within the same page.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    content:
+      type: string
+      title: Content
+    html_id:
+      type: string
+      title: HTML identifier
+    selected:
+      type: boolean
+      title: Is selected?
+      default: false
+    tab_id:
+      type: string
+      title: Tab identifier
+  required:
+    - content
+    - html_id
+    - tab_id
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.tab

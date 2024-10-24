@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme implementation for the status report error, based on counter.
+ *
+ * Available variables:
+ * - amount: The number shown on counter.
+ * - text: The text shown on counter.
+ * - severity: The severity of the counter.
+ *
+ * @ingroup themeable
+ */
+#}
+<span class="system-status-counter system-status-counter--{{ severity }}">
+  <span class="system-status-counter__status-icon system-status-counter__status-icon--{{ severity }}"></span>
+  <span class="system-status-counter__status-title">
+    <span class="system-status-counter__title-count">{{ amount }} {{ text }}</span>
+    <span class="system-status-counter__details"><span class="visually-hidden">{{ text }}</span></span>
+  </span>
+</span>

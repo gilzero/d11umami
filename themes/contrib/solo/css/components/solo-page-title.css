@@ -1,0 +1,60 @@
+.block-page-title-block {
+  display: grid;
+}
+
+h1.page-title-text {
+  display: grid;
+  padding: var(--solo-px32) 0;
+}
+
+h1.page-title-text span {
+  display: inline-flex;
+}
+
+h1.page-title-text {
+  font-size: calc(2 * var(--solo-px32));
+  line-height: calc(2 * var(--solo-px38));
+}
+
+#page-wrapper.pt-center h1.page-title-text,
+#page-wrapper.pt-center h1.page-title-text span {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width:75rem) {
+  h1.page-title-text {
+    font-size: calc(2 * var(--solo-px24));
+    line-height: calc(2 * var(--solo-px28));
+  }
+
+}
+
+@media (max-width:62rem) {
+  h1.page-title-text {
+    font-size: var(--solo-px36);
+    line-height: calc(2 * var(--solo-px22));
+    padding: var(--solo-px16) 0;
+  }
+
+}
+
+@media (max-width:48rem) {
+  h1.page-title-text {
+    font-size: var(--solo-px24);
+    line-height: calc(2 * var(--solo-px14));
+    padding: var(--solo-px8) 0;
+  }
+
+}
+
+@media (max-width:36rem) {
+  h1.page-title-text {
+    font-size: var(--solo-px18);
+    line-height: var(--solo-px22);
+    padding: var(--solo-px8) 0;
+  }
+
+}

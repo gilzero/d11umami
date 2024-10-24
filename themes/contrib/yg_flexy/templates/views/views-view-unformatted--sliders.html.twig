@@ -1,0 +1,23 @@
+
+<section id="yg-slider">
+  <div class="banner-overlay">
+    <div id="carouselYG" class="carousel slide" data-ride="carousel">
+          {% set i = 0 %}
+           <ol class="carousel-indicators">
+            {% for row in rows %}
+              {% if i == 0 %}
+               <li data-target="#carouselYG" data-slide-to="0" class="active"></li>
+              {% else %}
+                 <li data-target="#carouselYG" data-slide-to="{{i}}"></li>
+              {% endif %}
+              {% set i = i + 1 %}
+            {% endfor %}
+           </ol>
+           <div class="carousel-inner" role="listbox">
+              {% for row in rows %}
+                  {{row.content}}
+              {% endfor %}
+           </div>
+    </div>
+  </div>
+</section>

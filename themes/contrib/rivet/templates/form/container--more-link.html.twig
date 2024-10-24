@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override of the views more link container.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - children: The rendered child elements of the container.
+ * - has_parent: A flag to indicate that the container has one or more parent
+     containers.
+ *
+ * @see template_preprocess_container()
+ */
+#}
+
+<div{{attributes}}>
+{% if element['#type'] == 'more_link' %}
+{%
+  set attrs = {
+    'class': ['rvt-cta', 'rvt-cta--link'],
+  }
+%}
+{{ link(element['#title'], element['#url'], element['#attributes']|merge(attrs)) }}
+{% else %}
+{% include '@rivet/form/container.html.twig' %}
+{% endif %}
+</div>
+

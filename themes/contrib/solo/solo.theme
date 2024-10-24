@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Solo Theme.
+ *
+ * Filename:     solo.theme
+ * Website:      http://www.flashwebcenter.com
+ * Description:  template
+ * Author:       Alaa Haddad http://www.alaahaddad.com.
+ */
+
+require_once __DIR__ . '/includes/_theme_settings_helper_functions.inc';
+require_once __DIR__ . '/includes/_solo_theme_preprocess.inc';
+require_once __DIR__ . '/includes/_solo_theme_suggestions.inc';
+require_once __DIR__ . '/includes/_solo_theme_alter.inc';
+require_once __DIR__ . '/includes/_solo_theme_misc.inc';

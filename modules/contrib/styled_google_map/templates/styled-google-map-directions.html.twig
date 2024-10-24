@@ -1,0 +1,28 @@
+<div class="map-control getting-directions" id="directions-{{ id }}">
+    <div class="form-control address">
+        <input type="text" placeholder="{{ 'From address'|t }}" id="getting_directions_address-{{ id }}" />
+        <label for="getting_directions_location-{{ id }}">
+            <input type="checkbox" id="getting_directions_location-{{ id }}" />
+            {{ 'Use my current location'|t }}
+            <p class="error-message" style="display: none;"></p>
+        </label>
+    </div>
+
+    {% if settings.type == 'SELECTABLE' %}
+    <div class="form-control travel-method">
+        <label for="getting_directions_mode-{{ id }}">{{ 'Travel method'|t }}</label>
+        <select id="getting_directions_mode-{{ id }}">
+            <option value="DRIVING">{{ 'Driving'|t }}</option>
+            <option value="WALKING">{{ 'Walking'|t }}</option>
+            <option value="TRANSIT">{{ 'Public transport'|t }}</option>
+            <option value="BICYCLING">{{ 'Cycling'|t }}</option>
+        </select>
+    </div>
+    {% else %}
+        <input type="hidden" id="getting_directions_mode-{{ id }}" value="{{ settings.type }}" />
+    {% endif %}
+
+    <div class="form-actions">
+        <input type="button" value="{{ 'Find directions' }}" id="find-directions-{{ id }}" />
+    </div>
+</div>

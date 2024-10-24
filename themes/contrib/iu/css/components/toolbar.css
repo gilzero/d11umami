@@ -1,0 +1,84 @@
+.toolbar button {
+  border-radius: 0;
+}
+
+.toolbar .toolbar-bar {
+  overflow: hidden; /* Fix to ensure black background shows up while loading */
+}
+
+/* Let tray scroll until explicitly oriented to match behavior of toolbar. */
+.toolbar-fixed .toolbar-tray {
+  position: absolute;
+}
+
+.toolbar-fixed .toolbar-oriented .toolbar-tray {
+  position: fixed;
+}
+
+@media screen and (min-width: 40em) {
+  .toolbar-menu {
+    font-size: 1em;
+  }
+}
+
+.toolbar-loading #toggles,
+.toolbar-loading #branding-bar,
+.toolbar-loading #offCanvas,
+.toolbar-loading nav.main {
+  z-index: 1251;
+}
+
+@media only screen and (max-width: 976px) {
+  .toolbar-fixed #toggles,
+  .toolbar-fixed #branding-bar,
+  .toolbar-fixed #offCanvas {
+    top: 39px !important;
+  }
+
+  .toolbar-fixed #toggles {
+    right: 0;
+    width: auto;
+  }
+
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #toggles,
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #branding-bar,
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #offCanvas {
+    top: 79px !important;
+  }
+}
+
+@media only screen and (min-width: 977px) and (max-width: 1024px) {
+  .toolbar-fixed #toggles,
+  .toolbar-fixed #branding-bar,
+  .toolbar-fixed #offCanvas {
+    top: 39px !important;
+  }
+
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #toggles,
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #branding-bar,
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #offCanvas {
+    top: 79px !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .toolbar-loading #toggles,
+  .toolbar-loading #branding-bar,
+  .toolbar-loading #offCanvas,
+  .toolbar-vertical:not(.toolbar-fixed) #toggles,
+  .toolbar-vertical:not(.toolbar-fixed) #branding-bar,
+  .toolbar-vertical:not(.toolbar-fixed) #offCanvas {
+    position: absolute;
+    top: 39px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .toolbar-fixed:not(.toolbar-loading) nav.main.is-sticky {
+    top: 39px !important;
+  }
+
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) nav.main.is-sticky {
+    top: 79px !important;
+  }
+}

@@ -1,0 +1,15 @@
+{% set attributes = attributes.addClass('progress') %}
+
+{% if variant %}
+{% set attributes = (variant != 'default') ? attributes.addClass('progress-' ~ variant) : attributes %}
+{% endif %}
+
+{% if value or (not value and max) %}
+{% set attributes = attributes.setAttribute('value', value|default(0)) %}
+{% endif %}
+
+{% if max %}
+{% set attributes = attributes.setAttribute('max', max) %}
+{% endif %}
+
+<progress {{ attributes }}></progress>

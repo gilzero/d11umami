@@ -1,0 +1,51 @@
+/* Components -> Social icons */
+.footer-social {
+  padding: 1rem 0;
+}
+.social-icons {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.social-icons li {
+  display: inline-block;
+  margin: 0;
+}
+.social-icons li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.social-icons li a:hover {
+  border: 2px solid var(--primary);
+}
+/* components -> Scroll To Top */
+.scrolltop {
+  position: fixed;
+  display: none;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #000000;;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  z-index: 20;
+  cursor: pointer;
+}
+.scrolltop:hover {
+  background: var(--secondary);
+  color: #ffffff;
+}

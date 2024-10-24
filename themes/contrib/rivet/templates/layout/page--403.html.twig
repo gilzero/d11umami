@@ -1,0 +1,9 @@
+{% extends 'page--4xx.html.twig' %}
+
+{% block error_message %}
+Sorry, but you don't have permission to view this page or resource. Try searching the site or using the links below to find what you’re looking for.
+{% endblock %}
+
+{% block error_icon %}
+{% include('@rivet/../images/icons/rvt-sticker-lock.svg') %}
+{% endblock %}

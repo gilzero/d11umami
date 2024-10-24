@@ -1,0 +1,15 @@
+{% macro test(macro_1, macro_unused_1) %}{{ macro_1 }}{% endmacro %}
+{% set foo = 'foo' %}
+{{ foo }}
+{% for zoo_unused, item_1 in test_prop_array %}
+  {{ item_1 }}
+{% endfor %}
+{% for item_2 in test_prop_array %}
+  {{ item_2 }}
+{% endfor %}
+{% for item_unused in test_prop_array %}
+  {{ foo }}
+{% endfor %}
+{{ test_prop_string_collector }}
+{% set my_attributes = create_attribute() %}
+<span {{ attributes }}></span>

@@ -1,0 +1,17 @@
+{{ attach_library('zuvi/slider') }}
+<section class="slider">
+  <div class="container">
+  <div class="slider-container">
+    <div class="slider-text">
+      {{ page.slider }}
+    </div><!-- /slider-text -->
+    <div class="slider-image">
+      {% if slider_image_path != '' %}
+        <img src="{{ slider_image_path }}" alt="slider image" />
+      {% else %}
+        <img src="{{ base_path ~ directory }}/images/demo-images/slider.svg" alt="slider image" />
+      {% endif %}
+    </div><!-- /slider-image -->
+  </div> <!--/.slider-container -->
+  </div> <!--/.container -->
+</section>

@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * AI Search module file.
+ */
+
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\ai_search\Plugin\search_api\processor\DatabaseBoostByAiSearch;
+use Drupal\search_api\IndexInterface;
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function ai_search_entity_type_alter(array &$entity_types) {
+  if (isset($entity_types['search_api_index'])) {
+    /** @var \Drupal\Core\Config\Entity\ConfigEntityTypeInterface $entity_type */
+    $entity_type = $entity_types['search_api_index'];
+    $entity_type->setFormClass('fields', 'Drupal\ai_search\Form\AiSearchIndexFieldsForm');
+  }
+}
+
+/**
+ * Implements hook_query_TAG_alter().
+ */
+function ai_search_query_search_api_db_search_alter(AlterableInterface $query) {
+  DatabaseBoostByAiSearch::queryAlter($query);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function ai_search_search_api_index_delete(EntityInterface $entity) {
+  if ($entity instanceof IndexInterface) {
+    $config_factory = \Drupal::configFactory();
+    if ($config = $config_factory->get('ai_search.index.' . $entity->id())) {
+      $config->delete();
+    }
+  }
+}

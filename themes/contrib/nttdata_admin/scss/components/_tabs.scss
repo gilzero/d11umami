@@ -1,0 +1,151 @@
+/**
+ * @file
+ * Tabs.
+ */
+
+ .tabs--primary {
+  border: none;
+  padding-top: 35px;
+  .tabs__tab {
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    &::before {
+      border: none;
+    }
+    .tabs__trigger {
+      &:hover {
+        background-color: $primary;
+        svg {
+          @extend %filter-white;
+        }
+      }
+    }
+    .tabs__link {
+      background-color: $black-pearl;
+      color: $white;
+      z-index: 1;
+      min-height: 2.8rem;
+      @include transition(0.3s all);
+      &.is-active {
+        background-color: $white;
+        color: $smart-navy;
+        cursor: default;
+      }
+      &:before {
+        display: none;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        z-index: 1;
+        border-right: none;
+        border-bottom: 4px solid $black-pearl;
+        border-left: none;
+      }
+      &:not(.is-active) {
+        &:hover {
+          background-color: $primary;
+          color: $white;
+          &::after {
+            height: 100%;
+          }
+        }
+      }
+    }
+    &:hover {
+      &::after {
+        height: 100%;
+      }
+    }
+    @include focus-outline;
+  }
+  &.is-open {
+    .tabs__trigger {
+      background-color: $primary;
+      svg {
+        @extend %filter-white;
+      }
+    }
+  }
+}
+
+.horizontal-tabs,
+.vertical-tabs {
+	.horizontal-tabs-list {
+		background: $ck-grey2;
+		color: $primary;
+		.horizontal-tab-button {
+			text-align: center;
+			a:focus {
+				z-index: 2;
+			}
+			&.selected {
+				a {
+					@extend %tab-active-state;
+				}
+			}
+			&:not(.selected) {
+				a {
+					@extend %tab;
+				}
+			}
+		}
+	}
+  .vertical-tabs {
+    &__menu {
+      background: $nttdata-effect;
+      color: $primary;
+      .vertical-tabs__menu-item {
+        &.is-selected {
+          border-right: none;
+          .vertical-tabs__menu-link {
+            &:before {
+              background: $primary;
+            }
+            &:hover {
+              color: $text-white;
+              outline: none;
+              &:before {
+                background: $primary2;
+                border-left: 4px solid $primary2;
+              }
+            }
+          }
+        }
+        .vertical-tabs__menu-link {
+          margin-right: 1px;
+          .vertical-tabs__menu-item-title,
+          .vertical-tabs__menu-link-summary {
+            color: $text-white;
+          }
+          &:before {
+            border: 1px solid $ck-grey2;
+          }
+          &:focus {
+            box-shadow: none;
+            &:after {
+              border: none;
+            }
+          }
+          &:hover::before {
+            background: $primary2;
+          }
+        }
+      }
+    }
+    &__items {
+      border: 2px solid $white2;
+    }
+    &__panes {
+      background: $white2;
+    }
+    .field-group-tab {
+      .claro-details__wrapper--vertical-tabs-item {
+        background-color: $white;
+      }
+    }
+  }
+}

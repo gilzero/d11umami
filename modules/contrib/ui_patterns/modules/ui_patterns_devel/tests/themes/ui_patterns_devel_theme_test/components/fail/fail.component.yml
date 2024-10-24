@@ -1,0 +1,12 @@
+name: Syntax error
+description: Testing component with syntax error for failing.
+group: Testing
+tags:
+  - tests
+status: experimental
+props:
+  type: object
+  properties:
+    test_prop_string_fail:
+      title: Test string
+      type: string

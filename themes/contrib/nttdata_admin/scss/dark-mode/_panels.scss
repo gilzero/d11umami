@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Panels.
+ */
+body.dark-mode {
+  .panel {
+    border: solid 1px $white2;
+    &__title {
+      border-bottom: solid 2px $delightful-yellow;
+      background-color: $white2;
+      color: $text-white;
+    }
+    &__content {
+      .nttdata-card {
+        &:not(:last-child) {
+          border-bottom: 0.0625em solid $cornflower-blue;
+        }
+        &-text {
+          color: $cornflower-blue;
+        }
+      }
+    }
+  }
+}

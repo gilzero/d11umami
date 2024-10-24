@@ -1,0 +1,29 @@
+{% if links -%}
+  {%- if heading -%}
+    {%- if heading.level -%}
+      <{{ heading.level }}{{ heading.attributes }}>{{ heading.text }}</{{ heading.level }}>
+    {%- else -%}
+      <h2{{ heading.attributes }}>{{ heading.text }}</h2>
+    {%- endif -%}
+  {%- endif -%}
+  <div class="rvt-button-segmented" role="group" aria-label="Operations">
+    {%- for key, item in links -%}
+      {%- if item.link -%}
+        {{ item.link|merge({'#attributes': {'class': loop.first ? 'rvt-button rvt-button--small'}}) }}
+      {%- elseif item.text_attributes -%}
+        <span{{ item.text_attributes }}>{{ item.text }}</span>
+      {%- else -%}
+        {{ item.text }}
+      {%- endif -%}
+      {% if loop.first %}
+        <button type="button" class="rvt-button rvt-button--small" data-rvt-dropdown-toggle>
+          <span class="rvt-sr-only rvt-dropdown__toggle-text">Toggle dropdown</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"/></svg>
+        </button>
+      </div>
+      <div class="rvt-dropdown__menu" role="menu" data-rvt-dropdown-menu hidden>
+      {% endif %}
+    {%- endfor -%}
+  </div>
+{%- endif %}

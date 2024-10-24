@@ -1,0 +1,44 @@
+.rvt-c-webform-signature {
+  overflow: hidden;
+  border: 1px solid #75838f;
+  border-radius: 0.25rem;
+}
+
+.rvt-c-webform-signature .webform-signature-pad {
+  background-color: transparent;
+}
+
+.rvt-c-webform-signature .rvt-button {
+  position: absolute;
+  z-index: 3;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 1.5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  vertical-align: bottom;
+
+  /* mimic .rvt-button--small */
+  font-size: 0.875rem;
+  line-height: 1.1;
+}
+
+/* mimic .rvt-button--danger-secondary */
+.rvt-c-webform-signature .rvt-button {
+  color: #df3603;
+  border-color: #ffcdc0;
+  background-color: transparent;
+}
+
+.rvt-c-webform-signature .rvt-button:hover {
+  color: #b11c00;
+  border-color: #ffcdc0;
+  background-color: #fff3f0;
+}
+
+.rvt-c-webform-signature .rvt-button:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 0.125rem #fff,
+    0 0 0 0.25rem #f75930;
+}

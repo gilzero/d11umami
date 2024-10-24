@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Functions to support layouts theming in the "DSFR for Drupal" theme.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_preprocess_HOOK() for "html".
+ */
+function dsfr4drupal_preprocess_html(array &$variables): void {
+  /** @var \Drupal\Core\Template\Attribute $html_attributes */
+  $html_attributes = $variables['html_attributes'];
+
+  // Default scheme value (values available: system, light, dark).
+  $html_attributes->setAttribute(
+    'data-fr-scheme',
+    theme_get_setting('scheme') ?? 'system'
+  );
+
+  // Display site in half-mast mode.
+  if (theme_get_setting('mourning_mode')) {
+    $html_attributes->setAttribute(
+      'data-fr-mourning',
+      'true'
+    );
+  }
+
+  // If user can choose theme, enable "Display settings" button.
+  $variables['scheme_choose'] = (bool) theme_get_setting('scheme_choose');
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for "page".
+ */
+function dsfr4drupal_preprocess_page(array &$variables): void {
+  $variables['container_class'] = theme_get_setting('container_class');
+  $variables['logo_text'] = theme_get_setting('logo_text') ?? '';
+
+  $variables['logo_operator'] = '';
+  if (!empty(theme_get_setting('logo_operator'))) {
+    /** @var \Drupal\file\FileInterface|false $logo */
+    $logo = \Drupal::entityTypeManager()->getStorage('file')
+      ->load(theme_get_setting('logo_operator'));
+
+    if ($logo) {
+      $logo_size = getimagesize($logo->getFileUri());
+
+      $variables['logo_operator'] = [
+        '#theme' => 'image',
+        '#uri' => $logo->getFileUri(),
+        '#width' => $logo_size[0] ?? NULL,
+        '#height' => $logo_size[1] ?? NULL,
+      ];
+    }
+  }
+
+  $variables['footer_content_description'] = '';
+  $footer_content_description = theme_get_setting('footer_content_description');
+  if (!empty($footer_content_description['value'])) {
+    $variables['footer_content_description'] = check_markup(
+      $footer_content_description['value'],
+      $footer_content_description['format']
+    );
+  }
+
+  $variables['footer_copy'] = '';
+  $footer_copy = theme_get_setting('footer_copy');
+  if (!empty($footer_copy['value'])) {
+    $variables['footer_copy'] = check_markup(
+      $footer_copy['value'],
+      $footer_copy['format']
+    );
+  }
+
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+}

@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Content.
+ */
+
+ @media (min-width: 61rem) {
+  .layout-form {
+    .layout-region--main,
+    .layout-region--footer {
+      display: inline-block;
+      width: 100%;
+      padding: 5px;
+      margin-inline: auto;
+      overflow: hidden;
+    }
+  }
+}
+
+.layout-region--node-main {
+	@media (min-width: 61rem){
+		min-width: min(52rem, 100%);
+		width: 100%;
+	}
+}
+
+.layout-region--node-secondary {
+  @media (min-width: 61rem){
+    margin-block-start: 0;
+  }
+}
+
+.layout-region--node-main,
+.layout-region--node-footer {
+	max-width: 100%;
+	.layout-region__content {
+		max-width: 100% !important;
+	}
+}

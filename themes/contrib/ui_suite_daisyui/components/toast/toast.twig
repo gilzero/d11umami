@@ -1,0 +1,13 @@
+{% set attributes = attributes.addClass('toast') %}
+
+{% if position_x %}
+  {% set attributes = attributes.addClass('toast-' ~ position_x) %}
+{% endif %}
+
+{% if position_y %}
+  {% set attributes = attributes.addClass('toast-' ~ position_y) %}
+{% endif %}
+
+{% if items %}
+<div {{ attributes }}>{{ items }}</div>
+{% endif %}

@@ -1,0 +1,408 @@
+@media all and (max-width: 949px) {
+  #header,
+  #menu,
+  .slideshow-inner,
+  .slideshow,
+  #slideshow-bottom,
+  #preface-wrapper,
+  #bottom-teaser,
+  #bottom-wrapper,
+  #wrapper,
+  #footer-wrapper {
+    width: 768px;
+  }
+  #mission-wrapper {
+    width: 768px!important;
+  }
+
+  #search-block-form {
+    padding: 5px 10px 5px 0;
+  }
+}
+
+@media all and (max-width: 800px) {
+  #header,
+  #menu,
+  .slideshow-inner,
+  .slideshow,
+  #slideshow-bottom,
+  #preface-wrapper,
+  #bottom-teaser,
+  #bottom-wrapper,
+  #wrapper,
+  #footer-wrapper {
+    width: 730px;
+  }
+  #mission-wrapper {
+    width: 730px!important;
+  }
+}
+
+.menu-icon-open,
+.menu-icon-close {
+  display: none;
+}
+
+@media all and (max-width: 767px) {
+  #header,
+  #menu,
+  .slideshow-inner,
+  .slideshow,
+  #slideshow-bottom,
+  #preface-wrapper,
+  #bottom-teaser,
+  #bottom-wrapper,
+  #wrapper,
+  #footer-wrapper {
+    width: 620px;
+  }
+
+  #mission-wrapper {
+    width: 620px!important;
+  }
+
+  .menu-icon-open,
+  .menu-icon-close {
+    line-height: 1;
+    border: 0;
+    display: none;
+  }
+
+  .menu-icon-close {
+    font-size: 44px;
+    padding: 10px;
+    color: #2d2d2d;
+  }
+
+  .menu-icon-open {
+    background: linear-gradient(rgb(20, 47, 80), rgb(38, 80, 125));
+    color: #ffffff;
+    padding: 4px 10px 10px;
+    margin-bottom: 16px;
+    font-size: 28px;
+    display: block;
+  }
+
+  #nav .menu ul {
+    min-width: auto;
+    width: auto;
+  }
+
+  #menu #nav {
+    text-align: right;
+    width: 95%;
+  }
+
+  #nav .main-navigation-menu.menu-parent {
+    display: none;
+  }
+
+  #nav .main-navigation-menu.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .responsive-menu-icon {
+    display: inline-block;
+  }
+
+  .responsive-menu-icon.close .menu-icon-open {
+    display: none;
+  }
+
+  .responsive-menu-icon.close .menu-icon-close {
+    display: block;
+  }
+
+  #nav .main-navigation-menu.menu-parent .menu-item a {
+    padding: 15px 30px;
+  }
+}
+
+@media all and (max-width: 640px) {
+  #header,
+  #menu,
+  .slideshow-inner,
+  .slideshow,
+  #slideshow-bottom,
+  #preface-wrapper,
+  #bottom-teaser,
+  #bottom-wrapper,
+  #wrapper,
+  #footer-wrapper,
+  #footer {
+    width: 100%;
+  }
+  #mission-wrapper {
+    width: 100%!important;
+  }
+  #preface {
+    font-size: 84%;
+  }
+  .slideshow-inner,
+  .slideshow {
+    height: 300px;
+  }
+  #slideshow-wrapper {
+    height: 365px;
+    background-image: url("../images/slideshow-shadow.png");
+  }
+  #preface-wrapper.in3 .column,
+  #preface-wrapper.in2 .column,
+  #preface-wrapper.in1 .column,
+  #bottom-teaser.in3 .column,
+  #bottom-teaser.in2 .column,
+  #bottom-teaser.in1 .column,
+  #bottom-wrapper.in4 .column,
+  #bottom-wrapper.in3 .column,
+  #bottom-wrapper.in2 .column,
+  #bottom-wrapper.in1 .column {
+    width: 100%;
+  }
+  .one-sidebar #content,
+  .two-sidebars #content {
+    width: 100%;
+    float: left;
+    margin: 0;
+  }
+  #layout-type-1 #sidebar-left,
+  #layout-type-1 #sidebar-right,
+  #layout-type-2 #sidebar-left,
+  #layout-type-2 #sidebar-right {
+    width: 100%;
+    float: right;
+    margin: 0;
+    position: relative;
+  }
+  .region {
+    padding: 0 10px;
+  }
+  .content-top,
+  .content-bottom {
+    margin: 0 10px 20px;
+  }
+  .content-top .region,
+  .content-bottom .region {
+    padding: 0;
+  }
+  #header .region,
+  #menu .region,
+  #slideshow .region {
+    padding: 0;
+  }
+  #bottom-wrapper {
+    border-left: none;
+    border-right: none;
+  }
+
+  #menu {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0px;
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  #nav {
+    height: auto;
+    background: none;
+    float: left;
+    padding: 0 10px;
+    margin-top: 1em;
+  }
+
+  #nav .menu li a {
+    background: #14345c; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#14345c, #285c91); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#14345c, #285c91); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#14345c, #285c91); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#14345c, #285c91); /* Standard syntax */
+  }
+
+  #nav .menu li li a {
+    background: #3b6999;
+  }
+
+  #nav .menu li:first-child a:hover {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #nav .menu li:first-child a.is-active {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #nav .menu li:first-child li a.is-active {
+    border-radius: 0px;
+  }
+
+  #nav .menu li li a.is-active {
+    border-radius: 0px;
+  }
+
+  #nav .menu li.active-trail:first-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #nav .menu li.active-trail:first-child li {
+    border-radius: 0px;
+  }
+
+  #nav .menu li.active-trail li {
+    border-radius: 0px;
+  }
+
+  #nav .menu li.active-trail:first-child a.is-active {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #nav .menu li.active-trail:first-child li a.is-active {
+    border-radius: 0px;
+  }
+
+  #nav .menu li.active-trail li a.is-active {
+    border-radius: 0px;
+  }
+
+  #nav .menu li:hover ul,
+  #nav .menu li.sfHover ul {
+    top: 33px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .slideshow-inner,
+  .slideshow {
+    height: 200px;
+  }
+  #slideshow-wrapper {
+    height: 265px;
+    background-image: url("../images/slideshow-shadow.png");
+  }
+
+  .region-header {
+    text-align: left;
+    float: left;
+  }
+
+  #logo-wrapper,
+  #branding-wrapper {
+    float: left;
+    margin: 0;
+  }
+
+  #branding-wrapper {
+    margin-top: 15px;
+  }
+
+  #header-wrapper #search-box {
+    margin: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    left: 0;
+    text-align: center;
+    white-space: nowrap;
+    float: left;
+  }
+
+  #header .region.region-search_box {
+    padding: 15px;
+    display: block;
+  }
+
+  .site-slogan {
+    display: block;
+  }
+
+  #menu {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0px;
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  #nav {
+    height: auto;
+    background: none;
+    float: left;
+    padding: 0 10px;
+    margin-top: 1em;
+  }
+
+  #nav .menu-parent {
+    margin-bottom: 0;
+  }
+
+  #nav .menu li a {
+    background: #14345c; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#14345c, #285c91); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#14345c, #285c91); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#14345c, #285c91); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#14345c, #285c91); /* Standard syntax */
+  }
+
+  #nav .menu li li a {
+    background: #3b6999;
+  }
+
+  #nav .menu li:first-child a:hover {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #nav .menu li:first-child a.is-active {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #nav .menu li:first-child li a.is-active {
+    border-radius: 0px;
+  }
+
+  #nav .menu li li a.is-active {
+    border-radius: 0px;
+  }
+
+  #nav .menu li.active-trail:first-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #nav .menu li.active-trail:first-child li {
+    border-radius: 0px;
+  }
+
+  #nav .menu li.active-trail li {
+    border-radius: 0px;
+  }
+
+  #nav .menu li.active-trail:first-child a.is-active {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #nav .menu li.active-trail:first-child li a.is-active {
+    border-radius: 0px;
+  }
+
+  #nav .menu li.active-trail li a.is-active {
+    border-radius: 0px;
+  }
+
+  #nav .menu li:hover ul,
+  #nav .menu li.sfHover ul {
+    top: 33px;
+  }
+}

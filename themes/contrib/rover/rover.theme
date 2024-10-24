@@ -1,0 +1,255 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the VT theme.
+ */
+
+use Drupal\Component\Render\MarkupInterface;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Template\Attribute;
+use Drupal\file\Entity\File;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements theme_preprocess_page().
+ */
+function rover_preprocess_page(&$variables) {
+
+  // Container setting.
+  if (!empty(theme_get_setting('container_size'))) {
+    $variables['container'] = theme_get_setting('container_size');
+  }
+  else {
+    $variables['container'] = "container";
+  }
+
+  // Header variable.
+  if (!empty(theme_get_setting('header_bg_colors'))) {
+    $variables['header_bg_colors'] = theme_get_setting('header_bg_colors');
+  }
+  else {
+    $variables['header_bg_colors'] = "bg-primary";
+  }
+  // dd($variables['header_bg_colors']);
+  // Banner variables.
+  $variables['banner_display'] = theme_get_setting('banner_display');
+  $variables['banner_align'] = theme_get_setting('banner_align');
+  $variables['banner_title'] = theme_get_setting('banner_title');
+  $variables['banner_desc'] = theme_get_setting('banner_desc');
+  $banner_image = theme_get_setting('banner_image');
+  $variables['banner_url_title'] = theme_get_setting('banner_url_title');
+  $variables['banner_url'] = theme_get_setting('banner_url');
+  if (!empty($banner_image)) {
+    $file = File::load($banner_image[0]);
+    if (!empty($file)) {
+      $uri = $file->getFileUri();
+      $image_path = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+    }
+    else {
+      $image_path = \Drupal::theme()->getActiveTheme()->getPath() . '/images/banner.jpeg';
+    }
+  }
+  else {
+    $image_path = \Drupal::theme()->getActiveTheme()->getPath() . '/images/banner.jpeg';
+  }
+  $variables['image_path'] = $image_path;
+  // Set content and sidebat class and width.
+  $sidebar_first_width = "";
+  $sidebar_second_width = "";
+  if (!empty($variables['page']['sidebar_left']) && !empty($variables['page']['sidebar_right'])) {
+    if (!empty(theme_get_setting('sidebar_first')) && !empty(theme_get_setting('sidebar_second'))) {
+      $full_width = 12 - (theme_get_setting('sidebar_first') + theme_get_setting('sidebar_second'));
+    }
+    else {
+      $full_width = 12 - 4;
+      $sidebar_first_width = 2;
+      $sidebar_second_width = 2;
+    }
+  }
+  elseif (!empty($variables['page']['sidebar_left']) || !empty($variables['page']['sidebar_right'])) {
+    if (!empty($variables['page']['sidebar_left'])) {
+      if (!empty(theme_get_setting('sidebar_first'))) {
+        $full_width = 12 - (theme_get_setting('sidebar_first'));
+      }
+      else {
+        $full_width = 12 - 2;
+        $sidebar_first_width = 2;
+      }
+    }
+    else {
+      if (!empty(theme_get_setting('sidebar_second'))) {
+        $full_width = 12 - (theme_get_setting('sidebar_second'));
+      }
+      else {
+        $full_width = 12 - 2;
+        $sidebar_second_width = 2;
+      }
+    }
+  }
+  else {
+    $full_width = 12;
+  }
+  $content_width = 'col-md-' . $full_width;
+  if (!empty($sidebar_first_width)) {
+    $sidebar_first_width = 'col-md-' . $sidebar_first_width;
+  }
+  else {
+    $sidebar_first_width = 'col-md-' . theme_get_setting('sidebar_first');
+  }
+  if (!empty($sidebar_second_width)) {
+    $sidebar_second_width = 'col-md-' . $sidebar_second_width;
+  }
+  else {
+    $sidebar_second_width = 'col-md-' . theme_get_setting('sidebar_second');
+  }
+  $variables['content_attributes'] = [
+    'class' => ['main-content', $content_width],
+    'id' => ['content'],
+  ];
+  $variables['sidebar_first_attributes'] = [
+    'class' => ['sidebar_first', 'sidebar', $sidebar_first_width],
+    'id' => ['sidebar_first'],
+  ];
+  $variables['sidebar_second_attributes'] = [
+    'class' => ['sidebar_second', 'sidebar', $sidebar_second_width],
+    'id' => ['sidebar_second'],
+  ];
+  $variables['sidebar_first_attributes'] = new Attribute($variables['sidebar_first_attributes']);
+  $variables['sidebar_second_attributes'] = new Attribute($variables['sidebar_second_attributes']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for region.html.twig.
+ */
+function rover_preprocess_region(&$variables) {
+  $nowrap = [
+    'primary_menu',
+    'user_menu',
+  ];
+  if (theme_get_setting('rover_region_class_' . $variables['elements']['#region']) !== NULL) {
+    $variables['attributes']['class'][] = theme_get_setting('rover_region_class_' . $variables['elements']['#region']);
+  }
+  elseif (!in_array($variables['elements']['#region'], $nowrap)) {
+    $variables['attributes']['class'][] = 'row';
+  }
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for region templates.
+ */
+function rover_theme_suggestions_region_alter(array &$suggestions, array $variables) {
+  $nowrap = [
+    'primary_menu',
+    'user_menu',
+  ];
+  if (theme_get_setting('rover_region_clean_' . $variables['elements']['#region']) !== NULL) {
+    $region_clean = theme_get_setting('rover_region_clean_' . $variables['elements']['#region']);
+  }
+  else {
+    $region_clean = in_array($variables['elements']['#region'], $nowrap);
+  }
+  if ($region_clean) {
+    $suggestions[] = 'region__nowrap';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for form elements.
+ */
+function rover_preprocess_form_element(&$variables) {
+  if (isset($variables['label']['#title'])) {
+    if (is_object($variables['label']['#title']) && !$variables['label']['#title'] instanceof MarkupInterface) {
+      $variables['input_title'] = NULL;
+    }
+    elseif (is_object($variables['label']['#title'])) {
+      $variables['input_title'] = $variables['label']['#title'];
+    }
+    else {
+      $variables['input_title'] = $variables['label']['#title'];
+    }
+  }
+
+  if (isset($variables['element']['#attributes'])) {
+    $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function rover_theme_suggestions_input_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#type'] == 'submit') {
+    $suggestions[] = 'input__submit_button';
+  }
+}
+
+/**
+ * Implements hook_preprocess_input() for adding classes to inputs.
+ */
+function rover_preprocess_input(&$variables) {
+  $btn_type = theme_get_setting('btn_type');
+  $button_size = theme_get_setting('btn_size');
+  if ($variables['element']['#type'] == 'submit') {
+    $variables['safe_value_label'] = Xss::filter($variables['attributes']['value']);
+    $variables['attributes']['class'][] = 'btn';
+    if ($button_size) {
+      $variables['attributes']['class'][] = $button_size;
+    }
+    if ($btn_type) {
+      $variables['attributes']['class'][] = 'btn-' . $btn_type;
+    }
+    else {
+      $variables['attributes']['class'][] = 'btn-primary';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task() for adding classes to inputs.
+ */
+function rover_preprocess_menu_local_task(&$variables) {
+  // dd($variables);
+  $variables['link']['#options']['attributes']['class'][] = 'nav-link';
+  if (!empty($variables['is_active'])) {
+    $act = $variables['is_active'];
+    // dd($act);
+    if ($act == 'true') {
+      $variables['link']['#options']['attributes']['class'][] = 'active';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_comment() for getting first later of comment auther name.
+ */
+function rover_preprocess_comment(&$variables) {
+  $user = User::load($variables['author_id']);
+  if ($user->get('user_picture')->isEmpty()) {
+    $variables['comment_author'] = ucfirst(substr($user->get('name')->value, 0, 1));
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu() for getting first later of username and profile.
+ */
+function rover_preprocess_menu(&$variables) {
+  $uid = \Drupal::currentUser()->id();
+  $user = User::load($uid);
+  if (\Drupal::currentUser()->isAuthenticated()) {
+    if ($user->get('user_picture')->isEmpty()) {
+      $variables['userPictureUrl'] = ucfirst(substr($user->get('name')->value, 0, 1));
+      $variables['profile_pic'] = FALSE;
+    }
+    else {
+      $variables['userPictureUrl'] = $user->user_picture->entity->getFileUri();
+      $variables['profile_pic'] = TRUE;
+    }
+  }
+  else {
+    $base_path = base_path();
+    $variables['userPictureUrl'] = $base_path . \Drupal::theme()->getActiveTheme()->getPath() . '/images/userlogout.png';
+    $variables['profile_pic'] = TRUE;
+  }
+}

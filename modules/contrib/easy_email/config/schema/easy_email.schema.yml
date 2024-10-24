@@ -1,0 +1,15 @@
+easy_email.settings:
+  type: config_object
+  label: 'Easy Email global settings'
+  mapping:
+    purge_on_cron:
+      type: boolean
+      label: 'Purge on Cron'
+    purge_cron_limit:
+      type: integer
+      label: 'Purge on Cron Limit'
+    allowed_attachment_paths:
+      type: sequence
+      label: 'Allowed Attachment Paths'
+      sequence:
+          type: string

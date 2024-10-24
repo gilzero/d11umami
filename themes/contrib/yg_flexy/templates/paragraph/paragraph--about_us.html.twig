@@ -1,0 +1,25 @@
+
+<section class="about-area grey-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 mb-40">
+                <div class="section-title">
+                    <h2>{{content.field_title.0}}</h2>
+                </div>
+                <div class="about-content">
+                    {{content.field_about_content.0}}
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 mb-20 md-margin">
+                <div class="row">
+                  <div class="about-img">
+                   <img src="{{ file_url(content.field_image['#items'].entity.uri.value)}}"
+                   class="img-fluid" 
+                   alt="{{ content.field_image['#items'].alt }}" 
+                   title="{{ content.field_image['#items'].title }}">
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

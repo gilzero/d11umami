@@ -1,0 +1,24 @@
+.maintenance-header,
+.maintenance-main {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0;
+}
+.site-name h4 {
+  color: var(--color-primary);
+  line-height: 1;
+  font-weight: 700;
+}
+.maintenance {
+  text-align: center;
+}
+.maintenance-title {
+  color: #ffffff;
+}
+.maintenance-icon {
+  padding: 2rem 0;
+}
+.maintenance-icon img {
+  max-height: 50vh;
+}

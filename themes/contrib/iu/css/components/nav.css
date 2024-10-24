@@ -1,0 +1,27 @@
+/* Replace table layout with flexbox in order to vertically center menu items */
+nav.main:not(.is-sticky) ul {
+  display: flex;
+  align-items: center;
+}
+nav.main:not(.is-sticky) li {
+  flex: 1 1 auto;
+}
+
+nav.main .row.pad ul {
+  margin-left: 0;
+}
+
+/* this IU Framework CSS override is needed for proper nav button styles */
+nav.main li {
+  vertical-align: middle;
+}
+
+nav.main.dropdown > .row.pad > ul > li > a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1rem;
+  height: 1rem;
+  background-color: transparent;
+  width: 100%;
+}

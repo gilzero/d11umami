@@ -1,0 +1,30 @@
+{% set title = title|default('Our partners'|t) %}
+{% set main_item = items|first %}
+{% set sub_items = items|slice(1) %}
+<div class="fr-footer__partners">
+  <h4 class="fr-footer__partners-title">{{ title }}</h4>
+  <div class="fr-footer__partners-logos">
+
+    {% set main_item_attributes = main_item.attributes|default(create_attribute()) %}
+    <div class="fr-footer__partners-main">
+      <a{{ main_item_attributes.setAttribute('href', main_item.url).addClass('fr-footer__partners-link') }}>
+        <img class="fr-footer__logo" src="{{ main_item.logo }}" width="{{ main_item.logo_width }}" height="{{ main_item.logo_height }}" alt="{{ main_item.logo_alt }}" loading="lazy" />
+      </a>
+    </div>
+
+    {% if sub_items %}
+      <div class="fr-footer__partners-sub">
+        <ul>
+          {% for item in sub_items %}
+            {% set item_attributes = item.attributes|default(create_attribute()) %}
+            <li>
+              <a{{ item_attributes.setAttribute('href', item.url).addClass('fr-footer__partners-link') }}>
+                <img class="fr-footer__logo" src="{{ item.url }}" width="{{ item.logo_width }}" height="{{ item.logo_height }}" alt="{{ item.logo_alt }}" loading="lazy" />
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</div>

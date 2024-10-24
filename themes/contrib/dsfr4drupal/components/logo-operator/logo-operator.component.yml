@@ -1,0 +1,25 @@
+name: DSFR - Logo operator
+description: Display logo operator
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    has_link:
+      type: boolean
+      title: Has link?
+      default: true
+    is_front:
+      type: boolean
+      title: Is homepage?
+      default: true
+    link_title:
+      type: string
+      title: Link title attribute
+    logo:
+      type: string
+      title: Logo image tag
+  required:
+    - logo

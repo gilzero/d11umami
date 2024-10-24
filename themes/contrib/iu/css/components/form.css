@@ -1,0 +1,144 @@
+.fieldgroup {
+  margin-bottom: 1rem;
+}
+
+select {
+  box-sizing: border-box;
+}
+
+/* Drupal styles some form item labels as legends when grouped */
+legend {
+  font-family: BentonSansBold, Arial, sans-serif;
+  font-weight: 600;
+  color: #191919;
+}
+
+.fieldgroup>legend {
+  margin-bottom: 0;
+  font-size: .875rem;
+}
+
+
+.form-checkboxes .form-item,
+.form-radios .form-item {
+  margin: .5rem 0;
+}
+
+.form-checkboxes [type=checkbox],
+.form-radios [type=radio] {
+  margin: 0;
+}
+
+input[type=checkbox]+label,
+input[type=radio]+label {
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+.form-checkboxes input[type=checkbox]+label,
+.form-radios input[type=radio]+label {
+  padding: 0;
+}
+
+.filter-guidelines {
+  display: none;
+}
+
+.form-item .description {
+  font-size: 1rem;
+  margin-top: -.75rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form-checkbox ~ .description,
+.form-radio ~ .description,
+.form-checkboxes + .description,
+.form-radios + .description {
+  margin-top: 0;
+}
+
+.required-marker {
+  color: #da3116;
+}
+
+.form-required-marker {
+  display: none;
+}
+
+.form-required .form-required-marker {
+  display: inline;
+}
+
+.form-item-text-format-value + .filter-wrapper {
+  margin-top: -1rem;
+}
+
+.confirmation {
+  font-size: 1.25rem;
+}
+
+.confirmation .form-action {
+  margin-top: 1rem;
+}
+
+.machine-name-source + .field-suffix {
+  display: block;
+  margin: -.5rem 0 1rem;
+}
+
+.machine-name-value + .admin-link {
+  margin-left: .4rem;
+}
+
+.js-text-format-wrapper .filter-wrapper {
+  margin: 0 0 1rem;
+}
+
+button.link {
+  color: #006298;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+button.link:hover,
+button.link:focus {
+  color: #01426a;
+}
+
+span.field-prefix,
+span.field-prefix + input {
+  display: inline-block;
+  width: auto;
+}
+span.field-prefix + input {
+  margin-left: .5em;
+}
+
+.webform-multiple-table [type=text],
+.webform-multiple-table [type=password],
+.webform-multiple-table [type=date],
+.webform-multiple-table [type=datetime],
+.webform-multiple-table [type=datetime-local],
+.webform-multiple-table [type=month],
+.webform-multiple-table [type=week],
+.webform-multiple-table [type=email],
+.webform-multiple-table [type=number],
+.webform-multiple-table [type=search],
+.webform-multiple-table [type=tel],
+.webform-multiple-table [type=time],
+.webform-multiple-table [type=url],
+.webform-multiple-table [type=color],
+.webform-multiple-table textarea {
+  margin-bottom: 0;
+}
+
+.webform-element-description {
+  font-size: 1rem;
+}
+
+.webform-element-description a:not(.button) {
+  text-decoration: underline;
+}

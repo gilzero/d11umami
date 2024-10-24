@@ -1,0 +1,101 @@
+// For Drupal Paragraphs module
+form {
+  // Paragraphs actions
+  .paragraphs-dropdown-actions {
+    .button--small {
+      color: $text-grey;
+      background-color: transparent;
+      &:hover {
+        background: $medium-grey;
+      }
+    }
+  }
+
+  // Paragraphs dropdown
+  .paragraphs-dropbutton-wrapper {
+    .dropbutton-wrapper {
+      margin-right: 0.5rem;
+      &.open {
+        .dropbutton--multiple { //ul
+          position: relative;
+          height: fit-content;
+          max-height: 200px;
+        }
+        .dropbutton__toggle { //button
+          // margin-top: 3px;
+          // margin-right: 3px;
+        }
+      }
+      .dropbutton-widget button.dropbutton__toggle { //button
+        // height: 2.15rem;
+        // margin-top: 0;
+      }
+      .dropbutton--multiple { //ul
+        li:first-child input {
+          @extend %button-primary;
+          z-index: 1;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          max-width:500px;
+        }
+        li input {
+          white-space: pre-line;
+        }
+      }
+      .secondary-action {
+        .form-submit { //input
+          &:hover {
+            background-color: $medium-grey;
+          }
+        }
+      }
+    }
+    &.paragraphs-add-wrapper {
+      > input {
+        @extend %button-primary;
+      }
+    }
+  }
+  .paragraphs-tabs-wrapper {
+    .form-actions {
+      align-items: flex-start !important;
+      .paragraphs-dropbutton-wrapper {
+        margin-right: 0.75rem;
+      }
+    }
+  }
+}
+
+// Paragraphs form dialog
+.ui-dialog {
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .paragraphs-add-dialog {
+    @include scroll();
+    scrollbar-gutter: stable;
+    .paragraphs-add-dialog-list {
+      overflow-y: auto;
+      max-height: 50rem;
+      .button--small {
+        color: $white;
+        background: $primary;
+        padding: 5px 15px;
+        text-align: center;
+        &:hover {
+          outline: 2px solid $primary2;
+        }
+      }
+    }
+  }
+}
+
+// Paragraphs form table
+.field--widget-paragraphs {
+  .field-multiple-table {
+    display: table;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override for a view template to display a list of rows.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the container.
+ * - rows: A list of rows for this list.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's contents.
+ * - title: The title of this group of rows. May be empty.
+ * - list: @todo.
+ *   - type: Starting tag will be either a ul or ol.
+ *   - attributes: HTML attributes for the list element.
+ *
+ * @see template_preprocess_views_view_list()
+ */
+#}
+<div{{ attributes.addClass('item-list') }}>
+  {% if title %}
+    <h3 class="item-list__title">{{ title }}</h3>
+  {% endif %}
+  <{{ list.type }}{{ list.attributes.addClass('item-list__list') }}>
+    {% for row in rows %}
+      <li{{ row.attributes.addClass('item-list__item') }}>{{ row.content }}</li>
+    {% endfor %}
+  </{{ list.type }}>
+</div>

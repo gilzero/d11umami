@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Media Library.
+ */
+
+.media-library-wrapper {
+  .views-display-link-widget,
+  .views-display-link-widget_table {
+    background-position-y: center;
+  }
+}
+.media-library-item {
+  &:hover:focus {
+    box-shadow: none;
+  }
+  &__remove.button {
+    background-color: $white;
+    border: 1px solid $text-grey;
+    &:hover {
+      background-color: $ck-grey;
+    }
+  }
+  &__preview {
+    padding-bottom: 2.5rem;
+  }
+  &__attributes {
+    width: 100%;
+    background: $white;
+  }
+}

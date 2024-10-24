@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Adapt site alerts to IU Framework "Campus Alerts" (IU Notice).
+ */
+#}
+{%
+  set classes = [
+    'iu-notice',
+    alert.severity == 'high' ? 'severe',
+    alert.severity == 'medium' ? 'moderate',
+    alert.severity == 'low' ? 'minor',
+  ]
+%}
+{%
+  set label = {
+    'high': 'urgent message',
+    'medium': 'important note',
+    'low': 'informative note',
+  }
+%}
+<div role="alert" aria-label="{{ label[alert.severity] }}" class="{{ classes|join(' ')|trim }}">
+  <div class="row pad contents">
+    <div class="text">
+      {{ alert.message }}
+    </div>
+  </div>
+</div>

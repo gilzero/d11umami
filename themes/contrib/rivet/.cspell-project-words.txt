@@ -1,0 +1,23 @@
+# Inline SVG related.
+Canimate
+Ccircle
+Colorstr
+Cpath
+Csvg
+
+# URL and text related.
+ISPP
+privacygen
+
+# Rivet related.
+seriesnav
+Sidenav
+sidenav
+subnav
+
+# Webform related.
+Webform
+webform
+webforms
+rateit
+flaired

@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Template display for a single Drupal page with edge-to-edge content regions.
+ */
+ #}
+{% extends '@rivet/global/template.html.twig' %}
+
+{% block content %}
+{% set layout_classes = [
+  'rvt-layout__wrapper',
+  'rvt-layout__wrapper--single',
+  'rvt-p-tb-xxl',
+  content_width,
+]
+%}
+<div class="{{ layout_classes|join(' ') }}">
+
+{% block content_above %}{{ parent() }}{% endblock content_above %}
+
+</div>
+
+{{ page.content }}
+
+{% endblock content %}

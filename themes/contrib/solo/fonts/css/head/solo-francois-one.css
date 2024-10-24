@@ -1,0 +1,8 @@
+.page-wrapper h1,
+.page-wrapper h2,
+.page-wrapper h3,
+#page-wrapper .francois-one {
+  --solo-h1: 'Francois One', sans-serif;
+  font-family: var(--solo-h1);
+  letter-spacing: var(--solo-px1);
+}

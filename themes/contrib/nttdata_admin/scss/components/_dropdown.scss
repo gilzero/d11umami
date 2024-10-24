@@ -1,0 +1,50 @@
+.dropdown {
+  overflow: visible;
+  position: absolute;
+  display: inline-block;
+  top: 75px;
+  z-index: 100;
+  &-toggle {
+    @extend %button-base;
+    @extend %button-dimensions;
+    @extend %button-primary;
+    @include focus-outline;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.1rem 0.5rem;
+    margin-bottom: 0.25rem;
+    cursor: pointer;
+    font-size: 15px;
+    .arrow {
+      margin-left: 10px;
+      border: solid $text-white;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+    }
+    &:hover, &:focus {
+      background-color: $primary2;
+    }
+  }
+  &-menu {
+    display: none;
+    margin-bottom: 0.5rem;
+    background-color: $primary;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    a {
+      @include focus-outline;
+      display: block;
+      color: $text-white;
+      background-color: $blue-dark;
+      padding: 0.1rem 0.5rem;
+      border-bottom: 2px solid $black-pearl;
+      text-decoration: none;
+      &:hover {
+        background-color: $primary2;
+        color: $text-white;
+      }
+    }
+  }
+}

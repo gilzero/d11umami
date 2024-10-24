@@ -1,0 +1,22 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set title_tag = title_tag|default('h3') %}
+
+{% if icon %}
+  {% set attributes = attributes.addClass(icon) %}
+{% endif %}
+
+{% if color_schema %}
+  {% set attributes = attributes.addClass('fr-callout--' ~ color_schema) %}
+{% endif %}
+
+<div{{ attributes.addClass('fr-callout') }}>
+  {% if title %}
+    <{{ title_tag }} class="fr-callout__title">
+      {{ title }}
+    </{{ title_tag }}>
+  {% endif %}
+  <p class="fr-callout__text">
+    {{ content }}
+  </p>
+  {{ button }}
+</div>

@@ -1,0 +1,4 @@
+.page-wrapper .frijole {
+  --solo-font-s: 'Frijole', cursive;
+  font-family: var(--solo-font-s) !important;
+}

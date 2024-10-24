@@ -1,0 +1,756 @@
+:root {
+  --white: #ffffff;
+  --white2: #ffffff;
+  --text-white: #ffffff;
+  --text-black: #222222;
+  --text-lightgrey: #cbceda;
+  --text-grey: #55565b;
+  --text-dark: #232429;
+  --smart-navy: #0f1c50;
+  --border-grey: #919297;
+  --ck-grey: #f8f8f8;
+  --ck-grey2: #f3f4f9;
+  --primary: #005B96;
+  --primary2: #003c63;
+  --light-grey: #c1c2c7;
+  --medium-grey: #e6e6e6;
+  --strong-blue: #0036b1;
+  --link-water: #f8fafd;
+  --blue-light:#ecf0ff;
+  --disabled: #cbceda;
+  --dark-arrow: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath fill='%23232429' d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z'/%3e%3c/svg%3e");
+  --light-blue-arrow: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath fill='%236785c1' d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z'/%3e%3c/svg%3e");
+  --yellow-arrow: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath fill='%23e6b600' d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z'/%3e%3c/svg%3e");
+  --drag-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 16 16'%3e%3cpath fill='%23000f33' d='M14.103 5.476a.5.5 0 00-.701-.053.526.526 0 00-.082.713l1.1 1.346H8.512V1.62l1.32 1.113a.501.501 0 00.732-.054.528.528 0 00-.085-.744L8.328.119a.5.5 0 00-.647 0L5.529 1.935a.527.527 0 00-.085.744.504.504 0 00.732.054l1.32-1.113v5.862H1.588L2.68 6.136a.526.526 0 00-.1-.68.5.5 0 00-.675.02L.117 7.67a.525.525 0 000 .66l1.788 2.194a.5.5 0 00.702.053.526.526 0 00.081-.713l-1.1-1.346h5.908v5.862l-1.32-1.113a.501.501 0 00-.698.082.526.526 0 00.051.716l2.152 1.817v-.001a.5.5 0 00.647 0l2.151-1.816a.526.526 0 00.052-.716.501.501 0 00-.699-.082l-1.32 1.113V8.518h5.908l-1.091 1.346a.527.527 0 00.022.776.504.504 0 00.752-.116l1.78-2.194a.527.527 0 000-.66z'/%3e%3c/svg%3e");
+  --grey-arrow-down: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3e%3cpath fill='none' stroke-width='1.5' d='M1 1l6 6 6-6' stroke='%23545560'/%3e%3c/svg%3e");
+  --blue-checkbox: url("data:image/svg+xml,%3csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.795 7.096l2.387 2.506 6.023-6.327 1.484 1.56-7.507 7.89L2.31 8.656z' fill='%23fff'/%3e%3c/svg%3e");
+  --white-cross: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath fill='%23ffffff' d='M3.51 13.925c.194.194.512.195.706.001l3.432-3.431c.194-.194.514-.194.708 0l3.432 3.431c.192.194.514.193.707-.001l1.405-1.417c.191-.195.189-.514-.002-.709l-3.397-3.4c-.192-.193-.192-.514-.002-.708l3.401-3.43c.189-.195.189-.515 0-.709l-1.407-1.418c-.195-.195-.513-.195-.707-.001l-3.43 3.431c-.195.194-.516.194-.708 0l-3.432-3.431c-.195-.195-.512-.194-.706.001l-1.407 1.417c-.194.195-.194.515 0 .71l3.403 3.429c.193.195.193.514-.001.708l-3.4 3.399c-.194.195-.195.516-.001.709l1.406 1.419z'/%3e%3c/svg%3e");
+  --white-delete: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 32 32' %3e%3cpath fill='%23ffffff' d='M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z' /%3e%3c/svg%3e");
+  --white-pencil: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 32 32' %3e%3cpath fill='%23ffffff' d='M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z' /%3e%3c/svg%3e");
+  --white-swap-bold: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 32 32' %3e%3cpath fill='%23ffffff' d='M8,10V13H14V18H8V21L2,15.5L8,10M22,8.5L16,3V6H10V11H16V14L22,8.5Z' /%3e%3c/svg%3e");
+}
+
+body.dark-mode {
+  --white: #293244;
+  --white2: #202734;
+  --text-dark: #ffffff;
+  --text-grey: #919399;
+  --text-lightgrey: #cbceda;
+  --ck-grey: #161616;
+  --ck-grey2: #293244;
+  --smart-navy: #0072BC;
+  --link-water: #3f4a60;
+  --blue-light:#2a314d;
+  --disabled: #444d5d;
+  --dark-arrow: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath fill='%23ffffff' d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z'/%3e%3c/svg%3e");
+  --drag-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 16 16'%3e%3cpath fill='%23ffffff' d='M14.103 5.476a.5.5 0 00-.701-.053.526.526 0 00-.082.713l1.1 1.346H8.512V1.62l1.32 1.113a.501.501 0 00.732-.054.528.528 0 00-.085-.744L8.328.119a.5.5 0 00-.647 0L5.529 1.935a.527.527 0 00-.085.744.504.504 0 00.732.054l1.32-1.113v5.862H1.588L2.68 6.136a.526.526 0 00-.1-.68.5.5 0 00-.675.02L.117 7.67a.525.525 0 000 .66l1.788 2.194a.5.5 0 00.702.053.526.526 0 00.081-.713l-1.1-1.346h5.908v5.862l-1.32-1.113a.501.501 0 00-.698.082.526.526 0 00.051.716l2.152 1.817v-.001a.5.5 0 00.647 0l2.151-1.816a.526.526 0 00.052-.716.501.501 0 00-.699-.082l-1.32 1.113V8.518h5.908l-1.091 1.346a.527.527 0 00.022.776.504.504 0 00.752-.116l1.78-2.194a.527.527 0 000-.66z'/%3e%3c/svg%3e");
+}
+
+body.high-ctr {
+  --white: #1b1b1b;
+  --link-water: #1b1b1b;
+  -webkit-filter: invert(100%) contrast(100%) brightness(100%) saturate(80%);
+  -ms-filter: invert(100%) contrast(100%) brightness(100%) saturate(80%);
+  -moz-filter: invert(100%) contrast(100%) brightness(100%) saturate(80%);
+  -o-filter: invert(100%) contrast(100%) brightness(100%) saturate(80%);
+  filter: invert(100%) contrast(100%) brightness(100%) saturate(80%);
+}
+body.high-ctr img {
+  -webkit-filter: invert(100%) contrast(100%) brightness(100%) saturate(100%);
+  -ms-filter: invert(100%) contrast(100%) brightness(100%) saturate(100%);
+  -moz-filter: invert(100%) contrast(100%) brightness(100%) saturate(100%);
+  -o-filter: invert(100%) contrast(100%) brightness(100%) saturate(100%);
+  filter: invert(100%) contrast(100%) brightness(100%) saturate(100%);
+}
+
+/**
+ * @file
+ * Functions.
+ */
+body.dark-mode .tabledrag-toggle-weight-wrapper button .action-link:before, body.dark-mode table .sortable-heading.is-active a .tablesort, body.dark-mode table .sortable-heading a:after, body.dark-mode table .sortable-heading a .tablesort, body.dark-mode .pager .pager__item a:before, body.dark-mode .pager .pager__item a:after, body.dark-mode .dk-thumbnail, body.dark-mode form .claro-details > summary.claro-details__summary:before, body.dark-mode .system-modules .module-list__description .action-link.module-link:hover:before, body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add .action-list li .button:before, body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add a:before, body.dark-mode .paragraphs-dropdown.open .paragraphs-dropdown-actions .button--small:before, body.dark-mode form .form-actions .form-wrapper input.button.form-submit:before, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__toggle:before, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type > :before,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item a:before,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item input:before, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a button:before,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input button:before,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle button:before, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a:before,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input:before,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle:before, body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add .action-list li .button:after, body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add a:after, body.dark-mode .paragraphs-dropdown.open .paragraphs-dropdown-actions .button--small:after, body.dark-mode form .form-actions .form-wrapper input.button.form-submit:after, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__toggle:after, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type > :after,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item a:after,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item input:after, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a button:after,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input button:after,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle button:after, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a:after,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input:after,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle:after, body.dark-mode .views-preview-wrapper .views-live-preview .views-exposed-form .form-actions input[value=Reset]:before, body.dark-mode form .form-actions .form-wrapper a:nth-child(2):before,
+body.dark-mode form .form-actions .form-wrapper button:nth-child(2):before,
+body.dark-mode form .form-actions .form-wrapper input:nth-child(2):before, body.dark-mode .region-content div[class^=system-status] .card .cron-description__run-cron a:before, body.dark-mode .button:not(.button--primary):not(.icon-link):before, body.dark-mode .button.button--extrasmall:before, body.dark-mode .button.button--small:before, body.dark-mode .views-preview-wrapper .views-live-preview .views-exposed-form .form-actions input[value=Reset]:after, body.dark-mode form .form-actions .form-wrapper a:nth-child(2):after,
+body.dark-mode form .form-actions .form-wrapper button:nth-child(2):after,
+body.dark-mode form .form-actions .form-wrapper input:nth-child(2):after, body.dark-mode .region-content div[class^=system-status] .card .cron-description__run-cron a:after, body.dark-mode .button:not(.button--primary):not(.icon-link):after, body.dark-mode .button.button--extrasmall:after, body.dark-mode .button.button--small:after, body.dark-mode #system-themes-page .card__footer .action-link:before, body.dark-mode .button--primary:before, body.dark-mode #system-themes-page .card__footer .action-link:after, body.dark-mode .button--primary:after {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .views-preview-wrapper .views-live-preview .views-exposed-form .form-actions input[value=Reset]:before, body.dark-mode form .form-actions .form-wrapper a:nth-child(2):before,
+body.dark-mode form .form-actions .form-wrapper button:nth-child(2):before,
+body.dark-mode form .form-actions .form-wrapper input:nth-child(2):before, body.dark-mode .region-content div[class^=system-status] .card .cron-description__run-cron a:before, body.dark-mode .button:not(.button--primary):not(.icon-link):before, body.dark-mode .button.button--extrasmall:before, body.dark-mode .button.button--small:before, body.dark-mode .views-preview-wrapper .views-live-preview .views-exposed-form .form-actions input[value=Reset]:after, body.dark-mode form .form-actions .form-wrapper a:nth-child(2):after,
+body.dark-mode form .form-actions .form-wrapper button:nth-child(2):after,
+body.dark-mode form .form-actions .form-wrapper input:nth-child(2):after, body.dark-mode .region-content div[class^=system-status] .card .cron-description__run-cron a:after, body.dark-mode .button:not(.button--primary):not(.icon-link):after, body.dark-mode .button.button--extrasmall:after, body.dark-mode .button.button--small:after {
+  filter: brightness(0) invert(0);
+}
+
+body.dark-mode table tr td .field-plugin-settings-edit-wrapper + a::after, body.dark-mode table tr td .field-plugin-settings-edit-wrapper .image-button {
+  filter: brightness(0) invert(0.9);
+}
+
+a,
+.link {
+  color: var(--smart-navy);
+}
+a:hover,
+.link:hover {
+  color: var(--primary);
+}
+
+body.dark-mode a,
+body.dark-mode .link {
+  color: var(--text-white);
+}
+
+tr:focus-within {
+  color: unset;
+  background: unset;
+}
+
+body.dark-mode #system-themes-page .card__footer .action-link, body.dark-mode .button--primary {
+  background: unset;
+  background-color: var(--primary);
+  box-shadow: none;
+  color: var(--text-dark);
+}
+body.dark-mode #system-themes-page .card__footer .action-link:hover, body.dark-mode .button--primary:hover {
+  color: var(--text-dark);
+  background: unset;
+  background-color: var(--primary2);
+  text-decoration: none;
+}
+body.dark-mode #system-themes-page .card__footer .action-link:focus:focus, body.dark-mode .button--primary:focus:focus {
+  outline: solid #00CB5D 0.25rem;
+  box-shadow: 0 0 0 3px #00CB5D;
+}
+body.dark-mode .views-preview-wrapper .views-live-preview .views-exposed-form .form-actions input[value=Reset], body.dark-mode form .form-actions .form-wrapper a:nth-child(2),
+body.dark-mode form .form-actions .form-wrapper button:nth-child(2),
+body.dark-mode form .form-actions .form-wrapper input:nth-child(2), body.dark-mode .region-content div[class^=system-status] .card .cron-description__run-cron a, body.dark-mode .button:not(.button--primary):not(.icon-link), body.dark-mode .button.button--extrasmall, body.dark-mode .button.button--small {
+  background: unset;
+  background-color: #ffc400;
+  box-shadow: none;
+  color: #232429;
+}
+body.dark-mode .views-preview-wrapper .views-live-preview .views-exposed-form .form-actions input[value=Reset]:hover, body.dark-mode form .form-actions .form-wrapper a:hover:nth-child(2),
+body.dark-mode form .form-actions .form-wrapper button:hover:nth-child(2),
+body.dark-mode form .form-actions .form-wrapper input:hover:nth-child(2), body.dark-mode .region-content div[class^=system-status] .card .cron-description__run-cron a:hover, body.dark-mode .button:hover:not(.button--primary):not(.icon-link), body.dark-mode .button.button--extrasmall:hover, body.dark-mode .button.button--small:hover {
+  color: #232429;
+  background: unset;
+  background-color: #e6b600;
+  text-decoration: none;
+}
+body.dark-mode .views-preview-wrapper .views-live-preview .views-exposed-form .form-actions input[value=Reset]:focus:focus, body.dark-mode form .form-actions .form-wrapper a:focus:focus:nth-child(2),
+body.dark-mode form .form-actions .form-wrapper button:focus:focus:nth-child(2),
+body.dark-mode form .form-actions .form-wrapper input:focus:focus:nth-child(2), body.dark-mode .region-content div[class^=system-status] .card .cron-description__run-cron a:focus:focus, body.dark-mode .button:focus:focus:not(.button--primary):not(.icon-link), body.dark-mode .button.button--extrasmall:focus:focus, body.dark-mode .button.button--small:focus:focus {
+  outline: solid #00CB5D 0.25rem;
+  box-shadow: 0 0 0 3px #00CB5D;
+}
+body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add .action-list li .button, body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add a, body.dark-mode .paragraphs-dropdown.open .paragraphs-dropdown-actions .button--small, body.dark-mode form .form-actions .form-wrapper input.button.form-submit, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__toggle, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type > *,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item a,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item input, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a button,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input button,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle button, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle {
+  background: unset;
+  background-color: var(--ck-grey);
+  box-shadow: none;
+  color: var(--text-dark);
+}
+body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add .action-list li .button:hover, body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add a:hover, body.dark-mode .paragraphs-dropdown.open .paragraphs-dropdown-actions .button--small:hover, body.dark-mode form .form-actions .form-wrapper input.button.form-submit:hover, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__toggle:hover, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type > :hover,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item a:hover,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item input:hover, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a button:hover,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input button:hover,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle button:hover, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a:hover,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input:hover,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle:hover {
+  color: var(--text-dark);
+  background: unset;
+  background-color: var(--primary);
+  text-decoration: none;
+}
+body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add .action-list li .button:focus:focus, body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add a:focus:focus, body.dark-mode .paragraphs-dropdown.open .paragraphs-dropdown-actions .button--small:focus:focus, body.dark-mode form .form-actions .form-wrapper input.button.form-submit:focus:focus, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__toggle:focus:focus, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type > :focus:focus,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item a:focus:focus,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item input:focus:focus, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a button:focus:focus,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input button:focus:focus,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle button:focus:focus, body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small a:focus:focus,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small input:focus:focus,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton.dropbutton--small .dropbutton-toggle:focus:focus {
+  outline: solid #00CB5D 0.25rem;
+  box-shadow: 0 0 0 3px #00CB5D;
+}
+body.dark-mode .paragraphs-dropdown button {
+  box-shadow: none;
+  color: var(--text-dark);
+  background-color: transparent;
+}
+body.dark-mode .paragraphs-dropdown button:focus:focus {
+  outline: solid #00CB5D 0.25rem;
+  box-shadow: 0 0 0 3px #00CB5D;
+}
+
+body.dark-mode .js-text-format-wrapper button {
+  color: #ffc400;
+}
+body.dark-mode .views-exposed-form__item--actions input[type=submit] {
+  color: var(--white);
+}
+
+body.dark-mode .form-textarea-wrapper .cke .cke_top {
+  border-bottom: 1px solid var(--text-dark);
+  background: var(--white2);
+}
+body.dark-mode .form-textarea-wrapper .cke .cke_button_label,
+body.dark-mode .form-textarea-wrapper .cke .cke_combo_text {
+  color: var(--text-dark);
+}
+body.dark-mode .form-textarea-wrapper .cke .cke_button_icon {
+  filter: brightness(1) invert(1);
+}
+body.dark-mode .form-textarea-wrapper .cke .cke_bottom {
+  border-bottom: 1px solid var(--text-dark);
+  background: var(--text-dark);
+}
+body.dark-mode .form-textarea-wrapper .cke .cke_bottom a {
+  color: var(--text-dark);
+}
+body.dark-mode .form-textarea-wrapper .cke .cke_bottom a:hover {
+  background: var(--text-dark);
+}
+body.dark-mode .form-textarea-wrapper .cke .cke_bottom .cke_path_empty:only-child::after {
+  background: var(--white2);
+}
+body.dark-mode .form-textarea-wrapper .cke textarea.cke_source {
+  background: var(--white2);
+  color: var(--text-dark);
+}
+body.dark-mode .form-textarea-wrapper .cke span.cke_combo_on,
+body.dark-mode .form-textarea-wrapper .cke a.cke_combo_button:hover,
+body.dark-mode .form-textarea-wrapper .cke a.cke_combo_button:active,
+body.dark-mode .form-textarea-wrapper .cke a.cke_button:hover,
+body.dark-mode .form-textarea-wrapper .cke a.cke_button_on {
+  background: var(--white2);
+  border: 1px solid var(--text-grey);
+}
+body.dark-mode .ck-toolbar {
+  background-color: #070e27;
+}
+body.dark-mode .ck-toolbar .ck-button {
+  color: var(--text-white);
+}
+body.dark-mode .ck-toolbar .ck-button.ck-on {
+  background-color: var(--primary);
+}
+body.dark-mode .ck-toolbar .ck-button:hover {
+  background-color: var(--primary2) !important;
+}
+body.dark-mode .ck-content {
+  background-color: var(--white2) !important;
+  color: var(--text-white);
+}
+body.dark-mode .ck-list .ck-list__item {
+  background-color: var(--white) !important;
+}
+
+body.dark-mode .ui-dialog #drupal-modal {
+  background-color: var(--white);
+}
+body.dark-mode .ui-dialog #drupal-modal label,
+body.dark-mode .ui-dialog #drupal-modal .form-item.description {
+  color: var(--text-dark);
+}
+body.dark-mode .ui-dialog #drupal-modal .fieldset__description {
+  color: var(--text-lightgrey);
+}
+body.dark-mode .ui-dialog #drupal-modal ul.dropbutton a,
+body.dark-mode .ui-dialog #drupal-modal ul.action-links a {
+  color: var(--text-dark);
+}
+body.dark-mode .ui-dialog #drupal-modal .media-library-menu {
+  padding-top: 0;
+}
+body.dark-mode .ui-dialog #drupal-modal .media-library-menu__item {
+  padding: 0;
+  margin: 0 0 0 -0.5rem;
+}
+body.dark-mode .ui-dialog #drupal-modal .media-library-menu__item a {
+  color: var(--text-dark);
+  background-color: var(--white);
+  margin-top: 0;
+}
+body.dark-mode .ui-dialog #drupal-modal .media-library-menu__item a:hover {
+  background-color: var(--white2);
+}
+body.dark-mode .ui-dialog #drupal-modal .media-library-menu__item a.active:before {
+  border-left: 4px solid #ffc400;
+}
+body.dark-mode .ui-dialog .ui-dialog-titlebar {
+  background: var(--white2);
+  color: var(--text-dark);
+}
+body.dark-mode .ui-dialog .ui-dialog-buttonpane {
+  background-color: var(--white);
+}
+body.dark-mode .ui-dialog .ui-dialog-buttonpane button:not(.button--primary) {
+  color: var(--white2);
+}
+body.dark-mode .cke_dialog .cke_dialog_body {
+  border: 1px solid var(--text-grey);
+}
+body.dark-mode .cke_dialog .cke_dialog_contents tr:hover {
+  background-color: unset;
+}
+body.dark-mode .cke_dialog .cke_dialog_contents label {
+  color: var(--text-dark);
+}
+body.dark-mode .cke_dialog .cke_dialog_contents label .cke_dialog_ui_labeled_required {
+  color: var(--text-dark);
+}
+body.dark-mode .cke_dialog .cke_dialog_contents input[type=text] {
+  padding: calc(0.75rem - 3px) calc(2.5rem - 1px) calc(0.75rem - 3px) calc(0.75rem - 3px);
+  min-height: 2rem;
+  color: var(--text-dark);
+  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+  color: var(--text-dark);
+  background-color: var(--white2);
+  padding: calc(0.75rem - 3px);
+}
+body.dark-mode .cke_dialog .cke_dialog_contents input[type=text]:focus:focus, body.dark-mode .cke_dialog .cke_dialog_contents input[type=text]:focus:focus-visible, body.dark-mode .cke_dialog .cke_dialog_contents input[type=text]:focus:focus-within {
+  outline: solid #00CB5D 0.25rem;
+  box-shadow: 0 0 0 3px #00CB5D;
+}
+body.dark-mode .cke_dialog .cke_dialog_contents select {
+  color: var(--text-dark);
+  background-color: var(--white2);
+}
+body.dark-mode .cke_dialog .cke_dialog_contents select:focus:focus, body.dark-mode .cke_dialog .cke_dialog_contents select:focus:focus-visible, body.dark-mode .cke_dialog .cke_dialog_contents select:focus:focus-within {
+  outline: solid #00CB5D 0.25rem;
+  box-shadow: 0 0 0 3px #00CB5D;
+}
+body.dark-mode .cke_dialog .cke_dialog_contents select option {
+  color: var(--text-dark);
+  background-color: var(--white2);
+}
+body.dark-mode .cke_dialog .cke_dialog_ui_button_ok {
+  color: var(--white2);
+}
+body.dark-mode .cke_dialog .cke_dialog_ui_button_ok:hover {
+  color: var(--white2);
+}
+
+body.dark-mode .filter-guidelines__item {
+  color: var(--text-dark);
+}
+body.dark-mode .admin-list .nttdata-card {
+  background-color: var(--white2);
+}
+body.dark-mode .admin-list .nttdata-card.admin-item .admin-item__title .admin-item__link {
+  color: var(--text-dark);
+}
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item {
+  border: 1px solid var(--link-water);
+  box-shadow: 0 2px 5px var(--link-water);
+}
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type > *,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item a,
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__item:first-of-type ~ .dropbutton__item input {
+  border: 1px solid var(--link-water);
+  box-shadow: 0 2px 5px var(--link-water);
+}
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__toggle {
+  border: 1px solid var(--link-water) !important;
+  box-shadow: 0 2px 5px var(--link-water);
+  margin-top: 1px;
+  padding: 1px;
+}
+body.dark-mode .dropbutton-wrapper .dropbutton-widget .dropbutton__toggle:hover {
+  cursor: pointer;
+}
+body.dark-mode .form-type--boolean .form-boolean--type-radio:checked {
+  filter: invert(52%) sepia(96%) saturate(248%) hue-rotate(181deg) brightness(83%) contrast(83%);
+  box-shadow: unset;
+}
+body.dark-mode #system-themes-page .card__content-wrapper {
+  background: var(--white2);
+}
+body.dark-mode .system-modules .module-list__description {
+  background-color: var(--white);
+}
+body.dark-mode .system-modules .module-list__description .action-link.module-link {
+  color: #cfd8fc;
+  background-color: var(--link-water);
+}
+body.dark-mode .system-modules .module-list__description .action-link.module-link:before {
+  filter: invert(42%) sepia(10%) saturate(2583%) hue-rotate(182deg) brightness(91%) contrast(85%);
+}
+body.dark-mode .system-modules .module-list__description .action-link.module-link:hover {
+  color: var(--text-dark);
+  opacity: 0.85;
+}
+body.dark-mode .region-content .layout-column--quarter .section-item {
+  background: var(--white2);
+}
+body.dark-mode .region-content div[class^=system-status] .card {
+  background-color: var(--white2);
+}
+body.dark-mode .region-content div[class^=system-status] .color-warning {
+  color: #cfd8fc;
+  background-color: var(--link-water);
+}
+
+body.dark-mode .table-filter .form-element,
+body.dark-mode .views-exposed-form .form-element {
+  background-color: var(--ck-grey);
+}
+body.dark-mode .table-filter .form-element--type-select,
+body.dark-mode .views-exposed-form .form-element--type-select {
+  background-image: var(--grey-arrow-down);
+}
+
+body.dark-mode form .fieldset,
+body.dark-mode form .fieldset__legend {
+  background-color: unset;
+  color: var(--text-white);
+}
+body.dark-mode form .form-element {
+  background-color: var(--white2);
+}
+body.dark-mode form .form-element:hover {
+  border-color: var(--primary);
+  box-shadow: inset 0px 0px 3px 1px var(--primary);
+}
+body.dark-mode form .form-element--type-select {
+  background-image: var(--grey-arrow-down);
+}
+body.dark-mode form .form-element--type-select option {
+  background-color: var(--ck-grey);
+}
+body.dark-mode form .form-element--type-select-multiple option {
+  background-color: transparent;
+  color: var(--text-white);
+}
+body.dark-mode form .form-element--type-select-multiple option[selected=selected] {
+  background-color: var(--primary);
+}
+body.dark-mode form .fieldset__description,
+body.dark-mode form .form-item__description {
+  color: var(--text-lightgrey);
+}
+body.dark-mode form .fieldset__description a,
+body.dark-mode form .form-item__description a {
+  color: var(--text-lightgrey);
+}
+body.dark-mode form .claro-details {
+  box-shadow: 0 2px 10px var(--white2);
+  border: 1px solid var(--white2);
+}
+body.dark-mode form .claro-details .claro-details__wrapper {
+  border: 1px solid var(--white2);
+  border: 0;
+}
+body.dark-mode form .claro-details .claro-details__wrapper .claro-details__description {
+  color: var(--text-lightgrey);
+}
+body.dark-mode #edit-colors fieldset:not(.fieldgroup) > legend {
+  color: var(--text-white);
+}
+
+body.dark-mode .media-browser--full .browser--header {
+  background: linear-gradient(171deg, #232429 0%, #070e27 78.66%);
+}
+body.dark-mode .media-browser--full .browser--body .browser--tree {
+  background: unset;
+}
+
+body.dark-mode .media-library-widget .fieldset__label,
+body.dark-mode .media-library-widget .fieldset__prefix {
+  color: var(--text-white);
+}
+body.dark-mode .media-library-item--grid {
+  background: unset;
+}
+body.dark-mode .media-library-item--grid.is-hover:before {
+  border-color: var(--primary2);
+}
+body.dark-mode .media-library-item--grid .field--name-thumbnail {
+  background-color: unset;
+}
+body.dark-mode .media-library-item__attributes {
+  color: var(--text-white);
+  background: unset;
+  background-color: var(--white2);
+}
+body.dark-mode .media-library-item__remove {
+  background-image: var(--white-cross) !important;
+}
+body.dark-mode .media-library-item__preview .field--type-image {
+  background-color: var(--link-water);
+}
+body.dark-mode .media-library-add-form__input-wrapper {
+  background-color: unset;
+}
+body.dark-mode .media-library-selected-count {
+  color: var(--text-white);
+}
+body.dark-mode .media-library-wrapper .views-display-link {
+  background-blend-mode: difference;
+  color: var(--text-white);
+}
+body.dark-mode .media-library-add-form__description {
+  color: var(--text-white);
+}
+body.dark-mode .media-library-add-form__preview {
+  background: unset;
+}
+body.dark-mode .media-library-add-form__fields {
+  color: var(--text-white);
+}
+body.dark-mode .media-library-add-form__remove-button {
+  background-image: none;
+  bottom: 0;
+}
+body.dark-mode .media-library-add-form__remove-button:hover {
+  background-image: none;
+}
+body.dark-mode .media-library-add-form__remove-button.button--extrasmall {
+  padding: calc(0.25rem - 1px) calc(0.75rem - 1px);
+  margin-bottom: 1.5rem;
+}
+body.dark-mode .modules-tabs {
+  background: none;
+}
+body.dark-mode .modules-tabs .modules-tabs__menu-item {
+  background: none;
+}
+body.dark-mode .modules-tabs .modules-tabs__pane {
+  background: solid var(--white2);
+}
+body.dark-mode .modules-tabs .modules-wrapper tr {
+  background: none;
+  border-bottom: 10px solid var(--white2);
+}
+
+body.dark-mode .pager .pager__item a {
+  color: var(--text-dark);
+  background: transparent;
+}
+body.dark-mode .pager .pager__item a:hover {
+  border-color: var(--primary2);
+  box-shadow: inset 0px 0px 3px 3px var(--primary2);
+}
+body.dark-mode .pager .pager__item--active a {
+  background: var(--primary);
+}
+body.dark-mode .pager .pager__item--mini {
+  border-radius: 50%;
+}
+body.dark-mode .pager .pager__item--current {
+  background: var(--primary);
+}
+body.dark-mode .pager .pager__item--number {
+  border-radius: 50%;
+}
+
+/**
+ * @file
+ * Panels.
+ */
+body.dark-mode .panel {
+  border: solid 1px var(--white2);
+}
+body.dark-mode .panel__title {
+  border-bottom: solid 2px #ffc400;
+  background-color: var(--white2);
+  color: var(--text-white);
+}
+body.dark-mode .panel__content .nttdata-card:not(:last-child) {
+  border-bottom: 0.0625em solid #cfd8fc;
+}
+body.dark-mode .panel__content .nttdata-card-text {
+  color: #cfd8fc;
+}
+
+body.dark-mode .paragraphs-tabs-wrapper table thead tr th {
+  color: var(--text-white);
+  background-color: var(--primary);
+}
+body.dark-mode .paragraphs-description::after {
+  content: none;
+}
+body.dark-mode .paragraph-type-label,
+body.dark-mode .paragraphs-content-wrapper .summary-content,
+body.dark-mode .paragraphs-subform label {
+  color: var(--text-white);
+}
+body.dark-mode .paragraphs-dropdown.open .paragraphs-dropdown-actions {
+  background: var(--ck-grey);
+}
+body.dark-mode table.sticky-header {
+  background-color: transparent;
+}
+body.dark-mode table .sortable-heading a:hover {
+  color: var(--text-white);
+}
+body.dark-mode table .sortable-heading a:hover:before {
+  border-bottom: 0.1875rem solid var(--white);
+}
+body.dark-mode table .sortable-heading.is-active a {
+  color: var(--text-dark);
+}
+body.dark-mode table .sortable-heading.is-active a:before {
+  border-bottom: 0.1875rem solid var(--text-dark);
+}
+body.dark-mode table tr td a {
+  color: #ffc400;
+}
+body.dark-mode table tr td .module-list__module-details > summary.claro-details__summary:before,
+body.dark-mode table tr td .module-list__module-details[open] > summary.claro-details__summary:before {
+  filter: unset;
+}
+body.dark-mode table tr td .module-list__module-details > summary.claro-details__summary:hover,
+body.dark-mode table tr td .module-list__module-details[open] > summary.claro-details__summary:hover {
+  color: #ffc400;
+}
+body.dark-mode table tr td .module-list__module-details > summary.claro-details__summary:hover:before,
+body.dark-mode table tr td .module-list__module-details[open] > summary.claro-details__summary:hover:before {
+  background-image: var(--yellow-arrow);
+}
+body.dark-mode table tr.selected td {
+  background-color: #070e27;
+}
+body.dark-mode table tr.draggable {
+  color: var(--text-lightgrey);
+}
+body.dark-mode table tr.draggable.field-plugin-settings-editing, body.dark-mode table tr.draggable:focus {
+  background: var(--white2);
+}
+body.dark-mode table tr.region-message {
+  color: var(--text-lightgrey);
+}
+body.dark-mode table .region-title {
+  color: var(--text-dark);
+}
+body.dark-mode table .revision-current {
+  background-color: unset;
+}
+body.dark-mode .tabledrag-toggle-weight-wrapper button .action-link {
+  background: var(--white);
+  color: var(--text-dark);
+}
+body.dark-mode .tabledrag-toggle-weight-wrapper button .action-link:hover {
+  background: var(--white2);
+}
+body.dark-mode table.responsive-enabled.sticky-enabled td > a {
+  color: #ffc400;
+}
+body.dark-mode .module-list__description .claro-details {
+  box-shadow: none;
+  border: 0;
+  background-color: var(--white);
+}
+body.dark-mode .module-list__description .claro-details .claro-details__summary.module-list__module-summary {
+  background: var(--white);
+}
+body.dark-mode .module-list__description .claro-details .claro-details__wrapper.module-details__wrapper {
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .tabs .tabs__tab {
+  background: unset;
+}
+body.dark-mode .tabs .tabs__tab.is-active {
+  background: var(--primary);
+}
+body.dark-mode .tabs .tabs__tab .tabs__link {
+  color: var(--text-dark);
+}
+body.dark-mode .tabs .tabs__tab .tabs__link:not(.is-active):hover {
+  color: var(--text-dark);
+}
+body.dark-mode .tabs .tabs__tab .tabs__link.is-active:hover {
+  background: var(--white);
+}
+body.dark-mode .tabs .tabs__tab .tabs__link.is-active:before {
+  border-bottom: 0.2rem solid var(--text-dark);
+}
+body.dark-mode .tabs.tabs--secondary .tabs__link:not(.is-active):hover {
+  background-color: var(--primary);
+}
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item.is-selected {
+  color: var(--text-dark);
+}
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item.is-selected * {
+  border-color: unset;
+}
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link {
+  color: var(--white);
+}
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link:hover {
+  color: var(--primary2);
+}
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item .vertical-tabs__menu-link {
+  border-bottom: 1px solid var(--text-grey);
+  margin-bottom: 1px;
+}
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item .vertical-tabs__menu-link * {
+  color: var(--text-dark);
+}
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item .vertical-tabs__menu-link:hover:before,
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item .vertical-tabs__menu-link:hover * {
+  background-color: transparent;
+}
+body.dark-mode .vertical-tabs .vertical-tabs__menu-item:before {
+  border-top: unset;
+}
+
+body.dark-mode .views-edit-view .views-displays .views-display-top {
+  color: var(--text-dark);
+  background: var(--white2);
+  border-bottom: 1px solid var(--text-dark);
+}
+body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li:not(.add) a {
+  color: var(--text-dark);
+  background: var(--white2);
+}
+body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li:not(.add) a:hover {
+  background-color: var(--ck-grey);
+}
+body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li:not(.add).is-active a {
+  background: var(--primary);
+  pointer-events: none;
+}
+body.dark-mode .views-edit-view .views-displays .views-display-top .views-tabs li.add .action-list li.last {
+  padding-bottom: 1px;
+}
+body.dark-mode .views-edit-view .views-displays .views-display-tab a {
+  color: var(--text-lightgrey);
+  text-decoration: none;
+}
+body.dark-mode .views-edit-view .views-displays .views-display-tab a:hover {
+  text-decoration: underline;
+}
+body.dark-mode .views-edit-view .views-displays .views-display-column > .claro-details__wrapper.details-wrapper {
+  border: 1px solid var(--ck-grey);
+  box-shadow: 0 2px 5px var(--ck-grey);
+}
+body.dark-mode .views-edit-view form .form-actions {
+  background-color: var(--white2);
+}
+body.dark-mode .views-edit-view .views-display-setting span {
+  color: var(--text-dark);
+}
+body.dark-mode .views-preview-wrapper .views-live-preview .views-exposed-form {
+  background-color: var(--white);
+}

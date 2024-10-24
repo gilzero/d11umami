@@ -1,0 +1,52 @@
+/* Comments
+--------------------------------------*/
+#comments {
+  border-top: 1px solid var(--border);
+}
+#comments i {
+  color: var(--primary);
+}
+.comments-title::before,
+.comment-form-wrap .add-comment-title::before {
+  font-family: 'xara';
+  color: var(--primary);
+  padding-right: 6px;
+}
+.comments-title::before {
+  content: "\f0e6";
+}
+.comment-form-wrap .add-comment-title::before {
+  content: "\e900";
+}
+/* Comments -> single comment */
+.comment {
+  box-shadow: var(--shadow2);
+}
+.comment-header {
+  background-color: var(--border);
+  border: 0;
+  align-items: center;
+}
+.comment-user-picture {
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+}
+.comment-title,
+.comment-title a {
+  color: var(--color-heading);
+}
+.comment-reply a,
+.comment-delete a,
+.comment-edit a {
+  padding: 4px 12px;
+  background: #ffffff;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.comment-reply a:hover,
+.comment-delete a:hover,
+.comment-edit a:hover {
+  background: var(--primary);
+  color: #ffffff;
+}

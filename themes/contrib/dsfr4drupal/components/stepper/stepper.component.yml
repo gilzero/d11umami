@@ -1,0 +1,28 @@
+name: DSFR - Stepper
+description: The steps indicator allows you to tell the user where they are in a form or in a process.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    current:
+      type: integer
+      title: Current step
+      default: 1
+      description: Step numbers range from 1 to N.
+    items:
+      type: array
+      title: Items
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            title: Step title
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.stepper

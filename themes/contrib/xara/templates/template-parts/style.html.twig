@@ -1,0 +1,91 @@
+<style>
+{# Typography #}
+body {
+  font-size: {{ body_font_size }}rem;
+}
+{# Main menu #}
+{% if not main_menu_default %}
+.menu-wrap ul.menu {
+  font-size: {{ main_menu_top_size }}rem;
+}
+.menu-wrap {
+  font-weight: {{ main_menu_top_weight }};
+}
+.menu-wrap ul.menu > li > a {
+  text-transform: {{ main_menu_top_transform }};
+}
+.menu-wrap ul.menu ul.submenu {
+  fontweight: {{ main_menu_sub_weight }};
+}
+.menu-wrap ul.menu ul.submenu li {
+  font-size: {{ main_menu_sub_size }}rem;  
+  text-transform: {{ main_menu_sub_transform }};
+}
+{% endif %}
+@media (min-width: 1170px) {
+  .container {
+    max-width: {{ container_width }}px;
+  }
+}
+{# Layout #}
+{% if header_width == 'header_width_full' %}
+.header-top .container,
+.header .container,
+.page-header .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+{% if main_width == 'main_width_full' %}
+.main-wrapper .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+
+{% if footer_width == 'footer_width_full' %}
+.footer-top footer .container,
+.footer-blocks .container,
+.footer-bottom-blocks .container,
+.footer-bottom .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+{# Header #}
+.region-page-header {
+  align-items: {{ header_page_content_position }};
+}
+
+@media (min-width: 768px) {
+  {% if not sidebar_width_default %}
+  .sidebar-left #main {
+    flex: 1 1 calc(100% - {{ sidebar_width_left }}%);
+  }
+  .sidebar-right #main {
+    flex: 1 1 calc(100% - {{ sidebar_width_right }}%);
+  }
+  .two-sidebar #main {
+    flex: 1 1 calc(100% - {{ sidebar_width_left }}% - {{ sidebar_width_right }}%);
+  }
+  #sidebar-left {
+    flex: 0 1 {{ sidebar_width_left }}%;
+  }
+  #sidebar-right {
+    flex: 0 1 {{ sidebar_width_right }}%;
+  }
+  {% endif %}
+}
+{# Elements -> Page Title #}
+{% if not page_title_default %}
+.page-title {
+  font-size: {{ page_title_size }}rem;
+  text-transform: {{ page_title_transform }};
+}
+{% endif %}
+{% if highlight_author_comment %}
+.comment-by-author {
+  box-shadow: 0 0 6px 1px var(--secondary);
+}
+{% endif %}
+</style>

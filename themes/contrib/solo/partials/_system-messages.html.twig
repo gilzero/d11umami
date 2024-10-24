@@ -1,0 +1,9 @@
+  {% if page.system_messages %}
+    <!-- Start: System Messages -->
+    <div id="system-messages" class="solo-outer lone system-messages{{ classes_system_messages ? ' ' ~ classes_system_messages }}" {{ attributes_system_messages }}>
+      <div id="system-messages-inner" class="solo-inner solo-col solo-col-1 system-messages-inner">
+        {{ page.system_messages }}
+      </div>
+    </div>
+    <!-- End: System Messages -->
+  {% endif %}

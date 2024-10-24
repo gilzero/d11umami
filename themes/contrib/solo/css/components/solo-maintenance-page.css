@@ -1,0 +1,40 @@
+.solo-clear::after,
+.solo-clear::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body.maintenance-page {
+  color: var(--r-tx);
+  background-color: var(--r-bg);
+}
+
+.maintenance-page main {
+  min-height: 43.75rem;
+  margin-top: calc(2* var(--solo-px16)) !important;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.maintenance-page main header,
+.maintenance-page main header a {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.maintenance-page main header>* {
+  width: 100%;
+}
+
+.site-name-block {
+  margin: 20px auto;
+}
+
+.maintenance-page main h1 {
+  font-size: 46px;
+  line-height: 46px;
+}

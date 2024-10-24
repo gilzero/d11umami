@@ -1,0 +1,22 @@
+Google web font
++---------------------------+
+https://fonts.google.com/
+
+
+Morphist Slider
++---------------------------+
+https://github.com/MrSaints/Morphist
+
+Slider demo image
++---------------------------+
+https://undraw.co/
+
+
+FontAwesome font icons
++---------------------------+
+https://fontawesome.com/
+
+
+Icofonts - Font icons
++---------------------------+
+https://icofont.com/

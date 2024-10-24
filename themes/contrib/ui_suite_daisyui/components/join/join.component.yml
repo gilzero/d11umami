@@ -1,0 +1,39 @@
+name: Join
+description: "Join is a container for grouping multiple items, it can be used to group buttons, inputs, or any other element. Join applies border radius to the first and last item. Join can be used to create a horizontal or vertical list of items."
+group: Layout
+links:
+  - "https://daisyui.com/components/join/"
+variants:
+  default:
+    title: Default
+  vertical:
+    title: Vertical
+  vertical_responsive:
+    title: "Vertical responsive"
+slots:
+  items:
+    title: Items
+    description: "Expect a list of items"
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: component
+          component: "ui_suite_daisyui:button"
+          slots:
+            label: Button
+          props:
+            url: "http://example.com"
+        - type: component
+          component: "ui_suite_daisyui:button"
+          slots:
+            label: Button
+          props:
+            url: "http://example.com"
+        - type: component
+          component: "ui_suite_daisyui:button"
+          slots:
+            label: Button
+          props:
+            url: "http://example.com"

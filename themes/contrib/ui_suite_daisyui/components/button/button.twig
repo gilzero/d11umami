@@ -1,0 +1,35 @@
+{%
+  set classes = [
+    'btn',
+    variant and variant != 'default' ? 'btn-' ~ variant,
+    active ? 'btn-active',
+    outline ? 'btn-outline',
+    size ? 'btn-' ~ size,
+    wide ? 'btn-wide',
+    glass ? 'glass',
+    square ? 'btn-square',
+    circle ? 'btn-circle',
+    _block ? 'btn-block',
+    'not-prose',
+  ]
+%}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{% if modal_id %}
+  {% set attributes = attributes.setAttribute('onclick', modal_id ~ '.showModal()') %}
+{% endif %}
+
+{% if url or attributes.href %}
+  {% set url = url|default(attributes.href) %}
+  {% set attributes = attributes.setAttribute('href', url) %}
+  {% if disabled %}
+    {% set attributes = attributes.setAttribute('href', false).setAttribute('tabindex', '-1').setAttribute('aria-disabled', 'true').addClass('btn-disabled') %}
+  {% endif %}
+  <a{{ attributes.setAttribute('role', 'button') }}>{{ label }}</a>
+{% else %}
+  {% if disabled %}
+    {% set attributes = attributes.setAttribute('disabled', 'disabled') %}
+  {% endif %}
+  <button{{ attributes }}>{{ label }}</button>
+{% endif %}

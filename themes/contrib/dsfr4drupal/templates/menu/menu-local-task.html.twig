@@ -1,0 +1,7 @@
+{% if is_active %}
+  {% set attributes = attributes.setAttribute('aria-current', 'page') %}
+{% endif %}
+{{ include('dsfr4drupal:tab', {
+  'title': link['#title'],
+  'url': link['#url']
+}) }}

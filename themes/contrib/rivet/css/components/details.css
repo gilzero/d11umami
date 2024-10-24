@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Collapsible details.
+ *
+ * @see collapse.js
+ * @see http://nicolasgallagher.com/css-background-image-hacks/
+ */
+
+details {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+}
+/* @todo Regression: The summary of non-collapsible details are no longer
+     vertically aligned with the .details-wrapper in browsers without native
+     details support. */
+summary {
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+}
+
+.vertical-tabs__pane .rvt-disclosure__content {
+  box-shadow: none;
+}

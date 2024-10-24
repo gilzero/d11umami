@@ -1,0 +1,12 @@
+<div data-drupal-messages>
+  {% for type, messages in message_list %}
+    {% for message in messages %}
+      {{ include('dsfr4drupal:alert', {
+        'type': (type == 'status') ? 'success' : type,
+        'content': message,
+        'has_button': true,
+      }, with_context=false) }}
+    {% endfor %}
+  {% endfor %}
+</div>
+

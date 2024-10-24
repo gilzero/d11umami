@@ -1,0 +1,88 @@
+/**
+ * @file
+ * Presentational styles for Drupal dialogs.
+ */
+
+.ui-dialog {
+  position: absolute;
+  z-index: 1260;
+  overflow: visible;
+  padding: 0;
+  color: #000;
+  border: solid 1px #ccc;
+  background: #fff;
+}
+
+@media all and (max-width: 48em) {
+  /* 768px */
+  .ui-dialog {
+    width: 92% !important;
+  }
+}
+.ui-dialog .ui-dialog-titlebar {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 0;
+  background: #f3f4ee;
+  font-weight: bold;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+  border: 0;
+  background: none;
+}
+.ui-dialog .ui-dialog-buttonpane {
+  margin-top: 0;
+  padding: 0.3em 1em;
+  border-width: 1px 0 0 0;
+  border-color: #ccc;
+  background: #f3f4ee;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  margin: 0;
+  padding: 0;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-button-text-only .ui-button-text {
+  padding: 0;
+}
+
+/* Form action buttons are moved in dialogs. Remove empty space. */
+.ui-dialog .ui-dialog-content .form-actions {
+  margin: 0;
+  padding: 0;
+}
+.ui-dialog .ajax-progress-fullscreen {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.4);
+}
+.ui-dialog .ajax-progress-fullscreen::after {
+  position: fixed;
+  z-index: 1001;
+  top: calc(50% - 22px);
+  left: calc(50% - 22px);
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  content: "";
+  opacity: 1;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' fill='none' stroke='%23006298' stroke-width='11' r='44' stroke-dasharray='210 70' style='animation-play-state: running; animation-delay: 0s;'%3E%3CanimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='0.8s' values='0 50 50;360 50 50' keyTimes='0;1' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animateTransform%3E%3C/circle%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 44px 44px;
+}
+.ui-dialog .ajax-progress-throbber .throbber,
+.ui-dialog .ajax-progress-throbber .message {
+  display: none;
+}

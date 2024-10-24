@@ -1,0 +1,45 @@
+# Default features.
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  logo: true
+  name: true
+  node_user_picture: 1
+  slogan: true
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+sm_icon_facebook: 'https://www.facebook.com/flashwebcenter'
+sm_icon_twitter: 'https://x.com/flashwebcenter'
+sm_icon_pinterest: 'https://www.pinterest.com/alaahaddad'
+sm_icon_linkedin: 'https://www.linkedin.com/company/flash-web-center'
+sm_icon_instagram: 'https://www.instagram.com/flashwebcenter'
+sm_icon_youtube: 'https://www.youtube.com/user/flashwebcenter'
+sm_icon_snapchat: 'https://www.drupal.org/u/flashwebcenter'
+sm_icon_reddit: 'https://www.drupal.org/u/flashwebcenter'
+sm_icon_tiktok: 'https://www.drupal.org/u/flashwebcenter'
+sm_icon_whatsapp: 'https://www.drupal.org/u/flashwebcenter'
+sm_icon_threads: 'https://www.drupal.org/u/flashwebcenter'
+sm_icon_drupal: 'https://www.drupal.org/u/flashwebcenter'
+sm_icon_mastodon: 'https://www.drupal.org/u/flashwebcenter'
+sm_icon_rss: rss.xml
+sm_icon_email: '/#email'
+footer_copyright: 'Copyright © %year% Company Name - All rights reserved'
+sm_show_icons: 1
+sm_icon_size: 'sm-icons-small'
+footer_link: 'https://www.alaahaddad.com/'
+footer_link_label: 'Developed & Designed by'
+footer_link_text: 'Alaa Haddad'
+count_main: 2
+site_global_width: sw-1600
+site_global_breakpoints: sb-992
+site_global_regions_gap: 16
+site_global_font_size: 16
+site_menu_breakpoints: mn-992
+header_login_links: Login
+predefined_current_theme: midnight_and_twilight|solo-midnight-whispers
+theme_category: midnight_and_twilight
+color_coded_system_tabs: 1
+site_breadcrumb_scroll: 1

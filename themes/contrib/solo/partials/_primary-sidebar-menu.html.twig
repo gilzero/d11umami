@@ -1,0 +1,20 @@
+  {% if page.primary_sidebar_menu %}
+  <!-- Start: Primary Sidebar Menu  -->
+  <div id="primary-sidebar-menu" class="solo-outer lone main-navigation-wrapper primary-sidebar-menu hamburger-icon{{ header_change_icons ? ' hs-icons-left' }}{{ primary_sidebar_menu_border ? ' has-border'}}{{ classes_primary_sidebar_menu ? ' ' ~ classes_primary_sidebar_menu }}" role="navigation" aria-hidden="true"  aria-label="{{ 'Primary Sidebar Menu'|t }}" {{ attributes_primary_sidebar_menu }}>
+    <div id="primary-sidebar-menu-inner" class="solo-inner primary-sidebar-menu-inner">
+
+      <div id="sidebar-button-close" class="sidebar-button-close{{ header_change_icons ? ' hs-icons-left' }}{{ primary_sidebar_menu_branding ? ' activate-branding' }}">
+        {# <i class="fa fa-close"></i> #}
+          <button class="btn-animate solo-button-menu hamburger-icon hamburger-icon-close" data-drupal-selector="sidebar-hamburger-icon" aria-label="{{ 'Close Primary Sidebar Menu'|t }}" aria-controls="primary-sidebar-menu" aria-expanded="false">
+              <span>{{ svg_bars|raw }}</span>
+              <span class="visually-hidden">{{ 'Close Primary Sidebar Menu'|t }}</span>
+          </button>
+          {% if primary_sidebar_menu_branding %}
+          {% include '@solo/partials/_menu-branding.html.twig' %}
+          {% endif %}
+      </div>
+      {{ page.primary_sidebar_menu }}
+    </div>
+  </div>
+  <!-- End: Primary Sidebar Menu -->
+{% endif %}

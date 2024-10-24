@@ -1,0 +1,81 @@
+/* Footer
+--------------------------------------*/
+/* Footer Top */
+.footer-top-section {
+  background-color: var(--bg-content);
+}
+.region-footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+/* Footer Four Blocks */
+.footer-blocks-section {
+  background-color: var(--bg-header);
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+.footer-block {
+  flex: 1 260px;
+}
+/* Footer bottom */
+.footer-bottom-section {
+  background-color: var(--bg-content);
+}
+.region-footer-bottom {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0;
+}
+.region-footer-bottom .block {
+  flex: 100%;
+}
+/* Footer copyright and social icons */
+.footer-bottom-last-section {
+  background-color: var(--bg-content);
+}
+.footer-bottom-last {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0;
+}
+/* Footer -> Social icons. */
+.social-icons {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.social-icons li {
+  padding: 0;
+}
+.social-icons a {
+  display: grid;
+  place-content: center;
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-top: 3px solid var(--color-primary);
+  border-left: 3px solid var(--color-primary);
+  border-bottom: 3px solid var(--color-secondary);
+  border-right: 3px solid var(--color-secondary);
+  border-radius: 50%;  
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.social-icons a:hover {
+  color: var(--color-primary);
+  border: 3px solid #ffffff;
+}

@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override for tabs.
+ */
+#}
+{{ attach_library('rivet/rvt-c-subnav') }}
+{%
+  set classes = [
+    'rvt-subnav',
+    'rvt-c-subnav',
+    '[ rvt-c-position-sticky rvt-border-bottom-none ]'
+  ]
+%}
+{% if content %}
+<nav{{attributes.addClass(classes)|without('id')}} aria-label="{{ 'Tabs'|t }}">
+  {{ content }}
+</nav>
+{% endif %}

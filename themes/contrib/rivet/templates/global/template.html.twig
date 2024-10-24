@@ -1,0 +1,154 @@
+
+{#
+/**
+ * Header block. Most page templates will not need to override this.
+ */
+ #}
+{% block header %}
+
+{{ page.site_alert }}
+
+<header id="header" class="rvt-header-wrapper">
+  <a class="rvt-header-wrapper__skip-link" href="#main-content">{{ 'Skip to Content'|t }}</a>
+
+  {% if page.branding|render|striptags|trim is not empty or page.header_global|render|striptags|trim is not empty %}
+  <div class="rvt-header-global">
+    <div class="{{ page_width }}">
+      <div class="rvt-header-global__inner">
+        {{ page.branding }}
+        <div class="rvt-header-global__controls">
+          <div data-rvt-disclosure="menu" data-rvt-close-click-outside>
+            <button aria-expanded="false" class="rvt-global-toggle rvt-global-toggle--menu rvt-hide-lg-up" data-rvt-disclosure-toggle="menu">
+              <span class="rvt-sr-only">Menu</span>
+              <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M15 4H1V2h14v2Zm0 5H1V7h14v2ZM1 14h14v-2H1v2Z"></path>
+              </svg>
+              <svg class="rvt-global-toggle__close" fill="currentColor" width="16" height="16" viewBox="0 0 16 16">
+                <path d="m3.5 2.086 4.5 4.5 4.5-4.5L13.914 3.5 9.414 8l4.5 4.5-1.414 1.414-4.5-4.5-4.5 4.5L2.086 12.5l4.5-4.5-4.5-4.5L3.5 2.086Z"></path>
+              </svg>
+            </button>
+            <nav aria-label="Main" class="rvt-header-menu rvt-c-header-menu" data-rvt-disclosure-target="menu" hidden>
+            {{ page.header_global }}
+            {{ page.header_utility }}
+            </nav>
+          </div>
+          {{ page.header_search }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if page.header_local|render|striptags|trim is not empty %}
+  <!-- Secondary header area -->
+  <div class="rvt-header-local">
+    <div class="{{ page_width }}">
+    {{ page.header_local }}
+    </div>
+  </div>
+  {% endif %}
+</header>
+
+<main>
+<a id="main-content" tabindex="-1"></a>
+
+{% endblock header %}
+
+{#
+/**
+ * Featured region. Most page templates will not need to override this.
+ */
+ #}
+{% block featured %}
+{{ page.featured }}
+{% endblock featured %}
+
+{#
+/**
+ * Content top region. Most page templates will not need to override this.
+ */
+ #}
+{% block content_top %}
+{{ page.content_top }}
+{% endblock content_top %}
+
+{#
+/**
+ * Default content block.
+ */
+ #}
+{% block content %}
+
+{% set layout_classes = [
+  'rvt-layout__wrapper',
+  'rvt-layout__wrapper--single',
+  'rvt-p-tb-xxl',
+  content_width,
+]
+%}
+<div class="{{ layout_classes|join(' ') }}">
+
+{% block content_above %}
+
+{% include '@rivet/global/page-status.html.twig' %}
+
+{% if not hide_breadcrumb %}
+{{ page.breadcrumb }}
+{% endif %}
+
+{% if not hide_title %}
+{{ page.page_title }}
+{% endif %}
+
+{{ page.content_above }}
+
+{% endblock content_above %}
+
+{{ page.content }}
+
+</div>
+
+{% endblock content %}
+
+{#
+/**
+ * Below content block. Most page templates will not need to override this.
+ */
+ #}
+{% block content_below %}
+
+{{ page.content_below }}
+
+{% endblock content_below %}
+
+{#
+/**
+ * Below content block. Most page templates will not need to override this.
+ */
+ #}
+{% block content_bottom %}
+
+{{ page.content_bottom }}
+
+{% endblock content_bottom %}
+
+{#
+/**
+ * Default header block. Most page templates will not need to override this.
+ */
+ #}
+{% block footer %}
+
+</main>
+
+{% if page.footer_social|render|striptags|trim %}
+{{ page.footer_social }}
+{% endif %}
+
+{% if page.footer_resources|render|striptags|trim %}
+{{ page.footer_resources }}
+{% endif %}
+
+{% include '@rivet/global/footer.html.twig' %}
+
+{% endblock footer %}

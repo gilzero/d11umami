@@ -1,0 +1,30 @@
+rivet.sm:
+  label: Small
+  mediaQuery: '(min-width: 30em)'
+  weight: 1
+  multipliers:
+    - 1x
+rivet.md:
+  label: Medium
+  mediaQuery: '(min-width: 46.25em)'
+  weight: 2
+  multipliers:
+    - 1x
+rivet.lg:
+  label: Large
+  mediaQuery: '(min-width: 67.5em)'
+  weight: 3
+  multipliers:
+    - 1x
+rivet.xl:
+  label: X-Large
+  mediaQuery: '(min-width: 78.75em)'
+  weight: 4
+  multipliers:
+    - 1x
+rivet.xxl:
+  label: XXL
+  mediaQuery: '(min-width: 87.5em)'
+  weight: 5
+  multipliers:
+    - 1x

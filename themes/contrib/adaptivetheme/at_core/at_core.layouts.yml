@@ -1,0 +1,447 @@
+# One column
+onecol:
+  label: 'Adaptivetheme One Column'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  icon: templates/onecol/onecol.png
+  template: templates/onecol/at-layout--onecol
+  regions:
+    col_1:
+      label: Column 1
+
+# Two columns
+twocol-2-10:
+  label: 'Adaptivetheme Two Column: 2-10'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  icon: templates/twocol/twocol-2-10.png
+  template: templates/twocol/at-layout--twocol
+  css: css/twocol-2-10.css
+  library: at_core/at.twocol-2-10
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (2, left)
+    col_2:
+      label: Column 2 (10, right)
+    bottom:
+      label: Bottom
+
+twocol-3-9:
+  label: 'Adaptivetheme Two Column: 3-9'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/twocol/at-layout--twocol
+  icon: templates/twocol/twocol-3-9.png
+  css: css/twocol-3-9.css
+  library: at_core/at.twocol-3-9
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (3, left)
+    col_2:
+      label: Column 2 (9, right)
+    bottom:
+      label: Bottom
+
+twocol-4-8:
+  label: 'Adaptivetheme Two Column: 4-8'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/twocol/at-layout--twocol
+  icon: templates/twocol/twocol-4-8.png
+  css: css/twocol-4-8.css
+  library: at_core/at.twocol-4-8
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (4, left)
+    col_2:
+      label: Column 2 (8, right)
+    bottom:
+      label: Bottom
+
+twocol-5-7:
+  label: 'Adaptivetheme Two Column: 5-7'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/twocol/at-layout--twocol
+  icon: templates/twocol/twocol-5-7.png
+  css: css/twocol-5-7.css
+  library: at_core/at.twocol-5-7
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (5, left)
+    col_2:
+      label: Column 2 (7, right)
+    bottom:
+      label: Bottom
+
+twocol-6-6:
+  label: 'Adaptivetheme Two Column: 6-6'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/twocol/at-layout--twocol
+  icon: templates/twocol/twocol-6-6.png
+  css: css/twocol-6-6.css
+  library: at_core/at.twocol-6-6
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (6, left)
+    col_2:
+      label: Column 2 (6, right)
+    bottom:
+      label: Bottom
+
+twocol-7-5:
+  label: 'Adaptivetheme Two Column: 7-5'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/twocol/at-layout--twocol
+  icon: templates/twocol/twocol-7-5.png
+  css: css/twocol-7-5.css
+  library: at_core/at.twocol-7-5
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (7, right)
+    col_2:
+      label: Column 2 (5, left)
+    bottom:
+      label: Bottom
+
+twocol-8-4:
+  label: 'Adaptivetheme Two Column: 8-4'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/twocol/at-layout--twocol
+  icon: templates/twocol/twocol-8-4.png
+  css: css/twocol-8-4.css
+  library: at_core/at.twocol-8-4
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (8, right)
+    col_2:
+      label: Column 2 (4, left)
+    bottom:
+      label: Bottom
+
+twocol-9-3:
+  label: 'Adaptivetheme Two Column: 9-3'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/twocol/at-layout--twocol
+  icon: templates/twocol/twocol-9-3.png
+  css: css/twocol-9-3.css
+  library: at_core/at.twocol-9-3
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (9, right)
+    col_2:
+      label: Column 2 (3, left)
+    bottom:
+      label: Bottom
+      
+twocol-10-2:
+  label: 'Adaptivetheme Two Column: 10-2'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/twocol/at-layout--twocol
+  icon: templates/twocol/twocol-10-2.png
+  css: css/twocol-10-2.css
+  library: at_core/at.twocol-10-2
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column 1 (10, right)
+    col_2:
+      label: Column 2 (2, left)
+    bottom:
+      label: Bottom
+
+# Three columns
+threecol-2-8-2:
+  label: 'Adaptivetheme Three Column: 2-8-2'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/threecol/at-layout--threecol
+  icon: templates/threecol/threecol-2-8-2.png
+  css: css/threecol-2-8-2.css
+  library: at_core/at.threecol-2-8-2
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column One (8, center)
+    col_2:
+      label: Column Two (2, left)
+    col_3:
+      label: Column Three (2, right)
+    bottom:
+      label: Bottom
+
+threecol-2-2-8:
+  label: 'Adaptivetheme Three Column: 2-2-8'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/threecol/at-layout--threecol
+  icon: templates/threecol/threecol-2-2-8.png
+  css: css/threecol-2-2-8.css
+  library: at_core/at.threecol-2-2-8
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column One (2, right)
+    col_2:
+      label: Column Two (2, middle)
+    col_3:
+      label: Column Three (8, left)
+    bottom:
+      label: Bottom
+
+threecol-8-2-2:
+  label: 'Adaptivetheme Three Column: 8-2-2'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/threecol/at-layout--threecol
+  icon: templates/threecol/threecol-8-2-2.png
+  css: css/threecol-8-2-2.css
+  library: at_core/at.threecol-8-2-2
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column One (8, left)
+    col_2:
+      label: Column Two (2, middle)
+    col_3:
+      label: Column Three (2, right)
+    bottom:
+      label: Bottom
+
+threecol-3-6-3:
+  label: 'Adaptivetheme Three Column: 3-6-3'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/threecol/at-layout--threecol
+  icon: templates/threecol/threecol-3-6-3.png
+  css: css/threecol-3-6-3.css
+  library: at_core/at.threecol-3-6-3
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column One (6, center)
+    col_2:
+      label: Column Two (3, left)
+    col_3:
+      label: Column Three (3, right)
+    bottom:
+      label: Bottom
+
+threecol-3-3-6:
+  label: 'Adaptivetheme Three Column: 3-3-6'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/threecol/at-layout--threecol
+  icon: templates/threecol/threecol-3-3-6.png
+  css: css/threecol-3-3-6.css
+  library: at_core/at.threecol-3-3-6
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column One (3, right)
+    col_2:
+      label: Column Two (3, middle)
+    col_3:
+      label: Column Three (6, left)
+    bottom:
+      label: Bottom
+
+threecol-6-3-3:
+  label: 'Adaptivetheme Three Column: 6-3-3'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/threecol/at-layout--threecol
+  icon: templates/threecol/threecol-6-3-3.png
+  css: css/threecol-6-3-3.css
+  library: at_core/at.threecol-6-3-3
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column One (6, left)
+    col_2:
+      label: Column Two (3, middle)
+    col_3:
+      label: Column Three (3, right)
+    bottom:
+      label: Bottom
+
+threecol-4-4-4:
+  label: 'Adaptivetheme Three Column: 4-4-4'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/threecol/at-layout--threecol
+  icon: templates/threecol/threecol-4-4-4.png
+  css: css/threecol-4-4-4.css
+  library: at_core/at.threecol-4-4-4
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column One (4, left)
+    col_2:
+      label: Column Two (4, center)
+    col_3:
+      label: Column Three (4, right)
+    bottom:
+      label: Bottom
+
+# Fourcol
+fourcol-3-3-3-3:
+  label: 'Adaptivetheme Four Column: 3-3-3-3'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/fourcol/at-layout--fourcol
+  icon: templates/fourcol/fourcol-3-3-3-3.png
+  css: css/fourcol-3-3-3-3.css
+  library: at_core/at.fourcol-3-3-3-3
+  regions:
+    top:
+      label: Top
+    col_1:
+      label: Column One
+    col_2:
+      label: Column Two
+    col_3:
+      label: Column Three
+    col_4:
+      label: Column Four
+    bottom:
+      label: Bottom
+
+# Grids
+grid-2x2:
+  label: 'Adaptivetheme Grid: 2x2'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/grid/at-layout--grid-2x2
+  icon: templates/grid/grid-2x2.png
+  css: css/grid-2x2.css
+  library: at_core/at.grid-2x2
+  regions:
+    r1c1:
+      label: Row 1 Left
+    r1c2:
+      label: Row 1 Right
+    r2c1:
+      label: Row 2 left
+    r2c2:
+      label: Row 2 Right
+
+grid-3x3:
+  label: 'Adaptivetheme Grid: 3x3'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/grid/at-layout--grid-3x3
+  icon: templates/grid/grid-3x3.png
+  css: css/grid-3x3.css
+  library: at_core/at.grid-3x3
+  regions:
+    r1c1:
+      label: Row 1 Left
+    r1c2:
+      label: Row 1 Center
+    r1c3:
+      label: Row 1 Right
+    r2c1:
+      label: Row 2 left
+    r2c2:
+      label: Row 2 Center
+    r2c3:
+      label: Row 2 Right
+    r3c1:
+      label: Row 3 left
+    r3c2:
+      label: Row 3 Center
+    r3c3:
+      label: Row 3 Right
+
+grid-4x4:
+  label: 'Adaptivetheme Grid: 4x4'
+  category: Adaptivetheme Layouts
+  type: partial
+  path: layout_plugin
+  template: templates/grid/at-layout--grid-4x4
+  icon: templates/grid/grid-4x4.png
+  css: css/grid-4x4.css
+  library: at_core/at.grid-4x4
+  regions:
+    r1c1:
+      label: Row 1 Left
+    r1c2:
+      label: Row 1 Center Left
+    r1c3:
+      label: Row 1 Center Right
+    r1c4:
+      label: Row 1 Right
+    r2c1:
+      label: Row 2 Left
+    r2c2:
+      label: Row 2 Center Left
+    r2c3:
+      label: Row 2 Center Right
+    r2c4:
+      label: Row 2 Right
+    r3c1:
+      label: Row 3 Left
+    r3c2:
+      label: Row 3 Center Left
+    r3c3:
+      label: Row 3 Center Right
+    r3c4:
+      label: Row 3 Right
+    r4c1:
+      label: Row 4 Left
+    r4c2:
+      label: Row 4 Center Left
+    r4c3:
+      label: Row 4 Center Right
+    r4c4:
+      label: Row 4 Right

@@ -1,0 +1,153 @@
+/* Drupal system message */
+.status-message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+.message {
+  position: relative;
+  color: #ffffff;
+  margin: 1rem 0;
+  padding: 14px 14px 14px 64px;
+}
+.message em {
+  border-bottom: 1px dotted #ffffff;
+}
+.message p:last-of-type {
+  margin: 0;
+}
+.message a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.message-status {
+  background: #89ad32;
+}
+.message-status::before {
+  content: "\e002";
+  background-color: #759625;
+}
+.message-error {
+  background: #c94d1c;
+}
+.message-error::before {
+  content: "\e004";
+  background-color: #b3461b;
+}
+.message-warning {
+  background: #cd5a0a;
+}
+.message-warning::before {
+  content: "\e003";
+  background-color: #a44707;
+}
+.message-info {
+  background-color: #5a82a1;
+}
+.message-info::before {
+  content: "\e00c";
+  background-color: #3e6584;
+}
+.message::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 53px;
+  height: 100%;
+  font-family: "zuvi";
+  font-size: 2em;
+  line-height: 53px;
+  text-align: center;
+}
+/* Links */
+ul.inline,
+ul.links.inline {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.inline li {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  list-style-type: none;
+}
+ul.inline li a {
+  display: inline-block;
+}
+.node-links-container li {
+  float: left;
+  margin-right: 1em;
+}
+/* Scroll To Top. */
+.scrolltop {
+  position: fixed;
+  display: none;
+  right: 10px;
+  bottom: 10px;
+  background: var(--pink-gradient);
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  padding: 4px;
+  border-radius: 50%;
+  z-index: 20;
+  cursor: pointer;
+}
+.scrolltop-icon {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.scrolltop:hover .scrolltop-icon {
+  background: var(--bg-body);
+}
+/* Pager
+------------------------*/
+.pager {
+  width: 100%;
+  margin-top: 1rem;
+}
+.pager-items {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pager-item,
+.pager-item a {
+  display: grid;
+  place-content: center;
+  height: 44px;
+  min-width: 44px;
+}
+.pager-item {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+}
+.pager-item:hover {
+  background-color: var(--color-secondary);
+}
+.pager-item a {
+  color: #ffffff;
+}
+.pager-item-active {
+  background-color: var(--bg-header);
+}
+.pager-item-first,
+.pager-item-last {
+  padding: 0 4px;
+}

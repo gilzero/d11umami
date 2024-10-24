@@ -1,0 +1,8 @@
+body.dark-mode {
+  //Entity browser
+  .entities-list {
+    input.button:not(.button--primary):not(.icon-link) {
+        border: 2px solid $cornflower-blue !important;
+    }
+  }
+}

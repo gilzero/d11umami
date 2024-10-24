@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override for page titles.
+ *
+ * Available variables:
+ * - title_attributes: HTML attributes for the page title element.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title: The page title, for use in the actual content.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - route_has_hero_h1: TRUE if the current page already has an h1 set via
+ *   a hero component.
+ *
+ * @see @rivet_preprocess_page_title();
+ */
+#}
+<div class="rvt-prose rvt-m-top-xs">
+{{ title_prefix }}
+{% if title %}
+  {% if route_has_hero_h1 %}
+  <h2{{ title_attributes.addClass('rvt-ts-lg') }}>{{ title }}</h2>
+  {% else %}
+  <h1{{ title_attributes }}>{{ title }}</h1>
+ {% endif %}
+{% endif %}
+{{ title_suffix }}
+</div>

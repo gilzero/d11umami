@@ -1,0 +1,125 @@
+@import '//fonts.iu.edu/style.css?family=BentonSans:regular,bold,medium|BentonSansCond:regular,bold|GeorgiaPro:regular|BentonSansLight:regular';
+
+.color-block {
+  font-family: BentonSans, Arial, sans-serif;
+  color: #191919;
+  padding: 1.5rem;
+  font-size: 1rem;
+}
+
+.color-block.bg-dark {
+  color: #fff;
+}
+
+.color-block .color-name {
+  font-family: BentonSansBold, Arial, sans-serif;
+  font-weight: 400;
+  margin-bottom: .5rem;
+  font-size: 1.1rem;
+  line-height: 1.1;
+}
+
+.color-block-radios .form-radios > .form-item {
+  float: left;
+  margin: 10px 15px 5px 0;
+  width: 14rem;
+}
+
+.color-block-radios .form-radios::after {
+  overflow: hidden;
+}
+
+.color-block-radios .description {
+  clear: both;
+}
+
+.color-block-radios input[type=radio] {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.color-block-radios input[type=radio]:focus + label .color-block {
+  box-shadow: 0 0 .5em .1em hsla(203, 100%, 60%, .7);
+}
+
+.color-block-radios input[type=radio]:checked + label .color-block .color-name::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 13px;
+  margin-left: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='13' viewBox='0 0 16 13'%3E%3Cpath d='M12.94.07L5.77 7.28 3.06 4.55.25 7.38l5.52 5.55L15.75 2.9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.color-block-radios input[type=radio]:checked + label .color-block.bg-dark .color-name::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='13' viewBox='0 0 16 13'%3E%3Cpath fill='%23fff' d='M12.94.07L5.77 7.28 3.06 4.55.25 7.38l5.52 5.55L15.75 2.9z'/%3E%3C/svg%3E");
+}
+
+.bg-crimson {
+  background-color: #900;
+}
+
+.bg-mahogany {
+  background-color: #243142;
+}
+
+.bg-gray {
+  background-color: #f8f9fa;
+}
+
+.bg-gold {
+  background-color: #f1be48;
+}
+
+.bg-gold-dark {
+  background-color: #dc8823;
+}
+
+.bg-mint {
+  background-color: #008264;
+}
+
+.bg-mint-dark {
+  background-color: #285c4d;
+}
+
+.bg-midnight {
+  background-color: #006298;
+}
+
+.bg-midnight-dark {
+  background-color: #01426a;
+}
+
+.bg-majestic {
+  background-color: #66435a;
+}
+
+.bg-majestic-dark {
+  background-color: #512a44;
+}
+
+.bg-limestone {
+  background-color: #aca39a;
+}
+
+.bg-limestone-dark {
+  background-color: #83786f;
+}
+
+.bg-black {
+  background-color: #191919;
+}
+
+.bg-full-black {
+  background-color: #000;
+}
+
+.bg-white-default {
+  background-color: #fff;
+}

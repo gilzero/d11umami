@@ -1,0 +1,110 @@
+#views-entity-list {
+  padding: 0.01em var(--solo-px16);
+}
+
+.views-ui-view-displays ul li {
+  display: inline-block;
+  margin-right: var(--solo-px16);
+}
+
+.view-filters details.form-wrapper {
+  margin: var(--solo-px16) 0;
+  padding: var(--solo-px8);
+  border: var(--solo-px1) solid var(--r-br, var(--r-br-b));
+}
+
+.view-filters details.form-wrapper:hover {
+  cursor: pointer;
+}
+
+#view-edit-form  .dropbutton li a {
+  padding: var(--solo-px4) var(--solo-px10);
+}
+
+.views-ui-display-tab-bucket {
+  padding-top: 11px;
+}
+
+form #edit-reset {
+  margin: 0 var(--solo-px12);
+}
+
+.js .views-edit-view .dropbutton-wrapper .dropbutton .dropbutton-action > *,
+.views-display-setting,
+.views-display-setting input,
+.views-display-setting .label,
+.views-display-extra-actions a {
+  font-size: var(--solo-px14) !important;
+}
+
+.views-preview-wrapper {
+  border-color: var(--r-br, var(--r-br-b));
+  padding: var(--solo-px10);
+  margin: 0 var(--solo-px16) var(--solo-px8) var(--solo-px16);
+}
+
+.js .views-edit-view .dropbutton-wrapper .dropbutton .dropbutton-action input {
+  margin: var(--solo-px2) 0 !important;
+  border: none !important;
+  float: right;
+  width: 100%;
+  text-align: left;
+}
+
+.view-preview-form > h2,
+.view-preview-form > .solo-section {
+  width: 100%;
+  display: block;
+  clear: both;
+  position: static;
+}
+
+.views-filterable-options-controls .form-item {
+  float: left;
+}
+
+.views-ui-display-tab-bucket .views-display-setting {
+  padding-top: var(--solo-px5);
+  padding-bottom: var(--solo-px5);
+}
+
+.views-ui-display-tab-bucket .dropbutton-wrapper {
+  top: var(--solo-px1);
+}
+
+.views-align-left {
+  text-align: left !important;
+}
+
+.views-align-right {
+  text-align: right !important;
+}
+
+.views-align-center {
+  text-align: center !important;
+}
+
+form.views-exposed-form .form--inline {
+  align-items: flex-end;
+}
+
+form.views-exposed-form.form--inline .form-actions {
+  flex-grow: unset !important;
+  flex-basis: unset !important;
+  vertical-align: bottom;
+  width: auto;
+}
+
+form.views-exposed-form.form--inline .form-actions input {
+  vertical-align: bottom;
+  margin: 0;
+}
+
+form.views-exposed-form .exposed-form > * {
+  margin: 0 var(--solo-px12) var(--solo-px12) 0;
+  padding: 0;
+}
+
+form.views-exposed-form .exposed-form > *:last-child {
+  margin-right: var(--solopx0);
+}

@@ -1,0 +1,75 @@
+# Layout
+container_width: 1170
+header_width: 'header_width_contained'
+main_width: 'main_width_contained'
+footer_width: 'footer_width_contained'
+
+# Homepage slider
+slider_show: 1
+slider_code: ''
+slider_image: ''
+slider_image_path: ''
+slider_speed: 5000
+
+# Header
+header_page_content_position: 'center'
+
+
+# Sidebar
+front_sidebar: 0
+sidebar_width_default: 1
+sidebar_width_left: 30
+sidebar_width_right: 30
+
+# Footer
+copyright_text: 1
+
+# Content
+rtl: 0
+node_author_pic: 0
+node_tags: 0
+
+# Social
+social_icons_show: 1
+facebook_url: 'https://www.facebook.com/idewdot'
+twitter_url: 'https://twitter.com/dewdots'
+instagram_url: 'https://www.instagram.com/google'
+linkedin_url: 'https://in.linkedin.com/company/google'
+youtube_url: 'https://www.youtube.com/user/Google'
+vimeo_url: 'https://vimeo.com/'
+telegram_url: 'https://telegram.org/'
+whatsapp_url: 'https://web.whatsapp.com/'
+github_url: 'https://github.com/'
+vk_url: ''
+
+# Font Icons
+fontawesome_four: 0
+fontawesome_five: 0
+bootstrapicons: 0
+
+# comment
+comment_user_pic: 1
+highlight_author_comment: 0
+
+# Typography
+body_font_size: 1
+
+# Elements
+main_menu_default: 1
+main_menu_top_size: 1
+main_menu_top_weight: 700
+main_menu_top_transform: 'none'
+main_menu_sub_size: 0.9
+main_menu_sub_weight: 700
+main_menu_sub_transform: 'none'
+page_title_default: 1
+page_title_size: 2.6
+page_title_transform: 'none'
+
+# Components
+font_src: 'local'
+scrolltotop_on: 1
+
+# Custom styling
+styling: 0
+styling_code: ''

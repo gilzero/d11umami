@@ -1,0 +1,70 @@
+name: Tabs
+description: "Tabs can be used to show a list of links in a tabbed format."
+group: Navigation
+links:
+  - "https://daisyui.com/components/tab/"
+variants:
+  default:
+    title: Default
+  bordered:
+    title: Bordered
+  lifted:
+    title: Lifted
+  boxed:
+    title: Boxed
+slots:
+  items:
+    title: Items
+props:
+  type: object
+  properties:
+    size:
+      title: Size
+      description: "It is possible to set the size of buttons."
+      $ref: "ui-patterns://enum"
+      enum:
+        - xs
+        - sm
+        - md
+        - lg
+      "meta:enum":
+        xs: "Extra small"
+        sm: Small
+        md: Medium
+        lg: Large
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: component
+          component: "ui_suite_daisyui:tab"
+          slots:
+            link:
+              type: html_tag
+              tag: a
+              value: "Tab 1"
+              attributes:
+                href: "https://example.com"
+        - type: component
+          component: "ui_suite_daisyui:tab"
+          slots:
+            link:
+              type: html_tag
+              tag: a
+              value: "Tab 2"
+              attributes:
+                href: "https://example.com"
+          props:
+            active: true
+        - type: component
+          component: "ui_suite_daisyui:tab"
+          slots:
+            link:
+              type: html_tag
+              tag: a
+              value: "Tab 3"
+              attributes:
+                href: "https://example.com"
+    props:
+      size: md

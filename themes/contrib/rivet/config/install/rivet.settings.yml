@@ -1,0 +1,27 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+
+# Whether to show or hide the Home link in breadcrumb trail.
+#
+# Possible values include:
+# - '0': Show Home in breadcrumb trail (Drupal’s default behavior)
+# - '1': Remove Home from breadcrumb trail
+# - '2': Remove Home when it is the only breadcrumb in trail
+hide_home_breadcrumb: '2'
+
+# Whether to enable the right border on Rivet Layout Sidebar.
+sidebar_border_right: 1
+
+# Defines the global page width used for the header and footer.
+page_width: 'rvt-container-lg'
+
+# Defines the one-column content width, which may be narrower than
+# the page width.
+content_width: 'rvt-container-md'

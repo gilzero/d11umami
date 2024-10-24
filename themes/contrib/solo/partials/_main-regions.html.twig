@@ -1,0 +1,80 @@
+{% set main_left = page.sidebar_first is not empty ? page.sidebar_first : null %}
+{% set main_middle = page.content is not empty ? page.content : null %}
+{% set main_right = page.sidebar_second is not empty ? page.sidebar_second : null %}
+
+{% if main_left or main_middle or main_right %}
+
+{% set main_regions = 0 %}
+{% if main_left %}
+  {% set main_regions = main_regions + 1 %}
+  {% set sidebar_first_outer_classes = 'region-outer main-box sidebar-box-first' %}
+  {% set sidebar_first_inner_classes = 'region-inner main-box-inner sidebar-box-first-inner fade-inner' ~ (classes_sidebar_first ? ' ' ~ classes_sidebar_first) %}
+{% endif %}
+
+{% if main_middle %}
+  {% set main_regions = main_regions + 1 %}
+  {% set content_outer_classes = 'region-outer main-box sidebar-box-main' %}
+  {% set content_inner_classes = 'region-inner main-box-inner sidebar-box-main-inner fade-inner' ~ (classes_content ? ' ' ~ classes_content) %}
+{% endif %}
+
+{% if main_right %}
+  {% set main_regions = main_regions + 1 %}
+  {% set sidebar_second_outer_classes = 'region-outer main-box sidebar-box-second' %}
+  {% set sidebar_second_inner_classes = 'region-inner main-box-inner sidebar-box-second-inner fade-inner' ~ (classes_sidebar_second ? ' ' ~ classes_sidebar_second) %}
+{% endif %}
+
+{% set main_active = 'active-main-' ~ main_regions %}
+
+{% set main_outer = 'solo-outer multi main-container' ~
+  (main_active ? ' ' ~ main_active) ~
+  (site_regions_main_border ? ' has-border') ~
+  (site_regions_main_rounded ? ' ' ~ site_regions_main_rounded) ~
+  (classes_main_container ? ' ' ~ classes_main_container)
+%}
+
+{% set main_inner = 'solo-inner solo-col main-container-inner' ~
+  (main_layout ? ' ' ~ main_layout) ~
+  (main_layout_order ? ' ' ~ main_layout_order)
+%}
+
+  <!-- Start: Main -->
+  <div id="main-container" class="{{ main_outer }}" {{ attributes_main_container }}>
+    <div id="main-container-inner" class="{{ main_inner }}">
+      <!-- Start Main Container -->
+
+    {% if main_left %}
+      <!-- Start Left SideBar -->
+      <div id="sidebar-box-first" class="{{ sidebar_first_outer_classes }}" role="complementary">
+        <div class="{{ sidebar_first_inner_classes }}" {{ attributes_sidebar_first }}>
+          {{ main_left }}
+        </div>
+      </div>
+      <!-- End: Left SideBar -->
+    {% endif %}
+
+    {% if main_middle %}
+      <!-- Start: Main Content -->
+      <div id="sidebar-box-main" class="{{ content_outer_classes }}" role="main">
+        <div class="{{ content_inner_classes }}" {{ attributes_content }}>
+          <a id="main-content" tabindex="-1"></a>
+          {{ main_middle }}
+        </div>
+      </div>
+      <!-- End: Main Content -->
+    {% endif %}
+
+    {% if main_right %}
+      <!-- Start: Right SideBar -->
+      <div id="sidebar-box-second" class="{{ sidebar_second_outer_classes }}" role="complementary">
+        <div class="{{ sidebar_second_inner_classes }}" {{ attributes_sidebar_second }}>
+          {{ main_right }}
+        </div>
+      </div>
+      <!-- End: Right SideBar -->
+    {% endif %}
+
+      <!-- End: Main Container -->
+    </div>
+  </div>
+<!-- End: Main -->
+{% endif %}

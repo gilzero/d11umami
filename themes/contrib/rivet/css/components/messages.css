@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Rivet compatibility fixes for Drupal system messages.
+ */
+
+.rvt-alert__message {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.rvt-alert__message :first-child {
+  margin-top: 0;
+}
+
+.rvt-alert__message :last-child {
+  margin-bottom: 0;
+}
+
+.rvt-alert__message ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rvt-alert__message li + li {
+  margin-top: 0.8rem;
+}
+
+/* Hide webform dismissible because Rivet messages are already dismissible. */
+.webform-message--close
+  .rvt-alert:has(.rvt-alert__dismiss)
+  .webform-message__link {
+  display: none;
+}
+
+/* Hide Rivet dismissible by default for webform messages. */
+.webform-message:not(.webform-message--close) .rvt-alert__dismiss {
+  display: none;
+}

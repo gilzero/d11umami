@@ -1,0 +1,13 @@
+/**
+* @file
+* Custom Rivet Header styles and overrides.
+*/
+
+@use '../../node_modules/rivet-core/sass/core/variables' as *;
+@use '../../node_modules/rivet-core/sass/core/mixins' as *;
+
+.rvt-c-subnav {
+  .rvt-p-bottom-xl > &:last-child {
+    margin-bottom: -$spacing-xl;
+  }
+}

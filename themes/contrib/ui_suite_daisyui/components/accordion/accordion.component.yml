@@ -1,0 +1,55 @@
+name: Accordion
+description: "Accordion is used for showing and hiding content but only one item can stay open at a time."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/accordion/"
+slots:
+  items:
+    title: Items
+    description: "Expect a list of Collapses with accordion_id filled with same value"
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: component
+          component: "ui_suite_daisyui:collapse"
+          slots:
+            title: "Click to open this one and close others"
+            content: Hello
+          props:
+            accordion_id: my-accordion-1
+            arrow: true
+            checked: true
+            attributes:
+              class: bg-base-200
+        - type: component
+          component: "ui_suite_daisyui:collapse"
+          slots:
+            title: "Click to open this one and close others"
+            content: Hello
+          props:
+            accordion_id: my-accordion-1
+            arrow: true
+            attributes:
+              class: bg-base-200
+        - type: component
+          component: "ui_suite_daisyui:collapse"
+          slots:
+            title: "Click to open this one and close others"
+            content: Hello
+          props:
+            accordion_id: my-accordion-1
+            arrow: true
+            attributes:
+              class: bg-base-200
+        - type: component
+          component: "ui_suite_daisyui:collapse"
+          slots:
+            title: "Click to open this one and close others"
+            content: Hello
+          props:
+            accordion_id: my-accordion-1
+            arrow: true
+            attributes:
+              class: bg-base-200

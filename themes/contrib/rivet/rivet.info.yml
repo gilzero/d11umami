@@ -1,0 +1,104 @@
+name: Rivet
+type: theme
+base theme: stable9
+description: An implementation of Indiana University's <a href="https://rivet.iu.edu">Rivet Design System</a> for Drupal.
+starterkit: true
+# version: VERSION
+ckeditor5-stylesheets:
+  - css/ckeditor.css
+libraries:
+  - rivet/init
+  - rivet/base
+  - rivet/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - rivet/user
+  core/drupal.dropbutton:
+    - rivet/dropbutton
+  core/drupal.dialog:
+    - rivet/dialog
+  file/drupal.file:
+    - rivet/file
+  core/drupal.progress:
+    - rivet/progress
+  block/drupal.block.admin:
+    - rivet/block-region
+  webform/webform.form:
+    - rivet/webform.form
+  webform/webform.element.date:
+    - rivet/webform.element.date
+  webform/webform.element.flexbox:
+    - rivet/webform.element.flexbox
+  webform/webform.element.help:
+    - rivet/webform.element.help
+  webform/webform.element.horizontal_rule:
+    - rivet/webform.element.horizontal_rule
+  webform/webform.element.options:
+    - rivet/webform.element.options
+  webform/webform.element.other:
+    - rivet/webform.element.other
+  webform/webform.element.rating:
+    - rivet/webform.element.rating
+  webform/webform.element.select2:
+    - rivet/webform.element.select2
+  claro/claro.jquery.ui:
+    - rivet/ui-autocomplete
+
+libraries-override:
+  webform/webform.element.color: rivet/webform.element.color
+  webform/webform.element.computed: rivet/webform.element.computed
+  webform/webform.element.term_checkboxes: rivet/webform.element.term_checkboxes
+
+core_version_requirement: ^10 | ^11
+generator: 'starterkit_theme:10.1.2'
+regions:
+  site_alert: 'Site Alert'
+  branding: 'Branding'
+  header_global: 'Header global nav'
+  header_utility: 'Header utility nav'
+  header_search: 'Header search'
+  header_local: 'Header local'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  featured: 'Featured'
+  content_top: 'Content Top'
+  sidebar: 'Sidebar'
+  breadcrumb: Breadcrumb
+  page_title: 'Page title'
+  content_above: 'Above Content'
+  content: 'Content'
+  content_below: 'Below Content'
+  content_bottom: 'Content Bottom'
+  footer_social: 'Footer social media'
+  footer_resources: 'Footer resources'
+
+# Keep config yaml files up-to-date via command line:
+# `drush config:devel-export rivet`
+config_devel:
+  install:
+    - block.block.rivet_account_menu
+    - block.block.rivet_breadcrumbs
+    - block.block.rivet_content
+    - block.block.rivet_main_menu
+    - block.block.rivet_messages
+    - block.block.rivet_page_title
+    - block.block.rivet_powered
+    - block.block.rivet_primary_admin_actions
+    - block.block.rivet_primary_local_tasks
+    - block.block.rivet_secondary_local_tasks
+    - block.block.rivet_site_branding
+    - block.block.rivet_syndicate
+    - rivet.settings
+
+  # Note: Blocks provided by Drupal core `help` and `search` modules are
+  # optional but recommended on a fresh site install.
+  optional:
+    - block.block.rivet_help
+    - block.block.rivet_search_form_narrow
+    - block.block.rivet_search_form_wide
+
+# Information added by Drupal.org packaging script on 2024-10-16
+version: '1.0.3'
+project: 'rivet'
+datestamp: 1729098491

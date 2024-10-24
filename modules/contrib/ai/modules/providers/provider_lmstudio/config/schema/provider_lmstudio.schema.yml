@@ -1,0 +1,12 @@
+provider_lmstudio.settings:
+  type: config_object
+  label: 'LM Studio Settings'
+  mapping:
+    host_name:
+      type: string
+      label: 'Host Name'
+      required: true
+    port:
+      type: integer
+      label: 'Port'
+      required: false

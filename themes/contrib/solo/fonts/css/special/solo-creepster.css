@@ -1,0 +1,4 @@
+.page-wrapper .creepster {
+  --solo-font-s: 'Creepster', cursive;
+  font-family: var(--solo-font-s) !important;
+}

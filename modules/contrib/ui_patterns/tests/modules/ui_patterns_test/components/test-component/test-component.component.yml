@@ -1,0 +1,87 @@
+name: "UI Patterns Test component"
+props:
+  type: object
+  properties:
+    string:
+      title: "String"
+      type: "string"
+    integer:
+      title: "Integer"
+      type: "integer"
+    number:
+      title: "Number"
+      type: "number"
+    url:
+      title: "URL"
+      $ref: "ui-patterns://url"
+    machine_name:
+      title: "Machine Name"
+      $ref: "ui-patterns://machine_name"
+    boolean:
+      title: "Boolean"
+      $ref: "ui-patterns://boolean"
+    links:
+      title: "Links"
+      $ref: 'ui-patterns://links'
+    enum_integer:
+      title: "Enum Integer"
+      type: "integer"
+      $ref: "ui-patterns://enum"
+      enum:
+        - 2
+        - 3
+    enum_string:
+      title: "Enum String"
+      type: "string"
+      $ref: "ui-patterns://enum"
+      enum:
+        - "2"
+        - "3"
+    enum_list :
+      title: 'Enum List'
+      $ref: 'ui-patterns://enum_list'
+      items:
+        enum:
+          - A
+          - B
+        'meta:enum':
+          A: 'Label A'
+          B: 'Label B'
+    list_string:
+      title: "List String"
+      type: "array"
+      items:
+        type: "string"
+    list_integer:
+      title: "List Integer"
+      type: "array"
+      items:
+        type: "integer"
+    list_mixed:
+      title: "List String"
+      type: "array"
+      items:
+        type: ["string", "integer"]
+    attributes_implicit:
+      title: "Attributes (implicit typing)"
+      type: object
+      patternProperties:
+        ".+":
+          anyOf:
+            - type:
+                - string
+                - number
+            - type: array
+              items:
+                anyOf:
+                  - type: number
+                  - type: string
+    attributes_ui_patterns:
+      title: "Attributes (explicit typing)"
+      "$ref": "ui-patterns://attributes"
+    attributes_class:
+      title: "Attributes when type is a PHP namespace"
+      type: 'Drupal\Core\Template\Attribute'
+slots:
+  slot:
+    title: "Slot"

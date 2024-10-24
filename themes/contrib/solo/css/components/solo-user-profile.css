@@ -1,0 +1,12 @@
+.user-profile-page .sidebar-box-main .field--name-user-picture {
+  float: left;
+  margin-right: var(--solo-px16);
+}
+
+.user-profile-page .sidebar-box-main .field--name-field-first-name,
+.user-profile-page .sidebar-box-main .field--name-field-last-name {
+  float: left;
+  margin-right: var(--solo-px8);
+  margin-bottom: 0!important;
+  font-weight: bold;
+}

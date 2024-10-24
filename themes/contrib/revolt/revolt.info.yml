@@ -1,0 +1,23 @@
+name: Revolt
+type: theme
+description: "Introducing Revolt where Elegance Meets Responsiveness"
+core_version_requirement: ^9 || ^10 || ^11
+libraries:
+  - revolt/global-styling
+  - revolt/nice-select
+  - revolt/vendor
+base theme: false
+regions:
+  top_header: "Top Header"
+  header: "Header"
+  hero_banner: "Hero banner"
+  breadcrumb: "Breadcrumb"
+  content: "Content"
+  sidebar_left: "Sidebar Left"
+  sidebar_right: "Sidebar Right"
+  footer: "Footer"
+
+# Information added by Drupal.org packaging script on 2024-09-03
+version: '1.1.2'
+project: 'revolt'
+datestamp: 1725361396

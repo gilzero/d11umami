@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Install file for the Hugging Face provider module.
+ */
+
+/**
+ * Update to use new structure for provider configuration.
+ */
+function provider_huggingface_update_10200() {
+  $config = \Drupal::configFactory()->getEditable('provider_huggingface.settings');
+  $models = $config->get('models');
+  $global_config = \Drupal::configFactory()->getEditable('ai_models.settings');
+  $global_models = $global_config->get('models');
+  foreach ($models as $operation_type => $model_ids) {
+    foreach ($model_ids as $model_id) {
+      $id = str_replace(['/', '.', '-'], '_', $model_id);
+      $global_models['huggingface'][$operation_type][$id] = [
+        'provider' => 'huggingface',
+        'model_id' => $id,
+        'huggingface_endpoint' => $model_id,
+        'operation_type' => $operation_type,
+        'label' => $model_id,
+      ];
+    }
+  }
+  $global_config->set('models', $global_models);
+  $global_config->save();
+  $config->set('models', []);
+  $config->save();
+}

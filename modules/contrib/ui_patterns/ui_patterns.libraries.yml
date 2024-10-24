@@ -1,0 +1,12 @@
+drupal.ui_patterns.actions:
+  css:
+    theme:
+      css/ui-patterns.actions.css: {}
+  js:
+    js/ui-patterns.actions.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/once
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal

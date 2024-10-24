@@ -1,0 +1,34 @@
+/**
+ * @file
+ * Fixes for off-canvas functionality, missing from IU Framework.
+ */
+
+/* Ensure left flyout works properly */
+.off-canvas.position-left {
+  transition: all 0.5s ease;
+  bottom: 0;
+  top: 50px;
+}
+.is-open-left + .position-left {
+  left: 0;
+  transition: all 0.5s ease;
+}
+
+/*
+ * Ensure flyout disappears on large screen if left open from a smaller
+ * screen orientation change.
+ */
+@media only screen and (min-width: 1025px) {
+  .is-open-right + .off-canvas {
+    transform: translate3d(300px, 0, 0);
+  }
+
+  .is-open-left {
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  .is-open-left + .position-left {
+    left: -300px;
+  }
+}

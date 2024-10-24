@@ -1,0 +1,11 @@
+{
+    "name": "drupal/danland",
+    "type": "drupal-theme",
+    "description": "Provides Danland theme",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/danland",
+    "support": {
+      "issues": "https://www.drupal.org/project/issues/danland",
+      "source": "https://git.drupalcode.org/project/danland"
+    }
+}

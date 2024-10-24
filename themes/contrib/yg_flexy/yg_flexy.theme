@@ -1,0 +1,239 @@
+<?php
+
+/**
+ * @file
+ * YG Flexy theme implementations.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function yg_flexy_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    if ($node == "slider") {
+      $variables['head_title']['title'] = "Page Not Found";
+    }
+  }
+  foreach ($variables['user']->getRoles() as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function yg_flexy_preprocess_page(&$variables) {
+  // Header Section variables.
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['linkedin'] = theme_get_setting('linkedin');
+  $variables['pinterest'] = theme_get_setting('pinterest');
+  $variables['dribbble'] = theme_get_setting('dribbble');
+  $variables['company_phone_no'] = theme_get_setting('company_phone_no');
+  $variables['company_email'] = theme_get_setting('company_email');
+
+  $bg_image_url = [];
+  $path = '';
+  $fid = theme_get_setting('bg-image', 'yg_flexy')[0];
+  for ($i = 1; $i <= $fid; $i++) {
+    if (!empty($fid)) {
+      $file = File::load($fid);
+      $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['bg_image_url'] = $path;
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function yg_flexy_preprocess_menu(&$variables, $hook) {
+  // We're doing that for main menu.
+  if ($hook == 'menu__main') {
+    // Get the current path.
+    $current_path = \Drupal::request()->getRequestUri();
+    $items = $variables['items'];
+    foreach ($items as $key => $item) {
+      // If path is current_path, set active to li.
+      if ($item['url']->toString() == $current_path) {
+        // Add active link.
+        $variables['items'][$key]['attributes']['class'] = 'active';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_comment().
+ */
+function yg_flexy_preprocess_comment(&$variables) {
+  $d = $variables['comment']->getCreatedTime();
+  $variables['created'] = date("d/m/y g:i A", $d);
+  $comment = $variables['elements']['#comment'];
+  if ($comment) {
+    $uid = $comment->getOwnerId();
+    $account = User::load($uid);
+    $variables['author'] = $account->getUsername();
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function yg_flexy_preprocess_paragraph(&$variables) {
+  $request = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  if (($node = \Drupal::routeMatch()->getParameter('node'))) {
+    if ($node->bundle() == "slider") {
+      $variables['page_title'] = "Page Not Found";
+    }
+  }
+  else {
+    $variables['page_title'] = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+  }
+  $variables['#cache']['contexts'][] = 'url';
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function yg_flexy_form_system_theme_settings_alter(&$form, FormStateInterface &$form_state, $form_id = NULL) {
+
+  // Banner Section Start.
+  $form['drushup_settings']['banner'] = [
+    '#type' => 'details',
+    '#title' => 'Banner Image Settings For User and Not Found Pages',
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  ];
+  $form['drushup_settings']['banner']['bg-image'] = [
+    '#type'            => 'managed_file',
+    '#title'           => t('Banner image'),
+    '#required'        => TRUE,
+    '#default_value'   => theme_get_setting('bg-image'),
+    '#description'     => t("The Banner image for users."),
+    '#upload_location' => 'public://',
+  ];
+
+  // Header Section Start.
+  $form['drushup_settings']['header'] = [
+    '#type' => 'details',
+    '#title' => 'Header Theme Settings',
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  ];
+
+  $form['drushup_settings']['header']['company_phone_no'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Company Phone Number'),
+    '#default_value' => theme_get_setting('company_phone_no'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  ];
+
+  $form['drushup_settings']['header']['company_email'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Company Email'),
+    '#default_value' => theme_get_setting('company_email'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  ];
+
+  $form['drushup_settings']['header']['facebook'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Facebook'),
+    '#default_value' => theme_get_setting('facebook'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  ];
+
+  $form['drushup_settings']['header']['twitter'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Twitter'),
+    '#default_value' => theme_get_setting('twitter'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  ];
+
+  $form['drushup_settings']['header']['linkedin'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Linkedin'),
+    '#default_value' => theme_get_setting('linkedin'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  ];
+
+  $form['drushup_settings']['header']['pinterest'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Pinterest'),
+    '#default_value' => theme_get_setting('pinterest'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  ];
+
+  $form['drushup_settings']['header']['dribbble'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Dribbble'),
+    '#default_value' => theme_get_setting('dribbble'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  ];
+
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function yg_flexy_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'comment_comment_form') {
+
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-default theme-btn btn-hover';
+    $form['actions']['preview']['#attributes']['class'][] = 'btn btn-default theme-btn btn-hover';
+
+  }
+  elseif ($form_id == 'comment_comment_delete_form') {
+    $form['actions']['#attributes']['class'][] = 'blog-btn';
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-default theme-btn btn-hover';
+
+  }
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function yg_flexy_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get Request Object.
+  $request = \Drupal::request();
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    if ($node->bundle() == "slider") {
+      $suggestions[] = 'page__404';
+    }
+  }
+
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, [401, 403, 404])) {
+      $suggestions[] = 'page__' . $status_code;
+    }
+  }
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function yg_flexy_theme(&$existing, $type, $theme, $path) {
+  $hooks = [];
+  $hooks['user_login_form'] = [
+    'render element' => 'form',
+    'template' => 'user-login-form',
+  ];
+  return $hooks;
+}

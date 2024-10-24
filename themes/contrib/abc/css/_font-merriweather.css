@@ -1,0 +1,8 @@
+/* Merriweather font */
+@font-face {
+	font-family: 'Merriweather';
+	font-display: swap;
+}
+html, body, .pure-g [class*="pure-u"] {
+    font-family: 'Merriweather', serif;
+}

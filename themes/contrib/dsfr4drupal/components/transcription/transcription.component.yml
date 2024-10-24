@@ -1,0 +1,35 @@
+name: DSFR - Transcription
+description: The component resembles and functions like an accordion. However, the height of this is fixed to allow users to have access to the transcription at the same time as the media.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    content:
+      type: string
+      title: Content
+      description: Display into transcription modal.
+    modal_id:
+      type: string
+      title: Modal identifier
+    modal_title:
+      type: string
+      title: Modal title
+      description: If not defined, repeats the title of the transcription.
+    title:
+      type: string
+      title: Title
+    transcription_id:
+      type: string
+      title: Transcription identifier
+  required:
+    - content
+    - title
+slots:
+  modal_content:
+    title: Transcription modal content
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.transcription

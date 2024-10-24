@@ -1,0 +1,91 @@
+/**
+ * @file
+ * Theme styling for user module.
+ */
+
+/* Visual styling for the Password strength indicator */
+.password-confirm,
+.password-strength {
+  margin-bottom: 1rem;
+}
+
+.password-strength__meter {
+  margin-top: 0.25em;
+  background-color: #ebeae4;
+}
+.password-strength__indicator {
+  background-color: #77b259;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
+.password-strength__indicator.is-weak {
+  background-color: #bd0000;
+}
+.password-strength__indicator.is-fair {
+  background-color: #f5bb17;
+}
+.password-strength__indicator.is-good {
+  background-color: #49afc7;
+}
+.password-strength__indicator.is-strong {
+  background-color: #009933;
+}
+
+.password-strength__title,
+.password-strength__match {
+  font-size: 0.875rem;
+}
+
+.password-parent {
+  overflow: hidden;
+}
+
+.password-confirm,
+.password-field,
+.password-strength,
+.password-confirm-match {
+  width: 48%;
+  float: left;
+}
+
+.password-strength,
+.password-confirm-match,
+.password-confirm + .password-confirm {
+  float: right;
+}
+
+.password-confirm-match,
+.password-confirm + .password-confirm {
+  margin-top: 0.5rem;
+}
+
+.password-suggestions {
+  padding: 0.2em 0.5em;
+  margin: 0.7em 0;
+  max-width: 34.7em;
+  border: 1px solid #b4b4b4;
+}
+.password-suggestions ul {
+  margin-bottom: 0;
+}
+
+.confirm-parent,
+.password-parent {
+  clear: left; /* LTR */
+  margin: 0;
+  overflow: hidden;
+}
+[dir="rtl"] .confirm-parent,
+[dir="rtl"] .password-parent {
+  clear: right;
+}
+
+/* Styling for the status indicator of the passwords match test.  */
+.password-confirm .ok {
+  color: #093;
+  font-weight: bold;
+}
+.password-confirm .error {
+  color: #f25b19;
+  font-weight: bold;
+}

@@ -1,0 +1,6 @@
+{
+    "name": "drupal/dsfr4drupal",
+    "type": "drupal-theme",
+    "description": "Base theme based on DSFR.",
+    "license": "GPL-2.0-or-later"
+}

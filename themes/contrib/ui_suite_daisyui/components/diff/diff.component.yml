@@ -1,0 +1,27 @@
+name: Diff
+description: "Diff component shows a side-by-side comparison of two items."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/diff/"
+slots:
+  item_1:
+    title: "Item 1"
+  item_2:
+    title: "Item 2"
+stories:
+  preview:
+    title: Preview
+    slots:
+      item_1:
+        type: html_tag
+        tag: img
+        attributes:
+          src: "https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.webp"
+      item_2:
+        type: html_tag
+        tag: img
+        attributes:
+          src: "https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.webp"
+    props:
+      attributes:
+        class: aspect-[16/9]

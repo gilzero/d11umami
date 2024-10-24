@@ -1,0 +1,72 @@
+body.dark-mode {
+  //FORMS
+  form {
+    .fieldset,
+    .fieldset__legend {
+      background-color: unset;
+      color: $text-white;
+    }
+    .form-element {
+      background-color: $white2;
+      &:hover {
+        border-color: $primary;
+        box-shadow: inset 0px 0px 3px 1px $primary;
+      }
+    }
+    .form-element--type-select {
+      background-image: $grey-arrow-down;
+      option {
+        background-color: $ck-grey;
+      }
+    }
+    .form-element--type-select-multiple {
+      option {
+        background-color: transparent;
+        color: $text-white;
+        &[selected="selected"] {
+          background-color: $primary;
+        }
+      }
+    }
+    .fieldset__description,
+    .form-item__description {
+      color: $text-lightgrey;
+      a {
+        color: $text-lightgrey;
+      }
+    }
+    // Secondary sidebar
+    .claro-details {
+      box-shadow: 0 2px 10px $white2;
+      border: 1px solid $white2;
+      > summary.claro-details__summary {
+        &:before {
+          @extend %filter-white;
+        }
+      }
+      .claro-details__wrapper  {
+        border: 1px solid $white2;
+        border: 0;
+        .claro-details__description {
+          color: $text-lightgrey;
+        }
+      }
+    }
+    .form-actions .form-wrapper {
+      input.button.form-submit {
+        @extend %button-dark-dk;
+      }
+      a,
+      button,
+      input {
+        &:nth-child(2) {
+          @extend %button-base-dk;
+        }
+      }
+    }
+  }
+  //CivicTheme
+  #edit-colors fieldset:not(.fieldgroup) > legend {
+    color: $text-white;
+  }
+}

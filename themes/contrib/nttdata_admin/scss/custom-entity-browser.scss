@@ -1,0 +1,4 @@
+// Remove pattern from page wrapper
+body .page-wrapper:after {
+    display: none;
+}

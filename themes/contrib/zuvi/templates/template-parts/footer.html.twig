@@ -1,0 +1,79 @@
+<footer class="footer full-width">
+  {% if page.footer_top %}
+    <section class="footer-top-section full-width">
+      <div class="container">
+        <div class="footer-top">
+          {{ page.footer_top }}
+        </div>
+      </div>
+    </section>
+  {% endif %}<!-- /footer-top -->
+  {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+    <section class="footer-blocks-section full-width">
+      <div class="container">
+      <div class="footer-container">        
+        {% if page.footer_first %}
+          <div class="footer-block">
+            {{ page.footer_first }}
+          </div>
+        {% endif %}
+        {% if page.footer_second %}
+          <div class="footer-block">          
+            {{ page.footer_second }}          
+          </div>
+        {% endif %}
+        {% if page.footer_third %}
+          <div class="footer-block">          
+            {{ page.footer_third }}          
+          </div>
+        {% endif %}
+        {% if page.footer_fourth %}
+          <div class="footer-block">          
+            {{ page.footer_fourth }}          
+          </div>
+        {% endif %}
+      </div><!--/footer-container -->
+      </div><!--/container -->
+    </section> <!--/footer-blocks -->
+  {% endif %} {# end if for footer one, two, three, four blocks #}
+  {% if page.footer_bottom %}
+    <section class="footer-bottom-section full-width">
+      <div class="container">
+        <div class="footer-bottom">
+          {{ page.footer_bottom }}
+        </div>
+      </div>
+    </section>
+  {% endif %}<!-- /footer-bottom -->
+ {% if copyright_text or all_icons_show %}
+  <section class="footer-bottom-last-section full-width">
+    <div class="container">
+      <div class="footer-bottom-last">
+        {% if copyright_text %}
+          <div class="copyright">
+            &copy; {{ "now"|date("Y") }} {{ site_name }}, All rights reserved.
+          </div>
+        {% endif %}
+        {% if all_icons_show %}
+          {% include '@zuvi/template-parts/social-icons.html.twig' %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</footer>
+{% if scrolltotop_on %}
+  <div class="scrolltop">
+    <div class="scrolltop-icon"><i class="icon-arrow-up"></i></div>
+  </div>
+{% endif %}
+{% include '@zuvi/template-parts/style.html.twig' %}
+{% if fontawesome_four %}
+  {{ attach_library('zuvi/fontawesome4') }}
+{% endif %}
+{% if fontawesome_five %}
+  {{ attach_library('zuvi/fontawesome5') }}
+{% endif %}
+{% if bootstrapicons %}
+  {{ attach_library('zuvi/bootstrap-icons') }}
+{% endif %}

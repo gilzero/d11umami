@@ -1,0 +1,196 @@
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+  body {
+    -webkit-text-size-adjust: none;
+  }
+  /* typography */
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"], 
+  input[type="search"] {
+    width: 100%;
+  }
+	/* Header */
+	.page-header {
+		padding: 1rem 0;
+	}
+  /* Header */
+  .mobile-menu {
+    display: flex;
+  }
+  .main-menu {
+    display: none;
+  }
+  .active-menu .main-menu {
+    display: block;
+  }
+  .menu-wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: -1000px;
+    background: transparent;
+    z-index: 40;
+    transition: all 0.4s ease;
+  }
+  .active-menu .menu-wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 320px;
+    height: 100%;
+    margin-left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 40;
+    transition: all 0.4s ease;
+  }
+  .active-menu .menu-wrap ul.main-menu {
+    overflow-y: scroll;
+  }
+  .active-menu .menu-wrap ul.main-menu > li {
+    display: block;
+    float: none;
+  }
+  .active-menu .menu-wrap ul.main-menu a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+  }
+  .active-menu .menu-wrap .dropdown-arrow {
+    position: absolute;
+    right: 10px;
+  }
+  .active-menu ul.main-menu ul.submenu {
+    position: relative;
+    display: block;
+    top: 0;
+    opacity: 1;
+  }
+  .active-menu ul.main-menu ul.submenu::before,
+  .active-menu ul.main-menu ul.submenu::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .active-menu ul.main-menu ul.submenu li {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    background: none;
+  }
+  .active-menu ul.main-menu ul.submenu li a {
+    display: block;
+    width: 100%;
+  }
+  .active-menu ul.main-menu li a {
+    border-bottom: 1px solid #434343;
+  }
+  .active-menu .close-mobile-menu {
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+  }
+  .main-menu .submenu {
+    padding-left: 2rem;
+  }
+  .main-menu .submenu .submenu {
+    position: relative;
+    left: 0;
+  }
+  /* Search */
+  .search-box-content .block {
+    width: 90%;
+  }
+  .slider-container {
+    flex-direction: column;
+  }
+  .slider-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  /* Layout */
+  .no-sidebar .main-container,
+  .sidebar-left .main-container,
+  .sidebar-right .main-container,
+  .two-sidebar .main-container {
+    grid-template-columns: 100%;
+  }
+  #sidebar-left {
+    order: 3;
+    padding: 0;
+  }
+  #sidebar-right {
+    order: 4;
+    padding: 0;
+  }
+  /* Main - Primary tabs */
+  .page-tabs {
+    font-size: 14px;
+  }
+  ul.page-tabs li a {
+    padding: 4px;
+  }
+  /* comment */
+  .comment-user-picture {
+    padding: 0 3px;
+    flex: 0 0 50px;
+  }
+  .comment-user-picture img {
+    max-width: 50px;
+  }
+  .single-comment-content-body {
+    padding: 0 5px;
+  }
+  #node-comment .indented {
+    margin-left: 20px;
+  }
+  /* Footer */
+  .footer-blocks {
+    grid-auto-flow: row;
+  }
+  /* custom content */
+  .width50,
+  .width60,
+  .width70,
+  .width80 {
+    width: 100%;
+  }
+  /* Drupal core */
+  .align-left,
+  .align-right {
+    float: none;
+    clear: both;
+    margin: 1rem auto;
+  }
+}
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

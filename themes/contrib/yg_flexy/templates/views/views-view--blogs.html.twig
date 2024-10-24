@@ -1,0 +1,14 @@
+<div class="blog-area gray-bg ptb-90">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto blog-post-items">
+        {% if rows %}
+          {{rows}}
+        {% endif %}
+        {% if pager %}
+          {{ pager }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

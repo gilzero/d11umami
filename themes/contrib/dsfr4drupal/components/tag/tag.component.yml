@@ -1,0 +1,40 @@
+name: DSFR - Tag
+description: The tag categorizes/classifies/organizes content using keywords. It helps users to search and find information easily.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    color_schema:
+      type: string
+      title: Color schema
+      description: 'Example: brown-caramel'
+    dismissible:
+      type: boolean
+      title: Is dismissible?
+      default: false
+    icon:
+      type: string
+      title: Icon
+    label:
+      type: string
+      title: Label
+    tag:
+      type: string
+      title: HTML tag
+      description: 'Depending on the tag state, the default tag is "button" or "p".'
+    url:
+      type: string
+      title: Link URL
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - sm
+  required:
+    - label
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.tag

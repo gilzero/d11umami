@@ -1,0 +1,9 @@
+status: true
+dependencies:
+  enforced:
+    module:
+      - styled_google_map_demo
+name: 'Real Estate'
+vid: real_estate
+description: 'Styled Google Map Demo Vocabulary'
+weight: 0

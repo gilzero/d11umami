@@ -1,0 +1,38 @@
+name: Zuvi
+type: theme
+base theme: stable9
+description: 'A light weight, flexible, fully responsive and multi-purpose Drupal 8, 9, 10, 11 theme by <a href="https://drupar.com" target="_blank">Drupar.com</a><br /><a href="https://drupar.com/theme/zuvi" target="_blank">Theme Page</a> | <a href="https://drupar.com/zuvi-documentation" target="_blank">Theme Documentation</a> | <a href="https://drupar.com/theme/zuvipro" target="_blank">Zuvi Pro</a>'
+package: Drupar
+# Define Drupal core requirement
+core_version_requirement: ^9 || ^10 || ^11
+# Comment version before uploading to drupal.org
+# version: 11.0.0
+# Libraries
+libraries:
+  - zuvi/global-styling # Library for all global css. These css will be loaded on every pages.
+  - zuvi/global-scripts # Library for all global js. These js will be loaded on every pages.
+regions:
+  site_branding: 'Site Branding'
+  primary_menu: 'Primary menu'
+  search_box: 'Full Page Search'
+  page_header: 'Page Header'
+  slider: Slider
+  highlighted: Highlighted
+  content: Content
+  content_top: 'Content Top'
+  content_bottom: 'Content Bottom'
+  content_home: 'Homepage Content'
+  sidebar_first: 'Sidebar Left'
+  sidebar_second: 'Sidebar Right'
+  footer_top: 'Footer Top'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_bottom: 'Footer Bottom'
+  hidden_blocks: 'Hidden Blocks'
+
+# Information added by Drupal.org packaging script on 2024-08-09
+version: '11.0.0'
+project: 'zuvi'
+datestamp: 1723205801

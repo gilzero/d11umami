@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Manage node preview styling.
+ */
+
+.node-preview-container {
+  background-color: var(--background-default-grey);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% .25rem;
+  background-image: linear-gradient(0deg,var(--border-plain-grey),var(--border-plain-grey));
+  padding: 2rem 2rem 2.25rem;
+  /* Based on DSFR header z-index. */
+  z-index: calc(var(--ground) + 751);
+}

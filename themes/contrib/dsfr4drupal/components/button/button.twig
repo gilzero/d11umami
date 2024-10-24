@@ -1,0 +1,32 @@
+{% set attributes = attributes|default(create_attribute()) %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-btn--' ~ variant) %}
+{% endif %}
+
+{% if icon %}
+  {% set attributes = attributes.addClass(icon) %}
+  {% if icon_position %}
+    {% set attributes = attributes.addClass('fr-btn--icon-' ~ icon_position) %}
+  {% endif %}
+{% endif %}
+
+{% if title %}
+  {% set attributes = attributes.setAttribute('title', title) %}
+{% endif %}
+
+{% if disabled %}
+  {% set attributes = attributes.setAttribute('disabled', true) %}
+{% endif %}
+
+{% if url or attributes.href %}
+  {% set url = url|default(attributes.href) %}
+  {% if target %}
+    {% set attributes = attributes.setAttribute('target', '_' ~ target) %}
+  {% endif %}
+  {{ link(label, url, attributes.addClass('fr-btn').removeAttribute('href')) }}
+{% else %}
+  <button{{ attributes.addClass('fr-btn') }}>
+    {{ label }}
+  </button>
+{% endif %}

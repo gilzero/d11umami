@@ -1,0 +1,38 @@
+// AT Toolbar SCSS variables.
+
+$font-family                      : Helvetica, arial, sans-serif;
+$font-size                        : 0.875rem;
+
+$tap-highlight                    : rgba(0, 0, 0, 0);
+
+$toolbar-bar-color                : #666;
+$toolbar-bar-background           : #fafafa;
+
+$drop-shadows                     : true;
+$drop-shadow-color                : rgba(0, 0, 0, 0.35);
+$border-color                     : #ccc;
+
+$tab-item-height                  : $font-size * 2;
+$toolbar-item-padding             : 0.35em 1em .2em;
+
+$tab-color                        : #666;
+$tab-active-color                 : rgba(133, 178, 61, 0.95);
+
+$tray-color                       : #fff;
+$tray-active                      : #fff;
+$tray-background                  : $tab-active-color;
+$tray-background-hover            : rgba(255, 255, 255, 0.1);
+
+$tray-vertical-background         : $tab-active-color;
+$tray-border-color                : #e6e6e6;
+
+$drop-menu-color                  : #150304;
+$drop-menu-border-color           : #e6e6e6;
+$drop-menu-background             : #f7f7f7;
+$drop-menu-background-hover       : rgba(133, 178, 61, 0.1);
+$sub-menu-indicator               : $tray-background;
+
+$toggle-orientation-color         : rgba(255, 255, 255, 0.65);;
+$toggle-orientation-active        : rgba(255, 255, 255, 0.95);;
+$toggle-orientation-border-color  : rgba(255, 255, 255, 0.65);;
+

@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Mili's theme implementation to display front page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template.
+ *
+ */
+#}
+{% include '@mili/template-parts/header.html.twig' %}
+{% include '@mili/template-parts/highlighted.html.twig' %}
+<div id="main-wrapper" class="main-wrapper">
+  <div class="container">
+    {% if front_sidebar %}
+    <div class="main-container">
+    {% endif %}
+    <main id="main" class="page-content home-content">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      {% include '@mili/template-parts/content_top.html.twig' %}
+      {{ page.content }}
+      {% include '@mili/template-parts/content_home.html.twig' %}
+      {% include '@mili/template-parts/content_bottom.html.twig' %}
+    </main>
+    {% if front_sidebar %}
+      {% include '@mili/template-parts/sidebar_left.html.twig' %}
+      {% include '@mili/template-parts/sidebar_right.html.twig' %}
+    </div> {# /.main-container #}
+    {% endif %}
+  </div> {# /.container #}
+</div>{# /main-wrapper #}
+{% include '@mili/template-parts/footer.html.twig' %}
+{% if slider_show %}
+<script>
+jQuery(document).ready(function ($) {
+  $(".js-rotating").Morphist({
+  	animateIn: 'bounceIn',
+  	animateOut: 'fadeOutLeft',
+  	speed: 5000,
+  });
+});
+</script>
+{% endif %}

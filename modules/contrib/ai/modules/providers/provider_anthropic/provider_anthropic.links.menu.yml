@@ -1,0 +1,5 @@
+provider_anthropic.settings_menu:
+  title: "Anthropic Authentication"
+  description: "Setup Anthropic"
+  route_name: provider_anthropic.settings_form
+  parent: ai.admin_providers

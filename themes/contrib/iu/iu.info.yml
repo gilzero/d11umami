@@ -1,0 +1,78 @@
+name: IU
+description: A consistent and accessible base theme compliant with the <a href="//styleguide.iu.edu" target="_blank">IU Website Style Guide</a> and <a href="//brand.iu.edu" target="_blank">IU brand guidelines</a>.
+
+type: theme
+base theme: false
+
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+
+libraries:
+  - iu/global-styling
+  - iu/iu-framework-prod
+
+libraries-extend:
+  # Improve interoperability between IU Framework and various Drupal features.
+  toolbar/toolbar:
+    - iu/toolbar
+  settings_tray/drupal.settings_tray:
+    - iu/settings-tray
+  contextual/drupal.contextual-links:
+    - iu/contextual
+  user/drupal.user:
+    - iu/user
+  core/drupal.progress:
+    - iu/progress
+  core/drupal.vertical-tabs:
+    - iu/vertical-tabs
+  system/base:
+    - iu/tabledrag
+  quickedit/quickedit:
+    - iu/quickedit
+  paragraphs/drupal.paragraphs.admin:
+    - iu/paragraphs.admin
+  core/drupal.dropbutton:
+    - iu/dropbutton
+  iu_paragraphs/iu-tabs:
+    - iu/tabs
+  diff/diff.general:
+    - iu/diff
+
+libraries-override:
+  # Override site_alert styles for IU Notices / Campus Alert compatibility.
+  site_alert/drupal.site_alert:
+    css:
+      theme:
+        css/site_alert.css: css/components/site-alert.css
+
+ckeditor_stylesheets:
+  - css/components/ckeditor.css?1
+  - css/components/image-styles.css?1
+
+ckeditor5-stylesheets:
+  - css/components/ckeditor5.css
+
+regions:
+  # 1. Standard Drupal regions
+  # 2. Custom regions for IU Framework
+  campus_alert:       'Campus alert'              # 2
+  header:             'Header'                    # 1
+  off_canvas:         'Mobile menu (off canvas)'  # 2
+  primary_menu:       'Main menu'                 # 1
+  secondary_menu:     'Secondary menu'            # 1
+  highlighted:        'Highlighted'               # 1
+  help:               'Help'                      # 1
+  section_nav:        'Section Nav'               # 2
+  breadcrumb:         'Breadcrumb'                # 1
+  page_title:         'Page Title'                # 2
+  local_tasks:        'Local Tasks'               # 2
+  content:            'Content (Constrained)'     # 1
+  content_fullwidth:  'Content (Edge-to-edge)'    # 2
+  belt_nav:           'Footer Belt: Inline Nav'   # 2
+  belt_social_media:  'Footer Belt: Social Media' # 2
+  skirt_nav:          'Footer Skirt: Column Nav'  # 2
+  skirt_connect:      'Footer Skirt: Connect'     # 2
+
+# Information added by Drupal.org packaging script on 2024-10-15
+version: '2.1.3'
+project: 'iu'
+datestamp: 1729011449

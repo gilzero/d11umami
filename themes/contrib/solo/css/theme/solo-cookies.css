@@ -1,0 +1,128 @@
+#page-wrapper .cookiesjsr-banner,
+#page-wrapper .cookiesjsr-layer div,
+#page-wrapper .cookiesjsr-layer header,
+#page-wrapper .cookiesjsr-layer footer {
+  border-color: var(--r-br, var(--r-br-b));
+  background: var(--r-bg);
+  color: var(--r-tx);
+}
+
+#page-wrapper .cookiesjsr-banner {
+  border-top: 3px solid var(--r-br);
+  border-radius: var(--solo-px4);
+}
+
+#page-wrapper .cookiesjsr-banner.active {
+  animation-timing-function: cubic-bezier(0.1, 0.9, 1, 0.1);
+  animation: animatebottom 0.6s;
+}
+
+#page-wrapper .cookiesjsr-layer,
+#page-wrapper .cookiesjsr-service-group--content {
+  animation: opac 0.8s;
+  animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#page-wrapper #cookiesjsr button,
+#page-wrapper .cookiesjsr-service--always-on {
+  text-align: center;
+  border-color: var(--r-br, var(--r-br-b));
+  color: var(--r-tx-bt, var(--r-tx));
+  background: var(--r-bg-bt, var(--r-bg));
+}
+
+#page-wrapper .cookiesjsr-layer--header button {
+  border-radius: 50%;
+  border: 1px solid var(--r-br);
+  width: calc(2 * var(--solo-px24));
+  height: calc(2 * var(--solo-px24));
+  text-indent: initial;
+  font-size: var(--solo-px12);
+  line-height: var(--solo-px12);
+  text-transform: uppercase;
+}
+
+#page-wrapper .cookiesjsr-layer {
+  border: 1px solid var(--r-br);
+  border-radius: var(--solo-px4);
+}
+
+#page-wrapper #cookiesjsr button:hover {
+  color: var(--r-tx-bt-h, var(--r-tx));
+  background: var(--r-bg-bt-h, var(--r-bg));
+  box-shadow: inset 0 0 var(--solo-px10) var(--r-br);
+}
+
+#page-wrapper .cookiesjsr-links,
+#page-wrapper .cookiesjsr-links div,
+#page-wrapper .cookiesjsr-layer div span,
+#page-wrapper .cookiesjsr-layer footer div,
+#page-wrapper .cookiesjsr-service-group--services div {
+  background: transparent !important;
+}
+
+#page-wrapper .cookiesjsr-service-group--tab {
+  text-align: left !important;
+  width: 100%;
+}
+
+#page-wrapper .cookiesjsr-service-group button {
+  border-bottom: 1px solid var(--r-br);
+}
+
+#page-wrapper .cookiesjsr-service-group.active button {
+  text-decoration: underline !important;
+  border-bottom: 4px solid var(--r-br);
+  -moz-box-shadow: inset  0 -40px 40px -40px var(--r-br);
+  -webkit-box-shadow: inset  0 -40px 40px -40px var(--r-br);
+  box-shadow: inset  0 -40px 40px -40px var(--r-br);
+}
+
+#page-wrapper .cookiesjsr-banner--links li a {
+  font-size: var(--solo-px14);
+  text-decoration: underline;
+}
+
+@media (min-width:1200px) {
+  #page-wrapper .cookiesjsr-banner--action {
+    padding-right: var(--solo-px16);
+  }
+
+}
+
+@media (max-width:1200px) {
+  #page-wrapper .cookiesjsr-banner--action {
+    flex-direction: column-reverse;
+  }
+
+}
+
+@media (min-width:768px) {
+  #page-wrapper li.cookiesjsr-service-group > div {
+    border-left: 1px solid var(--r-br);
+  }
+
+  #page-wrapper .cookiesjsr-service-group--tab {
+    width: 30%;
+  }
+
+}
+
+@media (max-width:20rem) {
+  #page-wrapper .cookiesjsr-service {
+    flex-direction: column;
+  }
+
+  #page-wrapper .cookiesjsr-service--action,
+  #page-wrapper .cookiesjsr-service--description {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  #page-wrapper .cookiesjsr-service--action {
+    align-items: flex-end;
+  }
+
+}

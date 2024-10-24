@@ -1,0 +1,10 @@
+field.formatter.settings.background_image_formatter:
+  type: mapping
+  label: 'Background image formatter'
+  mapping:
+    image_style:
+      type: string
+    background_image_output_type:
+      type: string
+    background_image_selector:
+      type: string

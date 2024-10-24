@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Adaptivetheme implementation to display a two column Layout Plugin layout.
+ *
+ * Available variables:
+ * - content: holds layout regions.
+ * - attributes: layout attributes.
+#}
+{%- set int = [] -%}
+{%- for region in ['col_1', 'col_2', 'col_3', 'col_4'] %}
+  {%- if content["#{region}"]|render|trim is not empty -%}
+    {%- set int = int|merge([region|slice(4, 1)]) -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- set layout_classes = ['l-arc--' ~ int|length, 'l-ac--' ~ int|join('-')] -%}
+{%- set element = html_element|default('div') -%}
+<{{- element }}{{ attributes.addClass(layout_classes) -}}>
+  {% if content.top|render|trim is not empty %}
+    <div class="atl__lr">
+      <div class="atl__lc atl__top">
+        {{ content.top }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="atl__lr atl__cw">
+    {% if content.col_1|render|trim is not empty %}
+      <div class="atl__lc lc-1">
+        {{ content.col_1 }}
+      </div>
+    {% endif %}
+
+    {% if content.col_2|render|trim is not empty %}
+      <div class="atl__lc lc-2">
+        {{ content.col_2 }}
+      </div>
+    {% endif %}
+
+    {% if content.col_3|render|trim is not empty %}
+      <div class="atl__lc lc-3">
+        {{ content.col_3 }}
+      </div>
+    {% endif %}
+
+    {% if content.col_4|render|trim is not empty %}
+      <div class="atl__lc lc-4">
+        {{ content.col_4 }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if content.bottom|render|trim is not empty %}
+    <div class="atl__lr">
+      <div class="atl__lc atl__bottom">
+        {{ content.bottom }}
+      </div>
+    </div>
+  {% endif %}
+</{{ element }}>

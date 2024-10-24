@@ -1,0 +1,48 @@
+name: DSFR - Segmented control
+description: The Segmented Control component allows the user to choose a view type from several available, mutually exclusive display options with a value selected by default.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    elements:
+      type: array
+      title: Elements
+      items:
+        type: object
+        properties:
+          icon:
+            type: string
+            title: Element icon class
+          label:
+            type: string
+            title: Element label
+          value:
+            type: string
+            title: Element value
+    legend_inline:
+      type: boolean
+      title: Is legend inline?
+      default: false
+    legend_invisible:
+      type: boolean
+      title: Is legend invisible?
+      default: false
+    input_id:
+      type: string
+      title: Input identifier
+    input_title:
+      type: string
+      title: Input name
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - sm
+  required:
+    - elements
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.segmented

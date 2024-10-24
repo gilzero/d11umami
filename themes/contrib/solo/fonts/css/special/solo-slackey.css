@@ -1,0 +1,4 @@
+.page-wrapper .slackey {
+  --solo-font-s: 'Slackey', cursive;
+  font-family: var(--solo-font-s) !important;
+}

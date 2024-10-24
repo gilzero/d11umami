@@ -1,0 +1,81 @@
+{#
+    /**
+     * @file
+     * Default theme implementation to display a menu.
+     *
+     * Available variables:
+     * - classes: A list of classes to apply to the top level <ul> element.
+     * - dropdown_classes: A list of classes to apply to the dropdown <ul> element.
+     * - menu_name: The machine name of the menu.
+     * - items: A nested list of menu items. Each menu item contains:
+     *   - attributes: HTML attributes for the menu item.
+     *   - below: The menu item child items.
+     *   - title: The menu link title.
+     *   - url: The menu link url, instance of \Drupal\Core\Url
+     *   - localized_options: Menu link localized options.
+     *
+     * @ingroup templates
+     *
+     * Define a custom macro that will render all menu trees.
+     */
+    #}
+
+{% import _self as menus %}
+<div class="navbar-nav">
+  {{ menus.menu_links(items, attributes, 0, menu_name) }}
+    {% macro menu_links(items, attributes, menu_level, menu_name) %}
+      {% import _self as menus %}
+        {% if items %}
+          {% if menu_level == 0 %}
+            {%
+              set menu_class = [
+              'navbar-nav',
+                'menu-' ~ menu_name|clean_class,
+              ]
+            %}
+            <ul{{ attributes.addClass(menu_class) }}>
+          {% else %}
+            <ul class="dropdown-menu active">
+          {% endif %}
+          {% for item in items %}
+            {%
+              set classes = [
+                'nav-item',
+                item.below ? 'dropdown',
+                item.is_expanded ? 'menu-item--expanded',
+                item.is_collapsed ? 'menu-item--collapsed',
+                item.in_active_trail ? 'menu-item--active-trail',
+              ]
+            %}
+            <li{{ item.attributes.addClass(classes) }}>
+              {%
+                set link_classes = [
+                  'dropdown-item',
+                  not menu_level ? 'nav-link',
+                  item.in_active_trail ? 'active',
+                  item.below ? 'dropdown-toggle',
+                  item.url.getOption('attributes').class ? item.url.getOption('attributes').class|join(' '),
+                  'nav-link-' ~ item.url.toString()|clean_class,
+                ]
+              %}
+              {% if item.below %}
+                {{ link(item.title, item.url, {class: link_classes, 'data-bs-toggle': 'dropdown', 'aria-expanded': 'false', 'aria-haspopup': 'true'}) }}
+                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+              {% else %}
+                {{ link(item.title, item.url, {class: link_classes}) }}
+              {% endif %}
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endmacro %}
+      <ul class="user_profile">
+        {% if profile_pic %}
+          <li><img class="user_dp" src="{{ file_url(userPictureUrl) }}" alt="user_picture" > </li>
+        {% else %}
+          <li class="user_dp">
+            <span>{{ userPictureUrl }}</span>
+          </li>
+        {% endif %}
+      </ul>
+</div>

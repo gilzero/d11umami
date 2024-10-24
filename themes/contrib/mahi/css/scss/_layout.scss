@@ -1,0 +1,31 @@
+/* container and page layout
+-------------------------------------------- */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* content warpper including main, sidebar */
+.main-wrapper {
+  padding: 2rem 0;
+}
+.main-container {
+  display: grid;
+  width: 100%;
+  gap: 1.6rem;
+}
+/* Main */
+.no-sidebar .main-container,
+.sidebar-left .main-container,
+.sidebar-right .main-container,
+.two-sidebar .main-container {
+  grid-template-columns: 100%;
+}
+.page-content,
+.sidebar {
+  min-width: 0px;
+}

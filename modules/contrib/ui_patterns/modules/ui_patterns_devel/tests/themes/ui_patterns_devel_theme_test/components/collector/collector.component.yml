@@ -1,0 +1,42 @@
+name: Collector errors
+description: Testing component to provide collector tests.
+group: Testing
+tags:
+  - tests
+status: experimental
+variants:
+  default:
+    title: Default
+  test:
+    title: Test
+slots:
+  test_slot_string:
+    title: Test string
+    type: string
+  test_slot_block:
+    title: Block
+    description: 'An array of something.'
+props:
+  type: object
+  properties:
+    test_prop_string_collector:
+      title: Test string
+      type: string
+    test_prop_bool:
+      title: Test bool
+      type: boolean
+    test_prop_array:
+      title: Test array
+      type: array
+stories:
+  preview:
+    title: Preview
+    slots:
+      test_slot_string: Baz
+    props:
+      variant: test
+      test_prop_string_collector: Qux
+      test_prop_array:
+        - foo
+        - bar
+      test_prop_bool: true

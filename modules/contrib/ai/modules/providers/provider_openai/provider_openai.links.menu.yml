@@ -1,0 +1,5 @@
+provider_openai.settings_menu:
+  title: "OpenAI Authentication"
+  description: "Setup OpenAi"
+  route_name: provider_openai.settings_form
+  parent: ai.admin_providers

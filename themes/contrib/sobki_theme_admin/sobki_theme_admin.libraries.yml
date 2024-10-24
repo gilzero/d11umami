@@ -1,0 +1,4 @@
+edit_form:
+  css:
+    layout:
+      assets/css/components/edit_form.css: { minified: true }

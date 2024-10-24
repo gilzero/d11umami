@@ -1,0 +1,157 @@
+name: Card
+description: "Cards are used to group and display content in a way that is easily readable."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/card/"
+variants:
+  default:
+    title: Default
+  compact:
+    title: Compact
+  side:
+    title: Side
+  responsive:
+    title: Responsive
+slots:
+  image:
+    title: Image
+    description: "Card image."
+  title:
+    title: Title
+    description: "Card title. Plain text."
+  text:
+    title: Text
+    description: "Card text."
+  actions:
+    title: Actions
+props:
+  type: object
+  properties:
+    heading_level:
+      title: "Heading level"
+      $ref: "ui-patterns://enum"
+      enum:
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      "meta:enum":
+        2: "h2 (Default)"
+        3: h3
+        4: h4
+        5: h5
+        6: h6
+    image_bottom:
+      title: "Image bottom"
+      description: "Do you want to display image at bottom of the card?"
+      $ref: "ui-patterns://boolean"
+    centered:
+      title: Centered
+      description: "Do you want to display centered card body?"
+      $ref: "ui-patterns://boolean"
+    image_full:
+      title: "Image full"
+      description: "Do you want to display image full?"
+      $ref: "ui-patterns://boolean"
+    actions_top:
+      title: "Actions top"
+      description: "Do you want to display actions on top of the card body?"
+      $ref: "ui-patterns://boolean"
+stories:
+  default:
+    title: Default
+    slots:
+      image:
+        theme: image
+        uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        alt: Shoes
+      title: Shoes!
+      text:
+        type: html_tag
+        tag: p
+        value: "If a dog chews shoes whose shoes does he choose?"
+      actions:
+        type: component
+        component: "ui_suite_daisyui:button"
+        slots:
+          label: "Buy Now"
+        props:
+          variant: primary
+    props:
+      variant: default
+      heading_level: 2
+      attributes:
+        class: ["bg-base-100", "w-96", "shadow-xl"]
+  compact:
+    title: Compact
+    slots:
+      image:
+        theme: image
+        uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        alt: Shoes
+      title: Shoes!
+      text:
+        type: html_tag
+        tag: p
+        value: "If a dog chews shoes whose shoes does he choose?"
+      actions:
+        type: component
+        component: "ui_suite_daisyui:button"
+        slots:
+          label: "Buy Now"
+        props:
+          variant: primary
+    props:
+      variant: compact
+      heading_level: 2
+      attributes:
+        class: ["bg-base-100", "w-96", "shadow-xl"]
+  side:
+    title: Side
+    slots:
+      image:
+        theme: image
+        uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        alt: Shoes
+      title: Shoes!
+      text:
+        type: html_tag
+        tag: p
+        value: "If a dog chews shoes whose shoes does he choose?"
+      actions:
+        type: component
+        component: "ui_suite_daisyui:button"
+        slots:
+          label: "Buy Now"
+        props:
+          variant: primary
+    props:
+      variant: side
+      heading_level: 2
+      attributes:
+        class: ["bg-base-100", "shadow-xl"]
+  responsive:
+    title: Responsive
+    slots:
+      image:
+        theme: image
+        uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        alt: Shoes
+      title: Shoes!
+      text:
+        type: html_tag
+        tag: p
+        value: "If a dog chews shoes whose shoes does he choose?"
+      actions:
+        type: component
+        component: "ui_suite_daisyui:button"
+        slots:
+          label: "Buy Now"
+        props:
+          variant: primary
+    props:
+      variant: responsive
+      heading_level: 2
+      attributes:
+        class: ["bg-base-100", "shadow-xl"]

@@ -1,0 +1,57 @@
+name: DSFR - Link
+description: The link allows navigation between a page and other content within the same page, the same site or externally.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    detail:
+      type: string
+      title: Detail
+      description: Additional detail, added after the label.
+    force_internal:
+      type: boolean
+      title: Force internal?
+      default: false
+      description: 'Prevent external links target "_blank" attribute adding.'
+    icon:
+      type: string
+      title: Icon
+    icon_position:
+      type: string
+      title: Icon position
+      enum:
+        - left
+        - right
+    is_external:
+      type: boolean
+      title: Is external?
+      default: false
+    label:
+      type: string
+      title: Label
+    target:
+      type: string
+      target: Target attribute
+      description: 'Without "_" on prefix. External links. External links have a target "_blank" attribute by default.'
+    title:
+      type: string
+      title: Title attribute
+    url:
+      type: string
+      title: URL
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - download
+        - lg
+        - sm
+  required:
+    - label
+    - url
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.link

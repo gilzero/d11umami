@@ -1,0 +1,12 @@
+{% set attributes = attributes|default(create_attribute()) %}
+<div{{ attributes.addClass('fr-skiplinks') }}>
+  <nav class="fr-container" role="navigation" aria-label="{{ label }}">
+    <ul class="fr-skiplinks__list">
+      {% for item in items %}
+        <li>
+          <a href="#{{ item.anchor }}" class="fr-link">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

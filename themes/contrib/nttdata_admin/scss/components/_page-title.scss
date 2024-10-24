@@ -1,0 +1,73 @@
+/**
+ * @file
+ * Page title.
+ */
+ .region-header {
+  .block-page-title-block {
+    position: relative;
+  }
+  .page-title {
+    color: $text-white;
+    width: calc(100% - 200px);
+    padding-bottom: 20px;
+  }
+}
+
+.block-system-branding-block {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  height: 100px;
+  width: auto;
+  top: 0;
+  right: 0;
+  .site-logo {
+    max-height: 60px;
+    height: 100%;
+    width: auto;
+    margin: 0.25rem;
+    img {
+      height: 100%;
+    }
+  }
+  .site-name {
+    a {
+      color: $text-white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  .site-slogan {
+    color: $text-white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.node-preview-container {
+  position: relative;
+  padding-left: 3em;
+  background-color: $black-pearl;
+  color: $text-white;
+  .node-preview-backlink {
+    @extend %button-dimensions;
+    background-color: $primary2;
+    color: $text-white;
+    text-decoration: none;
+    &:hover {
+      background-color: $primary;
+    }
+  }
+  .form-item--view-mode {
+    margin: 0.75rem 2rem;
+    .form-element {
+      padding: calc(0.75rem - 10px) calc(2.5rem - 1px) calc(0.75rem - 10px) calc(0.75rem - 3px);
+      color: $text-white;
+      background-color: $black-pearl;
+    }
+  }
+}

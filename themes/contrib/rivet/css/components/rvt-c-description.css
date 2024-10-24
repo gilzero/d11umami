@@ -1,0 +1,18 @@
+.rvt-c-description {
+  display: block;
+  color: #75838f;
+  font-size: 0.875rem;
+}
+
+.rvt-c-description--after {
+  margin-top: 0.25rem;
+}
+
+.rvt-c-description--before {
+  margin-bottom: 0.25rem;
+}
+
+.rvt-c-description .rvt-c-field {
+  display: inline;
+  margin: 0;
+}

@@ -1,0 +1,60 @@
+/**
+ * @file
+ * Accordions.
+ */
+
+ .field-group-accordion-wrapper {
+    .accordion-item {
+        color: $text-white;
+        background: $nttdata-effect;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem 1.25rem 36px;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border: 2px solid $white;
+            border-top: none;
+            border-left: none;
+            display: inline-block;
+            left: 15px;
+            top: 45%;
+            @include transform(translate(0px, -50%) rotate(45deg));
+        }
+        &.ui-accordion-header-active {
+            &::before {
+                top: 50%;
+                @include transform(translate(0px, -50%) rotate(225deg));
+            }
+        }
+        .ui-accordion-header-icon {
+            display: none;
+        }
+        a {
+            color: $text-white;
+            text-transform: initial;
+            font-weight: 700;
+        }
+        &:focus {
+            @include focus-outline;
+            color: $text-white;
+            a {
+                outline: none;
+                box-shadow: none;
+            }
+            &:before {
+                background-image: $white;
+            }
+        }
+        &:hover {
+            a {
+                color: $delightful-yellow;
+            }
+            &:before {
+                border-color: $yellow-arrow;
+            }
+        }
+    }
+ }

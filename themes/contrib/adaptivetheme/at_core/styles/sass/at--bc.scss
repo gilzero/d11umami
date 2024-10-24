@@ -1,0 +1,21 @@
+// Provide BC CSS layer.
+
+// It's possible for older themes to not have this if the upgrade as not been
+// completed properly. Load this otherwise the layout could be broken.
+.layout-type--flex-builder {
+  .page {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
+
+  .l-attribution {
+    order: 100; // Ensure this always comes last in the flex-direction order.
+  }
+}
+
+.bogus {
+  padding: 0;
+}
+
+

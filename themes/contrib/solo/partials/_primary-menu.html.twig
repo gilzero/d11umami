@@ -1,0 +1,10 @@
+
+  {% if page.primary_menu %}
+    <!-- Start: Primary Menu -->
+    <div id="primary-menu" class="solo-outer lone main-navigation-wrapper primary-menu{{ primary_menu_border ? ' has-border'}}{{ primary_menu_justify_content ? ' menu--justify'}}{{ classes_primary_menu ? ' ' ~ classes_primary_menu }}" role="navigation" aria-label="{{ 'Main Navigation'|t }}"{{ attributes_primary_menu }}>
+      <div id="primary-menu-inner" class="solo-inner solo-col solo-col-1 primary-menu-inner">
+        {{ page.primary_menu }}
+      </div>
+    </div>
+    <!-- End: Primary Menu -->
+  {% endif %}

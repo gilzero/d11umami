@@ -1,0 +1,333 @@
+// Layouts
+
+[class*="admin-theme"] {
+  #edit-layouts {
+    padding: 0;
+    overflow: hidden;
+
+    // Be very obvious with disabled forms
+    .form-disabled,
+    .layouts-column.form-disabled {
+      background: #f5f5f2;
+
+      label, h2, h3, p, div, a, span, em, li, td, th {
+        color: #737373;
+      }
+
+      *:hover {
+        background: #f5f5f2;
+      }
+
+      *:before,
+      img {
+        opacity: 0.5;
+      }
+    }
+
+    #edit-layouts-enable-container {
+      label,
+      .form-disabled {
+        background: transparent !important;
+      }
+    }
+
+    #edit-adv-options {
+      .details-wrapper {
+        padding: 0.5em 1em;
+      }
+
+      #edit-selectors details .details-wrapper {
+        padding: 0;
+      }
+
+      pre {
+        background: #f5f5f2;
+        border-top: 1px solid #ccc;
+        font-weight: 400;
+        margin: 0;
+        padding: 1em 0.5em;
+      }
+
+      // Toolbar tray, while being awesome to use, messes up responsive design so much
+      // it's unusable in the front end, however we must try to support it at least
+      // in admin.
+      @media all and (min-width: 60em) {
+        select {
+          max-width: 160px;
+        }
+      }
+
+      @media all and (min-width: 75em) {
+        select {
+          max-width: 90%;
+        }
+
+        @at-root .toolbar-tray-open #edit-layouts #edit-adv-options select {
+          max-width: 160px;
+        }
+      }
+    }
+
+    #edit-settings-max-width-value {
+      max-width: 6em;
+    }
+
+    .submit--layout {
+      background: #f7fcff;
+      border-top: 1px solid #bfbfba;
+      clear: both;
+      margin: 0;
+      padding: 1em 0.5em;
+      position: relative;
+      z-index: 10;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-size: 1em;
+      text-transform: uppercase;
+    }
+
+    .fieldset-wrapper {
+      overflow: hidden;
+    }
+
+    #edit-settings-layouts-disabled {
+      font-size: 0.923em;
+      line-height: 1.295em;
+      color: #777;
+    }
+
+    .form-item-settings-layouts-enable {
+      margin: 0;
+    }
+
+    .layouts-column {
+  	  border-top: 1px solid #bfbfba;
+  	  margin-top: 0;
+    }
+
+    .layouts-column-two {
+      details {
+        border: 0 none;
+        margin: 0;
+      }
+    }
+
+    .breakpoint-group-values {
+      margin: 0;
+      padding: 0;
+      font-size: 0.923em;
+      line-height: 1.295em;
+      color: #666;
+    }
+
+    dl {
+      dt {
+        font-weight: 700;
+      }
+
+      dd {
+        margin: 0;
+        margin-bottom: 0.5em;
+      }
+    }
+
+    .column-select-layouts {
+      clear: right;
+      border-right: 1px solid #BFBFBA;
+      margin-bottom: -99999px;
+      padding-bottom: 99999px;
+    }
+
+
+    // Layout rows
+    #edit-layout-select {
+      .draggable td {
+        padding: 1px 10px 10px;
+
+        a.tabledrag-handle {
+          top: 11.5px;
+          position: relative;
+
+          .handle {
+            height: 25px;
+          }
+        }
+      }
+
+      .form-type-select {
+        margin: 12px 0;
+        padding: 0;
+
+        label {
+          display: inline-block;
+          margin: 1px 0;
+        }
+
+        select {
+          width: 60%;
+          float: right;
+
+          &.row-weight {
+            width: auto;
+          }
+        }
+      }
+
+      @media all and (min-width: 64em) {
+        .form-type-select {
+          margin: 12px 0;
+
+          label {
+            width: 10em;
+            float: left;
+          }
+
+          select {
+            width: 30%;
+            float: left;
+          }
+        }
+
+        .layout-preview {
+           float: right;
+           width: 40%;
+        }
+      }
+
+      .layout-preview {
+        .region {
+          box-sizing: border-box;
+          text-align: left;
+          margin-bottom: 2px;
+          transition: all, .15s, ease-in;
+
+          span {
+            display: block;
+            background-color: #a4a39f;
+            font-size: 0.75rem;
+            height: 1.5em;
+            padding: 0.2em 0 0 0.45em;
+            color: #f5f5f5;
+          }
+        }
+      }
+
+      details .details-wrapper {
+        padding: 10px;
+      }
+
+      details details {
+        margin: 10px 0;
+        border: 0;
+        padding: 0 0 10px;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+
+        summary {
+          color: #0074bd;
+
+          &:focus {
+            border-top: 0;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    .row-layout-table {
+      thead th {
+        text-transform: none;
+      }
+      thead th,
+      tbody td {
+        &:last-child {
+          text-align: center;
+          width: 3em;
+        }
+      }
+    }
+
+    tr.draggable {
+      td:first-child {}
+      td:nth-child(2) {}
+
+      td.tabledrag-hide {
+        select {
+          width: auto;
+        }
+      }
+
+      .warning.tabledrag-changed {
+        @include visually-hidden;
+      }
+    }
+  }
+
+
+  #edit-suggestions {
+    background: #f7fcff;
+
+    label {
+      padding-bottom: 10px
+    }
+
+    .description {
+      @include visually-hidden-off;
+      font-size: 0.9em;
+      margin-top: 20px;
+    }
+
+    ol,
+    .suggestions-ts-name-desc {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+
+  #edit-options,
+  .form-item-layout-suggestion,
+  #edit-no-mq-css {
+    clear: both;
+  }
+
+
+  #edit-options {
+    .form-disabled {
+      background: #f7f7f7;
+      margin: 0;
+      padding: 1em 0;
+    }
+  }
+
+
+  #edit-max-width {
+    [class*="form-item-settings-max-width-"] {
+      display: inline-block;
+      margin-right: 3px;
+    }
+  }
+
+
+  @media (max-width: 48em) {
+    #edit-layouts {
+      .form-radios label {
+        max-width: 120px;
+      }
+    }
+  }
+
+  @media (max-width: 56em) {
+    #edit-default-layout {
+      float: none;
+      clear: both;
+      margin: 0;
+      padding: 0 0 10px;
+    }
+  }
+}
+

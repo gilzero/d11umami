@@ -1,0 +1,15 @@
+{% set label = attributes['value'] %}
+{% set remove_value = remove_value ?? true %}
+
+{% if remove_value %}
+  {% set attributes = attributes.removeAttribute('value') %}
+{% endif %}
+
+{% if not attributes.hasAttribute('title') %}
+  {% set attributes = attributes.setAttribute('title', label) %}
+{% endif %}
+
+<button{{ attributes }}>
+  {{ label|raw }}
+</button>
+{{ children }}

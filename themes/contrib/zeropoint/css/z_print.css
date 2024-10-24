@@ -1,0 +1,76 @@
+/* print.css */
+
+body {
+  margin: 1em;
+  background-color: #fff;
+}
+[dir="rtl"] body {
+  direction: rtl;
+}
+th {
+  text-align: left; /* LTR */
+  color: #006;
+  border-bottom: 1px solid #ccc;
+}
+[dir="rtl"] th {
+  text-align: right;
+}
+tr:nth-child(odd) {
+  background-color: #ddd;
+}
+tr:nth-child(even) {
+  background-color: #fff;
+}
+td {
+  padding: 5px;
+}
+
+a:hover, a:active, 
+a:link, a:visited {
+	color: #000;
+}
+.comment .title {
+	padding: 0;
+	margin: 0;
+}
+.node--view-mode-teaser,
+#body_bg {
+  border: none;
+}
+.field-item .pure-img, 
+.colorbox .pure-img {
+	clear: both;
+	margin: .5em;
+}
+
+#toolbar,
+.region-page-top,
+.region-topreg,
+.region-primary-menu,
+.region-secondary-menu,
+.region-tertiary-menu,
+.region-breadcrumb,
+#slider,
+.sections,
+#sidebar-left,
+#sidebar-right,
+.region-help,
+.region-highlighted,
+.region-footer,
+.region-page_bottom,
+.field--name-user-picture a img,
+.by, .pager__items,
+.a2a_kit,
+.action-links,
+.tabs,
+.feed-icon,
+.messages,
+.book-navigation,
+.print-links,
+.node__links,
+.field--type-comment,
+.field--name-field-nofollow,
+.field--type-file
+{ 
+	display: none;
+}

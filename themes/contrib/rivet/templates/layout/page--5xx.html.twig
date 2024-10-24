@@ -1,0 +1,96 @@
+{% extends 'page--4xx.html.twig' %}
+
+{% block error_title %}
+Server error
+{% endblock %}
+
+{% block error_message %}
+Sorry, but the web server ran into an error while processing your request. If the problem persists, contact us using one of the methods below.
+{% endblock %}
+
+{% block error_icon %}
+{% include('@rivet/../images/icons/rvt-sticker-browser-with-x.svg') %}
+{% endblock %}
+
+
+{% block error_actions %}
+<div class="rvt-container-sm">
+
+  <!-- **********************************************************
+      Suggested links
+  *********************************************************** -->
+
+  <div class="rvt-row rvt-m-top-xl">
+
+    <!-- ******************************************************
+        Link
+    ******************************************************* -->
+
+    <div class="rvt-cols-6-md">
+      <div class="rvt-card rvt-card--clickable rvt-card--raised [ rvt-m-bottom-lg ]">
+        <div class="rvt-card__body">
+          <h2 class="rvt-card__title">
+            <a href="#0">Submit a help ticket</a>
+          </h2>
+          <div class="rvt-card__content [ rvt-flow ]">
+            <p>Send a help request to our support staff using ServiceNow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ******************************************************
+        Link
+    ******************************************************* -->
+
+    <div class="rvt-cols-6-md">
+      <div class="rvt-card rvt-card--clickable rvt-card--raised [ rvt-m-bottom-lg ]">
+        <div class="rvt-card__body">
+          <h2 class="rvt-card__title">
+            <a href="#0">Open an issue on GitHub</a>
+          </h2>
+          <div class="rvt-card__content [ rvt-flow ]">
+            <p>If you have a GitHub account, you can file a bug report.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ******************************************************
+        Link
+    ******************************************************* -->
+
+    <div class="rvt-cols-6-md">
+      <div class="rvt-card rvt-card--clickable rvt-card--raised [ rvt-m-bottom-lg ]">
+        <div class="rvt-card__body">
+          <h2 class="rvt-card__title">
+            <a href="#0">Get help on Slack</a>
+          </h2>
+          <div class="rvt-card__content [ rvt-flow ]">
+            <p>Administrators are active on Slack answering questions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ******************************************************
+        Link
+    ******************************************************* -->
+
+    <div class="rvt-cols-6-md">
+      <div class="rvt-card rvt-card--clickable rvt-card--raised [ rvt-m-bottom-lg ]">
+        <div class="rvt-card__body">
+          <h2 class="rvt-card__title">
+            <a href="#0">Call our support center</a>
+          </h2>
+          <div class="rvt-card__content [ rvt-flow ]">
+            <p>For after-hours help requests, call our support center.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

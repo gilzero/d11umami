@@ -1,0 +1,309 @@
+/* Responsive view
+------------------------- */
+.view-in-mobile {
+  display: block;
+}
+.view-in-desktop {
+  display: none;
+}
+/* Color and background
+--------------------------------- */
+.color-primary {
+  color: var(--primary);
+}
+.color-secondary {
+  color: var(--secondary);
+}
+.color-dark {
+  color: var(--dark);
+}
+.color-light {
+  color: var(--light);
+}
+.bg-light {
+  background-color: var(--light);
+}
+/* Text align
+------------------------- */
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.center {
+  margin: 0 auto;
+}
+/* Content direction
+------------------------- */
+.rtl {
+  direction: rtl;
+}
+.ltr {
+  direction: ltr;
+}
+/* Font Size
+------------------------- */
+.font-small {
+  font-size: 0.75rem;
+}
+.font-medium {
+  font-size: 1.25rem;
+}
+.font-large {
+  font-size: 1.5rem;
+}
+.font-2x {
+  font-size: 2rem;
+}
+.font-3x {
+  font-size: 2.5rem;
+}
+.font-4x {
+  font-size: 3rem;
+}
+.font-5x {
+  font-size: 4rem;
+}
+.font-6x {
+  font-size: 5rem;
+}
+.font-7x {
+  font-size: 6rem;
+}
+.font-8x {
+  font-size: 7rem;
+}
+/* image icons size
+------------------------- */
+.image-s {
+  max-height: 1rem;
+}
+.image-m {
+  max-height: 1.5rem;
+}
+.image-l {
+  max-height: 2rem;
+}
+.image-xl {
+  max-height: 3rem;
+}
+.image-x2 {
+  max-height: 4rem;
+}
+.image-x3 {
+  max-height: 5rem;
+}
+.image-x4 {
+  max-height: 6rem;
+}
+.image-x5 {
+  max-height: 7rem;
+}
+.image-x6 {
+  max-height: 8rem;
+}
+.image-x7 {
+  max-height: 9rem;
+}
+.image-x8 {
+  max-height: 10rem;
+}
+/* container width
+------------------------- */
+.width30,
+.width40,
+.width50,
+.width60,
+.width70,
+.width80,
+.width90 {
+  width: 100%;
+  clear: both;
+  display: block;
+}
+/* Empty space
+------------------------- */
+.w20px {
+  display: inline-block;
+  width: 20px;
+}
+.w30px {
+  display: inline-block;
+  width: 30px;
+}
+.w40px {
+  display: inline-block;
+  width: 40px;
+}
+.w50px {
+  display: inline-block;
+  width: 50px;
+}
+.w70px {
+  display: inline-block;
+  width: 70px;
+}
+.w100px {
+  display: inline-block;
+  width: 100px;
+}
+.spacer,
+.spacer-x2,
+.spacer-x3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.spacer {
+  padding: 1rem 0;
+}
+.spacer-x2 {
+  padding: 2rem 0;
+}
+.spacer-x3 {
+  padding: 3rem 0;
+}
+/* sections
+--------------------------------- */
+.section,
+.section-small,
+.section-large,
+.unit {
+  display: block;
+  width: 100%;
+}
+.section {
+  padding: 2rem 0;
+}
+.section-small {
+  padding: 1rem 0;
+}
+.section-large {
+  padding: 3rem 0;
+}
+/* Responsive Columns
+------------------------- */
+.flex,
+.grid,
+.items,
+.columns,
+.grid-container,
+.flex-container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+.flex,
+.flex-container,
+.columns {
+  display: flex;
+}
+.columns,
+.flex-container {
+  flex-wrap: wrap;
+}
+.grid {
+  display: grid;
+}
+.grid-container {
+  display: grid;
+  grid-auto-flow: column;
+}
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+.item img {
+  display: block;
+}
+/* Create Equal width columns with no gap */
+.column {
+  flex: 1 1 250px;
+  margin: 0;
+  padding: 0;
+}
+/* flex-items width */
+.w10,
+.w20,
+.w30,
+.w40,
+.w50,
+.w60,
+.w70,
+.w80,
+.w90 {
+  flex: 1 1 100%;
+}
+/* Flex and grid properties
+--------------------------------- */
+.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.v-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.h-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.vh-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.gap {
+  gap: 1rem;
+}
+.gap-2x {
+  gap: 2rem;
+}
+.gap-small {
+  gap: 0.5rem;
+}
+.no-gap {
+  gap: 0;
+}
+/* Flex properties */
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.no-wrap {
+  flex-wrap: nowrap;
+}
+/* Color
+------------------------- */
+.theme-color {
+  color: var(--color-primary);
+}
+.white-color {
+  color: #ffffff;
+}

@@ -1,0 +1,4 @@
+.page-wrapper .ceviche-one {
+  --solo-font-s: 'Ceviche One', cursive;
+  font-family: var(--solo-font-s) !important;
+}

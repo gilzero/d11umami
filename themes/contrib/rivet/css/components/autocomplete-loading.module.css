@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Visual styles for animated throbber.
+ *
+ * @see autocomplete.js
+ */
+
+.js input.form-autocomplete {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' fill='none' stroke='%23E2E7E9' stroke-width='11' r='44'%3E%3C/circle%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.5rem) center; /* LTR */
+  background-size: 20px 20px;
+}
+.js[dir="rtl"] input.form-autocomplete {
+  background-position: 0.5rem center;
+}
+.js input.form-autocomplete.ui-autocomplete-loading {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' fill='none' stroke='%23006298' stroke-width='11' r='44' stroke-dasharray='210 70' style='animation-play-state: running; animation-delay: 0s;'%3E%3CanimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='0.8s' values='0 50 50;360 50 50' keyTimes='0;1' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animateTransform%3E%3C/circle%3E%3C/svg%3E");
+  background-position: calc(100% - 0.5rem) center; /* LTR */
+}
+.js[dir="rtl"] input.form-autocomplete.ui-autocomplete-loading {
+  background-position: 0.5rem center;
+}

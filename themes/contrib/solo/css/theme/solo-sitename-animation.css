@@ -1,0 +1,281 @@
+@keyframes animateSiteName {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+
+}
+
+#page-wrapper .animate-solo-electric-surge,
+#header.animate-site-electric-surge a.site-name-link,
+#page-wrapper.animate-title-electric-surge .page-title-text,
+#page-wrapper.animate-title-electric-surge .page-title-text span {
+  background: linear-gradient(45deg, #f44336, #e91e63, #9c27b0, #673ab7, #3f51b5, #2196f3, #87ceeb, #00bcd4, #00ffff, #009688, #4caf50, #8bc34a, #8bc34a, #8bc34a, #8bc34a, #4caf50, #009688, #00ffff, #00bcd4, #87ceeb, #2196f3, #3f51b5, #673ab7, #9c27b0, #e91e63, #f44336);
+}
+
+#page-wrapper .animate-solo-aurora-wave,
+#header.animate-site-aurora-wave a.site-name-link,
+#page-wrapper.animate-title-aurora-wave .page-title-text,
+#page-wrapper.animate-title-aurora-wave .page-title-text span {
+  background: linear-gradient(45deg, #5f2879, #5f2879, #4c3c83, #00418d, #00418d, #0075a5, #00c2de, #00c2de, #16d1c8, #fad717, #fad717, #95e569, #00ba71, #00ba71, #4daa36, #fa8901, #fa8901, #fc614a, #f43545, #f43545, #d93658, #ccc, #ccc, #d93658, #f43545, #f43545, #fc614a, #fa8901, #fa8901, #4daa36, #00ba71, #00ba71, #95e569, #fad717, #fad717, #16d1c8, #00c2de, #00c2de, #0075a5, #00418d, #00418d, #4c3c83, #5f2879, #5f2879);
+}
+
+#page-wrapper .animate-solo-dreamy-bloom,
+#header.animate-site-dreamy-bloom a.site-name-link,
+#page-wrapper.animate-title-dreamy-bloom .page-title-text,
+#page-wrapper.animate-title-dreamy-bloom .page-title-text span {
+  background: linear-gradient(45deg, #095fab, #25abe8, #57d75b, #ccc, #57d75b, #25abe8, #095fab);
+}
+
+#page-wrapper .animate-solo-echo-pulse,
+#header.animate-site-echo-pulse a.site-name-link,
+#page-wrapper.animate-title-echo-pulse .page-title-text,
+#page-wrapper.animate-title-echo-pulse .page-title-text span {
+  background: linear-gradient(45deg, #d0e4f7, #73b1e7, #e2d40b, #539fe1, #87bcea, #539fe1, #e2d40b, #73b1e7, #d0e4f7);
+}
+
+#page-wrapper .animate-solo-gravity-defy,
+#header.animate-site-gravity-defy a.site-name-link,
+#page-wrapper.animate-title-gravity-defy .page-title-text,
+#page-wrapper.animate-title-gravity-defy .page-title-text span {
+  background: linear-gradient(45deg, #009688, #2196f3, #ffeb3b, #ff9800, #f44336, #9c27b0, #9c27b0, #f44336, #ff9800, #ffeb3b, #2196f3, #009688);
+}
+
+#page-wrapper .animate-solo-gliding-letters,
+#header.animate-site-gliding-letters a.site-name-link,
+#page-wrapper.animate-title-gliding-letters .page-title-text,
+#page-wrapper.animate-title-gliding-letters .page-title-text span {
+  background: linear-gradient(45deg, #f44336, #9c27b0, #2196f3, #4caf50, #ff9800, #ff9800, #4caf50, #2196f3, #9c27b0, #f44336);
+}
+
+#page-wrapper .animate-solo-holographic-spin,
+#header.animate-site-holographic-spin a.site-name-link,
+#page-wrapper.animate-title-holographic-spin .page-title-text,
+#page-wrapper.animate-title-holographic-spin .page-title-text span {
+  background: linear-gradient(45deg, #ffb5ba, #ff796c, #ce4676, #87ceeb, #00bcd4, #2196f3, #00bcd4, #87ceeb, #ce4676, #ff796c, #ffb5ba);
+}
+
+#page-wrapper .animate-solo-moonlight-dance,
+#header.animate-site-moonlight-dance a.site-name-link,
+#page-wrapper.animate-title-moonlight-dance .page-title-text,
+#page-wrapper.animate-title-moonlight-dance .page-title-text span {
+  background: linear-gradient(45deg, #8db600, #6bc026, #27a64c, #009688, #0085a1, #0077b3, #0085a1, #009688, #27a64c, #6bc026, #8db600);
+}
+
+#page-wrapper .animate-solo-mystic-fade,
+#header.animate-site-mystic-fade a.site-name-link,
+#page-wrapper.animate-title-mystic-fade .page-title-text,
+#page-wrapper.animate-title-mystic-fade .page-title-text span {
+  background: linear-gradient(45deg, #ffb7a5, #e25822, #f6a600, #dcd300, #8c52ff, #34d2eb, #dcd300, #f6a600, #e25822, #ffb7a5);
+}
+
+#page-wrapper .animate-solo-phoenix-rise,
+#header.animate-site-phoenix-rise a.site-name-link,
+#page-wrapper.animate-title-phoenix-rise .page-title-text,
+#page-wrapper.animate-title-phoenix-rise .page-title-text span {
+  background: linear-gradient(45deg, #008856, #00a1c2, #9065ca, #9a4eae, #9a4eae, #9065ca, #00a1c2, #008856);
+}
+
+#page-wrapper .animate-solo-quantum-leap,
+#header.animate-site-quantum-leap a.site-name-link,
+#page-wrapper.animate-title-quantum-leap .page-title-text,
+#page-wrapper.animate-title-quantum-leap .page-title-text span {
+  background: linear-gradient(45deg, #ffb5ba, #be0032, #f38400, #f3c300, #f3c300, #f38400, #be0032, #ffb5ba);
+}
+
+#page-wrapper .animate-solo-serene-float,
+#header.animate-site-serene-float a.site-name-link,
+#page-wrapper.animate-title-serene-float .page-title-text,
+#page-wrapper.animate-title-serene-float .page-title-text span {
+  background: linear-gradient(45deg, #bd1e24, #e97600, #f6c700, #007256, #0067a7, #964f8e, #964f8e, #0067a7, #007256, #f6c700, #e97600, #bd1e24);
+}
+
+#page-wrapper .animate-solo-shimmering-wave,
+#header.animate-site-shimmering-wave a.site-name-link,
+#page-wrapper.animate-title-shimmering-wave .page-title-text,
+#page-wrapper.animate-title-shimmering-wave .page-title-text span {
+  background: linear-gradient(45deg, #5f2879, #00418d, #00c2de, #fad717, #00ba71, #fa8901, #f43545, #fa8901, #00ba71, #fad717, #00c2de, #00418d, #5f2879);
+}
+
+#page-wrapper .animate-solo-solar-flare,
+#header.animate-site-solar-flare a.site-name-link,
+#page-wrapper.animate-title-solar-flare .page-title-text,
+#page-wrapper.animate-title-solar-flare .page-title-text span {
+  background: linear-gradient(45deg, #fad717, #fa8901, #f43545, #fa8901, #fad717);
+}
+
+#page-wrapper .animate-solo-starry-glide,
+#header.animate-site-starry-glide a.site-name-link,
+#page-wrapper.animate-title-starry-glide .page-title-text,
+#page-wrapper.animate-title-starry-glide .page-title-text span {
+  background: linear-gradient(45deg, #aebcbf, #6e7774, #cefc00, #ccc, #444, #ccc, #cefc00, #6e7774, #aebcbf);
+}
+
+#page-wrapper .animate-solo-swirling-entrance,
+#header.animate-site-swirling-entrance a.site-name-link,
+#page-wrapper.animate-title-swirling-entrance .page-title-text,
+#page-wrapper.animate-title-swirling-entrance .page-title-text span {
+  background: linear-gradient(45deg, #aebcbf, #6e7774, #ff6a00, #ccc, #444, #ccc, #ff6a00, #6e7774, #aebcbf);
+}
+
+#page-wrapper .animate-solo-timeless-flip,
+#header.animate-site-timeless-flip a.site-name-link,
+#page-wrapper.animate-title-timeless-flip .page-title-text,
+#page-wrapper.animate-title-timeless-flip .page-title-text span {
+  background: linear-gradient(45deg, #aebcbf, #6e7774, #ffee00, #ccc, #444, #ccc, #ffee00, #6e7774, #aebcbf);
+}
+
+#page-wrapper .animate-solo-cosmic-drift,
+#header.animate-site-cosmic-drift a.site-name-link,
+#page-wrapper.animate-title-cosmic-drift .page-title-text,
+#page-wrapper.animate-title-cosmic-drift .page-title-text span {
+  background: linear-gradient(45deg, #aebcbf, #6e7774, #46f900, #ccc, #444, #ccc, #46f900, #6e7774, #aebcbf);
+}
+
+#page-wrapper .animate-solo-velvet-slide,
+#header.animate-site-velvet-slide a.site-name-link,
+#page-wrapper.animate-title-velvet-slide .page-title-text,
+#page-wrapper.animate-title-velvet-slide .page-title-text span {
+  background: linear-gradient(45deg, #aebcbf, #6e7774, #00fcde, #ccc, #444, #ccc, #00fcde, #6e7774, #aebcbf);
+}
+
+#page-wrapper .animate-solo-whispering-shadows,
+#header.animate-site-whispering-shadows a.site-name-link,
+#page-wrapper.animate-title-whispering-shadows .page-title-text,
+#page-wrapper.animate-title-whispering-shadows .page-title-text span {
+  background: linear-gradient(45deg, #aebcbf, #6e7774, #00c9fc, #ccc, #444, #ccc, #00c9fc, #6e7774, #aebcbf);
+}
+
+#page-wrapper .animate-solo-whisper-fade,
+#header.animate-site-whisper-fade a.site-name-link,
+#page-wrapper.animate-title-whisper-fade .page-title-text,
+#page-wrapper.animate-title-whisper-fade .page-title-text span {
+  background: linear-gradient(45deg, #aebcbf, #6e7774, #e000f4, #ccc, #444, #ccc, #e000f4, #6e7774, #aebcbf);
+}
+
+#page-wrapper .animate-solo-sapphire-zoom,
+#header.animate-site-sapphire-zoom a.site-name-link,
+#page-wrapper.animate-title-sapphire-zoom .page-title-text,
+#page-wrapper.animate-title-sapphire-zoom .page-title-text span {
+  background: linear-gradient(45deg, #aebcbf, #6e7774, #f7001c, #0f52ba, #444, #3b4d57, #0f52ba, #f7001c, #6e7774, #aebcbf);
+}
+
+#page-wrapper .animate-solo-rhythmic-slide,
+#header.animate-site-rhythmic-slide a.site-name-link,
+#page-wrapper.animate-title-rhythmic-slide .page-title-text,
+#page-wrapper.animate-title-rhythmic-slide .page-title-text span {
+  background: linear-gradient(45deg, #6a1b9a, #ab47bc, #ce93d8, #e1bee7, #f8bbd0, #f48fb1, #f06292, #ec407a, #ff80ab, #ff4081, #f50057, #c51162, #c51162, #f50057, #ff4081, #ff80ab, #ec407a, #f06292, #f48fb1, #f8bbd0, #e1bee7, #ce93d8, #ab47bc, #6a1b9a);
+}
+
+#page-wrapper .animate-solo-zen-rotation,
+#header.animate-site-zen-rotation a.site-name-link,
+#page-wrapper.animate-title-zen-rotation .page-title-text,
+#page-wrapper.animate-title-zen-rotation .page-title-text span {
+  background: linear-gradient(45deg, #30267a, #0085a1, #870074, #ce4676, #ce4676, #870074, #0085a1, #30267a);
+}
+
+#page-wrapper .animate-solo-aurora-wave,
+#page-wrapper .animate-solo-dreamy-bloom,
+#page-wrapper .animate-solo-echo-pulse,
+#page-wrapper .animate-solo-electric-surge,
+#page-wrapper .animate-solo-gravity-defy,
+#page-wrapper .animate-solo-gliding-letters,
+#page-wrapper .animate-solo-holographic-spin,
+#page-wrapper .animate-solo-moonlight-dance,
+#page-wrapper .animate-solo-mystic-fade,
+#page-wrapper .animate-solo-phoenix-rise,
+#page-wrapper .animate-solo-quantum-leap,
+#page-wrapper .animate-solo-serene-float,
+#page-wrapper .animate-solo-shimmering-wave,
+#page-wrapper .animate-solo-solar-flare,
+#page-wrapper .animate-solo-starry-glide,
+#page-wrapper .animate-solo-swirling-entrance,
+#page-wrapper .animate-solo-timeless-flip,
+#page-wrapper .animate-solo-cosmic-drift,
+#page-wrapper .animate-solo-velvet-slide,
+#page-wrapper .animate-solo-whispering-shadows,
+#page-wrapper .animate-solo-whisper-fade,
+#page-wrapper .animate-solo-sapphire-zoom,
+#page-wrapper .animate-solo-rhythmic-slide,
+#page-wrapper .animate-solo-zen-rotation,
+#header.animate-site-aurora-wave a.site-name-link,
+#header.animate-site-dreamy-bloom a.site-name-link,
+#header.animate-site-echo-pulse a.site-name-link,
+#header.animate-site-electric-surge a.site-name-link,
+#header.animate-site-gravity-defy a.site-name-link,
+#header.animate-site-gliding-letters a.site-name-link,
+#header.animate-site-holographic-spin a.site-name-link,
+#header.animate-site-moonlight-dance a.site-name-link,
+#header.animate-site-mystic-fade a.site-name-link,
+#header.animate-site-phoenix-rise a.site-name-link,
+#header.animate-site-quantum-leap a.site-name-link,
+#header.animate-site-serene-float a.site-name-link,
+#header.animate-site-shimmering-wave a.site-name-link,
+#header.animate-site-solar-flare a.site-name-link,
+#header.animate-site-starry-glide a.site-name-link,
+#header.animate-site-swirling-entrance a.site-name-link,
+#header.animate-site-timeless-flip a.site-name-link,
+#header.animate-site-cosmic-drift a.site-name-link,
+#header.animate-site-velvet-slide a.site-name-link,
+#header.animate-site-whispering-shadows a.site-name-link,
+#header.animate-site-whisper-fade a.site-name-link,
+#header.animate-site-sapphire-zoom a.site-name-link,
+#header.animate-site-rhythmic-slide a.site-name-link,
+#header.animate-site-zen-rotation a.site-name-link,
+#page-wrapper.animate-title-aurora-wave .page-title-text,
+#page-wrapper.animate-title-dreamy-bloom .page-title-text,
+#page-wrapper.animate-title-echo-pulse .page-title-text,
+#page-wrapper.animate-title-electric-surge .page-title-text,
+#page-wrapper.animate-title-gravity-defy .page-title-text,
+#page-wrapper.animate-title-gliding-letters .page-title-text,
+#page-wrapper.animate-title-holographic-spin .page-title-text,
+#page-wrapper.animate-title-moonlight-dance .page-title-text,
+#page-wrapper.animate-title-mystic-fade .page-title-text,
+#page-wrapper.animate-title-phoenix-rise .page-title-text,
+#page-wrapper.animate-title-quantum-leap .page-title-text,
+#page-wrapper.animate-title-serene-float .page-title-text,
+#page-wrapper.animate-title-shimmering-wave .page-title-text,
+#page-wrapper.animate-title-solar-flare .page-title-text,
+#page-wrapper.animate-title-starry-glide .page-title-text,
+#page-wrapper.animate-title-swirling-entrance .page-title-text,
+#page-wrapper.animate-title-timeless-flip .page-title-text,
+#page-wrapper.animate-title-cosmic-drift .page-title-text,
+#page-wrapper.animate-title-velvet-slide .page-title-text,
+#page-wrapper.animate-title-whispering-shadows .page-title-text,
+#page-wrapper.animate-title-whisper-fade .page-title-text,
+#page-wrapper.animate-title-sapphire-zoom .page-title-text,
+#page-wrapper.animate-title-rhythmic-slide .page-title-text,
+#page-wrapper.animate-title-zen-rotation .page-title-text,
+#page-wrapper.animate-title-aurora-wave .page-title-text span,
+#page-wrapper.animate-title-dreamy-bloom .page-title-text span,
+#page-wrapper.animate-title-echo-pulse .page-title-text span,
+#page-wrapper.animate-title-electric-surge .page-title-text span,
+#page-wrapper.animate-title-gravity-defy .page-title-text span,
+#page-wrapper.animate-title-gliding-letters .page-title-text span,
+#page-wrapper.animate-title-holographic-spin .page-title-text span,
+#page-wrapper.animate-title-moonlight-dance .page-title-text span,
+#page-wrapper.animate-title-mystic-fade .page-title-text span,
+#page-wrapper.animate-title-phoenix-rise .page-title-text span,
+#page-wrapper.animate-title-quantum-leap .page-title-text span,
+#page-wrapper.animate-title-serene-float .page-title-text span,
+#page-wrapper.animate-title-shimmering-wave .page-title-text span,
+#page-wrapper.animate-title-solar-flare .page-title-text span,
+#page-wrapper.animate-title-starry-glide .page-title-text span,
+#page-wrapper.animate-title-swirling-entrance .page-title-text span,
+#page-wrapper.animate-title-timeless-flip .page-title-text span,
+#page-wrapper.animate-title-cosmic-drift .page-title-text span,
+#page-wrapper.animate-title-velvet-slide .page-title-text span,
+#page-wrapper.animate-title-whispering-shadows .page-title-text span,
+#page-wrapper.animate-title-whisper-fade .page-title-text span,
+#page-wrapper.animate-title-sapphire-zoom .page-title-text span,
+#page-wrapper.animate-title-rhythmic-slide .page-title-text span,
+#page-wrapper.animate-title-zen-rotation .page-title-text span {
+  background-size: 200% 200%;
+  animation: animateSiteName 10s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+}

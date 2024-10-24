@@ -1,0 +1,36 @@
+name: DSFR - Summary
+description: The summary allows users to preview content and navigate between different sections of a page.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    items:
+      type: array
+      title: Items
+      items:
+        type: object
+        properties:
+          attributes:
+            title: Item attributes
+            description: 'Expected \Drupal\Core\Template\Attribute object (to pick up "href" attribute).'
+          title:
+            type: string
+            title: Item title
+          url:
+            type: string
+            title: Item URL
+    title_id:
+      type: string
+      title: Title identifier
+    title_tag:
+      type: string
+      title: Title HTML tag
+      default: p
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.summary

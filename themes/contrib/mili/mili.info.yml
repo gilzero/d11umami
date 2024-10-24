@@ -1,0 +1,36 @@
+name: Mili
+type: theme
+base theme: stable9
+description: 'Mili is a light weight drupal 9, 10 and 11 theme by <a href="https://drupar.com" target="_blank">Drupar.com</a>'
+package: Drupar
+core_version_requirement: ^9 || ^10 || ^11
+# version: 11.0.2
+# Libraries
+libraries:
+  - mili/global-styling
+  - mili/global-scripts
+regions:
+  site_branding: 'Site Branding'
+  primary_menu: 'Primary menu'
+  search_box: 'Full Page Search'
+  page_header: 'Page Header'
+  page_top: 'Page Top'
+  page_bottom: 'Page Bottom'
+  highlighted: Highlighted
+  content: Content
+  content_top: 'Content Top'
+  content_bottom: 'Content Bottom'
+  content_home: 'Homepage Content'
+  sidebar_first: 'Sidebar Left'
+  sidebar_second: 'Sidebar Right'
+  footer_top: 'Footer Top'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_bottom: 'Footer Bottom'
+  hidden_blocks: 'Hidden Blocks'
+# Information added by Drupal.org packaging script on 2024-09-20
+version: '11.0.2'
+project: 'mili'
+datestamp: 1726820535

@@ -1,0 +1,182 @@
+name: Steps
+description: "Steps can be used to show a list of steps in a process."
+group: Navigation
+links:
+  - "https://daisyui.com/components/steps/"
+variants:
+  default:
+    title: Default
+  vertical:
+    title: Vertical
+  vertical_responsive:
+    title: "Vertical responsive"
+slots:
+  items:
+    title: Items
+    description: "Expect a list of steps"
+props:
+  type: object
+  properties:
+    scrollable:
+      title: "Scrollable wrapper?"
+      description: "With scrollable wrapper."
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            data_content: "?"
+            text: Start
+          props:
+            variant: default
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            data_content: "!"
+            text: "Step 1"
+          props:
+            variant: secondary
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            data_content: ✓
+            text: "Step 2"
+          props:
+            variant: secondary
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            data_content: ✕
+            text: "Step 3"
+          props:
+            variant: secondary
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            data_content: ★
+            text: "Step 4"
+          props:
+            variant: secondary
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 5"
+          props:
+            empty_data_content: true
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            data_content: ●
+            text: "Step 6"
+          props:
+            variant: accent
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 7"
+          props:
+            variant: accent
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 8"
+          props:
+            variant: default
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 9"
+          props:
+            variant: error
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 10"
+          props:
+            variant: error
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 11"
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 12"
+          props:
+            variant: default
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 13"
+          props:
+            variant: warning
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 14"
+          props:
+            variant: warning
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 15"
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 16"
+          props:
+            variant: neutral
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 17"
+          props:
+            variant: neutral
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 18"
+          props:
+            variant: neutral
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 19"
+          props:
+            variant: neutral
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 20"
+          props:
+            variant: neutral
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 21"
+          props:
+            variant: neutral
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 22"
+          props:
+            variant: neutral
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: "Step 23"
+          props:
+            variant: neutral
+        - type: component
+          component: "ui_suite_daisyui:step"
+          slots:
+            text: End
+          props:
+            variant: neutral
+    props:
+      scrollable: true

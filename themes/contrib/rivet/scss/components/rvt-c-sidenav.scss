@@ -1,0 +1,111 @@
+/**
+* @file
+* Custom Rivet Sidenav styles and overrides.
+*/
+
+@use '../../node_modules/rivet-core/sass/core/variables' as *;
+@use '../../node_modules/rivet-core/sass/core/mixins' as *;
+
+.rvt-sidenav + .rvt-sidenav {
+  margin-top: 4rem;
+}
+
+.rvt-c-sidenav {
+  // Override .rvt-dropdown__menu-heading for sidenav.
+  &__heading {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  // Support external menu link icon.
+  &__icon-external-link {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+
+  /**
+  * Rivet <> Drupal integration for <nolink> and <button>.
+  */
+  &__nolink {
+    flex-grow: 1;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    text-align: left;
+    color: #243142;
+    font-size: 0.875rem;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    color: #243142;
+    font-size: 0.875rem;
+
+    &:focus {
+      z-index: 100;
+    }
+  }
+
+  &__button-text {
+    flex-grow: 1;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  &__button-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5rem;
+    color: #a0abb4;
+    background: transparent;
+
+    .rvt-c-sidenav__button[aria-expanded="true"] & {
+      transform: rotate(180deg);
+    }
+
+    .rvt-c-sidenav__button:hover & {
+      color: #004f80;
+      background-color: #edfafd;
+    }
+
+    .rvt-c-sidenav__button:hover &,
+    .rvt-c-sidenav__button:focus & {
+      outline: 0.125rem solid #328bb8;
+      outline-offset: 0.125rem;
+    }
+
+    .rvt-c-sidenav__button:focus-visible & {
+      outline: 0;
+    }
+  }
+}
+
+a.rvt-c-sidenav__button,
+button.rvt-c-sidenav__button {
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+
+  &:hover {
+    text-decoration: underline;
+    color: #006298;
+  }
+
+  &:focus-visible {
+    outline: 0.125rem solid #328bb8;
+    outline-offset: 0.125rem;
+  }
+}

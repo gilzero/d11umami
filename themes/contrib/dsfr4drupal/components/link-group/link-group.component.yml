@@ -1,0 +1,29 @@
+name: DSFR - Link (group)
+description: The link group allows you to group several link components together.
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    items:
+      type: array
+      title: Items
+      description: 'Each item expects properties of the "dsfr4drupal:link" component.'
+      items:
+        type: object
+    variant:
+      type: string
+      title: Component variant
+      enum:
+        - bordered
+        - download
+        - inline
+        - lg
+        - sm
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.link

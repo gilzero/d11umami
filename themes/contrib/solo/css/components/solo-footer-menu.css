@@ -1,0 +1,166 @@
+.navigation__menubar-footer {
+  justify-content: center;
+}
+
+.navigation__menubar-footer li a {
+  padding: var(--solo-px6) var(--solo-px12);
+}
+
+.footer-menu-first {
+  margin: var(--solo-px16) auto;
+}
+
+.footer-menu-second>* {
+  margin: var(--solo-px16) auto;
+}
+
+.navigation__menubar-footer li {
+  display: inline-flex;
+}
+
+.copyright-inner p {
+  font-size: var(--solo-px14);
+}
+
+.copyright-inner.solo-col-1 p {
+  text-align: center;
+}
+
+/* label form in the footer */
+.footer-menu-inner form label {
+  text-align: left;
+  float: left;
+}
+
+.sm-icons a > span .svg-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.sm-icons a > span {
+  font-family: inherit !important;
+  transition: 0.4s ease;
+  width: 1.875rem;
+  height: 1.875rem;
+  margin: 0 var(--solo-px5);
+  display: inline-block;
+  background-repeat: no-repeat;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+.sm-icons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sm-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: var(--solo-px4);
+}
+
+.sm-icons a > span:hover {
+  transform: scale(1.3);
+}
+
+.sm-icons a > .fa-ext {
+  font-weight: normal;
+  font-size: var(--solo-px16);
+}
+
+.sm-icons .facebook svg {
+  fill: var(--solo-fb);
+}
+
+.sm-icons .twitter svg {
+  fill: var(--solo-tw);
+}
+
+.sm-icons .pinterest svg {
+  fill: var(--solo-pi);
+}
+
+.sm-icons .linkedin svg {
+  fill: var(--solo-in);
+}
+
+.sm-icons .instagram svg {
+  fill: var(--solo-st);
+}
+
+.sm-icons .youtube svg {
+  fill: var(--solo-tb);
+}
+
+.sm-icons .drupal svg {
+  fill: var(--solo-dr);
+}
+
+.sm-icons .mastodon svg {
+  fill: var(--solo-md);
+}
+
+.sm-icons .rss svg {
+  fill: var(--solo-ss);
+}
+
+.sm-icons .email svg {
+  fill: var(--solo-em);
+}
+
+.sm-icons .reddit svg {
+  fill: var(--solo-it);
+}
+
+.sm-icons .snapchat svg {
+  fill: var(--solo-sn);
+}
+
+.sm-icons .whatsapp svg {
+  fill: var(--solo-up);
+}
+
+.sm-icons .tiktok svg {
+  fill: var(--solo-tk);
+}
+
+.sm-icons .telegram svg {
+  fill: var(--solo-tl);
+}
+
+.sm-icons .threads svg {
+  fill: var(--solo-th);
+}
+
+/* Size for icons */
+@media (min-width:26rem) {
+  .sm-icons.sm-icons-medium a > span {
+    background-size: calc(2 * var(--solo-px20));
+    width: calc(2 * var(--solo-px20));
+    height: calc(2 * var(--solo-px20));
+  }
+
+  .sm-icons.sm-icons-large a > span {
+    background-size: var(--solo-px64);
+    width: var(--solo-px64);
+    height: var(--solo-px64);
+  }
+
+}
+
+@media (max-width:62rem) {
+  .sm-icons.sm-icons-large a {
+    margin: var(--solo-px8) var(--solo-px16);
+  }
+
+  .sm-icons.sm-icons-medium a {
+    margin: var(--solo-px6) var(--solo-px12);
+  }
+
+}

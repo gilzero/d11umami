@@ -1,0 +1,109 @@
+/*
+ * Blocks
+ * Common styling for all blocks regions
+ */
+ .block-section {
+	position: relative;
+}
+.block-title {
+  position: relative;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0 0 14px 0;
+  padding: 0 0 0.5rem 0;
+}
+.block-section .block-title::before,
+.block-section .block-title::after,
+.homepage-content .block-title::before,
+.homepage-content .block-title::after,
+.footer-block .block-title::before,
+.footer-block .block-title::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  height: 1px;
+  background: var(--pink-gradient);
+}
+.block-section .block-title::before,
+.homepage-content .block-title::before,
+.footer-block .block-title::before {
+  width: 40px;
+  bottom: 0;
+}
+.block-section .block-title::after,
+.homepage-content .block-title::after,
+.footer-block .block-title::after {
+  width: 60px;
+  bottom: -4px;
+}
+
+/* Search Block region */
+.search-box-content .block-title::before,
+.search-box-content .block-title::after {
+  position: absolute;
+  content: "";
+  background: var(--pink-gradient);
+  height: 1px;
+  width: 100%;
+  left: 0;
+}
+.search-box-content .block-title::before {
+  bottom: 0;
+  -webkit-transform: scaleX(0.1);
+  -ms-transform: scaleX(0.1);
+  transform: scaleX(0.1);
+}
+.search-box-content .block-title::after {
+  bottom: -4px;
+  -webkit-transform: scaleX(0.2);
+  -ms-transform: scaleX(0.2);
+  transform: scaleX(0.2);
+}
+/* List style for sidebar and footer block regions */
+.sidebar ul,
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+.sidebar ul ul,
+.footer ul ul,
+.sidebar ol ol,
+.footer ol ol {
+  margin: 0;
+  padding: 0 0 0.25em 1em;
+}
+.sidebar ul li,
+.footer ul li {
+  list-style: none;
+}
+.sidebar li,
+.footer li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+ul ul li:last-child,
+ol ol li:last-child {
+  border-bottom: none;
+}
+/* Highlighted Region */
+.highlighted {
+  background-color: var(--bg-content);
+  width: 100%;
+}
+.region-highlighted {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.highlighted .block {
+  position: relative;
+  margin: 0;
+  padding: 1.5em 0;
+}

@@ -1,0 +1,10 @@
+{% if attributes is not empty %}
+<div{{ attributes }}>
+{% endif %}
+
+ {{ title_suffix.contextual_links }}
+ {{ content }}
+
+{% if attributes is not empty %}
+</div>
+{% endif %}

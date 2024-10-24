@@ -1,0 +1,25 @@
+// PAGER
+.pager {
+  .pager__item {
+    a {
+      color: $text-dark;
+      &:hover {
+        background: $primary2;
+        color: $text-white;
+        &:before,
+        &:after {
+          @extend %filter-white;
+        }
+      }
+    }
+    &--active {
+      a {
+        color: $text-white;
+        background: $nttdata-blue-effect;
+      }
+    }
+    &.pager__item--mini {
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+name: DSFR - Follow
+description: 'These components allow the user to have access to complementary services of the site: registration for the proposed newsletter(s), as well as links to the social network accounts of the site. entity.'
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    newsletter_description:
+      type: string
+      title: Newsletter description
+    newsletter_form:
+      type: string
+      title: Newsletter form
+    newsletter_items:
+      type: array
+      title: Items
+      description: 'Each item expects properties of the "dsfr4drupal:button-group" component.'
+      items:
+        type: object
+    newsletter_items_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Newsletter items attributes
+    social_items:
+      type: array
+      title: Items
+      description: 'Each item expects properties of the "dsfr4drupal:button-group" component.'
+      items:
+        type: object
+    social_items_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Social items attributes
+    social_title:
+      type: string
+      title: Social title
+      description: 'By default: "Follow us <br />on social media", or the translated string in another language.'
+    title_tag:
+      type: string
+      title: Title HTML tag
+      default: h2
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.follow

@@ -1,0 +1,24 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set type = type|default('info') %}
+
+{% if variant %}
+  {% set attributes = attributes.addClass('fr-alert--' ~ variant) %}
+{% endif %}
+
+<div{{ attributes.addClass(['fr-alert', 'fr-alert--' ~ type]) }}>
+  {% if title is not empty %}
+    <div class="fr-alert__title">{{ title }}</div>
+  {% endif %}
+
+  {{ content }}
+
+  {% if has_button %}
+    {% set button_label = button_label|default('Hide message'|t) %}
+    {% set button_title = button_title|default('Hide message'|t) %}
+
+    <button class="fr-btn--close fr-btn" title="{{ button_title }}" onclick="const alert = this.parentNode; alert.parentNode.removeChild(alert)">
+      {{ button_label }}
+    </button>
+    {{ attach_library('dsfr4drupal/component.button') }}
+  {% endif %}
+</div>

@@ -1,0 +1,39 @@
+diff --git a/css/dsfr-theme-tac.css b/css/dsfr-theme-tac.css
+index a32deed9..e30b118f 100644
+--- a/css/dsfr-theme-tac.css
++++ b/css/dsfr-theme-tac.css
+@@ -1126,2 +1126,34 @@ outline-offset: 2px;
+   z-index: var(--focus-z-index);
+ }
++
++.tac_visually-hidden {
++  position: absolute;
++  width: 1px;
++  height: 1px;
++  padding: 0;
++  margin: -1px;
++  overflow: hidden;
++  clip: rect(0, 0, 0, 0);
++  white-space: nowrap; /* added line */
++  border: 0;
++}
++
++#tarteaucitronRoot div#tarteaucitronSave {
++  text-align: right;
++}
++
++#tarteaucitronRoot #tarteaucitronServices #tarteaucitronSaveButton {
++  font-size: inherit;
++  cursor: pointer;
++  background: var(--bf500);
++  color: var(--w);
++  padding: 0.5rem 1.5rem;
++  line-height: 1.5rem;
++  min-height: 2.5rem;
++  margin: .5rem 0;
++}
++
++#tarteaucitronRoot #tarteaucitronSaveButton.tarteaucitronAllow::before,
++#tarteaucitronRoot #tarteaucitronSaveButton.tarteaucitronAllow::after {
++  display: none;
++}

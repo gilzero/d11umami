@@ -1,0 +1,124 @@
+/*
+ * Drupal message
+ */
+ .message {
+  position: relative;
+  margin: 20px 0;
+  padding: 14px 14px 14px 64px;
+  color: #ffffff;
+  text-shadow: none;
+}
+.message p:last-of-type {
+  margin: 0;
+}
+.message a,
+.message a:visited {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.message em {
+  color: #ffffff;
+  font-style: italic;
+  border-bottom: 1px dotted #ffffff;  
+}
+.message-status {
+  background: #89ad32;
+}
+.message-status::before {
+  content: "\e022";
+  background-color: #759625;
+}
+.message-error {
+  background: #c94d1c;
+}
+.message-error::before {
+  content: "\e021";
+  background-color: #b3461b;
+}
+.message-warning {
+  background: #cd5a0a;
+}
+.message-warning::before {
+  content: "\e020";
+  background-color: #a44707;
+}
+.message-info {
+  background: #5a82a1;
+}
+.message-info::before {
+  content: "\e018";
+  background-color: #3e6584;
+}
+.message::before {
+  font-family: "thex";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 53px;
+  text-align: center;
+  height: 100%;
+  line-height: 53px;
+  font-size: 30px;
+}
+.status-message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+/* Pager
+------------------------*/
+.pager {
+  width: 100%;
+  margin-top: 1rem;
+}
+.pager-items {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.pager-item {
+  display: grid;
+  place-content: center;
+  color: var(--bold-color);
+  height: 44px;
+  min-width: 44px;
+  border-radius: 4px;
+  padding: 0;
+  line-height: 1;
+}
+.pager-item a {
+  display: grid;
+  place-content: center;
+  background-color: #ffffff;
+  border-radius: 4px;
+  height: 44px;
+  min-width: 44px;
+  border: 1px dashed var(--color-primary);
+}
+.pager-item a:hover,
+.pager-item-active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: 1px solid var(--color-primary);
+}
+/* pager full */
+.pager__item a {
+  background-color: #ffffff;
+  color: var(--bold-color);
+  padding: 0 2px;
+}
+.pager .is-active {
+  border-color: var(--color-primary);
+}
+.pager__item a:hover,
+.pager__item.is-active a {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}

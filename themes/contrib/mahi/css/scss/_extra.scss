@@ -1,0 +1,48 @@
+/* primary color components */
+.primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+/* secondary color components */
+.secondary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
+/* dark components */
+.dark,
+.sidebar .block {
+  background-color: var(--dark);
+  color: var(--dark-text-color);
+}
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.sidebar .block h1,
+.sidebar .block h2,
+.sidebar .block h3,
+.sidebar .block h4 {
+  color: #ffffff;
+}
+.dark a {
+  color: var(--color-secondary);
+}
+.dark a:hover {
+  color: var(--color-primary);
+}
+.dark button,
+.dark .button,
+.dark .button-primary,
+.dark .button-secondary {
+  color: #ffffff;
+}
+.dark button:hover,
+.dark .button:hover,
+.dark .button-primary:hover,
+.dark .button-secondary:hover {
+  color: #ffffff;
+}
+.dark.box,
+.dark.service {
+  box-shadow: none;
+}

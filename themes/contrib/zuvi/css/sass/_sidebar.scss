@@ -1,0 +1,41 @@
+/* Sidebar */
+.sidebar {
+  width: 100%;
+}
+.region-sidebar-first,
+.region-sidebar-second {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/* Sidebar -> Sidebar block */
+.sidebar .block {
+  background-color: var(--bg-content);
+  color: var(--color-text);
+  padding: 1rem;  
+  border-radius: 4px;  
+}
+.sidebar a {
+  color: var(--sidebar-link-color);
+}
+.sidebar a:hover {
+  color: var(--color-primary);
+}
+/* Sidebar -> Form */
+.sidebar input[type="text"],
+.sidebar input[type="email"],
+.sidebar input[type="url"],
+.sidebar input[type="password"],
+.sidebar input[type="search"] {
+  background: transparent;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  outline: none;
+}
+.sidebar input[type="text"]:focus,
+.sidebar input[type="email"]:focus,
+.sidebar input[type="url"]:focus,
+.sidebar input[type="password"]:focus,
+.sidebar input[type="search"]:focus {
+  border: 1px solid var(--color-primary);
+}

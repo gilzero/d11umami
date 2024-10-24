@@ -1,0 +1,259 @@
+# French translation of DSFR theme.
+
+msgid ""
+msgstr ""
+
+msgid "DSFR - Global settings"
+msgstr "DSFR - Paramètres globaux"
+
+msgid "DSFR - Header settings"
+msgstr "DSFR - Paramètres de l'entête"
+
+msgid "DSFR - Footer settings"
+msgstr "DSFR - Paramètres du pied de page"
+
+msgid "DSFR - Form settings"
+msgstr "DSFR - Paramètres de formulaire"
+
+msgid "Select the type of container that will be used on your site."
+msgstr "Sélectionnez le type de conteneur qui sera utilisé sur votre site."
+
+msgid "Fluid"
+msgstr "Fluide"
+
+msgid "Use mega menu"
+msgstr "Utiliser le méga menu"
+
+msgid "Use the mega menu rendering instead of the drop-down menu offered by the <a href=\":url\" lang=\"fr\">DSFR</a>."
+msgstr "Utilise le rendu en méga menu au lieu du menu déroulant proposé par le <a href=\":url\" lang=\"fr\">DSFR</a>."
+
+msgid "Logo text"
+msgstr "Texte du logo"
+
+msgid "Displays text under the logo of the Marianne."
+msgstr "Affiche le texte sous le logo Marianne."
+
+msgid "Enable mourning mode"
+msgstr "Activer le mode en deuil"
+
+msgid "Displays the Marianne in mourning."
+msgstr "Affiche la Marianne en deuil."
+
+msgid ""
+"Logo operator is an image displayed to the right "
+"of the Marianne logo in site's header."
+msgstr ""
+"Le logo opérateur est une image placée à droite "
+"du logo Marianne dans l’entête du site."
+
+msgid "Theme"
+msgstr "Thème"
+
+msgid "Automatic detection"
+msgstr "Détection automatique"
+
+msgid "Thème sombre"
+msgstr "Dark theme"
+
+msgid "Light theme"
+msgstr "Thème clair"
+
+msgctxt "DSFR container"
+msgid "Default"
+msgstr "Par défaut"
+
+msgid "Select the theme to use for your site. <a href=\":url\" lang=\"fr\">More informations</a>."
+msgstr "Sélectionner le thème à utiliser pour votre site. <a href=\":url\" lang=\"fr\">Plus d'informations</a>."
+
+msgid "Enable display settings"
+msgstr "Activer les paramètres d'affichage"
+
+msgid "Uses the user theme selection functionality offered by the <a href=\":url\" lang=\"fr\">DSFR</a>."
+msgstr "Utilise la fonctionnalité de sélection du thème par l'utilisateur proposé par le <a href=\":url\" lang=\"fr\">DSFR</a>."
+
+msgid "Disable browser validation of form fields"
+msgstr "Désactiver la validation par le navigateur des champs du formulaire"
+
+msgid "Disables browser validation of form fields. <a href=\":url\">More informations</a>."
+msgstr "Désactive la validation par le navigateur des champs du formulaire. <a href=\":url\">Plus d'informations</a>."
+
+msgid "Enable \"Show password\" feature"
+msgstr "Activer la fonctionnalité \"Afficher le mot de passe\""
+
+msgid "Display the \"Show password\" button. Allowing users to read their password in clear text."
+msgstr "Affiche le bouton \"Afficher le mot passe\", permettant à l'utilisateur de lire son mot de passe en clair."
+
+msgid "Display settings"
+msgstr "Paramètres d'affichage"
+
+msgid "Use system settings"
+msgstr "Utilise les paramètres système"
+
+msgid "Choose a theme to customize the appearance of the site."
+msgstr "Choisissez un thème pour personnaliser l'apparence du site."
+
+msgid "Logo operator"
+msgstr "Logo opérateur"
+
+msgid "Homepage - @text"
+msgstr "Page d'accueil - @text"
+
+msgid "Back to the homepage - @text"
+msgstr "Retour à l'accueil du site - @text"
+
+msgid "Homepage - @service_title - @text"
+msgstr "Page d'accueil - @service_title - @text"
+
+msgid "Back to the homepage - @service_title - @text"
+msgstr "Retour à l'accueil du site - @service_title - @text"
+
+msgid "Close search"
+msgstr "Fermer la recherche"
+
+msgid "Close menu"
+msgstr "Fermer le menu"
+
+msgid "Quick access"
+msgstr "Accès rapide"
+
+msgid "To main content"
+msgstr "Vers le contenu principal"
+
+msgid "Go to menu"
+msgstr "Aller au menu"
+
+msgid "Go to footer"
+msgstr "Aller au pied de page"
+
+msgid "View breadcrumb"
+msgstr "Voir le fil d'Ariane"
+
+msgid "You are here:"
+msgstr "Vous êtes ici :"
+
+msgid "Hide message"
+msgstr "Masquer le message"
+
+msgid "Default title"
+msgstr "Titre par défaut"
+
+msgid "Default content."
+msgstr "Contenu par défaut."
+
+msgid "Our partners"
+msgstr "Nos partenaires"
+
+msgid "Footer description"
+msgstr "Description du pied de page"
+
+msgid "Allows you to display presentation text in the footer."
+msgstr "Permet d'afficher un texte de présentation au sein du footer."
+
+msgid "Copyright notice"
+msgstr "Mention de la licence"
+
+msgid "Defines a copyright notice which will appear at the bottom of the page."
+msgstr "Définit une mention de la licence qui apparaitra en bas de page."
+
+msgid ""
+"<p>Unless otherwise stated, all text on this site is under "
+"<a href=\":url\" rel=\"nofollow noopener\" title=\"etalab-2.0 license - Open in new window\" target=\"_blank\">etalab-2.0 license</a>.</p>"
+msgstr ""
+"<p>Sauf mention contraire, tous les contenus de ce site sont sous "
+"<a href=\":url\" rel=\"nofollow noopener\" title=\"licence etalab-2.0 - Ouvrir dans une nouvelle fenêtre\" target=\"_blank\">licence etalab-2.0</a>.</p>"
+
+msgid "Accept all"
+msgstr "Accepter tout"
+
+msgid "Accept all cookies"
+msgstr "Accepter tous les cookies"
+
+msgid "Refuse all"
+msgstr "Refuser tout"
+
+msgid "Refuse all cookies"
+msgstr "Refuser tous les cookies"
+
+msgid "Personalize"
+msgstr "Personnaliser"
+
+msgid "Personalize cookies"
+msgstr "Personnaliser les cookies"
+
+msgid "See more details"
+msgstr "Voir plus de détails"
+
+msgid "Confirm my choices"
+msgstr "Confirmer mes choix"
+
+msgid "Manage consent"
+msgstr "Gestion du consentement"
+
+msgid "Enlarge"
+msgstr "Agrandir"
+
+msgid "Enlarge transcription"
+msgstr "Agrandir la transcription"
+
+msgid "Transcription"
+msgstr "Transcription"
+
+msgid "FranceConnect"
+msgstr "FranceConnect"
+
+msgid "FranceConnect+"
+msgstr "FranceConnect+"
+
+msgid "Identify with"
+msgstr "Identifiez-vous avec"
+
+msgid "In this section"
+msgstr "Dans cette section"
+
+msgid "Step @current on @total"
+msgstr "Étape @current sur @total"
+
+msgid "Next step:"
+msgstr "Étape suivante :"
+
+msgid "Select a language"
+msgstr "Sélectionner une langue"
+
+msgid "@code - @label"
+msgstr "@code - @label"
+
+msgid "Page not found"
+msgstr "Page non trouvée"
+
+msgid "Show"
+msgstr "Afficher"
+
+msgid "Show password"
+msgstr "Afficher le mot de passe"
+
+msgid "Error 404"
+msgstr "Erreur 404"
+
+msgid "The page you are looking for cannot be found. We apologize for the inconvenience caused."
+msgstr "La page que vous cherchez est introuvable. Excusez-nous pour la gène occasionnée."
+
+msgid ""
+"If you typed the web address into the browser, verify that it is correct. "
+"The page may no longer be available.<br />In this case, to continue your visit you can consult our home page, "
+"or carry out a search with our search engine at the top of the page.<br />Otherwise contact us so that we can redirect you to the correct information."
+msgstr ""
+"Si vous avez tapé l'adresse web dans le navigateur, vérifiez qu'elle est correcte. "
+"La page n’est peut-être plus disponible.<br />Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil, "
+"ou effectuer une recherche avec notre moteur de recherche en haut de page.<br />Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information."
+
+msgid "Copy to clipboard"
+msgstr "Copier dans le presse papier"
+
+msgid "Address copied to clipboard."
+msgstr "Adresse copiée dans le presse papier."
+
+msgid "Main menu"
+msgstr "Menu principal"
+
+msgid "Follow us <br />on social media"
+msgstr "Suivez-nous <br />sur les réseaux sociaux"

@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for a file input element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+<div class="rvt-file" data-rvt-file-input="singleFileInput">
+<input{{attributes}} data-rvt-file-input-button="{{ attributes.id }}-button" aria-describedby="{{ attributes.id }}-description">
+  <label for="{{ attributes.id }}" class="rvt-button">
+    <span>Upload a file</span>
+    <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="M2 1h8.414L14 4.586V15H2V1Zm2 2v10h8V7.5H7.5V3H4Zm5.5 0v2.5H12v-.086L9.586 3H9.5Z"></path></svg>
+  </label>
+  <div class="rvt-file__preview" data-rvt-file-input-preview="{{ attributes.id }}" id="{{ attributes.id }}-description">
+    No file selected
+  </div>
+  {{ children }}
+</div>

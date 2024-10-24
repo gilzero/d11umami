@@ -1,0 +1,125 @@
+@media screen and (min-width: 64.0625em) {
+  main {
+    padding-top: 50px;
+  }
+}
+
+article {
+  /* clearfix for floated images */
+  overflow: hidden;
+}
+
+.section.help {
+  padding: 0 !important;
+}
+
+.section.help .alert:last-child {
+  margin-bottom: 1.4rem;
+}
+
+@media screen and (max-width: 64em) {
+  .section.help [data-drupal-messages-fallback]+.alert {
+    /* first alert */
+    margin-top: 1.4rem;
+  }
+}
+
+.section.breadcrumb-trail {
+  padding: 0;
+}
+
+#content.bg-none {
+  margin-top: 0;
+}
+
+.page-title h1,
+.page-title .title {
+  margin-bottom: 1rem;
+}
+
+.bg-image.parallax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-nav-label {
+  color: #900;
+  font-size: .875rem;
+  font-weight: 700;
+  display: block;
+  letter-spacing: .04rem;
+  text-transform: uppercase;
+  font-family: BentonSansBold, Arial, sans-serif;
+}
+
+.section-nav-label+ul {
+  margin-top: 1rem;
+}
+
+.panel-text>:last-child {
+  margin-bottom: 0;
+}
+
+/* sticky footer */
+html,
+body,
+.dialog-off-canvas-main-canvas {
+  height: 100%;
+}
+
+body,
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#footer {
+  flex-shrink: 0;
+}
+
+/* Fix links colors inside text accordion on dark bg. Fixes IU/framework-issues #178 */
+.accordion-content a:not(.button),
+.bg-dark .accordion-content a:not(.button),
+.bg-secondary.bg-dark .accordion-content a:not(.button) {
+  color: #006298;
+}
+
+.accordion-content a:not(.button):hover,
+.accordion-content a:not(.button):focus,
+.bg-dark .accordion-content a:not(.button):hover,
+.bg-dark .accordion-content a:not(.button):focus,
+.bg-secondary.bg-dark .accordion-content a:not(.button):hover,
+.bg-secondary.bg-dark .accordion-content a:not(.button):focus {
+  color: #01426A;
+}
+
+/* Make primary button pass WCAG AA color contrast */
+.button.primary {
+  background-color: #1479bd;
+  color: #fff;
+}
+
+.ck.ck-content .button.primary:focus,
+.ck.ck-content .button.primary:hover {
+  background-color: #1377b9;
+}
+
+/* Make hidden filter lables accessible to screen readers. */
+.filter.hide-labels .form-item-label,
+.filter.hide-labels .label,
+.filter.hide-labels label {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}

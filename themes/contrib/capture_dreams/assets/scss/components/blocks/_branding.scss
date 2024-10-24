@@ -1,0 +1,8 @@
+.region-header {
+    .logo {
+        max-width: 220px;
+        @include md {
+            margin-bottom: em(30px);
+        }
+    }
+}

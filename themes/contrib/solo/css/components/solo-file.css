@@ -1,0 +1,343 @@
+/**
+ * @file
+ * Default style for file module.
+ */
+
+/* https://iconduck.com/sets/svg-file-type-icons */
+
+.field--type-file .field__items .field__item {
+  margin-bottom: var(--solo-px8);
+}
+
+.file:not(.imce-item) {
+  display: inline-block;
+  min-height: var(--solo-px24);
+  padding-left: var(--solo-px32);
+  background-repeat: no-repeat;
+  background-position: left center; /* LTR */
+  background-size: var(--solo-px32) var(--solo-px32);
+  background-repeat: no-repeat;
+}
+
+[dir="rtl"] .file {
+  padding-right: var(--solo-px32);
+  padding-left: inherit;
+  background-position: right center;
+}
+
+.file--general,
+.file--application-octet-stream {
+  background-image: url(../../images/icons/file/application-octet-stream.svg);
+}
+
+.file--package-x-generic {
+  background-image: url(../../images/icons/file/package-x-generic.svg);
+}
+
+.file--x-office-spreadsheet {
+  background-image: url(../../images/icons/file/x-office-spreadsheet.svg);
+}
+
+.file--x-office-document {
+  background-image: url(../../images/icons/file/x-office-document.svg);
+}
+
+.file--x-office-presentation {
+  background-image: url(../../images/icons/file/x-office-presentation.svg);
+}
+
+.file--text-x-script {
+  background-image: url(../../images/icons/file/text-x-script.svg);
+}
+
+.file--text-html {
+  background-image: url(../../images/icons/file/text-html.svg);
+}
+
+.file--text-plain {
+  background-image: url(../../images/icons/file/text-plain.svg);
+}
+
+.file--application-pdf {
+  background-image: url(../../images/icons/file/application-pdf.svg);
+}
+
+.file--application-x-executable {
+  background-image: url(../../images/icons/file/application-x-executable.svg);
+}
+
+.file--audio {
+  background-image: url(../../images/icons/file/audio-x-generic.svg);
+}
+
+.file--video {
+  background-image: url(../../images/icons/file/video-x-generic.svg);
+}
+
+.file--text {
+  background-image: url(../../images/icons/file/text-x-generic.svg);
+}
+
+.file--image {
+  background-image: url(../../images/icons/file/image-x-generic.svg);
+}
+
+/* Separate files */
+
+/* Document */
+.file--pdf {
+  background-image: url(../../images/icons/file/pdf.svg) !important;
+}
+
+.file--text,
+.file--txt {
+  background-image: url(../../images/icons/file/txt.svg) !important;
+}
+
+.file--docx {
+  background-image: url(../../images/icons/file/docx.svg) !important;
+}
+
+.file--doc {
+  background-image: url(../../images/icons/file/doc.svg) !important;
+}
+
+.file--odt {
+  background-image: url(../../images/icons/file/odt.svg) !important;
+}
+
+.file--dot {
+  background-image: url(../../images/icons/file/dot.svg) !important;
+}
+
+.file--ott {
+  background-image: url(../../images/icons/file/ott.svg) !important;
+}
+
+/* Spreadsheet */
+.file--xls {
+  background-image: url(../../images/icons/file/xls.svg) !important;
+}
+
+.file--xlsx {
+  background-image: url(../../images/icons/file/xlsx.svg) !important;
+}
+
+.file--csv {
+  background-image: url(../../images/icons/file/csv.svg) !important;
+}
+
+.file--csv {
+  background-image: url(../../images/icons/file/csv.svg) !important;
+}
+
+.file--ods {
+  background-image: url(../../images/icons/file/ods.svg) !important;
+}
+
+.file--ots {
+  background-image: url(../../images/icons/file/ots.svg) !important;
+}
+
+/* Presentation */
+.file--ppt,
+.file--pptx {
+  background-image: url(../../images/icons/file/ppt.svg) !important;
+}
+
+.file--odp {
+  background-image: url(../../images/icons/file/odp.svg) !important;
+}
+
+.file--otp {
+  background-image: url(../../images/icons/file/otp.svg) !important;
+}
+
+.file--odf {
+  background-image: url(../../images/icons/file/odf.svg) !important;
+}
+
+.file--key {
+  background-image: url(../../images/icons/file/key.svg) !important;
+}
+
+/* Movie */
+.file--mp4 {
+  background-image: url(../../images/icons/file/mp4.svg) !important;
+}
+
+.file--mkv {
+  background-image: url(../../images/icons/file/mkv.svg) !important;
+}
+
+.file--mpeg {
+  background-image: url(../../images/icons/file/mpeg.svg) !important;
+}
+
+.file--mov {
+  background-image: url(../../images/icons/file/mov.svg) !important;
+}
+
+.file--wmv {
+  background-image: url(../../images/icons/file/wmv.svg) !important;
+}
+
+.file--avi {
+  background-image: url(../../images/icons/file/avi.svg) !important;
+}
+
+.file--flv {
+  background-image: url(../../images/icons/file/flv.svg) !important;
+}
+
+/* Audio */
+.file--aiff {
+  background-image: url(../../images/icons/file/aiff.svg) !important;
+}
+
+.file--ogg {
+  background-image: url(../../images/icons/file/ogg.svg) !important;
+}
+
+.file--wav {
+  background-image: url(../../images/icons/file/wav.svg) !important;
+}
+
+.file--aac {
+  background-image: url(../../images/icons/file/aac.svg) !important;
+}
+
+.file--wma {
+  background-image: url(../../images/icons/file/wma.svg) !important;
+}
+
+.file--midi {
+  background-image: url(../../images/icons/file/midi.svg) !important;
+}
+
+.file--mp3 {
+  background-image: url(../../images/icons/file/mp3.svg) !important;
+}
+
+.file--m3u {
+  background-image: url(../../images/icons/file/m3u.svg) !important;
+}
+
+/* Image */
+.file--tiff {
+  background-image: url(../../images/icons/file/tiff.svg) !important;
+}
+
+.file--svg {
+  background-image: url(../../images/icons/file/svg.svg) !important;
+}
+
+.file--gif {
+  background-image: url(../../images/icons/file/gif.svg) !important;
+}
+
+.file--png {
+  background-image: url(../../images/icons/file/png.svg) !important;
+}
+
+.file--bmp {
+  background-image: url(../../images/icons/file/bmp.svg) !important;
+}
+
+.file--jpg,
+.file--jpeg {
+  background-image: url(../../images/icons/file/jpeg.svg) !important;
+}
+
+/* Compressed files */
+.file--zip {
+  background-image: url(../../images/icons/file/zip.svg) !important;
+}
+
+.file--7z {
+  background-image: url(../../images/icons/file/7z.svg) !important;
+}
+
+.file--gz {
+  background-image: url(../../images/icons/file/gz.svg) !important;
+}
+
+.file--rar {
+  background-image: url(../../images/icons/file/rar.svg) !important;
+}
+
+.file--iso {
+  background-image: url(../../images/icons/file/iso.svg) !important;
+}
+
+.file--tar {
+  background-image: url(../../images/icons/file/tar.svg) !important;
+}
+
+.file--dmg {
+  background-image: url(../../images/icons/file/dmg.svg) !important;
+}
+
+.file--bz2 {
+  background-image: url(../../images/icons/file/bz2.svg) !important;
+}
+.file--bz {
+  background-image: url(../../images/icons/file/bz.svg) !important;
+}
+
+/* Scripts */
+.file--css {
+  background-image: url(../../images/icons/file/css.svg) !important;
+}
+
+.file--exe {
+  background-image: url(../../images/icons/file/exe.svg) !important;
+}
+
+.file--dll {
+  background-image: url(../../images/icons/file/dll.svg) !important;
+}
+
+.file--html {
+  background-image: url(../../images/icons/file/html.svg) !important;
+}
+
+.file--mime-application-json {
+  background-image: url(../../images/icons/file/json.svg) !important;
+}
+
+.file--rtf {
+  background-image: url(../../images/icons/file/rtf.svg) !important;
+}
+
+.file--xml {
+  background-image: url(../../images/icons/file/xml.svg) !important;
+}
+
+.file--pyz {
+  background-image: url(../../images/icons/file/pyz.svg) !important;
+}
+
+.file--rb {
+  background-image: url(../../images/icons/file/rb.svg) !important;
+}
+
+.file--yml {
+  background-image: url(../../images/icons/file/yml.svg) !important;
+}
+
+.file--sql {
+  background-image: url(../../images/icons/file/sql.svg) !important;
+}
+
+.file--bz2 {
+  background-image: url(../../images/icons/file/bz2.svg) !important;
+}
+
+.file--pxm {
+  background-image: url(../../images/icons/file/pxm.svg) !important;
+}
+
+.file--tga {
+  background-image: url(../../images/icons/file/tga.svg) !important;
+}

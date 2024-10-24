@@ -1,0 +1,87 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{%- import _self as menus -%}
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0, menu_name) }}
+
+{% macro menu_links(items, attributes, menu_level, menu_name) %}
+  {%- import _self as menus -%}
+
+  {% if items %}
+
+    <ul
+    {%- if menu_level == 0 -%}
+      {{ attributes.addClass(['menu', 'odd', 'menu-level-1', menu_name ? 'menu-name--' ~ menu_name|clean_class ]) }}
+    {%- else %}
+      class="menu is-child {{ cycle(['odd', 'even'], menu_level) }} {{ 'menu-level-' ~ (menu_level + 1) }}"
+    {%- endif -%}
+    >
+
+    {%- for item in items -%}
+
+      {% set is_parent = false %}
+      {% if item.below and item.is_expanded %}
+        {% set is_parent = true %}
+      {% endif %}
+
+      {# Set a variable for <nolink> items, we have to be careful with routes as external links are unrouted. This may not be bulletproof. #}
+      {% if item.url.isExternal() == false and item.url.isRouted() == true %}
+        {% set nolink = (item.url.getRouteName() == '<nolink>') ? true : false %}
+      {% endif %}
+
+      {% set item_classes = [
+          'menu__item',
+          is_parent ? 'is-parent',
+          item.is_expanded ? 'menu__item--expanded',
+          item.is_collapsed ? 'menu__item--collapsed',
+          item.in_active_trail ? 'menu__item--active-trail',
+          nolink ? 'menu__item--no-link',
+          'menu__item-title--' ~ item.title|render|clean_class
+        ]
+      %}
+
+      {# We set an id on list items to provide context for aria attributes in responsive menu toggle buttons. #}
+      <li{{ item.attributes.addClass(item_classes)|without('role') }} id="{{ 'menu-name--' ~ menu_name ~ '__' ~ item.title|render|clean_id }}">
+
+        <span class="menu__link--wrapper{{ is_parent ? ' is-parent__wrapper' }}">
+          {{
+            link(
+              item.title,
+              item.url,
+              item.attributes.removeClass(item_classes).addClass('menu__link')|without('id', 'role')
+            )
+          }}
+        </span>
+
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_name) }}
+        {% endif %}
+
+      </li>
+
+    {%- endfor -%}
+
+    </ul>
+  {% endif %}
+{%- endmacro -%}

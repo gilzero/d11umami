@@ -1,0 +1,223 @@
+# No value because same as plugin ID.
+light:
+  label: "Light"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+dark:
+  label: "Dark"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+cupcake:
+  label: "Cupcake"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+aqua:
+  label: "Aqua"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+black:
+  label: "Black"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+bumblebee:
+  label: "Bumblebee"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+cmyk:
+  label: "Cmyk"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+corporate:
+  label: "Corporate"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+cyberpunk:
+  label: "Cyberpunk"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+dracula:
+  label: "Dracula"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+emerald:
+  label: "Emerald"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+fantasy:
+  label: "Fantasy"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+forest:
+  label: "Forest"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+garden:
+  label: "Garden"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+halloween:
+  label: "Halloween"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+lofi:
+  label: "Lofi"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+luxury:
+  label: "Luxury"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+pastel:
+  label: "Pastel"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+retro:
+  label: "Retro"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+synthwave:
+  label: "Synthwave"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+valentine:
+  label: "Valentine"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+wireframe:
+  label: "Wireframe"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+autumn:
+  label: "Autumn"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+business:
+  label: "Business"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+acid:
+  label: "Acid"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+lemonade:
+  label: "Lemonade"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+night:
+  label: "Night"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+coffee:
+  label: "Coffee"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+winter:
+  label: "Winter"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+dim:
+  label: "Dim"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+nord:
+  label: "Nord"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+# No value because same as plugin ID.
+sunset:
+  label: "Sunset"
+  label_context: "color"
+  key: "data-theme"
+  target: html

@@ -1,0 +1,16 @@
+canonicalizer
+canonicalized
+corge
+criticals
+endsandbox
+getattr
+grault
+kint
+maxcontains
+mincontains
+proptype
+recursivity
+sameas
+sdc's
+subcomponent
+toolset

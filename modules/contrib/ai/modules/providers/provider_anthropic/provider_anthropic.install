@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the provider_anthropic module.
+ */
+
+/**
+ * Implements hook_update_N().
+ */
+function provider_anthropic_update_10301() {
+  // Update the version id, so that Sonnet 3.5 is possible.
+  $config = \Drupal::configFactory()->getEditable('provider_anthropic.settings');
+  $config->set('version', '20240620');
+  $config->save();
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function provider_anthropic_update_10302() {
+  // If the moderation is set, we need to update the version.
+  $config = \Drupal::configFactory()->get('provider_anthropic.settings');
+  if ($config->get('moderation', '1')) {
+    $config = \Drupal::configFactory()->getEditable('ai_external_moderation.settings');
+    $moderations = $config->get('moderations');
+    foreach ($moderations as $key => $value) {
+      if ($key === 'anthropic__chat') {
+        $moderations[] = [
+          'provider' => 'anthropic',
+          'tags' => '',
+          'model_title' => '',
+          'models' => [
+            'openai__text-moderation-latest',
+          ],
+        ];
+        unset($moderations[$key]);
+      }
+    }
+    $config->set('moderations', $moderations);
+    $config->save();
+  }
+}

@@ -1,0 +1,58 @@
+{{ attach_library('mahi/slider') }}
+<div class="slider">
+  <div class="container">
+    <div class="splide" role="group" aria-label="webSite slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% if slider_code != '' %}
+            {{ slider_code | striptags('<ol>,<ul>,<li>,<p>,<a>,<img>,<video>,<audio>,<h1>,<h2>,<h3>,<h4>,<em>,<strong>,<br>,<i>,<div>,<span>,<button>,<mark>,<hr>,<del>,<sup>,<sub>,<svg>') | raw }}
+          {% else %}
+          <li class="splide__slide">
+            <div class="slider-text">
+              <h2>Mahi is Multipurpose Drupal theme</h2>
+              <p>Mahi Theme is packed full of all the amazing features and options for you to create a successful website</p>
+              <div><a class="button" href="#">Get Started</a> <a class="button-secondary" href="#">Read More</a></div>
+            </div>
+            <div class="slider-img">
+              <img src="{{ directory }}/images/demo/slider1.svg" alt="Multipurpose Drupal theme" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="slider-text">
+              <h2>Welcome To Drupar Design Studio</h2>
+              <p>We present you material design. We put our hearts and soul into making every project.</p>
+            <div><a class="button" href="#">Get Started</a> <a class="button-secondary" href="#">Read More</a></div>
+            </div>
+            <div class="slider-img">
+              <img src="{{ directory }}/images/demo/slider2.svg" alt="Drupar Design Studio" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="slider-text">
+              <h2>We Create Awesome Drupal Themes!</h2>
+              <p>Our themes are of high quality, flexible and beautifully crafted that stand out of crowd.</p>
+            <div><a class="button" href="#">Get Started</a> <a class="button-secondary" href="#">Read More</a></div>
+            </div>
+            <div class="slider-img">
+              <img src="{{ directory }}/images/demo/slider3.svg" alt="Awesome Drupal Theme" />
+            </div>
+          </li>
+          {% endif %}
+        </ul>
+      </div><!--/splide__track -->
+    </div><!--/splide-->
+  </div><!--/container-->
+</div><!--/slider-->
+<script>
+  document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide', {
+      perPage: 1,
+      autoplay: true,
+      rewind: true,
+      pauseOnHover: false,
+      interval: 5000,
+      arrowPath: 'M0.5 1L20 20.5L0.5 41.5',
+    } );
+    splide.mount();
+  } );
+</script>

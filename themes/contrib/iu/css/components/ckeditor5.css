@@ -1,0 +1,1291 @@
+@import '//fonts.iu.edu/style.css?family=BentonSans:regular,bold,medium|BentonSansCond:regular,bold|GeorgiaPro:regular|BentonSansLight:regular';
+@import '//assets.iu.edu/web/fonts/icon-font.css';
+
+/* Note: font sizes have been adjusted using calc(<original size> * 0.9) because they appear too big in ckeditor. */
+
+.ck-editor__editable {
+  padding: 1rem;
+}
+
+/* Enable the 'Styles' widget in CKEditor and add the following to the configuration:
+
+a.button|Button
+a.button.invert|Inverted Button
+a.button.large|Large Button
+a.button.large.invert|Large Inverted Button
+a.button.small|Small Button
+a.button.small.invert|Small Inverted Button
+a.button.tiny|Tiny Button
+a.button.tiny.invert|Tiny Inverted Button
+a.button.expanded|Expanded Button
+a.button.expanded.invert|Expanded Inverted Button
+a.button.primary|Primary Button
+a.button.secondary|Secondary Button
+a.button.success|Success Button
+a.button.warning|Warning Button
+a.button.alert|Alert Button
+a.button.hollow|Hollow Button
+a.button.hollow.primary|Hollow Primary Button
+a.button.hollow.secondary|Hollow Secondary Button
+a.button.hollow.success|Hollow Success Button
+a.button.hollow.warning|Hollow Warning Button
+a.button.hollow.alert|Hollow Alert Button
+
+div.help-text|Help text block
+
+img.float-left|Float left
+img.float-right|Float right
+img.float-center|Float center
+
+div.alert.default|Default Alert
+div.alert.success|Success Alert
+div.alert.info|Info Alert
+div.alert.message|Message Alert
+div.alert.error|Error Alert
+
+div.meta|Meta text block
+dl.meta|Meta definition list
+dl.inline|Inline definition list
+
+*/
+
+
+/* Adapted from https://assets.iu.edu/web/3.3.x/css/iu-framework.css */
+
+.ck.ck-content { /* body */
+  font-size: calc(1rem * 0.9);
+  font-family: BentonSansRegular, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #243142;
+  background: #fff;
+}
+
+.ck.ck-content img {
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ck.ck-content p {
+  font-size: inherit;
+  line-height: 1.6;
+  margin-bottom: calc(1.25rem * 0.9);
+  text-rendering: optimizeLegibility;
+}
+
+@media screen and (min-width: 40em) {
+  .ck.ck-content,
+  .ck.ck-content dl,
+  .ck.ck-content ol,
+  .ck.ck-content p,
+  .ck.ck-content ul {
+    font-size: calc(1.125rem * 0.9);
+    line-height: 1.65;
+  }
+}
+
+.ck.ck-content .text+h1,
+.ck.ck-content .text+h2,
+.ck.ck-content .text+h3,
+.ck.ck-content .text+h4,
+.ck.ck-content .text+h5,
+.ck.ck-content .text+h6,
+.ck.ck-content p+h1,
+.ck.ck-content p+h2,
+.ck.ck-content p+h3,
+.ck.ck-content p+h4,
+.ck.ck-content p+h5,
+.ck.ck-content p+h6,
+.ck.ck-content ul+h1,
+.ck.ck-content ul+h2,
+.ck.ck-content ul+h3,
+.ck.ck-content ul+h4,
+.ck.ck-content ul+h5,
+.ck.ck-content ul+h6 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ck.ck-content blockquote,
+.ck.ck-content dd,
+.ck.ck-content div,
+.ck.ck-content dl,
+.ck.ck-content dt,
+.ck.ck-content form,
+.ck.ck-content h1,
+.ck.ck-content h2,
+.ck.ck-content h3,
+.ck.ck-content h4,
+.ck.ck-content h5,
+.ck.ck-content h6,
+.ck.ck-content li,
+.ck.ck-content ol,
+.ck.ck-content p,
+.ck.ck-content pre,
+.ck.ck-content td,
+.ck.ck-content th,
+.ck.ck-content ul {
+  margin: 0;
+  padding: 0;
+}
+
+.ck.ck-content p {
+  font-size: inherit;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  text-rendering: optimizeLegibility;
+}
+
+.ck.ck-content em,
+.ck.ck-content i {
+  font-style: italic;
+  line-height: inherit;
+  padding-right: 2px;
+}
+
+.ck.ck-content b,
+.ck.ck-content strong {
+  font-family: BentonSansBold, Arial, sans-serif;
+  font-weight: 400;
+  line-height: inherit;
+}
+
+.ck.ck-content small {
+  font-size: 80%;
+  line-height: inherit;
+}
+
+.ck.ck-content h1,
+.ck.ck-content h2,
+.ck.ck-content h3,
+.ck.ck-content h4,
+.ck.ck-content h5,
+.ck.ck-content h6 {
+  font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #243142;
+  text-rendering: optimizeLegibility;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.ck.ck-content h1 small,
+.ck.ck-content h2 small,
+.ck.ck-content h3 small,
+.ck.ck-content h4 small,
+.ck.ck-content h5 small,
+.ck.ck-content h6 small {
+  color: #404041;
+  line-height: 0;
+}
+
+.ck.ck-content h1 {
+  font-size: calc(1.8125rem * 0.9);
+}
+
+.ck.ck-content h2 {
+  font-size: calc(1.625rem * 0.9);
+}
+
+.ck.ck-content h3 {
+  font-size: calc(1.5rem * 0.9);
+}
+
+.ck.ck-content h4 {
+  font-size: calc(1.25rem * 0.9);
+}
+
+.ck.ck-content h5 {
+  font-size: calc(1.125rem * 0.9);
+}
+
+.ck.ck-content h6 {
+  font-size: calc(1rem * 0.9);
+}
+
+@media screen and (min-width: 40em) {
+  .ck.ck-content h1 {
+    font-size: calc(2.5625rem * 0.9);
+  }
+
+  .ck.ck-content h2 {
+    font-size: calc(2.25rem * 0.9);
+  }
+
+  .ck.ck-content h3 {
+    font-size: calc(1.625rem * 0.9);
+  }
+
+  .ck.ck-content h4 {
+    font-size: calc(1.4375rem * 0.9);
+  }
+
+  .ck.ck-content h5 {
+    font-size: calc(1.125rem * 0.9);
+  }
+
+  .ck.ck-content h6 {
+    font-size: calc(1rem * 0.9);
+  }
+}
+
+.ck.ck-content a {
+  color: #006298;
+  text-decoration: none;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.ck.ck-content a:focus,
+.ck.ck-content a:hover {
+  color: #01426a;
+}
+
+.ck.ck-content a img {
+  border: 0;
+}
+
+.ck.ck-content hr {
+  max-width: 64rem;
+  height: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #edebeb;
+  border-left: 0;
+  margin: 1.25rem auto;
+  clear: both;
+}
+
+.ck.ck-content dl,
+.ck.ck-content ol,
+.ck.ck-content ul {
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  list-style-position: outside;
+}
+
+.ck.ck-content li {
+  font-size: inherit;
+}
+
+.ck.ck-content ul {
+  list-style-type: disc;
+  margin-left: 1.25rem;
+}
+
+.ck.ck-content ol {
+  margin-left: 1.25rem;
+}
+
+.ck.ck-content ol ol,
+.ck.ck-content ol ul,
+.ck.ck-content ul ol,
+.ck.ck-content ul ul {
+  margin-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+.ck.ck-content dl {
+  margin-bottom: 1rem;
+  margin-bottom: .75em;
+}
+
+.ck.ck-content dl dt {
+  margin-bottom: .3rem;
+  font-weight: 700;
+  font-family: BentonSansBold, Arial, sans-serif;
+  font-weight: 400;
+  margin-top: .75em;
+}
+
+.ck.ck-content dl dd {
+  margin: 0;
+}
+
+.ck.ck-content dl.meta {
+  font-size: calc(1rem * 0.9);
+  text-transform: none;
+}
+
+.ck.ck-content dl.meta dt,
+.ck.ck-content dl.meta dd {
+  font-family: BentonSansRegular, 'Arial Narrow', Arial, sans-serif;
+  font-weight: normal;
+}
+
+.ck.ck-content dl.inline dt:before {
+  content: "";
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ck.ck-content dl.inline dt,
+.ck.ck-content dl.inline dd {
+  display: inline;
+}
+
+.ck.ck-content dl.meta+dl.meta {
+  margin-top: 16px;
+}
+
+.ck.ck-content blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0 1.25rem 0 1.1875rem;
+  border-left: 1px solid #404041;
+}
+
+.ck.ck-content blockquote,
+.ck.ck-content blockquote p {
+  line-height: 1.6;
+  color: #243142;
+}
+
+.ck.ck-content cite {
+  display: block;
+  font-size: calc(1rem * 0.9);
+  color: #4c5a69;
+}
+
+.ck.ck-content cite:before {
+  content: '\2014 \0020';
+}
+
+.ck.ck-content abbr {
+  color: #243142;
+  cursor: help;
+  border-bottom: 1px dotted #191919;
+}
+
+.ck.ck-content code {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: 400;
+  color: #191919;
+  background-color: #edebeb;
+  border: 1px solid #edebeb;
+  padding: .125rem .3125rem .0625rem;
+}
+
+.ck.ck-content kbd {
+  padding: .125rem .25rem 0;
+  margin: 0;
+  background-color: #edebeb;
+  color: #191919;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  border-radius: .25rem;
+}
+
+.ck.ck-content .text-left {
+  text-align: left;
+}
+
+.ck.ck-content .text-right {
+  text-align: right;
+}
+
+.ck.ck-content .text-center {
+  text-align: center;
+}
+
+.ck.ck-content .text-justify {
+  text-align: justify;
+}
+
+@media screen and (min-width: 20em) {
+  .ck.ck-content .small-text-left {
+    text-align: left;
+  }
+
+  .ck.ck-content .small-text-right {
+    text-align: right;
+  }
+
+  .ck.ck-content .small-text-center {
+    text-align: center;
+  }
+
+  .ck.ck-content .small-text-justify {
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .ck.ck-content .medium-text-left {
+    text-align: left;
+  }
+
+  .ck.ck-content .medium-text-right {
+    text-align: right;
+  }
+
+  .ck.ck-content .medium-text-center {
+    text-align: center;
+  }
+
+  .ck.ck-content .medium-text-justify {
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 64.0625em) {
+  .ck.ck-content .large-text-left {
+    text-align: left;
+  }
+
+  .ck.ck-content .large-text-right {
+    text-align: right;
+  }
+
+  .ck.ck-content .large-text-center {
+    text-align: center;
+  }
+
+  .ck.ck-content .large-text-justify {
+    text-align: justify;
+  }
+}
+
+.ck.ck-content .button {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-transition: background-color .25s ease-out, color .25s ease-out;
+  transition: background-color .25s ease-out, color .25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: .5625em 1em;
+  margin: 0 0 1rem 0;
+  font-size: calc(1rem * 0.9);
+  background-color: #900;
+  color: #fff;
+}
+
+.ck.ck-content .button:focus,
+.ck.ck-content .button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.ck.ck-content .button.tiny {
+  font-size: calc(.6rem * 0.9);
+}
+
+.ck.ck-content .button.small {
+  font-size: calc(.75rem * 0.9);
+}
+
+.ck.ck-content .button.large {
+  font-size: calc(1.25rem * 0.9);
+}
+
+.ck.ck-content .button.expanded {
+  display: block;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.ck.ck-content .button.primary {
+  background-color: #1479bd;
+  color: #fff;
+}
+
+.ck.ck-content .button.primary:focus,
+.ck.ck-content .button.primary:hover {
+  background-color: #1377b9;
+  color: #fff;
+}
+
+.ck.ck-content .button.secondary {
+  background-color: #777;
+  color: #fff;
+}
+
+.ck.ck-content .button.secondary:focus,
+.ck.ck-content .button.secondary:hover {
+  background-color: #5f5f5f;
+  color: #fff;
+}
+
+.ck.ck-content .button.success {
+  background-color: #3adb76;
+  color: #fff;
+}
+
+.ck.ck-content .button.success:focus,
+.ck.ck-content .button.success:hover {
+  background-color: #22bb5b;
+  color: #fff;
+}
+
+.ck.ck-content .button.warning {
+  background-color: #ffae00;
+  color: #fff;
+}
+
+.ck.ck-content .button.warning:focus,
+.ck.ck-content .button.warning:hover {
+  background-color: #cc8b00;
+  color: #fff;
+}
+
+.ck.ck-content .button.alert {
+  background-color: #ec5840;
+  color: #fff;
+}
+
+.ck.ck-content .button.alert:focus,
+.ck.ck-content .button.alert:hover {
+  background-color: #da3116;
+  color: #fff;
+}
+
+.ck.ck-content .button.hollow {
+  border: 1px solid #2199e8;
+  color: #2199e8;
+}
+
+.ck.ck-content .button.hollow,
+.ck.ck-content .button.hollow:focus,
+.ck.ck-content .button.hollow:hover {
+  background-color: transparent;
+}
+
+.ck.ck-content .button.hollow:focus,
+.ck.ck-content .button.hollow:hover {
+  border-color: #0c4d78;
+  color: #0c4d78;
+}
+
+.ck.ck-content .button.hollow.primary {
+  border: 1px solid #2199e8;
+  color: #2199e8;
+}
+
+.ck.ck-content .button.hollow.primary:focus,
+.ck.ck-content .button.hollow.primary:hover {
+  border-color: #0c4d78;
+  color: #0c4d78;
+}
+
+.ck.ck-content .button.hollow.secondary {
+  border: 1px solid #777;
+  color: #777;
+}
+
+.ck.ck-content .button.hollow.secondary:focus,
+.ck.ck-content .button.hollow.secondary:hover {
+  border-color: #3c3c3c;
+  color: #3c3c3c;
+}
+
+.ck.ck-content .button.hollow.success {
+  border: 1px solid #3adb76;
+  color: #3adb76;
+}
+
+.ck.ck-content .button.hollow.success:focus,
+.ck.ck-content .button.hollow.success:hover {
+  border-color: #157539;
+  color: #157539;
+}
+
+.ck.ck-content .button.hollow.warning {
+  border: 1px solid #ffae00;
+  color: #ffae00;
+}
+
+.ck.ck-content .button.hollow.warning:focus,
+.ck.ck-content .button.hollow.warning:hover {
+  border-color: #805700;
+  color: #805700;
+}
+
+.ck.ck-content .button.hollow.alert {
+  border: 1px solid #ec5840;
+  color: #ec5840;
+}
+
+.ck.ck-content .button.hollow.alert:focus,
+.ck.ck-content .button.hollow.alert:hover {
+  border-color: #881f0e;
+  color: #881f0e;
+}
+
+.ck.ck-content .button.disabled,
+.ck.ck-content .button[disabled] {
+  opacity: .25;
+  cursor: not-allowed;
+}
+
+.ck.ck-content .button.disabled:focus,
+.ck.ck-content .button.disabled:hover,
+.ck.ck-content .button[disabled]:focus,
+.ck.ck-content .button[disabled]:hover {
+  background-color: #2199e8;
+  color: #fff;
+}
+
+.ck.ck-content .button.disabled.primary,
+.ck.ck-content .button[disabled].primary {
+  opacity: .25;
+  cursor: not-allowed;
+}
+
+.ck.ck-content .button.disabled.primary:focus,
+.ck.ck-content .button.disabled.primary:hover,
+.ck.ck-content .button[disabled].primary:focus,
+.ck.ck-content .button[disabled].primary:hover {
+  background-color: #2199e8;
+  color: #fff;
+}
+
+.ck.ck-content .button.disabled.secondary,
+.ck.ck-content .button[disabled].secondary {
+  opacity: .25;
+  cursor: not-allowed;
+}
+
+.ck.ck-content .button.disabled.secondary:focus,
+.ck.ck-content .button.disabled.secondary:hover,
+.ck.ck-content .button[disabled].secondary:focus,
+.ck.ck-content .button[disabled].secondary:hover {
+  background-color: #777;
+  color: #fff;
+}
+
+.ck.ck-content .button.disabled.success,
+.ck.ck-content .button[disabled].success {
+  opacity: .25;
+  cursor: not-allowed;
+}
+
+.ck.ck-content .button.disabled.success:focus,
+.ck.ck-content .button.disabled.success:hover,
+.ck.ck-content .button[disabled].success:focus,
+.ck.ck-content .button[disabled].success:hover {
+  background-color: #3adb76;
+  color: #fff;
+}
+
+.ck.ck-content .button.disabled.warning,
+.ck.ck-content .button[disabled].warning {
+  opacity: .25;
+  cursor: not-allowed;
+}
+
+.ck.ck-content .button.disabled.warning:focus,
+.ck.ck-content .button.disabled.warning:hover,
+.ck.ck-content .button[disabled].warning:focus,
+.ck.ck-content .button[disabled].warning:hover {
+  background-color: #ffae00;
+  color: #fff;
+}
+
+.ck.ck-content .button.disabled.alert,
+.ck.ck-content .button[disabled].alert {
+  opacity: .25;
+  cursor: not-allowed;
+}
+
+.ck.ck-content .button.disabled.alert:focus,
+.ck.ck-content .button.disabled.alert:hover,
+.ck.ck-content .button[disabled].alert:focus,
+.ck.ck-content .button[disabled].alert:hover {
+  background-color: #ec5840;
+  color: #fff;
+}
+
+.ck.ck-content .button.dropdown::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset .4em;
+  border-color: #fefefe transparent transparent;
+  border-top-style: solid;
+  border-bottom-width: 0;
+  position: relative;
+  top: .4em;
+  float: right;
+  margin-left: 1em;
+  display: inline-block;
+}
+
+.ck.ck-content .button.arrow-only::after {
+  margin-left: 0;
+  float: none;
+  top: -.1em;
+}
+
+.ck.ck-content .help-text {
+  margin-top: -.5rem;
+  font-size: .8125rem;
+  font-style: italic;
+  color: #191919;
+}
+
+.ck.ck-content .float-left {
+  float: left !important;
+}
+
+.ck.ck-content .float-right {
+  float: right !important;
+}
+
+.ck.ck-content .float-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ck.ck-content table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+}
+
+.ck.ck-content tbody,
+.ck.ck-content tfoot,
+.ck.ck-content thead {
+  border: 1px solid #e2e7e9;
+  background-color: #fefefe;
+}
+
+.ck.ck-content caption {
+  font-weight: 700;
+  padding: .5rem .625rem .625rem;
+}
+
+.ck.ck-content thead {
+  background: #f8f8f8;
+  color: #243142;
+}
+
+.ck.ck-content tfoot {
+  background: #f1f1f1;
+  color: #243142;
+}
+
+.ck.ck-content tfoot tr,
+.ck.ck-content thead tr {
+  background: 0 0;
+}
+
+.ck.ck-content tfoot td,
+.ck.ck-content tfoot th,
+.ck.ck-content thead td,
+.ck.ck-content thead th {
+  padding: .5rem .625rem .625rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.ck.ck-content tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.ck.ck-content tbody td,
+.ck.ck-content tbody th {
+  padding: .5rem .625rem .625rem;
+}
+
+@media screen and (max-width: 64em) {
+  .ck.ck-content table.stack thead {
+    display: none;
+  }
+
+  .ck.ck-content table.stack tfoot {
+    display: none;
+  }
+
+  .ck.ck-content table.stack td,
+  .ck.ck-content table.stack th,
+  .ck.ck-content table.stack tr {
+    display: block;
+  }
+
+  .ck.ck-content table.stack td {
+    border-top: 0;
+  }
+}
+
+.ck.ck-content table.scroll {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ck.ck-content table.hover thead tr:hover {
+  background-color: #f3f3f3;
+}
+
+.ck.ck-content table.hover tfoot tr:hover {
+  background-color: #ececec;
+}
+
+.ck.ck-content table.hover tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.ck.ck-content table.hover tbody tr:nth-of-type(even):hover {
+  background-color: #ececec;
+}
+
+.ck.ck-content .table-scroll {
+  overflow-x: auto;
+}
+
+.ck.ck-content .table-scroll table {
+  width: auto;
+}
+
+
+.ck.ck-content .bg-crimson,
+.ck.ck-content .crimson .bg-secondary {
+  background-color: #900;
+}
+
+.ck.ck-content .bg-mahogany,
+.ck.ck-content .mahogany .bg-secondary {
+  background-color: #243142;
+}
+
+.ck.ck-content .bg-gray,
+.ck.ck-content .gray .bg-secondary {
+  background-color: #f8f9fa;
+}
+
+.ck.ck-content .bg-midnight,
+.ck.ck-content .midnight .bg-secondary {
+  background-color: #006298;
+}
+
+.ck.ck-content .bg-midnight-dark {
+  background-color: #01426a;
+}
+
+.ck.ck-content .bg-majestic,
+.ck.ck-content .majestic .bg-secondary {
+  background-color: #59264d;
+}
+
+.ck.ck-content .bg-majestic-dark {
+  background-color: #512a44;
+}
+
+.ck.ck-content .white .bg-secondary {
+  background-color: #fff;
+}
+
+.ck.ck-content .bg-black,
+.ck.ck-content .black .bg-secondary {
+  background-color: #191919;
+}
+
+.ck.ck-content .bg-full-black {
+  background-color: #000;
+}
+
+.ck.ck-content .alert {
+  border-left: 3px solid #a7a9ab;
+  padding: .25rem .5rem;
+}
+
+.ck.ck-content .alert.default {
+  background: #eee;
+  border-color: #a7a9ab;
+}
+
+.ck.ck-content .alert.success {
+  background: #ddf4ea;
+  border-color: #093;
+}
+
+.ck.ck-content .alert.info {
+  background: #e9f6fc;
+  border-color: #49afc7;
+}
+
+.ck.ck-content .alert.message {
+  background: #fdf7e7;
+  border-color: #f5bb17;
+}
+
+.ck.ck-content .alert.error {
+  background: #fdeee8;
+  border-color: #f25b19;
+}
+
+.ck.ck-content .iu-notice.all-clear {
+  background: #093;
+}
+
+.ck.ck-content .iu-notice.minor {
+  background: #49afc7;
+}
+
+.ck.ck-content .iu-notice.moderate {
+  background: #f5bb17;
+}
+
+.ck.ck-content .iu-notice.severe {
+  background: #f25b19;
+}
+
+.ck.ck-content .iu-notice.extreme {
+  background: #bd0000;
+}
+
+.ck.ck-content .bg-dark {
+  color: #fff;
+}
+
+.ck.ck-content .bg-dark h1,
+.ck.ck-content .bg-dark h2,
+.ck.ck-content .bg-dark h3,
+.ck.ck-content .bg-dark h4,
+.ck.ck-content .bg-dark h5 {
+  color: #fff;
+}
+
+.ck.ck-content .h1 {
+  font-size: calc(1.8125rem * 0.9);
+  font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.ck.ck-content .h2 {
+  font-size: calc(1.625rem * 0.9);
+  font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.ck.ck-content .h3 {
+  font-size: calc(1.5rem * 0.9);
+  font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.ck.ck-content .feature .title,
+.ck.ck-content .h4,
+.ck.ck-content .lead {
+  font-size: calc(1.25rem * 0.9);
+  font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.ck.ck-content .h5 {
+  font-size: calc(1.125rem * 0.9);
+  font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.ck.ck-content .h6 {
+  font-size: calc(1rem * 0.9);
+  font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+@media screen and (min-width: 40em) {
+  .ck.ck-content .h1 {
+    font-size: calc(2.5625rem * 0.9);
+    font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .ck.ck-content .h2 {
+    font-size: calc(2.25rem * 0.9);
+    font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .ck.ck-content .h3 {
+    font-size: calc(1.625rem * 0.9);
+    font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .ck.ck-content .feature .title,
+  .ck.ck-content .h4,
+  .ck.ck-content .lead {
+    font-size: calc(1.4375rem * 0.9);
+    font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .ck.ck-content .h5 {
+    font-size: calc(1.125rem * 0.9);
+    font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .ck.ck-content .h6 {
+    font-size: calc(1rem * 0.9);
+    font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+}
+
+.ck.ck-content .text+h1,
+.ck.ck-content .text+h2,
+.ck.ck-content .text+h3,
+.ck.ck-content .text+h4,
+.ck.ck-content .text+h5,
+.ck.ck-content .text+h6,
+.ck.ck-content p+h1,
+.ck.ck-content p+h2,
+.ck.ck-content p+h3,
+.ck.ck-content p+h4,
+.ck.ck-content p+h5,
+.ck.ck-content p+h6,
+.ck.ck-content ul+h1,
+.ck.ck-content ul+h2,
+.ck.ck-content ul+h3,
+.ck.ck-content ul+h4,
+.ck.ck-content ul+h5,
+.ck.ck-content ul+h6 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 40em) {
+  .ck.ck-content,
+  .ck.ck-content dl,
+  .ck.ck-content ol,
+  .ck.ck-content p,
+  .ck.ck-content ul {
+    font-size: calc(1.125rem * 0.9);
+    line-height: 1.65;
+  }
+}
+
+.ck.ck-content pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+  border: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+.ck.ck-content pre code {
+  display: block;
+  padding: .5em;
+  margin: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+.ck.ck-content pre code .code-container {
+  margin: 10px 0;
+  padding: 5px;
+  overflow-x: auto;
+  line-height: 1.3rem;
+  font-weight: 400;
+}
+
+.ck.ck-content abbr[title] {
+  text-decoration: none;
+}
+
+.ck.ck-content address {
+  font-size: calc(1rem * 0.9);
+  font-style: normal;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 40em) {
+  .ck.ck-content address {
+    font-size: 1.25rem;
+  }
+}
+
+
+.ck.ck-content table caption,
+.ck.ck-content table thead tr td,
+.ck.ck-content table thead tr th,
+.ck.ck-content tbody td:before {
+  font-family: BentonSansBold, Arial, sans-serif;
+  font-weight: 400;
+  text-align: left;
+}
+
+.ck.ck-content table caption,
+.ck.ck-content td,
+.ck.ck-content th {
+  padding: .25rem 0;
+}
+
+.ck.ck-content td,
+.ck.ck-content th,
+.ck.ck-content tr {
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+.ck.ck-content tbody,
+.ck.ck-content thead {
+  border-left: none;
+  border-right: none;
+}
+
+.ck.ck-content thead {
+  border-top: none;
+  background-color: #f8f9fa;
+}
+
+.ck.ck-content tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.ck.ck-content caption {
+  font-size: 1.25rem;
+}
+
+.ck.ck-content table li,
+.ck.ck-content table p {
+  font-size: 1rem;
+}
+
+.ck.ck-content table li,
+.ck.ck-content table ol,
+.ck.ck-content table p,
+.ck.ck-content table ul {
+  margin-bottom: 0;
+}
+
+.ck.ck-content table a:not(.button) {
+  text-decoration: underline;
+}
+
+.ck.ck-content .button {
+  margin-bottom: 1.25rem;
+}
+
+.ck.ck-content p>.button {
+  margin-bottom: 0;
+}
+
+.ck.ck-content .media a,
+.ck.ck-content .social a {
+  background: 0 0;
+}
+
+.ck.ck-content .media a {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.ck.ck-content li {
+  margin-bottom: 8px;
+}
+
+.ck.ck-content .button {
+  border-width: 2px;
+  border-radius: .25rem;
+  font-family: BentonSansBold, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  -webkit-transition: background-color .2s ease-out, color .2s ease-out, border-color .18s ease-out;
+  transition: background-color .2s ease-out, color .2s ease-out, border-color .18s ease-out;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ck.ck-content .button.invert,
+.ck.ck-content .button:focus,
+.ck.ck-content .button:hover {
+  background: 0 0;
+  color: #900;
+  border-color: #900;
+}
+
+.ck.ck-content .button.invert:focus,
+.ck.ck-content .button.invert:hover {
+  background: #900;
+  border-color: #900;
+  color: #fff;
+}
+
+.ck.ck-content .button.float-left,
+.ck.ck-content .button.left {
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+.ck.ck-content .button.float-right,
+.ck.ck-content .button.right {
+  margin: 0 0 1.5rem 1.5rem;
+}
+
+.ck.ck-content .meta {
+  font-size: 1rem;
+  letter-spacing: .0125rem;
+  line-height: 1.33333;
+  text-transform: uppercase;
+  color: #4c5a69;
+}
+
+.ck.ck-content .meta+.meta {
+  margin-top: -1rem;
+}
+
+.ck.ck-content .meta strong {
+  font-weight: 700;
+}
+
+.ck.ck-content .meta span {
+  text-transform: none;
+  color: #4A3C31;
+}
+
+.ck.ck-content ul.circle li {
+  list-style-type: circle;
+}
+
+.ck.ck-content ul.square li {
+  list-style-type: square;
+}
+
+.ck.ck-content ul.inline {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.ck.ck-content ul.inline li {
+  display: inline;
+}
+
+.ck.ck-content ul.separators li:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.ck.ck-content ul.separators li:first-child:before {
+  content: "";
+  margin: 0;
+}
+
+.ck.ck-content .more {
+  font-family: BentonSansBold, Arial, sans-serif;
+  font-weight: normal;
+}

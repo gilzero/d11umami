@@ -1,0 +1,24 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set items = items|default([]) %}
+{% set add_mandatory_items = add_mandatory_items ?? true %}
+
+{% if add_mandatory_items %}
+  {% set items = items|merge([
+    {
+      'label': 'Copy to clipboard'|t,
+      'title': 'Copy to clipboard'|t,
+      'attributes': create_attribute({
+        'class': ['fr-btn--copy'],
+        'onclick': "navigator.clipboard.writeText(window.location);alert('" ~ 'Address copied to clipboard.'|t ~ "');",
+      }),
+    }
+  ]) %}
+{% endif %}
+
+<div{{ attributes.addClass('fr-share') }}>
+  <p class="fr-share__title">{{ title }}</p>
+  {{ include('dsfr4drupal:button-group', {'items': items}, with_context=false) }}
+  {% if content %}
+    <p class="fr-share__text">{{ content }}</p>
+  {% endif %}
+</div>

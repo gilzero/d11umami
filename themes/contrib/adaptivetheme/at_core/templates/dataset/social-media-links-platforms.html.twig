@@ -1,0 +1,23 @@
+{#
+/**
+ * Social Media Links module template.
+ */
+#}
+{%
+  set classes = [
+    'platforms',
+    appearance.orientation == 'h' ? 'inline is-horizontal' : 'is-vertical',
+  ]
+%}
+<ul{{ attributes.addClass(classes) }}>
+  {% for platform in platforms %}
+    <li class="platform">
+      <a href="{{ platform.url }}" {{ platform.attributes.addClass('platform__link') }}>
+        {{ platform.element }}
+        {% if appearance.show_name %}
+          <span class="platform__name">{{ platform.name }}</span>
+        {% endif %}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

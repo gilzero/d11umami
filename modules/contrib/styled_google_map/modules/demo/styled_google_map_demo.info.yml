@@ -1,0 +1,16 @@
+name: Styled Google Map Demo
+description: This module is made to show all the features that Module provides
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+hidden: true
+dependencies:
+  - styled_google_map:styled_google_map
+  - drupal:taxonomy
+  - drupal:image
+  - drupal:text
+
+# Information added by Drupal.org packaging script on 2024-07-08
+version: '8.x-2.6'
+project: 'styled_google_map'
+datestamp: 1720420588

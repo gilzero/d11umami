@@ -1,0 +1,7 @@
+.form-item.form-item-tel-international .iti {
+  display: block;
+}
+
+.rvt-label + .iti {
+  display: block;
+}

@@ -1,0 +1,45 @@
+name: DSFR - Pagination (mini)
+description: Pagination allows the user to navigate between different pages of a list of items.
+status: stable
+group: DSFR
+props:
+  properties:
+    aria_label:
+      type: string
+      title: Pagination "aria-label" attribute
+      description: 'By default: "Pagination", or the translated string in another language.'
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    current_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Current item attributes
+    current_title:
+      type: string
+      title: Current item title attribute
+      description: 'By default: "Current page", or the translated string in another language.'
+    items:
+      type: object
+      title: Items
+      description: Drupal pager items.
+    next_label:
+      type: string
+      title: Next page item label
+      description: 'By default: "Next page", or the translated string in another language.'
+    next_title:
+      type: string
+      title: Next page item title attribute
+      description: 'By default: "Go to next page", or the translated string in another language.'
+    previous_label:
+      type: string
+      title: Previous page item label
+      description: 'By default: "Previous page", or the translated string in another language.'
+    previous_title:
+      type: string
+      title: Previous page item title attribute
+      description: 'By default: "Go to previous page", or the translated string in another language.'
+  required:
+    - items
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.pagination

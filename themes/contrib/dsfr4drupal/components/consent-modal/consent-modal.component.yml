@@ -1,0 +1,44 @@
+name: DSFR - Consent (modal)
+description: The consent manager allows the user to define their preferences on the use of their personal data, in particular the deposit of non-functional cookies in their browser).
+status: stable
+group: DSFR
+props:
+  properties:
+    services:
+      type: array
+      title: Service items
+      items:
+        type: object
+        properties:
+          attributes:
+            type: object
+            title: Service attributes
+            properties:
+              id:
+                type: string
+                title: Service identifier
+              title:
+                type: string
+                title: Service title
+              below:
+                type: array
+                title: Service items below
+                items:
+                  type: object
+                  properties:
+                    attributes:
+                      type: object
+                      title: Service attributes
+                      properties:
+                        id:
+                          type: string
+                          title: Sub-service identifier
+                        title:
+                          type: string
+                          title: Sub-service title
+    title:
+      type: string
+      title: Title
+      description: 'By default: "Manage consent", or the translated string in another language.'
+  required:
+    - services

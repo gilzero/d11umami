@@ -1,0 +1,4 @@
+.page-wrapper .faster-one {
+  --solo-font-s: 'Faster One', cursive;
+  font-family: var(--solo-font-s) !important;
+}

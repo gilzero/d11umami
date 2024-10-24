@@ -1,0 +1,34 @@
+.menu-book {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+.menu-book-item {
+  position: relative;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+.menu-book-item:last-child {
+  border-bottom: 0;
+}
+.menu-book-item::before {
+  font-family: 'mahi';
+  content: '\e01c';
+}
+.book-pager {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem;
+  border-radius: 8px;
+}
+.book-pager-item {
+  list-style-type: none;
+}
+.book-pager-item i {
+  color: var(--dark-text-color);
+}

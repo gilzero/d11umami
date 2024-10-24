@@ -1,0 +1,90 @@
+name: Carousel
+description: "Carousel show images or content in a scrollable area."
+group: "Data display"
+links:
+  - "https://daisyui.com/components/carousel"
+variants:
+  default:
+    title: "Snap to start"
+  center:
+    title: "Snap to center"
+  end:
+    title: "Snap to end"
+slots:
+  items:
+    title: Items
+props:
+  type: object
+  properties:
+    carousel_id:
+      title: "HTML ID"
+      description: "Will be automatically generated if empty."
+      $ref: "ui-patterns://string"
+      pattern: "^[A-Za-z][A-Za-z0-9-_]*$"
+    full_width:
+      title: "Full width items?"
+      description: "Carousel with full width items"
+      $ref: "ui-patterns://boolean"
+    vertical:
+      title: "Vertical?"
+      description: "Vertical carousel"
+      $ref: "ui-patterns://boolean"
+    half_width:
+      title: "Half width?"
+      description: "Carousel with half width items"
+      $ref: "ui-patterns://boolean"
+    full_bleed:
+      title: "Full bleed?"
+      description: "Full-bleed carousel"
+      $ref: "ui-patterns://boolean"
+    indicator_buttons:
+      title: "Indicator buttons?"
+      description: "Carousel with indicator buttons"
+      $ref: "ui-patterns://boolean"
+    next_prev_buttons:
+      title: "Next/Prev buttons?"
+      description: "Carousel with next/prev buttons"
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: html_tag
+          tag: img
+          attributes:
+            src: "https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
+            alt: Burger
+        - type: html_tag
+          tag: img
+          attributes:
+            src: "https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
+            alt: Burger
+        - type: html_tag
+          tag: img
+          attributes:
+            src: "https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
+            alt: Burger
+        - type: html_tag
+          tag: img
+          attributes:
+            src: "https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
+            alt: Burger
+        - type: html_tag
+          tag: img
+          attributes:
+            src: "https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
+            alt: Burger
+        - type: html_tag
+          tag: img
+          attributes:
+            src: "https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp"
+            alt: Burger
+        - type: html_tag
+          tag: img
+          attributes:
+            src: "https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
+            alt: Burger
+    props:
+      attributes:
+        class: rounded-box

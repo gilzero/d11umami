@@ -1,0 +1,96 @@
+{#
+/**
+ * @file
+ * Default theme implementation for webform wizard progress tracker.
+ *
+ * Available variables:
+ * - webform: A webform.
+ * - pages: Associative array of wizard pages.
+ * - progress: Array of wizard progress containing page titles.
+ * - current_page: Current wizard page key.
+ * - current_index: The current wizard page index.
+ * - max_pages: Maximum number of pages that progress text should be displayed on.
+ *
+ * @see template_preprocess_webform_progress_tracker()
+ * @see https://www.w3.org/WAI/tutorials/forms/multi-page/
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('webform/webform.progress.tracker') }}
+{{ attach_library('rivet/rvt-steps') }}
+
+<ol class="rvt-steps" data-webform-progress-steps>
+  {% for index, page in progress %}
+    {% set is_completed = index < current_index %}
+    {% set is_active = index == current_index %}
+    {%
+      set classes = [
+        'rvt-steps__item',
+      ]
+    %}
+    {%
+      set indicator_classes = [
+        'rvt-steps__indicator',
+        is_completed ? 'rvt-steps__indicator--success',
+        is_active ? 'rvt-c-steps__indicator--current',
+      ]
+    %}
+    {%
+      set attributes = create_attribute()
+        .setAttribute('data-webform-' ~ page.type, page.name)
+        .setAttribute('data-text', index + 1)
+        .setAttribute('title', page.title)
+        .setAttribute('class', '')
+        .addClass(classes)
+    %}
+    <li{{ attributes }}>
+      {% if progress|length < max_pages %}
+        <div class="rvt-steps__item-content" {% if is_active %}aria-current="step"{% endif %}>
+          <span class="rvt-sr-only">
+            {% if is_active or is_completed %}
+              {{ is_active ? 'Current'|t : 'Completed'|t }}:
+            {% endif %}
+            {{ page.title }}
+          </span>
+          <span aria-hidden="true" class="rvt-steps__label">{{ page.title }}</span>
+          <span aria-hidden="true" class="{{ indicator_classes|join(' ') }}">{{ index + 1 }}</span>
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ol>
+
+{#
+<ol class="rvt-steps">
+  <li class="rvt-steps__item">
+    <a href="#" class="rvt-steps__item-content">
+      <span class="rvt-steps__label">{{ page.title }}</span>
+      <span class="rvt-steps__indicator"><span class="rvt-sr-only">Step</span> 1</span>
+    </a>
+  </li>
+  <li class="rvt-steps__item">
+    <a href="#" class="rvt-steps__item-content" aria-current="step">
+      <span class="rvt-steps__label">Personal information</span>
+      <span class="rvt-steps__indicator">2</span>
+    </a>
+  </li>
+  <li class="rvt-steps__item">
+    <a href="#" class="rvt-steps__item-content">
+      <span class="rvt-steps__label">Records and transcripts</span>
+      <span class="rvt-steps__indicator">3</span>
+    </a>
+  </li>
+  <li class="rvt-steps__item">
+    <a href="#" class="rvt-steps__item-content">
+      <span class="rvt-steps__label">Supporting documents</span>
+      <span class="rvt-steps__indicator">4</span>
+    </a>
+  </li>
+  <li class="rvt-steps__item">
+    <a href="#" class="rvt-steps__item-content">
+      <span class="rvt-steps__label">Confirmation</span>
+      <span class="rvt-steps__indicator">5</span>
+    </a>
+  </li>
+</ol> #}

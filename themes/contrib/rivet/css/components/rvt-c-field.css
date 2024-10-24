@@ -1,0 +1,45 @@
+/**
+ * @file
+ * Custom Rivet Component for Drupal field styles.
+ */
+
+.rvt-c-field {
+  display: block;
+  margin: 1rem 0;
+}
+
+.rvt-c-field--image {
+  margin: 0;
+}
+
+.rvt-c-field.rvt-prose :last-child {
+  margin-bottom: 0;
+}
+
+.rvt-c-field__label {
+  font-weight: 500;
+}
+
+.rvt-c-field__label + p {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.rvt-c-field__label--inline {
+  display: inline;
+  float: left;
+  margin-right: 0.25rem;
+}
+
+.rvt-c-field__list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rvt-c-field__list--inline,
+.rvt-c-field__list--inline ul,
+.rvt-c-field__list--inline li {
+  display: inline;
+}

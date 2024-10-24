@@ -1,0 +1,26 @@
+name: DSFR - Consent (banner)
+description: The consent manager allows the user to define their preferences on the use of their personal data, in particular the deposit of non-functional cookies in their browser).
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    buttons:
+      type: array
+      title: Buttons
+      description: 'Each item expects properties of the "dsfr4drupal:button-group" component. By default, display "Accept all", "Refuse all" and "Personalize", or the translated string in another language.'
+      items:
+        type: object
+    content:
+      type: string
+      title: Content
+    title:
+      type: string
+      title: Title
+  required:
+    - content
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.consent

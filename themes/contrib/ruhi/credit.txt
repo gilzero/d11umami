@@ -1,0 +1,35 @@
+Font Icons
++---------------------------+
+IcoMoon
+https://icomoon.io/
+Font icons used in the theme.
+
+FontAwesome
+https://fontawesome.com/
+
+
+Google Fonts
++---------------------------+
+https://fonts.google.com/
+
+
+Josefin Sans
+by Santiago Orozco
+https://fonts.google.com/?query=Santiago%20Orozco
+
+
+Noto Sans
+by Google
+https://fonts.google.com/?query=Google
+
+
+
+Morphing Slider
++---------------------------+
+https://morphist.fyianlai.com/
+
+
+Demo Images:
++---------------------------+
+https://undraw.co/
+https://pixabay.com/

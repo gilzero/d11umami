@@ -1,0 +1,11 @@
+{% if content %}
+{{ attach_library('rivet/rvt-c-region') }}
+{% apply spaceless %}
+<div aria-labelledby="social-heading" class="rvt-footer-social rvt-c-region rvt-c-region--footer-social" role="complementary">
+  <h2 class="rvt-sr-only" id="social-heading">Social media</h2>
+  <div class="rvt-c-region__inner {{ page_width }}">
+    {{ content }}
+  </div>
+</div>
+{% endapply %}
+{% endif %}

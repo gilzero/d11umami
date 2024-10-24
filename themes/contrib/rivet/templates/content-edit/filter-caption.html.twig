@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override for a filter caption.
+ *
+ * Returns HTML for a captioned image, audio, video or other tag.
+ *
+ * Available variables
+ * - string node: The complete HTML tag whose contents are being captioned.
+ * - string tag: The name of the HTML tag whose contents are being captioned.
+ * - string caption: The caption text.
+ * - string classes: The classes of the captioned HTML tag.
+ */
+#}
+{% set has_breakout = 'rvt_layout__breakout' in node|render %}
+{% set has_alignment = 'align-' in classes|render %}
+{% set is_left_align = 'align-left' in classes|render %}
+{% set is_right_align = 'align-right' in classes|render %}
+{% set is_center_align = 'align-center' in classes|render %}
+{% set is_breakout = has_breakout and not is_left_align and not is_right_align %}
+
+{%
+  set classes_array = [
+    'caption',
+    'caption-' ~ tag,
+    is_breakout ? 'rvt-layout__break-out',
+    not is_breakout ? classes,
+  ]
+%}
+
+<figure{{ create_attribute({'class': classes_array}) }}>
+{{ node }}
+<figcaption>{{ caption }}</figcaption>
+</figure>

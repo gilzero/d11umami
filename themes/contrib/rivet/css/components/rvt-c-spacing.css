@@ -1,0 +1,23 @@
+/**
+ * Rivet currently only supports zeroing out left/right and top/bottom
+ * whitespace from "small" screens and up, E.g. via .rvt-p-tb-sm-up.
+ */
+.rvt-p-lr-none {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.rvt-p-tb-none {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.rvt-m-lr-none {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.rvt-m-tb-none {
+  margin-top: 0;
+  margin-bottom: 0;
+}

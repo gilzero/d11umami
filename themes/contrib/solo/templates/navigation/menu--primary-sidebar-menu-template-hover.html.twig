@@ -1,0 +1,166 @@
+{#
+/**
+ * @file
+ * solo's theme implementation for the sidebar main menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link URL, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * @ingroup themeable
+ */
+#}
+{% import _self as menus %}
+
+{% macro svg_icon(icon_value) %}
+{% include '@solo/partials/svg/_svg-menu-arrow.html.twig' %}
+{% endmacro %}
+
+<div class="solo-clear solo-menu navigation-sidebar navigation-sidebar-template navigation-sidebar-hover">
+  {{ menus.menu_links(items, attributes, 0, menu_name, aria_id ) }}
+</div>
+
+{% macro menu_links(items, attributes, menu_level, menu_name, aria_id) %}
+
+{% set menu_level = menu_level + 1 %}
+
+{% set menu_classes = [
+  'navigation__menubar',
+  'navigation__sidebar',
+  'navigation__sidebar__template',
+  'navigation__menubar-' ~ menu_name|clean_class,
+]
+%}
+
+{% set submenu_classes = [
+'sub__menu sub__menu-' ~ menu_name|clean_class,
+]
+%}
+
+{% set menubar_attributes = create_attribute({
+  'id': menu_name ~'__menubar'|clean_unique_id,
+  'role': 'menubar',
+}) %}
+
+{% set submenu_attributes = create_attribute({
+  'id': menu_name ~'__submenu'|clean_unique_id,
+  'role': 'menu',
+  'tabindex': '-1',
+}) %}
+
+{% if items %}
+
+  {% if menu_level == 1 %}
+  <ul{{ attributes.addClass(menu_classes).removeAttribute('region') }} {{ menubar_attributes }}>
+  {% else %}
+  <ul{{ attributes.removeClass(menu_classes).addClass(submenu_classes) }} {{ submenu_attributes }}>
+  {% endif %}
+
+  {# The same in all menus #}
+  {% for item in items %}
+
+  {# Determine the system path for the link #}
+  {% set system_path = item.url.isRouted() ? item.url.getInternalPath() : item.url.toString() %}
+  {% if system_path == '' %}
+    {% set system_path = '<front>' %}
+  {% endif %}
+
+  {% import _self as macros %}
+  {% set aria_id = (menu_name ~ '-sub__menu-' ~ loop.index )|clean_unique_id %}
+  {% set dropdown_toggler_class = (menu_level == 1) ? 'dropdown-toggler-parent' : 'dropdown-toggler-child' %}
+  {% set rendered_url = item.url|render %}
+
+  {% set item_classes = [
+  'btn-animate nav__menu-item nav__menu-item-' ~ menu_name|clean_class,
+  (item and menu_level == 1 ) ? 'nav__menubar-item',
+  (item and menu_level > 1 ) ? 'nav__submenu-item',
+  item.is_expanded ? 'has-sub__menu',
+  item.is_expanded and (rendered_url starts with '/' or rendered_url starts with 'http') ? 'link-and-button',
+  item.is_expanded and not (rendered_url starts with '/' or rendered_url starts with 'http') ? 'button-only',
+  not (item.is_expanded) ? 'link-only',
+  item.in_active_trail ? 'is-active',
+  ]
+  %}
+
+  {% set dorpdown_toggler_attributes = create_attribute({
+    'data-drupal-selector': menu_name ~ '__level-' ~ (menu_level + 1),
+    'role': 'menuitem',
+    'aria-controls': aria_id,
+    'aria-haspopup': 'true',
+    'aria-expanded': 'false',
+    'tabindex': menu_level == 1 ? '0' : '-1',
+  }) %}
+
+    {# Set additional attributes if they exist #}
+    {% set additional_classes = item.url.getOption('attributes').class|default('') %}
+    {% set class_list = additional_classes is iterable ? additional_classes|join(' ') : additional_classes %}
+
+    {# The parent menu and it has children #}
+    {% if item.is_expanded %}
+    <li{{ item.attributes.addClass(item_classes) }} role='none'>
+    {% if rendered_url starts with '/' or rendered_url starts with 'http' %}
+        {# The parent link is clickable and it has children #}
+        {% set c_link_classes = ['nav__menu-link nav__menu-link-' ~ menu_name|clean_class, 'url-added'] %}
+        {% if class_list %}
+            {% set c_link_classes = c_link_classes|merge([class_list]) %}
+        {% endif %}
+        <a href="{{ item.url }}" class="{{ c_link_classes|join(' ') }}"
+            {%- if item.url.getOption('attributes').title %} title="{{ item.url.getOption('attributes').title }}" {% endif -%}
+            {%- if item.url.getOption('attributes').target %} target="{{ item.url.getOption('attributes').target }}" {% endif -%}
+            {%- if item.url.getOption('attributes').rel %} rel="{{ item.url.getOption('attributes').rel }}" {% endif -%}
+            tabindex="{{ menu_level == 1 ? '0' : '-1' }}"
+            data-drupal-link-system-path="{{ system_path }}" role='menuitem'>
+            <span class="menu__url-title-enabled">{{ item.title }}</span>
+        </a>
+        <button class="en-link dropdown-toggler {{ dropdown_toggler_class }}" {{ dorpdown_toggler_attributes }}>
+            <span class="visually-hidden">{{ '@title sub-navigation'|t({'@title': item.title}) }}</span>
+            <span class="toggler-icon dropdown-arrow">{{ macros.svg_icon('M6 9l6 6 6-6') }}</span>
+        </button>
+    {% else %}
+        {# The parent link is NOT clickable and it has children #}
+        <button class="ds-link dropdown-toggler {{ dropdown_toggler_class }} {{ class_list }}" {{ dorpdown_toggler_attributes }}
+            {%- if item.url.getOption('attributes').title %} title="{{ item.url.getOption('attributes').title }}" {% endif -%}>
+            <span class="menu__url-title-disabled">{{ item.title }}</span>
+            <span class="visually-hidden">{{ '@title sub-navigation'|t({'@title': item.title}) }}</span>
+            <span class="toggler-icon dropdown-arrow">{{ macros.svg_icon('M6 9l6 6 6-6') }}</span>
+        </button>
+    {% endif %}{# End of rendered_url starts with #}
+
+    {% else %} {# if item is not expanded #}
+    {% set link_classes = [
+    'nav__menu-link nav__menu-link-' ~ menu_name|clean_class,
+    ]
+    %}
+    {% set link_title %}
+      <span class="menu__url-title">{{ item.title }}</span>
+    {% endset %}
+    <li{{ item.attributes.addClass(item_classes) }} role='none'>
+      {{ link(
+      link_title,
+      item.url,
+      item.attributes.removeClass(item_classes).addClass(link_classes),
+      item.attributes.setAttribute('role', 'menuitem').setAttribute('tabindex', menu_level == 1 ? '0' : '-1')
+      )
+      }}
+    {% endif %}{# End for the if item.is_expanded #}
+
+    {% if item.below %}
+      {% set attributes = attributes.setAttribute('id', aria_id).setAttribute('tabindex', '-1') %}
+      {{ menus.menu_links(item.below, attributes, menu_level, menu_name) }}
+    {% endif %}
+    </li>
+
+    {% endfor %}{# End of {% for item in items %} #}
+  </ul>
+{% endif %} {# End of {% if items %} #}
+{% endmacro %}

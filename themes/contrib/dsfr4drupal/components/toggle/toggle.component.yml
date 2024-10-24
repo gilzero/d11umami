@@ -1,0 +1,45 @@
+name: DSFR - Toggle
+description: The "Toogle" component allows the user to make a choice between two opposite states (on/off).
+status: stable
+group: DSFR
+props:
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    display_current:
+      type: boolean
+      title: Display current
+      default: true
+    has_border:
+      type: boolean
+      title: Has border (bottom)?
+      default: false
+    hint_text:
+      type: string
+      title: Hint text
+    label_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Label attributes
+    label_checked:
+      type: string
+      title: Checked label
+    label_left:
+      type: boolean
+      title: Label on the left?
+      default: false
+    label_unchecked:
+      type: string
+      title: Unchecked label
+    input_id:
+      type: string
+      title: Input identifier
+    input_title:
+      type: string
+      title: Input name
+    input_value:
+      type: integer
+      title: Input value
+libraryOverrides:
+  dependencies:
+    - dsfr4drupal/component.toggle

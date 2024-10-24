@@ -1,0 +1,24 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set brand = 'FranceConnect'|t %}
+{% set url = 'https://franceconnect.gouv.fr/' %}
+
+{% if connect_plus %}
+  {% set attributes = attributes.addClass('fr-connect--plus') %}
+  {% set url = url ~ 'france-connect-plus' %}
+{% endif %}
+
+{% set link_label = link_label|default('What is @title?'|t({'@title': brand})) %}
+{% set login_label = login_label|default('Identify with'|t) %}
+
+<div class="fr-connect-group">
+  <button{{ attributes.addClass('fr-connect') }}>
+    <span class="fr-connect__login">{{ login_label }}</span>
+    <span class="fr-connect__brand">{{ brand }}</span>
+  </button>
+  <p>
+    {{ include('dsfr4drupal:link', {
+      'label': link_label,
+      'url': url,
+    }, with_context=false) }}
+  </p>
+</div>

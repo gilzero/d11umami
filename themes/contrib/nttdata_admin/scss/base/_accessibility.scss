@@ -1,0 +1,39 @@
+%parent-focus {
+  &:has(
+    a:focus, 
+    a:focus-within, 
+    a:focus
+  ) {
+    @include focus-outline;
+    z-index: 1;
+    a {
+      &:focus,
+      &:focus-visible,
+      &:focus-within {
+        outline: none;
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
+}
+
+a,
+.link {
+  color: $smart-navy;
+  &:hover {
+    color: $primary;
+  }
+}
+
+body.dark-mode {
+  a,
+  .link {
+    color: $text-white;
+  }
+}
+
+tr:focus-within {
+  color: unset;
+  background: unset;
+}

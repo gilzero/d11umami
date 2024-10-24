@@ -1,0 +1,15 @@
+.maintenance-page {
+  min-height: 100vh;
+  text-align: center;
+  background-image: url(../images/mantanence.jpg);
+  // background-color: $brand-color;
+  // color: $white;
+  main {
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+p {
+  margin-bottom: 0.5rem;
+}

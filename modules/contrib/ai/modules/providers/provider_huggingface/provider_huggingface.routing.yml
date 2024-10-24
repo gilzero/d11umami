@@ -1,0 +1,14 @@
+provider_huggingface.settings_form:
+  path: '/admin/config/ai/providers/huggingface'
+  defaults:
+    _form: '\Drupal\provider_huggingface\Form\HuggingfaceConfigForm'
+    _title: 'Setup Huggingface Authentication'
+  requirements:
+    _permission: 'administer ai providers'
+provider_huggingface.autocomplete.models:
+  path: '/admin/ai/huggingface/autocomplete/models'
+  defaults:
+    _controller: '\Drupal\provider_huggingface\Controller\HuggingfaceAutocomplete::models'
+    _format: json
+  requirements:
+    _permission: 'autocomplete huggingface model list'

@@ -1,0 +1,459 @@
+name: "Grid cols"
+description: "The grid system of tailwind CSS uses a series of utility classes for layouts and alignment of content. 'Grid cols' offers an off-the-shelf component to add a n-colummn configurable section. For more powerful needs, please refer to the Tailwind CSS documentation."
+group: "Grid"
+links:
+  - "https://daisyui.com/docs/layout-and-typography/"
+  - "https://tailwindcss.com/docs/container"
+  - "https://tailwindcss.com/docs/grid-template-columns"
+  - "https://tailwindcss.com/docs/gap"
+slots:
+  items:
+    title: Items
+props:
+  type: object
+  properties:
+    container_type:
+      title: "Container type"
+      description: "Utilities for controlling if container class is injected in the markup."
+      $ref: "ui-patterns://enum"
+      enum:
+        - container mx-auto
+        - breakout
+        - bg-breakout
+      "meta:enum":
+        container mx-auto: "Container (default)"
+        breakout: "Breakout"
+        bg-breakout: "Bg breakout"
+    background_image:
+      title: Background image
+      description: "The background image URL. Optional."
+      $ref: "ui-patterns://url"
+    background_size:
+      title: "Background size"
+      description: "Utilities for controlling the background size of an element's background image."
+      $ref: "ui-patterns://enum"
+      enum:
+        - bg-auto
+        - bg-cover
+        - bg-contain
+      "meta:enum":
+        bg-auto: "Background auto"
+        bg-cover: "Background cover"
+        bg-contain: "Background contain"
+    background_position:
+      title: "Background position"
+      description: "Utilities for controlling the position of an element's background image."
+      $ref: "ui-patterns://enum"
+      enum:
+        - bg-bottom
+        - bg-center
+        - bg-left
+        - bg-left-bottom
+        - bg-left-top
+        - bg-right
+        - bg-right-bottom
+        - bg-right-top
+        - bg-top
+      "meta:enum":
+        bg-bottom: "Background bottom"
+        bg-center: "Background center"
+        bg-left: "Background left"
+        bg-left-bottom: "Background left bottom"
+        bg-left-top: "Background left top"
+        bg-right: "Background right"
+        bg-right-bottom: "Background right bottom"
+        bg-right-top: "Background right top"
+        bg-top: "Background top"
+    background_repeat:
+      title: "Background repeat"
+      description: "Utilities for controlling the repetition of an element's background image."
+      $ref: "ui-patterns://enum"
+      enum:
+        - bg-repeat
+        - bg-no-repeat
+        - bg-repeat-x
+        - bg-repeat-y
+        - bg-repeat-round
+        - bg-repeat-space
+      "meta:enum":
+        bg-repeat: "Background repeat"
+        bg-no-repeat: "Background no repeat"
+        bg-repeat-x: "Background repeat x"
+        bg-repeat-y: "Background repeat y"
+        bg-repeat-round: "Background repeat round"
+        bg-repeat-space: "Background repeat space"
+    gap:
+      title: "Gap"
+      description: "Utilities for controlling gutters between grid and flexbox items, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - gap-0
+        - gap-2
+        - gap-4
+        - gap-8
+        - gap-12
+      "meta:enum":
+        gap-0: "0rem"
+        gap-2: "0.5rem"
+        gap-4: "1rem"
+        gap-8: "2rem"
+        gap-12: "3rem"
+    gap_lg:
+      title: "Gap (lg)"
+      description: "Utilities for controlling gutters between grid and flexbox items, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:gap-0
+        - lg:gap-2
+        - lg:gap-4
+        - lg:gap-8
+        - lg:gap-12
+      "meta:enum":
+        lg:gap-0: "0rem"
+        lg:gap-2: "0.5rem"
+        lg:gap-4: "1rem"
+        lg:gap-8: "2rem"
+        lg:gap-12: "3rem"
+    gap_md:
+      title: "Gap (md)"
+      description: "Utilities for controlling gutters between grid and flexbox items, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:gap-0
+        - md:gap-2
+        - md:gap-4
+        - md:gap-8
+        - md:gap-12
+      "meta:enum":
+        md:gap-0: "0rem"
+        md:gap-2: "0.5rem"
+        md:gap-4: "1rem"
+        md:gap-8: "2rem"
+        md:gap-12: "3rem"
+    gap_sm:
+      title: "Gap (sm)"
+      description: "Utilities for controlling gutters between grid and flexbox items, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:gap-0
+        - sm:gap-2
+        - sm:gap-4
+        - sm:gap-8
+        - sm:gap-12
+      "meta:enum":
+        sm:gap-0: "0rem"
+        sm:gap-2: "0.5rem"
+        sm:gap-4: "1rem"
+        sm:gap-8: "2rem"
+        sm:gap-12: "3rem"
+    grid_cols:
+      title: "Grid Template Columns"
+      description: "Utilities for specifying the columns in a grid layout, for 'xl' and every other breakpoints."
+      $ref: "ui-patterns://enum"
+      enum:
+        - grid-cols-1
+        - grid-cols-2
+        - grid-cols-3
+        - grid-cols-4
+        - grid-cols-5
+        - grid-cols-6
+        - grid-cols-7
+        - grid-cols-8
+        - grid-cols-9
+        - grid-cols-10
+        - grid-cols-11
+        - grid-cols-12
+      "meta:enum":
+        grid-cols-1: "1 column"
+        grid-cols-2: "2 columns"
+        grid-cols-3: "3 columns"
+        grid-cols-4: "4 columns"
+        grid-cols-5: "5 columns"
+        grid-cols-6: "6 columns"
+        grid-cols-7: "7 columns"
+        grid-cols-8: "8 columns"
+        grid-cols-9: "9 columns"
+        grid-cols-10: "10 columns"
+        grid-cols-11: "11 columns"
+        grid-cols-12: "12 columns"
+    grid_cols_lg:
+      title: "Grid Template Columns (lg)"
+      description: "Utilities for specifying the columns in a grid layout, for 'lg' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - lg:grid-cols-1
+        - lg:grid-cols-2
+        - lg:grid-cols-3
+        - lg:grid-cols-4
+        - lg:grid-cols-5
+        - lg:grid-cols-6
+        - lg:grid-cols-7
+        - lg:grid-cols-8
+        - lg:grid-cols-9
+        - lg:grid-cols-10
+        - lg:grid-cols-11
+        - lg:grid-cols-12
+      "meta:enum":
+        lg:grid-cols-1: "1 column"
+        lg:grid-cols-2: "2 columns"
+        lg:grid-cols-3: "3 columns"
+        lg:grid-cols-4: "4 columns"
+        lg:grid-cols-5: "5 columns"
+        lg:grid-cols-6: "6 columns"
+        lg:grid-cols-7: "7 columns"
+        lg:grid-cols-8: "8 columns"
+        lg:grid-cols-9: "9 columns"
+        lg:grid-cols-10: "10 columns"
+        lg:grid-cols-11: "11 columns"
+        lg:grid-cols-12: "12 columns"
+    grid_cols_md:
+      title: "Grid Template Columns (md)"
+      description: "Utilities for specifying the columns in a grid layout, for 'md' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - md:grid-cols-1
+        - md:grid-cols-2
+        - md:grid-cols-3
+        - md:grid-cols-4
+        - md:grid-cols-5
+        - md:grid-cols-6
+        - md:grid-cols-7
+        - md:grid-cols-8
+        - md:grid-cols-9
+        - md:grid-cols-10
+        - md:grid-cols-11
+        - md:grid-cols-12
+      "meta:enum":
+        md:grid-cols-1: "1 column"
+        md:grid-cols-2: "2 columns"
+        md:grid-cols-3: "3 columns"
+        md:grid-cols-4: "4 columns"
+        md:grid-cols-5: "5 columns"
+        md:grid-cols-6: "6 columns"
+        md:grid-cols-7: "7 columns"
+        md:grid-cols-8: "8 columns"
+        md:grid-cols-9: "9 columns"
+        md:grid-cols-10: "10 columns"
+        md:grid-cols-11: "11 columns"
+        md:grid-cols-12: "12 columns"
+    grid_cols_sm:
+      title: "Grid Template Columns (sm)"
+      description: "Utilities for specifying the columns in a grid layout, for 'sm' breakpoint."
+      $ref: "ui-patterns://enum"
+      enum:
+        - sm:grid-cols-1
+        - sm:grid-cols-2
+        - sm:grid-cols-3
+        - sm:grid-cols-4
+        - sm:grid-cols-5
+        - sm:grid-cols-6
+        - sm:grid-cols-7
+        - sm:grid-cols-8
+        - sm:grid-cols-9
+        - sm:grid-cols-10
+        - sm:grid-cols-11
+        - sm:grid-cols-12
+      "meta:enum":
+        sm:grid-cols-1: "1 column"
+        sm:grid-cols-2: "2 columns"
+        sm:grid-cols-3: "3 columns"
+        sm:grid-cols-4: "4 columns"
+        sm:grid-cols-5: "5 columns"
+        sm:grid-cols-6: "6 columns"
+        sm:grid-cols-7: "7 columns"
+        sm:grid-cols-8: "8 columns"
+        sm:grid-cols-9: "9 columns"
+        sm:grid-cols-10: "10 columns"
+        sm:grid-cols-11: "11 columns"
+        sm:grid-cols-12: "12 columns"
+stories:
+  preview:
+    title: Preview
+    slots:
+      items:
+        - type: component
+          component: "ui_suite_daisyui:card"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt: Shoes
+            title: Shoes!
+            text:
+              type: html_tag
+              tag: p
+              value: "If a dog chews shoes whose shoes does he choose?"
+            actions:
+              type: component
+              component: "ui_suite_daisyui:button"
+              slots:
+                label: "Buy Now"
+              props:
+                variant: primary
+                size: sm
+          props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+        - type: component
+          component: "ui_suite_daisyui:card"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt: Shoes
+            title: Shoes!
+            text:
+              type: html_tag
+              tag: p
+              value: "If a dog chews shoes whose shoes does he choose?"
+            actions:
+              type: component
+              component: "ui_suite_daisyui:button"
+              slots:
+                label: "Buy Now"
+              props:
+                variant: primary
+                size: sm
+          props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+        - type: component
+          component: "ui_suite_daisyui:card"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt: Shoes
+            title: Shoes!
+            text:
+              type: html_tag
+              tag: p
+              value: "If a dog chews shoes whose shoes does he choose?"
+            actions:
+              type: component
+              component: "ui_suite_daisyui:button"
+              slots:
+                label: "Buy Now"
+              props:
+                variant: primary
+                size: sm
+          props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+        - type: component
+          component: "ui_suite_daisyui:card"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt: Shoes
+            title: Shoes!
+            text:
+              type: html_tag
+              tag: p
+              value: "If a dog chews shoes whose shoes does he choose?"
+            actions:
+              type: component
+              component: "ui_suite_daisyui:button"
+              slots:
+                label: "Buy Now"
+              props:
+                variant: primary
+                size: sm
+          props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+        - type: component
+          component: "ui_suite_daisyui:card"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt: Shoes
+            title: Shoes!
+            text:
+              type: html_tag
+              tag: p
+              value: "If a dog chews shoes whose shoes does he choose?"
+            actions:
+              type: component
+              component: "ui_suite_daisyui:button"
+              slots:
+                label: "Buy Now"
+              props:
+                variant: primary
+                size: sm
+          props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+        - type: component
+          component: "ui_suite_daisyui:card"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt: Shoes
+            title: Shoes!
+            text:
+              type: html_tag
+              tag: p
+              value: "If a dog chews shoes whose shoes does he choose?"
+            actions:
+              type: component
+              component: "ui_suite_daisyui:button"
+              slots:
+                label: "Buy Now"
+              props:
+                variant: primary
+                size: sm
+          props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+        - type: component
+          component: "ui_suite_daisyui:card"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt: Shoes
+            title: Shoes!
+            text:
+              type: html_tag
+              tag: p
+              value: "If a dog chews shoes whose shoes does he choose?"
+            actions:
+              type: component
+              component: "ui_suite_daisyui:button"
+              slots:
+                label: "Buy Now"
+              props:
+                variant: primary
+                size: sm
+          props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+        - type: component
+          component: "ui_suite_daisyui:card"
+          slots:
+            image:
+              theme: image
+              uri: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt: Shoes
+            title: Shoes!
+            text:
+              type: html_tag
+              tag: p
+              value: "If a dog chews shoes whose shoes does he choose?"
+            actions:
+              type: component
+              component: "ui_suite_daisyui:button"
+              slots:
+                label: "Buy Now"
+              props:
+                variant: primary
+                size: sm
+          props:
+          attributes:
+            class: ["bg-base-100", "shadow-xl"]
+    props:
+      gap: "gap-4"

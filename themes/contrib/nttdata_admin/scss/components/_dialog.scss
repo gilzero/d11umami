@@ -1,0 +1,83 @@
+/**
+ * @file
+ * UI Dialogs.
+ */
+
+
+.cke_dialog_container .cke_dialog,
+.ui-dialog {
+  border: 1px solid $text-grey;
+  &:focus {
+    @include focus-outline;
+  }
+  &.ui-widget > .ui-dialog-content,
+  > .ui-dialog-content {
+    color: $text-dark;
+    background: $white;
+  }
+  .ui-dialog-titlebar,
+  .cke_dialog_title {
+    color: $text-white;
+    background: $bg-dark;
+  }
+  // conflict with yellow button in DK mode
+  > .ui-dialog-buttonpane > .ui-dialog-buttonset {
+    button.button.button--danger {
+      @extend %button-danger;
+    }
+  }
+  &_title {
+    position: relative;
+    box-sizing: border-box;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    line-height: 2rem;
+    font-size: 1.424rem;
+    font-weight: bold;
+  }
+  &_close_button {
+    top: 1.5rem;
+  }
+  &_contents {
+    color: $text-dark;
+    background: $white;
+    &:hover {
+      background: $white;
+    }
+    label.cke_required span {
+      color: $nttdata-red;
+    }
+    select {
+      background: unset;
+    }
+  }
+  .cke_dialog_footer {
+    background: $ck-grey2;
+    .cke_dialog_ui_hbox {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+    .cke_dialog_ui_button {
+      &_cancel {
+        @extend %button-dimensions;
+        @extend %button-base;
+        color: $text-white;
+        background: $nttdata-blue-effect;
+        margin-right: 0;
+        &:hover {
+          color: $smart-navy;
+          background: $primary;
+          padding: 0.375rem 1rem;
+        }
+      }
+      &_ok {
+        @extend %button-dimensions;
+        @extend %button-base;
+        &:hover {
+          padding: 0.375rem 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/xara.js: {}
+  dependencies:
+    - core/jquery
+
+# Google Fonts from local
+googlefontslocal:
+  css:
+    base:
+      css/fonts.css: {}
+
+# Theme settings page 
+theme-settings:
+  version: VERSION
+  css:
+    theme:
+      css/theme-settings.css: {}
+
+# Slider
+slider:
+  version: 2.1.2
+  js:
+    js/slider.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    component:
+      css/slider.css: {}

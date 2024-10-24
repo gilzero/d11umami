@@ -1,0 +1,36 @@
+# Schema for the configuration files of the "DSFR for Drupal" theme.
+
+dsfr4drupal.settings:
+  type: theme_settings
+  label: 'DSFR for Drupal settings'
+  mapping:
+    logo_text:
+      type: label
+      label: 'Logo text'
+    logo_operator:
+      type: integer
+      label: 'Logo operator (file ID)'
+    mourning_mode:
+      type: boolean
+      label: 'Enable mourning mode'
+    scheme:
+      type: string
+      label: 'Theme'
+    scheme_choose:
+      type: boolean
+      label: 'Enable display settings'
+    mega_menu:
+      type: boolean
+      label: 'Use mega menu'
+    container_class:
+      type: string
+      label: 'Container'
+    form_novalidate:
+      type: boolean
+      label: 'Disable browser validation of form fields'
+    footer_copy:
+      type: text_format
+      label: 'Copyright notice'
+    show_password_button:
+      type: boolean
+      label: 'Enable "Show password" feature'

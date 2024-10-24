@@ -1,0 +1,51 @@
+// vt-genric button type scss
+%default-button {
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  &:hover {
+    transform: translateY(-5px);
+    border-radius: 1.5rem;
+  }
+}
+.button {
+  @extend %default-button;
+}
+.nice-select.open{
+  z-index: 2;
+}
+.button--primary,
+.button-primary {
+  color: #fff;
+  background: #140C40;
+  border: 1px solid transparent;
+  &:hover {
+    color: #140C40;
+    border: 1px solid #140C40;
+    background: #fff;
+  }
+}
+.button-success,
+.button--success {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+  &:hover {
+    color: #4cd3e3;
+    border: 1px solid #4cd3e3;
+    background: #fff;
+  }
+}

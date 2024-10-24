@@ -1,0 +1,13 @@
+iu_page_layout:
+  label: 'IU Page Layout'
+  path: templates/layouts
+  template: layout--iu-page-layout
+  category: 'IU Page Layout'
+  default_region: content
+  regions:
+    constrained:
+      label: Constrained
+    edge_to_edge:
+      label: Edge-to-edge
+    constrained_below:
+      label: Constrained (below)

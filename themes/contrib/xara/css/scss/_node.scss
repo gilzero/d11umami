@@ -1,0 +1,25 @@
+/* Submitted Details */
+.node-submitted-details i {
+  color: var(--primary);
+}
+.node-header .image-field {
+  margin: 0;
+}
+.node-author {
+  display: flex;
+  align-items: center;
+}
+.author-picture {
+  margin-right: 10px;
+}
+
+.taxonomy-term a {
+  border-radius: 6px;
+  background-color: var(--light);
+  transition: all 0.3s ease;
+}
+.taxonomy-term a:hover {
+  color: var(--color-text);
+  background-color: var(--border);
+  border: 2px solid var(--primary);
+}

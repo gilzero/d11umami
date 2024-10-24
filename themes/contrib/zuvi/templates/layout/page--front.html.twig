@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * zuvi's theme implementation to display front page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template.
+ *
+ */
+#}
+{% include '@zuvi/template-parts/header.html.twig' %}
+{% include '@zuvi/template-parts/highlighted.html.twig' %}
+<div id="main-wrapper" class="main-wrapper">
+  <div class="container">
+    {% if front_sidebar %}
+      <div class="main-container">
+    {% endif %}
+    <main id="home-main" class="full-width page-content home-content">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      {% include '@zuvi/template-parts/content_top.html.twig' %}
+      {{ page.content }}
+      {% include '@zuvi/template-parts/content_home.html.twig' %}
+      {% include '@zuvi/template-parts/content_bottom.html.twig' %}
+    </main>
+    {% if front_sidebar %}
+      {% include '@zuvi/template-parts/sidebar_left.html.twig' %}
+      {% include '@zuvi/template-parts/sidebar_right.html.twig' %}
+      </div>
+    {% endif %}
+  </div>{# /.container #}
+</div>{# /main-wrapper #}
+{% include '@zuvi/template-parts/footer.html.twig' %}

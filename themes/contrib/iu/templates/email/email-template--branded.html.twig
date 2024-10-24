@@ -1,0 +1,130 @@
+{#
+/**
+ * @file
+ * An IU-branded email template.
+ *
+ * @see http://brand.iu.edu/downloads
+ */
+ #}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{{ subject }}</title>
+<style type="text/css">
+body {
+  color: #414042;
+}
+a,
+.redLink {
+  color: #990000;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body style="padding:0; margin:0;">
+{% if online_version_url %}
+<table width="100%" bgcolor="" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td style="font-family:Arial,Helvetica,sans-serif; font-size:13px">
+      <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" style="margin:0; padding:0; border-collapse:collapse;">
+        <tbody>
+          <tr>
+            <td valign="top" align="left" style="padding:0; margin:0;">&nbsp;</td>
+            <td width="464" valign="top" align="center" style="padding:16px 18px; margin:0; color:#990000; font-family:Arial,Helvetica,sans-serif; font-size:10px; line-height:17px;"><a style="color:#990000; text-decoration:none;" target="_blank" href="{{ online_version_url }}">View online.</a></td>
+            <td valign="top" align="left" style="padding:0; margin:0;">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+{% endif %}
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0; padding:0; border-collapse:collapse; background-color:#ffffff; min-width:600px;">
+  <tr>
+    <td align="center">
+      <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center" bgcolor="#ffffff">
+        <tr>
+          <td style="font-family:Arial,Helvetica,sans-serif; font-size:13px" valign="top">
+            <div align="center">
+
+              {%- if campus %}
+              {% include '@iu/email/email-header-' ~ campus ~ '.html.twig' %}
+              {%- else %}
+              {% include '@iu/email/email-header-iu.html.twig' %}
+              {%- endif %}
+
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center" bgcolor="#ffffff">
+        <tbody>
+          <tr>
+            <td style="font-family:Arial,Helvetica,sans-serif; font-size:13px" valign="top">
+              <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                  <tr>
+                    <td height="40" style="height:40px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td valign="top" align="left" style="padding:0 22px 22px; margin:0; font-family:Arial,Helvetica,sans-serif; font-weight:bold; font-size:32px;  font-style:none; color:#2A292B; line-height:32px;">{% block title %}{{ subject }}{% endblock %}</td>
+                  </tr>
+                  <tr>
+                    <td valign="top" align="left" style="padding:0 22px; margin:0; font-family:Arial,Helvetica,sans-serif; font-weight:normal; font-size:16px; color:#414042; line-height:24px;">
+                      {% block content %}{{ content }}{% endblock %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="40" style="height:40px;">&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center">
+        <tr>
+          <td width="600" valign="top" align="left" style="padding:0; margin:0;">
+            <img width="600" border="0" style="border-color:#000; margin:0; display:block" alt="1820-2020" src="http://lesc.iu.edu/emails/_____templates/_common/footer/fulfilling-the-promise-600x40.png" title="IU Bicentennial 1820-2020" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="100%" bgcolor="" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="top" align="center" class="mobile-adjust-size" style="padding:24px 18px; margin:0; font-family:Arial,Helvetica,sans-serif; font-size:14px; font-weight:normal; font-style:normal; line-height:20px; color:#767676;">
+      <address style="font-style:normal;">
+        {% block university_address %}
+          Indiana University<br />
+          107 S Indiana Avenue <br />
+          Bloomington, IN&nbsp;47405<br />
+        {% endblock %}
+      </address>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" align="center" style="padding:0 18px 28px; margin:0; font-style:normal; font-family:Arial,Helvetica,sans-serif; font-size:10px; font-weight:normal; line-height:17px; color:#767676;">
+      {% block compliance %}
+        {% if to_mail or site_name %}
+        This e-mail was automatically sent {% if to_mail %}to <a href="mailto:{{ to_mail }}" class="redlink" style="color:#990000; text-decoration:none;"><span class="redlink" style="color:#990000;">{{ to_mail }}</span></a>{% endif %}{% if site_name %} by the {{ site_name }} website{% endif %}.
+        {% endif %}
+      {% endblock %}
+    </td>
+  </tr>
+</table>
+</body>
+</html>

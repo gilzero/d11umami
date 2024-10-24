@@ -1,0 +1,3 @@
+body .page-wrapper:after {
+  display: none;
+}

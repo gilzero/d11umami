@@ -1,0 +1,1083 @@
+/* Round Hover Classes */
+#page-wrapper .w3-circle:hover {
+  border-radius: 50%;
+}
+
+#page-wrapper .w3-round-small:hover {
+  border-radius: 2px;
+}
+
+#page-wrapper .w3-round:hover,
+#page-wrapper .w3-round-medium:hover {
+  border-radius: 4px;
+}
+
+#page-wrapper .w3-round-large:hover {
+  border-radius: 8px;
+}
+
+#page-wrapper .w3-round-xlarge:hover {
+  border-radius: 16px;
+}
+
+#page-wrapper .w3-round-xxlarge:hover {
+  border-radius: 32px;
+}
+
+/* Default */
+#page-wrapper .w3-hover-over:hover,
+#page-wrapper .w3-button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-ccc);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-transparent,
+#page-wrapper .w3-hover-none:hover {
+  --r-bg: var(--solo-transparent);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-hover-none:hover {
+  box-shadow: none !important;
+}
+
+/* Text Colors */
+#page-wrapper .w3-text-amber,
+#page-wrapper .w3-hover-text-amber:hover {
+  --r-tx: var(--solo-amber);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-aqua,
+#page-wrapper .w3-hover-text-aqua:hover {
+  --r-tx: var(--solo-aqua);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-blue,
+#page-wrapper .w3-hover-text-blue:hover {
+  --r-tx: var(--solo-blue);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-light-blue,
+#page-wrapper .w3-hover-text-light-blue:hover {
+  --r-tx: var(--solo-light-blue);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-brown,
+#page-wrapper .w3-hover-text-brown:hover {
+  --r-tx: var(--solo-brown);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-cyan,
+#page-wrapper .w3-hover-text-cyan:hover {
+  --r-tx: var(--solo-cyan);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-blue-grey,
+#page-wrapper .w3-hover-text-blue-grey:hover,
+#page-wrapper .w3-text-blue-gray,
+#page-wrapper .w3-hover-text-blue-gray:hover {
+  --r-tx: var(--solo-blue-gray);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-green,
+#page-wrapper .w3-hover-text-green:hover {
+  --r-tx: var(--solo-green);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-light-green,
+#page-wrapper .w3-hover-text-light-green:hover {
+  --r-tx: var(--solo-light-green);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-indigo,
+#page-wrapper .w3-hover-text-indigo:hover {
+  --r-tx: var(--solo-indigo);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-khaki,
+#page-wrapper .w3-hover-text-khaki:hover {
+  --r-tx: var(--solo-khaki);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-lime,
+#page-wrapper .w3-hover-text-lime:hover {
+  --r-tx: var(--solo-lime);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-orange,
+#page-wrapper .w3-hover-text-orange:hover {
+  --r-tx: var(--solo-orange);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-deep-orange,
+#page-wrapper .w3-hover-text-deep-orange:hover {
+  --r-tx: var(--solo-deep-orange);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-pink,
+#page-wrapper .w3-hover-text-pink:hover {
+  --r-tx: var(--solo-pink);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-purple,
+#page-wrapper .w3-hover-text-purple:hover {
+  --r-tx: var(--solo-purple);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-deep-purple,
+#page-wrapper .w3-hover-text-deep-purple:hover {
+  --r-tx: var(--solo-deep-purple);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-red,
+#page-wrapper .w3-hover-text-red:hover {
+  --r-tx: var(--solo-red);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-sand,
+#page-wrapper .w3-hover-text-sand:hover {
+  --r-tx: var(--solo-sand);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-teal,
+#page-wrapper .w3-hover-text-teal:hover {
+  --r-tx: var(--solo-teal);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-yellow,
+#page-wrapper .w3-hover-text-yellow:hover {
+  --r-tx: var(--solo-yellow);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-white,
+#page-wrapper .w3-hover-text-white:hover {
+  --r-tx: var(--solo-white);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-black,
+#page-wrapper .w3-hover-text-black:hover {
+  --r-tx: var(--solo-black);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-grey,
+#page-wrapper .w3-hover-text-grey:hover,
+#page-wrapper .w3-text-gray,
+#page-wrapper .w3-hover-text-gray:hover {
+  --r-tx: var(--solo-gray);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-light-grey,
+#page-wrapper .w3-hover-text-light-grey:hover,
+#page-wrapper .w3-text-light-gray,
+#page-wrapper .w3-hover-text-light-gray:hover {
+  --r-tx: var(--solo-light-gray);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-dark-grey,
+#page-wrapper .w3-hover-text-dark-grey:hover,
+#page-wrapper .w3-text-dark-gray,
+#page-wrapper .w3-hover-text-dark-gray:hover {
+  --r-tx: var(--solo-dark-gray);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-pale-red,
+#page-wrapper .w3-hover-text-pale-red:hover {
+  --r-tx: var(--solo-pale-red);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-pale-green,
+#page-wrapper .w3-hover-text-pale-green:hover {
+  --r-tx: var(--solo-pale-green);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-pale-yellow,
+#page-wrapper .w3-hover-text-pale-yellow:hover {
+  --r-tx: var(--solo-pale-yellow);
+  color: var(--r-tx) !important;
+}
+
+#page-wrapper .w3-text-pale-blue,
+#page-wrapper .w3-hover-text-pale-blue:hover {
+  --r-tx: var(--solo-pale-blue);
+  color: var(--r-tx) !important;
+}
+
+/* Link Text Colors */
+#page-wrapper .w3-link-amber a {
+  --r-lk: var(--solo-amber);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-aqua a {
+  --r-lk: var(--solo-aqua);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-blue a {
+  --r-lk: var(--solo-blue);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-light-blue a {
+  --r-lk: var(--solo-light-blue);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-brown a {
+  --r-lk: var(--solo-brown);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-cyan a {
+  --r-lk: var(--solo-cyan);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-blue-gray a,
+#page-wrapper .w3-link-blue-grey a {
+  --r-lk: var(--solo-blue-gray);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-green a {
+  --r-lk: var(--solo-green);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-light-green a {
+  --r-lk: var(--solo-light-green);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-indigo a {
+  --r-lk: var(--solo-indigo);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-khaki a {
+  --r-lk: var(--solo-khaki);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-lime a {
+  --r-lk: var(--solo-lime);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-orange a {
+  --r-lk: var(--solo-orange);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-deep-orange a {
+  --r-lk: var(--solo-deep-orange);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-pink a {
+  --r-lk: var(--solo-pink);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-purple a {
+  --r-lk: var(--solo-purple);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-deep-purple a {
+  --r-lk: var(--solo-deep-purple);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-red a {
+  --r-lk: var(--solo-red);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-sand a {
+  --r-lk: var(--solo-sand);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-teal a {
+  --r-lk: var(--solo-teal);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-yellow a {
+  --r-lk: var(--solo-yellow);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-white a {
+  --r-lk: var(--solo-white);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-black a {
+  --r-lk: var(--solo-black);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-gray a,
+#page-wrapper .w3-link-grey a {
+  --r-lk: var(--solo-gray);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-light-gray a,
+#page-wrapper .w3-link-light-grey a {
+  --r-lk: var(--solo-light-gray);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-dark-gray a,
+#page-wrapper .w3-link-dark-grey a {
+  --r-lk: var(--solo-dark-gray);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-pale-red a {
+  --r-lk: var(--solo-pale-red);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-pale-green a {
+  --r-lk: var(--solo-pale-green);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-pale-yellow a {
+  --r-lk: var(--solo-pale-yellow);
+  color: var(--r-lk) !important;
+}
+
+#page-wrapper .w3-link-pale-blue a {
+  --r-lk: var(--solo-pale-blue);
+  color: var(--r-lk) !important;
+}
+
+/* Link Background Color Classes */
+#page-wrapper .w3-link-bg-red a {
+  --r-bg: var(--solo-red);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-green a {
+  --r-bg: var(--solo-green);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-blue a {
+  --r-bg: var(--solo-blue);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-yellow a {
+  --r-bg: var(--solo-yellow);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-white a {
+  --r-bg: var(--solo-white);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-black a {
+  --r-bg: var(--solo-black);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-grey a,
+#page-wrapper .w3-link-bg-gray a {
+  --r-bg: var(--solo-gray);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-amber a {
+  --r-bg: var(--solo-amber);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-aqua a {
+  --r-bg: var(--solo-aqua);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-light-blue a {
+  --r-bg: var(--solo-light-blue);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-brown a {
+  --r-bg: var(--solo-brown);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-cyan a {
+  --r-bg: var(--solo-cyan);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-blue-grey a,
+#page-wrapper .w3-link-bg-blue-gray a {
+  --r-bg: var(--solo-blue-gray);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-light-green a {
+  --r-bg: var(--solo-light-green);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-indigo a {
+  --r-bg: var(--solo-indigo);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-khaki a {
+  --r-bg: var(--solo-khaki);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-lime a {
+  --r-bg: var(--solo-lime);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-orange a {
+  --r-bg: var(--solo-orange);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-deep-orange a {
+  --r-bg: var(--solo-deep-orange);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-pink a {
+  --r-bg: var(--solo-pink);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-purple a {
+  --r-bg: var(--solo-purple);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-deep-purple a {
+  --r-bg: var(--solo-deep-purple);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-sand a {
+  --r-bg: var(--solo-sand);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-teal a {
+  --r-bg: var(--solo-teal);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-light-gray a,
+#page-wrapper .w3-link-bg-light-grey a {
+  --r-bg: var(--solo-light-gray);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-dark-gray a,
+#page-wrapper .w3-link-bg-dark-grey a {
+  --r-bg: var(--solo-dark-gray);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-pale-red a {
+  --r-bg: var(--solo-pale-red);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-pale-green a {
+  --r-bg: var(--solo-pale-green);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-pale-yellow a {
+  --r-bg: var(--solo-pale-yellow);
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-link-bg-pale-blue a {
+  --r-bg: var(--solo-pale-blue);
+  background-color: var(--r-bg) !important;
+}
+
+/* Background Colors */
+#page-wrapper .w3-amber,
+#page-wrapper .w3-hover-amber:hover,
+#page-wrapper .w3-button-amber button,
+#page-wrapper .w3-link-hover-amber a:hover,
+#page-wrapper .w3-button-hover-amber button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-amber);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-aqua,
+#page-wrapper .w3-hover-aqua:hover,
+#page-wrapper .w3-button-aqua button,
+#page-wrapper .w3-link-hover-aqua a:hover,
+#page-wrapper .w3-button-hover-aqua button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-aqua);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-blue,
+#page-wrapper .w3-hover-blue:hover,
+#page-wrapper .w3-button-blue button,
+#page-wrapper .w3-link-hover-blue a:hover,
+#page-wrapper .w3-button-hover-blue button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-blue);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-light-blue,
+#page-wrapper .w3-hover-light-blue:hover,
+#page-wrapper .w3-button-light-blue button,
+#page-wrapper .w3-link-hover-light-blue a:hover,
+#page-wrapper .w3-button-hover-light-blue button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-light-blue);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-brown,
+#page-wrapper .w3-hover-brown:hover,
+#page-wrapper .w3-button-brown button,
+#page-wrapper .w3-link-hover-brown a:hover,
+#page-wrapper .w3-button-hover-brown button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-brown);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-cyan,
+#page-wrapper .w3-hover-cyan:hover,
+#page-wrapper .w3-button-cyan button,
+#page-wrapper .w3-link-hover-cyan a:hover,
+#page-wrapper .w3-button-hover-cyan button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-cyan);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-blue-grey,
+#page-wrapper .w3-hover-blue-grey:hover,
+#page-wrapper .w3-blue-gray,
+#page-wrapper .w3-hover-blue-gray:hover,
+#page-wrapper .w3-button-blue-gray button,
+#page-wrapper .w3-button-blue-grey button,
+#page-wrapper .w3-link-hover-blue-gray a:hover,
+#page-wrapper .w3-link-hover-blue-grey a:hover,
+#page-wrapper .w3-button-hover-blue-gray button:hover,
+#page-wrapper .w3-button-hover-blue-grey button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-blue-gray);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-green,
+#page-wrapper .w3-hover-green:hover,
+#page-wrapper .w3-button-green button,
+#page-wrapper .w3-link-hover-green a:hover,
+#page-wrapper .w3-button-hover-green button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-green);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-light-green,
+#page-wrapper .w3-hover-light-green:hover,
+#page-wrapper .w3-button-light-green button,
+#page-wrapper .w3-link-hover-light-green a:hover,
+#page-wrapper .w3-button-hover-light-green button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-light-green);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-indigo,
+#page-wrapper .w3-hover-indigo:hover,
+#page-wrapper .w3-button-indigo button,
+#page-wrapper .w3-link-hover-indigo a:hover,
+#page-wrapper .w3-button-hover-indigo button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-indigo);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-khaki,
+#page-wrapper .w3-hover-khaki:hover,
+#page-wrapper .w3-button-khaki button,
+#page-wrapper .w3-link-hover-khaki a:hover,
+#page-wrapper .w3-button-hover-khaki button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-khaki);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-lime,
+#page-wrapper .w3-hover-lime:hover,
+#page-wrapper .w3-button-lime button,
+#page-wrapper .w3-link-hover-lime a:hover,
+#page-wrapper .w3-button-hover-lime button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-lime);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-orange,
+#page-wrapper .w3-hover-orange:hover,
+#page-wrapper .w3-button-orange button,
+#page-wrapper .w3-link-hover-orange a:hover,
+#page-wrapper .w3-button-hover-orange button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-orange);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-deep-orange,
+#page-wrapper .w3-hover-deep-orange:hover,
+#page-wrapper .w3-button-deep-orange button,
+#page-wrapper .w3-link-hover-deep-orange a:hover,
+#page-wrapper .w3-button-hover-deep-orange button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-deep-orange);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-pink,
+#page-wrapper .w3-hover-pink:hover,
+#page-wrapper .w3-button-pink button,
+#page-wrapper .w3-link-hover-pink a:hover,
+#page-wrapper .w3-button-hover-pink button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-pink);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-purple,
+#page-wrapper .w3-hover-purple:hover,
+#page-wrapper .w3-button-purple button,
+#page-wrapper .w3-link-hover-purple a:hover,
+#page-wrapper .w3-button-hover-purple button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-purple);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-deep-purple,
+#page-wrapper .w3-hover-deep-purple:hover,
+#page-wrapper .w3-button-deep-purple button,
+#page-wrapper .w3-link-hover-deep-purple a:hover,
+#page-wrapper .w3-button-hover-deep-purple button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-deep-purple);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-red,
+#page-wrapper .w3-hover-red:hover,
+#page-wrapper .w3-button-red button,
+#page-wrapper .w3-link-hover-red a:hover,
+#page-wrapper .w3-button-hover-red button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-red);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-sand,
+#page-wrapper .w3-hover-sand:hover,
+#page-wrapper .w3-button-sand button,
+#page-wrapper .w3-link-hover-sand a:hover,
+#page-wrapper .w3-button-hover-sand button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-sand);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-teal,
+#page-wrapper .w3-hover-teal:hover,
+#page-wrapper .w3-button-teal button,
+#page-wrapper .w3-link-hover-teal a:hover,
+#page-wrapper .w3-button-hover-teal button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-teal);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-yellow,
+#page-wrapper .w3-hover-yellow:hover,
+#page-wrapper .w3-button-yellow button,
+#page-wrapper .w3-link-hover-yellow a:hover,
+#page-wrapper .w3-button-hover-yellow button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-yellow);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-white,
+#page-wrapper .w3-hover-white:hover,
+#page-wrapper .w3-button-white button,
+#page-wrapper .w3-link-hover-white a:hover,
+#page-wrapper .w3-button-hover-white button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-white);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-black,
+#page-wrapper .w3-hover-black:hover,
+#page-wrapper .w3-button-black button,
+#page-wrapper .w3-link-hover-black a:hover,
+#page-wrapper .w3-button-hover-black button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-black);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-grey,
+#page-wrapper .w3-hover-grey:hover,
+#page-wrapper .w3-gray,
+#page-wrapper .w3-hover-gray:hover,
+#page-wrapper .w3-button-gray button,
+#page-wrapper .w3-button-grey button,
+#page-wrapper .w3-link-hover-gray a:hover,
+#page-wrapper .w3-link-hover-grey a:hover,
+#page-wrapper .w3-button-hover-gray button:hover,
+#page-wrapper .w3-button-hover-grey button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-gray);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-light-grey,
+#page-wrapper .w3-hover-light-grey:hover,
+#page-wrapper .w3-light-gray,
+#page-wrapper .w3-hover-light-gray:hover,
+#page-wrapper .w3-button-light-gray button,
+#page-wrapper .w3-button-light-grey button,
+#page-wrapper .w3-link-hover-light-gray a:hover,
+#page-wrapper .w3-link-hover-light-grey a:hover,
+#page-wrapper .w3-button-hover-light-gray button:hover,
+#page-wrapper .w3-button-hover-light-grey button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-light-gray);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-dark-grey,
+#page-wrapper .w3-hover-dark-grey:hover,
+#page-wrapper .w3-dark-gray,
+#page-wrapper .w3-hover-dark-gray:hover,
+#page-wrapper .w3-button-dark-gray button,
+#page-wrapper .w3-button-dark-grey button,
+#page-wrapper .w3-link-hover-dark-gray a:hover,
+#page-wrapper .w3-link-hover-dark-grey a:hover,
+#page-wrapper .w3-button-hover-dark-gray button:hover,
+#page-wrapper .w3-button-hover-dark-grey button:hover {
+  --r-tx: var(--solo-white);
+  --r-bg: var(--solo-dark-gray);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-pale-red,
+#page-wrapper .w3-hover-pale-red:hover,
+#page-wrapper .w3-button-pale-red,
+#page-wrapper .w3-link-hover-pale-red a:hover,
+#page-wrapper .w3-button-hover-pale-red button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-pale-red);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-pale-green,
+#page-wrapper .w3-hover-pale-green:hover,
+#page-wrapper .w3-button-pale-green,
+#page-wrapper .w3-link-hover-pale-green a:hover,
+#page-wrapper .w3-button-hover-pale-green button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-pale-green);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-pale-yellow,
+#page-wrapper .w3-hover-pale-yellow:hover,
+#page-wrapper .w3-button-pale-yellow,
+#page-wrapper .w3-link-hover-pale-yellow a:hover,
+#page-wrapper .w3-button-hover-pale-yellow button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-pale-yellow);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+#page-wrapper .w3-pale-blue,
+#page-wrapper .w3-hover-pale-blue:hover,
+#page-wrapper .w3-button-pale-blue,
+#page-wrapper .w3-link-hover-pale-blue a:hover,
+#page-wrapper .w3-button-hover-pale-blue button:hover {
+  --r-tx: var(--solo-black);
+  --r-bg: var(--solo-pale-blue);
+  color: var(--r-tx) !important;
+  background-color: var(--r-bg) !important;
+}
+
+/* Border Colors */
+#page-wrapper .w3-border-amber,
+#page-wrapper .w3-hover-border-amber:hover {
+  --r-br: var(--solo-amber);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-aqua,
+#page-wrapper .w3-hover-border-aqua:hover {
+  --r-br: var(--solo-aqua);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-blue,
+#page-wrapper .w3-hover-border-blue:hover {
+  --r-br: var(--solo-blue);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-light-blue,
+#page-wrapper .w3-hover-border-light-blue:hover {
+  --r-br: var(--solo-light-blue);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-brown,
+#page-wrapper .w3-hover-border-brown:hover {
+  --r-br: var(--solo-brown);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-cyan,
+#page-wrapper .w3-hover-border-cyan:hover {
+  --r-br: var(--solo-cyan);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-blue-grey,
+#page-wrapper .w3-hover-border-blue-grey:hover,
+#page-wrapper .w3-border-blue-gray,
+#page-wrapper .w3-hover-border-blue-gray:hover {
+  --r-br: var(--solo-blue-gray);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-green,
+#page-wrapper .w3-hover-border-green:hover {
+  --r-br: var(--solo-green);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-light-green,
+#page-wrapper .w3-hover-border-light-green:hover {
+  --r-br: var(--solo-light-green);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-indigo,
+#page-wrapper .w3-hover-border-indigo:hover {
+  --r-br: var(--solo-indigo);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-khaki,
+#page-wrapper .w3-hover-border-khaki:hover {
+  --r-br: var(--solo-khaki);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-lime,
+#page-wrapper .w3-hover-border-lime:hover {
+  --r-br: var(--solo-lime);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-orange,
+#page-wrapper .w3-hover-border-orange:hover {
+  --r-br: var(--solo-orange);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-deep-orange,
+#page-wrapper .w3-hover-border-deep-orange:hover {
+  --r-br: var(--solo-deep-orange);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-pink,
+#page-wrapper .w3-hover-border-pink:hover {
+  --r-br: var(--solo-pink);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-purple,
+#page-wrapper .w3-hover-border-purple:hover {
+  --r-br: var(--solo-purple);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-deep-purple,
+#page-wrapper .w3-hover-border-deep-purple:hover {
+  --r-br: var(--solo-deep-purple);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-red,
+#page-wrapper .w3-hover-border-red:hover {
+  --r-br: var(--solo-red);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-sand,
+#page-wrapper .w3-hover-border-sand:hover {
+  --r-br: var(--solo-sand);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-teal,
+#page-wrapper .w3-hover-border-teal:hover {
+  --r-br: var(--solo-teal);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-yellow,
+#page-wrapper .w3-hover-border-yellow:hover {
+  --r-br: var(--solo-yellow);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-white,
+#page-wrapper .w3-hover-border-white:hover {
+  --r-br: var(--solo-white);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-black,
+#page-wrapper .w3-hover-border-black:hover {
+  --r-br: var(--solo-black);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-grey,
+#page-wrapper .w3-hover-border-grey:hover,
+#page-wrapper .w3-border-gray,
+#page-wrapper .w3-hover-border-gray:hover {
+  --r-br: var(--solo-gray);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-light-grey,
+#page-wrapper .w3-hover-border-light-grey:hover,
+#page-wrapper .w3-border-light-gray,
+#page-wrapper .w3-hover-border-light-gray:hover {
+  --r-br: var(--solo-light-gray);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-dark-grey,
+#page-wrapper .w3-hover-border-dark-grey:hover,
+#page-wrapper .w3-border-dark-gray,
+#page-wrapper .w3-hover-border-dark-gray:hover {
+  --r-br: var(--solo-dark-gray);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-pale-red,
+#page-wrapper .w3-hover-border-pale-red:hover {
+  --r-br: var(--solo-pale-red);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-pale-green,
+#page-wrapper .w3-hover-border-pale-green:hover {
+  --r-br: var(--solo-pale-green);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-pale-yellow,
+#page-wrapper .w3-hover-border-pale-yellow:hover {
+  --r-br: var(--solo-pale-yellow);
+  border-color: var(--r-br) !important;
+}
+
+#page-wrapper .w3-border-pale-blue,
+#page-wrapper .w3-hover-border-pale-blue:hover {
+  --r-br: var(--solo-pale-blue);
+  border-color: var(--r-br) !important;
+}

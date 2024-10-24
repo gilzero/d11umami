@@ -1,0 +1,307 @@
+#edit-settings-blueprint div {
+  width: 100% !important;
+}
+
+.blueprint {
+  background-color: #b0e0e6 !important;
+  padding: 10px !important;
+  display: grid !important;
+  gap: 10px !important;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(1, 1fr) !important;
+  width: 100% !important;
+  color: #444444 !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.blueprint * {
+  color: #444444 !important;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-auto-flow: row;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.blueprint .highlighted {
+  background-color: #faf5ef !important;
+}
+
+.blueprint .primary-sidebar-menu {
+  background-color: #ecfbfc !important;
+}
+
+.blueprint .fixed-search-block {
+  background-color: #fff5ee !important;
+}
+
+.blueprint .popup-login-block {
+  background-color: #f1f9ec !important;
+}
+
+.blueprint .primary-menu {
+  background-color: #ecfbfc !important;
+}
+
+.blueprint .header {
+  background-color: #f8f8ff !important;
+}
+
+.blueprint .welcome-text {
+  background-color: #f5f5f5 !important;
+}
+
+.blueprint .top-regions {
+  background-color: #fdfcfa !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.blueprint .top-regions .top-one {
+  background-color: #fffafa !important;
+}
+
+.blueprint .top-regions .top-two {
+  background-color: #ecf3f9 !important;
+}
+
+.blueprint .top-regions .top-three {
+  background-color: #fffaf0 !important;
+}
+
+.blueprint .system-messages {
+  background-color: #f8fbf8 !important;
+}
+
+.blueprint .page-title-solo {
+  background-color: #f6f1f4 !important;
+}
+
+.blueprint .breadcrumb {
+  background-color: #ebf5f0 !important;
+}
+
+.blueprint .main-regions {
+  background-color: #f2f3f4 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 2fr 1fr !important;
+}
+
+.blueprint .main-regions .sidebar-first {
+  background-color: #f6f4f1 !important;
+}
+
+.blueprint .main-regions .content {
+  background-color: #ebf6f7 !important;
+}
+
+.blueprint .main-regions .sidebar-second {
+  background-color: #f8f4ff !important;
+}
+
+.blueprint .bottom-regions {
+  background-color: #fefffc !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.blueprint .bottom-regions .bottom-one {
+  background-color: #f8f8e8 !important;
+}
+
+.blueprint .bottom-regions .bottom-two {
+  background-color: #f7f5f6 !important;
+}
+
+.blueprint .bottom-regions .bottom-three {
+  background-color: #f2f7fd !important;
+}
+
+.blueprint .bottom-regions .bottom-four {
+  background-color: #fdf9ef !important;
+}
+
+.blueprint .footer-regions {
+  background-color: #fcfff9 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.blueprint .footer-regions .footer-one {
+  background-color: #eef1ea !important;
+}
+
+.blueprint .footer-regions .footer-two {
+  background-color: #efece1 !important;
+}
+
+.blueprint .footer-regions .footer-three {
+  background-color: #edf2f8 !important;
+}
+
+.blueprint .footer-menu {
+  background-color: #f4f5f0 !important;
+}
+
+.blueprint .copyright {
+  background-color: #edf1fe !important;
+}
+
+form.system-theme-settings {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+ul.settings-message {
+  padding: 24px;
+  color: white;
+  background: linear-gradient(135deg, #4caf50 0%, #090909 3%, #000 100%);
+  box-shadow: rgba(76, 175, 80, 0.3) 0px 2px 8px 0px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+form.system-theme-settings>details {
+  padding: 1rem 0.5rem;
+  margin: 0.5rem;
+}
+
+form.system-theme-settings>details>summary {
+  font-weight: normal !important;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+form.system-theme-settings  input[teyp="text"] {
+  width: 100%;
+}
+
+.error {
+  color: #f44336 !important;
+}
+
+.warning {
+  color: #ff5722 !important;
+}
+
+.status {
+  color: #4caf50 !important;
+}
+
+.info {
+  color: #2196f3 !important;
+}
+
+.purple,
+#edit-logo summary,
+#edit-favicon summary,
+#edit-theme-settings summary {
+  color: #9c27b0 !important;
+}
+
+.pink {
+  color: #e91e63 !important;
+}
+
+.teal {
+  color: #009688 !important;
+}
+
+.indigo {
+  color: #3f51b5 !important;
+}
+
+form.system-theme-settings #edit-settings-primary-menu .form-radios,
+form.system-theme-settings #edit-settings-top-container .form-radios,
+form.system-theme-settings #edit-settings-main-container .form-radios,
+form.system-theme-settings #edit-settings-bottom-container .form-radios,
+form.system-theme-settings #edit-settings-footer-container .form-radios,
+form.system-theme-settings #edit-settings-social-icons .form-radios,
+form.system-theme-settings #edit-theme-settings .details-wrapper,
+form.system-theme-settings #edit-settings-global-misc .form-radios {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form.system-theme-settings #edit-settings-primary-menu .form-radios>*,
+form.system-theme-settings #edit-settings-top-container .form-radios>*,
+form.system-theme-settings #edit-settings-main-container .form-radios>*,
+form.system-theme-settings #edit-settings-bottom-container .form-radios>*,
+form.system-theme-settings #edit-settings-footer-container .form-radios>*,
+form.system-theme-settings #edit-settings-social-icons .form-radios>*,
+form.system-theme-settings #edit-theme-settings .details-wrapper>*,
+form.system-theme-settings #edit-settings-global-misc .form-radios>* {
+  margin-right: 60px;
+  width: auto;
+}
+
+form.system-theme-settings .form-boolean--type-radio:checked {
+  border-style: double;
+}
+
+form.system-theme-settings .form-type--textfield [type="text"] {
+  width: 100%;
+}
+
+form.system-theme-settings .form-type--select select {
+  min-width: 400px;
+}
+
+form.system-theme-settings .form-radio[value="solo-col-1"],
+form.system-theme-settings .form-radio[value="disabled"] {
+  display: none;
+}
+
+form.system-theme-settings [data-drupal-selector="solo-color-picker"] {
+  display: inline-block;
+  min-width: 210px;
+  border-radius: 5px;
+}
+
+form.system-theme-settings [data-drupal-selector="solo-color-picker"] label {
+  font-weight: normal !important;
+  font-size: 13px;
+}
+
+form.system-theme-settings [data-drupal-selector="solo-color-picker"] .form-text {
+  display: inline-block;
+  width: calc(100% - 70px);
+  border-radius: 12px 0 0 12px;
+  border-right: none;
+  box-sizing: border-box;
+}
+
+form.system-theme-settings [data-drupal-selector="solo-color-picker"] .form-color {
+  display: inline-block;
+  width: 50px;
+  margin-right: 20px;
+  vertical-align: bottom;
+  border-radius: 0 12px 12px 0;
+  border-left: none;
+  padding: 5px;
+  background-color: black;
+  box-sizing: border-box;
+}
+
+form.system-theme-settings [data-drupal-selector="solo-color-picker"]label,
+form.system-theme-settings [data-drupal-selector="solo-color-picker"] div {
+  display: block;
+  width: 100%;
+}
+
+form.system-theme-settings [data-drupal-selector="solo-color-picker"] label {
+  padding: 12px 16px 0 4px;
+  width: 100%;
+  text-align: left;
+}
+
+form.system-theme-settings #edit-settings-social-icons [data-drupal-selector="solo-color-picker"] {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+}

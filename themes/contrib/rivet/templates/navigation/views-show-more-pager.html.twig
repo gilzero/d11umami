@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * The views show more pager template.
+ *
+ * Available variables:
+ * - heading_id: Pagination heading ID.
+ * - item: Show more pager item.
+ *
+ * @see views_show_more_preprocess_views_show_more_pager()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if item.text %}
+  <nav aria-labelledby="{{ heading_id }}">
+    <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
+    <div{{ attributes }}>
+      <div class="rvt-text-center">
+        {% if item.href %}
+          {% set item_attrs = create_attribute({'class': ['rvt-text-medium rvt-link-plain [ rvt-flex rvt-justify-center rvt-items-center rvt-gap-xs ]']}) %}
+          {% set item_text %}{{ item.text }}
+              <svg fill="currentColor" width="16" height="16" viewbox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+            {% endset %}
+          {{ link(item_text, item.href, item.attributes|merge(item_attrs)) }}
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+{% endif %}

@@ -1,0 +1,9 @@
+.filter.alpha.link li,
+.form-item.alpha.link li {
+  padding: 0 .3rem;
+}
+
+.filter.alpha.link ul:last-child,
+.form-item.alpha.link ul:last-child {
+  border-left: 0;
+}

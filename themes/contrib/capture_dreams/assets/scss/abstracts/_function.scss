@@ -1,0 +1,10 @@
+// Functions
+@use "sass:math";
+$baseFontSize: 18px !default;
+$baseLineHeight: 26px !default;
+$base-vertical-margin: $baseLineHeight * 0.75;
+
+// px to em converter function
+@function em($px, $base: $baseFontSize) {
+  @return math.div($px, $base) * 1em; 
+}

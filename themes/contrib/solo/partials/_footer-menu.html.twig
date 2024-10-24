@@ -1,0 +1,57 @@
+  {% if page.footer_menu or sm_show_icons %}
+    <!-- Start: Footer Menu -->
+    <div id="footer-menu" class="solo-outer lone footer-menu{{ classes_footer_menu ? ' ' ~ classes_footer_menu }}" {{ attributes_footer_menu }}>
+      <div id="footer-menu-inner" class="solo-inner solo-col solo-col-1 footer-menu-inner">
+
+    {% if sm_show_icons %}
+      <!-- Start: Social Media -->
+      <div class="solo-clear fade-inner footer-menu-first sm-icons{{ sm_icon_size ? ' ' ~ sm_icon_size }}" {% if sm_icon_colors %} style="fill: {{ sm_icon_colors }}" {% endif %}>
+        {% set socials = {
+        'facebook': {'url': sm_icon_facebook},
+        'instagram': {'url': sm_icon_instagram},
+        'twitter': {'url': sm_icon_twitter},
+        'linkedin': {'url': sm_icon_linkedin},
+        'youtube': {'url': sm_icon_youtube},
+        'pinterest': {'url': sm_icon_pinterest},
+        'snapchat': {'url': sm_icon_snapchat},
+        'reddit': {'url': sm_icon_reddit},
+        'tiktok': {'url': sm_icon_tiktok},
+        'whatsapp': {'url': sm_icon_whatsapp},
+        'telegram': {'url': sm_icon_telegram},
+        'mastodon': {'url': sm_icon_mastodon},
+        'drupal': {'url': sm_icon_drupal},
+        'threads': {'url': sm_icon_threads},
+        'rss': {'url': sm_icon_rss},
+        'email': {'url': sm_icon_email},
+        } %}
+        {% for key, social in socials %}
+          {% if social.url %}
+            {% if key == 'email' %}
+              <a href="mailto:{{ social.url }}" title="{{ key|capitalize }}" class="solo-clear {{ key }}">
+            {% else %}
+              <a href="{{ social.url }}" title="{{ key|capitalize }}" class="solo-clear {{ key }}" target="_blank">
+            {% endif %}
+                <span class="sm-icon">
+                  {% set svg_icon = "@solo/partials/svg/_svg-" ~  key   ~ ".html.twig" %}
+                  {% include svg_icon %}
+                </span>
+              </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <!-- End: Social Media -->
+    {% endif %}
+
+        <!-- Start: Bottom Menu -->
+        {% if page.footer_menu %}
+          <div class="solo-clear footer-menu-second fade-inner">
+            {{ page.footer_menu }}
+          </div>
+          <!-- End: Bottom Menu -->
+        {% endif %}
+      </div>
+    </div>
+    <!-- End: Footer Menu -->
+  {% endif %}
+
+

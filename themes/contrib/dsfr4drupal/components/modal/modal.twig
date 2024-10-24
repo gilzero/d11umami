@@ -1,0 +1,37 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set button_label = button_label|default('Close'|t) %}
+{% set button_title = button_title|default('Close'|t) %}
+{% set html_id = html_id|default('modal-default') %}
+
+<dialog id="{{ html_id }}" class="fr-modal" role="dialog" aria-labelledby="{{ html_id ~ '-title' }}">
+  <div class="fr-container fr-container--fluid fr-container-md">
+    <div class="fr-grid-row fr-grid-row--center">
+      <div{{ attributes }}>
+        <div class="fr-modal__body">
+          <div class="fr-modal__header">
+            <button class="fr-btn--close fr-btn" aria-controls="{{ html_id }}" title="{{ button_title }}">
+              {{ button_label }}
+            </button>
+          </div>
+          <div class="fr-modal__content">
+            <div id="{{ html_id ~ '-title' }}" class="fr-modal__title">
+              {% block modal_title %}
+                {{ title }}
+              {% endblock modal_title %}
+            </div>
+            {% block modal_content %}
+              <p>{{ 'Default content.'|t }}</p>
+            {% endblock modal_content %}
+          </div>
+          {% if modal_footer %}
+            <div class="fr-modal__footer">
+              {% block modal_footer %}
+                {{ modal_footer }}
+              {% endblock modal_footer %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>

@@ -1,0 +1,237 @@
+{# #}
+<div{{ danland_layout }}>
+
+  <div id="header">
+    <div id="header-wrapper">
+
+      {{ page.header }}
+
+      {% if page.search_box %}
+        <div id="search-box">
+          {{ page.search_box }}
+        </div><!-- /search-box -->
+      {% endif %}
+
+      {% if feed_icons %}
+        <div class="feed-wrapper">
+          {{ feed_icons }}
+        </div>
+      {% endif %}
+
+    </div><!-- end header-wrapper -->
+  </div> <!-- /header -->
+
+  <div style="clear:both"></div>
+
+  <div id="menu" class="clearfix">
+      {% if page.primary_menu %}
+        <div id="nav">
+          {{ page.primary_menu }}
+        </div>
+      {% endif %}
+  </div> <!-- end menu -->
+
+  <div style="clear:both"></div>
+
+  {% if is_front %}
+    {% if slideshow_display %}
+      <div id="slideshow-wrapper">
+        <div class="slideshow-inner">
+          {% if page.preface %}
+            <div id="slideshow-preface">
+              <div id="preface">
+                {{ page.preface }}
+              </div><!-- end preface -->
+            </div>
+          {% endif %}
+          {% if page.highlighted %}
+            <div id="slideshow-bottom">
+              <div id="mission">{{ page.highlighted }}</div>
+            </div>
+          {% endif %}
+          {% if page.slideshow %}
+            <div class="custom-slideshow">
+              {{ page.slideshow }}
+            </div>
+          {% else %}
+            <div class="slideshow">
+              <img src="{{ slide1_image }}" width="100%" height="100%" />
+              <img src="{{ slide2_image }}" width="100%" height="100%" />
+              <img src="{{ slide3_image }}" width="100%" height="100%" />
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% if page.preface_first or page.preface_middle or page.preface_last %}
+    <div style="clear:both"></div>
+    <div id="preface-wrapper" {{ danland_preface}}>
+      {% if page.preface_first %}
+        <div class="column A">
+          {{ page.preface_first }}
+        </div>
+      {% endif %}
+      {% if page.preface_middle %}
+        <div class="column B">
+          {{ page.preface_middle }}
+        </div>
+      {% endif %}
+      {% if page.preface_last %}
+        <div class="column C">
+          {{ page.preface_last }}
+        </div>
+      {% endif %}
+      <div style="clear:both"></div>
+    </div>
+  {% endif %}
+
+  <div style="clear:both"></div>
+
+  <div id="wrapper">
+
+    <div id="content">
+
+      <a id="main-content"></a>
+      {% if page.content_top %}
+        <div class="content-top">
+          {{ page.content_top }}
+        </div>
+      {% endif %}
+
+      {{ page.breadcrumb }}
+
+      {{ page.messages }}
+
+      {{ title_prefix }}
+
+      {% if title %}
+        <h1 class="title" id="page-title">
+          {{ title }}
+        </h1>
+      {% endif %}
+
+      {{ title_suffix }}
+
+      {% if tabs %}
+        <div class="tabs">
+          {{ tabs }}
+        </div>
+      {% endif %}
+
+      {{ page.help }}
+
+      {% if action_links %}
+        <ul class="action-links">
+          {{ action_links }}
+        </ul>
+      {% endif %}
+
+      {% if page.content %}
+        <div class="content-middle">
+          {{ page.content }}
+        </div>
+      {% endif %}
+
+      {% if page.content_bottom %}
+        <div class="content-bottom">
+          {{ page.content_bottom }}
+        </div>
+      {% endif %}
+
+    </div> <!-- end content -->
+
+    {% if page.sidebar_first %}
+      <div id="sidebar-left" class="column sidebar">
+        <div class="section">
+          {{ page.sidebar_first }}
+        </div>
+      </div> <!-- end sidebar-first -->
+    {% endif %}
+
+    {% if page.sidebar_second %}
+      <div id="sidebar-right" class="column sidebar">
+        <div class="section">
+          {{ page.sidebar_second }}
+        </div>
+      </div> <!-- end sidebar-second -->
+    {% endif %}
+
+    <div style="clear:both"></div>
+
+  </div> <!-- end wrapper -->
+
+
+  {% if page.bottom_first or page.bottom_middle or page.bottom_last %}
+    <div style="clear:both"></div>
+    <div id="bottom-teaser" {{ danland_bottom_a }}>
+      {% if page.bottom_first %}
+        <div class="column A">
+          {{ page.bottom_first }}
+        </div>
+      {% endif %}
+      {% if page.bottom_middle %}
+        <div class="column B">
+          {{ page.bottom_middle }}
+        </div>
+      {% endif %}
+      {% if page.bottom_last %}
+        <div class="column C">
+          {{ page.bottom_last }}
+        </div>
+      {% endif %}
+      <div style="clear:both"></div>
+    </div> <!-- end bottom first etc. -->
+  {% endif %}
+
+
+  {% if page.bottom_1 or page.bottom_2 or page.bottom_3 or page.bottom_4 %}
+    <div style="clear:both"></div><!-- Do not touch -->
+    <div id="bottom-wrapper" {{ danland_bottom_b }}>
+      {% if page.bottom_1 %}
+        <div class="column A">
+          {{ page.bottom_1 }}
+        </div>
+      {% endif %}
+      {% if page.bottom_2 %}
+        <div class="column B">
+          {{ page.bottom_2 }}
+        </div>
+      {% endif %}
+      {% if page.bottom_3 %}
+        <div class="column C">
+          {{ page.bottom_3 }}
+        </div>
+      {% endif %}
+      {% if page.bottom_4 %}
+        <div class="column D">
+          {{ page.bottom_4 }}
+        </div>
+      {% endif %}
+      <div style="clear:both"></div>
+    </div><!-- end bottom -->
+  {% endif %}
+
+  <div style="clear:both"></div>
+
+  <div id="footer-wrapper">
+    {% if page.footer %}
+      <div id="footer">
+        {{ page.footer }}
+      </div>
+    {% endif %}
+    {% if page.secondary_menu %}
+      <div id="secondary-menu">
+        {{ page.secondary_menu }}
+      </div>
+    {% endif %}
+  </div> <!-- end footer wrapper -->
+
+  <div style="clear:both"></div>
+
+  <div id="notice">
+    <p>Theme by <a href="http://www.danetsoft.com">Danetsoft</a> and <a href="http://www.danpros.com">Danang Probo Sayekti</a> inspired by <a href="http://www.maksimer.no">Maksimer</a></p>
+  </div>
+
+</div>

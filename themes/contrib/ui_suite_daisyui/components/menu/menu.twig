@@ -1,0 +1,62 @@
+{% if variant and variant != 'vertical__md' %}
+  {% set variants = variant|split('__')|map(v => v|replace({(v): 'menu-' ~ v})) %}
+  {% set attributes = attributes.addClass(variants) %}
+{% endif %}
+
+<ul {{ attributes.addClass('menu').addClass('not-prose') }}>
+  {{ collapsible ? _self.menu_links_collapsible(items, collapsible) : _self.menu_links(items) }}
+</ul>
+
+{% macro menu_links(items) %}
+  {% for item in items %}
+  <li{{ (not item.url and loop.first) ? ' class="menu-title"' : '' }}>
+    {% set item_attributes = item.attributes|default(create_attribute()) %}
+    {% if item.url %}
+    <a{{ item_attributes.setAttribute('href', item.url) }}>
+      {{ item.title }}
+    </a>
+    {% else %}
+    <span{{ item_attributes }}>
+      {{ item.title }}
+    </span>
+    {% endif %}
+    {% if item.below %}
+    <ul>
+    {{ _self.menu_links(item.below) }}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+{% endmacro %}
+
+{% macro menu_links_collapsible(items, collapsible) %}
+  {% for item in items %}
+  <li{{ (not item.url and loop.first) ? ' class="menu-title"' : '' }}>
+    {% set item_attributes = item.attributes|default(create_attribute()) %}
+    {% if item.below %}
+    <details {{ collapsible == 'open' ? 'open' : '' }}>
+      <summary {{ item_attributes }}>
+      {% if item.url %}
+      <a href="{{ item.url }}">{{ item.title }}</a>
+      {% else %}
+        {{ item.title }}
+      {% endif %}
+      </summary>
+      <ul>
+        {{ _self.menu_links_collapsible(item.below, collapsible) }}
+      </ul>
+    </details>
+    {% else %}
+      {% if item.url %}
+      <a{{ item_attributes.setAttribute('href', item.url) }}>
+        {{ item.title }}
+      </a>
+      {% else %}
+      <span{{ item_attributes }}>
+        {{ item.title }}
+      </span>
+      {% endif %}
+    {% endif %}
+  </li>
+  {% endfor %}
+{% endmacro %}

@@ -1,0 +1,56 @@
+/*** BLACK HOLE STYLE ***/
+
+#top_bg, .themed-block {
+	background-color: #000;
+	background-image: -webkit-linear-gradient(bottom, #2c271e 0%, #000 150px);
+	background-image: linear-gradient(to top, #2c271e 0%, #000 150px);
+}
+#section2 {
+	background-color: #000;
+	background-image: -webkit-linear-gradient(bottom, #000 0%, #101010 150px);
+	background-image: linear-gradient(to top, #000 0%, #101010 150px);
+}
+.region-highlighted {
+	border: solid 1px #222;
+}
+h1, h2, h3, .block-title {
+	color: #777;
+}
+a, a:link {
+	color: #999;
+}
+a:hover, a:active, a.is-active, ul.menu a.is-active {
+	color: #777;
+}
+.pure-menu-link {
+	color: #999 !important;
+	text-shadow: 1px 2px #000;
+	background: #202020;
+}
+.pure-menu-link:hover, .pure-menu-link:focus {
+	background: #151515;
+}
+.pure-menu-children .pure-menu-link {
+	background: #202020;
+	border: 1px solid;
+	border-color: #303030 #151515 #151515 #303030;
+}
+.pure-menu-children a:hover, .pure-menu-children a:focus {
+	background: #151515;
+}
+
+@media screen and (max-width: 48em) {
+	.pure-menu-link,
+	.pure-menu-children .pure-menu-link {
+		color: #999 !important;
+		text-shadow: none;
+		background: none;
+		border: none;
+	}
+	.pure-menu-link:hover,
+	.pure-menu-link:focus,
+	.pure-menu-children a:hover,
+	.pure-menu-children a:focus {
+		background: #191919;
+	}
+}

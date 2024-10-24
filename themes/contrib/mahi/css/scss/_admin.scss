@@ -1,0 +1,48 @@
+/* Admin Tabs */
+.page-tabs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  border-bottom: 2px solid var(--dark);
+}
+.page-tabs li {
+  padding: 0;
+}
+.page-tabs li a {
+  background-color: var(--dark);
+  color: #ffffff;
+  padding: 4px 10px;
+  transition: all 0.3s ease;
+}
+ul.page-tabs li.active-page-tab a {
+  background: var(--color-primary);
+}
+ul.page-tabs li a:hover {
+  background: var(--color-secondary);
+}
+/* Local actin */
+.local-action {
+  list-style: none;
+}
+.button-action {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  padding: 6px 12px;
+}
+.button-action:hover {
+  background-color: var(--color-primary);
+  color: #ffffff; 
+}
+/* block quick action button */
+.contextual .trigger {
+  background-color: var(--color-primary);
+}
+.contextual .trigger:hover {
+  background-color: var(--color-secondary);
+}
+.contextual .trigger::before {
+  content: none;
+}

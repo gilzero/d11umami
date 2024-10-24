@@ -1,0 +1,4 @@
+.page-wrapper .megrim {
+  --solo-font-s: 'Megrim', cursive;
+  font-family: var(--solo-font-s) !important;
+}

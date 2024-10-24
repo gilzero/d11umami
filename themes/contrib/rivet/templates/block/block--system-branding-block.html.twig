@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override for the default Drupal branding block.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ * - subtitle: Subtitle for site as defined in Rivet theme settings.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'rvt-header-global__logo-slot',
+    '[',
+    'rvt-m-right-lg',
+    ']',
+  ]
+%}
+<div{{ attributes.addClass(classes)|without('id') }}>
+  {{ title_prefix }}{{ title_suffix }}
+  <a class="rvt-lockup" href="{{ path('<front>') }}" rel="home">
+    <!-- Trident logo -->
+    <div class="rvt-lockup__tab">
+      <svg xmlns="http://www.w3.org/2000/svg" class="rvt-lockup__trident" viewBox="0 0 28 34">
+        <path d="M-3.34344e-05 4.70897H8.83308V7.174H7.1897V21.1426H10.6134V2.72321H8.83308V0.121224H18.214V2.65476H16.2283V21.1426H19.7889V7.174H18.214V4.64047H27.0471V7.174H25.0614V23.6761L21.7746 26.8944H16.2967V30.455H18.214V33.8787H8.76463V30.592H10.6819V26.8259H5.20403L1.91726 23.6077V7.174H-3.34344e-05V4.70897Z" fill="currentColor"></path>
+      </svg>
+    </div>
+    <!-- Website or application title -->
+    {% if site_name or subtitle %}
+    <div class="rvt-lockup__body [ rvt-text-nobr ]">
+      <span class="rvt-lockup__title">{{ site_name }}</span>
+      {% if subtitle %}
+      <span class="rvt-lockup__subtitle">{{ subtitle }}</span>
+      {% endif %}
+    </div>
+    {% endif %}
+  </a>
+</div>

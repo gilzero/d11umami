@@ -1,0 +1,28 @@
+name: 'Sobki Admin Theme'
+description: 'Provide BO customizations for websites using Sobki.'
+type: theme
+core_version_requirement: ^10 || ^11
+base theme: gin
+
+# Regions.
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first
+
+libraries-extend:
+  gin/edit_form:
+    - sobki_theme_admin/edit_form
+
+# Information added by Drupal.org packaging script on 2024-10-10
+version: '1.0.0-alpha3'
+project: 'sobki_theme_admin'
+datestamp: 1728577649

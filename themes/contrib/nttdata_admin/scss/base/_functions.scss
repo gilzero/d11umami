@@ -1,0 +1,51 @@
+/**
+ * @file
+ * Functions.
+ */
+
+%stretched-link {
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: auto;
+    content: "";
+  }
+}
+
+%tab-active-state {
+  cursor: default;
+  color: $text-white;
+  background-color: $primary;
+  &:hover {
+    background-color: $primary2;
+  }
+}
+
+%tab {
+  color: $text-white;
+  background-color:$black-pearl;
+  &:hover {
+    background-color: $primary2;
+  }
+}
+
+// Change icon colors
+%filter-white {
+  filter: brightness(0) invert(1);
+}
+
+%filter-black {
+  filter: brightness(0) invert(0);
+}
+
+%filter-dark-grey {
+  filter: brightness(0) invert(0.35);
+}
+
+%filter-light-grey {
+  filter: brightness(0) invert(0.9);
+}

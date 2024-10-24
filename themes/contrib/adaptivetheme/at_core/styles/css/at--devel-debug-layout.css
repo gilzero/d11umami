@@ -1,0 +1,124 @@
+#toolbar-administration {
+  display: none;
+}
+
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.page__temporary-tabs,
+.messages,
+.visually-hidden,
+.region-page-top,
+.region-page-bottom {
+  display: none !important;
+}
+
+.page-row {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: ghostwhite;
+}
+
+.page-row .regions {
+  padding: 20px 0 10px 0;
+  background: transparent;
+}
+
+.page-row .region {
+  margin-bottom: 10px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.65);
+  font: 12px/1 Arial;
+}
+
+.page-row .region .block,
+.page-row .region .block * {
+  display: none !important;
+}
+
+.page-row .region:before {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.page-row .region:first-child:before {
+  content: "Region 1";
+}
+
+.page-row .region:nth-child(2):before {
+  content: "Region 2";
+}
+
+.page-row .region:nth-child(3):before {
+  content: "Region 3";
+}
+
+.page-row .region:nth-child(4):before {
+  content: "Region 4";
+}
+
+.page-row .region:nth-child(5):before {
+  content: "Region 5";
+}
+
+.page-row .region:nth-child(6):before {
+  content: "Region 6";
+}
+
+.page-row .region:nth-child(7):before {
+  content: "Region 7";
+}
+
+.page-row .region:nth-child(8):before {
+  content: "Region 8";
+}
+
+.page-row .region:nth-child(9):before {
+  content: "Region 9";
+}
+
+.page-row .region:nth-child(10):before {
+  content: "Region 10";
+}
+
+.page-row .region:nth-child(11):before {
+  content: "Region 11";
+}
+
+.page-row .region:nth-child(12):before {
+  content: "Region 12";
+}
+
+/*
+html, body {
+  background: #fff !important;
+  padding: 20px 0;
+}
+.page-row {
+  background: #fff !important;
+  padding: 5px 0;
+
+  .container {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .region {
+    height: 40px;
+    margin: 0 0 12px;
+    &:before {
+      content: "" !important;
+    }
+  }
+}
+.page-row-two-one,
+.page-row-three-one,
+.page-row-four-one {
+  margin-top: 40px;
+}
+*/
+/*# sourceMappingURL=at--devel-debug-layout.css.map */

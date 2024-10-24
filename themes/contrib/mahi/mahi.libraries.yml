@@ -1,0 +1,67 @@
+# These will be loaded on every pages.
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/mahi.js: {}
+  dependencies:
+    - core/jquery
+# Slider
+slider:
+  version: 2.3.4
+  css:
+    component:
+      css/slider.css: {}
+  js:
+    js/slider.js: {}
+  dependencies:
+    - core/jquery
+
+# Google Fonts from local
+googlefontslocal:
+  css:
+    theme:
+      css/font.css: {}
+
+# Book
+book:
+  version: VERSION
+  css:
+    component:
+      css/book.css: {}
+# FontAwesome 5
+fontawesome5:
+  version: 5.15.4
+  css:
+    component:
+      css/fontawesome5.css: {weight: -10}
+
+# FontAwesome 6
+fontawesome6:
+  version: 6.4.0
+  css:
+    component:
+      css/fontawesome6.css: {weight: -10}
+
+# Bootstrap Icons
+bootstrap-icons:
+  version: 1.10.5
+  css:
+    component:
+      css/bootstrap-icons.css: {}
+
+# RTL Language support
+rtl:
+  version: VERSION
+  css:
+    theme:
+      css/rtl.css: {}
+
+# Theme settings
+theme-settings:
+  version: VERSION
+  css:
+    theme:
+      css/theme-settings.css: {}

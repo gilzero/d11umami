@@ -1,0 +1,196 @@
+/* Form API. */
+div.action,
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+div.action,
+div.form-actions {
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.form-radios .form-item,
+.form-checkboxes .form-item {
+  margin-top: 0.4em !important;
+  margin-bottom: 0.4em !important;
+}
+
+.form-radios,
+.form-checkboxes {
+  display: grid;
+}
+
+fieldset {
+  width: 100%;
+}
+
+.form-type-radio {
+  display: inline-flex;
+  width: 100%;
+  justify-content: left;
+  align-items: self-start;
+  flex-grow: 1;
+}
+
+.form-type-checkbox {
+  margin-top: 12px;
+  display: inline-flex;
+  width: 100%;
+  flex-grow: 1;
+  justify-content: left;
+  align-items: self-start;
+  flex-wrap: wrap;
+}
+
+.form-type-radio .form-radio,
+.form-type-checkbox .form-checkbox {
+  margin: 2px 2px 0 0;
+}
+
+.form-type-checkbox .form-checkbox {
+  flex-basis: 30px;
+}
+
+.form-type-checkbox label {
+  flex-basis: calc(100% - 50px);
+}
+
+.form-type-radio .description,
+.form-type-checkbox .description {
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.form-type-radio label,
+.form-type-checkbox label {
+  margin-left: var(--solo-px4) !important; /* LTR */
+  float: none !important;
+}
+
+[dir="rtl"] .form-type-radio label,
+[dir="rtl"] .form-type-checkbox label {
+  margin-right: var(--solo-px4) !important;
+  margin-left: 0 !important;
+}
+
+.form-type-radio .description,
+.form-type-checkbox .description {
+  margin-left: var(--solo-px2) !important; /* LTR */
+}
+
+[dir="rtl"] .form-type-radio .description,
+[dir="rtl"] .form-type-checkbox .description {
+  margin-right: var(--solo-px2) !important;
+  margin-left: 0 !important;
+}
+
+.marker {
+  color: #e00;
+}
+
+.form-checkbox,
+.form-radio {
+  display: inline-block;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  border-color: var(--solo-tx);
+  border-width: 2px;
+  border-style: solid;
+  outline-width: 4px;
+  outline-style: double;
+  outline-offset: -1px;
+}
+
+abbr.tabledrag-changed,
+abbr.ajax-changed {
+  border-bottom: none;
+}
+
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: var(--solo-px2) solid red;
+}
+
+.form-wrapper .field-multiple-table .label {
+  font-size: inherit;
+}
+
+.form-required::after {
+  display: inline-block;
+  width: var(--solo-px10);
+  height: var(--solo-px10);
+  margin: 0 0.3em;
+  content: "";
+  vertical-align: super;
+  background-image: url(../../images/icons/required.svg);
+  background-repeat: no-repeat;
+  background-size: var(--solo-px10) var(--solo-px10);
+}
+
+/* Inline Error Message. */
+.form-item--error-message::before {
+  display: inline-block;
+  width: var(--solo-px16);
+  height: var(--solo-px16);
+  margin: 0 0.3em;
+  content: "";
+  vertical-align: middle;
+  background-image: url(../../images/icons/error.svg);
+  background-repeat: no-repeat;
+  background-size: var(--solo-px16) var(--solo-px16);
+}
+
+input,
+textarea,
+.region-title__action a,
+.admin-context  form .form-actions > a,
+.admin-context  .action-links li > a,
+.view-filters details.form-wrapper {
+  -webkit-box-shadow: inset 0 0 var(--solo-px5) rgba(51, 44, 51, 0.1);
+  -moz-box-shadow: inset 0 0 var(--solo-px5) rgba(51, 44, 51, 0.1);
+  box-shadow: inset 0 0 var(--solo-px5) rgba(51, 44, 51, 0.1);
+}
+
+[type=checkbox],
+[type=radio] {
+  box-shadow: none;
+}
+
+form.system-theme-settings .details-wrapper {
+  display: block;
+}
+
+form.system-theme-settings .details-wrapper .form-type-textfield label {
+  display: block;
+}
+
+form.system-theme-settings .details-wrapper .form-element--api-color {
+  min-height: 3.25rem;
+  border: 0;
+}
+
+form .form-item__description {
+  padding: var(--solo-px8) 0;
+}
+
+.form-wrapper {
+  align-items: start;
+}
+
+.dropbutton-toggle button {
+  all: unset;
+}
+
+.dropbutton-wrapper.open .solo-button {
+  width: 100%;
+  border: 0 !important;
+  margin: 0 !important;
+}

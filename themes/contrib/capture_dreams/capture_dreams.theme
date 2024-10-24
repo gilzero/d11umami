@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * @file
+ * Implements().
+ */
+use Drupal\file\Entity\File;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\user\Entity\User;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Link;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Xss;
+use Drupal\node\Entity\Node;
+use Drupal\Component\Render\MarkupInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for form elements.
+ */
+function capture_dreams_preprocess_form_element(&$variables) {
+  if (isset($variables['label']['#title'])) {
+    if (is_object($variables['label']['#title']) && !$variables['label']['#title'] instanceof MarkupInterface) {
+      $variables['input_title'] = NULL;
+    }
+    elseif (is_object($variables['label']['#title'])) {
+      $variables['input_title'] = $variables['label']['#title'];
+    }
+    else {
+      $variables['input_title'] = $variables['label']['#title'];
+    }
+  }
+
+  if (isset($variables['element']['#attributes'])) {
+    $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
+  }
+}
+
+
+/**
+ * Implements theme_preprocess_page().
+ */
+function capture_dreams_preprocess_page(&$variables) {
+  $variables['slideshow_display'] = theme_get_setting('slideshow_display');
+  if($variables['slideshow_display']){
+    $variables['slider_content'] = capture_dreams_theme_get_slider_content();
+  }
+
+  if(isset($variables['node'])) {
+    $variables['title'] = $variables['node']->title->value;
+  }
+  else{
+    $variables['title'] =$variables['page']['#title'];
+  }
+
+}
+
+/**
+ * Slider
+ * Implements custom function for get slider content.
+ */
+function capture_dreams_theme_get_slider_content() {
+  $slide_num = theme_get_setting('slide_num');
+  for ($i = 1; $i <= $slide_num; $i++) {
+    // Create a temporary variable to hold the fileID.
+    $file_id = theme_get_setting('slide_image_' . $i);
+    if (!empty($file_id)) {
+      $file = File::load($file_id[0]);
+      if ($file) {
+        $uri = $file->getFileUri();
+        $image_path = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+      }
+    }
+    elseif ($i < 3) {
+      $image_path = \Drupal::service('extension.list.theme')->getPath('capture_dreams') . '/images/slide' . $i . '_image.jpg';
+    }
+    else {
+      // Handle the case when the file is not found.
+      $image_path = "";
+    }
+    // Now use the temporary variable as the key in the array.
+    if (empty(theme_get_setting('slide_title_' . $i)) && empty(theme_get_setting('slide_url_' . $i)) && empty(theme_get_setting('slide_url_title_' . $i)) && empty($image_path)) {
+      $message = "All feild is empty";
+    } else {
+      if ((!empty(theme_get_setting('slide_title_' . $i)) || empty(theme_get_setting('slide_url_' . $i)) || empty(theme_get_setting('slide_url_title_' . $i))) && empty($image_path)) {
+        $image_path = \Drupal::service('extension.list.theme')->getPath('capture_dreams') . '/images/slide' . 1 . '_image.jpg';
+      }
+      $slider_content[$i] = '
+      <div class="slide-content txt">
+        <div class="txt-wrapper">
+          <!-- <span class="copy">Intro about me</span> -->
+          <h2>'.theme_get_setting('slide_title_' . $i).'</h2>
+          <!-- <span class="subtitle">Fashion designer</span> -->
+          <div class="excerpt">'.theme_get_setting('slide_desc_' . $i)['value'].'</div>
+          <a href="'.theme_get_setting('slide_url_' . $i).'" class="button--secondary">'.theme_get_setting('slide_url_title_' . $i).'</a>
+        </div>
+      </div>
+      <div class="slide-content img">
+        <img src="' . $image_path . '" alt="" />
+      </div> ';
+    }
+  }
+  return $slider_content;
+}

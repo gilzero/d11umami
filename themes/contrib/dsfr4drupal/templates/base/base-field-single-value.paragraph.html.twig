@@ -1,0 +1,8 @@
+{% set paragraph_attributes = paragraph_attributes|default(create_attribute()) %}
+{% extends '@dsfr4drupal/templates/base/base-field-single-value.html.twig' %}
+
+{% block item_content %}
+  <p{{ paragraph_attributes }}>
+    {{ item.content }}
+  </p>
+{% endblock item_content %}

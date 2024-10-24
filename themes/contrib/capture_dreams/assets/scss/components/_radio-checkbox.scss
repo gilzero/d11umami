@@ -1,0 +1,138 @@
+// Settings
+$checkbox-size: 20px;
+$check-dash: 48;
+$radio-dot-size: 12px;
+$ani-speed-fast: 0.5s;
+$ani-speed-faster: 0.3s;
+$ani-speed-fastest: 0.15s;
+
+@keyframes checkmarkAnimation {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+.fancy-checkbox,
+.fancy-radio {
+    display: none;
+}
+
+.fancy-check-label,
+.fancy-radio-label {
+    display: inline-block;
+    line-height: $checkbox-size + 4;
+    padding-left: $checkbox-size * 1.4;
+    position: relative;
+    user-select: no-select;
+}
+
+.fancy-check-label {
+    .crappy-browser & .checkmark-path {
+        opacity: 0;
+    }
+    
+    .modern-browser & {
+        transition: color $ani-speed-faster;
+    }
+    
+    .fancy-check:checked + & {
+        color: $color-primary-100;
+        
+        .fancy-checkbox {
+            border-color: $color-primary-100;
+        }
+        
+        .checkmark-path {
+            
+            .modern-browser & {
+                animation: checkmarkAnimation $ani-speed-fast 0s forwards;
+            }
+            
+            .crappy-browser & {
+                opacity: 1;
+                stroke-dasharray: 0;
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+}
+
+.fancy-label--text {
+    position: relative;
+}
+
+.fancy-radio-label {
+    
+    .fancy-radio:checked + & {
+        color: $color-primary-100;
+        
+        .fancy-label--text::before {
+            transition: transform $ani-speed-fastest;
+            transform: scaleX(1);
+        }
+        
+        .fancy-radiobutton {
+            border-color: $color-primary-100;
+            transition: border-color $ani-speed-fast;
+        }
+        
+        .radiobutton-dot {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            transition: opacity $ani-speed-fastest, transform $ani-speed-fastest;
+        }
+    }
+}
+
+.fancy-checkbox,
+.fancy-radiobutton {
+    border: solid 2px $color-surface-600;
+    display: block;
+    height: $checkbox-size;
+    position: absolute;
+        left: 0;
+        top: 0;
+    width: $checkbox-size;
+    
+    .modern-browser & {
+        transition: border-color $ani-speed-faster;
+    }
+}
+
+.fancy-checkbox {
+    border-radius: 3px;
+}
+.fancy-radiobutton {
+    border-radius: 50%;
+}
+
+.radiobutton-dot {
+    background-color: currentColor;
+    border-radius: 50%;
+    height: $radio-dot-size;
+    opacity: 0;
+    position: absolute;
+        left: 50%;
+        top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: $radio-dot-size;
+}
+
+// SVG
+.checkmark {
+    height: $checkbox-size;
+    opacity: 1;
+    width: 100%;
+    margin-top: -10px;
+    
+    .checkmark-path {
+        stroke: $color-primary-100;
+        stroke-width: 2px;
+        transform-origin: 50% 50%;
+        stroke-miterlimit: 10;
+        opacity: 1;
+        
+        // Works only in modern browsers, not IE 11 or EDGE
+        stroke-dasharray: $check-dash;
+        stroke-dashoffset: $check-dash;
+    }
+}

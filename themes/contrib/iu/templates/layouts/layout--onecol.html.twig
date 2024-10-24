@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Override one-column layout for IU Framework compatibility.
+ *
+ * All DOM elements are removed for a 'Naked' single column layout container.
+ *
+ * Note the default 'layout' class provided by core interfere with IU
+ * Framework classes, and have therefore been removed.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ */
+#}
+{% if content %}
+  {{ content }}
+{% endif %}

@@ -1,0 +1,23 @@
+{% if items %}
+<div {{ attributes.addClass('join', 'not-prose') }}>
+{% for item in items %}
+  {% set item_attributes = item.attributes|default(create_attribute()) %}
+    {% if size %}
+      {% set item_attributes = item_attributes.addClass('btn-' ~ size) %}
+    {% endif %}
+  {% if item.url and item.title %}
+    <a{{ item_attributes.addClass(['join-item', 'btn']).setAttribute('href', item.url) }}>
+    {{ item.title }}
+    </a>
+  {% elseif item.title %}
+    <span{{ item_attributes.addClass(['join-item', 'btn', 'btn-active']) }}>
+    {{ item.title }}
+    </span>
+  {% else %}
+    <span{{ item_attributes.addClass(['join-item', 'btn', 'btn-disabled']) }}>
+    …
+    </span>
+  {% endif %}
+{% endfor %}
+</div>
+{% endif %}

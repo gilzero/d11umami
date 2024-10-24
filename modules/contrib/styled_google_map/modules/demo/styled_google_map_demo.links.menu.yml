@@ -1,0 +1,14 @@
+
+# Real estate menu items definition
+entity.real_estate.collection:
+  title: 'Real estate'
+  route_name: entity.real_estate.collection
+  description: 'List Real estate entities'
+  parent: system.admin_content
+  weight: 100
+
+real_estate.admin.structure.settings:
+  title: 'Real estate settings'
+  description: 'Configure Real estate entities'
+  route_name: real_estate.settings
+  parent: system.admin_structure

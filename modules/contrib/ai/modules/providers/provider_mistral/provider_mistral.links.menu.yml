@@ -1,0 +1,5 @@
+provider_mistral.settings_menu:
+  title: "Mistral AI Configuration"
+  description: "Setup Mistral AI"
+  route_name: provider_mistral.settings_form
+  parent: ai.admin_providers

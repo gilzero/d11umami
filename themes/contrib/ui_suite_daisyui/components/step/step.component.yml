@@ -1,0 +1,41 @@
+name: Step
+description: "Step can be used to show a step in a process."
+group: Navigation
+links:
+  - "https://daisyui.com/components/steps/"
+variants:
+  default:
+    title: Default
+  neutral:
+    title: Neutral
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  accent:
+    title: Accent
+  info:
+    title: Info
+  success:
+    title: Success
+  warning:
+    title: Warning
+  error:
+    title: Error
+slots:
+  data_content:
+    title: "Data content"
+  text:
+    title: Text
+props:
+  type: object
+  properties:
+    empty_data_content:
+      title: "Empty data content?"
+      description: "Show step empty data content."
+      $ref: "ui-patterns://boolean"
+stories:
+  preview:
+    title: Preview
+    slots:
+      text: Register

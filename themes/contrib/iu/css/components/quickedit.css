@@ -1,0 +1,12 @@
+.quickedit-form {
+  max-width: 960px;
+}
+
+.quickedit-form > .placeholder {
+  min-height: 22px;
+  display: block;
+  text-align: center;
+  background: #fff;
+  margin: 0;
+  padding: 2px 5px;
+}

@@ -1,0 +1,106 @@
+.footer,
+.footer-region {
+  position: relative;
+  width: 100%;
+}
+.footer {
+  padding: 2rem 0;
+}
+.footer ul,
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer li,
+.sidebar li {
+  position: relative;
+  padding: 8px 0;
+}
+.footer li::before,
+.footer li::after,
+.sidebar li::before,
+.sidebar li::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  height: 1px;
+}
+.footer li::before,
+.sidebar li::before {
+  background-color: var(--border-dark);
+  width: 100%;
+}
+.footer li::after,
+.sidebar li::after {
+  background-color: var(--color-primary);
+  width: 0px;
+  transition: width 0.3s linear;
+}
+.footer li:hover::after,
+.sidebar li:hover::after {
+  width: 100%;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+/* Footer top */
+.region-footer-top,
+.region-footer-bottom {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+/* Footer column blocks */
+.region-footer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+.region-footer .block {
+  flex: 1 0 250px;
+}
+/* Footer Bottom Last */
+.footer-bottom-last {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* Footer block title */
+.footer .block-title,
+.sidebar .block-title,
+.content-block .block-title {
+  font-size: 1.3rem;
+  padding-bottom: 0.6rem;
+}
+.footer .block-title::before,
+.footer .block-title::after,
+.sidebar .block-title::before,
+.sidebar .block-title::after,
+.content-block .block-title::before,
+.content-block .block-title::after  {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  height: 2px;
+}
+.footer .block-title::before,
+.sidebar .block-title::before,
+.content-block .block-title::before {
+  background-color: var(--color-secondary);
+  left: 0;
+  width: 0.5rem;
+}
+.footer .block-title::after,
+.sidebar .block-title::after,
+.content-block .block-title::after {
+  background-color: var(--color-primary);
+  left: 0.8rem;
+  width: 1.6rem;
+}

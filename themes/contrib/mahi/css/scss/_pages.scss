@@ -1,0 +1,60 @@
+/* Node viw mode */
+.node-view-mode-teaser {
+  margin-bottom: 6rem;
+}
+/* Node meta */
+.node-meta {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+}
+.node-author-date {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;  
+}
+.node-author-date i {
+  color: var(--color-primary);
+}
+/* Node content */
+.node-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.node-content p:last-of-type {
+  margin: 0;
+}
+/* Node content -> body field */
+.node-content .image-field {
+  border-radius: 8px;
+}
+/* Node content -> body field */
+.field--name-body li {
+  padding: 6px 0;
+}
+
+/* Node content -> Links field */
+.node-links-container {
+  padding: 12px 1rem;
+  border-radius: 8px;
+}
+.node-links-container .links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* maintenance-page */
+.maintenance-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}

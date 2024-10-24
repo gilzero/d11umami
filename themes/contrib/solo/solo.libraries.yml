@@ -1,0 +1,1960 @@
+w3-css:
+  remote: https://www.w3schools.com/w3css/
+  version: 4.13
+  license:
+    name: MIT
+    url: https://www.w3schools.com/w3css/w3css_downloads.asp
+    gpl-compatible: true
+  css:
+    base:
+      css/w3-css/w3.css: { weight: -202 }
+      css/w3-css/w3css-extended-classes.css: { weight: -201 }
+      css/w3-css/w3css-color-libraries-camouflage.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-european-signal.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-fashion.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-flat-ui.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-food.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-ios.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-metro-ui.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-us-highway.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-us-safety.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-vivid.css:  { weight: -201 }
+      css/w3-css/w3css-color-libraries-win8.css:  { weight: -201 }
+
+# Theme CSS.
+
+solo-global:
+  Version: VERSION
+  css:
+    base:
+      css/base/solo-normalize.css: { weight: -200 }
+      css/base/solo-variables.css: { weight: -200 }
+      css/base/solo-variables-regions.css: { weight: -200 }
+      css/base/solo-animation.css: { weight: -200 }
+      css/base/solo-hamburger.css: { weight: -200 }
+      css/base/solo-global.css: { weight: -200 }
+    layout:
+      css/layout/solo-layout.css: { weight: -100 }
+      css/layout/solo-site-width.css: { weight: -99 }
+    component:
+      css/components/solo-breadcrumb.css: { weight: 0 }
+      css/components/solo-ckeditor.css: { weight: 0 }
+      css/components/solo-comments.css: { weight: 0 }
+      css/components/solo-file.css: { weight: 0 }
+      css/components/solo-embedded-media.css: { weight: 0 }
+      css/components/solo-default-node.css: { weight: 0 }
+      css/components/solo-default-views.css: { weight: 0 }
+      css/components/solo-fixed-search-block.css: { weight: 0 }
+      css/components/solo-popup-login-block.css: { weight: 0 }
+      css/components/solo-forms.css: { weight: 0 }
+      css/components/solo-footer-menu.css: { weight: 0 }
+      css/components/solo-header.css: { weight: 0 }
+      css/components/solo-layout-builder.css: { weight: 0 }
+      css/components/solo-maintenance-page.css: { weight: 0 }
+      css/components/solo-node-form.css: { weight: 0 }
+      css/components/solo-page-title.css: { weight: 0 }
+      css/components/solo-pager.css: { weight: 0 }
+      css/components/solo-search-block.css: { weight: 0 }
+      css/components/solo-search-page.css: { weight: 0 }
+      css/components/solo-skip-link.css: { weight: 0 }
+      css/components/solo-sitemap.css: { weight: 0 }
+      css/components/solo-system-admin.css: { weight: 0 }
+      css/components/solo-system-messages.css: { weight: 0 }
+      css/components/solo-system-tabs.css: { weight: 0 }
+      css/components/solo-tables.css: { weight: 0 }
+      css/components/solo-teaser-mode.css: { weight: 0 }
+      css/components/solo-user-login.css: { weight: 0 }
+      css/components/solo-user-profile.css: { weight: 0 }
+      css/components/solo-user-menu.css: { weight: 0 }
+      css/components/solo-webform.css: { weight: 0 }
+    theme:
+      css/theme/solo-regions-animation.css: { weight: 200 }
+      css/theme/solo-sitename-animation.css: { weight: 200 }
+      css/theme/solo-clickable-image.css: { weight: 200 }
+      css/breakpoints/solo-responsive.css: { weight: 200 }
+      css/theme/solo-global-settings.css: { weight: 200 }
+  js:
+    js/solo-utils.js: { }
+    js/solo-scripts.js: { }
+    js/solo-messages.js: { }
+    js/solo-fixed-search-block.js: { }
+    js/solo-popup-login-block.js: { }
+  dependencies:
+    - core/drupal
+    - core/drupal.ajax
+    - core/drupalSettings
+    - core/once
+
+solo-menu:
+  Version: VERSION
+  css:
+    component:
+      css/components/solo-menu.css: { weight: 0 }
+    theme:
+      css/theme/solo-menu-side.css: { weight: 300 }
+  js:
+    js/solo-menu-scripts.js: { }
+    js/solo-menu.js: { }
+    js/solo-menu-mobile.js: { }
+    js/solo-menu-side.js: { }
+  dependencies:
+    - core/drupal
+    - core/drupal.ajax
+    - core/drupalSettings
+    - core/once
+
+solo-menu-keyboard:
+  Version: VERSION
+  css:
+    component:
+      css/components/solo-menu-keyboard.css: { weight: 0 }
+  js:
+    js/solo-menu-keyboard.js: { }
+  dependencies:
+    - core/drupal
+    - core/drupal.ajax
+    - core/drupalSettings
+    - core/once
+
+# Custom Message
+solo-system-messages-dark:
+  Version: VERSION
+  css:
+    component:
+      css/components/solo-system-messages-dark.css: { weight: 0 }
+
+# Custom Cookies
+solo-cookies:
+  Version: VERSION
+  css:
+    theme:
+      css/theme/solo-cookies.css: { weight: 200 }
+
+# Color Coded system tabs
+solo-color-coded-system-tabs:
+  Version: VERSION
+  css:
+    component:
+      css/components/solo-color-coded-system-tabs.css: { weight: 0 }
+
+# Global Breakpoints
+solo-global-breakpoints-sb-576:
+  Version: VERSION
+  css:
+    layout:
+      css/layout/solo-layout-breakpoints-sb-576.css: { weight: -100 }
+    theme:
+      css/breakpoints/solo-global-breakpoints-sb-576.css: { weight: 200 }
+
+solo-global-breakpoints-sb-768:
+  Version: VERSION
+  css:
+    layout:
+      css/layout/solo-layout-breakpoints-sb-768.css: { weight: -100 }
+    theme:
+      css/breakpoints/solo-global-breakpoints-sb-768.css: { weight: 200 }
+
+solo-global-breakpoints-sb-992:
+  Version: VERSION
+  css:
+    layout:
+      css/layout/solo-layout-breakpoints-sb-992.css: { weight: -100 }
+    theme:
+      css/breakpoints/solo-global-breakpoints-sb-992.css: { weight: 200 }
+
+solo-global-breakpoints-sb-1200:
+  Version: VERSION
+  css:
+    layout:
+      css/layout/solo-layout-breakpoints-sb-1200.css: { weight: -100 }
+    theme:
+      css/breakpoints/solo-global-breakpoints-sb-1200.css: { weight: 200 }
+
+solo-global-breakpoints-sb-1400:
+  Version: VERSION
+  css:
+    layout:
+      css/layout/solo-layout-breakpoints-sb-1400.css: { weight: -100 }
+    theme:
+      css/breakpoints/solo-global-breakpoints-sb-1400.css: { weight: 200 }
+
+# Menu Breakpoints .
+solo-menu-breakpoints-mn-576:
+  Version: VERSION
+  css:
+    theme:
+      css/breakpoints/solo-menu-breakpoints-mn-576.css: { weight: 200 }
+
+solo-menu-breakpoints-mn-768:
+  Version: VERSION
+  css:
+    theme:
+      css/breakpoints/solo-menu-breakpoints-mn-768.css: { weight: 200 }
+
+solo-menu-breakpoints-mn-992:
+  Version: VERSION
+  css:
+    theme:
+      css/breakpoints/solo-menu-breakpoints-mn-992.css: { weight: 200 }
+
+solo-menu-breakpoints-mn-1200:
+  Version: VERSION
+  css:
+    theme:
+      css/breakpoints/solo-menu-breakpoints-mn-1200.css: { weight: 200 }
+
+solo-menu-breakpoints-mn-1400:
+  Version: VERSION
+  css:
+    theme:
+      css/breakpoints/solo-menu-breakpoints-mn-1400.css: { weight: 200 }
+
+# Color Picker.
+solo-form-theme-settings:
+  Version: VERSION
+  css:
+    theme:
+      css/theme/solo-form-theme-settings.css: { weight: 200 }
+  js:
+    js/solo-form-theme-settings.js: { }
+    js/solo-color-picker.js: { }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+
+
+# Full Opacity on Scroll.
+solo-full-opacity:
+  version: VERSION
+  header: true
+  js:
+    js/solo-full-opacity.js: { }
+  dependencies:
+    - core/drupal
+    - core/once
+
+# custom user login page.
+
+solo-user-login-custom:
+  Version: VERSION
+  css:
+    layout:
+      css/layout/solo-layout-user-login.css: { weight: 200 }
+
+# use when node edit.
+
+solo-node-edit-form:
+  Version: VERSION
+  css:
+    layout:
+      css/layout/solo-layout-node-edit.css: { weight: 200 }
+
+# Local actions.
+solo-action-links:
+  Version: VERSION
+  css:
+    theme:
+      css/components/solo-action-links.css: { weight: 0 }
+
+# Font Awesome.
+font-awesome-4-ex:
+  remote: https://github.com/FortAwesome/Font-Awesome
+  version: 4.7.0
+  license:
+    name: MIT
+    url: https://fontawesome.com/license/free
+    gpl-compatible: true
+  css:
+    base:
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
+font-awesome-4-in:
+  Version: 4.7.0
+  css:
+    base:
+      fonts/font-awesome.4.7.0.css: { weight: -200 }
+
+font-awesome-5-ex:
+  remote: https://use.fontawesome.com/releases/v5.15.4/fontawesome-free-5.15.4-web.zip
+  license:
+    name: CC BY 4.0
+    url: https://fontawesome.com/license/free
+    gpl-compatible: true
+  version: 5.15.4
+  header: true
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css: { type: external, minified: true, attributes: { defer: true } }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js: { type: external, minified: true, attributes: { defer: true } }
+
+font-awesome-6-ex:
+  remote: https://use.fontawesome.com/releases/v6.1.1/fontawesome-free-6.1.1-web.zip
+  license:
+    name: CC BY 4.0
+    url: https://fontawesome.com/license/free
+    gpl-compatible: true
+  version: 6.1.1
+  header: true
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css: { type: external, minified: true, attributes: { defer: true } }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js: { type: external, minified: true, attributes: { defer: true } }
+
+# JS Dynamic.
+solo-js-dynamic:
+  Version: VERSION
+  js:
+    js/placeholder.js: { attributes: { defer: true } }
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+
+# Google Fonts - Global.
+solo-gfex-alegreya-sans:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-alegreya-sans.css: { }
+solo-gfin-alegreya-sans:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-alegreya-sans.css: { }
+      fonts/css/global/solo-alegreya-sans.css: { }
+
+solo-gfex-alegreya-sans-sc:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-alegreya-sans-sc.css: { }
+solo-gfin-alegreya-sans-sc:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-alegreya-sans-sc.css: { }
+      fonts/css/global/solo-alegreya-sans-sc.css: { }
+
+solo-gfex-lato:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-lato.css: { }
+solo-gfin-lato:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-lato.css: { }
+      fonts/css/global/solo-lato.css: { }
+
+solo-gfex-montserrat:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-montserrat.css: { }
+solo-gfin-montserrat:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-montserrat.css: { }
+      fonts/css/global/solo-montserrat.css: { }
+
+solo-gfex-nunito:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-nunito.css: { }
+solo-gfin-nunito:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-nunito.css: { }
+      fonts/css/global/solo-nunito.css: { }
+
+solo-gfex-kavivanar:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Kavivanar&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-kavivanar.css: { }
+solo-gfin-kavivanar:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-kavivanar.css: { }
+      fonts/css/global/solo-kavivanar.css: { }
+
+solo-gfex-open-sans:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-open-sans.css: { }
+solo-gfin-open-sans:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-open-sans.css: { }
+      fonts/css/global/solo-open-sans.css: { }
+
+solo-gfex-oswald:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-oswald.css: { }
+solo-gfin-oswald:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-oswald.css: { }
+      fonts/css/global/solo-oswald.css: { }
+
+solo-gfex-playfair-display:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-playfair-display.css: { }
+solo-gfin-playfair-display:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-playfair-display.css: { }
+      fonts/css/global/solo-playfair-display.css: { }
+
+solo-gfex-roboto:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-roboto.css: { }
+solo-gfin-roboto:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-roboto.css: { }
+      fonts/css/global/solo-roboto.css: { }
+
+solo-gfex-roboto-condensed:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-roboto-condensed.css: { }
+solo-gfin-roboto-condensed:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-roboto-condensed.css: { }
+      fonts/css/global/solo-roboto-condensed.css: { }
+
+solo-gfex-roboto-mono:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-roboto-mono.css: { }
+solo-gfin-roboto-mono:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-roboto-mono.css: { }
+      fonts/css/global/solo-roboto-mono.css: { }
+solo-gfex-source-sans-3:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-source-sans-3.css: { }
+solo-gfin-source-sans-3:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-source-sans-3.css: { }
+      fonts/css/global/solo-source-sans-3.css: { }
+
+solo-gfex-domine:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-domine.css: { }
+solo-gfin-domine:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-domine.css: { }
+      fonts/css/global/solo-domine.css: { }
+
+solo-gfex-glegoo:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-glegoo.css: { }
+solo-gfin-glegoo:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-glegoo.css: { }
+      fonts/css/global/solo-glegoo.css: { }
+
+solo-gfex-amita:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Amita&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-amita.css: { }
+solo-gfin-amita:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-amita.css: { }
+      fonts/css/global/solo-amita.css: { }
+
+solo-gfex-oranienbaum:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-oranienbaum.css: { }
+solo-gfin-oranienbaum:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-oranienbaum.css: { }
+      fonts/css/global/solo-oranienbaum.css: { }
+
+solo-gfex-abel:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Abel&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-abel.css: { }
+solo-gfin-abel:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-abel.css: { }
+      fonts/css/global/solo-abel.css: { }
+
+solo-gfex-archivo-narrow:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-archivo-narrow.css: { }
+solo-gfin-archivo-narrow:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-archivo-narrow.css: { }
+      fonts/css/global/solo-archivo-narrow.css: { }
+
+solo-gfex-arimo:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-arimo.css: { }
+solo-gfin-arimo:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-arimo.css: { }
+      fonts/css/global/solo-arimo.css: { }
+
+solo-gfex-arvo:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-arvo.css: { weight: -200 }
+solo-gfin-arvo:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-arvo.css: { weight: -200 }
+      fonts/css/global/solo-arvo.css: { weight: -200 }
+
+solo-gfex-barlow:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-barlow.css: { }
+solo-gfin-barlow:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-barlow.css: { }
+      fonts/css/global/solo-barlow.css: { }
+
+solo-gfex-barlow-semi-condensed:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-barlow-semi-condensed.css: { }
+solo-gfin-barlow-semi-condensed:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-barlow-semi-condensed.css: { }
+      fonts/css/global/solo-barlow-semi-condensed.css: { }
+
+solo-gfex-bitter:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-bitter.css: { }
+solo-gfin-bitter:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-bitter.css: { }
+      fonts/css/global/solo-bitter.css: { }
+
+solo-gfex-cairo:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-cairo.css: { }
+solo-gfin-cairo:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-cairo.css: { }
+      fonts/css/global/solo-cairo.css: { }
+
+solo-gfex-comfortaa:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-comfortaa.css: { }
+solo-gfin-comfortaa:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-comfortaa.css: { }
+      fonts/css/global/solo-comfortaa.css: { }
+
+solo-gfex-courgette:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Courgette&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-courgette.css: { }
+solo-gfin-courgette:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-courgette.css: { }
+      fonts/css/global/solo-courgette.css: { }
+
+solo-gfex-dosis:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-dosis.css: { }
+solo-gfin-dosis:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-dosis.css: { }
+      fonts/css/global/solo-dosis.css: { }
+
+solo-gfex-exo-2:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-exo-2.css: { }
+solo-gfin-exo-2:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-exo-2.css: { }
+      fonts/css/global/solo-exo-2.css: { }
+
+solo-gfex-fira-sans:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-fira-sans.css: { }
+solo-gfin-fira-sans:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-fira-sans.css: { }
+      fonts/css/global/solo-fira-sans.css: { }
+
+solo-gfex-hind-siliguri:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-hind-siliguri.css: { }
+solo-gfin-hind-siliguri:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-hind-siliguri.css: { }
+      fonts/css/global/solo-hind-siliguri.css: { }
+
+solo-gfex-ibm-plex-sans:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-ibm-plex-sans.css: { }
+solo-gfin-ibm-plex-sans:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-ibm-plex-sans.css: { }
+      fonts/css/global/solo-ibm-plex-sans.css: { }
+
+solo-gfex-inconsolata:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-inconsolata.css: { }
+solo-gfin-inconsolata:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-inconsolata.css: { }
+      fonts/css/global/solo-inconsolata.css: { }
+
+solo-gfex-josefin-sans:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-josefin-sans.css: { }
+solo-gfin-josefin-sans:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-josefin-sans.css: { }
+      fonts/css/global/solo-josefin-sans.css: { }
+
+solo-gfex-kanit:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-kanit.css: { }
+solo-gfin-kanit:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-kanit.css: { }
+      fonts/css/global/solo-kanit.css: { }
+
+solo-gfex-libre-baskerville:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-libre-baskerville.css: { }
+solo-gfin-libre-baskerville:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-libre-baskerville.css: { }
+      fonts/css/global/solo-libre-baskerville.css: { }
+
+solo-gfex-lora:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-lora.css: { }
+solo-gfin-lora:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-lora.css: { }
+      fonts/css/global/solo-lora.css: { }
+
+solo-gfex-merienda:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-merienda.css: { }
+solo-gfin-merienda:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-merienda.css: { }
+      fonts/css/global/solo-merienda.css: { }
+
+solo-gfex-merriweather:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-merriweather.css: { }
+solo-gfin-merriweather:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-merriweather.css: { }
+      fonts/css/global/solo-merriweather.css: { }
+
+solo-gfex-mukta:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-mukta.css: { }
+solo-gfin-mukta:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-mukta.css: { }
+      fonts/css/global/solo-mukta.css: { }
+
+solo-gfex-oxygen:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-oxygen.css: { }
+solo-gfin-oxygen:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-oxygen.css: { }
+      fonts/css/global/solo-oxygen.css: { }
+
+solo-gfex-poppins:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-poppins.css: { }
+solo-gfin-poppins:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-poppins.css: { }
+      fonts/css/global/solo-poppins.css: { }
+
+solo-gfex-prompt:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-prompt.css: { }
+solo-gfin-prompt:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-prompt.css: { }
+      fonts/css/global/solo-prompt.css: { }
+
+solo-gfex-pt-serif:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-pt-serif.css: { }
+solo-gfin-pt-serif:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-pt-serif.css: { }
+      fonts/css/global/solo-pt-serif.css: { }
+
+solo-gfex-quicksand:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-quicksand.css: { }
+solo-gfin-quicksand:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-quicksand.css: { }
+      fonts/css/global/solo-quicksand.css: { }
+
+solo-gfex-raleway:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-raleway.css: { }
+solo-gfin-raleway:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-raleway.css: { }
+      fonts/css/global/solo-raleway.css: { }
+
+solo-gfex-spline-sans:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;700&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-spline-sans.css: { }
+solo-gfin-spline-sans:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-spline-sans.css: { }
+      fonts/css/global/solo-spline-sans.css: { }
+
+solo-gfex-titillium-web:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-titillium-web.css: { }
+solo-gfin-titillium-web:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-titillium-web.css: { }
+      fonts/css/global/solo-titillium-web.css: { }
+
+solo-gfex-ubuntu:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-ubuntu.css: { }
+solo-gfin-ubuntu:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-ubuntu.css: { }
+      fonts/css/global/solo-ubuntu.css: { }
+
+solo-gfex-work-sans:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap': { type: external, minified: true }
+      fonts/css/global/solo-work-sans.css: { }
+solo-gfin-work-sans:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-work-sans.css: { }
+      fonts/css/global/solo-work-sans.css: { }
+
+# Google fonts - Heading.
+
+solo-gfex-abril-fatface:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-abril-fatface.css: { }
+solo-gfin-abril-fatface:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-abril-fatface.css: { }
+      fonts/css/head/solo-abril-fatface.css: { }
+
+solo-gfex-aladin:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Aladin&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-aladin.css: { }
+solo-gfin-aladin:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-aladin.css: { }
+      fonts/css/head/solo-aladin.css: { }
+
+solo-gfex-anton:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Anton&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-anton.css: { }
+solo-gfin-anton:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-anton.css: { }
+      fonts/css/head/solo-anton.css: { }
+
+solo-gfex-archivo-black:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-archivo-black.css: { }
+solo-gfin-archivo-black:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-archivo-black.css: { }
+      fonts/css/head/solo-archivo-black.css: { }
+
+solo-gfex-bebas-neue:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-bebas-neue.css: { }
+solo-gfin-bebas-neue:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-bebas-neue.css: { }
+      fonts/css/head/solo-bebas-neue.css: { }
+
+solo-gfex-big-shoulders-stencil-display:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-big-shoulders-stencil-display.css: { }
+solo-gfin-big-shoulders-stencil-display:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-big-shoulders-stencil-display.css: { }
+      fonts/css/head/solo-big-shoulders-stencil-display.css: { }
+
+solo-gfex-big-shoulders-stencil-text:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@700&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-big-shoulders-stencil-text.css: { }
+solo-gfin-big-shoulders-stencil-text:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-big-shoulders-stencil-text.css: { }
+      fonts/css/head/solo-big-shoulders-stencil-text.css: { }
+
+solo-gfex-black-ops-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-black-ops-one.css: { }
+solo-gfin-black-ops-one:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-black-ops-one.css: { }
+      fonts/css/head/solo-black-ops-one.css: { }
+
+solo-gfex-bree-serif:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-bree-serif.css: { }
+solo-gfin-bree-serif:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-bree-serif.css: { }
+      fonts/css/head/solo-bree-serif.css: { }
+
+solo-gfex-cinzel:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Cinzel&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-cinzel.css: { }
+solo-gfin-cinzel:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-cinzel.css: { }
+      fonts/css/head/solo-cinzel.css: { }
+
+solo-gfex-dancing-script:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-dancing-script.css: { }
+solo-gfin-dancing-script:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-dancing-script.css: { }
+      fonts/css/head/solo-dancing-script.css: { }
+
+solo-gfex-dm-serif-display:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-dm-serif-display.css: { }
+solo-gfin-dm-serif-display:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-dm-serif-display.css: { }
+      fonts/css/head/solo-dm-serif-display.css: { }
+
+solo-gfex-doppio-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Doppio+One&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-doppio-one.css: { }
+solo-gfin-doppio-one:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-doppio-one.css: { }
+      fonts/css/head/solo-doppio-one.css: { }
+
+solo-gfex-fjalla-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-fjalla-one.css: { }
+solo-gfin-fjalla-one:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-fjalla-one.css: { }
+      fonts/css/head/solo-fjalla-one.css: { }
+
+solo-gfex-francois-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Francois+One&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-francois-one.css: { }
+solo-gfin-francois-one:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-francois-one.css: { }
+      fonts/css/head/solo-francois-one.css: { }
+
+solo-gfex-fredericka-the-great:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-fredericka-the-great.css: { }
+solo-gfin-fredericka-the-great:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-fredericka-the-great.css: { }
+      fonts/css/head/solo-fredericka-the-great.css: { }
+
+solo-gfex-fredoka:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-fredoka.css: { }
+solo-gfin-fredoka:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-fredoka.css: { }
+      fonts/css/head/solo-fredoka.css: { }
+
+solo-gfex-hammersmith-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-hammersmith-one.css: { }
+solo-gfin-hammersmith-one:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-hammersmith-one.css: { }
+      fonts/css/head/solo-hammersmith-one.css: { }
+
+solo-gfex-indie-flower:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-indie-flower.css: { }
+solo-gfin-indie-flower:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-indie-flower.css: { }
+      fonts/css/head/solo-indie-flower.css: { }
+
+solo-gfex-kalam:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-kalam.css: { }
+solo-gfin-kalam:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-kalam.css: { }
+      fonts/css/head/solo-kalam.css: { }
+
+solo-gfex-lobster-two:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-lobster-two.css: { }
+solo-gfin-lobster-two:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-lobster-two.css: { }
+      fonts/css/head/solo-lobster-two.css: { }
+
+solo-gfex-patrick-hand:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-patrick-hand.css: { }
+solo-gfin-patrick-hand:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-patrick-hand.css: { }
+      fonts/css/head/solo-patrick-hand.css: { }
+
+solo-gfex-prosto-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Prosto+One&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-prosto-one.css: { }
+solo-gfin-prosto-one:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-prosto-one.css: { }
+      fonts/css/head/solo-prosto-one.css: { }
+
+solo-gfex-righteous:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Righteous&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-righteous.css: { }
+solo-gfin-righteous:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-righteous.css: { }
+      fonts/css/head/solo-righteous.css: { }
+
+solo-gfex-staatliches:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Staatliches&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-staatliches.css: { }
+solo-gfin-staatliches:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-staatliches.css: { }
+      fonts/css/head/solo-staatliches.css: { }
+
+solo-gfex-yanone-kaffeesatz:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap': { type: external, minified: true }
+      fonts/css/head/solo-yanone-kaffeesatz.css: { }
+solo-gfin-yanone-kaffeesatz:
+  Version: VERSION
+  css:
+    base:
+      fonts/font-face/google-font-yanone-kaffeesatz.css: { }
+      fonts/css/head/solo-yanone-kaffeesatz.css: { }
+
+# Google fonts - Specail Fonts.
+
+solo-gfex-metal-mania:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-metal-mania.css: { }
+
+solo-gfex-train-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Train+One&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-train-one.css: { }
+
+solo-gfex-barriecito:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Barriecito&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-barriecito.css: { }
+
+solo-gfex-sancreek:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Sancreek&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-sancreek.css: { }
+
+solo-gfex-new-rocker:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=New+Rocker&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-new-rocker.css: { }
+
+solo-gfex-nosifer:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Nosifer&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-nosifer.css: { }
+
+solo-gfex-kumar-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Kumar+One&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-kumar-one.css: { }
+
+solo-gfex-londrina-outline:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-londrina-outline.css: { }
+
+solo-gfex-trade-winds:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-trade-winds.css: { }
+
+solo-gfex-slackey:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Slackey&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-slackey.css: { }
+
+solo-gfex-frijole:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Frijole&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-frijole.css: { }
+
+solo-gfex-ruslan-display:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-ruslan-display.css: { }
+
+solo-gfex-faster-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Faster+One&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-faster-one.css: { }
+
+solo-gfex-akronim:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Akronim&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-akronim.css: { }
+
+solo-gfex-finger-paint:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-finger-paint.css: { }
+
+solo-gfex-ceviche-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-ceviche-one.css: { }
+
+solo-gfex-unifrakturmaguntia:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-unifrakturmaguntia.css: { }
+
+solo-gfex-megrim:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Megrim&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-megrim.css: { }
+
+solo-gfex-bungee-shade:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-bungee-shade.css: { }
+
+solo-gfex-irish-grover:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-irish-grover.css: { }
+
+solo-gfex-pirata-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Pirata+One&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-pirata-one.css: { }
+
+solo-gfex-rye:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Rye&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-rye.css: { }
+
+solo-gfex-creepster:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Creepster&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-creepster.css: { }
+
+solo-gfex-moo-lah-lah:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-moo-lah-lah.css: { }
+
+solo-gfex-monoton:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Monoton&display=swap': { type: external, minified: true }
+      fonts/css/special/solo-monoton.css: { }
+
+# Google fonts - Site Name Fonts.
+solo-gfex-acme:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Acme&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-acme.css: { }
+
+solo-gfex-audiowide:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Audiowide&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-audiowide.css: { }
+
+solo-gfex-berkshire-swash:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-berkshire-swash.css: { }
+
+solo-gfex-contrail-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Contrail+One&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-contrail-one.css: { }
+
+solo-gfex-cookie:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Cookie&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-cookie.css: { }
+
+solo-gfex-croissant-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Croissant+One&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-croissant-one.css: { }
+
+solo-gfex-crushed:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Crushed&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-crushed.css: { }
+
+solo-gfex-eagle-lake:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-eagle-lake.css: { }
+
+solo-gfex-fugaz-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-fugaz-one.css: { }
+
+solo-gfex-gilda-display:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-gilda-display.css: { }
+
+solo-gfex-girassol:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Girassol&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-girassol.css: { }
+
+solo-gfex-italiana:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Italiana&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-italiana.css: { }
+
+solo-gfex-joan:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Joan&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-joan.css: { }
+
+solo-gfex-julius-sans-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-julius-sans-one.css: { }
+
+solo-gfex-katibeh:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Katibeh&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-katibeh.css: { }
+
+solo-gfex-kaushan-script:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-kaushan-script.css: { }
+
+solo-gfex-overlock-sc:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Overlock+SC&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-overlock-sc.css: { }
+
+solo-gfex-poiret-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Poiret+One&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-poiret-one.css: { }
+
+solo-gfex-prata:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Prata&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-prata.css: { }
+
+solo-gfex-redressed:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Redressed&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-redressed.css: { }
+
+solo-gfex-tapestry:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Tapestry&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-tapestry.css: { }
+
+solo-gfex-uncial-antiqua:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-uncial-antiqua.css: { }
+
+solo-gfex-unica-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Unica+One&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-unica-one.css: { }
+
+solo-gfex-yatra-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Yatra+One&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-yatra-one.css: { }
+
+solo-gfex-yeseva-one:
+  Version: VERSION
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap': { type: external, minified: true }
+      fonts/css/site-name/solo-yeseva-one.css: { }
+
+
+# Custom predefined color scheme.
+solo-berry-blue-dreams:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-berry-blue-dreams.css: { weight: -9 }
+
+solo-blueberry-skies-quartet:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-blueberry-skies-quartet.css: { weight: -9 }
+
+solo-blushing-magnolia:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-blushing-magnolia.css: { weight: -9 }
+
+solo-celestial-blue-depths:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-celestial-blue-depths.css: { weight: -9 }
+
+solo-classic-ivory-lace:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-classic-ivory-lace.css: { weight: -9 }
+
+solo-cotton-candy-whispers:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-cotton-candy-whispers.css: { weight: -9 }
+
+solo-crimson-denim-night:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-crimson-denim-night.css: { weight: -9 }
+
+solo-deep-ocean-shadows:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-deep-ocean-shadows.css: { weight: -9 }
+
+solo-deep-sea-echo:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-deep-sea-echo.css: { weight: -9 }
+
+solo-denim-twilight:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-denim-twilight.css: { weight: -9 }
+
+solo-dusk-shadow-fusion:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-dusk-shadow-fusion.css: { weight: -9 }
+
+solo-eclipse-noir:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-eclipse-noir.css: { weight: -9 }
+
+solo-charcoal-gray:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-charcoal-gray.css: { weight: -9 }
+
+solo-enchanted-forest-zest:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-enchanted-forest-zest.css: { weight: -9 }
+
+solo-ethereal-white-harmony:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-ethereal-white-harmony.css: { weight: -9 }
+
+solo-flaming-sapphire:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-flaming-sapphire.css: { weight: -9 }
+
+solo-galactic-stone-hues:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-galactic-stone-hues.css: { weight: -9 }
+
+solo-gentle-ivory-breeze:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-gentle-ivory-breeze.css: { weight: -9 }
+
+solo-gunmetal-echo:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-gunmetal-echo.css: { weight: -9 }
+
+solo-indigo-pulse:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-indigo-pulse.css: { weight: -9 }
+
+solo-ivory-whisper:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-ivory-whisper.css: { weight: -9 }
+
+solo-jungle-denim-fusion:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-jungle-denim-fusion.css: { weight: -9 }
+
+solo-lemon-lime-forest:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-lemon-lime-forest.css: { weight: -9 }
+
+solo-luminous-alabaster:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-luminous-alabaster.css: { weight: -9 }
+
+solo-magnolia-afternoon:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-magnolia-afternoon.css: { weight: -9 }
+
+solo-metallic-nebula:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-metallic-nebula.css: { weight: -9 }
+
+solo-midnight-denim-swirl:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-midnight-denim-swirl.css: { weight: -9 }
+
+solo-midnight-garden-trio:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-midnight-garden-trio.css: { weight: -9 }
+
+solo-midnight-navy-duo:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-midnight-navy-duo.css: { weight: -9 }
+
+solo-midnight-whispers:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-midnight-whispers.css: { weight: -9 }
+
+solo-monochrome-splash:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-monochrome-splash.css: { weight: -9 }
+
+solo-mystic-ash-twilight:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-mystic-ash-twilight.css: { weight: -9 }
+
+solo-nightfall-paris:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-nightfall-paris.css: { weight: -9 }
+
+solo-nocturnal-velvet:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-nocturnal-velvet.css: { weight: -9 }
+
+solo-obsidian-cascade:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-obsidian-cascade.css: { weight: -9 }
+
+solo-ocean-depths-mystery:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-ocean-depths-mystery.css: { weight: -9 }
+
+solo-parisian-skyline:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-parisian-skyline.css: { weight: -9 }
+
+solo-porcelain-brilliance:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-porcelain-brilliance.css: { weight: -9 }
+
+solo-porpoise-dream:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-porpoise-dream.css: { weight: -9 }
+
+solo-pristine-porcelain-glow:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-pristine-porcelain-glow.css: { weight: -9 }
+
+solo-raspberry-nightfall:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-raspberry-nightfall.css: { weight: -9 }
+
+solo-razzle-onyx-elegance:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-razzle-onyx-elegance.css: { weight: -9 }
+
+solo-royal-azure-flame:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-royal-azure-flame.css: { weight: -9 }
+
+solo-rustic-redwood-charm:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-rustic-redwood-charm.css: { weight: -9 }
+
+solo-salmon-denim-fade:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-salmon-denim-fade.css: { weight: -9 }
+
+solo-silken-shadow-whisper:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-silken-shadow-whisper.css: { weight: -9 }
+
+solo-smokey-quartz-symphony:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-smokey-quartz-symphony.css: { weight: -9 }
+
+solo-soft-silk-elegance:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-soft-silk-elegance.css: { weight: -9 }
+
+solo-twilight-ash-mystique:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-twilight-ash-mystique.css: { weight: -9 }
+
+solo-urban-stone-shadows:
+  Version: VERSION
+  css:
+    theme:
+      css/predefined/solo-urban-stone-shadows.css: { weight: -9 }

@@ -1,0 +1,12 @@
+name: ReDoc for OpenAPI UI
+type: module
+description: Provides display of OpenAPI docs using the ReDoc library.
+core_version_requirement: ^10 || ^11
+package: OpenAPI
+dependencies:
+  - openapi_ui:openapi_ui
+
+# Information added by Drupal.org packaging script on 2024-07-11
+version: '8.x-1.0-rc5'
+project: 'openapi_ui_redoc'
+datestamp: 1720705400

@@ -1,0 +1,18 @@
+
+// Styles for the theme info details/fieldset items
+
+#edit-theme-info {
+  .item-list {
+    ul {
+      margin: 0 0 1.5em;
+      list-style: none;
+    }
+  }
+
+  .item-list h3,
+  .form-type-textarea label {
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 1.231em;
+  }
+}

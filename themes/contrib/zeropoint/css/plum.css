@@ -1,0 +1,79 @@
+/*** PLUM STYLE ***/
+
+#top_bg, .themed-block {
+	background-color: #d4c8d7;
+	background-image: -webkit-linear-gradient(bottom, #d4c8d7 0%, #fff 180px);
+	background-image: linear-gradient(to top, #d4c8d7 0%, #fff 180px);
+}
+#headimg {
+	background-color: #593662;
+	background-image: -webkit-linear-gradient(bottom, #593662 0%, #fff 180px);
+	background-image: linear-gradient(to top, #593662 0%, #fff 180px);
+}
+#section2 {
+	background-color: #fff;
+	background-image: -webkit-linear-gradient(bottom, #fff 0%, #d4c8d7 150px);
+	background-image: linear-gradient(to top, #fff 0%, #d4c8d7 150px);
+}
+#header, #header a {
+	color: #222;
+}
+.region-highlighted {
+	border: solid 1px #000;
+}
+#section2 .divider {
+	border-left: 1px dashed #333; /* LTR */
+}
+[dir="rtl"] #section2 .divider {
+	border-right: 1px dashed #333;
+}
+a, a:link, h1, h2, h3, .block-title, #name-and-slogan a {
+	color: #9d408d;
+}
+a:hover, a:active, a.is-active, ul.menu a.is-active {
+	color: #000;
+}
+.pure-menu-link {
+	color: #000 !important;
+	text-shadow: 0 1px #eee;
+	background: #b7a4bc;
+}
+.pure-menu-link:hover, .pure-menu-link:focus {
+	background: #d4c8d7;
+}
+.pure-menu-children .pure-menu-link {
+	background: #b7a4bc;
+	border: 1px solid;
+	border-color: #e1d9e3 #907297 #907297 #e1d9e3;
+}
+.pure-menu-children a:hover, .pure-menu-children a:focus {
+	background: #d4c8d7;
+}
+.menu-toggle .bars {
+	background: #9d408d;
+}
+ul.pure-paginator .is-active, ul.pure-paginator .is-active a {
+	border: none;
+	background: #b7a4bc;
+}
+
+@media screen and (max-width: 48em) {
+	.pure-menu-link, .pure-menu-children,
+	.pure-menu-children .pure-menu-link {
+		color: #9d408d !important;
+		text-shadow: none;
+		background: none;
+		border: none;
+	}
+	.pure-menu-link:hover,
+	.pure-menu-link:focus,
+	.pure-menu-children a:hover,
+	.pure-menu-children a:focus {
+		background: #f4f2ee;
+	}
+	#headimg {
+		background-color: #593662;
+		background-image: -webkit-linear-gradient(bottom, #fff 0%, #593662 150px);
+		background-image: linear-gradient(to top, #fff 0%, #593662 150px);
+	}
+}

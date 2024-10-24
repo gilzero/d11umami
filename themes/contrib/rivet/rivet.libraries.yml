@@ -1,0 +1,287 @@
+core:
+  css:
+    base:
+      # NOTE: when bumping Rivet dependency, remember to also bump ckeditor.css!
+      //unpkg.com/rivet-core@2.8.1/css/rivet.min.css: { type: external, minified: true }
+  js:
+    https://unpkg.com/rivet-core@2.8.1/js/rivet.min.js: { type: external, minified: true }
+
+init:
+  js:
+    js/init.js: {}
+  dependencies:
+    - rivet/core
+
+base:
+  version: VERSION
+  css:
+    theme:
+      css/components/action-links.css:
+        weight: -10
+      css/components/ajax-progress.module.css:
+        weight: -10
+      css/components/align.module.css:
+        weight: -10
+      css/components/autocomplete-loading.module.css:
+        weight: -10
+      css/components/breadcrumb.css:
+        weight: -10
+      css/components/button.css:
+        weight: -10
+      css/components/container-inline.css:
+        weight: -10
+      css/components/details.css:
+        weight: -10
+      css/components/exposed-filters.css:
+        weight: -10
+      css/components/form.css:
+        weight: -10
+      css/components/icons.css:
+        weight: -10
+      css/components/inline-form.css:
+        weight: -10
+      css/components/item-list.css:
+        weight: -10
+      css/components/link.css:
+        weight: -10
+      css/components/links.css:
+        weight: -10
+      css/components/menu.css:
+        weight: -10
+      css/components/more-link.css:
+        weight: -10
+      css/components/pager.css:
+        weight: -10
+      css/components/rvt-c-description.css:
+        weight: -10
+      css/components/rvt-c-field.css:
+        weight: -10
+      css/components/rvt-c-spacing.css:
+        weight: -10
+      css/compiled/components/rvt-select.css:
+        weight: -10
+      css/components/tabledrag.css:
+        weight: -10
+      css/components/tableselect.css:
+        weight: -10
+      css/components/tablesort.css:
+        weight: -10
+      css/components/tabs.css:
+        weight: -10
+      css/components/textarea.css:
+        weight: -10
+      css/components/ui-dialog.css:
+        weight: -10
+      css/rvt-drupal-compatibility.css: {}
+block-region:
+  css:
+    theme:
+      css/components/block-region.css: {}
+dialog:
+  version: VERSION
+  css:
+    theme:
+      css/components/dialog.css:
+        weight: -10
+dropbutton:
+  version: VERSION
+  css:
+    theme:
+      css/components/dropbutton.css:
+        weight: -10
+file:
+  version: VERSION
+  css:
+    theme:
+      css/components/file.css:
+        weight: -10
+image-widget:
+  version: VERSION
+  css:
+    theme:
+      css/components/image-widget.css: {  }
+indented:
+  version: VERSION
+  css:
+    theme:
+      css/components/indented.css: {  }
+
+messages:
+  version: VERSION
+  css:
+    theme:
+      css/components/messages.css:
+        weight: -10
+node:
+  version: VERSION
+  css:
+    theme:
+      css/components/node.css:
+        weight: -10
+progress:
+  version: VERSION
+  css:
+    theme:
+      css/components/progress.css:
+        weight: -10
+search-results:
+  version: VERSION
+  css:
+    theme:
+      css/components/search-results.css: {  }
+user:
+  version: VERSION
+  css:
+    theme:
+      css/components/user.css:
+        weight: -10
+
+rvt-c-card-image-square:
+  version: VERSION
+  css:
+    theme:
+      css/components/rvt-c-card-image-square.css: {}
+
+rvt-c-fieldset:
+  version: VERSION
+  css:
+    theme:
+      css/components/rvt-c-fieldset.css: {}
+
+rvt-c-header-menu:
+  version: VERSION
+  css:
+    theme:
+      css/compiled/components/rvt-c-header-menu.css: {}
+
+rvt-c-range-input:
+  version: VERSION
+  css:
+    theme:
+      css/components/rvt-c-range-input.css: {}
+
+rvt-c-region:
+  version: VERSION
+  css:
+    theme:
+      css/components/rvt-c-region.css: {}
+
+rvt-c-select--multiple:
+  version: VERSION
+  css:
+    theme:
+      css/components/rvt-c-select--multiple.css: {}
+
+rvt-c-sidenav:
+  version: VERSION
+  css:
+    theme:
+      css/compiled/components/rvt-c-sidenav.css: {}
+
+rvt-c-subnav:
+  version: VERSION
+  css:
+    theme:
+      css/compiled/components/rvt-c-subnav.css: {}
+
+rvt-c-webform-signature:
+  version: VERSION
+  css:
+    theme:
+      css/components/rvt-c-webform-signature.css: {}
+
+rvt-steps:
+  version: VERSION
+  css:
+    theme:
+      css/components/rvt-steps.css: {}
+
+ui-autocomplete:
+  version: VERSION
+  css:
+    theme:
+      css/components/ui-autocomplete.css: { }
+
+webform.element.color:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.color.css: {}
+
+webform.element.computed:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.computed.css: {}
+
+webform.element.date:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.date.css: {}
+
+webform.element.help:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.help.css: {}
+
+webform.element.horizontal_rule:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.horizontal_rule.css: {}
+
+webform.element.flexbox:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.flexbox.css: {}
+
+webform.element.options:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.options.css: {}
+
+webform.element.other:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.other.css: {}
+
+webform.element.rating:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.rating.css: {}
+
+webform.element.select2:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.select2.css: {}
+
+webform.element.telephone:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.telephone.css: {}
+
+webform.element.term_checkboxes:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.term_checkboxes.css: {}
+
+webform.element.multiple:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.element.multiple.css: {}
+
+webform.form:
+  version: VERSION
+  css:
+    theme:
+      css/components/webform.form.css: {}

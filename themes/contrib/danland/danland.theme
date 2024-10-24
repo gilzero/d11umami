@@ -1,0 +1,115 @@
+<?php
+
+/**
+ * @file
+ * Danland theme pre-process functions.
+ */
+
+use Drupal\Core\Template\Attribute;
+use Drupal\file\Entity\File;
+
+/**
+ * Implements template_preprocess_html().
+ */
+function danland_preprocess_html(&$variables) {
+
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'two-sidebars';
+  }
+  elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'one-sidebar';
+  }
+  else {
+    $variables['attributes']['class'][] = 'no-sidebars';
+  }
+
+  if (!empty($variables['page']['sidebar_first']) && empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'one-sidebar-left';
+  }
+  elseif (empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'one-sidebar-right';
+  }
+
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function danland_preprocess_page(&$variables) {
+
+  $variables['danland_layout'] = new Attribute();
+  $variables['danland_layout']['id'] = [];
+
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['danland_layout']['id'][] = 'layout-type-2';
+  }
+  elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
+    $variables['danland_layout']['id'][] = 'layout-type-1';
+  }
+
+  $preface = (bool) $variables['page']['preface_first'] + (bool) $variables['page']['preface_middle'] + (bool) $variables['page']['preface_last'];
+  $variables['danland_preface'] = new Attribute();
+  $variables['danland_preface']['class'] = [];
+  $variables['danland_preface']['class'][] = 'in' . $preface;
+
+  $bottom_a = (bool) $variables['page']['bottom_first'] + (bool) $variables['page']['bottom_middle'] + (bool) $variables['page']['bottom_last'];
+  $variables['danland_bottom_a'] = new Attribute();
+  $variables['danland_bottom_a']['class'] = [];
+  $variables['danland_bottom_a']['class'][] = 'in' . $bottom_a;
+
+  $bottom_b = (bool) $variables['page']['bottom_1'] + (bool) $variables['page']['bottom_2'] + (bool) $variables['page']['bottom_3'] + (bool) $variables['page']['bottom_4'];
+  $variables['danland_bottom_b'] = new Attribute();
+  $variables['danland_bottom_b']['class'] = [];
+  $variables['danland_bottom_b']['class'][] = 'in' . $bottom_b;
+
+  $mask = '/\.(?:jp[e]?g|gif|png)$/i';
+  $files = \Drupal::service('file_system')->scanDirectory(\Drupal::service('extension.list.theme')->getPath('danland') . '/images/slideshows', $mask);
+  ksort($files);
+  $variables['files'] = $files;
+  $variables['slideshow_display'] = theme_get_setting('slideshow_display', 'danland');
+  $variables['slide1_url'] = theme_get_setting('slide1_url', 'danland');
+  $variables['#attached']['drupalSettings']['stickyHeader'] = theme_get_setting('sticky_header', 'danland');
+  // slide1_image.
+  $fid = theme_get_setting("slide1_image", "danland");
+  if (!empty($fid)) {
+    $file = File::load($fid[0]);
+    $uri = $file->getFileUri();
+    $image_path = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+  }
+  else {
+    $image_path = \Drupal::service('extension.list.theme')->getPath('danland') . '/images/slideshows/1.sea.jpg';
+  }
+  $variables['slide1_image'] = $image_path;
+  $variables['slide2_url'] = theme_get_setting('slide2_url', 'danland');
+  // slide2_image.
+  $fid = theme_get_setting("slide2_image", "danland");
+  if (!empty($fid)) {
+    $file = File::load($fid[0]);
+    $uri = $file->getFileUri();
+    $image_path = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+  }
+  else {
+    $image_path = \Drupal::service('extension.list.theme')->getPath('danland') . '/images/slideshows/2.noon.jpg';
+  }
+  $variables['slide2_image'] = $image_path;
+  $variables['slide3_url'] = theme_get_setting('slide3_url', 'danland');
+  // slide3_image.
+  $fid = theme_get_setting("slide3_image", "danland");
+  if (!empty($fid)) {
+    $file = File::load($fid[0]);
+    $uri = $file->getFileUri();
+    $image_path = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+  }
+  else {
+    $image_path = \Drupal::service('extension.list.theme')->getPath('danland') . '/images/slideshows/3.snow.jpg';
+  }
+  $variables['slide3_image'] = $image_path;
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function danland_preprocess_block(&$variables) {
+  $variables['attributes']['class'][] = 'block';
+  $variables['title_attributes']['class'][] = 'block-title';
+}

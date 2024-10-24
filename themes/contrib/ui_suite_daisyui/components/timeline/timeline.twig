@@ -1,0 +1,17 @@
+{% set attributes = (variant != 'default') ? attributes.addClass('timeline-' ~ variant) : attributes %}
+
+{% if items %}
+<ul {{ attributes.addClass('timeline', 'not-prose') }}>
+{% for item in items %}
+  <li>
+  {% if not loop.first %}
+    <hr/>
+  {% endif %}
+  {{ item }}
+  {% if not loop.last %}
+    <hr/>
+  {% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,88 @@
+/* Layout
+----------------------------------- */
+.full-width {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+#main-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+.main-container {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.no-sidebar .main-container,
+.sidebar-left .main-container,
+.sidebar-right .main-container,
+.two-sidebar .main-container {
+  grid-template-columns: 1fr;
+}
+#main {
+  order: 1;
+}
+#sidebar-left {
+  order: 2;
+}
+#sidebar-right {
+  order: 3;
+}
+/* columns */
+.flex-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+}
+.row {
+  width: 100%;
+  clear: both;
+  margin-bottom: 1em;
+}
+.section {
+  width: 100%;
+  clear: both;
+  padding: 1.4em 0;
+}
+.full {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
+.item {
+  margin: 0 0 2em 0;
+  padding: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  max-width: 100%;
+}

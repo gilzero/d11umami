@@ -1,0 +1,54 @@
+// main menu scss
+.menu--main {
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            font-size: em(15px);
+            line-height: 2.5;
+            a {
+                color: $color-surface-mixed-600;
+                text-decoration: none;
+                text-transform: uppercase;
+                position: relative;
+                padding: em(10px) em(0px);
+                font-weight: 700;
+                letter-spacing: 1px;
+                &:hover {
+                    color: $color-primary-100;
+                    &::after {
+                        @include transformNew($translate: scaleX(1));
+                    }
+                }
+            }
+            > ul {
+                margin-left: em(9px);
+                display: none;
+            }
+            &.menu-item--active-trail {
+                a {
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        height: 2px;
+                        bottom: 3px;
+                        left: 0;
+                        right: 0;
+                        background-color: $color-primary-100;
+                        @include transformNew($translate: scaleX(0));
+                        @include transition(all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+                    }
+                    &.is-active {
+                        color: $color-primary-100;
+                        &:after {
+                            @include transformNew($translate: scaleX(1));
+                        }
+                    }
+                }
+                > ul {
+                    display: block;
+                }
+            }
+        }
+    }
+}

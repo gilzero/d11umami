@@ -1,0 +1,9 @@
+{
+    "name": "drupal/sobki_theme_admin",
+    "description": "Provide BO customizations for websites using Sobki.",
+    "license": "GPL-2.0-or-later",
+    "type": "drupal-theme",
+    "require": {
+        "drupal/gin": "^3.0"
+    }
+}

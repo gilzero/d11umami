@@ -1,0 +1,89 @@
+.js .field--widget-entity-reference-paragraphs .draggable .tabledrag-handle {
+  padding-right: 0;
+  margin-left: 6px;
+  margin-right: -24px;
+}
+
+.js .field--widget-entity-reference-paragraphs .field-multiple-drag {
+  vertical-align: top;
+  width: 10px;
+  margin: 0;
+  padding: 4px 0 0;
+}
+
+.js .field--widget-entity-reference-paragraphs th {
+  padding: 0.25rem 0.5rem;
+}
+
+.js .field--widget-entity-reference-paragraphs td {
+  padding: 5px 0 10px;
+}
+
+.paragraph-type-top {
+  position: relative;
+}
+
+.js .paragraph-top,
+.js .paragraph-type-top {
+  margin-left: 24px !important;
+  margin-bottom: 4px !important;
+}
+
+.js .paragraph-top {
+  margin-right: 5px;
+}
+
+.js .paragraph-top .paragraph-type,
+.js .paragraph-type-title {
+  padding: 0;
+  flex-basis: auto;
+  font-size: 1rem;
+  margin: 0 !important;
+}
+
+.js .field--widget-paragraphs th .label {
+  float: left;
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+.js .field--widget-paragraphs th .paragraphs-actions {
+  margin-right: 0;
+}
+
+.paragraphs-dropbutton-wrapper .button--remove {
+  position: absolute;
+  right: 0;
+}
+
+.paragraphs-dropbutton-wrapper .button--remove,
+.paragraphs-dropbutton-wrapper .button--remove:hover,
+.paragraphs-dropbutton-wrapper .button--remove:focus {
+  background: transparent url("../../images/delete.svg") no-repeat 50% 50%;
+  border: 0 !important;
+  padding: 0;
+  margin: 0;
+  text-indent: -99999em;
+  width: 30px;
+  height: 30px;
+}
+
+.paragraphs-dropbutton-wrapper .ajax-progress {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.paragraphs-dropbutton-wrapper .ajax-progress .message {
+  display: none;
+}
+
+.paragraphs-actions > .button {
+  margin-bottom: 0;
+}
+
+.js .paragraphs-subform {
+  margin-top: 4px !important;
+  margin-right: 3px !important;
+}
